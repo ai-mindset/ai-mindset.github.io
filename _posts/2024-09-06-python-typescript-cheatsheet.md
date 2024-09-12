@@ -4,7 +4,7 @@ I've been curious as to how Python and TypeScript compare at a high level, for s
 
 ## Variables and Data Types
 | Concept | Python | TypeScript |
-|---------|--------|------------|
+|-|-|-|
 | Int | `x = 5`| `let x: number = 5;`|
 | Float | `y = 3.14`| `let y: number = 3.14;`|
 | Str | `name = "John"`| `let name: string = "John";`|
@@ -14,14 +14,14 @@ I've been curious as to how Python and TypeScript compare at a high level, for s
 
 ## Functions 
 | Concept | Python | TypeScript |
-|---------|--------|------------|
+|-|-|-|
 | Func def | `def greet(name: str) -> str:`| `function greet(name: string): string {`|
 | Func return | `return f"Hello, {name}!"`| ``return `Hello, ${name}!`;``|
 | Lambda | `lambda x: x * 2`| `(x: number): number => x * 2`|
 
 ## Classes
 | Concept | Python | TypeScript |
-|---------|--------|------------|
+|-|-|-|
 | Class def | `class Person:`| `class Person {`|
 | Constructor | `def __init__(self, name: str, age: int):`| `constructor(name: string, age: number) {`|
 | Instance vars | `self.name = name`| `this.name = name;`|
@@ -31,7 +31,7 @@ I've been curious as to how Python and TypeScript compare at a high level, for s
 
 ## Control Flow
 | Concept | Python | TypeScript |
-|---------|--------|------------|
+|-|-|-|
 | If | `if x > 0:`| `if (x > 0) {`|
 | Else if | `elif x < 0:`| `} else if (x < 0) {`|
 | Else | `else:`| `} else {`|
@@ -40,7 +40,7 @@ I've been curious as to how Python and TypeScript compare at a high level, for s
 
 ## Error Handling
 | Concept | Python | TypeScript |
-|---------|--------|------------|
+|-|-|-|
 | Try | `try:`| `try {`|
 | Except/Catch | `except ZeroDivisionError:`| `} catch (error) {`|
 | Finally | `finally:`| `} finally {`|
