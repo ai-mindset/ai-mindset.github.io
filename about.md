@@ -7,4 +7,4 @@ Currently I'm betting on [Deno](https://deno.com/). This unusual choice aims at 
 
 My GitHub handle, which lends this blog its title, was inspired by Chris Molnar's excellent short read [Modeling Mindsets](https://ai-mindset.github.io/).
 
-I choose not to use Twitter / X. You can find me on [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/320px-LinkedIn_2021.svg.png" width="80" height="20" style="vertical-align: middle;" />](https://www.linkedin.com/in/eirinikomninou)
+I choose not to use Twitter / X. You can find me on [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/320px-LinkedIn_2021.svg.png" width="80" height="20" style="vertical-align:baseline;" />](https://www.linkedin.com/in/eirinikomninou)
