@@ -1,3 +1,4 @@
-# Your blog
+# ai-mindset.github.io
+Learning in public
 
-This is the repository for your blog! Click *_config.yml* above to get started and fill in the details. Then click *index.md* and edit it to start creating your home page.
+[![pages-build-deployment](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages/pages-build-deployment)
