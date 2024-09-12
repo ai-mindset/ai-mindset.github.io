@@ -1,7 +1,5 @@
-Hello and welcome to this blog. Edit the `index.md` file to change this content. All pages on the blog, including this one, use [Markdown](https://guides.github.com/features/mastering-markdown/). You can include images:
+A static site[^1], to share my musings as I [learn in public](https://www.swyx.io/learn-in-public)[^2]. Made with [Vim](https://github.com/ai-mindset/vimrc/blob/my_changes/vimrcs/basic.vim) and [fast_template](https://github.com/fastai/fast_template) ♥️ . 
 
-![Image of fast.ai logo](images/logo.png)
+[^1]: No ads, cookies, tracking, pop-ups, comments, social widgets, syndicated content, newsletter
+[^2]: ][https://www.fast.ai/posts/2017-12-18-personal-brand.html](https://www.fast.ai/posts/2017-12-18-personal-brand.html), [https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045)
 
-## This is a title
-
-And you can include links, like this [link to fast.ai](https://www.fast.ai). Posts will appear after this file. 
