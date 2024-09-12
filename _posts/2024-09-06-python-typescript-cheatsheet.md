@@ -3,6 +3,7 @@
 I've been curious as to how Python and TypeScript compare at a high level, for someone new to TypeScript. Below is a chatsheet I put together with the help of Claude 3.5 Sonnet. It covers basic syntax, it's by no means complete or exhaustive. However it gives a first taste of the similarities and differences between the two languages. The reason I am looking into TypeScript is explained in my [Deno article](../deno/).
 
 ## Variables and Data Types
+
 | Concept | Python | TypeScript |
 |-|-|-|
 | Int | `x = 5`| `let x: number = 5;`|
@@ -13,6 +14,7 @@ I've been curious as to how Python and TypeScript compare at a high level, for s
 | Dict | `person = {"name": "John", "age": 30}`| `let person: { name: string; age: number } = { name: "John", age: 30 };`|
 
 ## Functions 
+
 | Concept | Python | TypeScript |
 |-|-|-|
 | Func def | `def greet(name: str) -> str:`| `function greet(name: string): string {`|
@@ -20,6 +22,7 @@ I've been curious as to how Python and TypeScript compare at a high level, for s
 | Lambda | `lambda x: x * 2`| `(x: number): number => x * 2`|
 
 ## Classes
+
 | Concept | Python | TypeScript |
 |-|-|-|
 | Class def | `class Person:`| `class Person {`|
@@ -30,6 +33,7 @@ I've been curious as to how Python and TypeScript compare at a high level, for s
 | Method return | `return f"Hello, I'm {self.name}!"`| ``return `Hello, I'm ${this.name}!`;``|
 
 ## Control Flow
+
 | Concept | Python | TypeScript |
 |-|-|-|
 | If | `if x > 0:`| `if (x > 0) {`|
@@ -39,6 +43,7 @@ I've been curious as to how Python and TypeScript compare at a high level, for s
 | While loop | `while x > 0:`| `while (x > 0) {`|
 
 ## Error Handling
+
 | Concept | Python | TypeScript |
 |-|-|-|
 | Try | `try:`| `try {`|
