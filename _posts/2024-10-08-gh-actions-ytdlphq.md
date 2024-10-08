@@ -92,7 +92,7 @@ $ ./yt-dlp-hq-intel-linux https://www.youtube.com/watch?v=dQw4w9WgXcQ
 I'm glad I learned something more about GitHub and Actions, its idiosyncrasies and abilities. It took me a couple days' worth of work, which made me consider the benefits of [automation](https://xkcd.com/1319/). Being more of a minimalist, I tend to opt for simple automation when possible [_if_ it's worth it](https://xkcd.com/1205/). To quote [Alan Perlis](https://en.wikiquote.org/wiki/Alan_Perlis), "_Simplicity does not precede complexity, but follows it_".
 
 
-
+---
 [^1]: Some improvements I'm planning to implement include unit testing, automatic selection of audio & video format IDs and possibly automatic installation of FFmpeg when it's not already in `$PATH`.  
 [^2]: Recently, a [Juiia](https://julialang.org/) enthusiast introduced me to [Woodpecker CI](https://woodpecker-ci.org/) and [Codeberg](https://codeberg.org/). I'm definitely considering switching, following my recent GitHub Actions experience 🤔 
 
