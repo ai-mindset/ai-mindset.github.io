@@ -67,7 +67,7 @@ sb0     mhtml 320x180      0    │                  mhtml │ images           
 
 It looks like the only ID containing a video _with_ audio, is `18`, i.e. a 420p, 640x360 video according to my media player. This might be sufficient for a video like the above, but such low resolution would make it almost impossible to read code or smaller writing.
 
-## My solution
+## My approach 
 Given I have started leveraging Deno for my needs, I wrote a small tool called [yt-dlp-hq](https://github.com/ai-mindset/yt-dlp-hq). It's certainly basic, with lots of room for improvement. However it does exactly what I need and I'm relatively happy with the result, pending some improvements[^1].  
 Deno is great for cross-compilation. Also, GitHub Actions can be a good method for automating testing, running, compiling etc.[^2] Is it though? Let's see.  
 
