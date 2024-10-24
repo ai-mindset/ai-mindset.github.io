@@ -50,3 +50,35 @@ I've been curious as to how Python and TypeScript compare at a high level, for s
 | Except/Catch | `except ZeroDivisionError:`| `} catch (error) {`|
 | Finally | `finally:`| `} finally {`|
 
+
+## Procedural or OO?
+Both languages are Object-Oriented first, allowing for different programming paradigms such as procedural or functional to an extent. Depending on a technologist's background and preference, some people may gravitate towards one paradigm over another. I've found that frequently enough, software developers[^1] may tend to become polarised and strongly support or oppose a programming paradigm or style. More often than not, I've found this to be due to personal opinions and preferences without adequate substantiation.  
+Personally, given my technical needs, I've found Object-Orientation not to be required or sometimes adding unnecessary opaqueness. For this reason, I usually opt for procedural programming. Here's my rationale: 
+
+1. Pure Functions
+- Each function has a single responsibility
+- Functions are independent and don't share state
+- All dependencies are passed as parameters
+- Functions are easier to test and reason about
+
+2. No Class State
+- Configuration is passed explicitly to functions
+- No instance variables to manage
+- No need to worry about this context
+- Clearer data flow between functions
+
+3. Enhanced Features  
+- Added batch operations support -no need to maintain state  
+- Added filtered search capability -no hidden state  
+- Better type definitions  
+- More explicit error handling -no shared state    
+
+4. Testing Advantages
+- Functions can be tested in isolation
+- No need to mock class instances
+- Easier to unit test each function
+- Simpler dependency injection
+
+A final thought, I recognise and appreciate how succinct and effective functional programming can be. Thus, I'm striving to shift my coding style to be more functional.  
+
+[^1]: Software is _not_ an engineering discipline. See the definition of [engineer](https://dictionary.cambridge.org/dictionary/english/engineering) for more information
