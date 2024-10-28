@@ -2,8 +2,8 @@
 ## [Was it worth my time](https://xkcd.com/1205/)? 
 
 ## Motivation
-Occasionally I need to use my computer offline, e.g. when I'm travelling. Having to stay offline is a good opportunity for me to study some lectures of interest, with little distraction. For that, I need offline access to the videos I'm interested in.  
-[yt-dlp](https://github.com/yt-dlp/yt-dlp) is a great open-source project that allows the user to download audio and/or video from a wide array of platforms including YouTube. Recently, I noticed that it's no longer as straightforward to download a video with audio, using `yt-dlp`. A workaround to this is to download the audio stream and video stream separately, merging them with the help of [FFmpeg](https://ffmpeg.org/). This sounded like a good opportunity to write a small automation project in a language I want to learn better.  
+Occasionally I need to use my computer offline, e.g. when I'm travelling. Having to stay offline is a good opportunity for me to study some lectures of interest, without distractions. For that, I need offline access to the videos I'm interested in.  
+[yt-dlp](https://github.com/yt-dlp/yt-dlp) is a great open-source project that allows the user to download audio and/or video from a wide array of platforms including YouTube. Recently, I noticed that it's no longer as straightforward to download a video with audio, using `yt-dlp`. One workaround is to download the audio and video streams separately, and merge them using [FFmpeg](https://ffmpeg.org/). This was a good opportunity to write a small automation project in a language I'm interested in.  
 
 ### yt-dlp and YouTube
 Here's an example that motivates implementing this project. Imagine I'd like to download a video from the excellent [IBM Technology](https://www.youtube.com/channel/UCKWaEZ-_VweaEx1j62do_vQ) YouTube channel, for instance [What are AI Agents](https://www.youtube.com/watch?v=F8NKVhkZZWI). Listing the video's available formats, returns the following table   
@@ -75,13 +75,12 @@ Deno is great for cross-compilation. Also, GitHub Actions can be a good method f
 I started off by using [act](https://nektosact.com/introduction.html), a very nice tool that allows for testing pipelines locally. The main downside I found was that for an intermediate Docker user with little `act` experience, sometimes GitHub Actions don't behave the same way locally as they would online. Also, I like [podman](https://podman.io/) considerably better, since it's daemonless and not as resource-hungry among others.  
 Putting `act` aside, I focused on setting up a [pipeline](https://github.com/ai-mindset/yt-dlp-hq/blob/main/.github/workflows/ci.yml) that'd work well enough with every new PR opened against `main` aside from others.  
 The pipeline ran successfully, where in theory it built and released `yt-dlp-hq` executables. However, when I downloaded the corresponding executable for my OS and CPU architecture, it did not run. When I locally built the same set of executables, running `deno task build`, the executable for my OS & arch worked as expected. This made me wonder whether I'm doing something wrong, if it's a GitHub Action intricacy or some other issue I needed to resolve. 
-Inspired by Medicine, I tried approaching the issue through differential diagnosis, which to my understanding works by excluding other causes in order to hone in on the actual medical condition. I.e. I first created a release directory locally. I then manually created a release on GitHub. To my dismay, the executable I manually uploaded didn't run when I
-downloaded it back from GitHub. This made me wonder if there is a conversion involved when a pipeline generates executables or the user uploads them manually for release. Spoiler alert: I still don't know if that's the case, but I suspect that GitHub indeed doesn't save executables '
+Inspired by Medicine, I tried approaching the issue through differential diagnosis, which to my understanding works by excluding other causes in order to hone in on the actual medical condition. I.e. I first created a release directory locally. I then manually created a release on GitHub. To my dismay, the executable I manually uploaded didn't run when I downloaded it back from GitHub. This made me wonder if there is a conversion involved when a pipeline generates executables or the user uploads them manually for release. Spoiler alert: I still don't know if that's the case, but I suspect that GitHub indeed doesn't save executables without some change taking place during upload. 
 
 ## My simple solution
 Initially, I changed the following setting on my repository:   
-"Settings -> Actions -> General -> Workflow permissions" select  "Read and write permissions".
-Then, I experimented with compressing each generated executable into a .tar file. This appeared to do the trick. While it's a workaround, I am happy to see that simply compressing an executable is enough to maintain its function. Thus, the way to install `yt-dlp-hq` requires an extra step.  
+_"Settings -> Actions -> General -> Workflow permissions"_ select  _"Read and write permissions"_.
+Then, I experimented with compressing each generated executable into a .tar file. This did the trick. Simply compressing an executable is enough to maintain its function. Thus, the way to install `yt-dlp-hq` takes one extra step.  
 For example, if you're a Linux user on an Intel-based machine, here's how you can use my tool   
 ```console
 $ curl -L -O https://github.com/ai-mindset/yt-dlp-hq/releases/download/1.0.0/yt-dlp-hq-intel-linux.tar && tar xvf yt-dlp-hq-intel-linux.tar && cd release
@@ -89,11 +88,11 @@ $ ./yt-dlp-hq-intel-linux https://www.youtube.com/watch?v=dQw4w9WgXcQ
 ```
 
 ## Conclusion
-I'm glad I learned something more about GitHub and Actions, its idiosyncrasies and abilities. It took me a couple days' worth of work, which made me consider the benefits of [automation](https://xkcd.com/1319/). Being more of a minimalist, I tend to opt for simple automation when possible [_if_ it's worth it](https://xkcd.com/1205/). To quote [Alan Perlis](https://en.wikiquote.org/wiki/Alan_Perlis), "_Simplicity does not precede complexity, but follows it_".
+I'm glad I learned something more about GitHub and Actions, its idiosyncrasies and abilities. It took me a couple days, which made me consider the benefits of [automation](https://xkcd.com/1319/). Being more minimalistic, I tend to opt for simple automation when possible [_if_ it's worth it](https://xkcd.com/1205/). To quote [Alan Perlis](https://en.wikiquote.org/wiki/Alan_Perlis), "_Simplicity does not precede complexity, but follows it_".
 
 
 ---
-[^1]: Some improvements I'm planning to implement include unit testing, automatic selection of audio & video format IDs and possibly automatic installation of FFmpeg when it's not already in `$PATH`.  
+[^1]: Some improvements I'm planning include unit testing, automatic audio & video ID selection and possibly automatic FFmpeg installation when it's not available in `$PATH`.  
 [^2]: Recently, a [Juiia](https://julialang.org/) enthusiast introduced me to [Woodpecker CI](https://woodpecker-ci.org/) and [Codeberg](https://codeberg.org/). I'm definitely considering switching, following my recent GitHub Actions experience 🤔 
 
 
