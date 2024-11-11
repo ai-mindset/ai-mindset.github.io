@@ -18,9 +18,14 @@ Being doubtful as to whether this tech stack could meet all my current needs, be
 More recently, especially given many AI Engineering APIs are written both in Python _and_ TypeScript, I started using Deno. The idea is to leverage Deno for all my computational needs, since it's an all-in-one, straightforward to use runtime. Installation and setup were a breeze, Deno comes with _all_ the tools a developer requires (formatter, linter, testing suite, package manager etc.), it plays very nicely with Vim, it's lightweight, secure, compatible with NPM packages and the list goes on. Importantly, it can easily cross-compile executables. The data and AI ecosystem is not yet as mature as that of Python. However, if someone is willing to put in the effort, I've found that it's well worth the investment. This is why I am betting on Deno for my Data Science and AI needs. 
 
 ## What about Python cross-compilation? 
-### How hard could it be? 
-**TL;DR:** it's certainly a more involved process that usually requires setting up one or more pipelines. I wrote two pipelines, one for generating a [Unix build](https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/unix-build.yml) and one for [Windows](https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/win-build.yml). The result is pretty decent, however the cumbersome process and reliance on third party tech (GitHub Actions in this case) strengthened my conviction that Deno and TypeScript are worth investing in, for a more complete solution. The JS/DS Data[^2] ecosystem is not as mature yet but it's evolving pretty fast.  
+#### How hard could it be?   
+**TL;DR:** it's an involved process that requires access to a CI/CD platform such as GitHub Actions. Once a pipeline is in place, it's a straightforward process that requires internet access and registering to a hosting service such as GitHub.  
 
+I wrote two pipelines, one for generating a [Unix build](https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/unix-build.yml) and one for [Windows](https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/win-build.yml). The result is pretty decent, however the cumbersome process and reliance on third party tech (GitHub Actions in this case) strengthened my conviction that Deno and TypeScript are worth investing in, for a more complete solution. The JS/DS Data[^2] ecosystem is not as mature yet but it's evolving pretty fast.  
+
+## Conclusions
+The process of cross-compiling a simple Python app was pretty instructive. The main downside I see is the reliance on a hosting service and a CI/CD platform. Frankly, having access to a hosting service and using CI/CD is almost a given in my line of work. Still, it's nowhere near as straightforward as running `$ deno compile main.ts`
+I am considering attempting the same using [Podman](https://podman.io/), since [Windows](https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images), [macOS](https://github.com/sickcodes/Docker-OSX) and [Linux](https://hub.docker.com/_/ubuntu/) containers are available. Stay tuned for updates!   
 
 
 [^1]: One might argue that running statically compiled executables in a sandboxed environment is a security risk. Static malware analysis tools exist for this exact reason  
