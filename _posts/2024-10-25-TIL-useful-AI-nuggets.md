@@ -1,4 +1,4 @@
-# TIL: Useful AI nuggets
+# TIL: Useful AI Nuggets
 
 ## Introduction
 As I was going through some [CS25: Transformers United V4](https://web.stanford.edu/class/cs25/) lectures from Stanford, I stumbled across some pertinent and useful quotes from guest lecturers.   

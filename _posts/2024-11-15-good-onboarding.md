@@ -19,12 +19,12 @@ According to the presenter, research and experience show that effective on-board
 ### Best practices
 These principles translate into concrete best practices that any organisation can implement. While the specific skills and technologies may vary between teams, successful on-boarding programs share common structural elements that maximize learning efficiency while minimizing cognitive overload:
 
-- Break down complex skills into smaller, manageable components. For example, rather than asking someone to "learn LiveView"[^2] break it down into specific tasks like creating forms, handling events, or managing state 
-- Provide structured learning paths rather than self-directed exploration. When new hires must decide what to learn next, they waste valuable mental capacity on planning rather than learning. A clear, predefined path eliminates this overhead 
-- Aim for 80% proficiency before moving to next skill. This threshold ensures sufficient mastery while avoiding diminishing returns from pursuing perfection 
-- Define minimum productive competency for the role. Not every skill needs to be mastered immediately - identify what's truly needed for day-one productivity and focus there first 
-- Use checklists and frequent practice with feedback. Clear checkpoints provide motivation and progress tracking, while regular feedback prevents learners from developing incorrect habits 
-- Focus on mechanical competency to reduce cognitive load. When basic operations become automatic, developers can focus their mental energy on solving more complex problems 
+- **Break down complex skills into smaller, manageable components**. For example, rather than asking someone to "learn LiveView"[^2] break it down into specific tasks like creating forms, handling events, or managing state 
+- **Provide structured learning paths rather than self-directed exploration**. When new hires must decide what to learn next, they waste valuable mental capacity on planning rather than learning. A clear, predefined path eliminates this overhead 
+- **Aim for 80% proficiency before moving to next skill**. This threshold ensures sufficient mastery while avoiding diminishing returns from pursuing perfection 
+- **Define minimum productive competency for the role**. Not every skill needs to be mastered immediately - identify what's truly needed for day-one productivity and focus there first 
+- **Use checklists and frequent practice with feedback**. Clear checkpoints provide motivation and progress tracking, while regular feedback prevents learners from developing incorrect habits 
+- **Focus on mechanical competency to reduce cognitive load**. When basic operations become automatic, developers can focus their mental energy on solving more complex problems 
 
 ## Conclusions
 Effective on-boarding is not just a nice-to-have, it's a competitive necessity in today's software industry. While poor on-boarding practices continue to cost companies valuable time and talent, the path to improvement is clear. By _breaking down_ complex skills, providing _structured learning_ paths, and _respecting_ cognitive limitations, organisations can dramatically reduce the time it takes for new hires to become productive team members. This investment in structured on-boarding not only accelerates developer productivity but also expands hiring possibilities, allowing companies to tap into a broader talent pool. The choice is simple: continue losing months of productivity to ineffective on-boarding, or implement these evidence-based practices to build stronger, more capable engineering teams.
