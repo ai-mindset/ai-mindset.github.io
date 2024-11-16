@@ -1,7 +1,13 @@
-# The Advantage
+---
+layout: post
+title: "The Advantage"
+date: 2024-11-14
+tags: [slow-down, advantage]
+---
+<!--more-->
 
 ## Introduction
-Recently I listened to a [successful company's CEO interview](https://saasscalingsecrets.buzzsprout.com/2172375/episodes/15926541-why-slower-growth-could-be-your-fast-track-to-success-with-roan-lavery-ceo-of-freeagent), where he explained how growing sustainably contributed to the company's success. The CEO said that their growth strategy was inspired by [Patrick Lencioni](https://www.tablegroup.com/pat/)'s book "[The Advantage](https://www.tablegroup.com/product/the-advantage/)". I found the book's premise very interesting, hence I'll attempt to summarise important points as a note to self.   
+Recently I listened to a [successful company's CEO interview](https://saasscalingsecrets.buzzsprout.com/2172375/episodes/15926541-why-slower-growth-could-be-your-fast-track-to-success-with-roan-lavery-ceo-of-freeagent), where he explained how growing sustainably contributed to the company's success. The CEO said that their growth strategy was inspired by [Patrick Lencioni](https://www.tablegroup.com/pat/)'s book [The Advantage](https://www.tablegroup.com/product/the-advantage/). I found the book's premise very interesting, hence I'll attempt to summarise important points as a note to self.   
 
 ## Central Thesis
 Organisational health is the _single greatest competitive advantage_ a company can achieve, yet it's often overlooked in favour of "smart" business decisions.

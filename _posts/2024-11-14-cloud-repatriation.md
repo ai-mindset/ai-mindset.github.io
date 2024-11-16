@@ -1,4 +1,10 @@
-# Cloud Repatriation: The On-Prem Comeback 
+---
+layout: post
+title: "Cloud Repatriation: The On-Prem Comeback"
+date: 2024-11-14
+tags: [cloud, on-prem]
+---
+<!--more-->
 
 ## Introduction
 More recently, a notable shift is emerging in how organisations approach their cloud infrastructure. Some companies are beginning to move their applications and data away from public cloud providers like AWS, GCP and Azure. This marks a shift in the computing landscape.

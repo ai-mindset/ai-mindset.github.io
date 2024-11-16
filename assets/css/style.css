@@ -1,16 +1,45 @@
-.tags-list {
-  margin: 20px 0;
+:root {
+  --bg-light: #ffffff;
+  --text-light: #333333;
+  --link-light: #0366d6;
+  
+  --bg-dark: #1a1a1a;
+  --text-dark: #e6e6e6;
+  --link-dark: #58a6ff;
 }
 
-.tag {
-  margin-right: 10px;
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.posts-list article {
-  margin-bottom: 20px;
+body.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
 }
 
-.post-meta {
-  font-size: 0.9em;
-  color: #666;
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: none;
+  font-size: 0.9rem;
+}
+
+.dark-theme .theme-toggle {
+  border-color: #666;
+  color: var(--text-dark);
+}
+
+a {
+  color: var(--link-light);
+}
+
+.dark-theme a {
+  color: var(--link-dark);
 }

@@ -1,4 +1,10 @@
-# TIL: Useful AI Nuggets
+---
+layout: post
+title: "TIL: Useful AI Nuggets"
+date: 2024-10-25
+tags: [til, ai, llm, skills]
+---
+<!--more-->
 
 ## Introduction
 As I was going through some [CS25: Transformers United V4](https://web.stanford.edu/class/cs25/) lectures from Stanford, I stumbled across some pertinent and useful quotes from guest lecturers.   
