@@ -8,6 +8,7 @@
 
 title: Just-in-Time learning 
 permalink: /:title/
+excerpt_separator: <!--more-->
 defaults:
   -
     scope:
