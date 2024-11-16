@@ -1,0 +1,16 @@
+.tags-list {
+  margin: 20px 0;
+}
+
+.tag {
+  margin-right: 10px;
+}
+
+.posts-list article {
+  margin-bottom: 20px;
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: #666;
+}
