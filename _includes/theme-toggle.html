@@ -1,0 +1,21 @@
+<button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
+  🌙 Dark
+</button>
+
+<script>
+function toggleTheme() {
+    const body = document.querySelector('body');
+    const button = document.getElementById('theme-toggle');
+    const isDark = body.classList.toggle('dark-theme');
+    
+    button.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('darkTheme', isDark);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('darkTheme') === 'true') {
+        document.querySelector('body').classList.add('dark-theme');
+        document.getElementById('theme-toggle').innerHTML = '☀️ Light';
+    }
+});
+</script>

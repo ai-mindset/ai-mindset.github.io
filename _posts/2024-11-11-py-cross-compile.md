@@ -1,4 +1,10 @@
-# Cross-Platform Builds In Python
+---
+layout: post
+title: "Cross-Platform Builds In Python"
+date: 2024-11-11
+tags: [python, github-actions, cross-platform, deno, typescript, julia, elixir]
+---
+<!--more-->
 
 ## Introduction 
 In the last couple of years I've spoken to 3-4 people who had needed a bespoke data analysis tool that could be used locally, with privacy in mind. In some cases they'd need to work in a sandboxed environment for security reasons, other times they had IP protection concerns. A desktop app or a CLI tool[^1] seemed to fit the bill in all those cases.   

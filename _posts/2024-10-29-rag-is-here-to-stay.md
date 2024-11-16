@@ -1,4 +1,10 @@
-# RAG Is Here To Stay
+---
+layout: post
+title: "RAG Is Here To Stay"
+date: 2024-10-29
+tags: [rag, llm, ai, performance]
+---
+<!--more-->
 
 ## Introduction
 This morning I noticed that [Simon Willison shared some views on RAG](https://xcancel.com/simonw/status/1850928417363149049), [Andryi Burkov criticised](https://xcancel.com/burkov/status/1851159933913280647) people who claim that RAG is obsolete, and other RAG-related discussions taking place sparked by recent longer LLM context windows. Below I'm sharing some thoughts based on personal experience.   

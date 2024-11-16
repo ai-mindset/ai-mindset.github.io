@@ -1,8 +1,14 @@
-# GitHub Actions For `yt-dlp-hq` 
-## [Was it worth my time](https://xkcd.com/1205/)? 
+---
+layout: post
+title: "GitHub Actions For `yt-dlp-hq`"
+date: 2024-10-08
+tags: [github-actions, yt-dlp, cloud]
+---
+<!--more-->
+**[Was it worth my time](https://xkcd.com/1205/)?** 
 
-## Motivation
-Occasionally I need to use my computer offline, e.g. when I'm travelling. Having to stay offline is a good opportunity for me to study some lectures of interest, without distractions. For that, I need offline access to the videos I'm interested in.  
+## Introduction 
+There are times where I need to use my computer offline, e.g. when I'm travelling. Having to stay offline is a good opportunity for me to study some lectures of interest, without distractions. For that, I need offline access to the videos I'm interested in.  
 [yt-dlp](https://github.com/yt-dlp/yt-dlp) is a great open-source project that allows the user to download audio and/or video from a wide array of platforms including YouTube. Recently, I noticed that it's no longer as straightforward to download a video with audio, using `yt-dlp`. One workaround is to download the audio and video streams separately, and merge them using [FFmpeg](https://ffmpeg.org/). This was a good opportunity to write a small automation project in a language I'm interested in.  
 
 ### `yt-dlp` And YouTube

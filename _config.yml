@@ -7,6 +7,15 @@
 # https://learnxinyminutes.com/docs/yaml/
 
 title: Just-in-Time learning 
+permalink: /:title/
+excerpt_separator: <!--more-->
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 description: Ambitiously curious. I learn stuff, then I blog about them. Simplicity -> reliability. 
 github_username: ai-mindset 
 
