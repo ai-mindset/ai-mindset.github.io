@@ -15,21 +15,29 @@ layout: default
 
 <h2>Tags</h2>
 <div class="tags-list">
- {% for tag in site.tags %}
-   <a href="javascript:void(0)" onclick="filterByTag('{{ tag[0] }}')" class="tag">{{ tag[0] }}</a>
-   {% unless forloop.last %} • {% endunless %}
- {% endfor %}
- <a href="javascript:void(0)" onclick="showAllPosts()" class="tag" id="show-all">(Show All)</a>
+  {% for tag in site.tags %}
+    <a href="javascript:void(0)" onclick="filterByTag('{{ tag[0] }}')" class="tag">{{ tag[0] }}</a>
+    {% unless forloop.last %} • {% endunless %}
+  {% endfor %}
+  <a href="javascript:void(0)" onclick="showAllPosts()" class="tag" id="show-all">(Show All)</a>
 </div>
 
 <h2>Posts</h2>
-<ul id="posts-list">
- {% for post in site.posts %}
-   <li class="post-item" data-tags="{{ post.tags | join: ' ' }}">
-     <a href="{{ post.url }}">{% if post.title %}{{ post.title }}{% else %}Untitled{% endif %}</a> - {{ post.date | date: "%B %Y" }}
-   </li>
- {% endfor %}
-</ul>
+{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% for year in postsByYear %}
+  <h3>{{ year.name }}</h3>
+  {% assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%B'" %}
+  {% for month in postsByMonth %}
+    <h4>{{ month.name }}</h4>
+    <ul id="posts-list">
+    {% for post in month.items %}
+      <li class="post-item" data-tags="{{ post.tags | join: ' ' }}">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+{% endfor %}
 
 <hr>
 <div class="references">
@@ -73,17 +81,19 @@ function showAllPosts() {
 }
 
 function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-    const isDark = document.body.classList.contains('dark-theme');
+    const body = document.querySelector('body');
+    const button = document.getElementById('theme-toggle');
+    const isDark = body.classList.toggle('dark-theme');
+    
+    button.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
     localStorage.setItem('darkTheme', isDark);
-    document.getElementById('theme-toggle').innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
 }
 
-// Initialize theme from localStorage
+// Initialize theme
 if (localStorage.getItem('darkTheme') === 'true') {
-    document.body.classList.add('dark-theme');
+    document.querySelector('body').classList.add('dark-theme');
     document.getElementById('theme-toggle').innerHTML = '☀️ Light';
-}// Show all posts by default
+}
 
 showAllPosts();
 </script>

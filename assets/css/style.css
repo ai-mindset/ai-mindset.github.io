@@ -1,17 +1,24 @@
+/* Site colours */
 :root {
   --bg-light: #ffffff;
   --text-light: #333333;
   --link-light: #0366d6;
+  --code-bg-light: #f6f8fa;
+  --code-text-light: #24292e;
+  --table-border-light: #dfe2e5;
   
   --bg-dark: #1a1a1a;
   --text-dark: #e6e6e6;
   --link-dark: #58a6ff;
+  --code-bg-dark: #2f3337;
+  --code-text-dark: #c9d1d9;
+  --table-border-dark: #404040;
 }
 
 body {
   background-color: var(--bg-light);
   color: var(--text-light);
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease;
 }
 
 body.dark-theme {
@@ -19,27 +26,106 @@ body.dark-theme {
   color: var(--text-dark);
 }
 
+a {
+  color: var(--link-light);
+  transition: color 0.3s ease;
+}
+
+.dark-theme a {
+  color: var(--link-dark);
+}
+
 .theme-toggle {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.5rem 1rem;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
   border-radius: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-light);
+  background: var(--bg-light);
+  color: var(--text-light);
   cursor: pointer;
-  background: none;
   font-size: 0.9rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .dark-theme .theme-toggle {
-  border-color: #666;
+  border-color: var(--text-dark);
+  background: var(--bg-dark);
   color: var(--text-dark);
 }
 
+code {
+  background-color: var(--code-bg-light);
+  color: var(--code-text-light);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 85%;
+}
+
+.dark-theme code {
+  background-color: var(--code-bg-dark);
+  color: var(--code-text-dark);
+}
+
+/* */
 a {
   color: var(--link-light);
 }
 
 .dark-theme a {
   color: var(--link-dark);
+}
+
+/* List posts */
+#posts-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.post-item {
+    margin-bottom: 1.5rem;
+}
+
+.post-item a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.post-item a:hover {
+    text-decoration: underline;
+}
+
+/* Posts underline */
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2:not(:first-of-type) {  /* This targets "Posts" but not "Tags" */
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;  /* Makes border only as wide as text */
+    border-bottom: 2px solid var(--text-light);
+    padding-bottom: 0.5rem;
+}
+
+.dark-theme h2:not(:first-of-type) {
+    border-bottom-color: var(--text-dark);
+}
+
+/* Footnote line */
+hr {
+    margin: 3rem 0;
+    border: none;
+    border-top: 1px solid var(--text-light);
+    opacity: 0.2;
+}
+
+.dark-theme hr {
+    border-top-color: var(--text-dark);
 }
