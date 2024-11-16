@@ -2,9 +2,7 @@
 layout: default
 ---
 
-<button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
-  🌙 Dark
-</button>
+{% include theme-toggle.html %}
 
 <p>
  A static site<sup><a href="#ref1">1</a></sup>, to share things I'd like to have known 6 months ago, while I <a href="https://www.swyx.io/learn-in-public">learn in public</a><sup><a href="#ref2">2</a></sup> <sup><a href="#ref3">3</a></sup>.
@@ -78,21 +76,6 @@ function showAllPosts() {
    for (let tagElement of tagElements) {
        tagElement.style.fontWeight = 'normal';
    }
-}
-
-function toggleTheme() {
-    const body = document.querySelector('body');
-    const button = document.getElementById('theme-toggle');
-    const isDark = body.classList.toggle('dark-theme');
-    
-    button.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
-    localStorage.setItem('darkTheme', isDark);
-}
-
-// Initialize theme
-if (localStorage.getItem('darkTheme') === 'true') {
-    document.querySelector('body').classList.add('dark-theme');
-    document.getElementById('theme-toggle').innerHTML = '☀️ Light';
 }
 
 showAllPosts();
