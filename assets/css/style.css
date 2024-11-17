@@ -1,4 +1,4 @@
-/* Site colours */
+/* Variables */
 :root {
   --bg-light: #ffffff;
   --text-light: #333333;
@@ -6,15 +6,20 @@
   --code-bg-light: #f6f8fa;
   --code-text-light: #24292e;
   --table-border-light: #dfe2e5;
+  --inline-code-bg-light: #f6f8fa;
+  --inline-code-text-light: #24292e;
   
   --bg-dark: #1a1a1a;
   --text-dark: #e6e6e6;
   --link-dark: #58a6ff;
-  --code-bg-dark: #2f3337;
-  --code-text-dark: #c9d1d9;
+  --code-bg-dark: #161b22;
+  --code-text-dark: #e6edf3;
   --table-border-dark: #404040;
+  --inline-code-bg-dark: #2f3337;
+  --inline-code-text-dark: #c9d1d9;
 }
 
+/* Base styles */
 body {
   background-color: var(--bg-light);
   color: var(--text-light);
@@ -26,136 +31,218 @@ body.dark-theme {
   color: var(--text-dark);
 }
 
-a {
-  color: var(--link-light);
-  transition: color 0.3s ease;
-}
-
-.dark-theme a {
-  color: var(--link-dark);
-}
-
+/* Links */
 html body a {
   color: var(--link-light) !important;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 html body.dark-theme a {
   color: var(--link-dark) !important;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--text-light);
-  background: var(--bg-light);
-  color: var(--text-light);
-  cursor: pointer;
-  font-size: 0.9rem;
-  z-index: 1000;
-  transition: all 0.3s ease;
+html body a:hover,
+html body a:focus {
+  text-decoration: underline;
 }
 
-.dark-theme .theme-toggle {
-  border-color: var(--text-dark);
-  background: var(--bg-dark);
+/* Theme toggle */
+.site-nav .theme-toggle {
+  color: var(--text-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  line-height: 54px;
+  padding: 0;
+  position: relative;
+  top: -1px;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.site-nav .theme-toggle:hover,
+.site-nav .theme-toggle:focus {
+  opacity: 0.8;
+  outline: none;
+}
+
+.site-nav .theme-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.dark-theme .site-nav .theme-toggle {
   color: var(--text-dark);
 }
 
+@media screen and (max-width: 600px) {
+  .site-nav .theme-toggle {
+    line-height: normal;
+    margin: 7px 0;
+    top: 0;
+  }
+}
+
+/* Lists */
+#posts-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.post-item {
+  margin-bottom: 1.5rem;
+}
+
+.post-item a {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Headings */
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2:not(:first-of-type) {
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  border-bottom: 2px solid var(--text-light);
+  padding-bottom: 0.5rem;
+}
+
+.dark-theme h2:not(:first-of-type) {
+  border-bottom-color: var(--text-dark);
+}
+
+/* Horizontal rule */
+hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 1px solid var(--text-light);
+  opacity: 0.2;
+}
+
+.dark-theme hr {
+  border-top-color: var(--text-dark);
+}
+
+/* Code styles */
+/* Inline code */
 code {
-  background-color: var(--code-bg-light);
-  color: var(--code-text-light);
+  background-color: var(--inline-code-bg-light);
+  color: var(--inline-code-text-light);
   padding: 0.2em 0.4em;
   border-radius: 3px;
   font-size: 85%;
 }
 
 .dark-theme code {
-  background-color: var(--code-bg-dark);
-  color: var(--code-text-dark);
-}
-
-/* */
-a {
-  color: var(--link-light);
-}
-
-.dark-theme a {
-  color: var(--link-dark);
-}
-
-/* List posts */
-#posts-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.post-item {
-    margin-bottom: 1.5rem;
-}
-
-.post-item a {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.post-item a:hover {
-    text-decoration: underline;
-}
-
-/* Posts underline */
-h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-
-h2:not(:first-of-type) {  /* This targets "Posts" but not "Tags" */
-    font-size: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    display: inline-block;  /* Makes border only as wide as text */
-    border-bottom: 2px solid var(--text-light);
-    padding-bottom: 0.5rem;
-}
-
-.dark-theme h2:not(:first-of-type) {
-    border-bottom-color: var(--text-dark);
-}
-
-/* Footnote line */
-hr {
-    margin: 3rem 0;
-    border: none;
-    border-top: 1px solid var(--text-light);
-    opacity: 0.2;
-}
-
-.dark-theme hr {
-    border-top-color: var(--text-dark);
+  background-color: var(--inline-code-bg-dark);
+  color: var(--inline-code-text-dark);
 }
 
 /* Code blocks */
 .highlight pre {
-    padding: 1rem;
-    border-radius: 6px;
-    overflow-x: auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  background-color: var(--code-bg-light);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.highlight pre code {
+  background: none;
+  color: var(--code-text-light);
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .dark-theme .highlight pre {
-    background-color: #1e1e1e;
+  background-color: var(--code-bg-dark);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .dark-theme .highlight pre code {
-    color: #d4d4d4;
+  color: var(--code-text-dark);
 }
 
-/* Inline code */
-.dark-theme code {
-    background-color: #2f3337;
-    color: #c9d1d9;
+/* Console styling */
+.highlight.language-console .nv,
+.highlight.language-console .go {
+    color: var(--code-text-dark) !important;
+}
+
+.highlight.language-console .gp {  /* Shell prompt $ */
+    color: #7ee787 !important;
+    user-select: none;
+}
+
+/* Command flags styling */
+.highlight.language-console .c1,
+.highlight.language-console .c,
+.highlight.language-console .o,
+.highlight.language-console .s2,
+.highlight.language-console .s1,
+.highlight.language-console .se {
+    color: #ff7b72 !important;
+    background: transparent !important;
+}
+
+/* Dark theme overrides for flags */
+.dark-theme .highlight.language-console .c1,
+.dark-theme .highlight.language-console .c,
+.dark-theme .highlight.language-console .o,
+.dark-theme .highlight.language-console .s2,
+.dark-theme .highlight.language-console .s1,
+.dark-theme .highlight.language-console .se {
+    color: #ff7b72 !important;
+    background: transparent !important;
+}
+
+/* Additional flag selectors */
+.highlight.language-console .nt,
+.dark-theme .highlight.language-console .nt {
+    color: #ff7b72 !important;
+}
+
+.language-console .err,
+.dark-theme .language-console .err {
+    color: #ff7b72 !important;
+    background-color: transparent !important;
+}
+
+/* Focus styles */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--link-light);
+  outline-offset: 2px;
+}
+
+.dark-theme *:focus-visible {
+  outline-color: var(--link-dark);
+}
+
+/* Target .nt class specifically, for better readability */
+.highlight .nt,
+.language-console .nt,
+pre .nt {
+    color: #ff7b72 !important;
+    background: transparent !important;
+}
+
+.dark-theme .highlight .nt,
+.dark-theme .language-console .nt,
+.dark-theme pre .nt {
+    color: #ff7b72 !important;
+    background: transparent !important;
 }

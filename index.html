@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% include theme-toggle.html %}
+<!-- {% include theme-toggle.html %} -->
 
 <p>
  A static site<sup><a href="#ref1">1</a></sup>, to share things I'd like to have known 6 months ago, while I <a href="https://www.swyx.io/learn-in-public">learn in public</a><sup><a href="#ref2">2</a></sup> <sup><a href="#ref3">3</a></sup>.
@@ -11,14 +11,16 @@ layout: default
  Made with <a href="https://github.com/ai-mindset/vimrc/blob/my_changes/vimrcs/basic.vim">Vim</a>, <a href="https://github.com/fastai/fast_template">fast_template</a> and <a href="https://medium.com/@fabioc/dialog-engineering-ai-as-your-research-assistant-616a625e9853">dialogue engineering</a> ♥️
 </p>
 
-<!-- <h2>Tags</h2> -->
-<!-- <div class="tags-list"> -->
-<!--   {% for tag in site.tags %} -->
-<!--     <a href="javascript:void(0)" onclick="filterByTag('{{ tag[0] }}')" class="tag">{{ tag[0] }}</a> -->
-<!--     {% unless forloop.last %} • {% endunless %} -->
-<!--   {% endfor %} -->
-<!--   <a href="javascript:void(0)" onclick="showAllPosts()" class="tag" id="show-all">(Show All)</a> -->
-<!-- </div> -->
+<h2>Tags</h2>
+<div class="tags-list">
+  {% for tag in site.tags %}
+    <a href="javascript:void(0)" onclick="filterByTag('{{ tag[0] }}')" class="tag">{{ tag[0] }}</a>
+    {% unless forloop.last %} • {% endunless %}
+  {% endfor %}
+  <a href="javascript:void(0)" onclick="showAllPosts()" class="tag" id="show-all">(Show All)</a>
+</div>
+
+</br>
 
 <h2>Posts</h2>
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
