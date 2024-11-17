@@ -2,8 +2,8 @@
 
 ## Introduction
 Dialogue Engineering is transforming how we interact with AI[^1]. Rather than relying on one-shot prompts, it's an iterative approach where we engage in structured, multi-turn conversations with LLMs (Large Language Models) to achieve complex goals. While I first encountered the term through Jeremy Howard[^2] [^3], the concept has deeper roots in human-AI interaction research. Though Howard popularized it recently through fast.ai and answer.ai, the concept has been discussed since as early as 1986[^4].
-Dialogue engineering dramatically improves productivity by breaking down complex tasks, maintaining context across interactions, and guiding AI through iterative refinement. This systematic approach helps produce better results while reducing the cognitive load of prompt crafting.
-A nice overview of Dialogue Engineering comes from the blog post titled [Dialog Engineering: AI as Your Research Assistant](https://medium.com/@fabioc/dialog-engineering-ai-as-your-research-assistant-616a625e9853). Below, I'll summarise what I inferred from the article.
+Dialogue engineering dramatically improves productivity by breaking down complex tasks, maintaining context across interactions, and guiding AI through iterative refinement. This systematic approach helps produce better results while reducing the cognitive load of prompt crafting. A nice overview of Dialogue Engineering comes from the blog post titled [Dialog Engineering: AI as Your Research Assistant](https://medium.com/@fabioc/dialog-engineering-ai-as-your-research-assistant-616a625e9853).  
+Below, I'll summarise what I inferred from the article.
 
 ## How Dialogue Engineering Works
 1. **Setting the Scenario**  
@@ -27,19 +27,19 @@ Throughout all steps, we maintain active oversight, checking for accuracy and pr
 ## Practical Applications
 Here are the key areas where dialogue engineering proves particularly valuable:
 
-**Academic Research**  
+- **Academic Research**  
 Researchers can leverage dialogue engineering to synthesize vast amounts of information, structure complex arguments, and ensure accurate citations. The iterative approach is particularly useful for literature reviews and thesis development.  
 _Example:_ A researcher prompts AI to generate an annotated bibliography on AI-driven diagnostics, focusing on recent studies, then iteratively refines the summaries and findings.  
-**Business Strategy and Reporting**  
+- **Business Strategy and Reporting**  
 For corporate applications, dialogue engineering helps generate market reports, analyse trends, and produce comprehensive strategy documents. This systematic approach ensures consistency while maintaining analytical depth.  
 _Example:_ Business analysts use iterative prompts to draft sections of market reports, starting with "Generate a section on e-commerce trends focusing on AI-driven personalisation," then refining based on specific data points.  
-**Report Automation**  
+- **Report Automation**  
 Dialogue Engineering excels at automating recurring business reports, such as quarterly financial reviews or performance summaries. The structured approach ensures consistency while allowing for customisation.  
 _Example:_ Teams automate quarterly reports by structuring templates with AI, feeding relevant data, and using iterative refinement to maintain accuracy and freshness.  
-**Content Creation and Media**  
+- **Content Creation and Media**  
 Content creators can streamline the production of articles, blogs, and multimedia scripts through structured dialogue with AI. This approach particularly shines in drafting and revising content iteratively.  
 _Example:_ Writers use dialogue engineering to draft introductory paragraphs, then iterate with prompts for more engaging language or additional examples.  
-**Technical Writing and Documentation**  
+- **Technical Writing and Documentation**  
 In fields requiring precise technical documentation, dialogue engineering helps ensure clarity, accuracy, and consistency across complex documents.  
 _Example:_ Software engineers use dialogue engineering to draft technical documentation for new features, prompting "Draft a technical overview of the new user authentication feature," then refining for clarity and technical accuracy.  
 
@@ -47,22 +47,22 @@ Each of these applications benefits from dialogue engineering's structured, iter
 
 ## Best Practices
 Key best practices include:  
-* **Precision in Prompts**  
+- **Precision in Prompts**  
 Craft prompts that are neither too vague nor overly specific. Focus on clear, well-structured queries that guide AI towards relevant outputs.
 _Example:_ Instead of "Tell me about AI in healthcare," use "What are the latest advancements in AI-driven diagnostics in healthcare, particularly in image recognition?"
-* **Iterative Refinement**  
+- **Iterative Refinement**  
 Build on each interaction, using feedback to improve outputs gradually rather than expecting perfection immediately.
 _Example:_ Start with a draft section, then refine with follow-up prompts like "Expand on the use of dialogue engineering in business reporting, specifically market trend analysis."
-* **Leverage Feedback Loops**  
+- **Leverage Feedback Loops**  
 Maintain continuous cycles of prompting, feedback, and refinement to improve output quality over time.
 _Example:_ When creating an outline, start broad, then use feedback to add specific sections on practical examples in different domains.
-* **Source and Citation Checking**  
+- **Source and Citation Checking**  
 Verify AI-generated sources and citations manually, as AI models lack real-time access to databases.
 _Example:_ Cross-reference any cited statistics or research papers with trusted external sources before including them in final outputs.
-* **Structure Before Diving In**  
+- **Structure Before Diving In**  
 Create clear outlines or plans before generating detailed content to ensure logical flow and completeness.
 _Example:_ Start with a structured outline for a Medium article, then develop each section iteratively.
-* **Mind Token Limits**  
+- **Mind Token Limits**  
 Break down long content into manageable chunks to work within AI model token limits.  
 _Example:_ Generate long-form content section by section, refining each piece before moving to the next.
 
