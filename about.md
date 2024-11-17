@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # About
 
 Hi there 👋! I'm Eirini, an AI Engineer / Full-stack Data Scientist and a proponent of [Just-in-Time learning](https://xcancel.com/radekosmulski/status/1828564396265926967).   
