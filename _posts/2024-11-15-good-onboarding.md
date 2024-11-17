@@ -1,4 +1,10 @@
-# On-boarding that works: a practical guide
+---
+layout: post
+title: "On-boarding that works: a practical guide"
+date: 2024-11-14
+tags: [on-boarding]
+---
+<!--more-->
 
 ## Introduction
 I recently watched a lively presentation titled [opinionated on-boarding](https://www.youtube.com/watch?v=Og7NzaVpceE), that discussed the dramatic impact of on-boarding practices on new staff and business success. The speaker, drawing from his experience, articulated that poor on-boarding is actively harming companies while good on-boarding can transform team productivity and retention.

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "GitHub Actions For `yt-dlp-hq`"
+title: "GitHub Actions For yt-dlp-hq"
 date: 2024-10-08
-tags: [github-actions, yt-dlp, cloud]
+tags: [github-actions, yt-dlp]
 ---
 <!--more-->
 **[Was it worth my time](https://xkcd.com/1205/)?** 

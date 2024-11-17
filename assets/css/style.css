@@ -35,6 +35,15 @@ a {
   color: var(--link-dark);
 }
 
+html body a {
+  color: var(--link-light) !important;
+  transition: color 0.3s ease;
+}
+
+html body.dark-theme a {
+  color: var(--link-dark) !important;
+}
+
 .theme-toggle {
   position: fixed;
   top: 20px;
