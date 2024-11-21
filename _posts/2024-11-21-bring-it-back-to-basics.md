@@ -66,7 +66,7 @@ def test_data_pipeline():
     pyinstaller --onefile src/main.py
 ```
 3. Local cross-compilation using [Podman](https://podman.io/):
-```containerfile
+```Dockerfile
 FROM python:3.11-slim
 COPY . /app
 WORKDIR /app
