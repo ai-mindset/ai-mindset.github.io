@@ -213,39 +213,39 @@ With hybrid solutions becoming more prevalent nowadays, we can use a combination
 
 - [MongoDB](https://www.mongodb.com/): A distributed document DB that supports vector storage and graph operations
 ```python
-from pymongo import MongoClient
-import numpy as np
+    from pymongo import MongoClient
+    import numpy as np
 
-def vector_search(text_embedding: np.ndarray, threshold: float = 0.8):
-    client = MongoClient("mongodb://localhost:27017/")
-    db = client.vector_db
-    
-    pipeline = [
-        {
-            "$search": {
-                "index": "vector_index",
-                "knnBeta": {
-                    "vector": text_embedding.tolist(),
-                    "path": "embedding",
-                    "k": 5
+    def vector_search(text_embedding: np.ndarray, threshold: float = 0.8):
+        client = MongoClient("mongodb://localhost:27017/")
+        db = client.vector_db
+        
+        pipeline = [
+            {
+                "$search": {
+                    "index": "vector_index",
+                    "knnBeta": {
+                        "vector": text_embedding.tolist(),
+                        "path": "embedding",
+                        "k": 5
+                    }
+                }
+            },
+            {
+                "$match": {
+                    "score": {"$gt": threshold}
+                }
+            },
+            {
+                "$project": {
+                    "_id": 0,
+                    "text": 1,
+                    "score": {"$meta": "searchScore"}
                 }
             }
-        },
-        {
-            "$match": {
-                "score": {"$gt": threshold}
-            }
-        },
-        {
-            "$project": {
-                "_id": 0,
-                "text": 1,
-                "score": {"$meta": "searchScore"}
-            }
-        }
-    ]
-    
-    return list(db.documents.aggregate(pipeline))
+        ]
+        
+        return list(db.documents.aggregate(pipeline))
 ```
 
 This stack provides everything needed for modern Data Science and AI work while maintaining clarity and minimising tool overlap.
