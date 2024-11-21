@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bring it Back to Basics: A Modern, Minimal Python Toolchain"
-date: 2024-11-11
+date: 2024-11-21
 tags: [python, github-actions, cross-platform, minimal, toolchain]
 ---
 <!--more-->
