@@ -147,9 +147,9 @@ A carefully selected set of powerful libraries that minimize overlap:
     fig.show()
     ```
     - [MLFlow](https://mlflow.org): Managing the Machine Learning Lifecycle
-<center>
-    <img src="" width="60%" height="60%"/>
-</center>
+    <center>
+        <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/40_MLFlow.png"/>
+    </center>
 
 
 ### AI Engineering
