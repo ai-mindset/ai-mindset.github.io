@@ -49,7 +49,12 @@ My toolchain starts with three foundational choices that eliminate common Python
     - Configurable through `pyproject.toml`
     - Significantly faster than Python-based alternatives
 
-4. [pytest](https://docs.pytest.org/en/stable/): Handles testing with minimal boilerplate and rich assertions:
+4. [mypy](https://www.mypy-lang.org/): Static Typing for Python
+    - Type annotations validation during development, not runtime
+    - Type error catching before execution
+    - Configure within `pyproject.toml` 
+
+5. [pytest](https://docs.pytest.org/en/stable/): Handles testing with minimal boilerplate and rich assertions:
 ```python
 def test_data_pipeline():
     data = process_data(sample_input)
