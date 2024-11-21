@@ -79,12 +79,12 @@ RUN pip install pyinstaller
 CMD pyinstaller --onefile src/main.py
 ```
 
-### Data Science and AI Stack
+### Data Science
 A carefully selected set of powerful libraries that minimize overlap:
 
-1. Data Processing & ML:
-    - [Polars](https://pola.rs/): Fast DataFrame operations with a cohesive API
-    ```python
+- [Polars](https://pola.rs/): Fast DataFrame operations with a cohesive API
+
+```python
     import polars as pl
 
     def analyze_customer_behavior(path: str):
@@ -106,9 +106,11 @@ A carefully selected set of powerful libraries that minimize overlap:
             .sort(["customer_id", "month"])
             .collect()
         )
-    ```
-    - [TensorFlow 2](https://www.tensorflow.org/): Deep learning when needed
-    ```python
+```
+
+- [TensorFlow 2](https://www.tensorflow.org/): Deep learning when needed
+
+```python
     import tensorflow as tf
     mnist = tf.keras.datasets.mnist
 
@@ -128,9 +130,11 @@ A carefully selected set of powerful libraries that minimize overlap:
 
     model.fit(x_train, y_train, epochs=5)
     model.evaluate(x_test, y_test)
-    ```
-    - [XGBoost](https://xgboost.ai/): Gradient boosting for structured data
-    ```python
+```
+
+- [XGBoost](https://xgboost.ai/): Gradient boosting for structured data
+
+```python
     from xgboost import XGBClassifier
     # read data
     from sklearn.datasets import load_iris
@@ -143,18 +147,20 @@ A carefully selected set of powerful libraries that minimize overlap:
     bst.fit(X_train, y_train)
     # make predictions
     preds = bst.predict(X_test)
-    ```
-    - [Plotly](https://plotly.com/python/): Interactive visualizations
-    ```python
+```
+
+- [Plotly](https://plotly.com/python/): Interactive visualizations
+
+```python
     import plotly.express as px
     df = px.data.iris()
     fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species", symbol="species")
     fig.show()
-    ```
-    - [MLFlow](https://mlflow.org): Managing the Machine Learning Lifecycle
-    <center>
-        <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/40_MLFlow.png"/>
-    </center>
+```
+- [MLFlow](https://mlflow.org): Managing the Machine Learning Lifecycle
+<center>
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/40_MLFlow.png"/>
+</center>
 
 
 ### AI Engineering
