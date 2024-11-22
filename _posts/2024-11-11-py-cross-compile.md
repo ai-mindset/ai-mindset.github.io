@@ -3,7 +3,6 @@ layout: post
 title: "Cross-Platform Builds In Python"
 date: 2024-11-11
 tags: [python, github-actions, cross-platform, deno, typescript]
-toc: true
 ---
 <!--more-->
 

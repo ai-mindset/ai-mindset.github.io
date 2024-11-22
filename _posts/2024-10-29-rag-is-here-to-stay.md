@@ -3,7 +3,6 @@ layout: post
 title: "RAG Is Here To Stay"
 date: 2024-10-29
 tags: [rag, llm, ai, performance]
-toc: true
 ---
 <!--more-->
 
