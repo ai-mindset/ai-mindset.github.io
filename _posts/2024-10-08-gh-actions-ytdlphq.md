@@ -3,6 +3,7 @@ layout: post
 title: "GitHub Actions For yt-dlp-hq"
 date: 2024-10-08
 tags: [github-actions, yt-dlp]
+toc: true
 ---
 <!--more-->
 **[Was it worth my time](https://xkcd.com/1205/)?** 

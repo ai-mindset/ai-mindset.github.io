@@ -3,6 +3,7 @@ layout: post
 title: "Python To TypeScript Cheatsheet"
 date: 2024-09-06
 tags: [python, typescript, cheatsheet]
+toc: true
 ---
 <!--more-->
 

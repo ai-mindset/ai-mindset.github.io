@@ -2,8 +2,21 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-{{ content }}
+<article class="post">
+  <h1>{{ page.title }}</h1>
+  
+  <!-- Debug info -->
+  <!-- <div style="color: red;"> -->
+  <!--   TOC enabled: {{ page.toc }} -->
+  <!--   Layout: {{ page.layout }} -->
+  <!-- </div> -->
+  
+  {% if page.toc or layout.toc %}
+    {% include toc.html html=content %}
+  {% endif %}
+  
+  {{ content }}
+</article>
 
 <script>
 // Initialize theme from localStorage
