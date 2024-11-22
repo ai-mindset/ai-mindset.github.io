@@ -18,11 +18,35 @@ layout: default
   {{ content }}
 </article>
 
+<!-- Theme toggle -->
 <script>
 // Initialize theme from localStorage
 if (localStorage.getItem('darkTheme') === 'true') {
     document.body.classList.add('dark-theme');
 }
+</script>
+
+<!-- Collapsible TOC -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocHeader = document.querySelector('.toc-header');
+  const toc = document.querySelector('.toc');
+  
+  if (tocHeader && toc) {
+    tocHeader.addEventListener('click', function() {
+      toc.classList.toggle('collapsed');
+      
+      // Optional: Save state to localStorage
+      localStorage.setItem('tocCollapsed', toc.classList.contains('collapsed'));
+    });
+    
+    // Optional: Restore state from localStorage
+    const isCollapsed = localStorage.getItem('tocCollapsed') === 'true';
+    if (isCollapsed) {
+      toc.classList.add('collapsed');
+    }
+  }
+});
 </script>
 
 <div class="post-tags">

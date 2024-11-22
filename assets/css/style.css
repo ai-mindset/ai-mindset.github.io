@@ -215,6 +215,56 @@ body.dark-theme .toc li a {
   font-size: 0.95em;
 }
 
+/* TOC Header styling */
+.toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.toc-header h2 {
+  margin: 0;
+}
+
+.toc-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+body.dark-theme .toc-toggle {
+  color: var(--text-dark);
+}
+
+.toc-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s ease;
+}
+
+.toc-content {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.toc.collapsed .toc-content {
+  max-height: 0;
+  opacity: 0;
+}
+
+.toc.collapsed .toc-icon {
+  transform: rotate(-90deg);
+}
+
 /* Lists */
 #posts-list {
   list-style-type: none;
