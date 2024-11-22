@@ -35,5 +35,5 @@ I am considering attempting the same using [Podman](https://podman.io/), since [
 
 ---
 [^1]: One might argue that running statically compiled executables in a sandboxed environment is a security risk. Static malware analysis tools exist for this exact reason  
-[^2]: To be fair, the Data ecosystem is pretty decent and continuously improving. It's the ML ecosystem and specifically the lack of a native Scikit-learn-like package that's still somewhat lacking 
+[^2]: To be fair, the Data ecosystem is pretty decent and continuously improving. It's the ML and statistical ecosystem and specifically the lack of a native Scikit-learn and Scipy-like packages that's still somewhat lacking 
 
