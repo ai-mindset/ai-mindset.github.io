@@ -17,8 +17,9 @@ The goal isn't to prescribe another "right way" of doing things, but rather to d
 
 ## My Approach
 ### Local Development
-My toolchain starts with three foundational choices that eliminate common Python setup headaches:
+My toolchain starts with the following foundational choices that eliminate common Python setup headaches:
 
+0. [PEP8](https://peps.python.org/pep-0008/): We start with a style guide, so that we can all be on the same page  
 1. [uv](https://docs.astral.sh/uv/): A blazing-fast Python package and project manager, written in Rust. It replaces pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, and more, providing: 
     - Consistent dependency resolution
     - Lightning-fast package installations

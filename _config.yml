@@ -9,13 +9,6 @@
 title: Just-in-Time learning 
 permalink: /:title/
 excerpt_separator: <!--more-->
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
 description: Inquisitive. Learning. Sharing. Simplicity = Reliability 
 github_username: ai-mindset 
 
@@ -50,3 +43,15 @@ kramdown:
   auto_ids: true
   hard_wrap: false
   syntax_highlighter: rouge
+  auto_ids: true
+  toc_levels: "2..3"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      toc: true
+
