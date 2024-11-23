@@ -2,7 +2,7 @@
 layout: post
 title: "The Case for Iterative Refinement Over Unit Testing"
 date: 2024-11-22
-tags: [til, fast-ai, answer-ai, iterative-development, doctests, best-practices, llms, dialogue-engineering, code-quality]
+tags: [fast-ai, answer-ai, iterative-refinement, doctests, best-practices, llm, dialogue-engineering, code-quality]
 ---
 <!--more-->
 
