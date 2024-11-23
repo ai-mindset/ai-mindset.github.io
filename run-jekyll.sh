@@ -2,6 +2,9 @@
 
 CONTAINER_NAME="jekyll-site"
 
+# Remove old _site to start afresh
+rm -rf _site/
+
 # Check if container image exists
 if ! podman image exists $CONTAINER_NAME; then
    echo "Building container image..."
