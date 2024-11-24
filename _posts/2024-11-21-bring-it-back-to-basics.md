@@ -56,7 +56,7 @@ My toolchain starts with the following foundational choices that eliminate commo
     - Type error catching before execution
     - Configure within `pyproject.toml` 
 
-5. [iterative refinement]({{ site.baseurl }}{% link _posts/2024-11-22-iterative-refinement.md %}): An approach that tightly couples tests with code, ensuring up-to-dateness[^1]  
+5. [iterative refinement]({{ site.baseurl }}{% link _posts/2024-11-22-iterative-refinement.md %}): An approach that tightly couples (doc)tests with code, ensuring up-to-dateness[^1]  
 ~~[pytest](https://docs.pytest.org/en/stable/): Handles testing with minimal boilerplate and rich assertions~~
 
 ### Cross-Platform Distribution:
@@ -79,7 +79,7 @@ CMD pyinstaller --onefile src/main.py
 ### Data Science
 A carefully selected set of powerful libraries that minimize overlap:
 
-- [Polars](https://pola.rs/): Fast DataFrame operations with a cohesive API
+- [Polars](https://pola.rs/): Fast DataFrame operations with a cohesive API. [Why?](https://xcancel.com/charliermarsh/status/1860388882015223835)  
 
 ```python
     import polars as pl
