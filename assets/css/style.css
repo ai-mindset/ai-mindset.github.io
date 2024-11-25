@@ -27,6 +27,16 @@
   --table-first-column-text-dark: #ffffff;  /* Using link colour for first column */
 }
 
+/* Tags */
+.tag.active {
+    background-color: var(--link-light);
+    color: white;
+}
+
+.dark-theme .tag.active {
+    background-color: var(--link-dark);
+}
+
 /* Table styles */
 table {
   border-collapse: collapse;

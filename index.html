@@ -25,10 +25,7 @@ Made with <a href="https://github.com/ai-mindset/vimrc/blob/my_changes/vimrcs/ba
     <h2>Recent Posts</h2>
 
     {% for post in site.posts limit:5 %}
-    <article class="post-preview">
-        <h3>
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h3>
+    <article class="post-preview" data-tags="{{ post.tags | join: ' ' }}">
         <div class="post-meta">
             {{ post.date | date: "%B %-d, %Y" }}
             {% if post.categories.size > 0 %}
@@ -39,14 +36,17 @@ Made with <a href="https://github.com/ai-mindset/vimrc/blob/my_changes/vimrcs/ba
             {% endfor %}
             {% endif %}
         </div>
+        <h3>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
     </article>
     {% endfor %}
-
     {% if site.posts.size > 5 %}
     <p class="all-posts-link">
     <a href="/posts/">View all {{ site.posts.size }} posts →</a>
     </p>
     {% endif %}
+
 </div>
 
 <!-- <h2>Posts</h2> -->
@@ -74,38 +74,25 @@ Made with <a href="https://github.com/ai-mindset/vimrc/blob/my_changes/vimrcs/ba
 </div>
 
 <script>
-    function filterByTag(tag) {
-        const posts = document.getElementsByClassName('post-item');
-        for (let post of posts) {
-            const tags = post.getAttribute('data-tags').split(' ');
-            if (tags.includes(tag)) {
-                post.style.display = '';
-            } else {
-                post.style.display = 'none';
-            }
-        }
+function filterByTag(tag) {
+  const posts = document.querySelectorAll('.post-preview');
+  posts.forEach(post => {
+    const postTags = post.getAttribute('data-tags')?.split(' ') || [];
+    post.style.display = postTags.includes(tag) ? 'block' : 'none';
+  });
 
-        const tagElements = document.getElementsByClassName('tag');
-        for (let tagElement of tagElements) {
-            if (tagElement.textContent === tag) {
-                tagElement.style.fontWeight = 'bold';
-            } else {
-                tagElement.style.fontWeight = 'normal';
-            }
-        }
-    }
+  // Update active tag styling
+  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('show-all').classList.remove('active');
+}
 
-    function showAllPosts() {
-        const posts = document.getElementsByClassName('post-item');
-        for (let post of posts) {
-            post.style.display = '';
-        }
-
-        const tagElements = document.getElementsByClassName('tag');
-        for (let tagElement of tagElements) {
-            tagElement.style.fontWeight = 'normal';
-        }
-    }
-
-    showAllPosts();
+function showAllPosts() {
+  document.querySelectorAll('.post-preview').forEach(post => {
+    post.style.display = 'block';
+  });
+  
+  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+  document.getElementById('show-all').classList.add('active');
+}
 </script>
