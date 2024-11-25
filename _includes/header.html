@@ -1,3 +1,6 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+
 <header class="site-header">
   <div class="wrapper">
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
@@ -12,6 +15,16 @@
       </label>
 
       <div class="trigger">
+        <div class="search-container">
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Search..." 
+            aria-label="Search posts"
+            class="search-input"
+          >
+          <div id="search-results" class="search-results"></div>
+        </div>
         <a class="page-link" href="{{ site.baseurl }}/about">About</a>
         {% include theme-toggle.html %}
       </div>
