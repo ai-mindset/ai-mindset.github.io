@@ -2,83 +2,110 @@
 layout: default
 ---
 
-<!-- {% include theme-toggle.html %} -->
-
 <p>
- A static site<sup><a href="#ref1">1</a></sup>, to share things I'd like to have known 6 months ago, while I <a href="https://www.swyx.io/learn-in-public">learn in public</a><sup><a href="#ref2">2</a></sup> <sup><a href="#ref3">3</a></sup>.
+A static site<sup><a href="#ref1">1</a></sup>, to share things I'd like to have known 6 months ago, while I <a href="https://www.swyx.io/learn-in-public">learn in public</a><sup><a href="#ref2">2</a></sup> <sup><a href="#ref3">3</a></sup>.
 </p>
 <p>
- Made with <a href="https://github.com/ai-mindset/vimrc/blob/my_changes/vimrcs/basic.vim">Vim</a>, <a href="https://github.com/fastai/fast_template">fast_template</a> and <a href="https://medium.com/@fabioc/dialog-engineering-ai-as-your-research-assistant-616a625e9853">dialogue engineering</a> ♥️
+Made with <a href="https://github.com/ai-mindset/vimrc/blob/my_changes/vimrcs/basic.vim">Vim</a>, <a href="https://github.com/fastai/fast_template">fast_template</a> and <a href="https://ai-mindset.github.io/dialogue-engineering"/>Dialogue Engineering</a> ♥️
 </p>
 
 <h2>Tags</h2>
 <div class="tags-list">
-  {% for tag in site.tags %}
+    {% assign sorted_tags = site.tags | sort %}
+    {% for tag in sorted_tags %}
     <a href="javascript:void(0)" onclick="filterByTag('{{ tag[0] }}')" class="tag">{{ tag[0] }}</a>
     {% unless forloop.last %} • {% endunless %}
-  {% endfor %}
-  <a href="javascript:void(0)" onclick="showAllPosts()" class="tag" id="show-all">(Show All)</a>
+    {% endfor %}
+    <a href="javascript:void(0)" onclick="showAllPosts()" class="tag" id="show-all">(Show All)</a>
 </div>
 
 </br>
 
-<h2>Posts</h2>
-{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
-{% for year in postsByYear %}
-  <h3>{{ year.name }}</h3>
-  {% assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%B'" %}
-  {% for month in postsByMonth %}
-    <h4>{{ month.name }}</h4>
-    <ul id="posts-list">
-    {% for post in month.items %}
-      <li class="post-item" data-tags="{{ post.tags | join: ' ' }}">
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
+<div class="posts-section">
+    <h2>Recent Posts</h2>
+
+    {% for post in site.posts limit:5 %}
+    <article class="post-preview">
+        <h3>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <div class="post-meta">
+            {{ post.date | date: "%B %-d, %Y" }}
+            {% if post.categories.size > 0 %}
+            in 
+            {% for category in post.categories %}
+            <span class="category">{{ category }}</span>
+            {% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+            {% endif %}
+        </div>
+    </article>
     {% endfor %}
-    </ul>
-  {% endfor %}
-{% endfor %}
+
+    {% if site.posts.size > 5 %}
+    <p class="all-posts-link">
+    <a href="/posts/">View all {{ site.posts.size }} posts →</a>
+    </p>
+    {% endif %}
+</div>
+
+<!-- <h2>Posts</h2> -->
+<!-- {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %} -->
+<!-- {% for year in postsByYear %} -->
+<!--   <h3>{{ year.name }}</h3> -->
+<!--   {% assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%B'" %} -->
+<!--   {% for month in postsByMonth %} -->
+<!--     <h4>{{ month.name }}</h4> -->
+<!--     <ul id="posts-list"> -->
+<!--     {% for post in month.items %} -->
+<!--       <li class="post-item" data-tags="{{ post.tags | join: ' ' }}"> -->
+<!--         <a href="{{ post.url }}">{{ post.title }}</a> -->
+<!--       </li> -->
+<!--     {% endfor %} -->
+<!--     </ul> -->
+<!--   {% endfor %} -->
+<!-- {% endfor %} -->
 
 <hr>
 <div class="references">
- <p id="ref1"><sup>1</sup> No ads, cookies, tracking, pop-ups, comments, social widgets, syndicated content, newsletter</p>
- <p id="ref2"><sup>2</sup> <a href="https://www.fast.ai/posts/2017-12-18-personal-brand.html">Making Peace with Personal Branding</a></p>
- <p id="ref3"><sup>3</sup> <a href="https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045">Why you (yes, you) should blog</a></p>
+    <p id="ref1"><sup>1</sup> No ads, cookies, tracking, pop-ups, comments, social widgets, syndicated content, newsletter</p>
+    <p id="ref2"><sup>2</sup> <a href="https://www.fast.ai/posts/2017-12-18-personal-brand.html">Making Peace with Personal Branding</a></p>
+    <p id="ref3"><sup>3</sup> <a href="https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045">Why you (yes, you) should blog</a></p>
 </div>
 
 <script>
-function filterByTag(tag) {
-   const posts = document.getElementsByClassName('post-item');
-   for (let post of posts) {
-       const tags = post.getAttribute('data-tags').split(' ');
-       if (tags.includes(tag)) {
-           post.style.display = '';
-       } else {
-           post.style.display = 'none';
-       }
-   }
-   
-   const tagElements = document.getElementsByClassName('tag');
-   for (let tagElement of tagElements) {
-       if (tagElement.textContent === tag) {
-           tagElement.style.fontWeight = 'bold';
-       } else {
-           tagElement.style.fontWeight = 'normal';
-       }
-   }
-}
+    function filterByTag(tag) {
+        const posts = document.getElementsByClassName('post-item');
+        for (let post of posts) {
+            const tags = post.getAttribute('data-tags').split(' ');
+            if (tags.includes(tag)) {
+                post.style.display = '';
+            } else {
+                post.style.display = 'none';
+            }
+        }
 
-function showAllPosts() {
-   const posts = document.getElementsByClassName('post-item');
-   for (let post of posts) {
-       post.style.display = '';
-   }
-   
-   const tagElements = document.getElementsByClassName('tag');
-   for (let tagElement of tagElements) {
-       tagElement.style.fontWeight = 'normal';
-   }
-}
+        const tagElements = document.getElementsByClassName('tag');
+        for (let tagElement of tagElements) {
+            if (tagElement.textContent === tag) {
+                tagElement.style.fontWeight = 'bold';
+            } else {
+                tagElement.style.fontWeight = 'normal';
+            }
+        }
+    }
 
-showAllPosts();
+    function showAllPosts() {
+        const posts = document.getElementsByClassName('post-item');
+        for (let post of posts) {
+            post.style.display = '';
+        }
+
+        const tagElements = document.getElementsByClassName('tag');
+        for (let tagElement of tagElements) {
+            tagElement.style.fontWeight = 'normal';
+        }
+    }
+
+    showAllPosts();
 </script>
