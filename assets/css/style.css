@@ -617,25 +617,132 @@ body.dark-theme .category {
  padding: 0;
 }
 
+
+/* Base styles */
+.site-nav {
+  position: relative;
+  line-height: 54px;
+}
+
+.site-nav .nav-trigger {
+  display: none;
+}
+
+.site-nav .menu-icon {
+  display: none;
+}
+
+.site-nav .trigger {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav .page-link {
+  color: var(--text-light);
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
 /* Mobile responsive adjustments */
 @media screen and (max-width: 600px) {
-  .site-nav .search-container {
-    display: block;
-    margin: 0.5rem 0;
-    width: 100%;
+  .site-nav {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    text-align: right;
   }
 
-  .site-nav .search-input,
-  .site-nav .search-input:focus {
+  .site-nav label[for="nav-trigger"] {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .site-nav .menu-icon {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center;
+    background-color: var(--bg-light);
+    border-radius: 3px;
+  }
+
+  .site-nav .menu-icon > svg path {
+    fill: var(--text-light);
+  }
+
+  .site-nav input ~ .trigger {
+    clear: both;
+    display: none;
+  }
+
+  .site-nav input:checked ~ .trigger {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--bg-light);
+    border: 1px solid var(--table-border-light);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    min-width: 200px;
+  }
+
+  .site-nav .page-link {
+    display: block;
+    padding: 5px 10px;
+    margin: 0;
+    line-height: 2;
+  }
+
+  .site-nav .search-container {
+    display: block;
+    margin: 5px 0;
     width: 100%;
+    max-width: none;
+  }
+
+  .site-nav .search-input {
+    width: calc(100% - 20px);
+    height: 32px;
+  }
+
+  .site-nav .search-input:focus {
+    width: calc(100% - 20px);
   }
 
   .site-nav .search-results {
-    width: 100%;
+    width: calc(100% - 20px);
   }
 }
 
-/* Dark theme adjustments remain the same */
+/* Dark theme adjustments */
+body.dark-theme .site-nav .menu-icon {
+  background-color: var(--bg-dark);
+}
+
+body.dark-theme .site-nav .menu-icon > svg path {
+  fill: var(--text-dark);
+}
+
+body.dark-theme .site-nav input:checked ~ .trigger {
+  background-color: var(--bg-dark);
+  border-color: var(--table-border-dark);
+}
+
 body.dark-theme .site-nav .search-input {
   background-color: var(--bg-dark);
   border-color: var(--table-border-dark);
