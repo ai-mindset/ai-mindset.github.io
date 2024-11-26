@@ -2,7 +2,7 @@
 <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
 
 <header class="site-header">
-  <div class="wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+  <div class="wrapper">
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     <nav class="site-nav">
       <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -14,7 +14,7 @@
         </span>
       </label>
 
-      <div class="trigger" style="display: flex; align-items: center;">
+      <div class="trigger">
         <div class="search-container">
           <input 
             type="text" 
@@ -22,7 +22,6 @@
             placeholder="Search..." 
             aria-label="Search posts"
             class="search-input"
-            style="height: 32px;"
           >
           <div id="search-results" class="search-results"></div>
         </div>
