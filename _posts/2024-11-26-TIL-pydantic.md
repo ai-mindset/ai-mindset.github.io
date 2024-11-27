@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TIL: Pydantic - Python's Data Validation Guardian"
+title: "TIL: Pydantic - Python's Data Validation Guard"
 date: 2024-11-26
 tags: [til, data-validation, python, type-checking, data-modeling, code-quality, pydantic, error-handling]
 ---
