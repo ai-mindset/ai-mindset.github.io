@@ -279,7 +279,7 @@ For developing T-shaped expertise in modelling, the practitioner's choice should
 
 For practical applications, certain combinations prove particularly effective:
 
-- _Industry/Business_ combines Supervised Learning with Causal Inference, enabling both prediction and intervention understanding. 
+- _Industry/Business_ combines Supervised Learning with Unsupervised Learning, enabling accurate predictions while discovering valuable patterns in customer data.
 
 - _Research_ pairs Statistical Modelling with Machine Learning, balancing academic rigour with modern capabilities.
 

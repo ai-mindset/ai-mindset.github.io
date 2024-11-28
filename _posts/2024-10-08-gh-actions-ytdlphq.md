@@ -2,7 +2,7 @@
 layout: post
 title: "GitHub Actions For yt-dlp-hq"
 date: 2024-10-08
-tags: [github-actions, ci-cd, yt-dlp]
+tags: [github-actions, ci-cd, yt-dlp, deno, typescript, cross-platform]
 ---
 <!--more-->
 **[Was it worth my time](https://xkcd.com/1205/)?** 
