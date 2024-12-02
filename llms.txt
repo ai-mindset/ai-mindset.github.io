@@ -6,6 +6,7 @@ Engineering.
 
 ## Posts (Reverse Chronological Order)
 
+- **December 2, 2024** - Pandas or Polars? Choosing the Best Python Data Processing Tool
 - **November 27, 2024** - Ten Ways to Model Data: A Decision Guide
 - **November 26, 2024** - TIL: Pydantic - Python's Data Validation Guard
 - **November 23, 2024** - AI's Historical Evolution
