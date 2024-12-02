@@ -1,4 +1,3 @@
-/* Variables */
 :root {
   --bg-light: #ffffff;
   --text-light: #333333;
@@ -20,24 +19,11 @@
 
   --table-row-odd-light: #ffffff;
   --table-row-even-light: #f6f8fa;
-  --table-row-odd-dark: #1a1a1a;
-  --table-row-even-dark: #2d3337;
-  --table-header-dark: #2d3748;  /* Darker background for headers */
-  --table-header-text-dark: #ffffff;  /* Bright white text for headers */
-  --table-first-column-text-dark: #ffffff;  /* Using link colour for first column */
-}
-
-/* Tags */
-.tag.active {
-   text-decoration: underline;
-   text-underline-offset: 2px;
-   font-weight: bold;
-}
-
-.dark-theme .tag.active {
-   text-decoration: underline;
-   text-underline-offset: 2px;
-   font-weight: bold;
+  --table-row-odd-dark: #2d3337;
+  --table-row-even-dark: #343a40;
+  --table-header-dark: #2d3748;  
+  --table-header-text-dark: #ffffff;  
+  --table-first-column-text-dark: #ffffff;
 }
 
 /* Table styles */
@@ -77,6 +63,7 @@ th, td {
 body.dark-theme th,
 body.dark-theme td {
   border-color: var(--table-border-dark);
+  color: #e6e6e6; /* Slightly lighter text color */
 }
 
 /* Header styling */
