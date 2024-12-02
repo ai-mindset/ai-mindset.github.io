@@ -2,7 +2,7 @@
 layout: post
 title: "TIL: Useful AI Nuggets"
 date: 2024-10-25
-tags: [til, ai, llm, skills]
+tags: [til, ai, llm]
 ---
 <!--more-->
 

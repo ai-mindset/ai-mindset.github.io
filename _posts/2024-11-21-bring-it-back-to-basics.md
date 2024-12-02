@@ -2,7 +2,7 @@
 layout: post
 title: "Bring it Back to Basics: A Modern, Minimal Python Toolchain"
 date: 2024-11-21
-tags: [python, github-actions, cross-platform, minimal, toolchain]
+tags: [python, type-checking, code-quality, github-actions, ci-cd, cross-platform, minimal, toolchain]
 ---
 <!--more-->
 
@@ -41,6 +41,7 @@ My toolchain starts with the following foundational choices that eliminate commo
     line-length = 90 
     select = ["E", "F", "I"]
 
+    # Required only if you use pytest for unit testing
     [tool.pytest.ini_options]
     testpaths = ["tests"]
 ```
@@ -55,16 +56,11 @@ My toolchain starts with the following foundational choices that eliminate commo
     - Type error catching before execution
     - Configure within `pyproject.toml` 
 
-5. [pytest](https://docs.pytest.org/en/stable/): Handles testing with minimal boilerplate and rich assertions:
-```python
-def test_data_pipeline():
-    data = process_data(sample_input)
-    assert isinstance(data, pl.DataFrame)
-    assert "target" in data.columns
-```
+5. [iterative refinement]({{ site.baseurl }}{% link _posts/2024-11-22-iterative-refinement.md %}): An approach that tightly couples (doc)tests with code, ensuring up-to-dateness[^1]  
+~~[pytest](https://docs.pytest.org/en/stable/): Handles testing with minimal boilerplate and rich assertions~~
 
 ### Cross-Platform Distribution:
-1. PyInstaller for creating standalone executables
+1. PyInstaller for creating stand-alone executables
 2. GitHub Actions workflow for automated builds:
 ```yaml
 - name: Build executables
@@ -83,7 +79,7 @@ CMD pyinstaller --onefile src/main.py
 ### Data Science
 A carefully selected set of powerful libraries that minimize overlap:
 
-- [Polars](https://pola.rs/): Fast DataFrame operations with a cohesive API
+- [Polars](https://pola.rs/): Fast DataFrame operations with a cohesive API. [Why?](https://xcancel.com/charliermarsh/status/1860388882015223835)  
 
 ```python
     import polars as pl
@@ -160,9 +156,8 @@ A carefully selected set of powerful libraries that minimize overlap:
 ```
 - [MLFlow](https://mlflow.org): Managing the Machine Learning Lifecycle
 <center>
-    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/40_MLFlow.png"/>
-</center>
-
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/40_MLFlow.png"/>  
+</center><br />
 
 ### AI Engineering
 With hybrid solutions becoming more prevalent nowadays, we can use a combination of tools.
@@ -277,3 +272,6 @@ Key benefits of this approach:
 While Python's ecosystem will likely remain fragmented, we don't have to accept the complexity. By carefully choosing modern tools that prioritise speed, simplicity, and clarity, we can create a development environment that's both powerful and pleasant to use.
 
 The beauty of this approach lies not in its prescriptiveness, but in its principles: _minimize tooling_, _maximise capability_, and _maintain clarity_. Whether you adopt this exact stack or use it as inspiration for your own, the goal remains the same: bring the focus back to solving problems rather than managing tools.
+
+---
+[^1]: Yes this is a valid term. See Merriam-Webster.com Thesaurus, Merriam-Webster, [https://www.merriam-webster.com/thesaurus/up-to-dateness](https://www.merriam-webster.com/thesaurus/up-to-dateness)

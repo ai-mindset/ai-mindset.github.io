@@ -2,13 +2,13 @@
 layout: post
 title: "Cross-Platform Builds In Python"
 date: 2024-11-11
-tags: [python, github-actions, cross-platform, deno, typescript]
+tags: [python, github-actions, ci-cd, cross-platform, deno, typescript]
 ---
 <!--more-->
 
 ## Introduction 
 In the last couple of years I've spoken to 3-4 people who had needed a bespoke data analysis tool that could be used locally, with privacy in mind. In some cases they'd need to work in a sandboxed environment for security reasons, other times they had IP protection concerns. A desktop app or a CLI tool[^1] seemed to fit the bill in all those cases.   
-In the last decade+, Data and Python have become a synonym. [PyInstaller](https://pyinstaller.org/) seemed like an obvious choice. However, However, PyInstaller cannot cross-compile code as it stands. Being a _Linux_ user, offering to help _Windows_ users, meant I should find a workaround e.g. leveraging GitHub Action for cross-compilation.  
+In the last decade+, Data and Python have become a synonym. [PyInstaller](https://pyinstaller.org/) seemed like an obvious choice. However, PyInstaller cannot cross-compile code as it stands. Being a _Linux_ user, offering to help _Windows_ users, meant I should find a workaround e.g. leveraging GitHub Actions for cross-compilation.  
 
 ## Taking The Scenic Route
 Out of curiosity, I decided to have a poke around a couple of different languages and ecosystems that could teach me a few things while helping me understand what is a viable alternative to Python.  
