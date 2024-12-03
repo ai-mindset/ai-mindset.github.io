@@ -7,7 +7,7 @@ tags: [python, pandas, polars, data-processing, code-quality, toolchain, data-sc
 <!--more-->
 
 ## Introduction
-The world of Python data processing has long revolved around the well established Pandas library, but in recent years, a new contender has emerged in the form of Polars. This post aims to provide a comparison of these two powerful data processing tools, that empowers the reader to make an informed choice on a case-by-case basis.  
+The world of Python data processing has long revolved around the well established [Pandas](https://pandas.pydata.org/) library, but in recent years, a new contender has emerged in the form of [Polars](https://pola.rs/). This post aims to provide a comparison of these two powerful data processing tools, that empowers the reader to make an informed choice on a case-by-case basis.  
 
 ## Architecture and Design Comparison
 At the core, Pandas and Polars differ in their underlying implementation and design philosophies.
