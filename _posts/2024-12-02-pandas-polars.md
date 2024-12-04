@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pandas or Polars? Choosing the Best Python Data Processing Tool"
+title: "Pandas or Polars? Making An Informed Choice"
 date: 2024-12-02
 tags: [python, pandas, polars, data-processing, code-quality, toolchain, data-science]
 ---
