@@ -6,7 +6,7 @@ This document provides a curated list of high-quality sources for learning about
 - [Supervised Machine Learning for Science](https://ml-science-book.com/) is a comprehensive book that explores the role of supervised machine learning in scientific research. It provides a philosophical justification for using ML in science and discusses best practices for integrating it effectively.
 
 ## Talks
-- [The .CLUB Club](https://dotclub.club/), a list of links containing informative presentations from [Dan McKinley](https://mcfunley.com/). His talks are sprinkled with golden nuggets on egoless engineering, simple and effective technology, politics at work from the lens of an engineering lead.   
+- [The .CLUB Club](https://dotclub.club/), a list of links containing informative presentations from [Dan McKinley](https://mcfunley.com/). His talks are sprinkled with golden nuggets on egoless engineering (excellent read!), simple and effective technology, politics at work from the lens of an engineering lead.   
 
 ## Data-driven Insights
 - [Our World in Data](https://ourworldindata.org/) is a project of the Global Change Data Lab at the University of Oxford. It provides well-researched and data-driven insights into global issues, making it a valuable resource for understanding the world's largest problems and potential solutions.
