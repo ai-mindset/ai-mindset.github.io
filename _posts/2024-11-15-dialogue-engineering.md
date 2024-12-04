@@ -23,7 +23,7 @@ _Best Practice:_ Work on sections individually to maintain focus, use feedback l
 The final step involves revisiting the opening and closing sections once the main content is complete. This ensures these crucial parts accurately reflect and synthesise the entire piece.  
 _Best Practice:_ Write introduction last to accurately reflect content, craft conclusion by synthesising main takeaways from each section.  
 
-Throughout all steps, we maintain active oversight, checking for accuracy and providing clear feedback. This systematic approach has dramatically improved our productivity while ensuring high-quality outputs.
+Throughout all steps, I maintain active oversight, checking for accuracy and providing clear feedback. This systematic approach has dramatically improved my productivity while ensuring high-quality outputs.
 
 ## Practical Applications
 Here are the key areas where dialogue engineering proves particularly valuable:
@@ -70,7 +70,7 @@ _Example:_ Generate long-form content section by section, refining each piece be
 However, we should be aware of the limitations (and challenges) of Dialogue Engineering too. 
 
 ## Understanding the Limitations
-While these best practices enhance our use of dialogue engineering, it's essential to acknowledge its constraints and challenges. Like any powerful tool, dialogue engineering comes with limitations that require careful consideration and management. Here's what we need to keep in mind:
+While these best practices enhance the use of dialogue engineering, it's essential to acknowledge its constraints and challenges. Like any powerful tool, dialogue engineering comes with limitations that require careful consideration and management. Here's what we need to keep in mind:
 
 ### Key Limitations and Challenges
 The foremost concern when using generative AI is _accuracy_ and _hallucinations_. LLMs can sometimes generate plausible-sounding but false information, necessitating rigorous fact-checking processes. This is particularly critical in professional contexts where accuracy is paramount.
