@@ -1,8 +1,15 @@
-# Python to TypeScript cheatsheet
+---
+layout: post
+title: "Python To TypeScript Cheatsheet"
+date: 2024-09-06
+tags: [python, typescript, cheatsheet]
+---
+<!--more-->
 
+## Introduction
 I've been curious as to how Python and TypeScript compare at a high level, for someone new to TypeScript. Below is a chatsheet I put together with the help of Claude 3.5 Sonnet. It covers basic syntax, it's by no means complete or exhaustive. However it gives a first taste of the similarities and differences between the two languages. The reason I am looking into TypeScript is explained in my [Deno article](../deno/).
 
-## Variables and Data Types
+## Variables And Data Types
 
 | Concept | Python | TypeScript |
 |-|-|-|

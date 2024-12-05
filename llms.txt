@@ -1,0 +1,36 @@
+# Just-In-Time Learning: A Static Site for Inquisitive Minds
+
+## Description
+A personal blog focused on data science, AI, and engineering best practices, built with Vim, fast_template, and Dialogue
+Engineering.
+
+## Posts (Reverse Chronological Order)
+
+- **December 2, 2024** - Pandas or Polars? Choosing the Best Python Data Processing Tool
+- **November 27, 2024** - Ten Ways to Model Data: A Decision Guide
+- **November 26, 2024** - TIL: Pydantic - Python's Data Validation Guard
+- **November 23, 2024** - AI's Historical Evolution
+- **November 22, 2024** - The Case for Iterative Refinement Over Unit Testing
+- **November 21, 2024** - Bring it Back to Basics: A Modern, Minimal Python Toolchain
+- **November 20, 2024** - TIL: TF-IDF vs BM25 - Choosing the Right Text Ranking Algorithm
+- **November 15, 2024** - Level Up With Dialogue Engineering
+- **November 14, 2024** - On-boarding that works: a practical guide
+- **November 14, 2024** - The Advantage
+- **November 14, 2024** - Slow Down And Grow Smart, Not Fast
+- **November 14, 2024** - Cloud Repatriation: The On-Prem Comeback
+- **November 13, 2024** - TIL: vLLM Is A High-Performance Engine For LLM Serving
+- **November 11, 2024** - Cross-Platform Builds In Python
+- **October 30, 2024** - TIL: 1.58-bit LLMs Match Full Performance @ 98.6% Energy Reduction
+- **October 29, 2024** - RAG Is Here To Stay
+- **October 25, 2024** - TIL: Useful AI Nuggets
+- **October 8, 2024** - GitHub Actions For yt-dlp-hq
+- **September 6, 2024** - Python To TypeScript Cheatsheet
+- **September 5, 2024** - Deno for Data Science and AI
+
+## About the Author
+The author is an inquisitive learner who believes in sharing knowledge to make learning more reliable. They strive to be precise,
+concise, and correct in their content.
+
+## License
+All content on this site is licensed under the [MIT License](https://opensource.org/licenses/MIT). Copyright © 2023-present Your
+Name.

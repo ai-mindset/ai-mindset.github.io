@@ -7,13 +7,14 @@
 # https://learnxinyminutes.com/docs/yaml/
 
 title: Just-in-Time learning 
-description: I'm ambitiously curious. I learn stuff. Then, I blog about them. Simplicity is prerequisite for reliability. 
+permalink: /:title/
+excerpt_separator: <!--more-->
+description: Inquisitive. Learning. Sharing. Simplicity = Reliability 
 github_username: ai-mindset 
 
 # Email and twitter are optional:
 email:
 twitter_username:
-
 
 # Set this to true to get LaTeX math equation support
 use_math: true
@@ -42,3 +43,15 @@ kramdown:
   auto_ids: true
   hard_wrap: false
   syntax_highlighter: rouge
+  auto_ids: true
+  toc_levels: "2..3"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      toc: true
+
