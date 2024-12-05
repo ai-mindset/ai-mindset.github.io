@@ -18,7 +18,7 @@ This expert-centric approach echoes knowledge engineering practices from the 197
 The methodology follows a structured, iterative process:
 
 <center>
-    <img src="" width="60%" height="60%"/>
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/Critique%20Framework%20Hamel%20Husain.png" width="80%" height="80%"/>
 </center>
 
 1. Identify a principal domain expert as the arbiter of quality
