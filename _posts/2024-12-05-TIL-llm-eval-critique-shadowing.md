@@ -12,7 +12,7 @@ As LLMs increasingly drive critical business decisions, ensuring their reliabili
 ## The Critique Shadowing Method
 The key insight behind Critique Shadowing is deceptively simple: start with binary (pass/fail) expert judgements and detailed critiques before building automated evaluation systems. This approach solves two critical challenges: capturing domain expertise and scaling evaluation processes.
 
-This expert-centric approach echoes knowledge engineering practices from the 1970-80s, when AI researchers first recognized the necessity of systematically capturing domain expertise. Just as [MYCIN](https://en.wikipedia.org/wiki/Mycin)'s creators worked closely with medical doctors to encode diagnostic knowledge, Critique Shadowing similarly structures the process of extracting expert judgement for LLM evaluation. While the technology has evolved from rule-based systems to large language models, the fundamental challenge of effectively capturing and operationalising expert knowledge remains central.
+This expert-centric approach echoes [knowledge engineering](https://en.wikipedia.org/wiki/Knowledge_engineering) practices from the 1970-80s, when AI researchers first recognized the necessity of systematically capturing domain expertise. Just as [MYCIN](https://en.wikipedia.org/wiki/Mycin)'s creators worked closely with medical doctors to encode diagnostic knowledge, Critique Shadowing similarly structures the process of extracting expert judgement for LLM evaluation. While the technology has evolved from rule-based systems to large language models, the fundamental challenge of effectively capturing and operationalising expert knowledge remains central.
 
 ### Implementation Process
 The methodology follows a structured, iterative process:
