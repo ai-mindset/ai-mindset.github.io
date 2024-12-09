@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Case for Iterative Refinement Over Unit Testing"
+title: "Considering Iterative Refinement Over Unit Testing"
 date: 2024-11-22
 tags: [fast-ai, answer-ai, iterative-refinement, doctests, best-practices, llm, dialogue-engineering, code-quality]
 ---
@@ -9,7 +9,7 @@ tags: [fast-ai, answer-ai, iterative-refinement, doctests, best-practices, llm, 
 ## Introduction
 In the realm of software development and related fields, three influential figures -Peter Norvig (former Director of Research at Google), Jeremy Howard (founder of fast.ai), and Grant Sanderson (creator of 3Blue1Brown)- demonstrate the power of iterative refinement over rigid test-driven development. Their approaches, while applied in different domains, share common principles that challenge traditional development practices.
 
-## Iterative Refinement: A Better Approach
+## Iterative Refinement
 ### Peter Norvig's Software Development
 Norvig's approach, demonstrated in both his [original `docex` module](https://norvig.com/docex.html) and his [spell corrector implementation](https://norvig.com/spell-correct.html), emphasises tests that are tightly coupled with the code they verify. Before Python's doctests[^1] were officially supported, he created the `docex` module specifically to write tests in docstrings using a concise syntax like 
 ```python

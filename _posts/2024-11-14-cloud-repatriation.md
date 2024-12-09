@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cloud Repatriation: The On-Prem Comeback"
+title: "The On-Prem Comeback (aka Cloud Repatriation)"
 date: 2024-11-14
 tags: [cloud, on-prem]
 ---

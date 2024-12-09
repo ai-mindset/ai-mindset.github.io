@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ten Ways to Model Data: A Decision Guide"
+title: "Ten Ways to Model Data"
 date: 2024-11-27
 tags: [modelling-mindsets, data-science, ai, data-modeling, neural-network, best-practices, statistics, machine-learning, decision-making]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI's Historical Evolution"
+title: "Historical Evolution of AI"
 date: 2024-11-23
 tags: [ai, evolution, llm, symbolic, neural-network, data-science]
 ---

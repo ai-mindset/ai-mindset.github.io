@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TIL: Useful AI Nuggets"
+title: "TIL: Useful Nuggets from AI Engineers"
 date: 2024-10-25
 tags: [til, ai, llm]
 ---
