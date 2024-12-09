@@ -2,7 +2,7 @@
 layout: post
 title: "Understanding GGUF Model Quantization"
 date: 2024-12-07
-tags: [ai, llm,]
+tags: [ai, llm, energy-reduction, performance]
 ---
 <!--more-->
 
