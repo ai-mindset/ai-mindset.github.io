@@ -9,4 +9,5 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 EXPOSE 4000
-CMD bundle exec jekyll clean && bundle exec jekyll build && bundle exec jekyll serve --host 0.0.0.0
+# Change this line to use exec form and wrap Jekyll in sh -c to handle signals
+ENTRYPOINT ["sh", "-c", "trap 'exit 0' SIGINT; bundle exec jekyll clean && bundle exec jekyll build && bundle exec jekyll serve --host 0.0.0.0"]
