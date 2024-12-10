@@ -9,7 +9,6 @@ tags: [ai, data-science, design-principles, code-quality, mlops, monitoring, obs
 ## Introduction
 Don Norman's principles of good design, outlined in [The Design of Everyday Things](https://archive.org/details/thedesignofeverydaythingsbydonnorman), are particularly relevant to Data Science and AI Engineering, where systems often suffer from unnecessary complexity. This article presents a minimalist approach to implementing these principles using a carefully selected set of tools that maximise impact while reducing operational overhead. Norman's insights about visibility, feedback, constraints, and mappings translate powerfully to AI system design, where abstract interfaces and complex workflows can easily become overwhelming. Just as Norman observed that poorly designed physical objects lead to user frustration and errors, poorly architected AI systems can result in maintenance nightmares, hidden failure modes, and costly debugging cycles. By applying his principles - making system states visible, providing clear feedback, implementing appropriate constraints, and creating natural mappings between components, we can build AI systems that are not only more intuitive to use but also easier to maintain, debug, and evolve over time.
 
-
 ## Design Principles Implementation
 ### 1. Visibility
 Implement comprehensive system observability using [MLflow](https://mlflow.org/) as your central platform:
