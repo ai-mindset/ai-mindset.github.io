@@ -21,7 +21,6 @@ By examining these mindsets systematically, I aim to make an informed decision a
 
 Let's explore each mindset in turn, focusing on their fundamental premises, key strengths, and limitations to guide this decision.
 
-
 ## Statistical Modelling: The Foundation of Data-Driven Inference
 _This mindset sees the world through probability distributions. At its core, it's about modelling how data is generated and making inferences under uncertainty._
 
@@ -44,7 +43,6 @@ Notable Limitations:
 4. Less automatable than modern machine learning approaches
 
 This mindset serves as the foundation for three important sub-approaches: Frequentism, Bayesianism, and Likelihoodism, each with its own interpretation of probability and evidence. For someone starting in data science, understanding statistical modelling provides crucial groundwork for understanding both traditional statistics and modern machine learning approaches.
-
 
 ## Frequentism: Making Decisions Through Repeated Experiments
 _Frequentism views probability as long-run frequency and assumes that parameters in the world are fixed but unknown. It's the dominant approach in many scientific fields, particularly in medicine and psychology._
@@ -69,7 +67,6 @@ Notable Limitations:
 
 For practitioners, Frequentism offers a well-established framework with clear decision rules and strong scientific acceptance. However, its limitations in handling uncertainty and tendency toward oversimplification have led to growing interest in alternative approaches like Bayesian inference.
 
-
 ## Bayesianism: Learning Through Updated Beliefs
 _Bayesianism stands out by treating parameters themselves as random variables with distributions, fundamentally different from Frequentism's fixed-parameter view. It focuses on updating beliefs about parameters as new data arrives._
 
@@ -93,7 +90,6 @@ Notable Limitations:
 
 Bayesianism offers a more complete and intuitive framework for handling uncertainty, but requires more computational resources and mathematical sophistication. It's particularly valuable when prior knowledge is important or when understanding full uncertainty is crucial.
 
-
 ## Likelihoodism: Pure Evidence Through Likelihood
 _Likelihoodism attempts to reform statistical inference by focusing solely on likelihood as evidence, avoiding both Frequentism's imagined experiments and Bayesianism's subjective priors._
 
@@ -116,7 +112,6 @@ Notable Limitations:
 4. Less practical than other statistical approaches
 
 Likelihoodism offers interesting theoretical insights but may be less immediately useful than Frequentist or Bayesian approaches. It's more valuable for understanding the foundations of statistical inference than for day-to-day data analysis.
-
 
 ## Causal Inference: From Association to Causation
 _Causal inference moves beyond correlation to understand what actually causes observed effects, providing a framework for analysing interventions and their impacts._
@@ -260,7 +255,6 @@ Notable Limitations:
 5. Results can be difficult to interpret
 
 For practitioners, deep learning is essential for complex data types but may be overkill for simpler problems. Most valuable in computer vision, natural language processing, and other complex pattern recognition tasks.
-
 
 ## Conclusions
 ***aka Choosing Your Modelling Path***  
