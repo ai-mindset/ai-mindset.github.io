@@ -2,7 +2,7 @@
 layout: post
 title: "Understanding GGUF Model Quantization"
 date: 2024-12-07
-tags: [ai, llm, energy-reduction, performance]
+tags: [ai, llm, energy-reduction, performance, quantization]
 ---
 <!--more-->
 
@@ -10,11 +10,9 @@ tags: [ai, llm, energy-reduction, performance]
 When experimenting with larger language models (12B, 30B, 70B etc.), choosing the right quantization format becomes crucial for striking a good balance i.e. running them on consumer hardware while maintaining reasonably good performance. I wrote this guide after spending time looking up different GGUF quantization types to optimise model selection for my machine's constraints. This guide explains quantization methods and their practical tradeoffs to help the reader select the optimal format for their setup.  
 The quantization formats discussed here are implemented in popular frameworks like [llama.cpp](https://github.com/ggerganov/llama.cpp). Q4_K_S is typically the default format due to its good balance of size, speed, and quality, while Q2_K and Q3_K variants are offered for more constrained systems.
 
-
 ## What is Quantization?
 Quantization converts model weights from 16-bit floating point (F16) to lower precision formats using fixed-size blocks. Each block contains multiple weights that share scaling parameters.   
 Perplexity is the key metric used to measure model quality after quantization. It indicates how well the model predicts text, the lower the perplexity the better the predictions. For example, a change from 5.91 to 6.78 perplexity represents a noticeable but often acceptable drop in prediction quality. A model with perplexity 6.78 is slightly less certain about its predictions than one with perplexity 5.91.
-
 
 ## Basic Quantization Types and K-Quantization
 K-quantization is a way to make AI models smaller using two methods to store weights (the model's numbers):
@@ -74,31 +72,24 @@ This is why Type-1 generally gives better quality results but needs more storage
 K-quantizations use different precision levels for different model components. From [llama.cpp](https://github.com/ggerganov/llama.cpp) documentation, there are three variants:
 
 - S (Small): Uses single quantization throughout
-  Example using Q3_K_S:
-  ```
-  All model tensors → Q3_K (3-bit)
-  Result: 2.75GB size, 6.46 perplexity (7B model)
-  ```
+  Example using Q3_K_S:  
+  > All model tensors → Q3_K (3-bit)  
+  > Result: 2.75GB size, 6.46 perplexity (7B model)  
 
 - M (Medium): Strategic mixed precision
-  Example using Q3_K_M:
-  ```
-  attention.wv, attention.wo, feed_forward.w2 → Q4_K (4-bit)
-  All other tensors → Q3_K (3-bit)
-  Result: 3.06GB size, 6.15 perplexity (7B model)
-  ```
+  Example using Q3_K_M:  
+  > attention.wv[^1], attention.wo[^2], feed_forward.w2[^3] → Q4_K (4-bit)  
+  > All other tensors → Q3_K (3-bit)  
+  > Result: 3.06GB size, 6.15 perplexity (7B model)  
 
 - L (Large): Higher precision mix
-  Example using Q3_K_L:
-  ```
-  attention.wv, attention.wo, feed_forward.w2 → Q5_K (5-bit)
-  All other tensors → Q3_K (3-bit)
-  Result: 3.35GB size, 6.09 perplexity (7B model)
-  ```
+  Example using Q3_K_L:  
+  > attention.wv[^1], attention.wo[^2], feed_forward.w2[^3] → Q5_K (5-bit)  
+  > All other tensors → Q3_K (3-bit)  
+  > Result: 3.35GB size, 6.09 perplexity (7B model)  
 
 These strategies target attention and feed-forward layers with higher precision because they directly impact text processing quality, as demonstrated by the perplexity improvements in benchmarks: Q3_K_S (6.46) → Q3_K_M (6.15) → Q3_K_L (6.09).  
 The improvement in perplexity scores demonstrates why mixed precision strategies are effective, though they require more storage space.
-
 
 ## Performance Comparison (7B model)
 ```
@@ -119,7 +110,6 @@ Practical Recommendations:
 - GPU Inference: Q4_K (optimal speed/quality)
 
 All data are from recent [llama.cpp](https://github.com/ggerganov/llama.cpp/pull/1684) performance benchmarks and [GGML](https://github.com/ggerganov/ggml) implementation details.
-
 
 ## Memory Requirements for Inference
 When running quantized models, more RAM is required than the model size alone for inference overhead. Memory requirements depend on several factors:
@@ -147,7 +137,6 @@ Here is an example memory usage scenario for a Q4_K_S 7B model:
 
 This explains why a model that's "3.56GB" might need 6-7GB of free RAM/VRAM to run smoothly. The exact overhead varies based on your settings and system.
 
-
 ## Conclusion
 Modern quantization techniques offer multiple ways to run large language models on consumer hardware. Here's what we need to remember:
 
@@ -161,3 +150,9 @@ Modern quantization techniques offer multiple ways to run large language models 
 - The _S/_M/_L variants let the user fine-tune the quality-size tradeoff by adjusting precision where it matters most
 
 Before downloading a quantized model, check the system's available RAM and choose a format that leaves enough memory for comfortable operation. For most users with modern GPUs, Q4_K variants will provide the best experience.
+
+---
+[^1]: In [llama.cpp](https://github.com/ggerganov/llama.cpp/tree/master/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp), `attention.wv` refers to a tensor that holds the weights for the value vectors in the self-attention mechanism of the model. This tensor is crucial for determining how much focus the model places on different parts of the input when generating responses. 
+[^2]: `attention.wo` refers to the weight matrix used in the output layer of the attention mechanism within a transformer model. It plays a crucial role in transforming the attention output into the final representation that is used for generating predictions.
+[^3]: `feed_forward.w1` projects input to a higher-dimensional space, enabling the capture of complex features. `feed_forward.w2` projects transformed input back to the original dimension with a non-linear activation function, whereas `feed_forward.w3` applies an additional transformation to enhance the learning of complex patterns. These matrices collectively enable the feed-forward network to transform and learn from the input effectively, contributing to the overall performance of the transformer model. 
+

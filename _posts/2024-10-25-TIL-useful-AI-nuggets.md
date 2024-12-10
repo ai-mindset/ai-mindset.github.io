@@ -10,7 +10,6 @@ tags: [til, ai, llm]
 As I was going through some [CS25: Transformers United V4](https://web.stanford.edu/class/cs25/) lectures from Stanford, I stumbled across some pertinent and useful quotes from guest lecturers.   
 
 ## 📖 
-
 ### [Best AI skillset](https://xcancel.com/_jasonwei/status/1631017964286922753?cxt=HHwWgsDS-c2MxaItAAAA) 
 > Best AI skillset in 2018: PhD + long publication record in a specific area  
 > Best AI skillset in 2023: strong engineering abilities + adapting quickly to new directions without sunk cost fallacy
