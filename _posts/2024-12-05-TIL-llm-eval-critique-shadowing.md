@@ -2,7 +2,7 @@
 layout: post
 title: "TIL: LLM Evaluation using Critique Shadowing"
 date: 2024-12-05
-tags: [til, llm, ai, machine-learning, mlops, best-practices, production-ai, model-governance, evaluation, observability, monitoring, quality-assurance, iterative-refinement]
+tags: [til, llm, ai, machine-learning, mlops, best-practices, production, model-governance, evaluation, observability, monitoring, quality-assurance, iterative-refinement]
 ---
 <!--more-->
 

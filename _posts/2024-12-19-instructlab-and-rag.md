@@ -2,7 +2,7 @@
 layout: post
 title: "A Practical Guide to Fine-tuning LLMs with InstructLab"
 date: 2024-12-19
-tags: [ai, llm, model-governance, production-ai, quantisation, python, mlops, best-practices, data-science]
+tags: [ai, llm, model-governance, production, quantisation, python, mlops, best-practices, data-science]
 ---
 <!--more-->
 

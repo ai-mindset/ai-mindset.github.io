@@ -1,4 +1,10 @@
-# Level Up With Dialogue Engineering
+---
+layout: post
+title: "Level Up With Dialogue Engineering
+date: 2024-11-15
+tags: [ai, llm, dialogue-engineering, prompt, iterative-refinement, rag, ]
+---
+<!--more-->
 
 ## Introduction
 Dialogue Engineering is transforming how we interact with AI[^1]. Rather than relying on one-shot prompts, it's an iterative approach where we engage in structured, multi-turn conversations with LLMs (Large Language Models) to achieve complex goals. While I first encountered the term through Jeremy Howard[^2] [^3], the concept has deeper roots in human-AI interaction research. Though Howard popularized it recently through fast.ai and answer.ai, the concept has been discussed since 1986[^4].
