@@ -22,7 +22,8 @@ This approach offers several advantages:
 For developers working with AI APIs, this provides a valuable reference point - especially when building services that need to maintain compatibility with OpenAI's API structure.
 
 ## Try It Yourself
-Visit the [Swagger UI](https://petstore.swagger.io/) and paste this URL: https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml
+Visit the [Swagger UI](https://petstore.swagger.io/) and paste this URL:   
+`https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml`
 
 ---
 [^1]: Co-founder of [Lanyrd](https://blog.natbat.net/post/61658401806/lanyrd-from-idea-to-exit), co-creator of [Django](https://simonwillison.net/2005/Jul/17/django/) and [Datasette](https://datasette.io/) and a prolific independent AI researcher
