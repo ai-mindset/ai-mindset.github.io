@@ -1,13 +1,14 @@
-# Authoritative Sources to Learn From
+# Authoritative Learning Resources
 
+## What is this?
 This document provides a curated list of high-quality sources for learning about AI, data science, and related topics. These sources come from respected experts, researchers, and institutions, making them reliable and informative references.
 
 ## Books
 - [Supervised Machine Learning for Science](https://ml-science-book.com/) is a comprehensive book that explores the role of supervised machine learning in scientific research. It provides a philosophical justification for using ML in science and discusses best practices for integrating it effectively.
 
 ## Courses
-[Building LLM Applications for Data Scientists and Software Engineers](https://xcancel.com/hugobowne/status/1870978490574704812) teaches how to build LLM-powered software reliably, from first principles. It's an authoritative source on GenAI software development lifecycle: agents, evals, iteration and others.
-[CS294/194-196 Large Language Model Agents](https://rdi.berkeley.edu/llm-agents/f24) is a course that discusses fundamental concepts for LLM agents, including the foundation of LLMs, essential LLM abilities required for task automation, and agent development infrastructure. Agent applications are discussed as well as limitations, potential risks and directions for further improvement.
+- [Building LLM Applications for Data Scientists and Software Engineers](https://xcancel.com/hugobowne/status/1870978490574704812) teaches how to build LLM-powered software reliably, from first principles. It's an authoritative source on GenAI software development lifecycle: agents, evals, iteration and others.  
+- [CS294/194-196 Large Language Model Agents](https://rdi.berkeley.edu/llm-agents/f24) is a course that discusses fundamental concepts for LLM agents, including the foundation of LLMs, essential LLM abilities required for task automation, and agent development infrastructure. Agent applications are discussed as well as limitations, potential risks and directions for further improvement.
 
 ## Data-driven Insights
 - [Our World in Data](https://ourworldindata.org/) is a project of the Global Change Data Lab at the University of Oxford. It provides well-researched and data-driven insights into global issues, making it a valuable resource for understanding the world's largest problems and potential solutions.
