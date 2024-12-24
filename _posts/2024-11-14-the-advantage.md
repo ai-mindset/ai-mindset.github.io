@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Advantage"
+title: "💪 The Advantage"
 date: 2024-11-14
 tags: [slow-down, advantage]
 ---

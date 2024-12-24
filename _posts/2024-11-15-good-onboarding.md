@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On-boarding that works"
+title: "✅ On-boarding that works"
 date: 2024-11-14
 tags: [on-boarding]
 ---

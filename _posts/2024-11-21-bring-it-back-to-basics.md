@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Back to Basics: A Modern, Minimal Python Toolchain"
+title: "シ Back to Basics: A Modern, Minimal Python Toolchain"
 date: 2024-11-21
 tags: [python, type-checking, code-quality, github-actions, ci-cd, cross-platform, minimal, toolchain]
 ---

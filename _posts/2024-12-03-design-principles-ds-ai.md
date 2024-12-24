@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Path to Maintainable AI Systems using Norman's Design Principles"
+title: "✍ A Path to Maintainable AI Systems using Norman's Design Principles"
 date: 2024-12-03
 tags: [ai, data-science, design-principles, code-quality, mlops, monitoring, observability, production, model-governance, minimal]
 ---
