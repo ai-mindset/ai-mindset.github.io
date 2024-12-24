@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Understanding GGUF Model Quantisation"
+title: "💡 TIL: Understanding GGUF Model Quantisation"
 date: 2024-12-07
 tags: [ai, llm, energy-reduction, performance, quantisation]
 ---

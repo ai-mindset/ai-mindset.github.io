@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pandas or Polars?"
+title: "🐼 Pandas or 🐻‍❄️ Polars?"
 date: 2024-12-02
 tags: [python, pandas, polars, data-processing, code-quality, toolchain, data-science]
 ---

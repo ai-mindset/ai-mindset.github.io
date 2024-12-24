@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GitHub Actions For yt-dlp-hq"
+title: "🔁 GitHub Actions for yt-dlp-hq"
 date: 2024-10-08
 tags: [github-actions, ci-cd, yt-dlp, deno, typescript, cross-platform]
 ---

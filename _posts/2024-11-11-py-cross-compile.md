@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cross-Platform Builds In Python"
+title: "🔀 Cross-Platform Builds In Python"
 date: 2024-11-11
 tags: [python, github-actions, ci-cd, cross-platform, deno, typescript]
 ---

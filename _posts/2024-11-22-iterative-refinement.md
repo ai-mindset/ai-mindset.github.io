@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Considering Iterative Refinement Over Unit Testing"
+title: "🔄 Considering Iterative Refinement Over Unit Testing"
 date: 2024-11-22
 tags: [fast-ai, answer-ai, iterative-refinement, doctests, best-practices, llm, dialogue-engineering, code-quality]
 ---
