@@ -2,7 +2,7 @@
 layout: post
 title: "📝 From Vim to VSCode to Neovim"
 date: 2024-12-24
-tags: [ai, llm]
+tags: [minimal, cross-platform, toolchain, best-practices, design-principles, python, deno, zero-config]
 ---
 <!--more-->
 
