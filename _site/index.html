@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Just-in-Time learning | Inquisitive. Learning. Sharing. Simplicity = Reliability</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Just-in-Time learning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
+<meta property="og:description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
+<link rel="canonical" href="http://0.0.0.0:4000/" />
+<meta property="og:url" content="http://0.0.0.0:4000/" />
+<meta property="og:site_name" content="Just-in-Time learning" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Just-in-Time learning" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"Just-in-Time learning","name":"Just-in-Time learning","url":"http://0.0.0.0:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Just-in-Time learning" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+delimiters: [
+{left: "$$", right: "$$", display: true},
+{left: "[%", right: "%]", display: true},
+{left: "$", right: "$", display: false}
+]}
+);
+        });
+</script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+                if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+                }
+                });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/theme.js"></script>
+
+</head>
+<body><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="/assets/js/search.js"></script>
+
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Just-in-Time learning</a>
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,12.031,18,12.696,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." aria-label="Search posts" class="search-input">
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <a class="page-link" href="/aihub">AI Hub</a>
+        <a class="page-link" href="/about">About</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
+  🌙 Dark
+</button>
+
+<script>
+function toggleTheme() {
+    const body = document.querySelector('body');
+    const button = document.getElementById('theme-toggle');
+    const isDark = body.classList.toggle('dark-theme');
+    
+    button.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('darkTheme', isDark);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('darkTheme') === 'true') {
+        document.querySelector('body').classList.add('dark-theme');
+        document.getElementById('theme-toggle').innerHTML = '☀️ Light';
+    }
+});
+</script>
+
+      </div>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <p>
+A static site<sup><a href="#ref1">1</a></sup> to share things I'd like to have known 6 months ago, while I <a href="https://www.swyx.io/learn-in-public">learn in public</a><sup><a href="#ref2">2</a></sup> <sup><a href="#ref3">3</a></sup>.
+</p>
+<p>
+Made with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, <a href="https://github.com/fastai/fast_template">fast_template</a> and <a href="https://ai-mindset.github.io/dialogue-engineering"/>Dialogue Engineering</a> ♥️
+</p>
+
+<p>
+    <center>
+        <figure>
+            <a href="https://xcancel.com/HamelHusain/status/1867289397898752222"><img src="https://pbs.twimg.com/media/GenxqRbawAAN6UZ.jpg?name=orig" width="80%" height="80%"/></a>
+            <!-- <figcaption>How to evaluate MLOps tools</figcaption> -->
+            </figure>
+    </center>
+</p>
+</br>
+
+<div class="tags-nav">
+  <div class="tags-header">
+    <h2>Tags</h2>
+    <button class="tags-toggle" aria-label="Toggle tags list">
+      <svg class="tags-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path class="chevron-down" d="M6 9l6 6 6-6"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="tags-content">
+    <div class="tags-list">
+      
+      
+      <a href="javascript:void(0)" onclick="filterByTag('advantage')" class="tag">advantage</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('ai')" class="tag">ai</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('answer-ai')" class="tag">answer-ai</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('best-practices')" class="tag">best-practices</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('bm25')" class="tag">bm25</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('cheatsheet')" class="tag">cheatsheet</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('ci-cd')" class="tag">ci-cd</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('cloud')" class="tag">cloud</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('code-quality')" class="tag">code-quality</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('cross-platform')" class="tag">cross-platform</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('data-modeling')" class="tag">data-modeling</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('data-processing')" class="tag">data-processing</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('data-science')" class="tag">data-science</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('data-validation')" class="tag">data-validation</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('decision-making')" class="tag">decision-making</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('deno')" class="tag">deno</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('deployment')" class="tag">deployment</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('design-principles')" class="tag">design-principles</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('dialogue-engineering')" class="tag">dialogue-engineering</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('doctests')" class="tag">doctests</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('energy-reduction')" class="tag">energy-reduction</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('error-handling')" class="tag">error-handling</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('evaluation')" class="tag">evaluation</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('evolution')" class="tag">evolution</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('fast-ai')" class="tag">fast-ai</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('github-actions')" class="tag">github-actions</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('iterative-refinement')" class="tag">iterative-refinement</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('llm')" class="tag">llm</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('machine-learning')" class="tag">machine-learning</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('minimal')" class="tag">minimal</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('mlops')" class="tag">mlops</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('model-governance')" class="tag">model-governance</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('modelling-mindsets')" class="tag">modelling-mindsets</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('monitoring')" class="tag">monitoring</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('neural-network')" class="tag">neural-network</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('nlp')" class="tag">nlp</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('observability')" class="tag">observability</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('on-boarding')" class="tag">on-boarding</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('on-prem')" class="tag">on-prem</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('openai')" class="tag">openai</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('openapi')" class="tag">openapi</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('pandas')" class="tag">pandas</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('performance')" class="tag">performance</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('polars')" class="tag">polars</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('production')" class="tag">production</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('prompt')" class="tag">prompt</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('pydantic')" class="tag">pydantic</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('python')" class="tag">python</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('quality-assurance')" class="tag">quality-assurance</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('quantisation')" class="tag">quantisation</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('rag')" class="tag">rag</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('security')" class="tag">security</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('slow-down')" class="tag">slow-down</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('spec')" class="tag">spec</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('statistics')" class="tag">statistics</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('symbolic')" class="tag">symbolic</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('text-ranking')" class="tag">text-ranking</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('tf-idf')" class="tag">tf-idf</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('til')" class="tag">til</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('toolchain')" class="tag">toolchain</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('type-checking')" class="tag">type-checking</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('typescript')" class="tag">typescript</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('yt-dlp')" class="tag">yt-dlp</a>
+       • 
+      
+      <a href="javascript:void(0)" onclick="filterByTag('zero-config')" class="tag">zero-config</a>
+      
+      
+      <a href="javascript:void(0)" onclick="showAllPosts()" class="tag" id="show-all">(Show All)</a>
+    </div>
+  </div>
+</div>
+
+<div class="posts-section">
+    <h2>All Posts</h2>
+    
+    <div class="post-item" data-tags="minimal cross-platform toolchain best-practices design-principles python deno zero-config">
+        <time class="post-date">December 24, 2024</time>
+        <h3>
+            <a href="/vscode-to-neovim/">📝 From Vim to VSCode to Neovim</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="ai llm openai openapi spec">
+        <time class="post-date">December 23, 2024</time>
+        <h3>
+            <a href="/TIL-openai-openapi/">💡 TIL: Exploring OpenAI's API with Swagger</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="ai llm model-governance production quantisation python mlops best-practices data-science">
+        <time class="post-date">December 19, 2024</time>
+        <h3>
+            <a href="/instructlab-and-rag/">🎛️ A Practical Guide to Fine-tuning LLMs with InstructLab</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="ai llm energy-reduction performance quantisation">
+        <time class="post-date">December 07, 2024</time>
+        <h3>
+            <a href="/TIL-llm-quantisation/">💡 TIL: Understanding GGUF Model Quantisation</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="til llm ai machine-learning mlops best-practices production model-governance evaluation observability monitoring quality-assurance iterative-refinement">
+        <time class="post-date">December 05, 2024</time>
+        <h3>
+            <a href="/TIL-llm-eval-critique-shadowing/">💡 TIL: LLM Evaluation using Critique Shadowing</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="ai data-science design-principles code-quality mlops monitoring observability production model-governance minimal">
+        <time class="post-date">December 03, 2024</time>
+        <h3>
+            <a href="/design-principles-ds-ai/">✍ A Path to Maintainable AI Systems using Norman's Design Principles</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="python pandas polars data-processing code-quality toolchain data-science">
+        <time class="post-date">December 02, 2024</time>
+        <h3>
+            <a href="/pandas-polars/">🐼 Pandas or 🐻‍❄️ Polars?</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="modelling-mindsets data-science ai data-modeling neural-network best-practices statistics machine-learning decision-making">
+        <time class="post-date">November 27, 2024</time>
+        <h3>
+            <a href="/modelling-mindsets/">📊 Ten Ways to Model Data</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="til data-validation python type-checking data-modeling code-quality pydantic error-handling">
+        <time class="post-date">November 26, 2024</time>
+        <h3>
+            <a href="/TIL-pydantic/">💡 TIL: Pydantic - Python's Data Validation Guard</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="ai evolution llm symbolic neural-network data-science">
+        <time class="post-date">November 23, 2024</time>
+        <h3>
+            <a href="/ai-evolution/">🏺 Historical Evolution of AI</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="fast-ai answer-ai iterative-refinement doctests best-practices llm dialogue-engineering code-quality">
+        <time class="post-date">November 22, 2024</time>
+        <h3>
+            <a href="/iterative-refinement/">🔄 Considering Iterative Refinement Over Unit Testing</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="python type-checking code-quality github-actions ci-cd cross-platform minimal toolchain">
+        <time class="post-date">November 21, 2024</time>
+        <h3>
+            <a href="/bring-it-back-to-basics/">シ Back to Basics: A Modern, Minimal Python Toolchain</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="til tf-idf bm25 text-ranking nlp">
+        <time class="post-date">November 20, 2024</time>
+        <h3>
+            <a href="/TIL-BM25-TFIDF/">💡 TIL: TF-IDF vs BM25</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="ai llm dialogue-engineering prompt iterative-refinement rag">
+        <time class="post-date">November 15, 2024</time>
+        <h3>
+            <a href="/dialogue-engineering/">🆙 Level Up With Dialogue Engineering</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="on-boarding">
+        <time class="post-date">November 14, 2024</time>
+        <h3>
+            <a href="/good-onboarding/">✅ On-boarding that works</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="slow-down advantage">
+        <time class="post-date">November 14, 2024</time>
+        <h3>
+            <a href="/the-advantage/">💪 The Advantage</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="slow-down advantage">
+        <time class="post-date">November 14, 2024</time>
+        <h3>
+            <a href="/slow-down/">🐢 Slow Down And Grow Smart, Not Fast</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="cloud on-prem">
+        <time class="post-date">November 14, 2024</time>
+        <h3>
+            <a href="/cloud-repatriation/">🖥 The On-Prem Comeback (aka Cloud Repatriation)</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="til llm ai python on-prem performance">
+        <time class="post-date">November 13, 2024</time>
+        <h3>
+            <a href="/TIL-vLLM/">💡 TIL: vLLM Is A High-Performance Engine For LLM Serving</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="python github-actions ci-cd cross-platform deno typescript">
+        <time class="post-date">November 11, 2024</time>
+        <h3>
+            <a href="/py-cross-compile/">🔀 Cross-Platform Builds In Python</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="til llm performance energy-reduction">
+        <time class="post-date">October 30, 2024</time>
+        <h3>
+            <a href="/TIL-1bitLLM/">💡 TIL: 1.58-bit LLMs Match Full Performance @ 98.6% Energy Reduction</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="rag llm ai performance">
+        <time class="post-date">October 29, 2024</time>
+        <h3>
+            <a href="/rag-is-here-to-stay/">🗃️ RAG Is Here To Stay</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="til ai llm">
+        <time class="post-date">October 25, 2024</time>
+        <h3>
+            <a href="/TIL-useful-AI-nuggets/">💡 TIL: Useful Nuggets from AI Engineers</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="github-actions ci-cd yt-dlp deno typescript cross-platform">
+        <time class="post-date">October 08, 2024</time>
+        <h3>
+            <a href="/gh-actions-ytdlphq/">🔁 GitHub Actions for yt-dlp-hq</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="python typescript cheatsheet">
+        <time class="post-date">September 06, 2024</time>
+        <h3>
+            <a href="/python-typescript-cheatsheet/">📖 Python To TypeScript Cheatsheet</a>
+        </h3>
+    </div>
+    
+    <div class="post-item" data-tags="ai llm cross-platform data-processing data-science deno machine-learning minimal polars production deployment toolchain typescript security zero-config">
+        <time class="post-date">September 05, 2024</time>
+        <h3>
+            <a href="/deno/">🏗️ Modern Data Science and AI Engineering with Deno 2.0</a>
+        </h3>
+    </div>
+    
+</div>
+
+<hr>
+<div class="references">
+    <p id="ref1"><sup>1</sup> No ads, cookies, tracking, pop-ups, comments, social widgets, syndicated content, newsletter</p>
+    <p id="ref2"><sup>2</sup> <a href="https://www.fast.ai/posts/2017-12-18-personal-brand.html">Making Peace with Personal Branding</a></p>
+    <p id="ref3"><sup>3</sup> <a href="https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045">Why you (yes, you) should blog</a></p>
+</div>
+
+<script>
+function filterByTag(tag) {
+  const posts = document.querySelectorAll('.post-item');
+  posts.forEach(post => {
+    const postTags = post.getAttribute('data-tags')?.split(' ') || [];
+    post.style.display = postTags.includes(tag) ? 'block' : 'none';
+  });
+
+  // Update active tag styling
+  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('show-all').classList.remove('active');
+}
+
+function showAllPosts() {
+  document.querySelectorAll('.post-item').forEach(post => {
+    post.style.display = 'block';
+  });
+  
+  // Update active tag styling
+  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+  document.getElementById('show-all').classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tagsNav = document.querySelector('.tags-nav');
+    const tagsHeader = document.querySelector('.tags-header');
+    const tagsContent = document.querySelector('.tags-content');
+    
+    if (tagsHeader && tagsContent) {
+        // Tags toggle functionality
+        tagsHeader.addEventListener('click', function() {
+            tagsNav.classList.toggle('collapsed');
+            tagsContent.classList.toggle('collapsed');
+            localStorage.setItem('tagsCollapsed', tagsNav.classList.contains('collapsed'));
+        });
+        
+        // Initialize state (start collapsed)
+        tagsNav.classList.add('collapsed');
+        tagsContent.classList.add('collapsed');
+        localStorage.setItem('tagsCollapsed', 'true');
+    }
+});
+</script>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Just-in-Time learning</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Just-in-Time learning</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list">
+  <li><a href="https://github.com/ai-mindset"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ai-mindset</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

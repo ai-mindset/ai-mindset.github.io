@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>💡 TIL: Understanding GGUF Model Quantisation | Just-in-Time learning</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="💡 TIL: Understanding GGUF Model Quantisation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
+<meta property="og:description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
+<link rel="canonical" href="http://0.0.0.0:4000/TIL-llm-quantisation/" />
+<meta property="og:url" content="http://0.0.0.0:4000/TIL-llm-quantisation/" />
+<meta property="og:site_name" content="Just-in-Time learning" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-12-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="💡 TIL: Understanding GGUF Model Quantisation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-07T00:00:00+00:00","datePublished":"2024-12-07T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"💡 TIL: Understanding GGUF Model Quantisation","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/TIL-llm-quantisation/"},"url":"http://0.0.0.0:4000/TIL-llm-quantisation/"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Just-in-Time learning" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+delimiters: [
+{left: "$$", right: "$$", display: true},
+{left: "[%", right: "%]", display: true},
+{left: "$", right: "$", display: false}
+]}
+);
+        });
+</script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+                if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+                }
+                });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/theme.js"></script>
+
+</head>
+<body><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="/assets/js/search.js"></script>
+
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Just-in-Time learning</a>
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,12.031,18,12.696,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." aria-label="Search posts" class="search-input">
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <a class="page-link" href="/aihub">AI Hub</a>
+        <a class="page-link" href="/about">About</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
+  🌙 Dark
+</button>
+
+<script>
+function toggleTheme() {
+    const body = document.querySelector('body');
+    const button = document.getElementById('theme-toggle');
+    const isDark = body.classList.toggle('dark-theme');
+    
+    button.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('darkTheme', isDark);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('darkTheme') === 'true') {
+        document.querySelector('body').classList.add('dark-theme');
+        document.getElementById('theme-toggle').innerHTML = '☀️ Light';
+    }
+});
+</script>
+
+      </div>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+  <h1>💡 TIL: Understanding GGUF Model Quantisation</h1>
+  
+  <!-- Debug info -->
+  <!-- <div style="color: red;"> -->
+  <!--   TOC enabled: true -->
+  <!--   Layout: post -->
+  <!-- </div> -->
+  
+  
+    <nav class="toc">
+  <div class="toc-header">
+    <h2>Contents</h2>
+    <button class="toc-toggle" aria-label="Toggle table of contents">
+      <svg class="toc-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path class="chevron-down" d="M6 9l6 6 6-6"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="toc-content">
+    <ul>
+      
+      
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#introduction">Introduction</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#what-is-quantisation">What is Quantisation?</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#basic-quantisation-types-and-k-quantisation">Basic Quantisation Types and K-Quantisation</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#mixed-precision-strategies">Mixed Precision Strategies</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#performance-comparison-7b-model">Performance Comparison (7B model)</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#memory-requirements-for-inference">Memory Requirements for Inference</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#conclusion">Conclusion</a>
+            
+            
+            
+          </li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+  
+  
+  <!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>When experimenting with larger language models (12B, 30B, 70B etc.), choosing the right quantisation format becomes crucial for striking a good balance i.e. running them on consumer hardware while maintaining reasonably good performance. I wrote this guide after spending time looking up different GGUF quantisation types to optimise model selection for my machine’s constraints. This guide explains quantisation methods and their practical tradeoffs to help the reader select the optimal format for their setup.<br />
+The quantisation formats discussed here are implemented in popular frameworks like <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a>. Q4_K_S is typically the default format due to its good balance of size, speed, and quality, while Q2_K and Q3_K variants are offered for more constrained systems.</p>
+
+<h2 id="what-is-quantisation">What is Quantisation?</h2>
+<p>Quantisation converts model weights from 16-bit floating point (F16) to lower precision formats using fixed-size blocks. Each block contains multiple weights that share scaling parameters. <br />
+Perplexity is the key metric used to measure model quality after quantisation. It indicates how well the model predicts text, the lower the perplexity the better the predictions. For example, a change from 5.91 to 6.78 perplexity represents a noticeable but often acceptable drop in prediction quality. A model with perplexity 6.78 is slightly less certain about its predictions than one with perplexity 5.91.</p>
+
+<h2 id="basic-quantisation-types-and-k-quantisation">Basic Quantisation Types and K-Quantisation</h2>
+<p>K-quantisation is a way to make AI models smaller using two methods to store weights (the model’s numbers):</p>
+
+<ol>
+  <li>Type-0 (simpler): reconstructs weight as <code class="language-plaintext highlighter-rouge">weight = scale × quant</code></li>
+  <li>Type-1 (more precise): reconstructs weight as <code class="language-plaintext highlighter-rouge">weight = scale × quant + minimum</code></li>
+</ol>
+
+<p>The “block minimum” <code class="language-plaintext highlighter-rouge">minimum</code> is the smallest value found in a group of weights. By tracking this minimum, we can represent the other values more precisely relative to it, rather than having to represent their full absolute values.</p>
+
+<p>Each format groups weights into “super-blocks” to save space. Specifically:</p>
+
+<p>Q2_K (2-bit):</p>
+<ul>
+  <li>Uses Type-1 formula</li>
+  <li>Organises weights in groups of 256 (16 blocks × 16 weights)</li>
+  <li>Uses 4 bits to store both scales and minimums</li>
+  <li>Takes exactly 2.5625 bits per weight</li>
+  <li>Result: Shrinks a 13GB model to 2.67GB, but quality drops (perplexity increases from 5.91 to 6.78)</li>
+</ul>
+
+<p>Q3_K (3-bit):</p>
+<ul>
+  <li>Uses Type-0 formula (simpler one)</li>
+  <li>Same organization: 16 blocks × 16 weights</li>
+  <li>Uses 6 bits to store scales</li>
+  <li>Takes exactly 3.4375 bits per weight</li>
+  <li>Better quality than Q2_K but bigger file size</li>
+</ul>
+
+<p>Q4_K (4-bit):</p>
+<ul>
+  <li>Uses Type-1 formula</li>
+  <li>Different organisation: 8 blocks × 32 weights = 256 total</li>
+  <li>Uses 6 bits for both scales and minimums</li>
+  <li>Takes exactly 4.5 bits per weight</li>
+  <li>Much better quality, file size around 3.56GB</li>
+</ul>
+
+<p>Q5_K (5-bit):</p>
+<ul>
+  <li>Uses Type-1 formula</li>
+  <li>Same organisation as Q4_K</li>
+  <li>Also uses 6 bits for scales and minimums</li>
+  <li>Takes exactly 5.5 bits per weight</li>
+  <li>Quality getting very close to original</li>
+</ul>
+
+<p>Q6_K (6-bit):</p>
+<ul>
+  <li>Uses Type-0 formula</li>
+  <li>Back to 16 blocks × 16 weights</li>
+  <li>Uses 8 bits for scales</li>
+  <li>Takes exactly 6.5625 bits per weight</li>
+  <li>Almost perfect quality, file size 5.15GB</li>
+</ul>
+
+<p>The main tradeoff: Fewer bits means smaller files but lower quality. More bits means better quality but larger files. This lets users choose what works best for their needs.<br />
+When compressing numbers in Type-1 quantisation, each block keeps track of its smallest value (the minimum). When reconstructing the weights, this minimum is added back after multiplication. This helps preserve the range of values more accurately than just using scaling alone.</p>
+
+<p>A simple way to think of this concept is:</p>
+<ul>
+  <li>Type-0 just stretches/shrinks values using a scale</li>
+  <li>Type-1 first shifts all numbers by subtracting the minimum (making them smaller), then scales them for storage, and when reconstructing adds the minimum back</li>
+</ul>
+
+<p>This is why Type-1 generally gives better quality results but needs more storage space. It has to keep track of both the scale and minimum for each block.</p>
+
+<h2 id="mixed-precision-strategies">Mixed Precision Strategies</h2>
+<p>K-quantisations use different precision levels for different model components. From <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> documentation, there are three variants:</p>
+
+<ul>
+  <li>S (Small): Uses single quantisation throughout
+Example using Q3_K_S:
+    <blockquote>
+      <p>All model tensors → Q3_K (3-bit)<br />
+Result: 2.75GB size, 6.46 perplexity (7B model)</p>
+    </blockquote>
+  </li>
+  <li>M (Medium): Strategic mixed precision
+Example using Q3_K_M:
+    <blockquote>
+      <p>attention.wv<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, attention.wo<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, feed_forward.w2<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> → Q4_K (4-bit)<br />
+All other tensors → Q3_K (3-bit)<br />
+Result: 3.06GB size, 6.15 perplexity (7B model)</p>
+    </blockquote>
+  </li>
+  <li>L (Large): Higher precision mix
+Example using Q3_K_L:
+    <blockquote>
+      <p>attention.wv<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, attention.wo<sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, feed_forward.w2<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> → Q5_K (5-bit)<br />
+All other tensors → Q3_K (3-bit)<br />
+Result: 3.35GB size, 6.09 perplexity (7B model)</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>These strategies target attention and feed-forward layers with higher precision because they directly impact text processing quality, as demonstrated by the perplexity improvements in benchmarks: Q3_K_S (6.46) → Q3_K_M (6.15) → Q3_K_L (6.09).<br />
+The improvement in perplexity scores demonstrates why mixed precision strategies are effective, though they require more storage space.</p>
+
+<h2 id="performance-comparison-7b-model">Performance Comparison (7B model)</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Format | Size(GB) | Reduction | BPW  | Perplexity | RTX4080  | M2Max   
+F16    | 13.0     | 1.0x      | 16.0 | 5.91       | 60.0ms   | 116ms
+Q2_K   | 2.67     | 4.9x      | 2.56 | 6.78       | 15.5ms   | 56ms
+Q3_K_S | 2.75     | 4.7x      | 3.44 | 6.46       | 18.6ms   | 81ms
+Q4_K_S | 3.56     | 3.7x      | 4.50 | 6.02       | 15.5ms   | 50ms
+Q6_K   | 5.15     | 2.5x      | 6.56 | 5.91       | 18.3ms   | 75ms
+</code></pre></div></div>
+<p>*BPW = Bits Per Weight, Speed in milliseconds per token</p>
+
+<p>Practical Recommendations:</p>
+<ul>
+  <li>Balanced Performance: Q4_K_S</li>
+  <li>Maximum Compression: Q2_K</li>
+  <li>Best Quality: Q6_K (matches F16)</li>
+  <li>Limited RAM: Q2_K or Q3_K</li>
+  <li>GPU Inference: Q4_K (optimal speed/quality)</li>
+</ul>
+
+<p>All data are from recent <a href="https://github.com/ggerganov/llama.cpp/pull/1684">llama.cpp</a> performance benchmarks and <a href="https://github.com/ggerganov/ggml">GGML</a> implementation details.</p>
+
+<h2 id="memory-requirements-for-inference">Memory Requirements for Inference</h2>
+<p>When running quantised models, more RAM is required than the model size alone for inference overhead. Memory requirements depend on several factors:</p>
+<ul>
+  <li>Model architecture and size</li>
+  <li>Batch size for inference</li>
+  <li>Number of layers loaded at once</li>
+  <li>Operating system and framework overhead</li>
+</ul>
+
+<p>For 7B models (verified from benchmarks):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Format | Model Size | Note
+F16    | 13.0GB    | Base format
+Q4_K_S | 3.56GB    | Common choice
+Q3_K_S | 2.75GB    | Minimum size
+Q6_K   | 5.15GB    | Highest quality
+</code></pre></div></div>
+
+<p>For larger models scale the memory requirements proportionally and ensure additional overhead memory is available for inference. Test with smaller models first to gauge the system’s capabilities.<br />
+Actual RAM/VRAM requirements will be higher than the model size. Consider monitoring memory usage during inference to determine exact requirements for a specific setup.<br />
+Here is an example memory usage scenario for a Q4_K_S 7B model:</p>
+<ul>
+  <li>Model size: 3.56GB</li>
+  <li>Inference overhead: ~2GB for standard settings</li>
+  <li>Operating system buffer: ~1GB recommended</li>
+  <li>Total recommended free memory: ~7GB</li>
+</ul>
+
+<p>This explains why a model that’s “3.56GB” might need 6-7GB of free RAM/VRAM to run smoothly. The exact overhead varies based on your settings and system.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Modern quantisation techniques offer multiple ways to run large language models on consumer hardware. Here’s what we need to remember:</p>
+
+<ul>
+  <li>K-quantisation provides the best balance through super-blocks and mixed precision strategies</li>
+  <li>Q4_K_S (4-bit) represents the current sweet spot for most users, offering:
+    <ul>
+      <li>3.7x size reduction</li>
+      <li>Good perplexity (6.02)</li>
+      <li>Excellent inference speed on both GPU and CPU</li>
+    </ul>
+  </li>
+  <li>For more constrained setups, Q2_K/Q3_K variants can run larger models with acceptable quality loss</li>
+  <li>Higher bits (Q5_K, Q6_K) approach F16 quality but require more memory</li>
+  <li>The _S/_M/_L variants let the user fine-tune the quality-size tradeoff by adjusting precision where it matters most</li>
+</ul>
+
+<p>Before downloading a quantised model, check the system’s available RAM and choose a format that leaves enough memory for comfortable operation. For most users with modern GPUs, Q4_K variants will provide the best experience.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>In <a href="https://github.com/ggerganov/llama.cpp/tree/master/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp">llama.cpp</a>, <code class="language-plaintext highlighter-rouge">attention.wv</code> refers to a tensor that holds the weights for the value vectors in the self-attention mechanism of the model. This tensor is crucial for determining how much focus the model places on different parts of the input when generating responses. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><code class="language-plaintext highlighter-rouge">attention.wo</code> refers to the weight matrix used in the output layer of the attention mechanism within a transformer model. It plays a crucial role in transforming the attention output into the final representation that is used for generating predictions. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p><code class="language-plaintext highlighter-rouge">feed_forward.w1</code> projects input to a higher-dimensional space, enabling the capture of complex features. <code class="language-plaintext highlighter-rouge">feed_forward.w2</code> projects transformed input back to the original dimension with a non-linear activation function, whereas <code class="language-plaintext highlighter-rouge">feed_forward.w3</code> applies an additional transformation to enhance the learning of complex patterns. These matrices collectively enable the feed-forward network to transform and learn from the input effectively, contributing to the overall performance of the transformer model. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+</article>
+
+<!-- Theme toggle -->
+<script>
+// Initialize theme from localStorage
+if (localStorage.getItem('darkTheme') === 'true') {
+    document.body.classList.add('dark-theme');
+}
+</script>
+
+<!-- Collapsible TOC -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocHeader = document.querySelector('.toc-header');
+  const toc = document.querySelector('.toc');
+  
+  if (tocHeader && toc) {
+    tocHeader.addEventListener('click', function() {
+      toc.classList.toggle('collapsed');
+      
+      // Optional: Save state to localStorage
+      localStorage.setItem('tocCollapsed', toc.classList.contains('collapsed'));
+    });
+    
+    // Optional: Restore state from localStorage
+    const isCollapsed = localStorage.getItem('tocCollapsed') === 'true';
+    if (isCollapsed) {
+      toc.classList.add('collapsed');
+    }
+  }
+});
+</script>
+
+<div class="post-tags">
+  Tags: 
+  
+    <a href="/">ai</a>, 
+  
+    <a href="/">llm</a>, 
+  
+    <a href="/">energy-reduction</a>, 
+  
+    <a href="/">performance</a>, 
+  
+    <a href="/">quantisation</a>
+  
+</div>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Just-in-Time learning</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Just-in-Time learning</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list">
+  <li><a href="https://github.com/ai-mindset"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ai-mindset</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

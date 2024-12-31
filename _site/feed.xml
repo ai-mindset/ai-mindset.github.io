@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2024-12-31T12:49:27+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">📝 From Vim to VSCode to Neovim</title><link href="http://0.0.0.0:4000/vscode-to-neovim/" rel="alternate" type="text/html" title="📝 From Vim to VSCode to Neovim" /><published>2024-12-24T00:00:00+00:00</published><updated>2024-12-24T00:00:00+00:00</updated><id>http://0.0.0.0:4000/vscode-to-neovim</id><content type="html" xml:base="http://0.0.0.0:4000/vscode-to-neovim/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Vim’s portable <code class="language-plaintext highlighter-rouge">.vimrc</code> embodies software minimalism at its best. One file, one minute to setup, resulting in a complete development environment. This simplicity served me well until Azure development motivated the use of VSCode.<br />
+While VSCode worked reasonably well on macOS, Fedora revealed its constraints: keyboard input failures, heavy resource usage, and <a href="https://stackoverflow.com/questions/35368889/how-can-i-export-settings">complex environment portability</a> compared to Vim’s <code class="language-plaintext highlighter-rouge">vim +PlugInstall</code>. These limitations drove my search for tools that could maintain simplicity while meeting my development requirements with simplicity and portability in mind.</p>
+
+<h2 id="vim---vscode---neovim">Vim -&gt; VSCode -&gt; Neovim</h2>
+<p>Azure development initially pulled me into VSCode’s ecosystem. While stable on macOS, Fedora revealed deal-breakers: random keyboard input failures that only responded to command palette (Ctrl+Shift+P). No amount of configuration resets or reinstalls resolved these issues.</p>
+
+<p>This instability, coupled with VSCode’s resource footprint, led me to Neovim. The timing aligned with my exploration of Clojure, where Neovim’s Conjure plugin offered a compelling Lisp development experience that rivaled Emacs.</p>
+
+<p>My requirements were specific:</p>
+<ul>
+  <li>A lightweight Python IDE</li>
+  <li>A lightweight Deno IDE</li>
+  <li>A lightweight Clojure IDE</li>
+</ul>
+
+<p>Through <a href="/dialogue-engineering/">Dialogue Engineering</a>, I crafted a complete IDE using a <a href="https://github.com/ai-mindset/init.vim">single configuration file</a>. Neovim’s mixed ecosystem of package managers and dual Vimscript/Lua support presents a learning curve, but the resulting environment is fast, stable, and precisely tailored to my needs. One minor drawback is the complexity of adding colour to Conjure’s output, especially when compared to the rich REPL experiences offered by <a href="https://ipython.org/">IPython</a>, <a href="https://deno.com/">Deno</a>, and Clojure with <a href="https://github.com/bhauman/rebel-readline">rebel-readline</a>.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>The journey from Vim to VSCode and finally to Neovim reflects a common pattern in software development: sometimes we need to step backward to move forward. While VSCode offered modern IDE features, its stability and resource issues on Linux highlighted the enduring value of minimal, portable tools.<br />
+Neovim strikes an elegant balance: it preserves Vim’s philosophy of simplicity and portability while providing modern IDE capabilities. Despite minor challenges with REPL colourisation, its single configuration file approach and robust plugin ecosystem make it a powerful choice for polyglot development. For developers who value both minimal tooling and modern features, Neovim proves that we don’t always have to choose between the two.</p>]]></content><author><name></name></author><category term="minimal" /><category term="cross-platform" /><category term="toolchain" /><category term="best-practices" /><category term="design-principles" /><category term="python" /><category term="deno" /><category term="zero-config" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: Exploring OpenAI’s API with Swagger</title><link href="http://0.0.0.0:4000/TIL-openai-openapi/" rel="alternate" type="text/html" title="💡 TIL: Exploring OpenAI’s API with Swagger" /><published>2024-12-23T00:00:00+00:00</published><updated>2024-12-23T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-openai-openapi</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-openai-openapi/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>OpenAI maintains a comprehensive <a href="https://github.com/openai/openai-openapi/">OpenAPI specification</a> that documents their entire API surface. While browsing through their GitHub repository, <a href="https://simonwillison.net/">Simon Willison</a><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> discovered you can easily explore this spec using Swagger’s web interface.</p>
+
+<h2 id="the-discovery">The Discovery</h2>
+<p>Willison recently highlighted a neat trick: you can browse OpenAI’s full API documentation by loading their <a href="https://github.com/openai/openai-openapi/blob/master/openapi.yaml">OpenAPI YAML file</a> directly into <a href="https://petstore.swagger.io/?url=https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml#/">Swagger’s web UI</a>.</p>
+
+<h2 id="why-this-matters">Why This Matters</h2>
+<p>This approach offers several advantages:</p>
+<ul>
+  <li>Interactive exploration of all API endpoints</li>
+  <li>Complete request/response schemas</li>
+  <li>Built-in testing capability</li>
+  <li>Detailed parameter documentation</li>
+</ul>
+
+<p>For developers working with AI APIs, this provides a valuable reference point - especially when building services that need to maintain compatibility with OpenAI’s API structure.</p>
+
+<h2 id="try-it-yourself">Try It Yourself</h2>
+<p>Visit the <a href="https://petstore.swagger.io/">Swagger UI</a> and paste this URL: <br />
+<code class="language-plaintext highlighter-rouge">https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml</code></p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Co-founder of <a href="https://blog.natbat.net/post/61658401806/lanyrd-from-idea-to-exit">Lanyrd</a>, co-creator of <a href="https://simonwillison.net/2005/Jul/17/django/">Django</a> and <a href="https://datasette.io/">Datasette</a> and a prolific independent AI researcher <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="openai" /><category term="openapi" /><category term="spec" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🎛️ A Practical Guide to Fine-tuning LLMs with InstructLab</title><link href="http://0.0.0.0:4000/instructlab-and-rag/" rel="alternate" type="text/html" title="🎛️ A Practical Guide to Fine-tuning LLMs with InstructLab" /><published>2024-12-19T00:00:00+00:00</published><updated>2024-12-19T00:00:00+00:00</updated><id>http://0.0.0.0:4000/instructlab-and-rag</id><content type="html" xml:base="http://0.0.0.0:4000/instructlab-and-rag/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The explosion of Large Language Models (LLMs) has created a pressing need for domain-specific adaptations. While base models like GPT-4, Claude, and Llama demonstrate impressive general capabilities, organisations often need models that excel in specific domains or exhibit particular behavioural traits. This customisation typically requires fine-tuning, a process that has historically demanded significant expertise, computational resources, and sophisticated infrastructure.</p>
+
+<h3 id="the-fine-tuning-challenge">The Fine-tuning Challenge</h3>
+
+<p>Traditional LLM fine-tuning presents a complex web of interconnected challenges that organisations must navigate. At its core lies the need for sophisticated infrastructure, often requiring specialised hardware and carefully orchestrated software stacks. This infrastructure challenge is compounded by substantial computational costs, making experimentation and iteration expensive.<br />
+The data challenge is equally significant. Fine-tuning demands large, high-quality datasets that are both rare and expensive to create. Even when such datasets exist, organisations face the risk of catastrophic forgetting, where models lose their general capabilities while acquiring new ones. Moreover, validating improvements remains a complex task, requiring careful benchmarking and evaluation frameworks.<br />
+These challenges have historically restricted fine-tuning to well-resourced organisations, creating a significant barrier to entry for smaller teams and organisations seeking to adapt LLMs to their specific needs.</p>
+
+<h3 id="real-world-challenges">Real-world Challenges</h3>
+
+<p>The adaptation of LLMs to specific domains presents organisations with a multifaceted set of practical challenges. In healthcare, medical institutions grapple with the need for models that can accurately process and generate content using complex medical terminology while maintaining strict clinical protocols. This domain expertise challenge extends beyond mere vocabulary; it encompasses understanding of medical procedures, drug interactions, and diagnostic reasoning.<br />
+The financial sector faces equally demanding requirements, particularly around compliance and regulation. Banks and financial institutions must ensure their models operate within specific regulatory frameworks, making decisions that are not only accurate but also auditable and explainable to regulatory bodies.<br />
+Data quality emerges as a persistent challenge across sectors. Organisations typically struggle with historical datasets that exhibit inconsistent formatting, missing values, and inherent biases. The challenge extends to maintaining proper version control and data lineage tracking, crucial for both compliance and model improvement cycles.<br />
+Regulatory constraints add another layer of complexity. Healthcare organisations must ensure strict HIPAA compliance in their model development and deployment processes. Similarly, any organisation handling European data must adhere to GDPR requirements, while specific industries often face additional certification needs. These regulatory requirements must be considered not just in the final deployment but throughout the entire fine-tuning process.</p>
+
+<h3 id="the-role-of-instructlab">The Role of InstructLab</h3>
+
+<p><a href="https://instructlab.ai/">InstructLab</a> emerges as a systematic solution to these challenges, offering a novel approach to LLM fine-tuning that combines:</p>
+<ul>
+  <li>Synthetic data generation for high-quality training examples</li>
+  <li>Efficient <a href="https://arxiv.org/abs/2305.14314">QLoRA</a>-based training pipelines</li>
+  <li>Comprehensive evaluation frameworks</li>
+  <li>Hardware-adaptive processing</li>
+</ul>
+
+<p>The rest of this article will elaborate on <a href="https://instructlab.ai/">InstructLab</a>’s architecture, workflow, and practical considerations, demonstrating how it makes LLM fine-tuning accessible while maintaining rigorous quality standards. It will explore how organisations can leverage this tool to enhance their AI capabilities efficiently and systematically.</p>
+
+<h2 id="from-principles-to-practice">From Principles to Practice</h2>
+
+<p><a href="https://instructlab.ai/">InstructLab</a> is built around the LAB (Large-Scale Alignment for ChatBots) methodology, leveraging [QLoRA(https://arxiv.org/abs/2305.14314) (Quantized Low-Rank Adaptation) for efficient fine-tuning. The system requires Python 3.10/3.11 and approximately 500GB of disc space for full operation.</p>
+
+<h3 id="architectural-components">Architectural Components</h3>
+
+<p>The system operates through three primary components:</p>
+<ul>
+  <li><strong>Taxonomy Repository</strong>: A structured collection of knowledge and skills, organised in YAML files (max 2300 words per Q&amp;A pair)</li>
+  <li><strong>Synthetic Data Generator</strong>: Uses a teacher model (default: Mixtral/Mistral instruct for full pipeline, Merlinite 7b for simple) to transform taxonomy entries into diverse training examples</li>
+  <li><strong>Training Pipeline System</strong>: <a href="https://arxiv.org/abs/2305.14314">QLoRA</a>-based training options optimised for different hardware configurations</li>
+</ul>
+
+<h3 id="training-pipelines">Training Pipelines</h3>
+
+<p><a href="https://instructlab.ai/">InstructLab</a> offers three specialised training pipelines:</p>
+
+<ol>
+  <li><strong>Simple Pipeline</strong>
+    <ul>
+      <li>Fast training (~1 hour)</li>
+      <li>Uses SFT Trainer (Linux) or MLX (MacOS)</li>
+      <li>Great for initial experiments and validation</li>
+    </ul>
+  </li>
+  <li><strong>Full Pipeline</strong>
+    <ul>
+      <li>Custom <a href="https://arxiv.org/abs/2305.14314">QLoRA</a> training loop optimised for CPU/MPS</li>
+      <li>Enhanced data processing functions</li>
+      <li>Memory requirement: 32GB RAM</li>
+      <li>Balanced performance and accessibility</li>
+    </ul>
+  </li>
+  <li><strong>Accelerated Pipeline</strong>
+    <ul>
+      <li>GPU-accelerated distributed <a href="https://arxiv.org/abs/2305.14314">QLoRA</a> training</li>
+      <li>Supports NVIDIA CUDA and AMD ROCm</li>
+      <li>Requires 18GB+ GPU memory</li>
+      <li>Ideal for production-grade fine-tuning</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="hardware-support-and-quantisation">Hardware Support and Quantisation</h3>
+
+<p><a href="https://instructlab.ai/">InstructLab</a> supports various hardware configurations with automatic quantisation:</p>
+<ul>
+  <li>Apple M-series chips: MLX optimisation, MPS acceleration</li>
+  <li>NVIDIA GPUs: CUDA support, 4-bit quantisation available</li>
+  <li>AMD GPUs: ROCm support, similar quantisation options</li>
+  <li>Standard CPUs: Optimised quantisation for memory efficiency</li>
+</ul>
+
+<h2 id="practical-workflow">Practical Workflow</h2>
+
+<p>With the architectural foundation established, <a href="https://instructlab.ai/">InstructLab</a> provides a systematic approach to implementing these components through a straightforward command-line interface. The following sections detail the practical steps to leverage this architecture effectively.</p>
+
+<h3 id="setup-and-installation">Setup and Installation</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>instructlab
+ilab config init
+</code></pre></div></div>
+
+<p>Key requirements:</p>
+<ul>
+  <li>Python 3.10 or 3.11 (&gt;=3.12 not supported<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>)</li>
+  <li>500GB recommended disc space</li>
+  <li>16GB RAM minimum, 32GB recommended</li>
+</ul>
+
+<h3 id="core-workflow-steps">Core Workflow Steps</h3>
+
+<ol>
+  <li><strong>Model Acquisition</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model download
+</code></pre></div>    </div>
+    <ul>
+      <li>Downloads pre-trained base models</li>
+      <li>Supports GGUF (4-bit to 16-bit) and Safetensors formats</li>
+      <li>Automatic quantisation with configurable parameters</li>
+    </ul>
+  </li>
+  <li><strong>Synthetic Data Generation</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model serve
+ilab data generate <span class="nt">--pipeline</span> <span class="o">[</span>simple|full]
+</code></pre></div>    </div>
+    <p>Common issues and solutions:</p>
+    <ul>
+      <li>Server conflicts: Use different ports with <code class="language-plaintext highlighter-rouge">--port</code></li>
+      <li>Memory errors: Reduce batch size or use <code class="language-plaintext highlighter-rouge">--pipeline simple</code></li>
+      <li>Teacher model issues: Verify model checksum and try re-downloading</li>
+    </ul>
+  </li>
+  <li><strong>Training</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model train
+</code></pre></div>    </div>
+    <p>Hyperparameters (configurable in config.yaml):</p>
+    <ul>
+      <li>Max epochs: 10</li>
+    </ul>
+  </li>
+  <li><strong>Evaluation</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model evaluate
+</code></pre></div>    </div>
+    <p>Benchmarks and typical scores:</p>
+    <ul>
+      <li><a href="http://en.wikipedia.org/wiki/MMLU">MMLU</a>: Knowledge (0.0-1.0 scale)</li>
+      <li>MMLUBranch: Delta improvements</li>
+      <li>MTBench: Skills (0.0-10.0 scale)</li>
+      <li>MTBenchBranch: Skill improvements</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="model-deployment">Model Deployment</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model serve <span class="nt">--model-path</span> &lt;new-model-path&gt;
+ilab model chat <span class="nt">-m</span> &lt;new-model-path&gt; <span class="c"># Optionally, chat with the model</span>
+</code></pre></div></div>
+<p>Deployment considerations:</p>
+<ul>
+  <li>Verify quantisation level matches hardware capabilities</li>
+  <li>Monitor memory usage during serving</li>
+  <li>Consider temperature settings for inference (default: 1.0)</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><a href="https://instructlab.ai/">InstructLab</a> represents a significant advancement in democratising LLM fine-tuning, bridging the gap between research capabilities and practical deployment. Through its innovative LAB methodology and <a href="https://arxiv.org/abs/2305.14314">QLoRA</a>-based implementation, it makes sophisticated model adaptation accessible to practitioners across different hardware configurations.</p>
+
+<h3 id="key-advantages">Key Advantages</h3>
+
+<ul>
+  <li><strong>Accessibility</strong>: From laptops to data centres, <a href="https://instructlab.ai/">InstructLab</a> scales with available resources</li>
+  <li><strong>Flexibility</strong>: Multiple training pipelines accommodate different needs and constraints</li>
+  <li><strong>Systematic</strong>: Structured approach to knowledge and skill injection through taxonomy</li>
+  <li><strong>Verifiable</strong>: Comprehensive evaluation suite ensures quality of fine-tuned models</li>
+</ul>
+
+<h3 id="practical-impact">Practical Impact</h3>
+
+<p><a href="https://instructlab.ai/">InstructLab</a> enables organisations to:</p>
+<ul>
+  <li>Create domain-specialised models without massive compute resources</li>
+  <li>Systematically inject new capabilities through structured knowledge representation</li>
+  <li>Validate improvements through quantitative benchmarks</li>
+  <li>Deploy fine-tuned models with minimal operational overhead</li>
+</ul>
+
+<h3 id="limitations-and-considerations">Limitations and Considerations</h3>
+
+<ul>
+  <li><strong>Model Constraints</strong>: Currently supports models up to 7B parameters effectively</li>
+  <li><strong>Resource Timeline</strong>: Typical deployment cycle from setup to production:
+    <ul>
+      <li>Initial setup: a few hours</li>
+      <li>Synthetic Data generation: 15 minutes to 1+ hours depending on computing resources</li>
+      <li>Training: several hours on consumer hardware</li>
+      <li>Evaluation and deployment: a few hours</li>
+    </ul>
+  </li>
+  <li><strong>Maintenance Requirements</strong>:
+    <ul>
+      <li>Regular model evaluations against new benchmarks</li>
+      <li>Periodic retraining with updated taxonomy</li>
+      <li>System updates and dependency management</li>
+      <li>Storage management for checkpoints and datasets</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="rag-vs-fine-tuning">RAG vs Fine-tuning</h3>
+
+<p>It’s important to recognise that fine-tuning isn’t always the optimal solution. For dynamic, frequently changing knowledge bases, Retrieval-Augmented Generation (RAG) often provides a more practical and maintainable solution. Fine-tuning through <a href="https://instructlab.ai/">InstructLab</a> is most valuable for:</p>
+<ul>
+  <li>Stable knowledge domains (e.g., natural sciences, engineering)</li>
+  <li>Consistent skill enhancement needs</li>
+  <li>Cases where inference latency is critical</li>
+</ul>
+
+<p>The system’s architecture strikes a careful balance between computational efficiency and training effectiveness, making it a practical tool for both experimentation and production use. While not eliminating the complexity of LLM fine-tuning entirely, <a href="https://instructlab.ai/">InstructLab</a> significantly reduces the technical barriers to entry in this crucial domain.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Python version compatibility remains a significant consideration in the ML ecosystem. While newer versions (≥3.12) offer improved performance, they often lack compatibility with essential ML frameworks. This constraint informs <a href="https://instructlab.ai/">InstructLab</a>’s current version requirements. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="model-governance" /><category term="production" /><category term="quantisation" /><category term="python" /><category term="mlops" /><category term="best-practices" /><category term="data-science" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: Understanding GGUF Model Quantisation</title><link href="http://0.0.0.0:4000/TIL-llm-quantisation/" rel="alternate" type="text/html" title="💡 TIL: Understanding GGUF Model Quantisation" /><published>2024-12-07T00:00:00+00:00</published><updated>2024-12-07T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-llm-quantisation</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-llm-quantisation/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>When experimenting with larger language models (12B, 30B, 70B etc.), choosing the right quantisation format becomes crucial for striking a good balance i.e. running them on consumer hardware while maintaining reasonably good performance. I wrote this guide after spending time looking up different GGUF quantisation types to optimise model selection for my machine’s constraints. This guide explains quantisation methods and their practical tradeoffs to help the reader select the optimal format for their setup.<br />
+The quantisation formats discussed here are implemented in popular frameworks like <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a>. Q4_K_S is typically the default format due to its good balance of size, speed, and quality, while Q2_K and Q3_K variants are offered for more constrained systems.</p>
+
+<h2 id="what-is-quantisation">What is Quantisation?</h2>
+<p>Quantisation converts model weights from 16-bit floating point (F16) to lower precision formats using fixed-size blocks. Each block contains multiple weights that share scaling parameters. <br />
+Perplexity is the key metric used to measure model quality after quantisation. It indicates how well the model predicts text, the lower the perplexity the better the predictions. For example, a change from 5.91 to 6.78 perplexity represents a noticeable but often acceptable drop in prediction quality. A model with perplexity 6.78 is slightly less certain about its predictions than one with perplexity 5.91.</p>
+
+<h2 id="basic-quantisation-types-and-k-quantisation">Basic Quantisation Types and K-Quantisation</h2>
+<p>K-quantisation is a way to make AI models smaller using two methods to store weights (the model’s numbers):</p>
+
+<ol>
+  <li>Type-0 (simpler): reconstructs weight as <code class="language-plaintext highlighter-rouge">weight = scale × quant</code></li>
+  <li>Type-1 (more precise): reconstructs weight as <code class="language-plaintext highlighter-rouge">weight = scale × quant + minimum</code></li>
+</ol>
+
+<p>The “block minimum” <code class="language-plaintext highlighter-rouge">minimum</code> is the smallest value found in a group of weights. By tracking this minimum, we can represent the other values more precisely relative to it, rather than having to represent their full absolute values.</p>
+
+<p>Each format groups weights into “super-blocks” to save space. Specifically:</p>
+
+<p>Q2_K (2-bit):</p>
+<ul>
+  <li>Uses Type-1 formula</li>
+  <li>Organises weights in groups of 256 (16 blocks × 16 weights)</li>
+  <li>Uses 4 bits to store both scales and minimums</li>
+  <li>Takes exactly 2.5625 bits per weight</li>
+  <li>Result: Shrinks a 13GB model to 2.67GB, but quality drops (perplexity increases from 5.91 to 6.78)</li>
+</ul>
+
+<p>Q3_K (3-bit):</p>
+<ul>
+  <li>Uses Type-0 formula (simpler one)</li>
+  <li>Same organization: 16 blocks × 16 weights</li>
+  <li>Uses 6 bits to store scales</li>
+  <li>Takes exactly 3.4375 bits per weight</li>
+  <li>Better quality than Q2_K but bigger file size</li>
+</ul>
+
+<p>Q4_K (4-bit):</p>
+<ul>
+  <li>Uses Type-1 formula</li>
+  <li>Different organisation: 8 blocks × 32 weights = 256 total</li>
+  <li>Uses 6 bits for both scales and minimums</li>
+  <li>Takes exactly 4.5 bits per weight</li>
+  <li>Much better quality, file size around 3.56GB</li>
+</ul>
+
+<p>Q5_K (5-bit):</p>
+<ul>
+  <li>Uses Type-1 formula</li>
+  <li>Same organisation as Q4_K</li>
+  <li>Also uses 6 bits for scales and minimums</li>
+  <li>Takes exactly 5.5 bits per weight</li>
+  <li>Quality getting very close to original</li>
+</ul>
+
+<p>Q6_K (6-bit):</p>
+<ul>
+  <li>Uses Type-0 formula</li>
+  <li>Back to 16 blocks × 16 weights</li>
+  <li>Uses 8 bits for scales</li>
+  <li>Takes exactly 6.5625 bits per weight</li>
+  <li>Almost perfect quality, file size 5.15GB</li>
+</ul>
+
+<p>The main tradeoff: Fewer bits means smaller files but lower quality. More bits means better quality but larger files. This lets users choose what works best for their needs.<br />
+When compressing numbers in Type-1 quantisation, each block keeps track of its smallest value (the minimum). When reconstructing the weights, this minimum is added back after multiplication. This helps preserve the range of values more accurately than just using scaling alone.</p>
+
+<p>A simple way to think of this concept is:</p>
+<ul>
+  <li>Type-0 just stretches/shrinks values using a scale</li>
+  <li>Type-1 first shifts all numbers by subtracting the minimum (making them smaller), then scales them for storage, and when reconstructing adds the minimum back</li>
+</ul>
+
+<p>This is why Type-1 generally gives better quality results but needs more storage space. It has to keep track of both the scale and minimum for each block.</p>
+
+<h2 id="mixed-precision-strategies">Mixed Precision Strategies</h2>
+<p>K-quantisations use different precision levels for different model components. From <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> documentation, there are three variants:</p>
+
+<ul>
+  <li>S (Small): Uses single quantisation throughout
+Example using Q3_K_S:
+    <blockquote>
+      <p>All model tensors → Q3_K (3-bit)<br />
+Result: 2.75GB size, 6.46 perplexity (7B model)</p>
+    </blockquote>
+  </li>
+  <li>M (Medium): Strategic mixed precision
+Example using Q3_K_M:
+    <blockquote>
+      <p>attention.wv<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, attention.wo<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, feed_forward.w2<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> → Q4_K (4-bit)<br />
+All other tensors → Q3_K (3-bit)<br />
+Result: 3.06GB size, 6.15 perplexity (7B model)</p>
+    </blockquote>
+  </li>
+  <li>L (Large): Higher precision mix
+Example using Q3_K_L:
+    <blockquote>
+      <p>attention.wv<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, attention.wo<sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, feed_forward.w2<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> → Q5_K (5-bit)<br />
+All other tensors → Q3_K (3-bit)<br />
+Result: 3.35GB size, 6.09 perplexity (7B model)</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>These strategies target attention and feed-forward layers with higher precision because they directly impact text processing quality, as demonstrated by the perplexity improvements in benchmarks: Q3_K_S (6.46) → Q3_K_M (6.15) → Q3_K_L (6.09).<br />
+The improvement in perplexity scores demonstrates why mixed precision strategies are effective, though they require more storage space.</p>
+
+<h2 id="performance-comparison-7b-model">Performance Comparison (7B model)</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Format | Size(GB) | Reduction | BPW  | Perplexity | RTX4080  | M2Max   
+F16    | 13.0     | 1.0x      | 16.0 | 5.91       | 60.0ms   | 116ms
+Q2_K   | 2.67     | 4.9x      | 2.56 | 6.78       | 15.5ms   | 56ms
+Q3_K_S | 2.75     | 4.7x      | 3.44 | 6.46       | 18.6ms   | 81ms
+Q4_K_S | 3.56     | 3.7x      | 4.50 | 6.02       | 15.5ms   | 50ms
+Q6_K   | 5.15     | 2.5x      | 6.56 | 5.91       | 18.3ms   | 75ms
+</code></pre></div></div>
+<p>*BPW = Bits Per Weight, Speed in milliseconds per token</p>
+
+<p>Practical Recommendations:</p>
+<ul>
+  <li>Balanced Performance: Q4_K_S</li>
+  <li>Maximum Compression: Q2_K</li>
+  <li>Best Quality: Q6_K (matches F16)</li>
+  <li>Limited RAM: Q2_K or Q3_K</li>
+  <li>GPU Inference: Q4_K (optimal speed/quality)</li>
+</ul>
+
+<p>All data are from recent <a href="https://github.com/ggerganov/llama.cpp/pull/1684">llama.cpp</a> performance benchmarks and <a href="https://github.com/ggerganov/ggml">GGML</a> implementation details.</p>
+
+<h2 id="memory-requirements-for-inference">Memory Requirements for Inference</h2>
+<p>When running quantised models, more RAM is required than the model size alone for inference overhead. Memory requirements depend on several factors:</p>
+<ul>
+  <li>Model architecture and size</li>
+  <li>Batch size for inference</li>
+  <li>Number of layers loaded at once</li>
+  <li>Operating system and framework overhead</li>
+</ul>
+
+<p>For 7B models (verified from benchmarks):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Format | Model Size | Note
+F16    | 13.0GB    | Base format
+Q4_K_S | 3.56GB    | Common choice
+Q3_K_S | 2.75GB    | Minimum size
+Q6_K   | 5.15GB    | Highest quality
+</code></pre></div></div>
+
+<p>For larger models scale the memory requirements proportionally and ensure additional overhead memory is available for inference. Test with smaller models first to gauge the system’s capabilities.<br />
+Actual RAM/VRAM requirements will be higher than the model size. Consider monitoring memory usage during inference to determine exact requirements for a specific setup.<br />
+Here is an example memory usage scenario for a Q4_K_S 7B model:</p>
+<ul>
+  <li>Model size: 3.56GB</li>
+  <li>Inference overhead: ~2GB for standard settings</li>
+  <li>Operating system buffer: ~1GB recommended</li>
+  <li>Total recommended free memory: ~7GB</li>
+</ul>
+
+<p>This explains why a model that’s “3.56GB” might need 6-7GB of free RAM/VRAM to run smoothly. The exact overhead varies based on your settings and system.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Modern quantisation techniques offer multiple ways to run large language models on consumer hardware. Here’s what we need to remember:</p>
+
+<ul>
+  <li>K-quantisation provides the best balance through super-blocks and mixed precision strategies</li>
+  <li>Q4_K_S (4-bit) represents the current sweet spot for most users, offering:
+    <ul>
+      <li>3.7x size reduction</li>
+      <li>Good perplexity (6.02)</li>
+      <li>Excellent inference speed on both GPU and CPU</li>
+    </ul>
+  </li>
+  <li>For more constrained setups, Q2_K/Q3_K variants can run larger models with acceptable quality loss</li>
+  <li>Higher bits (Q5_K, Q6_K) approach F16 quality but require more memory</li>
+  <li>The _S/_M/_L variants let the user fine-tune the quality-size tradeoff by adjusting precision where it matters most</li>
+</ul>
+
+<p>Before downloading a quantised model, check the system’s available RAM and choose a format that leaves enough memory for comfortable operation. For most users with modern GPUs, Q4_K variants will provide the best experience.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>In <a href="https://github.com/ggerganov/llama.cpp/tree/master/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp">llama.cpp</a>, <code class="language-plaintext highlighter-rouge">attention.wv</code> refers to a tensor that holds the weights for the value vectors in the self-attention mechanism of the model. This tensor is crucial for determining how much focus the model places on different parts of the input when generating responses. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><code class="language-plaintext highlighter-rouge">attention.wo</code> refers to the weight matrix used in the output layer of the attention mechanism within a transformer model. It plays a crucial role in transforming the attention output into the final representation that is used for generating predictions. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p><code class="language-plaintext highlighter-rouge">feed_forward.w1</code> projects input to a higher-dimensional space, enabling the capture of complex features. <code class="language-plaintext highlighter-rouge">feed_forward.w2</code> projects transformed input back to the original dimension with a non-linear activation function, whereas <code class="language-plaintext highlighter-rouge">feed_forward.w3</code> applies an additional transformation to enhance the learning of complex patterns. These matrices collectively enable the feed-forward network to transform and learn from the input effectively, contributing to the overall performance of the transformer model. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="energy-reduction" /><category term="performance" /><category term="quantisation" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: LLM Evaluation using Critique Shadowing</title><link href="http://0.0.0.0:4000/TIL-llm-eval-critique-shadowing/" rel="alternate" type="text/html" title="💡 TIL: LLM Evaluation using Critique Shadowing" /><published>2024-12-05T00:00:00+00:00</published><updated>2024-12-05T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-llm-eval-critique-shadowing</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-llm-eval-critique-shadowing/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>As LLMs increasingly drive critical business decisions, ensuring their reliability becomes paramount. Many teams struggle with complex metrics and scoring systems that lead to confusion rather than clarity. <a href="https://hamel.dev/">Hamel Husain</a>’s Critique Shadowing methodology<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> offers a systematic path from drowning in metrics to developing reliable evaluation systems.</p>
+
+<h2 id="the-critique-shadowing-method">The Critique Shadowing Method</h2>
+<p>The key insight behind Critique Shadowing is deceptively simple: start with binary (pass/fail) expert judgements and detailed critiques before building automated evaluation systems. This approach solves two critical challenges: capturing domain expertise and scaling evaluation processes.</p>
+
+<p>This expert-centric approach echoes <a href="https://en.wikipedia.org/wiki/Knowledge_engineering">knowledge engineering</a> practices from the 1970-80s, when AI researchers first recognized the necessity of systematically capturing domain expertise. Just as <a href="https://en.wikipedia.org/wiki/Mycin">MYCIN</a>’s creators worked closely with medical doctors to encode diagnostic knowledge, Critique Shadowing similarly structures the process of extracting expert judgement for LLM evaluation. While the technology has evolved from rule-based systems to large language models, the fundamental challenge of effectively capturing and operationalising expert knowledge remains central.</p>
+
+<h3 id="implementation-process">Implementation Process</h3>
+<p>The methodology follows a structured, iterative process:</p>
+
+<center>
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/Critique%20Framework%20Hamel%20Husain.png" width="80%" height="80%" />
+</center>
+
+<ol>
+  <li>Identify a principal domain expert as the arbiter of quality</li>
+  <li>Create a diverse dataset covering different scenarios and user types</li>
+  <li>Expert conducts binary pass/fail judgements with detailed critiques</li>
+  <li>Address discovered issues and verify fixes</li>
+  <li>Develop LLM-based judges using expert critiques as few-shot examples</li>
+  <li>Analyze error patterns and root causes</li>
+  <li>Create specialized judges for persistent issues</li>
+</ol>
+
+<p>The process is continuous, repeating periodically or when material changes occur. For simpler applications or when manual review is feasible, teams can adapt or streamline these steps while maintaining the core principle of systematic data examination.</p>
+
+<h2 id="beyond-automation">Beyond Automation</h2>
+<p>Husain’s most striking observation is that the process of developing evaluation systems often provides more value than the resulting automated judges. The systematic collection of expert feedback reveals product insights, user needs, and failure modes that might otherwise remain hidden. This understanding drives improvements in the core system, not just its evaluation.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The Critique Shadowing methodology succeeds by prioritizing expert knowledge and systematic data collection over premature automation. For teams building LLM applications, this approach offers a clear path to reliable evaluation systems while simultaneously deepening their understanding of their product and users.<br />
+LLM evaluation is an active area of interest and research both in academia and industry. Here is a short list of resources to look into:</p>
+<ul>
+  <li><a href="https://www.ibm.com/think/topics/llm-evaluation">IBM LLM Evaluation</a></li>
+  <li><a href="https://docs.mistral.ai/guides/evaluation/">Mistral AI - Evaluation</a></li>
+  <li><a href="https://github.com/mistralai/mistral-evals">Mistral Evals</a></li>
+  <li><a href="https://docs.anthropic.com/en/docs/test-and-evaluate/eval-tool">Anthropic - Using the Evaluation Tool</a></li>
+  <li><a href="https://dev.to/guybuildingai/-top-5-open-source-llm-evaluation-frameworks-in-2024-98m">Top 5 Open-Source LLM Evaluation Frameworks in 2024</a></li>
+</ul>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Husain, H. (2024). “Creating a LLM-as-a-Judge That Drives Business Results” https://hamel.dev/blog/posts/llm-judge/ <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="til" /><category term="llm" /><category term="ai" /><category term="machine-learning" /><category term="mlops" /><category term="best-practices" /><category term="production" /><category term="model-governance" /><category term="evaluation" /><category term="observability" /><category term="monitoring" /><category term="quality-assurance" /><category term="iterative-refinement" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">✍ A Path to Maintainable AI Systems using Norman’s Design Principles</title><link href="http://0.0.0.0:4000/design-principles-ds-ai/" rel="alternate" type="text/html" title="✍ A Path to Maintainable AI Systems using Norman’s Design Principles" /><published>2024-12-03T00:00:00+00:00</published><updated>2024-12-03T00:00:00+00:00</updated><id>http://0.0.0.0:4000/design-principles-ds-ai</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles-ds-ai/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Don Norman’s principles of good design, outlined in <a href="https://archive.org/details/thedesignofeverydaythingsbydonnorman">The Design of Everyday Things</a>, are particularly relevant to Data Science and AI Engineering, where systems often suffer from unnecessary complexity. This article presents a minimalist approach to implementing these principles using a carefully selected set of tools that maximise impact while reducing operational overhead. Norman’s insights about visibility, feedback, constraints, and mappings translate powerfully to AI system design, where abstract interfaces and complex workflows can easily become overwhelming. Just as Norman observed that poorly designed physical objects lead to user frustration and errors, poorly architected AI systems can result in maintenance nightmares, hidden failure modes, and costly debugging cycles. By applying his principles - making system states visible, providing clear feedback, implementing appropriate constraints, and creating natural mappings between components, we can build AI systems that are not only more intuitive to use but also easier to maintain, debug, and evolve over time.</p>
+
+<h2 id="design-principles-implementation">Design Principles Implementation</h2>
+<h3 id="1-visibility">1. Visibility</h3>
+<p>Implement comprehensive system observability using <a href="https://mlflow.org/">MLflow</a> as your central platform:</p>
+
+<ul>
+  <li>Track experiments, parameters, and metrics</li>
+  <li>Version models and artefacts</li>
+  <li>Log production predictions and outcomes</li>
+  <li>Monitor model performance metrics</li>
+</ul>
+
+<p>For system-level metrics, use <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> to:</p>
+<ul>
+  <li>Track resource utilisation (CPU, memory, latency)</li>
+  <li>Monitor prediction throughput</li>
+  <li>Create dashboards for key performance indicators</li>
+</ul>
+
+<p>Implement adaptive sampling for high-volume systems:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">should_log</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="n">request_id</span><span class="p">)</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">sampling_rate</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2-feedback">2. Feedback</h3>
+<p>Use <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> for real-time monitoring and alerting:</p>
+
+<ul>
+  <li>Set up alerts for model performance degradation</li>
+  <li>Monitor data distribution shifts</li>
+  <li>Track system health metrics</li>
+  <li>Configure tiered alerting based on severity</li>
+</ul>
+
+<p>Example metric collection:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">prometheus_client</span> <span class="kn">import</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">Histogram</span>
+
+<span class="n">PREDICTIONS</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="s">'model_predictions_total'</span><span class="p">,</span> <span class="s">'Total predictions made'</span><span class="p">)</span>
+<span class="n">LATENCY</span> <span class="o">=</span> <span class="n">Histogram</span><span class="p">(</span><span class="s">'prediction_latency_seconds'</span><span class="p">,</span> <span class="s">'Time spent processing prediction'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">LATENCY</span><span class="p">.</span><span class="n">time</span><span class="p">():</span>
+        <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+        <span class="n">PREDICTIONS</span><span class="p">.</span><span class="n">inc</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">prediction</span>
+</code></pre></div></div>
+
+<h3 id="3-constraints">3. Constraints</h3>
+<p>Implement data and model guardrails using <a href="https://greatexpectations.io/">Great Expectations</a>:</p>
+
+<ul>
+  <li>Define data quality expectations</li>
+  <li>Set distribution bounds for features</li>
+  <li>Monitor for data drift</li>
+  <li>Generate validation reports</li>
+</ul>
+
+<p>Example constraint implementation:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">great_expectations.dataset</span> <span class="kn">import</span> <span class="n">Dataset</span>
+
+<span class="k">def</span> <span class="nf">validate_features</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">dataset</span><span class="p">.</span><span class="n">expect_column_values_to_be_between</span><span class="p">(</span><span class="s">"age"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+    <span class="n">dataset</span><span class="p">.</span><span class="n">expect_column_values_to_not_be_null</span><span class="p">(</span><span class="s">"critical_feature"</span><span class="p">)</span>
+    <span class="n">validation_result</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="n">validate</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">validation_result</span><span class="p">.</span><span class="n">success</span>
+</code></pre></div></div>
+
+<h3 id="4-mappings">4. Mappings</h3>
+<p>Use <a href="https://mlflow.org/">MLflow</a> to maintain clear relationships between:</p>
+
+<ul>
+  <li>Experiments and business objectives</li>
+  <li>Models and their training data</li>
+  <li>Predictions and outcomes</li>
+  <li>Performance metrics and business KPIs</li>
+</ul>
+
+<p>Example mapping structure:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="n">mlflow</span><span class="p">.</span><span class="n">start_run</span><span class="p">(</span><span class="n">run_name</span><span class="o">=</span><span class="s">"production_model_v1"</span><span class="p">):</span>
+    <span class="n">mlflow</span><span class="p">.</span><span class="n">log_param</span><span class="p">(</span><span class="s">"business_objective"</span><span class="p">,</span> <span class="s">"customer_churn"</span><span class="p">)</span>
+    <span class="n">mlflow</span><span class="p">.</span><span class="n">log_param</span><span class="p">(</span><span class="s">"data_version"</span><span class="p">,</span> <span class="n">data_hash</span><span class="p">)</span>
+    <span class="n">mlflow</span><span class="p">.</span><span class="n">log_metric</span><span class="p">(</span><span class="s">"business_impact"</span><span class="p">,</span> <span class="n">revenue_improvement</span><span class="p">)</span>
+    <span class="n">mlflow</span><span class="p">.</span><span class="n">log_artifact</span><span class="p">(</span><span class="s">"feature_importance.json"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="5-error-prevention-and-recovery">5. Error Prevention and Recovery</h3>
+<p>Integrate safeguards using your core toolset:</p>
+
+<p><a href="https://mlflow.org/">MLflow</a>:</p>
+<ul>
+  <li>Version control for models and artefacts</li>
+  <li>Rollback capabilities</li>
+  <li>Experiment tracking for reproducibility</li>
+</ul>
+
+<p><a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>:</p>
+<ul>
+  <li>Early warning system for issues</li>
+  <li>Performance degradation detection</li>
+  <li>Resource exhaustion prevention</li>
+</ul>
+
+<p><a href="https://greatexpectations.io/">Great Expectations</a>:</p>
+<ul>
+  <li>Data quality validation</li>
+  <li>Schema enforcement</li>
+  <li>Distribution monitoring</li>
+</ul>
+
+<p>Example error prevention:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">safe_predict</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">validate_features</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">fallback_prediction</span><span class="p">()</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">LATENCY</span><span class="p">.</span><span class="n">time</span><span class="p">():</span>
+            <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+            <span class="n">PREDICTIONS</span><span class="p">.</span><span class="n">inc</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">prediction</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">ERROR_COUNTER</span><span class="p">.</span><span class="n">inc</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">fallback_prediction</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="implementation-strategy">Implementation Strategy</h2>
+<ol>
+  <li>Start with <a href="https://mlflow.org/">MLflow</a>
+    <ul>
+      <li>Set up experiment tracking</li>
+      <li>Implement model versioning</li>
+      <li>Configure basic logging</li>
+    </ul>
+  </li>
+  <li>Add <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>
+    <ul>
+      <li>Deploy basic monitoring</li>
+      <li>Set up key alerts</li>
+      <li>Create essential dashboards</li>
+    </ul>
+  </li>
+  <li>Integrate <a href="https://greatexpectations.io/">Great Expectations</a>
+    <ul>
+      <li>Define core data quality rules</li>
+      <li>Implement validation pipelines</li>
+      <li>Monitor data distributions</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>By focusing on a minimal set of powerful tools (<a href="https://mlflow.org/">MLflow</a>, <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>, and <a href="https://greatexpectations.io/">Great Expectations</a>), you can implement Norman’s design principles effectively while maintaining system simplicity. This approach provides:</p>
+
+<ul>
+  <li>Comprehensive visibility through unified logging and monitoring</li>
+  <li>Immediate feedback via real-time alerts</li>
+  <li>Strong constraints through data validation</li>
+  <li>Clear mappings between components</li>
+  <li>Robust error prevention and recovery</li>
+</ul>
+
+<p>The key is to fully utilise these core tools rather than adding complexity with additional solutions. This creates maintainable, observable, and reliable AI systems that can scale with your needs.</p>]]></content><author><name></name></author><category term="ai" /><category term="data-science" /><category term="design-principles" /><category term="code-quality" /><category term="mlops" /><category term="monitoring" /><category term="observability" /><category term="production" /><category term="model-governance" /><category term="minimal" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🐼 Pandas or 🐻‍❄️ Polars?</title><link href="http://0.0.0.0:4000/pandas-polars/" rel="alternate" type="text/html" title="🐼 Pandas or 🐻‍❄️ Polars?" /><published>2024-12-02T00:00:00+00:00</published><updated>2024-12-02T00:00:00+00:00</updated><id>http://0.0.0.0:4000/pandas-polars</id><content type="html" xml:base="http://0.0.0.0:4000/pandas-polars/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>The world of Python data processing has long revolved around the well established <a href="https://pandas.pydata.org/">Pandas</a> library, but in recent years, a new contender has emerged in the form of <a href="https://pola.rs/">Polars</a>. This post aims to provide a comparison of these two powerful data processing tools, that empowers the reader to make an informed choice on a case-by-case basis.</p>
+
+<h2 id="architecture-and-design-comparison">Architecture and Design Comparison</h2>
+<p>At the core, Pandas and Polars differ in their underlying implementation and design philosophies.</p>
+
+<h3 id="implementation-and-performance">Implementation and Performance</h3>
+<p>The Pandas library is written in Python/Cython, with a focus on single-threaded operations. In contrast, Polars is built upon the Rust programming language, leveraging its performance and concurrency capabilities to enable parallel processing by default.<br />
+This distinction in implementation has significant implications for memory management and query optimization. Pandas typically works with multiple copies of data, while Polars utilizes the Arrow data format, which allows for more efficient memory usage. Additionally, Polars offers automatic query optimization, whereas Pandas users must rely on a more sequential, manual approach to optimizing their data processing pipelines.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Pandas</th>
+      <th>Polars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Implementation</td>
+      <td>Python/Cython</td>
+      <td>Rust</td>
+    </tr>
+    <tr>
+      <td>Processing</td>
+      <td>Single-threaded</td>
+      <td>Parallel by default</td>
+    </tr>
+    <tr>
+      <td>Memory Management</td>
+      <td>Multiple copies</td>
+      <td>Arrow format</td>
+    </tr>
+    <tr>
+      <td>Query Optimization</td>
+      <td>Sequential</td>
+      <td>Automatic</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="api-and-language-support">API and Language Support</h3>
+<p>The API and language support differences between Pandas and Polars are quite notable. Pandas -being a Python-only library- offers a mix of method chaining and attribute access approaches. In contrast, Polars takes a more expansive approach, providing implementations in Python, Node.js, and the Rust programming language itself.<br />
+This language versatility of Polars enables seamless JavaScript and TypeScript integration, allowing data scientists and developers to leverage the same performance benefits regardless of their preferred language. Additionally, Polars maintains a consistent method chaining syntax across these different language environments, simplifying the learning curve for users who may work with the library in multiple contexts.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Pandas</th>
+      <th>Polars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Language Support</td>
+      <td>Python-only</td>
+      <td>Python, Node.js, Rust</td>
+    </tr>
+    <tr>
+      <td>API Style</td>
+      <td>Mixed method chaining and attribute access</td>
+      <td>Consistent method chaining</td>
+    </tr>
+    <tr>
+      <td>Language Integration</td>
+      <td>N/A</td>
+      <td>JavaScript/TypeScript</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="use-cases-and-trade-offs">Use Cases and Trade-offs</h2>
+<p>While both Pandas and Polars excel in the realm of data processing, each library has distinct strengths and weaknesses that make them better suited for different use cases and scenarios.</p>
+
+<h3 id="when-to-choose-pandas">When to Choose Pandas</h3>
+<p>Pandas shines when it comes to interactive data exploration and working with smaller datasets, typically under 1GB in size. The library’s deep integration with the broader scientific computing ecosystem in Python, along with its intuitive syntax and extensive documentation, make it an excellent choice for rapid prototyping, educational contexts, and projects that require seamless compatibility with the Python-centric data science toolchain.</p>
+
+<h3 id="when-to-choose-polars">When to Choose Polars</h3>
+<p>On the other hand, Polars emerges as the preferred choice for large-scale data processing, particularly for datasets exceeding 1GB. The library’s Rust-based implementation and parallel processing capabilities make it a more suitable option for production environments with demanding performance requirements. Polars also excels in memory-constrained systems, thanks to its efficient use of the Arrow data format, and it is an attractive choice for cross-language development teams due to its implementations in Python, Node.js, and Rust.<br />
+Furthermore, Polars demonstrates strengths in handling complex data transformations and time series processing at scale, areas where its optimized query engine and parallel processing features can truly shine.</p>
+
+<p>To summarize the key differences:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Consideration</th>
+      <th>Pandas</th>
+      <th>Polars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dataset Size</td>
+      <td>Small to medium (&lt;1GB)</td>
+      <td>Scales to larger datasets</td>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td>Suitable for interactive exploration</td>
+      <td>Excels at large-scale processing</td>
+    </tr>
+    <tr>
+      <td>Memory Efficiency</td>
+      <td>Works with multiple data copies</td>
+      <td>Utilizes Arrow format for efficiency</td>
+    </tr>
+    <tr>
+      <td>Query Optimization</td>
+      <td>Sequential, manual approach</td>
+      <td>Automatic optimization</td>
+    </tr>
+    <tr>
+      <td>Language Support</td>
+      <td>Python-only</td>
+      <td>Python, Node.js, Rust</td>
+    </tr>
+    <tr>
+      <td>Ecosystem Integration</td>
+      <td>Strong in Python scientific computing</td>
+      <td>Limited cross-language integration</td>
+    </tr>
+    <tr>
+      <td>Learning Resources</td>
+      <td>Extensive documentation and community support</td>
+      <td>Younger ecosystem, less comprehensive resources</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Ultimately, the choice between Pandas and Polars should be guided by the specific requirements of your project, such as data volume, performance needs, language preferences, and ecosystem integration requirements. Both libraries offer powerful data processing capabilities, and selecting the right one can significantly impact the success and efficiency of your data-driven initiatives.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>After carefully evaluating the key differences between Pandas and Polars, the choice between the two data processing libraries ultimately comes down to the specific requirements of your project and use case.<br />
+For projects focused on interactive data exploration and working with smaller datasets (under 1GB), Pandas remains the go-to choice. Its deep integration with the broader Python scientific computing ecosystem, extensive documentation, and large community make it a reliable and familiar option for many data scientists and developers.<br />
+However, for large-scale data processing, production environments, and cross-language teams, Polars presents a compelling alternative. Its performance advantages, memory efficiency, and multi-language support (Python, Node.js, Rust) make it an increasingly attractive choice for modern data-intensive applications.<br />
+When deciding between Pandas and Polars, consider factors such as dataset size, performance requirements, memory constraints, language preferences, and the level of ecosystem integration needed. Pandas may be the better fit for projects focused on rapid prototyping and educational use, while Polars can shine in mission-critical, large-scale data processing tasks.<br />
+Ultimately, both Pandas and Polars are powerful data processing tools, and the choice between them should be guided by the specific needs and constraints of your project. As the data processing landscape continues to evolve, it’s valuable to stay informed about the trade-offs and emerging alternatives to ensure you make the most informed decision for your team and organization.</p>]]></content><author><name></name></author><category term="python" /><category term="pandas" /><category term="polars" /><category term="data-processing" /><category term="code-quality" /><category term="toolchain" /><category term="data-science" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">📊 Ten Ways to Model Data</title><link href="http://0.0.0.0:4000/modelling-mindsets/" rel="alternate" type="text/html" title="📊 Ten Ways to Model Data" /><published>2024-11-27T00:00:00+00:00</published><updated>2024-11-27T00:00:00+00:00</updated><id>http://0.0.0.0:4000/modelling-mindsets</id><content type="html" xml:base="http://0.0.0.0:4000/modelling-mindsets/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>As a practitioner looking to work effectively with real-world data and generate meaningful insights, I face a crucial decision: which modelling approaches should I invest my time and energy in learning? After discovering Christoph Molnar’s <a href="https://christophmolnar.com/books/modeling-mindsets/">Modeling Mindsets</a>, I realised this isn’t about picking the “best” approach. It’s about becoming what he calls a “T-shaped modeller”.<br />
+The concept is elegantly simple: rather than trying to master every possible approach (impossible) or limiting myself to just one (ineffective), I should aim to develop:</p>
+<ul>
+  <li>Deep expertise in one or two mindsets that align with my goals and problems</li>
+  <li>Working knowledge of other approaches to recognise when my primary tools aren’t optimal</li>
+</ul>
+
+<p>This systematic exploration serves two purposes:</p>
+<ol>
+  <li>To understand the landscape: What are the main modelling mindsets available today? What are their core premises, strengths, and limitations?</li>
+  <li>To make an informed choice: Which mindset(s) should I focus on mastering, given my goals and constraints?</li>
+</ol>
+
+<p>Each mindset represents a different way of approaching problems through data. From the probability-focused world of statistical modelling to the interactive realm of reinforcement learning, from the causality-oriented approach to the pattern-finding nature of unsupervised learning, each offers unique tools and perspectives.<br />
+By examining these mindsets systematically, I aim to make an informed decision about where to focus my learning efforts while maintaining enough breadth to recognize when I should switch approaches. This isn’t just about theoretical understanding, it’s about practical effectiveness in solving real-world problems.</p>
+
+<p>Let’s explore each mindset in turn, focusing on their fundamental premises, key strengths, and limitations to guide this decision.</p>
+
+<h2 id="statistical-modelling-the-foundation-of-data-driven-inference">Statistical Modelling: The Foundation of Data-Driven Inference</h2>
+<p><em>This mindset sees the world through probability distributions. At its core, it’s about modelling how data is generated and making inferences under uncertainty.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Everything has a distribution, from dice rolls to customer behaviours</li>
+  <li>Models encode assumptions about how data is generated</li>
+  <li>Models are evaluated by both checking if their assumptions make sense and measuring how well they match the data</li>
+  <li>Uses same data for fitting and evaluation, unlike machine learning approaches</li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>Provides rigourous mathematical framework for handling uncertainty</li>
+  <li>Strong theoretical foundation spanning decades of research</li>
+  <li>Forces explicit consideration of data-generating processes</li>
+  <li>Versatile for decisions, predictions, and understanding</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Manual and often tedious modelling process</li>
+  <li>Struggles with complex data types like images and text</li>
+  <li>Good model fit doesn’t guarantee good predictions</li>
+  <li>Less automatable than modern machine learning approaches</li>
+</ol>
+
+<p>This mindset serves as the foundation for three important sub-approaches: Frequentism, Bayesianism, and Likelihoodism, each with its own interpretation of probability and evidence. For someone starting in data science, understanding statistical modelling provides crucial groundwork for understanding both traditional statistics and modern machine learning approaches.</p>
+
+<h2 id="frequentism-making-decisions-through-repeated-experiments">Frequentism: Making Decisions Through Repeated Experiments</h2>
+<p><em>Frequentism views probability as long-run frequency and assumes that parameters in the world are fixed but unknown. It’s the dominant approach in many scientific fields, particularly in medicine and psychology.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Interprets probability as frequency in infinite repetitions</li>
+  <li>Makes decisions through hypothesis tests and confidence intervals</li>
+  <li>Relies on “imagined experiments” to draw conclusions</li>
+  <li>Focuses on estimating fixed, true parameters</li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>Enables clear, binary decisions</li>
+  <li>Computationally fast compared to other approaches</li>
+  <li>No need for prior information</li>
+  <li>Widely accepted in scientific research</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Often oversimplifies complex questions into yes/no decisions</li>
+  <li>Vulnerable to p-hacking (searching for significant results)</li>
+  <li>Interpretation can be counterintuitive, especially for confidence intervals</li>
+  <li>Results depend on the experimental design, not just the data</li>
+</ol>
+
+<p>For practitioners, Frequentism offers a well-established framework with clear decision rules and strong scientific acceptance. However, its limitations in handling uncertainty and tendency toward oversimplification have led to growing interest in alternative approaches like Bayesian inference.</p>
+
+<h2 id="bayesianism-learning-through-updated-beliefs">Bayesianism: Learning Through Updated Beliefs</h2>
+<p><em>Bayesianism stands out by treating parameters themselves as random variables with distributions, fundamentally different from Frequentism’s fixed-parameter view. It focuses on updating beliefs about parameters as new data arrives.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Requires prior distributions before seeing data</li>
+  <li>Updates beliefs through Bayes’ theorem</li>
+  <li>Produces complete posterior distributions, not just point estimates</li>
+  <li>Naturally propagates uncertainty through all calculations<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>Can incorporate prior knowledge and expert opinions</li>
+  <li>Provides complete probability distributions for parameters</li>
+  <li>More intuitive interpretation of uncertainty</li>
+  <li>Cleanly separates inference (getting posteriors) from decisions (using them)</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Choosing priors can be difficult and controversial</li>
+  <li>Computationally intensive, especially for complex models</li>
+  <li>Mathematically more demanding than frequentist approaches</li>
+  <li>Can seem like overkill for simple decisions</li>
+</ol>
+
+<p>Bayesianism offers a more complete and intuitive framework for handling uncertainty, but requires more computational resources and mathematical sophistication. It’s particularly valuable when prior knowledge is important or when understanding full uncertainty is crucial.</p>
+
+<h2 id="likelihoodism-pure-evidence-through-likelihood">Likelihoodism: Pure Evidence Through Likelihood</h2>
+<p><em>Likelihoodism attempts to reform statistical inference by focusing solely on likelihood as evidence, avoiding both Frequentism’s imagined experiments and Bayesianism’s subjective priors.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Uses likelihood ratios to compare hypotheses</li>
+  <li>Adheres strictly to the likelihood principle</li>
+  <li>Rejects both prior probabilities and sampling distributions</li>
+  <li>Compares models based on their relative evidence</li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>More coherent than Frequentism’s mixed toolkit</li>
+  <li>Avoids subjective elements of Bayesianism</li>
+  <li>Ideas work well within other statistical mindsets</li>
+  <li>Adheres to likelihood principle (evidence depends only on observed data)</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Cannot make absolute statements, only relative comparisons</li>
+  <li>No clear mechanism for making final decisions</li>
+  <li>Lacks tools for expressing beliefs or uncertainty</li>
+  <li>Less practical than other statistical approaches</li>
+</ol>
+
+<p>Likelihoodism offers interesting theoretical insights but may be less immediately useful than Frequentist or Bayesian approaches. It’s more valuable for understanding the foundations of statistical inference than for day-to-day data analysis.</p>
+
+<h2 id="causal-inference-from-association-to-causation">Causal Inference: From Association to Causation</h2>
+<p><em>Causal inference moves beyond correlation to understand what actually causes observed effects, providing a framework for analysing interventions and their impacts.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Uses Directed Acyclic Graphs (DAGs) to visualize relationships</li>
+  <li>Distinguishes between association and causation</li>
+  <li>Requires explicit encoding of causal assumptions</li>
+  <li>Can work with both statistical models and machine learning</li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>Addresses fundamental questions about cause and effect</li>
+  <li>Makes assumptions explicit through DAGs</li>
+  <li>Models tend to be more robust than pure association-based approaches</li>
+  <li>Provides clear framework for analysing interventions</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Requires identifying all relevant confounders</li>
+  <li>Cannot verify all causal assumptions from data alone</li>
+  <li>Multiple competing frameworks can confuse newcomers</li>
+  <li>May sacrifice predictive performance for causal understanding</li>
+</ol>
+
+<p>For practitioners, causal inference is essential when decisions about interventions are needed, though it requires careful consideration of assumptions and domain knowledge. It’s particularly valuable in fields like medicine, policy-making, and business strategy where understanding cause-effect relationships is crucial.</p>
+
+<h2 id="machine-learning-algorithms-learning-from-data">Machine Learning: Algorithms Learning from Data</h2>
+<p><em>Machine learning approaches problems by having computers learn algorithms from data, focusing on task performance rather than theoretical underpinning.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Computer-first approach to learning from data</li>
+  <li>External evaluation based on task performance</li>
+  <li>Less constrained by statistical assumptions</li>
+  <li>Includes supervised, unsupervised, reinforcement, and deep learning</li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>Task-oriented and pragmatic approach</li>
+  <li>Highly automatable</li>
+  <li>Well-suited for building digital products</li>
+  <li>Strong industry adoption and career opportunities</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Less principled than statistical approaches</li>
+  <li>Many competing approaches can be overwhelming</li>
+  <li>Models often prioritize performance over interpretability</li>
+  <li>Usually requires substantial data and computation</li>
+</ol>
+
+<p>For practitioners, machine learning offers powerful tools for automation and prediction, particularly valuable in industry settings. It’s especially useful when theoretical understanding is less important than practical performance.</p>
+
+<h3 id="supervised-learning-the-art-of-prediction">Supervised Learning: The Art of Prediction</h3>
+<p><em>Supervised learning frames everything as a prediction problem, using labelled data to learn mappings from inputs to outputs.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Learning is optimization and search in hypothesis space</li>
+  <li>Models evaluated on unseen data, not training data</li>
+  <li>Focuses on generalizing to new cases</li>
+  <li>Highly automatable and competition-friendly</li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>Clear evaluation metrics</li>
+  <li>Highly automatable</li>
+  <li>Strong performance on prediction tasks</li>
+  <li>Well-defined optimization objectives</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Requires labelled data</li>
+  <li>Models often black-box (uninterpretable)</li>
+  <li>Not hypothesis-driven</li>
+  <li>May miss causal relationships</li>
+  <li>Can fail in unexpected ways when patterns change</li>
+</ol>
+
+<p>For practitioners, supervised learning excels in prediction tasks where good labelled data exists and interpretability isn’t crucial. It’s particularly valuable in industry settings for automation and decision support.</p>
+
+<h3 id="unsupervised-learning-discovering-hidden-patterns">Unsupervised Learning: Discovering Hidden Patterns</h3>
+<p><em>This mindset focuses on finding inherent structures in data without labelled outcomes, making it ideal for exploratory analysis and pattern discovery.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Discovers patterns in data distributions</li>
+  <li>Includes clustering, dimensionality reduction, anomaly detection</li>
+  <li>No ground truth for validation</li>
+  <li>More open-ended than supervised learning</li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>Finds patterns other approaches might miss</li>
+  <li>Excellent for initial data exploration</li>
+  <li>Flexible for undefined problems</li>
+  <li>Can reveal natural groupings in data</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Hard to validate results objectively</li>
+  <li>Feature weighting is often arbitrary</li>
+  <li>Suffers from curse of dimensionality<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></li>
+  <li>No guarantee of finding meaningful patterns</li>
+</ol>
+
+<p>For practitioners, unsupervised learning is valuable for initial data exploration and when labelled data isn’t available. It’s particularly useful in customer segmentation, anomaly detection, and dimension reduction.</p>
+
+<h3 id="reinforcement-learning-learning-through-interaction">Reinforcement Learning: Learning Through Interaction</h3>
+<p><em>This mindset models an agent interacting with an environment, making decisions and learning from rewards.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Agent learns by taking actions and receiving rewards</li>
+  <li>Handles delayed and sparse rewards</li>
+  <li>Balances exploration and exploitation</li>
+  <li>Creates its own training data through interaction</li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>Models dynamic real-world interactions</li>
+  <li>Excellent for sequential decision-making</li>
+  <li>Can discover novel strategies</li>
+  <li>Learns through direct experience</li>
+  <li>Combines well with deep learning</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Not all problems fit agent-environment framework</li>
+  <li>Often unstable or difficult to train</li>
+  <li>May perform poorly in real-world conditions</li>
+  <li>Requires careful reward design</li>
+  <li>Complex implementation choices</li>
+</ol>
+
+<p>For practitioners, reinforcement learning is valuable for problems involving sequential decisions or control, particularly in robotics, game playing, and resource management.</p>
+
+<h3 id="deep-learning-end-to-end-neural-networks">Deep Learning: End-to-End Neural Networks</h3>
+<p><em>This mindset approaches problems through deep neural networks, letting the model learn both features and relationships.</em></p>
+
+<p>Key Aspects:</p>
+<ul>
+  <li>Models tasks end-to-end through neural networks</li>
+  <li>Learns hierarchical representations automatically</li>
+  <li>Highly modular architecture design</li>
+  <li>Benefits from transfer learning and pre-trained models</li>
+</ul>
+
+<p>Primary Strengths:</p>
+<ol>
+  <li>Excels at complex data (images, text, speech)</li>
+  <li>Learns useful feature representations</li>
+  <li>Highly modular and customizable</li>
+  <li>Strong tooling and community support</li>
+  <li>Can handle multiple inputs/outputs seamlessly</li>
+</ol>
+
+<p>Notable Limitations:</p>
+<ol>
+  <li>Underperforms on tabular data versus tree methods</li>
+  <li>Requires large amounts of data</li>
+  <li>Computationally intensive</li>
+  <li>Hard to train and tune effectively</li>
+  <li>Results can be difficult to interpret</li>
+</ol>
+
+<p>For practitioners, deep learning is essential for complex data types but may be overkill for simpler problems. Most valuable in computer vision, natural language processing, and other complex pattern recognition tasks.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+<p><strong><em>aka Choosing Your Modelling Path</em></strong></p>
+
+<p>For developing T-shaped expertise in modelling, the practitioner’s choice should align with their primary domain while maintaining broader awareness. Here’s how to approach this decision:</p>
+
+<ul>
+  <li>
+    <p><em>Scientific Research</em> demands Statistical Modelling for its rigorous uncertainty quantification and established peer review frameworks.</p>
+  </li>
+  <li>
+    <p><em>Business Predictions</em> benefit most from Supervised Learning, optimising prediction accuracy while enabling automation and scalability.</p>
+  </li>
+  <li>
+    <p><em>Complex Data</em> (images/text) requires Deep Learning to handle unstructured data and learn hierarchical features effectively.</p>
+  </li>
+  <li>
+    <p><em>Interventions/Policies</em> need Causal Inference to distinguish correlation from causation and understand intervention effects.</p>
+  </li>
+  <li>
+    <p><em>Control Systems</em> thrive with Reinforcement Learning for sequential decisions and environment interaction.</p>
+  </li>
+</ul>
+
+<p>For practical applications, certain combinations prove particularly effective:</p>
+
+<ul>
+  <li>
+    <p><em>Industry/Business</em> combines Supervised Learning with Unsupervised Learning, enabling accurate predictions while discovering valuable patterns in customer data.</p>
+  </li>
+  <li>
+    <p><em>Research</em> pairs Statistical Modelling with Machine Learning, balancing academic rigour with modern capabilities.</p>
+  </li>
+  <li>
+    <p><em>Product Development</em> merges Deep Learning with Supervised Learning for end-to-end features with clear metrics.</p>
+  </li>
+  <li>
+    <p><em>Medical Diagnostics</em> unites Supervised Learning with Statistical Modelling, crucial for evidence-based decisions with proper uncertainty quantification.</p>
+  </li>
+</ul>
+
+<p>The choice should be based on the practitioner’s domain requirements, computational resources, interpretability needs, and available time for mastery. <em>Remember:</em> Mastery of one mindset with broad awareness surpasses superficial knowledge of many.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Because Bayesian models treat everything as probability distributions (rather than fixed values), any predictions or conclusions automatically include their associated uncertainty. For example, if you predict someone’s future income using multiple uncertain factors, the final prediction comes as a range of possibilities with their probabilities, rather than just a single number. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Here is a <a href="https://bsky.app/profile/chrisalbon.com/post/3lbendflq2w2n">nice digital flashcard</a> by Chris Albon, on the concept of <em>curse of dimensionality</em> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="modelling-mindsets" /><category term="data-science" /><category term="ai" /><category term="data-modeling" /><category term="neural-network" /><category term="best-practices" /><category term="statistics" /><category term="machine-learning" /><category term="decision-making" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: Pydantic - Python’s Data Validation Guard</title><link href="http://0.0.0.0:4000/TIL-pydantic/" rel="alternate" type="text/html" title="💡 TIL: Pydantic - Python’s Data Validation Guard" /><published>2024-11-26T00:00:00+00:00</published><updated>2024-11-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-pydantic</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-pydantic/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Today I started using <a href="https://docs.pydantic.dev/latest/">Pydantic</a>, a Python library that handles data validation through Python type annotations. Pydantic brings runtime type checking and data validation that catches errors before they cause mysterious bugs in an application. It uses type hints to validate data at runtime, automatically converting and validating data types, preventing bugs, and reducing boilerplate code. It’s essential for robust API development, configuration management, and data processing pipelines.</p>
+
+<h2 id="understanding-pydantic-and-its-value">Understanding Pydantic and Its Value</h2>
+<p>Pydantic leverages Python’s type hints to validate data structures. It converts your type hints from mere documentation into active runtime checks, ensuring data consistency throughout your application. Here are Pydantic’s key features:</p>
+
+<h3 id="type-enforcement">Type Enforcement</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="c1"># This raises a ValidationError
+</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"John"</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="s">"not_a_number"</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">"john@example.com"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="automatic-type-coercion">Automatic Type Coercion</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Order</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">quantity</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="c1"># Pydantic automatically converts valid strings to numbers
+</span><span class="n">order</span> <span class="o">=</span> <span class="n">Order</span><span class="p">(</span><span class="n">quantity</span><span class="o">=</span><span class="s">"3"</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="s">"9.99"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">quantity</span><span class="p">)</span>  <span class="c1"># 3 (int)
+</span><span class="k">print</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">price</span><span class="p">)</span>    <span class="c1"># 9.99 (float)
+</span></code></pre></div></div>
+
+<h3 id="real-world-benefits">Real-World Benefits</h3>
+<ul>
+  <li><strong>API Development</strong>: Validates incoming JSON data automatically</li>
+  <li><strong>Configuration Management</strong>: Ensures config files meet your specifications</li>
+  <li><strong>Database Operations</strong>: Validates data before insertion</li>
+  <li><strong>Data Parsing</strong>: Converts between JSON, dictionaries, and model instances seamlessly</li>
+</ul>
+
+<h3 id="why-it-matters">Why It Matters</h3>
+<ol>
+  <li><strong>Error Prevention</strong>: Catches data issues at system boundaries</li>
+  <li><strong>Clean Code</strong>: Reduces validation boilerplate</li>
+  <li><strong>Self-Documenting</strong>: Type hints serve as both validation rules and documentation</li>
+  <li><strong>Performance</strong>: Compiled validation code runs efficiently</li>
+</ol>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>Pydantic transforms Python’s type hints from passive documentation into active data validators, significantly reducing runtime errors and improving code reliability.</p>]]></content><author><name></name></author><category term="til" /><category term="data-validation" /><category term="python" /><category term="type-checking" /><category term="data-modeling" /><category term="code-quality" /><category term="pydantic" /><category term="error-handling" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🏺 Historical Evolution of AI</title><link href="http://0.0.0.0:4000/ai-evolution/" rel="alternate" type="text/html" title="🏺 Historical Evolution of AI" /><published>2024-11-23T00:00:00+00:00</published><updated>2024-11-23T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ai-evolution</id><content type="html" xml:base="http://0.0.0.0:4000/ai-evolution/"><![CDATA[<!--more-->
+
+<h1 id="ais-historical-evolution">AI’s Historical Evolution</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>The field of Artificial Intelligence has undergone several paradigm shifts since its inception, each representing a distinct approach to creating intelligent systems. Drawing from Pedro Domingos’ framework in <a href="https://en.wikipedia.org/wiki/The_Master_Algorithm">The Master Algorithm</a> we can trace how different schools of thought have shaped our understanding and implementation of AI technologies.</p>
+
+<h2 id="historical-evolution">Historical Evolution</h2>
+<h3 id="early-foundations-symbolic-ai-and-expert-systems-1950s-1970s">Early Foundations: Symbolic AI and Expert Systems (1950s-1970s)</h3>
+<p>The pioneers of AI began with symbolic reasoning, believing intelligence could be reduced to symbol manipulation. This <em>symbolist</em> approach offered explicit reasoning chains and interpretability but struggled with real-world complexity. Expert Systems followed, successfully applying rule-based reasoning to narrow domains while revealing the challenges of scaling knowledge-based systems.</p>
+
+<h3 id="the-rise-of-neural-approaches-1980s-1990s">The Rise of Neural Approaches (1980s-1990s)</h3>
+<p>The <em>connectionist</em> movement emerged with neural networks, drawing inspiration from biological systems. This era introduced pattern recognition capabilities and learning from examples. Simultaneously, the <em>Bayesian</em> school brought statistical methods to the forefront, offering principled approaches to handling uncertainty but requiring significant data and computational resources.</p>
+
+<h3 id="the-data-revolution-2000s-2010s">The Data Revolution (2000s-2010s)</h3>
+<p>Big Data and Deep Learning foundations emerged as the <em>analogiser</em> school gained prominence. This period saw the convergence of massive datasets, computational power, and sophisticated architectures. Deep Learning breakthrough demonstrated the power of automatic feature learning, though at the cost of increased computational demands and reduced interpretability.</p>
+
+<h3 id="contemporary-ai-the-era-of-integration-2020s">Contemporary AI: The Era of Integration (2020s)</h3>
+<p>Current AI systems, particularly large language models, represent a synthesis of multiple schools. They combine symbolic reasoning<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, neural architectures<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, and statistical learning<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>, achieving impressive generative capabilities and few-shot learning. However, they face challenges in resource requirements, reliability, and alignment with human values. A nicely distilled overview of what is today’s AI, comes from an <a href="https://xcancel.com/karpathy/status/1864033537479135369">Andrej Karpathy Tweet</a>.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>The evolution of AI reveals a field shaped by competing philosophies, each contributing essential insights. As Domingos argues, the future likely lies not in the dominance of any single approach but in their unification. While recent advances demonstrate the potential of synthesising different methods, significant challenges remain in creating truly intelligent systems that are both powerful and reliable.</p>
+
+<p>The path forward requires building on these foundations while addressing core challenges in efficiency, interpretability, and alignment. Rather than choosing between different schools of thought, the field must continue to integrate their strengths while mitigating their individual weaknesses.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Symbolic reasoning in modern AI manifests through attention mechanisms and transformers’ ability to process structured input like code or mathematical expressions. While not explicitly rule-based like early AI, these systems can learn and apply symbolic patterns. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Neural architectures in contemporary AI primarily use the transformer architecture, where self-attention layers process information in parallel, allowing the model to weigh the importance of different inputs contextually. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Statistical learning appears in the form of probabilistic token prediction and the use of large-scale statistical patterns learned during training. Models learn probability distributions over sequences, enabling them to generate coherent outputs. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="evolution" /><category term="llm" /><category term="symbolic" /><category term="neural-network" /><category term="data-science" /><summary type="html"><![CDATA[]]></summary></entry></feed>
