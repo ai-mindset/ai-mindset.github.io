@@ -37,7 +37,7 @@ This document provides a curated list of high-quality sources for learning about
 - [Michael A. Osborne](https://bsky.app/profile/maosbot.bsky.social/post/3laix6hz42n2m) is a professor of machine learning who focuses on Bayesian optimisation and its applications within battery modelling and tuning quantum devices. He has created Bluesky starter packs distilling prominent figures in relevant fields that are worth following. 
 
 - [Christoph Molnar](https://bsky.app/profile/christophmolnar.bsky.social) is a statistician, machine learning expert, and author specializing in ML interpretability and uncertainty quantification. He wrote the influential books Interpretable Machine Learning and Modeling Mindsets, focusing on translating academic research into practical data science insights. He publishes the Mindful Modeler newsletter and is known for making complex ML concepts accessible to practitioners.
-
 ## Talks
-- [The .CLUB Club](https://dotclub.club/), a list of links containing informative presentations sprinkled with golden nuggets on egoless engineering (excellent read!), simple and effective technology, politics at work from the lens of an engineering lead.   
+- [The .CLUB Club](https://dotclub.club/), offering insightful talks on egoless engineering, straightforward tech solutions, and workplace politics as seen from an engineering leadership perspective (highly recommended!).  
+- [CCC.de](https://media.ccc.de/) hosts a vast collection of presentations by the Chaos Computer Club, Europe's largest hacker association. Topics range from reverse engineering to cutting-edge exploration and more, making it an invaluable source of practical ideas, scientific exploration, and authentic engineering concepts.
 

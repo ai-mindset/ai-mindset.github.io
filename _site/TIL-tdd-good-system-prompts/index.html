@@ -3,21 +3,21 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>💡 TIL: Pydantic, Python’s Data Validation Guard | Just-in-Time learning</title>
+<title>💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts | Just-in-Time learning</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="💡 TIL: Pydantic, Python’s Data Validation Guard" />
+<meta property="og:title" content="💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
 <meta property="og:description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
-<link rel="canonical" href="http://0.0.0.0:4000/TIL-pydantic/" />
-<meta property="og:url" content="http://0.0.0.0:4000/TIL-pydantic/" />
+<link rel="canonical" href="http://0.0.0.0:4000/TIL-tdd-good-system-prompts/" />
+<meta property="og:url" content="http://0.0.0.0:4000/TIL-tdd-good-system-prompts/" />
 <meta property="og:site_name" content="Just-in-Time learning" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-11-26T00:00:00+00:00" />
+<meta property="article:published_time" content="2025-01-02T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="💡 TIL: Pydantic, Python’s Data Validation Guard" />
+<meta property="twitter:title" content="💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-26T00:00:00+00:00","datePublished":"2024-11-26T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"💡 TIL: Pydantic, Python’s Data Validation Guard","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/TIL-pydantic/"},"url":"http://0.0.0.0:4000/TIL-pydantic/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-02T00:00:00+00:00","datePublished":"2025-01-02T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/TIL-tdd-good-system-prompts/"},"url":"http://0.0.0.0:4000/TIL-tdd-good-system-prompts/"}</script>
 <!-- End Jekyll SEO tag -->
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Just-in-Time learning" />
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post">
-  <h1>💡 TIL: Pydantic, Python's Data Validation Guard</h1>
+  <h1>💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts</h1>
   
   <!-- Debug info -->
   <!-- <div style="color: red;"> -->
@@ -164,43 +164,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
           
           <li class="toc-level-2">
-            <a href="#understanding-pydantic-and-its-value">Understanding Pydantic and Its Value</a>
+            <a href="#the-evaluation-first-approach">The Evaluation-First Approach</a>
             
             
-            
-              <ul>
-                
-                  
-                
-                  
-                    
-                    <li class="toc-level-3">
-                      <a href="#type-enforcement">Type Enforcement</a>
-                    </li>
-                  
-                
-                  
-                    
-                    <li class="toc-level-3">
-                      <a href="#automatic-type-coercion">Automatic Type Coercion</a>
-                    </li>
-                  
-                
-                  
-                    
-                    <li class="toc-level-3">
-                      <a href="#real-world-benefits">Real-World Benefits</a>
-                    </li>
-                  
-                
-                  
-                    
-                    <li class="toc-level-3">
-                      <a href="#why-it-matters">Why It Matters</a>
-                    </li>
-                  
-                
-              </ul>
             
           </li>
         
@@ -208,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
           
           <li class="toc-level-2">
-            <a href="#conclusions">Conclusions</a>
+            <a href="#conclusion">Conclusion</a>
             
             
             
@@ -224,54 +190,24 @@ document.addEventListener('DOMContentLoaded', function() {
   <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>Today I started using <a href="https://docs.pydantic.dev/latest/">Pydantic</a>, a Python library that handles data validation through Python type annotations. Pydantic brings runtime type checking and data validation that catches errors before they cause mysterious bugs in an application. It uses type hints to validate data at runtime, automatically converting and validating data types, preventing bugs, and reducing boilerplate code. It’s essential for robust API development, configuration management, and data processing pipelines.</p>
 
-<h2 id="understanding-pydantic-and-its-value">Understanding Pydantic and Its Value</h2>
-<p>Pydantic leverages Python’s type hints to validate data structures. It converts your type hints from mere documentation into active runtime checks, ensuring data consistency throughout your application. Here are Pydantic’s key features:</p>
+<p>2024 has made clear that writing good automated evaluations for LLM-powered systems is the most critical skill for building useful applications. This insight parallels Anthropic’s internal approach to system prompt development.</p>
 
-<h3 id="type-enforcement">Type Enforcement</h3>
+<h2 id="the-evaluation-first-approach">The Evaluation-First Approach</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
-
-<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
-    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
-
-<span class="c1"># This raises a ValidationError
-</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"John"</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="s">"not_a_number"</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">"john@example.com"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="automatic-type-coercion">Automatic Type Coercion</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Order</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">quantity</span><span class="p">:</span> <span class="nb">int</span>
-    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
-
-<span class="c1"># Pydantic automatically converts valid strings to numbers
-</span><span class="n">order</span> <span class="o">=</span> <span class="n">Order</span><span class="p">(</span><span class="n">quantity</span><span class="o">=</span><span class="s">"3"</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="s">"9.99"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">quantity</span><span class="p">)</span>  <span class="c1"># 3 (int)
-</span><span class="k">print</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">price</span><span class="p">)</span>    <span class="c1"># 9.99 (float)
-</span></code></pre></div></div>
-
-<h3 id="real-world-benefits">Real-World Benefits</h3>
-<ul>
-  <li><strong>API Development</strong>: Validates incoming JSON data automatically</li>
-  <li><strong>Configuration Management</strong>: Ensures config files meet your specifications</li>
-  <li><strong>Database Operations</strong>: Validates data before insertion</li>
-  <li><strong>Data Parsing</strong>: Converts between JSON, dictionaries, and model instances seamlessly</li>
-</ul>
-
-<h3 id="why-it-matters">Why It Matters</h3>
+<p><a href="https://askell.io/">Amanda Askell</a>, leading fine-tuning at Anthropic, <a href="https://xcancel.com/amandaaskell/status/1866207266761760812">outlines a test-driven process</a> for system prompts:</p>
 <ol>
-  <li><strong>Error Prevention</strong>: Catches data issues at system boundaries</li>
-  <li><strong>Clean Code</strong>: Reduces validation boilerplate</li>
-  <li><strong>Self-Documenting</strong>: Type hints serve as both validation rules and documentation</li>
-  <li><strong>Performance</strong>: Compiled validation code runs efficiently</li>
+  <li>Create a test set of messages where the model’s default behaviour fails to meet requirements</li>
+  <li>Develop a system prompt that passes these tests</li>
+  <li>Identify cases where the system prompt is misapplied and refine it</li>
+  <li>Expand the test set and repeat</li>
 </ol>
 
-<h2 id="conclusions">Conclusions</h2>
-<p>Pydantic transforms Python’s type hints from passive documentation into active data validators, significantly reducing runtime errors and improving code reliability.</p>
+<p>This methodology’s importance extends beyond prompt engineering. Companies with strong evaluation suites can adopt new models faster and build more reliable features than competitors. As <a href="https://xcancel.com/cramforce/status/1860436022347075667">Vercel’s experience demonstrates</a>, moving from complex prompt protection to robust testing enables rapid iteration and development.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>While everyone acknowledges evals’ importance, implementing them effectively remains challenging. The key insight is clear: robust automated evaluation isn’t just a quality check, it’s the foundation for building reliable LLM-powered systems.</p>
 
 </article>
 
@@ -309,21 +245,25 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="post-tags">
   Tags: 
   
+    <a href="/">ai</a>, 
+  
+    <a href="/">llm</a>, 
+  
     <a href="/">til</a>, 
   
-    <a href="/">data-validation</a>, 
+    <a href="/">prompt-engineering</a>, 
   
-    <a href="/">python</a>, 
+    <a href="/">testing</a>, 
   
-    <a href="/">type-checking</a>, 
+    <a href="/">best-practices</a>, 
   
-    <a href="/">data-modeling</a>, 
+    <a href="/">evaluation</a>, 
   
-    <a href="/">code-quality</a>, 
+    <a href="/">machine-learning</a>, 
   
-    <a href="/">pydantic</a>, 
+    <a href="/">ai-alignment</a>, 
   
-    <a href="/">error-handling</a>
+    <a href="/">system-prompts</a>
   
 </div>
 
