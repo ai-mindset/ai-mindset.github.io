@@ -8,7 +8,7 @@ tags: [ai, llm, til, prompt-engineering, testing, best-practices, evaluation, ma
 
 ## Introduction
 
-2024 has made clear that writing good automated evaluations for LLM-powered systems is the most critical skill for building useful applications. This insight parallels Anthropic's internal approach to system prompt development. 
+2024 has made clear that writing good automated evaluations for LLM-powered systems is the most critical skill for building useful applications. This insight parallels Anthropic's internal approach to system prompt development. As usual, Simon Willison's [recent insightful 2024 LLM overview](https://simonwillison.net/2024/Dec/31/llms-in-2024/#evals-really-matter) was a treasure trove. One item I picked up on was evaluating system prompts using a test-driven approach. 
 
 ## The Evaluation-First Approach
 
