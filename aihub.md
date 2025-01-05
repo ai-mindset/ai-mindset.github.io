@@ -5,6 +5,7 @@ This document provides a curated list of high-quality sources for learning about
 
 ## Books
 - [Supervised Machine Learning for Science](https://ml-science-book.com/) is a comprehensive book that explores the role of supervised machine learning in scientific research. It provides a philosophical justification for using ML in science and discusses best practices for integrating it effectively.
+- [Essentials of Metaheuristics](https://cs.gmu.edu/~sean/book/metaheuristics/), an open set of lecture notes on metaheuristics algorithms, intended for undergraduate students, practitioners, programmers, and other non-experts. A metaheuristic is any stochastic optimization algorithm intended to be the last resort before giving up and using random or brute-force search.   
 
 ## Courses
 - [Building LLM Applications for Data Scientists and Software Engineers](https://xcancel.com/hugobowne/status/1870978490574704812) teaches how to build LLM-powered software reliably, from first principles. It's an authoritative source on GenAI software development lifecycle: agents, evals, iteration and others.  
@@ -37,6 +38,7 @@ This document provides a curated list of high-quality sources for learning about
 - [Michael A. Osborne](https://bsky.app/profile/maosbot.bsky.social/post/3laix6hz42n2m) is a professor of machine learning who focuses on Bayesian optimisation and its applications within battery modelling and tuning quantum devices. He has created Bluesky starter packs distilling prominent figures in relevant fields that are worth following. 
 
 - [Christoph Molnar](https://bsky.app/profile/christophmolnar.bsky.social) is a statistician, machine learning expert, and author specializing in ML interpretability and uncertainty quantification. He wrote the influential books Interpretable Machine Learning and Modeling Mindsets, focusing on translating academic research into practical data science insights. He publishes the Mindful Modeler newsletter and is known for making complex ML concepts accessible to practitioners.
+
 ## Talks
 - [The .CLUB Club](https://dotclub.club/), offering insightful talks on egoless engineering, straightforward tech solutions, and workplace politics as seen from an engineering leadership perspective (highly recommended!).  
 - [CCC.de](https://media.ccc.de/) hosts a vast collection of presentations by the Chaos Computer Club, Europe's largest hacker association. Topics range from reverse engineering to cutting-edge exploration and more, making it an invaluable source of practical ideas, scientific exploration, and authentic engineering concepts.
