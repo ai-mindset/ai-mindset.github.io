@@ -1,24 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-07T17:44:58+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics</title><link href="http://0.0.0.0:4000/golden-age-of-antibiotics/" rel="alternate" type="text/html" title="💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics" /><published>2025-01-07T00:00:00+00:00</published><updated>2025-01-07T00:00:00+00:00</updated><id>http://0.0.0.0:4000/golden-age-of-antibiotics</id><content type="html" xml:base="http://0.0.0.0:4000/golden-age-of-antibiotics/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-08T18:28:05+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">💡 TIL: How Different Societies View and Value Choice</title><link href="http://0.0.0.0:4000/TIL-the-art-of-choice/" rel="alternate" type="text/html" title="💡 TIL: How Different Societies View and Value Choice" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-the-art-of-choice</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-the-art-of-choice/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Today I revisited a talk on <a href="https://www.youtube.com/watch?v=lDq9-QxvsNU">the art of choosing</a> by Sheena Iyengar. A humourous and informative presentation, it reminded me that our assumptions about choice –as studied by Prof. Iyengar through research spanning American, European and Asian populations– reveals fascinating cultural differences in how we perceive and respond to choice. Her research reveals some eye-opening insights that I’ll briefly summarise below.</p>
+
+<h2 id="perceiving-choice">Perceiving Choice</h2>
+<p>First, while Americans believe individual choice is sacred (think “have it your way”), research shows this isn’t universal. When studying children solving puzzles, Asian-American children actually performed better when their mothers chose for them, while Anglo-American children did better choosing for themselves. This reveals how deeply cultural context shapes not just our preferences, but the actual effectiveness of our choices.</p>
+
+<p>Second, remember how overwhelming it feels staring at 50 different breakfast cereals? Turns out, people from post-communist countries often saw seven different sodas as just one choice: “soda or no soda.” This isn’t because they’re less sophisticated, it’s because the ability to spot tiny differences between products is a learned skill -not a natural one.</p>
+
+<p>Most striking was the research on medical decisions. When comparing American and French parents making end-of-life decisions for infants, American parents had more negative emotions and guilt despite insisting on having the choice, while French parents, whose doctors made the decisions, coped better. This challenges the core American belief that having choice is always better.</p>
+
+<p>Concluding with a personal story, Prof. Iyengar -who is blind- shared how she once brought two “clearly different” shades of pink nail polish to her lab. When she removed the labels, half the participants couldn’t tell them apart. Those who could, chose differently when the labels were present versus absent, showing how marketing narratives shape what we think we’re choosing.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>The TL;DR is: Through cross-cultural research, Prof. Iyengar shows that how we understand and value choice varies dramatically across cultures. Sometimes, having fewer choices or letting others choose for us might actually lead to better outcomes. <br />
+As a technologist, inundated with a very wide choice of tools that often offer similar results, I have made the conscious decision to reduce my tooling footprint to the minimum viable toolstack possible. I’m happy to let more knowledgeable professionals choose, with <em>adequate justification</em>, tools for my line of work but I do disagree with the zealotry that’s occasionally observed in tech and complemented by big egos.</p>]]></content><author><name></name></author><category term="til" /><category term="decision-making" /><category term="best-practices" /><category term="evaluation" /><category term="statistics" /><category term="design-principles" /><category term="modelling-mindsets" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: The Matrix Equation That Makes Linear Regression Work</title><link href="http://0.0.0.0:4000/TIL-lin-alg-applied-to-stats/" rel="alternate" type="text/html" title="💡 TIL: The Matrix Equation That Makes Linear Regression Work" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-lin-alg-applied-to-stats</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-lin-alg-applied-to-stats/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>This morning <a href="https://xcancel.com/andrew_n_carr/status/1876855682529480844">I remembered</a> how the equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves linear regression using matrix algebra. Here’s why it’s brilliant:</p>
+
+<h2 id="what-it-solves">What it Solves</h2>
+<p>Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors.</p>
+
+<h2 id="the-components">The Components</h2>
+<ol>
+  <li>$X$ is our feature matrix (n samples × p features)</li>
+  <li>$y$ is our target values (n × 1)</li>
+  <li>$X^T$ is the transpose of X</li>
+  <li>$\beta$ is our solution vector (p × 1) of coefficients</li>
+</ol>
+
+<h2 id="how-it-works">How it Works</h2>
+<ol>
+  <li>$X^TX$ creates a (p × p) correlation matrix:
+    <ul>
+      <li>Normalises input features</li>
+      <li>Captures feature relationships</li>
+      <li>Makes the problem solvable</li>
+    </ul>
+  </li>
+  <li>$(X^TX)^{-1}$ inverts this matrix:
+    <ul>
+      <li>Acts as a normalising factor</li>
+      <li>Corrects for feature correlations</li>
+      <li>Only exists if features are linearly independent</li>
+    </ul>
+  </li>
+  <li>$X^Ty$ projects targets into feature space:
+    <ul>
+      <li>Maps target values to feature relationships</li>
+      <li>Dimensions: (p × 1)</li>
+    </ul>
+  </li>
+  <li>Final multiplication gives $\beta$:
+    <ul>
+      <li>Each element is the optimal weight for a feature</li>
+      <li>Minimises sum of squared residuals</li>
+      <li>Solves $\min_\beta ||X\beta - y||^2$</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>This single equation replaces iterative optimisation with a direct solution, returning the globally optimal coefficients in one step. It’s the effectiveness of linear algebra applied to statistics. You can think of it like having a GPS for finding the best-fit line. Instead of wandering around hoping to stumble upon it, we calculate the exact destination mathematically.</p>]]></content><author><name></name></author><category term="data-science" /><category term="machine-learning" /><category term="statistics" /><category term="ai" /><category term="linear-algebra" /><category term="til" /><category term="modelling-mindsets" /><category term="data-modeling" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics</title><link href="http://0.0.0.0:4000/golden-age-of-antibiotics/" rel="alternate" type="text/html" title="💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics" /><published>2025-01-07T00:00:00+00:00</published><updated>2025-01-07T00:00:00+00:00</updated><id>http://0.0.0.0:4000/golden-age-of-antibiotics</id><content type="html" xml:base="http://0.0.0.0:4000/golden-age-of-antibiotics/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
 <p>In a thought-provoking analysis<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, Our World in Data reveals a striking paradox in medical progress: the most productive period in antibiotic development occurred in the two decades following World War II, with scientific capabilities far more limited than today. This “Golden Age of Antibiotics” (1940s-1960s) produced nearly two-thirds of the antibiotic drug classes we still rely on<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.<br />
-Even more surprisingly, since 1970—despite exponential advances in computing power and biotechnology—only eight new classes of antibiotics have been approved<sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. This indicates a stark decline that threatens the foundation of modern medicine. Traditional screening methods now rediscover existing compounds more than 99% of the time rather than finding new ones<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.<br />
+Even more surprisingly, since 1970 -despite exponential advances in computing power and biotechnology- only eight new classes of antibiotics have been approved<sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. This indicates a stark decline that threatens the foundation of modern medicine. Traditional screening methods now rediscover existing compounds most of the time rather than finding new ones<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.<br />
 Modern tools like genome sequencing and systematic screening methods offer unprecedented capabilities. We’ve only identified a small fraction of bacterial species, many of which could harbour new antibiotic compounds<sup id="fnref:2:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. Yet despite these capabilities, development has stagnated due to fundamental market failures and fragmented research efforts.<br />
 This article examines this paradoxical inverse relationship between technological capability and antibiotic development: How did the Golden Age achieve such remarkable success with limited tools? Why has progress slowed as our capabilities have grown? Most importantly, what combinations of economic incentives and modern technology could spark a new era of antibiotic discovery?</p>
 
 <h2 id="when-urgency-met-innovation">When Urgency Met Innovation</h2>
 
-<p>The Golden Age of Antibiotics stands as medicine’s most productive period in antimicrobial discovery, yielding over 20 new antibiotic classes—more than double what we’ve developed in the 50 years since<sup id="fnref:2:3" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. Three pivotal breakthroughs, coupled with unprecedented coordination, drove this remarkable success.<br />
-The foundation was laid by Paul Ehrlich’s systematic approach to drug discovery. By methodically testing hundreds of compounds, he discovered Salvarsan in 1910—the first synthetic antibiotic that effectively treated syphilis<sup id="fnref:2:4" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. A second milestone emerged when Alexander Fleming discovered penicillin in 1928. However, the real innovation came through coordinated wartime effort. With infections being the second-most common cause of hospital admissions in the US Army, the U.S. Office of Scientific Research and Development (OSRD) launched a global search for more productive penicillin strains, ultimately finding a high-yielding strain on a cantaloupe<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>.<br />
+<p>The Golden Age of Antibiotics stands as medicine’s most productive period in antimicrobial discovery, yielding over 20 new antibiotic classes -more than double what we’ve developed in the 50 years since<sup id="fnref:2:3" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. Three pivotal breakthroughs, coupled with unprecedented coordination, drove this remarkable success.<br />
+The foundation was laid by Paul Ehrlich’s systematic approach to drug discovery. By methodically testing hundreds of compounds, he discovered <a href="https://en.wikipedia.org/wiki/Arsphenamine">salvarsan</a> in 1910 -the first synthetic antibiotic that effectively treated syphilis<sup id="fnref:2:4" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. A second milestone emerged when Alexander Fleming discovered penicillin in 1928. However, the real innovation came through coordinated wartime effort. With infections being the second-most common cause of hospital admissions in the US Army, the U.S. Office of Scientific Research and Development (OSRD) launched a global search for more productive penicillin strains, ultimately finding a high-yielding strain on a cantaloupe<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>.<br />
 The third breakthrough came from Selman Waksman’s insight into soil bacteria. His discovery that soil-dwelling <a href="https://en.wikipedia.org/wiki/Actinomycetales">actinomycetes</a> bacteria naturally produce antibiotics led to <a href="https://en.wikipedia.org/wiki/Streptomycin">streptomycin</a>’s development and opened an entirely new avenue for antibiotic discovery<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>.<br />
-What transformed these breakthroughs into a “golden age” was unprecedented coordination. The U.S. War Production Board orchestrated collaboration between government, academia, and industry—removing patent restrictions, sharing data, and streamlining clinical trials<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>. The results were remarkable: some antibiotics, like <a href="https://en.wikipedia.org/wiki/Tetracycline_antibiotics">tetracyclines</a> and <a href="https://en.wikipedia.org/wiki/Macrolide">macrolides</a>, went from discovery to clinical use within the same year.</p>
+What transformed these breakthroughs into a “golden age” was unprecedented coordination. The U.S. War Production Board orchestrated collaboration between government, academia, and industry -removing patent restrictions, sharing data, and streamlining clinical trials<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>. The results were remarkable: some antibiotics, like <a href="https://en.wikipedia.org/wiki/Tetracycline_antibiotics">tetracyclines</a> and <a href="https://en.wikipedia.org/wiki/Macrolide">macrolides</a>, went from discovery to clinical use within the same year.</p>
 
 <h2 id="scientific-progress-and-market-failure">Scientific Progress and Market Failure</h2>
 
 <p>The contrast between the Golden Age and our current era reflects a fundamental misalignment between public health needs and market incentives<sup id="fnref:2:5" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. The market structure fundamentally disfavours antibiotics in two ways:</p>
 <ol>
-  <li>Revenue Structure: While chronic disease medications can generate billions in annual revenue over decades, new antibiotics typically generate only £45-50 million annually<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>. This revenue gap has driven more than 20 large pharmaceutical companies away from antibiotic development<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>.</li>
+  <li>Revenue Structure: While chronic disease medications can generate billions in annual revenue over decades, new antibiotics typically generate only tens of millions annually<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>, by comparison. This revenue gap has driven many large pharmaceutical companies away from antibiotic development<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>.</li>
   <li>Conservation Requirements: New antibiotics must be reserved for severe drug-resistant infections, reaching less than 1% of hospitalised patients<sup id="fnref:7:1" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>. This necessary conservation practice severely limits market potential.</li>
 </ol>
 
@@ -29,7 +93,7 @@ What transformed these breakthroughs into a “golden age” was unprecedented c
   <li>Smart combination strategies: exploiting the observation that bacterial resistance to one antibiotic can increase vulnerability to others, opening new therapeutic possibilities<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>.</li>
 </ol>
 
-<p>Yet these powerful tools remain underutilised due to insufficient investment and coordination. The challenge isn’t scientific capability—it’s the failure to create systems that effectively deploy these technologies within sustainable economic frameworks.</p>
+<p>Yet these powerful tools remain underutilised due to insufficient investment and coordination. The challenge isn’t scientific capability -it’s the failure to create systems that effectively deploy these technologies within sustainable economic frameworks.</p>
 
 <h2 id="integrating-economics-and-technology">Integrating Economics and Technology</h2>
 
@@ -54,16 +118,16 @@ What transformed these breakthroughs into a “golden age” was unprecedented c
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>The story of antibiotic development demonstrates that scientific capability alone cannot drive progress. The Golden Age succeeded through a powerful combination of systematic approaches, unprecedented collaboration, and removal of institutional barriers—even with limited technological tools<sup id="fnref:2:6" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.<br />
-Today’s challenge is fundamentally different. We possess sophisticated tools—from genome mining to advanced screening methods—yet development has stalled. This paradox reveals that progress requires three key elements working in concert: economic incentives, institutional coordination, and technological application<sup id="fnref:7:5" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>.<br />
-The evidence-based solutions presented here offer a path forward. Market reforms like subscription models and advance market commitments could help correct the fundamental economic misalignment in antibiotic development<sup id="fnref:8:1" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>. Meanwhile, systematic application of computational tools, genomic analysis, and bacterial exploration could help unlock new classes of antibiotics that traditional methods miss<sup id="fnref:9:2" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>.<br />
+<p>The story of antibiotic development demonstrates that scientific capability alone cannot drive progress. The Golden Age succeeded through a powerful combination of systematic approaches, unprecedented collaboration, and removal of institutional barriers -even with limited technological tools<sup id="fnref:2:6" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.<br />
+Today’s challenge is fundamentally different. We possess sophisticated tools -from genome mining to advanced screening methods- yet development has stalled. This paradox reveals that progress requires three key elements working in concert: economic incentives, institutional coordination, and technological application<sup id="fnref:7:5" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>.<br />
+The evidence-based solutions presented in the original Our World in Data article<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> offer a path forward. Market reforms like subscription models and advance market commitments could help correct the fundamental economic misalignment in antibiotic development<sup id="fnref:8:1" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>. Meanwhile, systematic application of computational tools, genomic analysis, and bacterial exploration could help unlock new classes of antibiotics that traditional methods miss<sup id="fnref:9:2" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>.<br />
 The urgency is clear. Antimicrobial resistance threatens to undermine many advances in modern medicine<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>. However, by combining proven coordination approaches from the Golden Age with modern capabilities and sustainable economic frameworks, we can revitalise antibiotic development for the challenges ahead.</p>
 
 <hr />
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
-      <p>Our World in Data (2024). “What was the Golden Age of Antibiotics, and how can we spark a new one?” <a href="https://ourworldindata.org/golden-age-antibiotics">https://ourworldindata.org/golden-age-antibiotics</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Our World in Data (2024). “What was the Golden Age of Antibiotics, and how can we spark a new one?” <a href="https://ourworldindata.org/golden-age-antibiotics">https://ourworldindata.org/golden-age-antibiotics</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
     <li id="fn:2" role="doc-endnote">
       <p>Hutchings, M. I., Truman, A. W., &amp; Wilkinson, B. (2019). Antibiotics: Past, present and future. Current Opinion in Microbiology, 51, 72–80. <a href="https://doi.org/10.1016/j.mib.2019.10.008">https://doi.org/10.1016/j.mib.2019.10.008</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:2:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a> <a href="#fnref:2:3" class="reversefootnote" role="doc-backlink">&#8617;<sup>4</sup></a> <a href="#fnref:2:4" class="reversefootnote" role="doc-backlink">&#8617;<sup>5</sup></a> <a href="#fnref:2:5" class="reversefootnote" role="doc-backlink">&#8617;<sup>6</sup></a> <a href="#fnref:2:6" class="reversefootnote" role="doc-backlink">&#8617;<sup>7</sup></a></p>
@@ -72,7 +136,7 @@ The urgency is clear. Antimicrobial resistance threatens to undermine many advan
       <p>Kolter, R., &amp; Van Wezel, G. P. (2016). Goodbye to brute force in antibiotic discovery? Nature Microbiology, 1(2), 15020. <a href="https://doi.org/10.1038/nmicrobiol.2015.20">https://doi.org/10.1038/nmicrobiol.2015.20</a> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:3:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
     </li>
     <li id="fn:4" role="doc-endnote">
-      <p>Gaynes, R. (2017). The Discovery of Penicillin—New Insights After More Than 75 Years of Clinical Use. Emerging Infectious Diseases, 23(5), 849–853. <a href="https://doi.org/10.3201/eid2305.161556">https://doi.org/10.3201/eid2305.161556</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Gaynes, R. (2017). The Discovery of Penicillin -New Insights After More Than 75 Years of Clinical Use. Emerging Infectious Diseases, 23(5), 849–853. <a href="https://doi.org/10.3201/eid2305.161556">https://doi.org/10.3201/eid2305.161556</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:5" role="doc-endnote">
       <p>Waksman, S. A., &amp; Schatz, A. (1945). Streptomycin–Origin, Nature, and Properties. Journal of the American Pharmaceutical Association, 34(11), 273–291. <a href="https://doi.org/10.1002/jps.3030341102">https://doi.org/10.1002/jps.3030341102</a> <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
@@ -81,7 +145,7 @@ The urgency is clear. Antimicrobial resistance threatens to undermine many advan
       <p>Sampat, B. N. (2023). Second World War and the Direction of Medical Innovation. SSRN Electronic Journal. <a href="https://doi.org/10.2139/ssrn.4422261">https://doi.org/10.2139/ssrn.4422261</a> <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:7" role="doc-endnote">
-      <p>Årdal, C., et al. (2020). Antibiotic development—economic, regulatory and societal challenges. Nature Reviews Microbiology, 18(5), 267-274. <a href="https://doi.org/10.1038/s41579-019-0293-3">https://doi.org/10.1038/s41579-019-0293-3</a> <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:7:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:7:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a> <a href="#fnref:7:3" class="reversefootnote" role="doc-backlink">&#8617;<sup>4</sup></a> <a href="#fnref:7:4" class="reversefootnote" role="doc-backlink">&#8617;<sup>5</sup></a> <a href="#fnref:7:5" class="reversefootnote" role="doc-backlink">&#8617;<sup>6</sup></a></p>
+      <p>Årdal, C., et al. (2020). Antibiotic development -economic, regulatory and societal challenges. Nature Reviews Microbiology, 18(5), 267-274. <a href="https://doi.org/10.1038/s41579-019-0293-3">https://doi.org/10.1038/s41579-019-0293-3</a> <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:7:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:7:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a> <a href="#fnref:7:3" class="reversefootnote" role="doc-backlink">&#8617;<sup>4</sup></a> <a href="#fnref:7:4" class="reversefootnote" role="doc-backlink">&#8617;<sup>5</sup></a> <a href="#fnref:7:5" class="reversefootnote" role="doc-backlink">&#8617;<sup>6</sup></a></p>
     </li>
     <li id="fn:8" role="doc-endnote">
       <p>Renwick, M. J., Brogan, D. M., &amp; Mossialos, E. (2016). A systematic review and critical assessment of incentive strategies for discovery and development of novel antibiotics. The Journal of Antibiotics, 69(2), 73-88. <a href="https://doi.org/10.1038/ja.2015.98">https://doi.org/10.1038/ja.2015.98</a> <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:8:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
@@ -798,513 +862,4 @@ LLM evaluation is an active area of interest and research both in academia and i
   <li>Robust error prevention and recovery</li>
 </ul>
 
-<p>The key is to fully utilise these core tools rather than adding complexity with additional solutions. This creates maintainable, observable, and reliable AI systems that can scale with your needs.</p>]]></content><author><name></name></author><category term="ai" /><category term="data-science" /><category term="design-principles" /><category term="code-quality" /><category term="mlops" /><category term="monitoring" /><category term="observability" /><category term="production" /><category term="model-governance" /><category term="minimal" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🐼 Pandas or 🐻‍❄️ Polars?</title><link href="http://0.0.0.0:4000/pandas-polars/" rel="alternate" type="text/html" title="🐼 Pandas or 🐻‍❄️ Polars?" /><published>2024-12-02T00:00:00+00:00</published><updated>2024-12-02T00:00:00+00:00</updated><id>http://0.0.0.0:4000/pandas-polars</id><content type="html" xml:base="http://0.0.0.0:4000/pandas-polars/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>The world of Python data processing has long revolved around the well established <a href="https://pandas.pydata.org/">Pandas</a> library, but in recent years, a new contender has emerged in the form of <a href="https://pola.rs/">Polars</a>. This post aims to provide a comparison of these two powerful data processing tools, that empowers the reader to make an informed choice on a case-by-case basis.</p>
-
-<h2 id="architecture-and-design-comparison">Architecture and Design Comparison</h2>
-<p>At the core, Pandas and Polars differ in their underlying implementation and design philosophies.</p>
-
-<h3 id="implementation-and-performance">Implementation and Performance</h3>
-<p>The Pandas library is written in Python/Cython, with a focus on single-threaded operations. In contrast, Polars is built upon the Rust programming language, leveraging its performance and concurrency capabilities to enable parallel processing by default.<br />
-This distinction in implementation has significant implications for memory management and query optimization. Pandas typically works with multiple copies of data, while Polars utilizes the Arrow data format, which allows for more efficient memory usage. Additionally, Polars offers automatic query optimization, whereas Pandas users must rely on a more sequential, manual approach to optimizing their data processing pipelines.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Pandas</th>
-      <th>Polars</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Implementation</td>
-      <td>Python/Cython</td>
-      <td>Rust</td>
-    </tr>
-    <tr>
-      <td>Processing</td>
-      <td>Single-threaded</td>
-      <td>Parallel by default</td>
-    </tr>
-    <tr>
-      <td>Memory Management</td>
-      <td>Multiple copies</td>
-      <td>Arrow format</td>
-    </tr>
-    <tr>
-      <td>Query Optimization</td>
-      <td>Sequential</td>
-      <td>Automatic</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="api-and-language-support">API and Language Support</h3>
-<p>The API and language support differences between Pandas and Polars are quite notable. Pandas -being a Python-only library- offers a mix of method chaining and attribute access approaches. In contrast, Polars takes a more expansive approach, providing implementations in Python, Node.js, and the Rust programming language itself.<br />
-This language versatility of Polars enables seamless JavaScript and TypeScript integration, allowing data scientists and developers to leverage the same performance benefits regardless of their preferred language. Additionally, Polars maintains a consistent method chaining syntax across these different language environments, simplifying the learning curve for users who may work with the library in multiple contexts.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Pandas</th>
-      <th>Polars</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Language Support</td>
-      <td>Python-only</td>
-      <td>Python, Node.js, Rust</td>
-    </tr>
-    <tr>
-      <td>API Style</td>
-      <td>Mixed method chaining and attribute access</td>
-      <td>Consistent method chaining</td>
-    </tr>
-    <tr>
-      <td>Language Integration</td>
-      <td>N/A</td>
-      <td>JavaScript/TypeScript</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="use-cases-and-trade-offs">Use Cases and Trade-offs</h2>
-<p>While both Pandas and Polars excel in the realm of data processing, each library has distinct strengths and weaknesses that make them better suited for different use cases and scenarios.</p>
-
-<h3 id="when-to-choose-pandas">When to Choose Pandas</h3>
-<p>Pandas shines when it comes to interactive data exploration and working with smaller datasets, typically under 1GB in size. The library’s deep integration with the broader scientific computing ecosystem in Python, along with its intuitive syntax and extensive documentation, make it an excellent choice for rapid prototyping, educational contexts, and projects that require seamless compatibility with the Python-centric data science toolchain.</p>
-
-<h3 id="when-to-choose-polars">When to Choose Polars</h3>
-<p>On the other hand, Polars emerges as the preferred choice for large-scale data processing, particularly for datasets exceeding 1GB. The library’s Rust-based implementation and parallel processing capabilities make it a more suitable option for production environments with demanding performance requirements. Polars also excels in memory-constrained systems, thanks to its efficient use of the Arrow data format, and it is an attractive choice for cross-language development teams due to its implementations in Python, Node.js, and Rust.<br />
-Furthermore, Polars demonstrates strengths in handling complex data transformations and time series processing at scale, areas where its optimized query engine and parallel processing features can truly shine.</p>
-
-<p>To summarize the key differences:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Consideration</th>
-      <th>Pandas</th>
-      <th>Polars</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Dataset Size</td>
-      <td>Small to medium (&lt;1GB)</td>
-      <td>Scales to larger datasets</td>
-    </tr>
-    <tr>
-      <td>Performance</td>
-      <td>Suitable for interactive exploration</td>
-      <td>Excels at large-scale processing</td>
-    </tr>
-    <tr>
-      <td>Memory Efficiency</td>
-      <td>Works with multiple data copies</td>
-      <td>Utilizes Arrow format for efficiency</td>
-    </tr>
-    <tr>
-      <td>Query Optimization</td>
-      <td>Sequential, manual approach</td>
-      <td>Automatic optimization</td>
-    </tr>
-    <tr>
-      <td>Language Support</td>
-      <td>Python-only</td>
-      <td>Python, Node.js, Rust</td>
-    </tr>
-    <tr>
-      <td>Ecosystem Integration</td>
-      <td>Strong in Python scientific computing</td>
-      <td>Limited cross-language integration</td>
-    </tr>
-    <tr>
-      <td>Learning Resources</td>
-      <td>Extensive documentation and community support</td>
-      <td>Younger ecosystem, less comprehensive resources</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Ultimately, the choice between Pandas and Polars should be guided by the specific requirements of your project, such as data volume, performance needs, language preferences, and ecosystem integration requirements. Both libraries offer powerful data processing capabilities, and selecting the right one can significantly impact the success and efficiency of your data-driven initiatives.</p>
-
-<h2 id="conclusions">Conclusions</h2>
-<p>After carefully evaluating the key differences between Pandas and Polars, the choice between the two data processing libraries ultimately comes down to the specific requirements of your project and use case.<br />
-For projects focused on interactive data exploration and working with smaller datasets (under 1GB), Pandas remains the go-to choice. Its deep integration with the broader Python scientific computing ecosystem, extensive documentation, and large community make it a reliable and familiar option for many data scientists and developers.<br />
-However, for large-scale data processing, production environments, and cross-language teams, Polars presents a compelling alternative. Its performance advantages, memory efficiency, and multi-language support (Python, Node.js, Rust) make it an increasingly attractive choice for modern data-intensive applications.<br />
-When deciding between Pandas and Polars, consider factors such as dataset size, performance requirements, memory constraints, language preferences, and the level of ecosystem integration needed. Pandas may be the better fit for projects focused on rapid prototyping and educational use, while Polars can shine in mission-critical, large-scale data processing tasks.<br />
-Ultimately, both Pandas and Polars are powerful data processing tools, and the choice between them should be guided by the specific needs and constraints of your project. As the data processing landscape continues to evolve, it’s valuable to stay informed about the trade-offs and emerging alternatives to ensure you make the most informed decision for your team and organization.</p>]]></content><author><name></name></author><category term="python" /><category term="pandas" /><category term="polars" /><category term="data-processing" /><category term="code-quality" /><category term="toolchain" /><category term="data-science" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">📊 Ten Ways to Model Data</title><link href="http://0.0.0.0:4000/modelling-mindsets/" rel="alternate" type="text/html" title="📊 Ten Ways to Model Data" /><published>2024-11-27T00:00:00+00:00</published><updated>2024-11-27T00:00:00+00:00</updated><id>http://0.0.0.0:4000/modelling-mindsets</id><content type="html" xml:base="http://0.0.0.0:4000/modelling-mindsets/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>As a practitioner looking to work effectively with real-world data and generate meaningful insights, I face a crucial decision: which modelling approaches should I invest my time and energy in learning? After discovering Christoph Molnar’s <a href="https://christophmolnar.com/books/modeling-mindsets/">Modeling Mindsets</a>, I realised this isn’t about picking the “best” approach. It’s about becoming what he calls a “T-shaped modeller”.<br />
-The concept is elegantly simple: rather than trying to master every possible approach (impossible) or limiting myself to just one (ineffective), I should aim to develop:</p>
-<ul>
-  <li>Deep expertise in one or two mindsets that align with my goals and problems</li>
-  <li>Working knowledge of other approaches to recognise when my primary tools aren’t optimal</li>
-</ul>
-
-<p>This systematic exploration serves two purposes:</p>
-<ol>
-  <li>To understand the landscape: What are the main modelling mindsets available today? What are their core premises, strengths, and limitations?</li>
-  <li>To make an informed choice: Which mindset(s) should I focus on mastering, given my goals and constraints?</li>
-</ol>
-
-<p>Each mindset represents a different way of approaching problems through data. From the probability-focused world of statistical modelling to the interactive realm of reinforcement learning, from the causality-oriented approach to the pattern-finding nature of unsupervised learning, each offers unique tools and perspectives.<br />
-By examining these mindsets systematically, I aim to make an informed decision about where to focus my learning efforts while maintaining enough breadth to recognize when I should switch approaches. This isn’t just about theoretical understanding, it’s about practical effectiveness in solving real-world problems.</p>
-
-<p>Let’s explore each mindset in turn, focusing on their fundamental premises, key strengths, and limitations to guide this decision.</p>
-
-<h2 id="statistical-modelling-the-foundation-of-data-driven-inference">Statistical Modelling: The Foundation of Data-Driven Inference</h2>
-<p><em>This mindset sees the world through probability distributions. At its core, it’s about modelling how data is generated and making inferences under uncertainty.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Everything has a distribution, from dice rolls to customer behaviours</li>
-  <li>Models encode assumptions about how data is generated</li>
-  <li>Models are evaluated by both checking if their assumptions make sense and measuring how well they match the data</li>
-  <li>Uses same data for fitting and evaluation, unlike machine learning approaches</li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>Provides rigourous mathematical framework for handling uncertainty</li>
-  <li>Strong theoretical foundation spanning decades of research</li>
-  <li>Forces explicit consideration of data-generating processes</li>
-  <li>Versatile for decisions, predictions, and understanding</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Manual and often tedious modelling process</li>
-  <li>Struggles with complex data types like images and text</li>
-  <li>Good model fit doesn’t guarantee good predictions</li>
-  <li>Less automatable than modern machine learning approaches</li>
-</ol>
-
-<p>This mindset serves as the foundation for three important sub-approaches: Frequentism, Bayesianism, and Likelihoodism, each with its own interpretation of probability and evidence. For someone starting in data science, understanding statistical modelling provides crucial groundwork for understanding both traditional statistics and modern machine learning approaches.</p>
-
-<h2 id="frequentism-making-decisions-through-repeated-experiments">Frequentism: Making Decisions Through Repeated Experiments</h2>
-<p><em>Frequentism views probability as long-run frequency and assumes that parameters in the world are fixed but unknown. It’s the dominant approach in many scientific fields, particularly in medicine and psychology.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Interprets probability as frequency in infinite repetitions</li>
-  <li>Makes decisions through hypothesis tests and confidence intervals</li>
-  <li>Relies on “imagined experiments” to draw conclusions</li>
-  <li>Focuses on estimating fixed, true parameters</li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>Enables clear, binary decisions</li>
-  <li>Computationally fast compared to other approaches</li>
-  <li>No need for prior information</li>
-  <li>Widely accepted in scientific research</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Often oversimplifies complex questions into yes/no decisions</li>
-  <li>Vulnerable to p-hacking (searching for significant results)</li>
-  <li>Interpretation can be counterintuitive, especially for confidence intervals</li>
-  <li>Results depend on the experimental design, not just the data</li>
-</ol>
-
-<p>For practitioners, Frequentism offers a well-established framework with clear decision rules and strong scientific acceptance. However, its limitations in handling uncertainty and tendency toward oversimplification have led to growing interest in alternative approaches like Bayesian inference.</p>
-
-<h2 id="bayesianism-learning-through-updated-beliefs">Bayesianism: Learning Through Updated Beliefs</h2>
-<p><em>Bayesianism stands out by treating parameters themselves as random variables with distributions, fundamentally different from Frequentism’s fixed-parameter view. It focuses on updating beliefs about parameters as new data arrives.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Requires prior distributions before seeing data</li>
-  <li>Updates beliefs through Bayes’ theorem</li>
-  <li>Produces complete posterior distributions, not just point estimates</li>
-  <li>Naturally propagates uncertainty through all calculations<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>Can incorporate prior knowledge and expert opinions</li>
-  <li>Provides complete probability distributions for parameters</li>
-  <li>More intuitive interpretation of uncertainty</li>
-  <li>Cleanly separates inference (getting posteriors) from decisions (using them)</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Choosing priors can be difficult and controversial</li>
-  <li>Computationally intensive, especially for complex models</li>
-  <li>Mathematically more demanding than frequentist approaches</li>
-  <li>Can seem like overkill for simple decisions</li>
-</ol>
-
-<p>Bayesianism offers a more complete and intuitive framework for handling uncertainty, but requires more computational resources and mathematical sophistication. It’s particularly valuable when prior knowledge is important or when understanding full uncertainty is crucial.</p>
-
-<h2 id="likelihoodism-pure-evidence-through-likelihood">Likelihoodism: Pure Evidence Through Likelihood</h2>
-<p><em>Likelihoodism attempts to reform statistical inference by focusing solely on likelihood as evidence, avoiding both Frequentism’s imagined experiments and Bayesianism’s subjective priors.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Uses likelihood ratios to compare hypotheses</li>
-  <li>Adheres strictly to the likelihood principle</li>
-  <li>Rejects both prior probabilities and sampling distributions</li>
-  <li>Compares models based on their relative evidence</li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>More coherent than Frequentism’s mixed toolkit</li>
-  <li>Avoids subjective elements of Bayesianism</li>
-  <li>Ideas work well within other statistical mindsets</li>
-  <li>Adheres to likelihood principle (evidence depends only on observed data)</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Cannot make absolute statements, only relative comparisons</li>
-  <li>No clear mechanism for making final decisions</li>
-  <li>Lacks tools for expressing beliefs or uncertainty</li>
-  <li>Less practical than other statistical approaches</li>
-</ol>
-
-<p>Likelihoodism offers interesting theoretical insights but may be less immediately useful than Frequentist or Bayesian approaches. It’s more valuable for understanding the foundations of statistical inference than for day-to-day data analysis.</p>
-
-<h2 id="causal-inference-from-association-to-causation">Causal Inference: From Association to Causation</h2>
-<p><em>Causal inference moves beyond correlation to understand what actually causes observed effects, providing a framework for analysing interventions and their impacts.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Uses Directed Acyclic Graphs (DAGs) to visualize relationships</li>
-  <li>Distinguishes between association and causation</li>
-  <li>Requires explicit encoding of causal assumptions</li>
-  <li>Can work with both statistical models and machine learning</li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>Addresses fundamental questions about cause and effect</li>
-  <li>Makes assumptions explicit through DAGs</li>
-  <li>Models tend to be more robust than pure association-based approaches</li>
-  <li>Provides clear framework for analysing interventions</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Requires identifying all relevant confounders</li>
-  <li>Cannot verify all causal assumptions from data alone</li>
-  <li>Multiple competing frameworks can confuse newcomers</li>
-  <li>May sacrifice predictive performance for causal understanding</li>
-</ol>
-
-<p>For practitioners, causal inference is essential when decisions about interventions are needed, though it requires careful consideration of assumptions and domain knowledge. It’s particularly valuable in fields like medicine, policy-making, and business strategy where understanding cause-effect relationships is crucial.</p>
-
-<h2 id="machine-learning-algorithms-learning-from-data">Machine Learning: Algorithms Learning from Data</h2>
-<p><em>Machine learning approaches problems by having computers learn algorithms from data, focusing on task performance rather than theoretical underpinning.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Computer-first approach to learning from data</li>
-  <li>External evaluation based on task performance</li>
-  <li>Less constrained by statistical assumptions</li>
-  <li>Includes supervised, unsupervised, reinforcement, and deep learning</li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>Task-oriented and pragmatic approach</li>
-  <li>Highly automatable</li>
-  <li>Well-suited for building digital products</li>
-  <li>Strong industry adoption and career opportunities</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Less principled than statistical approaches</li>
-  <li>Many competing approaches can be overwhelming</li>
-  <li>Models often prioritize performance over interpretability</li>
-  <li>Usually requires substantial data and computation</li>
-</ol>
-
-<p>For practitioners, machine learning offers powerful tools for automation and prediction, particularly valuable in industry settings. It’s especially useful when theoretical understanding is less important than practical performance.</p>
-
-<h3 id="supervised-learning-the-art-of-prediction">Supervised Learning: The Art of Prediction</h3>
-<p><em>Supervised learning frames everything as a prediction problem, using labelled data to learn mappings from inputs to outputs.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Learning is optimization and search in hypothesis space</li>
-  <li>Models evaluated on unseen data, not training data</li>
-  <li>Focuses on generalizing to new cases</li>
-  <li>Highly automatable and competition-friendly</li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>Clear evaluation metrics</li>
-  <li>Highly automatable</li>
-  <li>Strong performance on prediction tasks</li>
-  <li>Well-defined optimization objectives</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Requires labelled data</li>
-  <li>Models often black-box (uninterpretable)</li>
-  <li>Not hypothesis-driven</li>
-  <li>May miss causal relationships</li>
-  <li>Can fail in unexpected ways when patterns change</li>
-</ol>
-
-<p>For practitioners, supervised learning excels in prediction tasks where good labelled data exists and interpretability isn’t crucial. It’s particularly valuable in industry settings for automation and decision support.</p>
-
-<h3 id="unsupervised-learning-discovering-hidden-patterns">Unsupervised Learning: Discovering Hidden Patterns</h3>
-<p><em>This mindset focuses on finding inherent structures in data without labelled outcomes, making it ideal for exploratory analysis and pattern discovery.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Discovers patterns in data distributions</li>
-  <li>Includes clustering, dimensionality reduction, anomaly detection</li>
-  <li>No ground truth for validation</li>
-  <li>More open-ended than supervised learning</li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>Finds patterns other approaches might miss</li>
-  <li>Excellent for initial data exploration</li>
-  <li>Flexible for undefined problems</li>
-  <li>Can reveal natural groupings in data</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Hard to validate results objectively</li>
-  <li>Feature weighting is often arbitrary</li>
-  <li>Suffers from curse of dimensionality<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></li>
-  <li>No guarantee of finding meaningful patterns</li>
-</ol>
-
-<p>For practitioners, unsupervised learning is valuable for initial data exploration and when labelled data isn’t available. It’s particularly useful in customer segmentation, anomaly detection, and dimension reduction.</p>
-
-<h3 id="reinforcement-learning-learning-through-interaction">Reinforcement Learning: Learning Through Interaction</h3>
-<p><em>This mindset models an agent interacting with an environment, making decisions and learning from rewards.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Agent learns by taking actions and receiving rewards</li>
-  <li>Handles delayed and sparse rewards</li>
-  <li>Balances exploration and exploitation</li>
-  <li>Creates its own training data through interaction</li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>Models dynamic real-world interactions</li>
-  <li>Excellent for sequential decision-making</li>
-  <li>Can discover novel strategies</li>
-  <li>Learns through direct experience</li>
-  <li>Combines well with deep learning</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Not all problems fit agent-environment framework</li>
-  <li>Often unstable or difficult to train</li>
-  <li>May perform poorly in real-world conditions</li>
-  <li>Requires careful reward design</li>
-  <li>Complex implementation choices</li>
-</ol>
-
-<p>For practitioners, reinforcement learning is valuable for problems involving sequential decisions or control, particularly in robotics, game playing, and resource management.</p>
-
-<h3 id="deep-learning-end-to-end-neural-networks">Deep Learning: End-to-End Neural Networks</h3>
-<p><em>This mindset approaches problems through deep neural networks, letting the model learn both features and relationships.</em></p>
-
-<p>Key Aspects:</p>
-<ul>
-  <li>Models tasks end-to-end through neural networks</li>
-  <li>Learns hierarchical representations automatically</li>
-  <li>Highly modular architecture design</li>
-  <li>Benefits from transfer learning and pre-trained models</li>
-</ul>
-
-<p>Primary Strengths:</p>
-<ol>
-  <li>Excels at complex data (images, text, speech)</li>
-  <li>Learns useful feature representations</li>
-  <li>Highly modular and customizable</li>
-  <li>Strong tooling and community support</li>
-  <li>Can handle multiple inputs/outputs seamlessly</li>
-</ol>
-
-<p>Notable Limitations:</p>
-<ol>
-  <li>Underperforms on tabular data versus tree methods</li>
-  <li>Requires large amounts of data</li>
-  <li>Computationally intensive</li>
-  <li>Hard to train and tune effectively</li>
-  <li>Results can be difficult to interpret</li>
-</ol>
-
-<p>For practitioners, deep learning is essential for complex data types but may be overkill for simpler problems. Most valuable in computer vision, natural language processing, and other complex pattern recognition tasks.</p>
-
-<h2 id="conclusions">Conclusions</h2>
-<p><strong><em>aka Choosing Your Modelling Path</em></strong></p>
-
-<p>For developing T-shaped expertise in modelling, the practitioner’s choice should align with their primary domain while maintaining broader awareness. Here’s how to approach this decision:</p>
-
-<ul>
-  <li>
-    <p><em>Scientific Research</em> demands Statistical Modelling for its rigorous uncertainty quantification and established peer review frameworks.</p>
-  </li>
-  <li>
-    <p><em>Business Predictions</em> benefit most from Supervised Learning, optimising prediction accuracy while enabling automation and scalability.</p>
-  </li>
-  <li>
-    <p><em>Complex Data</em> (images/text) requires Deep Learning to handle unstructured data and learn hierarchical features effectively.</p>
-  </li>
-  <li>
-    <p><em>Interventions/Policies</em> need Causal Inference to distinguish correlation from causation and understand intervention effects.</p>
-  </li>
-  <li>
-    <p><em>Control Systems</em> thrive with Reinforcement Learning for sequential decisions and environment interaction.</p>
-  </li>
-</ul>
-
-<p>For practical applications, certain combinations prove particularly effective:</p>
-
-<ul>
-  <li>
-    <p><em>Industry/Business</em> combines Supervised Learning with Unsupervised Learning, enabling accurate predictions while discovering valuable patterns in customer data.</p>
-  </li>
-  <li>
-    <p><em>Research</em> pairs Statistical Modelling with Machine Learning, balancing academic rigour with modern capabilities.</p>
-  </li>
-  <li>
-    <p><em>Product Development</em> merges Deep Learning with Supervised Learning for end-to-end features with clear metrics.</p>
-  </li>
-  <li>
-    <p><em>Medical Diagnostics</em> unites Supervised Learning with Statistical Modelling, crucial for evidence-based decisions with proper uncertainty quantification.</p>
-  </li>
-</ul>
-
-<p>The choice should be based on the practitioner’s domain requirements, computational resources, interpretability needs, and available time for mastery. <em>Remember:</em> Mastery of one mindset with broad awareness surpasses superficial knowledge of many.</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Because Bayesian models treat everything as probability distributions (rather than fixed values), any predictions or conclusions automatically include their associated uncertainty. For example, if you predict someone’s future income using multiple uncertain factors, the final prediction comes as a range of possibilities with their probabilities, rather than just a single number. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2" role="doc-endnote">
-      <p>Here is a <a href="https://bsky.app/profile/chrisalbon.com/post/3lbendflq2w2n">nice digital flashcard</a> by Chris Albon, on the concept of <em>curse of dimensionality</em> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name></name></author><category term="modelling-mindsets" /><category term="data-science" /><category term="ai" /><category term="data-modeling" /><category term="neural-network" /><category term="best-practices" /><category term="statistics" /><category term="machine-learning" /><category term="decision-making" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<p>The key is to fully utilise these core tools rather than adding complexity with additional solutions. This creates maintainable, observable, and reliable AI systems that can scale with your needs.</p>]]></content><author><name></name></author><category term="ai" /><category term="data-science" /><category term="design-principles" /><category term="code-quality" /><category term="mlops" /><category term="monitoring" /><category term="observability" /><category term="production" /><category term="model-governance" /><category term="minimal" /><summary type="html"><![CDATA[]]></summary></entry></feed>
