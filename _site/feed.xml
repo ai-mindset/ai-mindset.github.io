@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-09T14:44:12+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔍 Understanding LLM Interpretability</title><link href="http://0.0.0.0:4000/interpreting-llms/" rel="alternate" type="text/html" title="🔍 Understanding LLM Interpretability" /><published>2025-01-09T00:00:00+00:00</published><updated>2025-01-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/interpreting-llms</id><content type="html" xml:base="http://0.0.0.0:4000/interpreting-llms/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-09T16:07:48+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔍 Understanding LLM Interpretability</title><link href="http://0.0.0.0:4000/interpreting-llms/" rel="alternate" type="text/html" title="🔍 Understanding LLM Interpretability" /><published>2025-01-09T00:00:00+00:00</published><updated>2025-01-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/interpreting-llms</id><content type="html" xml:base="http://0.0.0.0:4000/interpreting-llms/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 <p>Large Language Models (LLMs) have become increasingly sophisticated, yet understanding their inner workings remains a critical challenge for AI safety and development. This blog post summarises concepts and research presented in <a href="https://www.youtube.com/watch?v=UGO_Ehywuxc">Welch Labs’ video on mechanistic interpretability</a>, examining how LLMs process information and recent advances in making their decision-making processes more transparent.</p>
@@ -177,12 +177,12 @@ Average activation of hidden unit $j$:</li>
 As a technologist, inundated with a very wide choice of tools that often offer similar results, I have made the conscious decision to reduce my tooling footprint to the minimum viable toolstack possible. I’m happy to let more knowledgeable professionals choose, with <em>adequate justification</em>, tools for my line of work but I do disagree with the zealotry that’s occasionally observed in tech and complemented by big egos.</p>]]></content><author><name></name></author><category term="til" /><category term="decision-making" /><category term="best-practices" /><category term="evaluation" /><category term="statistics" /><category term="design-principles" /><category term="modelling-mindsets" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: The Matrix Equation That Makes Linear Regression Work</title><link href="http://0.0.0.0:4000/TIL-lin-alg-applied-to-stats/" rel="alternate" type="text/html" title="💡 TIL: The Matrix Equation That Makes Linear Regression Work" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-lin-alg-applied-to-stats</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-lin-alg-applied-to-stats/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>This morning <a href="https://xcancel.com/andrew_n_carr/status/1876855682529480844">I remembered</a> how the equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves linear regression using matrix algebra. Here’s why it’s brilliant:</p>
+<p>This morning <a href="https://xcancel.com/andrew_n_carr/status/1876855682529480844">an interesting interview question</a> motivated me to remind myself how it’s possible to solve linear regression through matrix algebra. Below is what I learned:</p>
 
-<h2 id="what-it-solves">What it Solves</h2>
-<p>Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors.</p>
+<h2 id="the-theory-an-elegant-mathematical-solution">The Theory: An Elegant Mathematical Solution</h2>
+<p>Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors. The equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves this optimization problem using matrix algebra.</p>
 
-<h2 id="the-components">The Components</h2>
+<p>The solution involves these key components:</p>
 <ol>
   <li>$X$ is our feature matrix (n samples × p features)</li>
   <li>$y$ is our target values (n × 1)</li>
@@ -190,39 +190,65 @@ As a technologist, inundated with a very wide choice of tools that often offer s
   <li>$\beta$ is our solution vector (p × 1) of coefficients</li>
 </ol>
 
-<h2 id="how-it-works">How it Works</h2>
+<p>Here’s how this elegant solution works:</p>
 <ol>
-  <li>$X^TX$ creates a (p × p) correlation matrix:
+  <li>$X^TX$ creates a $(p \times p)$ matrix of feature products:
     <ul>
-      <li>Normalises input features</li>
-      <li>Captures feature relationships</li>
-      <li>Makes the problem solvable</li>
+      <li>Each element $(i,j)$ contains the dot product between features $i$ and $j$</li>
+      <li>When features are centred, these products are proportional to covariances<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></li>
+      <li>When features are also standardised, it yields correlations scaled by $n$</li>
     </ul>
   </li>
-  <li>$(X^TX)^{-1}$ inverts this matrix:
+  <li>$(X^TX)^{-1}$ computes the inverse of this matrix:
     <ul>
-      <li>Acts as a normalising factor</li>
-      <li>Corrects for feature correlations</li>
-      <li>Only exists if features are linearly independent</li>
+      <li>Compensates for feature correlations in coefficient calculations<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></li>
+      <li>Required for solving the normal equations $X^TX\beta = X^Ty$</li>
+      <li>Exists only when no feature is a linear combination of others</li>
     </ul>
   </li>
-  <li>$X^Ty$ projects targets into feature space:
+  <li>$X^Ty$ creates a $(p \times 1)$ vector of feature-target products:
     <ul>
-      <li>Maps target values to feature relationships</li>
-      <li>Dimensions: (p × 1)</li>
+      <li>Each element $i$ contains the dot product of feature $i$ with target $y$</li>
+      <li>Represents raw feature-target relationships before adjustment</li>
+      <li>When centred, proportional to feature-target covariances<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></li>
     </ul>
   </li>
-  <li>Final multiplication gives $\beta$:
+  <li>Final multiplication $(X^TX)^{-1}X^Ty$:
     <ul>
-      <li>Each element is the optimal weight for a feature</li>
-      <li>Minimises sum of squared residuals</li>
-      <li>Solves $\min_\beta ||X\beta - y||^2$</li>
+      <li>Solves the normal equations $X^TX\beta = X^Ty$</li>
+      <li>Accounts for inter-feature correlations in determining coefficients</li>
+      <li>Mathematically guarantees minimum squared error</li>
     </ul>
   </li>
 </ol>
 
+<p>For more information, check Hastie, Tibshirani &amp; Friedman’s “<a href="https://archive.org/details/elementsofstatis0000hast">Elements of Statistical Learning</a>” seminal book.</p>
+
+<h2 id="the-real-world-catch">The Real-World Catch</h2>
+<p>While mathematically elegant, this direct solution has practical limitations in real-world applications:</p>
+<ol>
+  <li><em>Computational Complexity</em>: Computing $(X^TX)^{-1}$ requires $\Omicron(n^3)$ operations, becoming prohibitively expensive for large feature sets. This is why gradient descent, with its $\Omicron(n^2)$  per-iteration complexity, often proves more practical.</li>
+  <li><em>Numerical Instability</em>: When features are highly correlated (like monthly and annual income), $X^TX$ becomes nearly singular<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>. Even small rounding errors in the computation of its inverse can lead to large errors in $\beta$. In extreme cases, when features are perfectly correlated, the inverse doesn’t exist at all. Gradient descent avoids this matrix inversion entirely.</li>
+  <li><em>Memory Constraints</em>: Large datasets require holding the entire $X^TX$ matrix in memory, while gradient descent can work with mini-batches, making it more memory-efficient.</li>
+</ol>
+
 <h2 id="conclusions">Conclusions</h2>
-<p>This single equation replaces iterative optimisation with a direct solution, returning the globally optimal coefficients in one step. It’s the effectiveness of linear algebra applied to statistics. You can think of it like having a GPS for finding the best-fit line. Instead of wandering around hoping to stumble upon it, we calculate the exact destination mathematically.</p>]]></content><author><name></name></author><category term="data-science" /><category term="machine-learning" /><category term="statistics" /><category term="ai" /><category term="linear-algebra" /><category term="til" /><category term="modelling-mindsets" /><category term="data-modeling" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics</title><link href="http://0.0.0.0:4000/golden-age-of-antibiotics/" rel="alternate" type="text/html" title="💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics" /><published>2025-01-07T00:00:00+00:00</published><updated>2025-01-07T00:00:00+00:00</updated><id>http://0.0.0.0:4000/golden-age-of-antibiotics</id><content type="html" xml:base="http://0.0.0.0:4000/golden-age-of-antibiotics/"><![CDATA[<!--more-->
+<p>While this equation brilliantly demonstrates the power of linear algebra in statistics, real-world machine learning often favours gradient descent’s iterative approach. Think of it as choosing between a perfect GPS route through heavy traffic (direct solution) versus taking smaller, adaptable steps through clear side streets (gradient descent). Both reach the same destination, but the practical path often wins in real-world conditions.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>When features are centred (mean = 0), each product becomes $n$ times the covariance. This means $X^TX$ captures how features vary together, which is crucial because correlated features can lead to unstable coefficients if not accounted for. The relationship between $X^TX$ and covariance comes from the definition of sample covariance: $cov(X_i, X_j) = \frac{1}{n-1}\sum_{k=1}^n (x_{ki} - \bar{x_i})(x_{kj} - \bar{x_j})$. When data is centred, this simplifies to $\frac{1}{n-1}(X^TX)_{ij}$.  $\frac{X^TX}{n-1}$ returns the sample covariance matrix. This matters because a) when features are uncentred, $(X^TX)$ gives the sum of products, b) when centred $\frac{X^TX}{n-1}$ gives covariances, c) when also standardised (std = 1), $\frac{X^TX}{n-1}$ gives correlations. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Adjusts coefficient estimates to account for shared information between features. For example, if height and weight are correlated, we need to determine each variable’s unique contribution to the prediction, not their overlapping effect. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>A matrix is singular (or non-invertible) when its determinant is zero. In practical terms, this means one or more columns can be expressed as linear combinations of other columns. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="data-science" /><category term="machine-learning" /><category term="statistics" /><category term="ai" /><category term="linear-algebra" /><category term="til" /><category term="modelling-mindsets" /><category term="data-modeling" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics</title><link href="http://0.0.0.0:4000/golden-age-of-antibiotics/" rel="alternate" type="text/html" title="💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics" /><published>2025-01-07T00:00:00+00:00</published><updated>2025-01-07T00:00:00+00:00</updated><id>http://0.0.0.0:4000/golden-age-of-antibiotics</id><content type="html" xml:base="http://0.0.0.0:4000/golden-age-of-antibiotics/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
