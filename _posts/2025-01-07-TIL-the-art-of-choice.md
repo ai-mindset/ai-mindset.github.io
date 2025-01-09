@@ -1,4 +1,4 @@
-]---
+---
 layout: post
 title: "💡 TIL: How Different Societies View and Value Choice"
 date: 2025-01-08

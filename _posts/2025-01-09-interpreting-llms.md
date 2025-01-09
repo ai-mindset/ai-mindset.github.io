@@ -29,7 +29,7 @@ These probabilities emerge from intricate interactions between neurons, leading 
 ## The Superposition Phenomenon and Its Solution
 Unlike vision models where neurons correspond to specific concepts, LLMs exhibit [polysemanticity](https://arxiv.org/abs/2210.01892) -individual neurons respond to multiple, unrelated concepts. This occurs because LLMs encode more concepts than available neurons by using specific neuron combinations.
 
-This complexity necessitated the development of [sparse autoencoders](https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf), which:
+This complexity necessitated the development of [sparse autoencoders]({{ site.baseurl }}{% link _posts/2025-01-09-sparse-autoencoders.md %}), which:
 1. Map complex neuron combinations to specific concepts
 2. Extract interpretable features from LLMs
 3. Enable direct manipulation of model behaviour
