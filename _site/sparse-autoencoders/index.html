@@ -3,9 +3,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Sparse Autoencoders: A Technical Overview | Just-in-Time learning</title>
+<title>📐 Sparse Autoencoders: A Technical Overview | Just-in-Time learning</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Sparse Autoencoders: A Technical Overview" />
+<meta property="og:title" content="📐 Sparse Autoencoders: A Technical Overview" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
 <meta property="og:description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
@@ -15,9 +15,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-01-09T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Sparse Autoencoders: A Technical Overview" />
+<meta property="twitter:title" content="📐 Sparse Autoencoders: A Technical Overview" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-09T00:00:00+00:00","datePublished":"2025-01-09T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"Sparse Autoencoders: A Technical Overview","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/sparse-autoencoders/"},"url":"http://0.0.0.0:4000/sparse-autoencoders/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-09T00:00:00+00:00","datePublished":"2025-01-09T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"📐 Sparse Autoencoders: A Technical Overview","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/sparse-autoencoders/"},"url":"http://0.0.0.0:4000/sparse-autoencoders/"}</script>
 <!-- End Jekyll SEO tag -->
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Just-in-Time learning" />
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post">
-  <h1>Sparse Autoencoders: A Technical Overview</h1>
+  <h1>📐 Sparse Autoencoders: A Technical Overview</h1>
   
   <!-- Debug info -->
   <!-- <div style="color: red;"> -->
@@ -151,6 +151,76 @@ document.addEventListener('DOMContentLoaded', function() {
       
         
       
+        
+          
+          <li class="toc-level-2">
+            <a href="#introduction">Introduction</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#sparse-autoencoders">Sparse Autoencoders</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#mathematical-framework">Mathematical Framework</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#training-process">Training Process</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#practical-guidelines">Practical Guidelines</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#results">Results</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#conclusion">Conclusion</a>
+            
+            
+            
+          </li>
+        
+      
     </ul>
   </div>
 </nav>
@@ -159,82 +229,109 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <!--more-->
 
-<h3 id="1-core-architecture--motivation">1. Core Architecture &amp; Motivation</h3>
-<p>Sparse autoencoders are neural networks that learn efficient data representations by:</p>
-<ol>
-  <li>Reconstructing their input under a sparsity constraint</li>
-  <li>Forcing hidden units to respond selectively, similar to biological neurons</li>
-  <li>Using an encoder-decoder structure: Input → Sparse Hidden Layer → Reconstruction</li>
-</ol>
+<h2 id="introduction">Introduction</h2>
+<p>Supervised learning has achieved remarkable successes in areas ranging from computer vision to genomics. However, as Andrew Ng points out in his <a href="https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf">CS294A lecture notes</a>, it faces a fundamental limitation: the need for manually engineered features. While researchers have spent years crafting specialised features for vision, audio, and text processing, this approach neither scales nor generalises well.
+Sparse autoencoders offer an elegant solution to this challenge by automatically learning features from unlabelled data. These neural networks are distinguished by two key characteristics:<br />
+They attempt to reconstruct their input, forcing them to capture essential data patterns<br />
+They employ a sparsity constraint that mimics biological neural systems, where neurons fire infrequently and selectively<br />
+While simple implementations may not outperform hand-engineered features in specific domains like computer vision, their strength lies in their generality and biological plausibility. The sparse coding principle has proven effective across diverse domains including audio, text, and visual processing.<br />
+The mathematical framework combines reconstruction error, regularisation, and sparsity penalties to learn efficient, interpretable representations. This approach not only advances machine learning capabilities but also provides insights into how biological neural networks might learn and process information.
+This overview examines the mathematical foundations, practical implementation, and emergent properties of sparse autoencoders, following the framework presented in Stanford’s CS294A course notes.</p>
 
-<h3 id="2-mathematical-foundation">2. Mathematical Foundation</h3>
-
-<p><strong>Basic Autoencoder Cost</strong>:
-\(J_{basic}(W,b) = \frac{1}{2m}\sum_{i=1}^m ||h_{W,b}(x^{(i)}) - x^{(i)}||^2 + \frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2\)</p>
-
+<h2 id="sparse-autoencoders">Sparse Autoencoders</h2>
+<p>An autoencoder is a neural network that learns to reconstruct its input. In a sparse autoencoder, we add a critical biological constraint: neurons should be “inactive” most of the time, mimicking how biological neurons exhibit low average firing rates.<br />
+The Basic Architecture is:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input (x) -&gt; Hidden Layer (sparse activation) -&gt; Output (x̂)
+</code></pre></div></div>
 <p>Where:</p>
 <ul>
-  <li>First term: Reconstruction error (how well we recreate the input)</li>
-  <li>Second term: Weight decay preventing overfitting (λ controls strength)</li>
-  <li>Activation function: $f(z) = \frac{1}{1+e^{-z}}$ (sigmoid) or $tanh(z)$</li>
+  <li>Input and output dimensions are equal $(x, \hat{x} \in \R^n)$</li>
+  <li>Hidden layer learns a sparse representation</li>
+  <li>Network uses sigmoid activation: $f(z) = \frac{1}{1+e^{-z}}$</li>
 </ul>
 
-<p><strong>Sparsity Mechanism</strong>:</p>
-<ol>
-  <li>
-    <p>Calculate average activation for each hidden unit j:
-\(\hat{\rho}_j = \frac{1}{m}\sum_{i=1}^m[a_j^{(2)}(x^{(i)})]\)</p>
-  </li>
-  <li>
-    <p>Enforce sparsity via KL divergence between desired sparsity ρ and actual activation ρ̂:
-\(KL(\rho||\hat{\rho}_j) = \rho\log\frac{\rho}{\hat{\rho}_j} + (1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j}\)</p>
-  </li>
-</ol>
-
-<p><em>Why KL divergence?</em> It provides smooth gradients and naturally handles probability distributions between 0 and 1, matching our activation function range.</p>
-
-<p><strong>Complete Cost Function</strong>:
-\(J_{sparse}(W,b) = J_{basic}(W,b) + \beta\sum_{j=1}^{s_2}KL(\rho||\hat{\rho}_j)\)
-Where β controls the strength of sparsity enforcement.</p>
-
-<h3 id="3-training-process">3. Training Process</h3>
+<h2 id="mathematical-framework">Mathematical Framework</h2>
 
 <ol>
-  <li><strong>Forward Pass</strong>:
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input → Hidden Layer Activation → Output
-Calculate ρ̂j for each hidden unit
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Backward Pass</strong>:
-Modified backpropagation with sparsity gradient:
-\(\delta_i^{(2)} = \left(\sum_{j=1}^{s_3}W_{ji}^{(2)}\delta_j^{(3)}\right)f'(z_i^{(2)}) + \beta\left(-\frac{\rho}{\hat{\rho}_i} + \frac{1-\rho}{1-\hat{\rho}_i}\right)\)</li>
+  <li><strong>Base Cost Function</strong> (single training example):</li>
 </ol>
 
-<h3 id="4-practical-implementation">4. Practical Implementation</h3>
+\[J(W,b; x,y) = \frac{1}{2}||h_{W,b}(x) - y||^2\]
 
-<p><strong>Key Hyperparameters</strong>:</p>
+<p>This measures reconstruction error between input and output.</p>
+
+<ol>
+  <li><strong>Full Cost Function with Weight Decay</strong>:</li>
+</ol>
+
+\[J(W,b) = \left[\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - y^{(i)}||^2\right] + \frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2\]
+
+<p>The second term prevents overfitting by penalising large weights.</p>
+
+<ol>
+  <li><strong>Sparsity Measurement</strong>:<br />
+Average activation of hidden unit $j$:</li>
+</ol>
+
+\[\hat{\rho}_j = \frac{1}{m}\sum_{i=1}^m[a_j^{(2)}(x^{(i)})]\]
+
+<p>We want this to be close to a small value $\rho$ (typically 0.05), meaning the neuron is mostly inactive.</p>
+
+<ol>
+  <li><strong>Sparsity Penalty</strong> (using <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>):</li>
+</ol>
+
+\[\sum_{j=1}^{s_2}\rho\log\frac{\rho}{\hat{\rho}_j} + (1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j}\]
+
+<p>KL divergence measures how far the actual neuron activation $(\hat{\rho})$ deviates from desired sparsity $(\rho)$. It’s ideal because it penalises both over- and under-activation effectively.</p>
+
+<ol>
+  <li><strong>Final Cost Function</strong>:</li>
+</ol>
+
+\[J_{sparse}(W,b) = J(W,b) + \beta\sum_{j=1}^{s_2}KL(\rho||\hat{\rho}_j)\]
+
+<p>$\beta$ controls the strength of the sparsity constraint.</p>
+
+<h2 id="training-process">Training Process</h2>
+
+<p>The key modification to standard backpropagation occurs in the hidden layer:</p>
+
+\[\delta_i^{(2)} = \left(\sum_{j=1}^{s_3}W_{ji}^{(3)}\delta_j^{(3)}\right)f'(s_i^{(2)}) + \beta\left(-\frac{\rho}{\hat{\rho}_i} + \frac{1-\rho}{1-\hat{\rho}_i}\right)\]
+
+<p>This extra term adjusts weights to maintain sparsity.</p>
+
+<h2 id="practical-guidelines">Practical Guidelines</h2>
+
 <ul>
-  <li>Target sparsity: ρ ≈ 0.05 (5% average activation)</li>
-  <li>Sparsity weight: β ≈ 3 (start here, adjust based on results)</li>
-  <li>Learning rate: α ≈ 0.1 (decrease if training unstable)</li>
-  <li>Weight decay: λ ≈ 0.0001 (prevents weight explosion)</li>
+  <li>$\rho$ ≈ 0.05 (5% target activation rate)</li>
+  <li>$\beta$ controls sparsity penalty strength</li>
+  <li>Initialise weights randomly near zero</li>
+  <li>Must compute forward pass on all examples first to calculate $\hat{\rho}$</li>
 </ul>
 
-<p><strong>Common Challenges</strong>:</p>
+<h2 id="results">Results</h2>
+<p>When trained on images, the network naturally learns edge detectors at different orientations, similar to what is found in the visual cortex. This emergence of biologically plausible features validates the sparsity approach.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Sparse autoencoders represent a mathematically principled approach to unsupervised feature learning, combining biological inspiration with rigorous optimisation techniques. Their key innovation lies in the sparsity constraint, implemented through KL divergence, which forces hidden units to develop specialised, interpretable features.</p>
+
+<p>The mathematical framework achieves this through three key components:</p>
 <ol>
-  <li>Vanishing gradients with very low sparsity targets</li>
-  <li>Dead units if sparsity penalty too high</li>
-  <li>Poor reconstruction if hidden layer too small</li>
+  <li>A reconstruction cost that ensures faithful data representation</li>
+  <li>A weight decay term that prevents overfitting</li>
+  <li>A sparsity penalty that enforces selective neural activation</li>
 </ol>
 
-<p><strong>Emergent Properties</strong>:</p>
+<p>This formulation has proven successful in practice, typically leading to:</p>
 <ul>
-  <li>Hidden units learn natural features (edges, textures)</li>
-  <li>Representations more interpretable than standard autoencoders</li>
-  <li>Similar feature detectors emerge across different datasets</li>
+  <li>Edge and feature detectors emerging naturally from visual data</li>
+  <li>Interpretable representations comparable to biological neural coding</li>
+  <li>Robust feature learning even with <a href="https://en.wikipedia.org/wiki/Overcompleteness">overcomplete</a> hidden layers</li>
 </ul>
 
-<p>This formulation balances theoretical understanding with practical implementation guidance, making it both rigorous and useful.</p>
+<p>The practical value of sparse autoencoders extends beyond their theoretical elegance -they provide a foundation for understanding how neural networks can learn meaningful data representations without supervision. Their success in learning biologically plausible features validates both their design principles and their potential for advanced machine learning applications. Their main limitation lies in hyperparameter sensitivity, particularly to the sparsity target ρ and weight β, requiring careful tuning for optimal performance.</p>
 
 </article>
 
@@ -274,7 +371,29 @@ document.addEventListener('DOMContentLoaded', function() {
   
     <a href="/">ai</a>, 
   
-    <a href="/">llm</a>
+    <a href="/">llm</a>, 
+  
+    <a href="/">neural-network</a>, 
+  
+    <a href="/">machine-learning</a>, 
+  
+    <a href="/">data-science</a>, 
+  
+    <a href="/">linear-algebra</a>, 
+  
+    <a href="/">statistics</a>, 
+  
+    <a href="/">evaluation</a>, 
+  
+    <a href="/">interpretability</a>, 
+  
+    <a href="/">modelling-mindsets</a>, 
+  
+    <a href="/">design-principles</a>, 
+  
+    <a href="/">best-practices</a>, 
+  
+    <a href="/">data-processing</a>
   
 </div>
 
