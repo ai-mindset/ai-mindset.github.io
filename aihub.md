@@ -40,5 +40,5 @@ This document provides a curated list of high-quality sources for learning about
 
 ## Talks
 - [The .CLUB Club](https://dotclub.club/), offering insightful talks on egoless engineering, straightforward tech solutions, and workplace politics as seen from an engineering leadership perspective (highly recommended!).  
-- [CCC.de](https://media.ccc.de/) hosts a vast collection of presentations by the Chaos Computer Club, Europe's largest hacker association. Topics range from reverse engineering to cutting-edge exploration and more, making it an invaluable source of practical ideas, scientific exploration, and authentic engineering concepts.
+- [ccc.de](https://media.ccc.de/) hosts a vast collection of presentations by the Chaos Computer Club, Europe's largest hacker association. Topics range from reverse engineering to cutting-edge exploration and more, making it an invaluable source of practical ideas, scientific exploration, and authentic engineering concepts.
 

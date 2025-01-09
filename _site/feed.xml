@@ -1,4 +1,164 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-08T18:28:05+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">💡 TIL: How Different Societies View and Value Choice</title><link href="http://0.0.0.0:4000/TIL-the-art-of-choice/" rel="alternate" type="text/html" title="💡 TIL: How Different Societies View and Value Choice" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-the-art-of-choice</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-the-art-of-choice/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-09T14:44:12+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔍 Understanding LLM Interpretability</title><link href="http://0.0.0.0:4000/interpreting-llms/" rel="alternate" type="text/html" title="🔍 Understanding LLM Interpretability" /><published>2025-01-09T00:00:00+00:00</published><updated>2025-01-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/interpreting-llms</id><content type="html" xml:base="http://0.0.0.0:4000/interpreting-llms/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Large Language Models (LLMs) have become increasingly sophisticated, yet understanding their inner workings remains a critical challenge for AI safety and development. This blog post summarises concepts and research presented in <a href="https://www.youtube.com/watch?v=UGO_Ehywuxc">Welch Labs’ video on mechanistic interpretability</a>, examining how LLMs process information and recent advances in making their decision-making processes more transparent.</p>
+
+<h2 id="how-llms-think">How LLMs Think</h2>
+<p>LLMs process text through a sophisticated pipeline:</p>
+<ol>
+  <li>Text is converted into tokens and mapped to vectors</li>
+  <li>These vectors flow through multiple layers via “<em>residual streams</em>”</li>
+  <li>Each layer transforms the information through attention mechanisms</li>
+  <li>Final outputs emerge from probability distributions across possible tokens</li>
+</ol>
+
+<p>This process, while mathematically precise, creates a black box of neural connections that resist simple interpretation.</p>
+
+<h2 id="the-challenge-of-model-transparency">The Challenge of Model Transparency</h2>
+<p><a href="https://ai.google.dev/gemma">Google Gemma</a> models’ analysis of “<em>the reliability of Wikipedia is very</em>” demonstrates this complexity. The model assigns varying probabilities to different completions:</p>
+<ul>
+  <li>“<em>important</em>” (20.21%)</li>
+  <li>“<em>high</em>” (11.16%)</li>
+  <li>“<em>questionable</em>” (9.48%)</li>
+</ul>
+
+<p>These probabilities emerge from intricate interactions between neurons, leading to a phenomenon called <em>superposition</em><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
+
+<h2 id="the-superposition-phenomenon-and-its-solution">The Superposition Phenomenon and Its Solution</h2>
+<p>Unlike vision models where neurons correspond to specific concepts, LLMs exhibit <a href="https://arxiv.org/abs/2210.01892">polysemanticity</a> -individual neurons respond to multiple, unrelated concepts. This occurs because LLMs encode more concepts than available neurons by using specific neuron combinations.</p>
+
+<p>This complexity necessitated the development of <a href="/sparse-autoencoders/">sparse autoencoders</a>, which:</p>
+<ol>
+  <li>Map complex neuron combinations to specific concepts</li>
+  <li>Extract interpretable features from LLMs</li>
+  <li>Enable direct manipulation of model behaviour</li>
+</ol>
+
+<h2 id="practical-implications">Practical Implications</h2>
+<p>Understanding LLM internals has crucial implications:</p>
+<ul>
+  <li>AI Safety: Better control over model behaviours and outputs</li>
+  <li>Development: More targeted improvements in model capabilities</li>
+  <li>Deployment: Enhanced ability to predict and prevent unwanted behaviours</li>
+  <li>Trust: Greater transparency in AI decision-making processes</li>
+</ul>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>While tools like sparse autoencoders have provided unprecedented insights into model behaviour, they’ve also revealed the vast complexity of LLM internal mechanisms -the “dark matter” of AI. As these models become more integral to society, advancing our ability to interpret and control them becomes increasingly critical for responsible AI development.<br />
+This improved understanding represents not just academic progress, but a crucial step toward safer, more reliable AI systems.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>superposition in the neural networks context is the ability of a single neuron to represent multiple features simultaneously.  https://hdl.handle.net/1721.1/157073 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="machine-learning" /><category term="neural-network" /><category term="model-governance" /><category term="ai-alignment" /><category term="interpretability" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">📐 Sparse Autoencoders: A Technical Overview</title><link href="http://0.0.0.0:4000/sparse-autoencoders/" rel="alternate" type="text/html" title="📐 Sparse Autoencoders: A Technical Overview" /><published>2025-01-09T00:00:00+00:00</published><updated>2025-01-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/sparse-autoencoders</id><content type="html" xml:base="http://0.0.0.0:4000/sparse-autoencoders/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Supervised learning has achieved remarkable successes in areas ranging from computer vision to genomics. However, as Andrew Ng points out in his <a href="https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf">CS294A lecture notes</a>, it faces a fundamental limitation: the need for manually engineered features. While researchers have spent years crafting specialised features for vision, audio, and text processing, this approach neither scales nor generalises well.
+Sparse autoencoders offer an elegant solution to this challenge by automatically learning features from unlabelled data. These neural networks are distinguished by two key characteristics:<br />
+They attempt to reconstruct their input, forcing them to capture essential data patterns<br />
+They employ a sparsity constraint that mimics biological neural systems, where neurons fire infrequently and selectively<br />
+While simple implementations may not outperform hand-engineered features in specific domains like computer vision, their strength lies in their generality and biological plausibility. The sparse coding principle has proven effective across diverse domains including audio, text, and visual processing.<br />
+The mathematical framework combines reconstruction error, regularisation, and sparsity penalties to learn efficient, interpretable representations. This approach not only advances machine learning capabilities but also provides insights into how biological neural networks might learn and process information.
+This overview examines the mathematical foundations, practical implementation, and emergent properties of sparse autoencoders, following the framework presented in Stanford’s CS294A course notes.</p>
+
+<h2 id="sparse-autoencoders">Sparse Autoencoders</h2>
+<p>An autoencoder is a neural network that learns to reconstruct its input. In a sparse autoencoder, we add a critical biological constraint: neurons should be “inactive” most of the time, mimicking how biological neurons exhibit low average firing rates.<br />
+The Basic Architecture is:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input (x) -&gt; Hidden Layer (sparse activation) -&gt; Output (x̂)
+</code></pre></div></div>
+<p>Where:</p>
+<ul>
+  <li>Input and output dimensions are equal $(x, \hat{x} \in \R^n)$</li>
+  <li>Hidden layer learns a sparse representation</li>
+  <li>Network uses sigmoid activation: $f(z) = \frac{1}{1+e^{-z}}$</li>
+</ul>
+
+<h2 id="mathematical-framework">Mathematical Framework</h2>
+
+<ol>
+  <li><strong>Base Cost Function</strong> (single training example):</li>
+</ol>
+
+\[J(W,b; x,y) = \frac{1}{2}||h_{W,b}(x) - y||^2\]
+
+<p>This measures reconstruction error between input and output.</p>
+
+<ol>
+  <li><strong>Full Cost Function with Weight Decay</strong>:</li>
+</ol>
+
+\[J(W,b) = \left[\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - y^{(i)}||^2\right] + \frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2\]
+
+<p>The second term prevents overfitting by penalising large weights.</p>
+
+<ol>
+  <li><strong>Sparsity Measurement</strong>:<br />
+Average activation of hidden unit $j$:</li>
+</ol>
+
+\[\hat{\rho}_j = \frac{1}{m}\sum_{i=1}^m[a_j^{(2)}(x^{(i)})]\]
+
+<p>We want this to be close to a small value $\rho$ (typically 0.05), meaning the neuron is mostly inactive.</p>
+
+<ol>
+  <li><strong>Sparsity Penalty</strong> (using <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>):</li>
+</ol>
+
+\[\sum_{j=1}^{s_2}\rho\log\frac{\rho}{\hat{\rho}_j} + (1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j}\]
+
+<p>KL divergence measures how far the actual neuron activation $(\hat{\rho})$ deviates from desired sparsity $(\rho)$. It’s ideal because it penalises both over- and under-activation effectively.</p>
+
+<ol>
+  <li><strong>Final Cost Function</strong>:</li>
+</ol>
+
+\[J_{sparse}(W,b) = J(W,b) + \beta\sum_{j=1}^{s_2}KL(\rho||\hat{\rho}_j)\]
+
+<p>$\beta$ controls the strength of the sparsity constraint.</p>
+
+<h2 id="training-process">Training Process</h2>
+
+<p>The key modification to standard backpropagation occurs in the hidden layer:</p>
+
+\[\delta_i^{(2)} = \left(\sum_{j=1}^{s_3}W_{ji}^{(3)}\delta_j^{(3)}\right)f'(s_i^{(2)}) + \beta\left(-\frac{\rho}{\hat{\rho}_i} + \frac{1-\rho}{1-\hat{\rho}_i}\right)\]
+
+<p>This extra term adjusts weights to maintain sparsity.</p>
+
+<h2 id="practical-guidelines">Practical Guidelines</h2>
+
+<ul>
+  <li>$\rho$ ≈ 0.05 (5% target activation rate)</li>
+  <li>$\beta$ controls sparsity penalty strength</li>
+  <li>Initialise weights randomly near zero</li>
+  <li>Must compute forward pass on all examples first to calculate $\hat{\rho}$</li>
+</ul>
+
+<h2 id="results">Results</h2>
+<p>When trained on images, the network naturally learns edge detectors at different orientations, similar to what is found in the visual cortex. This emergence of biologically plausible features validates the sparsity approach.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Sparse autoencoders represent a mathematically principled approach to unsupervised feature learning, combining biological inspiration with rigorous optimisation techniques. Their key innovation lies in the sparsity constraint, implemented through KL divergence, which forces hidden units to develop specialised, interpretable features.</p>
+
+<p>The mathematical framework achieves this through three key components:</p>
+<ol>
+  <li>A reconstruction cost that ensures faithful data representation</li>
+  <li>A weight decay term that prevents overfitting</li>
+  <li>A sparsity penalty that enforces selective neural activation</li>
+</ol>
+
+<p>This formulation has proven successful in practice, typically leading to:</p>
+<ul>
+  <li>Edge and feature detectors emerging naturally from visual data</li>
+  <li>Interpretable representations comparable to biological neural coding</li>
+  <li>Robust feature learning even with <a href="https://en.wikipedia.org/wiki/Overcompleteness">overcomplete</a> hidden layers</li>
+</ul>
+
+<p>The practical value of sparse autoencoders extends beyond their theoretical elegance -they provide a foundation for understanding how neural networks can learn meaningful data representations without supervision. Their success in learning biologically plausible features validates both their design principles and their potential for advanced machine learning applications. Their main limitation lies in hyperparameter sensitivity, particularly to the sparsity target ρ and weight β, requiring careful tuning for optimal performance.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="neural-network" /><category term="machine-learning" /><category term="data-science" /><category term="linear-algebra" /><category term="statistics" /><category term="evaluation" /><category term="interpretability" /><category term="modelling-mindsets" /><category term="design-principles" /><category term="best-practices" /><category term="data-processing" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: How Different Societies View and Value Choice</title><link href="http://0.0.0.0:4000/TIL-the-art-of-choice/" rel="alternate" type="text/html" title="💡 TIL: How Different Societies View and Value Choice" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-the-art-of-choice</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-the-art-of-choice/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 <p>Today I revisited a talk on <a href="https://www.youtube.com/watch?v=lDq9-QxvsNU">the art of choosing</a> by Sheena Iyengar. A humourous and informative presentation, it reminded me that our assumptions about choice –as studied by Prof. Iyengar through research spanning American, European and Asian populations– reveals fascinating cultural differences in how we perceive and respond to choice. Her research reveals some eye-opening insights that I’ll briefly summarise below.</p>
@@ -647,219 +807,4 @@ Here is an example memory usage scenario for a Q4_K_S 7B model:</p>
       <p><code class="language-plaintext highlighter-rouge">feed_forward.w1</code> projects input to a higher-dimensional space, enabling the capture of complex features. <code class="language-plaintext highlighter-rouge">feed_forward.w2</code> projects transformed input back to the original dimension with a non-linear activation function, whereas <code class="language-plaintext highlighter-rouge">feed_forward.w3</code> applies an additional transformation to enhance the learning of complex patterns. These matrices collectively enable the feed-forward network to transform and learn from the input effectively, contributing to the overall performance of the transformer model. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="energy-reduction" /><category term="performance" /><category term="quantisation" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: LLM Evaluation using Critique Shadowing</title><link href="http://0.0.0.0:4000/TIL-llm-eval-critique-shadowing/" rel="alternate" type="text/html" title="💡 TIL: LLM Evaluation using Critique Shadowing" /><published>2024-12-05T00:00:00+00:00</published><updated>2024-12-05T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-llm-eval-critique-shadowing</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-llm-eval-critique-shadowing/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>As LLMs increasingly drive critical business decisions, ensuring their reliability becomes paramount. Many teams struggle with complex metrics and scoring systems that lead to confusion rather than clarity. <a href="https://hamel.dev/">Hamel Husain</a>’s Critique Shadowing methodology<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> offers a systematic path from drowning in metrics to developing reliable evaluation systems.</p>
-
-<h2 id="the-critique-shadowing-method">The Critique Shadowing Method</h2>
-<p>The key insight behind Critique Shadowing is deceptively simple: start with binary (pass/fail) expert judgements and detailed critiques before building automated evaluation systems. This approach solves two critical challenges: capturing domain expertise and scaling evaluation processes.</p>
-
-<p>This expert-centric approach echoes <a href="https://en.wikipedia.org/wiki/Knowledge_engineering">knowledge engineering</a> practices from the 1970-80s, when AI researchers first recognized the necessity of systematically capturing domain expertise. Just as <a href="https://en.wikipedia.org/wiki/Mycin">MYCIN</a>’s creators worked closely with medical doctors to encode diagnostic knowledge, Critique Shadowing similarly structures the process of extracting expert judgement for LLM evaluation. While the technology has evolved from rule-based systems to large language models, the fundamental challenge of effectively capturing and operationalising expert knowledge remains central.</p>
-
-<h3 id="implementation-process">Implementation Process</h3>
-<p>The methodology follows a structured, iterative process:</p>
-
-<center>
-    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/Critique%20Framework%20Hamel%20Husain.png" width="80%" height="80%" />
-</center>
-
-<ol>
-  <li>Identify a principal domain expert as the arbiter of quality</li>
-  <li>Create a diverse dataset covering different scenarios and user types</li>
-  <li>Expert conducts binary pass/fail judgements with detailed critiques</li>
-  <li>Address discovered issues and verify fixes</li>
-  <li>Develop LLM-based judges using expert critiques as few-shot examples</li>
-  <li>Analyze error patterns and root causes</li>
-  <li>Create specialized judges for persistent issues</li>
-</ol>
-
-<p>The process is continuous, repeating periodically or when material changes occur. For simpler applications or when manual review is feasible, teams can adapt or streamline these steps while maintaining the core principle of systematic data examination.</p>
-
-<h2 id="beyond-automation">Beyond Automation</h2>
-<p>Husain’s most striking observation is that the process of developing evaluation systems often provides more value than the resulting automated judges. The systematic collection of expert feedback reveals product insights, user needs, and failure modes that might otherwise remain hidden. This understanding drives improvements in the core system, not just its evaluation.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>The Critique Shadowing methodology succeeds by prioritizing expert knowledge and systematic data collection over premature automation. For teams building LLM applications, this approach offers a clear path to reliable evaluation systems while simultaneously deepening their understanding of their product and users.<br />
-LLM evaluation is an active area of interest and research both in academia and industry. Here is a short list of resources to look into:</p>
-<ul>
-  <li><a href="https://www.ibm.com/think/topics/llm-evaluation">IBM LLM Evaluation</a></li>
-  <li><a href="https://docs.mistral.ai/guides/evaluation/">Mistral AI - Evaluation</a></li>
-  <li><a href="https://github.com/mistralai/mistral-evals">Mistral Evals</a></li>
-  <li><a href="https://docs.anthropic.com/en/docs/test-and-evaluate/eval-tool">Anthropic - Using the Evaluation Tool</a></li>
-  <li><a href="https://dev.to/guybuildingai/-top-5-open-source-llm-evaluation-frameworks-in-2024-98m">Top 5 Open-Source LLM Evaluation Frameworks in 2024</a></li>
-</ul>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Husain, H. (2024). “Creating a LLM-as-a-Judge That Drives Business Results” https://hamel.dev/blog/posts/llm-judge/ <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name></name></author><category term="til" /><category term="llm" /><category term="ai" /><category term="machine-learning" /><category term="mlops" /><category term="best-practices" /><category term="production" /><category term="model-governance" /><category term="evaluation" /><category term="observability" /><category term="monitoring" /><category term="quality-assurance" /><category term="iterative-refinement" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">✍ A Path to Maintainable AI Systems using Norman’s Design Principles</title><link href="http://0.0.0.0:4000/design-principles-ds-ai/" rel="alternate" type="text/html" title="✍ A Path to Maintainable AI Systems using Norman’s Design Principles" /><published>2024-12-03T00:00:00+00:00</published><updated>2024-12-03T00:00:00+00:00</updated><id>http://0.0.0.0:4000/design-principles-ds-ai</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles-ds-ai/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>Don Norman’s principles of good design, outlined in <a href="https://archive.org/details/thedesignofeverydaythingsbydonnorman">The Design of Everyday Things</a>, are particularly relevant to Data Science and AI Engineering, where systems often suffer from unnecessary complexity. This article presents a minimalist approach to implementing these principles using a carefully selected set of tools that maximise impact while reducing operational overhead. Norman’s insights about visibility, feedback, constraints, and mappings translate powerfully to AI system design, where abstract interfaces and complex workflows can easily become overwhelming. Just as Norman observed that poorly designed physical objects lead to user frustration and errors, poorly architected AI systems can result in maintenance nightmares, hidden failure modes, and costly debugging cycles. By applying his principles - making system states visible, providing clear feedback, implementing appropriate constraints, and creating natural mappings between components, we can build AI systems that are not only more intuitive to use but also easier to maintain, debug, and evolve over time.</p>
-
-<h2 id="design-principles-implementation">Design Principles Implementation</h2>
-<h3 id="1-visibility">1. Visibility</h3>
-<p>Implement comprehensive system observability using <a href="https://mlflow.org/">MLflow</a> as your central platform:</p>
-
-<ul>
-  <li>Track experiments, parameters, and metrics</li>
-  <li>Version models and artefacts</li>
-  <li>Log production predictions and outcomes</li>
-  <li>Monitor model performance metrics</li>
-</ul>
-
-<p>For system-level metrics, use <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> to:</p>
-<ul>
-  <li>Track resource utilisation (CPU, memory, latency)</li>
-  <li>Monitor prediction throughput</li>
-  <li>Create dashboards for key performance indicators</li>
-</ul>
-
-<p>Implement adaptive sampling for high-volume systems:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">should_log</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="n">request_id</span><span class="p">)</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">sampling_rate</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="2-feedback">2. Feedback</h3>
-<p>Use <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> for real-time monitoring and alerting:</p>
-
-<ul>
-  <li>Set up alerts for model performance degradation</li>
-  <li>Monitor data distribution shifts</li>
-  <li>Track system health metrics</li>
-  <li>Configure tiered alerting based on severity</li>
-</ul>
-
-<p>Example metric collection:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">prometheus_client</span> <span class="kn">import</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">Histogram</span>
-
-<span class="n">PREDICTIONS</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="s">'model_predictions_total'</span><span class="p">,</span> <span class="s">'Total predictions made'</span><span class="p">)</span>
-<span class="n">LATENCY</span> <span class="o">=</span> <span class="n">Histogram</span><span class="p">(</span><span class="s">'prediction_latency_seconds'</span><span class="p">,</span> <span class="s">'Time spent processing prediction'</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">LATENCY</span><span class="p">.</span><span class="n">time</span><span class="p">():</span>
-        <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-        <span class="n">PREDICTIONS</span><span class="p">.</span><span class="n">inc</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">prediction</span>
-</code></pre></div></div>
-
-<h3 id="3-constraints">3. Constraints</h3>
-<p>Implement data and model guardrails using <a href="https://greatexpectations.io/">Great Expectations</a>:</p>
-
-<ul>
-  <li>Define data quality expectations</li>
-  <li>Set distribution bounds for features</li>
-  <li>Monitor for data drift</li>
-  <li>Generate validation reports</li>
-</ul>
-
-<p>Example constraint implementation:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">great_expectations.dataset</span> <span class="kn">import</span> <span class="n">Dataset</span>
-
-<span class="k">def</span> <span class="nf">validate_features</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-    <span class="n">dataset</span><span class="p">.</span><span class="n">expect_column_values_to_be_between</span><span class="p">(</span><span class="s">"age"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
-    <span class="n">dataset</span><span class="p">.</span><span class="n">expect_column_values_to_not_be_null</span><span class="p">(</span><span class="s">"critical_feature"</span><span class="p">)</span>
-    <span class="n">validation_result</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="n">validate</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">validation_result</span><span class="p">.</span><span class="n">success</span>
-</code></pre></div></div>
-
-<h3 id="4-mappings">4. Mappings</h3>
-<p>Use <a href="https://mlflow.org/">MLflow</a> to maintain clear relationships between:</p>
-
-<ul>
-  <li>Experiments and business objectives</li>
-  <li>Models and their training data</li>
-  <li>Predictions and outcomes</li>
-  <li>Performance metrics and business KPIs</li>
-</ul>
-
-<p>Example mapping structure:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="n">mlflow</span><span class="p">.</span><span class="n">start_run</span><span class="p">(</span><span class="n">run_name</span><span class="o">=</span><span class="s">"production_model_v1"</span><span class="p">):</span>
-    <span class="n">mlflow</span><span class="p">.</span><span class="n">log_param</span><span class="p">(</span><span class="s">"business_objective"</span><span class="p">,</span> <span class="s">"customer_churn"</span><span class="p">)</span>
-    <span class="n">mlflow</span><span class="p">.</span><span class="n">log_param</span><span class="p">(</span><span class="s">"data_version"</span><span class="p">,</span> <span class="n">data_hash</span><span class="p">)</span>
-    <span class="n">mlflow</span><span class="p">.</span><span class="n">log_metric</span><span class="p">(</span><span class="s">"business_impact"</span><span class="p">,</span> <span class="n">revenue_improvement</span><span class="p">)</span>
-    <span class="n">mlflow</span><span class="p">.</span><span class="n">log_artifact</span><span class="p">(</span><span class="s">"feature_importance.json"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="5-error-prevention-and-recovery">5. Error Prevention and Recovery</h3>
-<p>Integrate safeguards using your core toolset:</p>
-
-<p><a href="https://mlflow.org/">MLflow</a>:</p>
-<ul>
-  <li>Version control for models and artefacts</li>
-  <li>Rollback capabilities</li>
-  <li>Experiment tracking for reproducibility</li>
-</ul>
-
-<p><a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>:</p>
-<ul>
-  <li>Early warning system for issues</li>
-  <li>Performance degradation detection</li>
-  <li>Resource exhaustion prevention</li>
-</ul>
-
-<p><a href="https://greatexpectations.io/">Great Expectations</a>:</p>
-<ul>
-  <li>Data quality validation</li>
-  <li>Schema enforcement</li>
-  <li>Distribution monitoring</li>
-</ul>
-
-<p>Example error prevention:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">safe_predict</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">validate_features</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">fallback_prediction</span><span class="p">()</span>
-    
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">LATENCY</span><span class="p">.</span><span class="n">time</span><span class="p">():</span>
-            <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-            <span class="n">PREDICTIONS</span><span class="p">.</span><span class="n">inc</span><span class="p">()</span>
-            <span class="k">return</span> <span class="n">prediction</span>
-    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">ERROR_COUNTER</span><span class="p">.</span><span class="n">inc</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">fallback_prediction</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h2 id="implementation-strategy">Implementation Strategy</h2>
-<ol>
-  <li>Start with <a href="https://mlflow.org/">MLflow</a>
-    <ul>
-      <li>Set up experiment tracking</li>
-      <li>Implement model versioning</li>
-      <li>Configure basic logging</li>
-    </ul>
-  </li>
-  <li>Add <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>
-    <ul>
-      <li>Deploy basic monitoring</li>
-      <li>Set up key alerts</li>
-      <li>Create essential dashboards</li>
-    </ul>
-  </li>
-  <li>Integrate <a href="https://greatexpectations.io/">Great Expectations</a>
-    <ul>
-      <li>Define core data quality rules</li>
-      <li>Implement validation pipelines</li>
-      <li>Monitor data distributions</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="conclusions">Conclusions</h2>
-<p>By focusing on a minimal set of powerful tools (<a href="https://mlflow.org/">MLflow</a>, <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>, and <a href="https://greatexpectations.io/">Great Expectations</a>), you can implement Norman’s design principles effectively while maintaining system simplicity. This approach provides:</p>
-
-<ul>
-  <li>Comprehensive visibility through unified logging and monitoring</li>
-  <li>Immediate feedback via real-time alerts</li>
-  <li>Strong constraints through data validation</li>
-  <li>Clear mappings between components</li>
-  <li>Robust error prevention and recovery</li>
-</ul>
-
-<p>The key is to fully utilise these core tools rather than adding complexity with additional solutions. This creates maintainable, observable, and reliable AI systems that can scale with your needs.</p>]]></content><author><name></name></author><category term="ai" /><category term="data-science" /><category term="design-principles" /><category term="code-quality" /><category term="mlops" /><category term="monitoring" /><category term="observability" /><category term="production" /><category term="model-governance" /><category term="minimal" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="energy-reduction" /><category term="performance" /><category term="quantisation" /><summary type="html"><![CDATA[]]></summary></entry></feed>
