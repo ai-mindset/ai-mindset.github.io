@@ -17,7 +17,7 @@ This overview examines the mathematical foundations, practical implementation, a
 
 ## Sparse Autoencoders 
 An autoencoder is a neural network that learns to reconstruct its input. In a sparse autoencoder, we add a critical biological constraint: neurons should be "inactive" most of the time, mimicking how biological neurons exhibit low average firing rates.  
-The Basic Architecture is:  
+The basic architecture is:  
 ```
 Input (x) -> Hidden Layer (sparse activation) -> Output (x̂)
 ```
@@ -30,44 +30,80 @@ Where:
 
 1. **Base Cost Function** (single training example):  
 
-$$ 
-J(W,b; x,y) = \frac{1}{2}||h_{W,b}(x) - y||^2 
-$$  
+    $$ 
+    J(W,b; x,y) = \frac{1}{2}||h_{W,b}(x) - y||^2 
+    $$  
 
-This measures reconstruction error between input and output.
-
+    For a single training example:  
+        - Measures reconstruction error between network output $h_{W,b}(x)$ and target $y$  
+        - For autoencoders: $y = x$ (we reconstruct the input)  
+        - $\frac{1}{2}$ factor simplifies gradient computations  
+        - Squared L2 norm penalises larger reconstruction errors quadratically  
+ 
 2. **Full Cost Function with Weight Decay**:  
 
-$$ 
-J(W,b) = \left[\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - y^{(i)}||^2\right] + \frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2 
-$$  
+    The cost function $J(W,b)$ combines the average reconstruction error  
+    $\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - x^{(i)}||^2$
 
-The second term prevents overfitting by penalising large weights.
+    with the weight decay regularisation, to prevent overfitting by penalising large weights:  
+    $\frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2$  
+
+    $$ 
+    J(W,b) = \left[\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - y^{(i)}||^2\right] + \frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2 
+    $$  
+
+    Key points:  
+    - For autoencoders, output $y^{(i)}$ equals input $x^{(i)}$  
+    - Weight decay applies only to weights $W$, not biases $b$  
+    - $\lambda$ balances reconstruction accuracy vs. weight magnitude  
+    - The $\frac{1}{2}$ factor simplifies derivative calculations in backpropagation  
+    - This regularisation is distinct from the sparsity constraint (KL divergence term)  
 
 3. **Sparsity Measurement**:  
-Average activation of hidden unit $j$:  
+    
+    The average activation $\hat{\rho}_j$ measures how frequently hidden unit $j$ fires across the training set:  
+  
+    $$ 
+    \hat{\rho}_j = \frac{1}{m}\sum_{i=1}^m[a_j^{(2)}(x^{(i)})] 
+    $$  
 
-$$ 
-\hat{\rho}_j = \frac{1}{m}\sum_{i=1}^m[a_j^{(2)}(x^{(i)})] 
-$$  
-
-We want this to be close to a small value $\rho$ (typically 0.05), meaning the neuron is mostly inactive.
+    Key points:  
+    - $a_j^{(2)}(x^{(i)})$ is hidden unit $j$'s activation for input $x^{(i)}$  
+    - With sigmoid activation:  
+        - Values near 1 mean "active" or "firing"  
+        - Values near 0 mean "inactive"  
+    - We constrain $\hat{\rho}_j \approx \rho$ where $\rho$ is small (typically 0.05)  
+    - This enforces selective firing: each neuron responds strongly to specific input patterns  
 
 4. **Sparsity Penalty** (using [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence)):  
 
-$$ 
-\sum_{j=1}^{s_2}\rho\log\frac{\rho}{\hat{\rho}_j} + (1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j} 
-$$  
+    The sparsity penalty uses KL divergence to enforce $$\hat{\rho}_j \approx \rho$$:  
 
-KL divergence measures how far the actual neuron activation $(\hat{\rho})$ deviates from desired sparsity $(\rho)$. It's ideal because it penalises both over- and under-activation effectively.
+    $$ 
+    \sum_{j=1}^{s_2}\rho\log\frac{\rho}{\hat{\rho}_j} + (1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j} 
+    $$  
+
+    Properties of this penalty:  
+    - Minimised (zero) when $\hat{\rho}_j = \rho$  
+    - Monotonically increases as $\hat{\rho}_j$ deviates from $\rho$  
+    - Becomes infinite as $\hat{\rho}_j$ approaches 0 or 1  
 
 5. **Final Cost Function**:  
 
-$$ 
-J_{sparse}(W,b) = J(W,b) + \beta\sum_{j=1}^{s_2}KL(\rho||\hat{\rho}_j) 
-$$  
+    $$ 
+    J_{sparse}(W,b) = J(W,b) + \beta\sum_{j=1}^{s_2}KL(\rho||\hat{\rho}_j) 
+    $$  
 
-$\beta$ controls the strength of the sparsity constraint.
+    Components:  
+    - $J(W,b)$: Standard autoencoder cost (reconstruction error + weight decay)  
+    - Sparsity term: KL divergence penalty summed over $s_2$ hidden units  
+
+    $\beta$ controls:  
+    - Balance between accurate reconstruction and sparse representation  
+    - Strength of sparsity enforcement  
+    - Higher $\beta$ → stronger sparsity constraint  
+    
+    This formulation naturally penalises both over- and under-activation of hidden units relative to target sparsity $\rho$.   
 
 ## Training Process
 
@@ -77,7 +113,13 @@ $$
 \delta_i^{(2)} = \left(\sum_{j=1}^{s_3}W_{ji}^{(3)}\delta_j^{(3)}\right)f'(s_i^{(2)}) + \beta\left(-\frac{\rho}{\hat{\rho}_i} + \frac{1-\rho}{1-\hat{\rho}_i}\right) 
 $$  
 
-This extra term adjusts weights to maintain sparsity.
+Where:
+- First term: Standard backpropagation gradient through the network
+- Second term: Gradient of KL-divergence sparsity penalty
+- $s_i^{(2)}$ is weighted input sum to hidden unit $i$
+- $\hat{\rho}_i$ must be pre-computed using full training set
+
+This modification ensures gradient descent optimises both reconstruction accuracy and sparsity.
 
 ## Practical Guidelines
 

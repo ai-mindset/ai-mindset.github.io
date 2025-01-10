@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-09T16:07:48+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔍 Understanding LLM Interpretability</title><link href="http://0.0.0.0:4000/interpreting-llms/" rel="alternate" type="text/html" title="🔍 Understanding LLM Interpretability" /><published>2025-01-09T00:00:00+00:00</published><updated>2025-01-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/interpreting-llms</id><content type="html" xml:base="http://0.0.0.0:4000/interpreting-llms/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-10T15:03:49+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲</title><link href="http://0.0.0.0:4000/TIL-model-soups/" rel="alternate" type="text/html" title="💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲" /><published>2025-01-10T00:00:00+00:00</published><updated>2025-01-10T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-model-soups</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-model-soups/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>While most ensemble methods in machine learning combine model predictions, thanks to <a href="https://bsky.app/profile/chrisalbon.com/post/3lfbbixka7c25">Chris Albon</a> I recently learned about an alternative approach called “<em>model soups</em>” that works directly with model parameters. Instead of aggregating outputs, model soups blend the actual weights and biases of neural networks, showing promising results in computer vision and language tasks.</p>
+
+<center>
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/model_soups.jpg" width="80%" height="80%" />
+</center>
+
+<h2 id="main-concept">Main Concept</h2>
+<p>Model soups are created by averaging the parameters (weights and biases) of multiple independently trained neural networks that share the same architecture and training setup. For example, if we have three models with weights 2.32, 4.21, and 1.23 for a particular parameter, the “souped” model would use (2.32 + 4.21 + 1.23) / 3 = 2.587 for that parameter. This process is repeated across all parameters in the network. However, not all parameter combinations lead to improvements -models typically need similar training datasets, optimisation methods, and hyperparameters (like learning rate and batch size) to blend effectively. When done right, parameter-averaged models can outperform both individual networks and traditional prediction-averaging ensembles, while maintaining the inference speed of a single model.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Model soups challenge our intuitions about neural networks by showing that directly averaging weights can produce better results than averaging predictions. While the technique requires careful consideration of training conditions, it provides a computationally efficient way to combine multiple models into a single network, making it particularly valuable for resource-constrained production environments where running multiple models in parallel isn’t feasible.</p>]]></content><author><name></name></author><category term="neural-network" /><category term="machine-learning" /><category term="performance" /><category term="mlops" /><category term="production" /><category term="evaluation" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🔍 Understanding LLM Interpretability</title><link href="http://0.0.0.0:4000/interpreting-llms/" rel="alternate" type="text/html" title="🔍 Understanding LLM Interpretability" /><published>2025-01-09T00:00:00+00:00</published><updated>2025-01-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/interpreting-llms</id><content type="html" xml:base="http://0.0.0.0:4000/interpreting-llms/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 <p>Large Language Models (LLMs) have become increasingly sophisticated, yet understanding their inner workings remains a critical challenge for AI safety and development. This blog post summarises concepts and research presented in <a href="https://www.youtube.com/watch?v=UGO_Ehywuxc">Welch Labs’ video on mechanistic interpretability</a>, examining how LLMs process information and recent advances in making their decision-making processes more transparent.</p>
@@ -15,7 +28,7 @@
 <p>This process, while mathematically precise, creates a black box of neural connections that resist simple interpretation.</p>
 
 <h2 id="the-challenge-of-model-transparency">The Challenge of Model Transparency</h2>
-<p><a href="https://ai.google.dev/gemma">Google Gemma</a> models’ analysis of “<em>the reliability of Wikipedia is very</em>” demonstrates this complexity. The model assigns varying probabilities to different completions:</p>
+<p><a href="https://ai.google.dev/gemma">Google Gemma</a> models’ analysis of the sentence “<em>the reliability of Wikipedia is very</em>” demonstrates this complexity. The model assigns varying probabilities to different completions:</p>
 <ul>
   <li>“<em>important</em>” (20.21%)</li>
   <li>“<em>high</em>” (11.16%)</li>
@@ -37,10 +50,10 @@
 <h2 id="practical-implications">Practical Implications</h2>
 <p>Understanding LLM internals has crucial implications:</p>
 <ul>
-  <li>AI Safety: Better control over model behaviours and outputs</li>
-  <li>Development: More targeted improvements in model capabilities</li>
-  <li>Deployment: Enhanced ability to predict and prevent unwanted behaviours</li>
-  <li>Trust: Greater transparency in AI decision-making processes</li>
+  <li><strong>AI Safety</strong>: Better control over model behaviours and outputs</li>
+  <li><strong>Development</strong>: More targeted improvements in model capabilities</li>
+  <li><strong>Deployment</strong>: Enhanced ability to predict and prevent unwanted behaviours</li>
+  <li><strong>Trust</strong>: Greater transparency in AI decision-making processes</li>
 </ul>
 
 <h2 id="conclusions">Conclusions</h2>
@@ -51,7 +64,7 @@ This improved understanding represents not just academic progress, but a crucial
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
-      <p>superposition in the neural networks context is the ability of a single neuron to represent multiple features simultaneously.  https://hdl.handle.net/1721.1/157073 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>superposition in the neural networks context is the ability of a single neuron to represent multiple features simultaneously.  <a href="https://hdl.handle.net/1721.1/157073">https://hdl.handle.net/1721.1/157073</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="machine-learning" /><category term="neural-network" /><category term="model-governance" /><category term="ai-alignment" /><category term="interpretability" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">📐 Sparse Autoencoders: A Technical Overview</title><link href="http://0.0.0.0:4000/sparse-autoencoders/" rel="alternate" type="text/html" title="📐 Sparse Autoencoders: A Technical Overview" /><published>2025-01-09T00:00:00+00:00</published><updated>2025-01-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/sparse-autoencoders</id><content type="html" xml:base="http://0.0.0.0:4000/sparse-autoencoders/"><![CDATA[<!--more-->
@@ -67,7 +80,7 @@ This overview examines the mathematical foundations, practical implementation, a
 
 <h2 id="sparse-autoencoders">Sparse Autoencoders</h2>
 <p>An autoencoder is a neural network that learns to reconstruct its input. In a sparse autoencoder, we add a critical biological constraint: neurons should be “inactive” most of the time, mimicking how biological neurons exhibit low average firing rates.<br />
-The Basic Architecture is:</p>
+The basic architecture is:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input (x) -&gt; Hidden Layer (sparse activation) -&gt; Output (x̂)
 </code></pre></div></div>
 <p>Where:</p>
@@ -80,45 +93,92 @@ The Basic Architecture is:</p>
 <h2 id="mathematical-framework">Mathematical Framework</h2>
 
 <ol>
-  <li><strong>Base Cost Function</strong> (single training example):</li>
-</ol>
+  <li>
+    <p><strong>Base Cost Function</strong> (single training example):</p>
 
 \[J(W,b; x,y) = \frac{1}{2}||h_{W,b}(x) - y||^2\]
 
-<p>This measures reconstruction error between input and output.</p>
+    <p>For a single training example:<br />
+     - Measures reconstruction error between network output $h_{W,b}(x)$ and target $y$<br />
+     - For autoencoders: $y = x$ (we reconstruct the input)<br />
+     - $\frac{1}{2}$ factor simplifies gradient computations<br />
+     - Squared L2 norm penalises larger reconstruction errors quadratically</p>
+  </li>
+  <li>
+    <p><strong>Full Cost Function with Weight Decay</strong>:</p>
 
-<ol>
-  <li><strong>Full Cost Function with Weight Decay</strong>:</li>
-</ol>
+    <p>The cost function $J(W,b)$ combines the average reconstruction error<br />
+ $\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - x^{(i)}||^2$</p>
+
+    <p>with the weight decay regularisation, to prevent overfitting by penalising large weights:<br />
+ $\frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2$</p>
 
 \[J(W,b) = \left[\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - y^{(i)}||^2\right] + \frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2\]
 
-<p>The second term prevents overfitting by penalising large weights.</p>
+    <p>Key points:</p>
+    <ul>
+      <li>For autoencoders, output $y^{(i)}$ equals input $x^{(i)}$</li>
+      <li>Weight decay applies only to weights $W$, not biases $b$</li>
+      <li>$\lambda$ balances reconstruction accuracy vs. weight magnitude</li>
+      <li>The $\frac{1}{2}$ factor simplifies derivative calculations in backpropagation</li>
+      <li>This regularisation is distinct from the sparsity constraint (KL divergence term)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Sparsity Measurement</strong>:</p>
 
-<ol>
-  <li><strong>Sparsity Measurement</strong>:<br />
-Average activation of hidden unit $j$:</li>
-</ol>
+    <p>The average activation $\hat{\rho}_j$ measures how frequently hidden unit $j$ fires across the training set:</p>
 
 \[\hat{\rho}_j = \frac{1}{m}\sum_{i=1}^m[a_j^{(2)}(x^{(i)})]\]
 
-<p>We want this to be close to a small value $\rho$ (typically 0.05), meaning the neuron is mostly inactive.</p>
+    <p>Key points:</p>
+    <ul>
+      <li>$a_j^{(2)}(x^{(i)})$ is hidden unit $j$’s activation for input $x^{(i)}$</li>
+      <li>With sigmoid activation:
+        <ul>
+          <li>Values near 1 mean “active” or “firing”</li>
+          <li>Values near 0 mean “inactive”</li>
+        </ul>
+      </li>
+      <li>We constrain $\hat{\rho}_j \approx \rho$ where $\rho$ is small (typically 0.05)</li>
+      <li>This enforces selective firing: each neuron responds strongly to specific input patterns</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Sparsity Penalty</strong> (using <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>):</p>
 
-<ol>
-  <li><strong>Sparsity Penalty</strong> (using <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>):</li>
-</ol>
+    <p>The sparsity penalty uses KL divergence to enforce \(\hat{\rho}_j \approx \rho\):</p>
 
 \[\sum_{j=1}^{s_2}\rho\log\frac{\rho}{\hat{\rho}_j} + (1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j}\]
 
-<p>KL divergence measures how far the actual neuron activation $(\hat{\rho})$ deviates from desired sparsity $(\rho)$. It’s ideal because it penalises both over- and under-activation effectively.</p>
-
-<ol>
-  <li><strong>Final Cost Function</strong>:</li>
-</ol>
+    <p>Properties of this penalty:</p>
+    <ul>
+      <li>Minimised (zero) when $\hat{\rho}_j = \rho$</li>
+      <li>Monotonically increases as $\hat{\rho}_j$ deviates from $\rho$</li>
+      <li>Becomes infinite as $\hat{\rho}_j$ approaches 0 or 1</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Final Cost Function</strong>:</p>
 
 \[J_{sparse}(W,b) = J(W,b) + \beta\sum_{j=1}^{s_2}KL(\rho||\hat{\rho}_j)\]
 
-<p>$\beta$ controls the strength of the sparsity constraint.</p>
+    <p>Components:</p>
+    <ul>
+      <li>$J(W,b)$: Standard autoencoder cost (reconstruction error + weight decay)</li>
+      <li>Sparsity term: KL divergence penalty summed over $s_2$ hidden units</li>
+    </ul>
+
+    <p>$\beta$ controls:</p>
+    <ul>
+      <li>Balance between accurate reconstruction and sparse representation</li>
+      <li>Strength of sparsity enforcement</li>
+      <li>Higher $\beta$ → stronger sparsity constraint</li>
+    </ul>
+
+    <p>This formulation naturally penalises both over- and under-activation of hidden units relative to target sparsity $\rho$.</p>
+  </li>
+</ol>
 
 <h2 id="training-process">Training Process</h2>
 
@@ -126,7 +186,15 @@ Average activation of hidden unit $j$:</li>
 
 \[\delta_i^{(2)} = \left(\sum_{j=1}^{s_3}W_{ji}^{(3)}\delta_j^{(3)}\right)f'(s_i^{(2)}) + \beta\left(-\frac{\rho}{\hat{\rho}_i} + \frac{1-\rho}{1-\hat{\rho}_i}\right)\]
 
-<p>This extra term adjusts weights to maintain sparsity.</p>
+<p>Where:</p>
+<ul>
+  <li>First term: Standard backpropagation gradient through the network</li>
+  <li>Second term: Gradient of KL-divergence sparsity penalty</li>
+  <li>$s_i^{(2)}$ is weighted input sum to hidden unit $i$</li>
+  <li>$\hat{\rho}_i$ must be pre-computed using full training set</li>
+</ul>
+
+<p>This modification ensures gradient descent optimises both reconstruction accuracy and sparsity.</p>
 
 <h2 id="practical-guidelines">Practical Guidelines</h2>
 
@@ -641,196 +709,4 @@ ilab model chat <span class="nt">-m</span> &lt;new-model-path&gt; <span class="c
       <p>Python version compatibility remains a significant consideration in the ML ecosystem. While newer versions (≥3.12) offer improved performance, they often lack compatibility with essential ML frameworks. This constraint informs <a href="https://instructlab.ai/">InstructLab</a>’s current version requirements. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="model-governance" /><category term="production" /><category term="quantisation" /><category term="python" /><category term="mlops" /><category term="best-practices" /><category term="data-science" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: Understanding GGUF Model Quantisation</title><link href="http://0.0.0.0:4000/TIL-llm-quantisation/" rel="alternate" type="text/html" title="💡 TIL: Understanding GGUF Model Quantisation" /><published>2024-12-07T00:00:00+00:00</published><updated>2024-12-07T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-llm-quantisation</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-llm-quantisation/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>When experimenting with larger language models (12B, 30B, 70B etc.), choosing the right quantisation format becomes crucial for striking a good balance i.e. running them on consumer hardware while maintaining reasonably good performance. I wrote this guide after spending time looking up different GGUF quantisation types to optimise model selection for my machine’s constraints. This guide explains quantisation methods and their practical tradeoffs to help the reader select the optimal format for their setup.<br />
-The quantisation formats discussed here are implemented in popular frameworks like <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a>. Q4_K_S is typically the default format due to its good balance of size, speed, and quality, while Q2_K and Q3_K variants are offered for more constrained systems.</p>
-
-<h2 id="what-is-quantisation">What is Quantisation?</h2>
-<p>Quantisation converts model weights from 16-bit floating point (F16) to lower precision formats using fixed-size blocks. Each block contains multiple weights that share scaling parameters. <br />
-Perplexity is the key metric used to measure model quality after quantisation. It indicates how well the model predicts text, the lower the perplexity the better the predictions. For example, a change from 5.91 to 6.78 perplexity represents a noticeable but often acceptable drop in prediction quality. A model with perplexity 6.78 is slightly less certain about its predictions than one with perplexity 5.91.</p>
-
-<h2 id="basic-quantisation-types-and-k-quantisation">Basic Quantisation Types and K-Quantisation</h2>
-<p>K-quantisation is a way to make AI models smaller using two methods to store weights (the model’s numbers):</p>
-
-<ol>
-  <li>Type-0 (simpler): reconstructs weight as <code class="language-plaintext highlighter-rouge">weight = scale × quant</code></li>
-  <li>Type-1 (more precise): reconstructs weight as <code class="language-plaintext highlighter-rouge">weight = scale × quant + minimum</code></li>
-</ol>
-
-<p>The “block minimum” <code class="language-plaintext highlighter-rouge">minimum</code> is the smallest value found in a group of weights. By tracking this minimum, we can represent the other values more precisely relative to it, rather than having to represent their full absolute values.</p>
-
-<p>Each format groups weights into “super-blocks” to save space. Specifically:</p>
-
-<p>Q2_K (2-bit):</p>
-<ul>
-  <li>Uses Type-1 formula</li>
-  <li>Organises weights in groups of 256 (16 blocks × 16 weights)</li>
-  <li>Uses 4 bits to store both scales and minimums</li>
-  <li>Takes exactly 2.5625 bits per weight</li>
-  <li>Result: Shrinks a 13GB model to 2.67GB, but quality drops (perplexity increases from 5.91 to 6.78)</li>
-</ul>
-
-<p>Q3_K (3-bit):</p>
-<ul>
-  <li>Uses Type-0 formula (simpler one)</li>
-  <li>Same organization: 16 blocks × 16 weights</li>
-  <li>Uses 6 bits to store scales</li>
-  <li>Takes exactly 3.4375 bits per weight</li>
-  <li>Better quality than Q2_K but bigger file size</li>
-</ul>
-
-<p>Q4_K (4-bit):</p>
-<ul>
-  <li>Uses Type-1 formula</li>
-  <li>Different organisation: 8 blocks × 32 weights = 256 total</li>
-  <li>Uses 6 bits for both scales and minimums</li>
-  <li>Takes exactly 4.5 bits per weight</li>
-  <li>Much better quality, file size around 3.56GB</li>
-</ul>
-
-<p>Q5_K (5-bit):</p>
-<ul>
-  <li>Uses Type-1 formula</li>
-  <li>Same organisation as Q4_K</li>
-  <li>Also uses 6 bits for scales and minimums</li>
-  <li>Takes exactly 5.5 bits per weight</li>
-  <li>Quality getting very close to original</li>
-</ul>
-
-<p>Q6_K (6-bit):</p>
-<ul>
-  <li>Uses Type-0 formula</li>
-  <li>Back to 16 blocks × 16 weights</li>
-  <li>Uses 8 bits for scales</li>
-  <li>Takes exactly 6.5625 bits per weight</li>
-  <li>Almost perfect quality, file size 5.15GB</li>
-</ul>
-
-<p>The main tradeoff: Fewer bits means smaller files but lower quality. More bits means better quality but larger files. This lets users choose what works best for their needs.<br />
-When compressing numbers in Type-1 quantisation, each block keeps track of its smallest value (the minimum). When reconstructing the weights, this minimum is added back after multiplication. This helps preserve the range of values more accurately than just using scaling alone.</p>
-
-<p>A simple way to think of this concept is:</p>
-<ul>
-  <li>Type-0 just stretches/shrinks values using a scale</li>
-  <li>Type-1 first shifts all numbers by subtracting the minimum (making them smaller), then scales them for storage, and when reconstructing adds the minimum back</li>
-</ul>
-
-<p>This is why Type-1 generally gives better quality results but needs more storage space. It has to keep track of both the scale and minimum for each block.</p>
-
-<h2 id="mixed-precision-strategies">Mixed Precision Strategies</h2>
-<p>K-quantisations use different precision levels for different model components. From <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> documentation, there are three variants:</p>
-
-<ul>
-  <li>S (Small): Uses single quantisation throughout
-Example using Q3_K_S:
-    <blockquote>
-      <p>All model tensors → Q3_K (3-bit)<br />
-Result: 2.75GB size, 6.46 perplexity (7B model)</p>
-    </blockquote>
-  </li>
-  <li>M (Medium): Strategic mixed precision
-Example using Q3_K_M:
-    <blockquote>
-      <p>attention.wv<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, attention.wo<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, feed_forward.w2<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> → Q4_K (4-bit)<br />
-All other tensors → Q3_K (3-bit)<br />
-Result: 3.06GB size, 6.15 perplexity (7B model)</p>
-    </blockquote>
-  </li>
-  <li>L (Large): Higher precision mix
-Example using Q3_K_L:
-    <blockquote>
-      <p>attention.wv<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, attention.wo<sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, feed_forward.w2<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> → Q5_K (5-bit)<br />
-All other tensors → Q3_K (3-bit)<br />
-Result: 3.35GB size, 6.09 perplexity (7B model)</p>
-    </blockquote>
-  </li>
-</ul>
-
-<p>These strategies target attention and feed-forward layers with higher precision because they directly impact text processing quality, as demonstrated by the perplexity improvements in benchmarks: Q3_K_S (6.46) → Q3_K_M (6.15) → Q3_K_L (6.09).<br />
-The improvement in perplexity scores demonstrates why mixed precision strategies are effective, though they require more storage space.</p>
-
-<h2 id="performance-comparison-7b-model">Performance Comparison (7B model)</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Format | Size(GB) | Reduction | BPW  | Perplexity | RTX4080  | M2Max   
-F16    | 13.0     | 1.0x      | 16.0 | 5.91       | 60.0ms   | 116ms
-Q2_K   | 2.67     | 4.9x      | 2.56 | 6.78       | 15.5ms   | 56ms
-Q3_K_S | 2.75     | 4.7x      | 3.44 | 6.46       | 18.6ms   | 81ms
-Q4_K_S | 3.56     | 3.7x      | 4.50 | 6.02       | 15.5ms   | 50ms
-Q6_K   | 5.15     | 2.5x      | 6.56 | 5.91       | 18.3ms   | 75ms
-</code></pre></div></div>
-<p>*BPW = Bits Per Weight, Speed in milliseconds per token</p>
-
-<p>Practical Recommendations:</p>
-<ul>
-  <li>Balanced Performance: Q4_K_S</li>
-  <li>Maximum Compression: Q2_K</li>
-  <li>Best Quality: Q6_K (matches F16)</li>
-  <li>Limited RAM: Q2_K or Q3_K</li>
-  <li>GPU Inference: Q4_K (optimal speed/quality)</li>
-</ul>
-
-<p>All data are from recent <a href="https://github.com/ggerganov/llama.cpp/pull/1684">llama.cpp</a> performance benchmarks and <a href="https://github.com/ggerganov/ggml">GGML</a> implementation details.</p>
-
-<h2 id="memory-requirements-for-inference">Memory Requirements for Inference</h2>
-<p>When running quantised models, more RAM is required than the model size alone for inference overhead. Memory requirements depend on several factors:</p>
-<ul>
-  <li>Model architecture and size</li>
-  <li>Batch size for inference</li>
-  <li>Number of layers loaded at once</li>
-  <li>Operating system and framework overhead</li>
-</ul>
-
-<p>For 7B models (verified from benchmarks):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Format | Model Size | Note
-F16    | 13.0GB    | Base format
-Q4_K_S | 3.56GB    | Common choice
-Q3_K_S | 2.75GB    | Minimum size
-Q6_K   | 5.15GB    | Highest quality
-</code></pre></div></div>
-
-<p>For larger models scale the memory requirements proportionally and ensure additional overhead memory is available for inference. Test with smaller models first to gauge the system’s capabilities.<br />
-Actual RAM/VRAM requirements will be higher than the model size. Consider monitoring memory usage during inference to determine exact requirements for a specific setup.<br />
-Here is an example memory usage scenario for a Q4_K_S 7B model:</p>
-<ul>
-  <li>Model size: 3.56GB</li>
-  <li>Inference overhead: ~2GB for standard settings</li>
-  <li>Operating system buffer: ~1GB recommended</li>
-  <li>Total recommended free memory: ~7GB</li>
-</ul>
-
-<p>This explains why a model that’s “3.56GB” might need 6-7GB of free RAM/VRAM to run smoothly. The exact overhead varies based on your settings and system.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>Modern quantisation techniques offer multiple ways to run large language models on consumer hardware. Here’s what we need to remember:</p>
-
-<ul>
-  <li>K-quantisation provides the best balance through super-blocks and mixed precision strategies</li>
-  <li>Q4_K_S (4-bit) represents the current sweet spot for most users, offering:
-    <ul>
-      <li>3.7x size reduction</li>
-      <li>Good perplexity (6.02)</li>
-      <li>Excellent inference speed on both GPU and CPU</li>
-    </ul>
-  </li>
-  <li>For more constrained setups, Q2_K/Q3_K variants can run larger models with acceptable quality loss</li>
-  <li>Higher bits (Q5_K, Q6_K) approach F16 quality but require more memory</li>
-  <li>The _S/_M/_L variants let the user fine-tune the quality-size tradeoff by adjusting precision where it matters most</li>
-</ul>
-
-<p>Before downloading a quantised model, check the system’s available RAM and choose a format that leaves enough memory for comfortable operation. For most users with modern GPUs, Q4_K variants will provide the best experience.</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>In <a href="https://github.com/ggerganov/llama.cpp/tree/master/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp">llama.cpp</a>, <code class="language-plaintext highlighter-rouge">attention.wv</code> refers to a tensor that holds the weights for the value vectors in the self-attention mechanism of the model. This tensor is crucial for determining how much focus the model places on different parts of the input when generating responses. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-    <li id="fn:2" role="doc-endnote">
-      <p><code class="language-plaintext highlighter-rouge">attention.wo</code> refers to the weight matrix used in the output layer of the attention mechanism within a transformer model. It plays a crucial role in transforming the attention output into the final representation that is used for generating predictions. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-    <li id="fn:3" role="doc-endnote">
-      <p><code class="language-plaintext highlighter-rouge">feed_forward.w1</code> projects input to a higher-dimensional space, enabling the capture of complex features. <code class="language-plaintext highlighter-rouge">feed_forward.w2</code> projects transformed input back to the original dimension with a non-linear activation function, whereas <code class="language-plaintext highlighter-rouge">feed_forward.w3</code> applies an additional transformation to enhance the learning of complex patterns. These matrices collectively enable the feed-forward network to transform and learn from the input effectively, contributing to the overall performance of the transformer model. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="energy-reduction" /><category term="performance" /><category term="quantisation" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="model-governance" /><category term="production" /><category term="quantisation" /><category term="python" /><category term="mlops" /><category term="best-practices" /><category term="data-science" /><summary type="html"><![CDATA[]]></summary></entry></feed>

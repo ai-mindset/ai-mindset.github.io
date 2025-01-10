@@ -1,0 +1,24 @@
+**Model Soups**
+
+*   Model soups are neural networks created by averaging the weights and biases of multiple independently trained neural networks with identical architectures, rather than combining their predictions.
+*   This technique can produce models that outperform individual networks and provide even more sophisticated ensemble methods.
+
+    **Neural Networks:**
+        *   model A
+        *   model B
+        *   model C
+        *   model soup
+
+            *   (2.32 + 4.21 + 1.23) / 3
+
+
+# TIL: Model Soups - A Surprisingly Simple Yet Effective Ensemble Technique
+
+## Introduction
+While most ensemble methods in machine learning combine model predictions, I learned about an intriguing alternative approach called "model soups" that works directly with model parameters. Instead of aggregating outputs, model soups blend the actual weights and biases of neural networks, showing promising results in computer vision and language tasks.
+
+## Main Concept
+Model soups are created by averaging the parameters (weights and biases) of multiple independently trained neural networks that share the same architecture and training conditions. For example, if we have three models with weights 2.32, 4.21, and 1.23 for a particular parameter, the souped model would use (2.32 + 4.21 + 1.23) / 3 = 2.587 for that parameter. This process is repeated across all parameters in the network. However, not all parameter combinations lead to improvements - models typically need similar training regimes and hyperparameters to blend effectively. When done right, parameter-averaged models can outperform both individual networks and traditional prediction-averaging ensembles, while maintaining the inference speed of a single model.
+
+## Conclusion
+Model soups challenge our intuitions about neural networks by showing that directly averaging weights can produce better results than averaging predictions. While the technique requires careful consideration of training conditions, it provides a computationally efficient way to combine multiple models into a single network, making it particularly valuable for resource-constrained production environments where running multiple models in parallel isn't feasible.
