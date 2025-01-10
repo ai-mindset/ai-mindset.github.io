@@ -240,7 +240,7 @@ This overview examines the mathematical foundations, practical implementation, a
 
 <h2 id="sparse-autoencoders">Sparse Autoencoders</h2>
 <p>An autoencoder is a neural network that learns to reconstruct its input. In a sparse autoencoder, we add a critical biological constraint: neurons should be “inactive” most of the time, mimicking how biological neurons exhibit low average firing rates.<br />
-The Basic Architecture is:</p>
+The basic architecture is:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input (x) -&gt; Hidden Layer (sparse activation) -&gt; Output (x̂)
 </code></pre></div></div>
 <p>Where:</p>
@@ -253,45 +253,92 @@ The Basic Architecture is:</p>
 <h2 id="mathematical-framework">Mathematical Framework</h2>
 
 <ol>
-  <li><strong>Base Cost Function</strong> (single training example):</li>
-</ol>
+  <li>
+    <p><strong>Base Cost Function</strong> (single training example):</p>
 
 \[J(W,b; x,y) = \frac{1}{2}||h_{W,b}(x) - y||^2\]
 
-<p>This measures reconstruction error between input and output.</p>
+    <p>For a single training example:<br />
+     - Measures reconstruction error between network output $h_{W,b}(x)$ and target $y$<br />
+     - For autoencoders: $y = x$ (we reconstruct the input)<br />
+     - $\frac{1}{2}$ factor simplifies gradient computations<br />
+     - Squared L2 norm penalises larger reconstruction errors quadratically</p>
+  </li>
+  <li>
+    <p><strong>Full Cost Function with Weight Decay</strong>:</p>
 
-<ol>
-  <li><strong>Full Cost Function with Weight Decay</strong>:</li>
-</ol>
+    <p>The cost function $J(W,b)$ combines the average reconstruction error<br />
+ $\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - x^{(i)}||^2$</p>
+
+    <p>with the weight decay regularisation, to prevent overfitting by penalising large weights:<br />
+ $\frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2$</p>
 
 \[J(W,b) = \left[\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - y^{(i)}||^2\right] + \frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2\]
 
-<p>The second term prevents overfitting by penalising large weights.</p>
+    <p>Key points:</p>
+    <ul>
+      <li>For autoencoders, output $y^{(i)}$ equals input $x^{(i)}$</li>
+      <li>Weight decay applies only to weights $W$, not biases $b$</li>
+      <li>$\lambda$ balances reconstruction accuracy vs. weight magnitude</li>
+      <li>The $\frac{1}{2}$ factor simplifies derivative calculations in backpropagation</li>
+      <li>This regularisation is distinct from the sparsity constraint (KL divergence term)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Sparsity Measurement</strong>:</p>
 
-<ol>
-  <li><strong>Sparsity Measurement</strong>:<br />
-Average activation of hidden unit $j$:</li>
-</ol>
+    <p>The average activation $\hat{\rho}_j$ measures how frequently hidden unit $j$ fires across the training set:</p>
 
 \[\hat{\rho}_j = \frac{1}{m}\sum_{i=1}^m[a_j^{(2)}(x^{(i)})]\]
 
-<p>We want this to be close to a small value $\rho$ (typically 0.05), meaning the neuron is mostly inactive.</p>
+    <p>Key points:</p>
+    <ul>
+      <li>$a_j^{(2)}(x^{(i)})$ is hidden unit $j$’s activation for input $x^{(i)}$</li>
+      <li>With sigmoid activation:
+        <ul>
+          <li>Values near 1 mean “active” or “firing”</li>
+          <li>Values near 0 mean “inactive”</li>
+        </ul>
+      </li>
+      <li>We constrain $\hat{\rho}_j \approx \rho$ where $\rho$ is small (typically 0.05)</li>
+      <li>This enforces selective firing: each neuron responds strongly to specific input patterns</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Sparsity Penalty</strong> (using <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>):</p>
 
-<ol>
-  <li><strong>Sparsity Penalty</strong> (using <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>):</li>
-</ol>
+    <p>The sparsity penalty uses KL divergence to enforce \(\hat{\rho}_j \approx \rho\):</p>
 
 \[\sum_{j=1}^{s_2}\rho\log\frac{\rho}{\hat{\rho}_j} + (1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j}\]
 
-<p>KL divergence measures how far the actual neuron activation $(\hat{\rho})$ deviates from desired sparsity $(\rho)$. It’s ideal because it penalises both over- and under-activation effectively.</p>
-
-<ol>
-  <li><strong>Final Cost Function</strong>:</li>
-</ol>
+    <p>Properties of this penalty:</p>
+    <ul>
+      <li>Minimised (zero) when $\hat{\rho}_j = \rho$</li>
+      <li>Monotonically increases as $\hat{\rho}_j$ deviates from $\rho$</li>
+      <li>Becomes infinite as $\hat{\rho}_j$ approaches 0 or 1</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Final Cost Function</strong>:</p>
 
 \[J_{sparse}(W,b) = J(W,b) + \beta\sum_{j=1}^{s_2}KL(\rho||\hat{\rho}_j)\]
 
-<p>$\beta$ controls the strength of the sparsity constraint.</p>
+    <p>Components:</p>
+    <ul>
+      <li>$J(W,b)$: Standard autoencoder cost (reconstruction error + weight decay)</li>
+      <li>Sparsity term: KL divergence penalty summed over $s_2$ hidden units</li>
+    </ul>
+
+    <p>$\beta$ controls:</p>
+    <ul>
+      <li>Balance between accurate reconstruction and sparse representation</li>
+      <li>Strength of sparsity enforcement</li>
+      <li>Higher $\beta$ → stronger sparsity constraint</li>
+    </ul>
+
+    <p>This formulation naturally penalises both over- and under-activation of hidden units relative to target sparsity $\rho$.</p>
+  </li>
+</ol>
 
 <h2 id="training-process">Training Process</h2>
 
@@ -299,7 +346,15 @@ Average activation of hidden unit $j$:</li>
 
 \[\delta_i^{(2)} = \left(\sum_{j=1}^{s_3}W_{ji}^{(3)}\delta_j^{(3)}\right)f'(s_i^{(2)}) + \beta\left(-\frac{\rho}{\hat{\rho}_i} + \frac{1-\rho}{1-\hat{\rho}_i}\right)\]
 
-<p>This extra term adjusts weights to maintain sparsity.</p>
+<p>Where:</p>
+<ul>
+  <li>First term: Standard backpropagation gradient through the network</li>
+  <li>Second term: Gradient of KL-divergence sparsity penalty</li>
+  <li>$s_i^{(2)}$ is weighted input sum to hidden unit $i$</li>
+  <li>$\hat{\rho}_i$ must be pre-computed using full training set</li>
+</ul>
+
+<p>This modification ensures gradient descent optimises both reconstruction accuracy and sparsity.</p>
 
 <h2 id="practical-guidelines">Practical Guidelines</h2>
 

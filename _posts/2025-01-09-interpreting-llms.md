@@ -19,7 +19,7 @@ LLMs process text through a sophisticated pipeline:
 This process, while mathematically precise, creates a black box of neural connections that resist simple interpretation.
 
 ## The Challenge of Model Transparency
-[Google Gemma](https://ai.google.dev/gemma) models' analysis of "_the reliability of Wikipedia is very_" demonstrates this complexity. The model assigns varying probabilities to different completions:
+[Google Gemma](https://ai.google.dev/gemma) models' analysis of the sentence "_the reliability of Wikipedia is very_" demonstrates this complexity. The model assigns varying probabilities to different completions:
 - "_important_" (20.21%)
 - "_high_" (11.16%)
 - "_questionable_" (9.48%)
@@ -36,14 +36,14 @@ This complexity necessitated the development of [sparse autoencoders]({{ site.ba
 
 ## Practical Implications
 Understanding LLM internals has crucial implications:
-- AI Safety: Better control over model behaviours and outputs
-- Development: More targeted improvements in model capabilities
-- Deployment: Enhanced ability to predict and prevent unwanted behaviours
-- Trust: Greater transparency in AI decision-making processes
+- **AI Safety**: Better control over model behaviours and outputs
+- **Development**: More targeted improvements in model capabilities
+- **Deployment**: Enhanced ability to predict and prevent unwanted behaviours
+- **Trust**: Greater transparency in AI decision-making processes
 
 ## Conclusions
 While tools like sparse autoencoders have provided unprecedented insights into model behaviour, they've also revealed the vast complexity of LLM internal mechanisms -the "dark matter" of AI. As these models become more integral to society, advancing our ability to interpret and control them becomes increasingly critical for responsible AI development.  
 This improved understanding represents not just academic progress, but a crucial step toward safer, more reliable AI systems.
 
 ---
-[^1]: superposition in the neural networks context is the ability of a single neuron to represent multiple features simultaneously.  https://hdl.handle.net/1721.1/157073
+[^1]: superposition in the neural networks context is the ability of a single neuron to represent multiple features simultaneously.  [https://hdl.handle.net/1721.1/157073](https://hdl.handle.net/1721.1/157073)
