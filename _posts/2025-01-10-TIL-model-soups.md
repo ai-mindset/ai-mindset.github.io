@@ -10,7 +10,7 @@ tags: [neural-network, machine-learning, performance, mlops, production, evaluat
 While most ensemble methods in machine learning combine model predictions, thanks to [Chris Albon](https://bsky.app/profile/chrisalbon.com/post/3lfbbixka7c25) I recently learned about an alternative approach called "_model soups_" that works directly with model parameters. Instead of aggregating outputs, model soups blend the actual weights and biases of neural networks, showing promising results in computer vision and language tasks.
 
 <center>
-    <img src="https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:umpsiyampiq3bpgce7kigydz/bafkreihvr4b4gid7v6y7karhiusawtqfdbhoen2bt6q55pmugyioj3q3gq@jpeg" width="80%" height="80%"/>
+   <a href="https://bsky.app/profile/chrisalbon.com/post/3lfbbixka7c25"><img src="https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:umpsiyampiq3bpgce7kigydz/bafkreihvr4b4gid7v6y7karhiusawtqfdbhoen2bt6q55pmugyioj3q3gq@jpeg" width="80%" height="80%"/></a>
 </center>
 
 ## Main Concept
