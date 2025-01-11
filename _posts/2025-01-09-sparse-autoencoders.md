@@ -9,8 +9,9 @@ tags: [ai, llm, neural-network, machine-learning, data-science, linear-algebra, 
 ## Introduction
 Supervised learning has achieved remarkable successes in areas ranging from computer vision to genomics. However, as Andrew Ng points out in his [CS294A lecture notes](https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf), it faces a fundamental limitation: the need for manually engineered features. While researchers have spent years crafting specialised features for vision, audio, and text processing, this approach neither scales nor generalises well.
 Sparse autoencoders offer an elegant solution to this challenge by automatically learning features from unlabelled data. These neural networks are distinguished by two key characteristics:  
-They attempt to reconstruct their input, forcing them to capture essential data patterns  
-They employ a sparsity constraint that mimics biological neural systems, where neurons fire infrequently and selectively  
+1. They attempt to reconstruct their input, forcing them to capture essential data patterns  
+2. They employ a sparsity constraint that mimics biological neural systems, where neurons fire infrequently and selectively  
+
 While simple implementations may not outperform hand-engineered features in specific domains like computer vision, their strength lies in their generality and biological plausibility. The sparse coding principle has proven effective across diverse domains including audio, text, and visual processing.  
 The mathematical framework combines reconstruction error, regularisation, and sparsity penalties to learn efficient, interpretable representations. This approach not only advances machine learning capabilities but also provides insights into how biological neural networks might learn and process information.
 This overview examines the mathematical foundations, practical implementation, and emergent properties of sparse autoencoders, following the framework presented in Stanford's CS294A course notes.
