@@ -15,7 +15,7 @@ jobs:
       - name: Update count
         run: |
           mkdir -p _data
-          DATE=$(date +%Y-%m-%d)
+          DATE=$(TZ=UTC date +%Y-%m-%d)
           
           # Create initial file if it doesn't exist
           if [ ! -f "_data/visitors.json" ]; then
