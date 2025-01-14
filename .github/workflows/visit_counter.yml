@@ -3,6 +3,9 @@ name: Count Visitors
 on:
   page_build
 
+permissions:
+  contents: write
+
 jobs:
   count:
     runs-on: ubuntu-latest
