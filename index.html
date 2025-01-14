@@ -61,8 +61,12 @@ Made with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, <a href="
 </div>
 
 <!-- Visitor Counter -->
+<!-- <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #eee;"> -->
+<!--     <p>Daily Visitors: {{ site.data.visitors.daily[site.time | date: '%Y-%m-%d'] | default: 0 }} | --> 
+<!--     Total Visitors: {{ site.data.visitors.total }}</p> -->
+<!-- </div> -->
 <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #eee;">
-    <p>Daily Visitors: {{ site.data.visitors.daily[site.time | date: '%Y-%m-%d'] | default: 0 }} | 
+    <p>Daily Visitors: {{ site.data.visitors.daily[site.time | date: '%Y-%m-%d' | timezone: 'UTC'] | default: 0 }} | 
     Total Visitors: {{ site.data.visitors.total }}</p>
 </div>
 
