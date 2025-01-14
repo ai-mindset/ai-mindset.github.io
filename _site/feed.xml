@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-11T21:54:31+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲</title><link href="http://0.0.0.0:4000/TIL-model-soups/" rel="alternate" type="text/html" title="💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲" /><published>2025-01-10T00:00:00+00:00</published><updated>2025-01-10T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-model-soups</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-model-soups/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-14T14:51:23+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🤖 Understanding AI Agents: Tools, Planning, and Evaluation</title><link href="http://0.0.0.0:4000/agents-chip-huyen/" rel="alternate" type="text/html" title="🤖 Understanding AI Agents: Tools, Planning, and Evaluation" /><published>2025-01-14T00:00:00+00:00</published><updated>2025-01-14T00:00:00+00:00</updated><id>http://0.0.0.0:4000/agents-chip-huyen</id><content type="html" xml:base="http://0.0.0.0:4000/agents-chip-huyen/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>This article summarises Chip Huyen’s comprehensive blog post “<a href="https://huyenchip.com//2025/01/07/agents.html">Agents</a>” adapted from her upcoming book AI Engineering (2025). The original piece provides an in-depth examination of intelligent agents, which represent a fundamental concept in AI, defined by Russell and Norvig in their seminal 1995 book <a href="https://en.wikipedia.org/wiki/Artificial_Intelligence:_A_Modern_Approach">Artificial Intelligence: A Modern Approach</a> as anything that can perceive its environment through sensors and act upon it through actuators. Huyen explores how the unprecedented capabilities of foundational models have transformed theoretical possibilities into practical applications, enabling agents to operate in diverse environments -from digital workspaces for coding to physical settings for robotics. These agents can now assist with tasks ranging from website creation to complex negotiations.</p>
+
+<h2 id="understanding-agents-and-their-tools">Understanding Agents and Their Tools</h2>
+<p>An agent’s effectiveness is determined by two key factors: its environment and its tool inventory. The environment defines the scope of possible actions, while tools enable the agent to perceive and act within this environment. Modern agents leverage three distinct categories of tools.<br />
+Knowledge augmentation tools, including text retrievers and web browsing capabilities, prevent model staleness by enabling access to current information. However, web browsing tools require careful API selection to protect against unreliable or harmful content. Capability extension tools address inherent model limitations -for instance, providing calculators for precise arithmetic or code interpreters for programming tasks. These interpreters demand robust security measures to prevent code injection attacks.<br />
+Write actions represent the most powerful and potentially risky category, enabling agents to modify databases or send emails. These tools are distinguished from read-only actions by their ability to affect the environment directly. The <a href="https://arxiv.org/abs/2304.09842">Chameleon</a> system demonstrated the power of tool augmentation, achieving an 11.37% improvement on ScienceQA (a science question answering task) and 17% on TabMWP (a tabular math problem-solving task) through strategic tool combination.</p>
+
+<center>
+    <figure>
+           <a href="https://huyenchip.com//2025/01/07/agents.html"><img src="https://huyenchip.com/assets/pics/agents/8-tool-transition.png" width="80%" height="80%" /></a>
+        <figcaption>A tool transition tree by Chameleon</figcaption>
+    </figure>
+</center>
+
+<h2 id="planning-and-execution-strategies">Planning and Execution Strategies</h2>
+<p>Effective planning requires balancing granularity and flexibility. While <a href="https://arxiv.org/abs/2302.04761">Toolformer</a> managed with 5 tools and <a href="https://arxiv.org/abs/2304.09842">Chameleon</a> with 13, <a href="https://arxiv.org/abs/2305.15334">Gorilla</a> attempted to handle 1,645 APIs, illustrating the complexity of tool selection. Plans can be expressed either in natural language or specific function calls, each approach offering different advantages in maintainability and precision.<br />
+Foundational Model planners require minimal training but need careful prompting, while Reinforcement Learning planners demand extensive training for robustness. Modern planning systems support multiple control flows: sequential, parallel, conditional, and iterative patterns. The <a href="https://arxiv.org/abs/2210.03629">ReAct</a> framework successfully combines reasoning with action,</p>
+<center>
+    <figure>
+        <a href="https://huyenchip.com//2025/01/07/agents.html"><img src="https://huyenchip.com/assets/pics/agents/5-ReAct.png" width="80%" height="80%" /></a>
+        <figcaption>ReAct agent</figcaption>
+    </figure>
+</center>
+
+<p>while <a href="https://arxiv.org/abs/2303.11366">Reflexion</a> separates evaluation and self-reflection for improved performance.</p>
+<center>
+    <figure>
+        <a href="https://huyenchip.com//2025/01/07/agents.html"><img src="https://huyenchip.com/assets/pics/agents/6-reflexion.png" width="80%" height="80%" /></a>
+        <figcaption>Reflexion agent</figcaption>
+    </figure>
+</center>
+
+<h2 id="reflection-and-error-management">Reflection and Error Management</h2>
+<p>Continuous reflection and error correction form the backbone of reliable agent systems. The process begins with query validation, continues through plan assessment, and extends to execution monitoring. Chameleon’s tool transition analysis shows how tools are commonly used together, while Voyager’s skill manager builds on this by tracking and reusing successful tool combinations.</p>
+
+<h2 id="evaluation-framework">Evaluation Framework</h2>
+<p>Agent evaluation requires a comprehensive approach to failure mode analysis. Planning failures might involve invalid tools or incorrect parameters, while tool-specific failures demand targeted analysis. Efficiency metrics must consider not just step count and costs, but also completion time constraints. When comparing AI and human agents, it’s essential to recognise their different operational patterns -what’s efficient for one may be inefficient for the other. Working with domain experts helps identify missing tools and validate performance metrics.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Huyen’s analysis demonstrates that successful AI agents emerge from the careful orchestration of three key elements: strategic tool selection, sophisticated planning mechanisms, and robust evaluation frameworks. While tools dramatically enhance agent capabilities -as evidenced by Chameleon’s significant performance improvements- their effectiveness depends on thoughtful curation, balancing between Toolformer’s minimal approach and Gorilla’s extensive API integration. The integration of planning frameworks like ReAct and Reflexion shows how combining reasoning with action and incorporating systematic reflection can enhance agent performance. However, as an emerging field without established theoretical frameworks, significant challenges remain in tool selection, planning efficiency, and error management. Future developments will focus on agent framework evaluation and memory systems for handling information beyond context limits, while maintaining the delicate balance between capability and control that Huyen emphasizes throughout her analysis.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="prompt-engineering" /><category term="system-prompts" /><category term="evaluation" /><category term="best-practices" /><category term="toolchain" /><category term="machine-learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲</title><link href="http://0.0.0.0:4000/TIL-model-soups/" rel="alternate" type="text/html" title="💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲" /><published>2025-01-10T00:00:00+00:00</published><updated>2025-01-10T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-model-soups</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-model-soups/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 <p>While most ensemble methods in machine learning combine model predictions, thanks to <a href="https://bsky.app/profile/chrisalbon.com/post/3lfbbixka7c25">Chris Albon</a> I recently learned about an alternative approach called “<em>model soups</em>” that works directly with model parameters. Instead of aggregating outputs, model soups blend the actual weights and biases of neural networks, showing promising results in computer vision and language tasks.</p>
@@ -492,224 +534,4 @@ Neovim strikes an elegant balance: it preserves Vim’s philosophy of simplicity
       <p>Co-founder of <a href="https://blog.natbat.net/post/61658401806/lanyrd-from-idea-to-exit">Lanyrd</a>, co-creator of <a href="https://simonwillison.net/2005/Jul/17/django/">Django</a> and <a href="https://datasette.io/">Datasette</a> and a prolific independent AI researcher <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="openai" /><category term="openapi" /><category term="spec" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🎛️ A Practical Guide to Fine-tuning LLMs with InstructLab</title><link href="http://0.0.0.0:4000/instructlab-and-rag/" rel="alternate" type="text/html" title="🎛️ A Practical Guide to Fine-tuning LLMs with InstructLab" /><published>2024-12-19T00:00:00+00:00</published><updated>2024-12-19T00:00:00+00:00</updated><id>http://0.0.0.0:4000/instructlab-and-rag</id><content type="html" xml:base="http://0.0.0.0:4000/instructlab-and-rag/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-
-<p>The explosion of Large Language Models (LLMs) has created a pressing need for domain-specific adaptations. While base models like GPT-4, Claude, and Llama demonstrate impressive general capabilities, organisations often need models that excel in specific domains or exhibit particular behavioural traits. This customisation typically requires fine-tuning, a process that has historically demanded significant expertise, computational resources, and sophisticated infrastructure.</p>
-
-<h3 id="the-fine-tuning-challenge">The Fine-tuning Challenge</h3>
-
-<p>Traditional LLM fine-tuning presents a complex web of interconnected challenges that organisations must navigate. At its core lies the need for sophisticated infrastructure, often requiring specialised hardware and carefully orchestrated software stacks. This infrastructure challenge is compounded by substantial computational costs, making experimentation and iteration expensive.<br />
-The data challenge is equally significant. Fine-tuning demands large, high-quality datasets that are both rare and expensive to create. Even when such datasets exist, organisations face the risk of catastrophic forgetting, where models lose their general capabilities while acquiring new ones. Moreover, validating improvements remains a complex task, requiring careful benchmarking and evaluation frameworks.<br />
-These challenges have historically restricted fine-tuning to well-resourced organisations, creating a significant barrier to entry for smaller teams and organisations seeking to adapt LLMs to their specific needs.</p>
-
-<h3 id="real-world-challenges">Real-world Challenges</h3>
-
-<p>The adaptation of LLMs to specific domains presents organisations with a multifaceted set of practical challenges. In healthcare, medical institutions grapple with the need for models that can accurately process and generate content using complex medical terminology while maintaining strict clinical protocols. This domain expertise challenge extends beyond mere vocabulary; it encompasses understanding of medical procedures, drug interactions, and diagnostic reasoning.<br />
-The financial sector faces equally demanding requirements, particularly around compliance and regulation. Banks and financial institutions must ensure their models operate within specific regulatory frameworks, making decisions that are not only accurate but also auditable and explainable to regulatory bodies.<br />
-Data quality emerges as a persistent challenge across sectors. Organisations typically struggle with historical datasets that exhibit inconsistent formatting, missing values, and inherent biases. The challenge extends to maintaining proper version control and data lineage tracking, crucial for both compliance and model improvement cycles.<br />
-Regulatory constraints add another layer of complexity. Healthcare organisations must ensure strict HIPAA compliance in their model development and deployment processes. Similarly, any organisation handling European data must adhere to GDPR requirements, while specific industries often face additional certification needs. These regulatory requirements must be considered not just in the final deployment but throughout the entire fine-tuning process.</p>
-
-<h3 id="the-role-of-instructlab">The Role of InstructLab</h3>
-
-<p><a href="https://instructlab.ai/">InstructLab</a> emerges as a systematic solution to these challenges, offering a novel approach to LLM fine-tuning that combines:</p>
-<ul>
-  <li>Synthetic data generation for high-quality training examples</li>
-  <li>Efficient <a href="https://arxiv.org/abs/2305.14314">QLoRA</a>-based training pipelines</li>
-  <li>Comprehensive evaluation frameworks</li>
-  <li>Hardware-adaptive processing</li>
-</ul>
-
-<p>The rest of this article will elaborate on <a href="https://instructlab.ai/">InstructLab</a>’s architecture, workflow, and practical considerations, demonstrating how it makes LLM fine-tuning accessible while maintaining rigorous quality standards. It will explore how organisations can leverage this tool to enhance their AI capabilities efficiently and systematically.</p>
-
-<h2 id="from-principles-to-practice">From Principles to Practice</h2>
-
-<p><a href="https://instructlab.ai/">InstructLab</a> is built around the LAB (Large-Scale Alignment for ChatBots) methodology, leveraging [QLoRA(https://arxiv.org/abs/2305.14314) (Quantized Low-Rank Adaptation) for efficient fine-tuning. The system requires Python 3.10/3.11 and approximately 500GB of disc space for full operation.</p>
-
-<h3 id="architectural-components">Architectural Components</h3>
-
-<p>The system operates through three primary components:</p>
-<ul>
-  <li><strong>Taxonomy Repository</strong>: A structured collection of knowledge and skills, organised in YAML files (max 2300 words per Q&amp;A pair)</li>
-  <li><strong>Synthetic Data Generator</strong>: Uses a teacher model (default: Mixtral/Mistral instruct for full pipeline, Merlinite 7b for simple) to transform taxonomy entries into diverse training examples</li>
-  <li><strong>Training Pipeline System</strong>: <a href="https://arxiv.org/abs/2305.14314">QLoRA</a>-based training options optimised for different hardware configurations</li>
-</ul>
-
-<h3 id="training-pipelines">Training Pipelines</h3>
-
-<p><a href="https://instructlab.ai/">InstructLab</a> offers three specialised training pipelines:</p>
-
-<ol>
-  <li><strong>Simple Pipeline</strong>
-    <ul>
-      <li>Fast training (~1 hour)</li>
-      <li>Uses SFT Trainer (Linux) or MLX (MacOS)</li>
-      <li>Great for initial experiments and validation</li>
-    </ul>
-  </li>
-  <li><strong>Full Pipeline</strong>
-    <ul>
-      <li>Custom <a href="https://arxiv.org/abs/2305.14314">QLoRA</a> training loop optimised for CPU/MPS</li>
-      <li>Enhanced data processing functions</li>
-      <li>Memory requirement: 32GB RAM</li>
-      <li>Balanced performance and accessibility</li>
-    </ul>
-  </li>
-  <li><strong>Accelerated Pipeline</strong>
-    <ul>
-      <li>GPU-accelerated distributed <a href="https://arxiv.org/abs/2305.14314">QLoRA</a> training</li>
-      <li>Supports NVIDIA CUDA and AMD ROCm</li>
-      <li>Requires 18GB+ GPU memory</li>
-      <li>Ideal for production-grade fine-tuning</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="hardware-support-and-quantisation">Hardware Support and Quantisation</h3>
-
-<p><a href="https://instructlab.ai/">InstructLab</a> supports various hardware configurations with automatic quantisation:</p>
-<ul>
-  <li>Apple M-series chips: MLX optimisation, MPS acceleration</li>
-  <li>NVIDIA GPUs: CUDA support, 4-bit quantisation available</li>
-  <li>AMD GPUs: ROCm support, similar quantisation options</li>
-  <li>Standard CPUs: Optimised quantisation for memory efficiency</li>
-</ul>
-
-<h2 id="practical-workflow">Practical Workflow</h2>
-
-<p>With the architectural foundation established, <a href="https://instructlab.ai/">InstructLab</a> provides a systematic approach to implementing these components through a straightforward command-line interface. The following sections detail the practical steps to leverage this architecture effectively.</p>
-
-<h3 id="setup-and-installation">Setup and Installation</h3>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>instructlab
-ilab config init
-</code></pre></div></div>
-
-<p>Key requirements:</p>
-<ul>
-  <li>Python 3.10 or 3.11 (&gt;=3.12 not supported<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>)</li>
-  <li>500GB recommended disc space</li>
-  <li>16GB RAM minimum, 32GB recommended</li>
-</ul>
-
-<h3 id="core-workflow-steps">Core Workflow Steps</h3>
-
-<ol>
-  <li><strong>Model Acquisition</strong>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model download
-</code></pre></div>    </div>
-    <ul>
-      <li>Downloads pre-trained base models</li>
-      <li>Supports GGUF (4-bit to 16-bit) and Safetensors formats</li>
-      <li>Automatic quantisation with configurable parameters</li>
-    </ul>
-  </li>
-  <li><strong>Synthetic Data Generation</strong>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model serve
-ilab data generate <span class="nt">--pipeline</span> <span class="o">[</span>simple|full]
-</code></pre></div>    </div>
-    <p>Common issues and solutions:</p>
-    <ul>
-      <li>Server conflicts: Use different ports with <code class="language-plaintext highlighter-rouge">--port</code></li>
-      <li>Memory errors: Reduce batch size or use <code class="language-plaintext highlighter-rouge">--pipeline simple</code></li>
-      <li>Teacher model issues: Verify model checksum and try re-downloading</li>
-    </ul>
-  </li>
-  <li><strong>Training</strong>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model train
-</code></pre></div>    </div>
-    <p>Hyperparameters (configurable in config.yaml):</p>
-    <ul>
-      <li>Max epochs: 10</li>
-    </ul>
-  </li>
-  <li><strong>Evaluation</strong>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model evaluate
-</code></pre></div>    </div>
-    <p>Benchmarks and typical scores:</p>
-    <ul>
-      <li><a href="http://en.wikipedia.org/wiki/MMLU">MMLU</a>: Knowledge (0.0-1.0 scale)</li>
-      <li>MMLUBranch: Delta improvements</li>
-      <li>MTBench: Skills (0.0-10.0 scale)</li>
-      <li>MTBenchBranch: Skill improvements</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="model-deployment">Model Deployment</h3>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilab model serve <span class="nt">--model-path</span> &lt;new-model-path&gt;
-ilab model chat <span class="nt">-m</span> &lt;new-model-path&gt; <span class="c"># Optionally, chat with the model</span>
-</code></pre></div></div>
-<p>Deployment considerations:</p>
-<ul>
-  <li>Verify quantisation level matches hardware capabilities</li>
-  <li>Monitor memory usage during serving</li>
-  <li>Consider temperature settings for inference (default: 1.0)</li>
-</ul>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p><a href="https://instructlab.ai/">InstructLab</a> represents a significant advancement in democratising LLM fine-tuning, bridging the gap between research capabilities and practical deployment. Through its innovative LAB methodology and <a href="https://arxiv.org/abs/2305.14314">QLoRA</a>-based implementation, it makes sophisticated model adaptation accessible to practitioners across different hardware configurations.</p>
-
-<h3 id="key-advantages">Key Advantages</h3>
-
-<ul>
-  <li><strong>Accessibility</strong>: From laptops to data centres, <a href="https://instructlab.ai/">InstructLab</a> scales with available resources</li>
-  <li><strong>Flexibility</strong>: Multiple training pipelines accommodate different needs and constraints</li>
-  <li><strong>Systematic</strong>: Structured approach to knowledge and skill injection through taxonomy</li>
-  <li><strong>Verifiable</strong>: Comprehensive evaluation suite ensures quality of fine-tuned models</li>
-</ul>
-
-<h3 id="practical-impact">Practical Impact</h3>
-
-<p><a href="https://instructlab.ai/">InstructLab</a> enables organisations to:</p>
-<ul>
-  <li>Create domain-specialised models without massive compute resources</li>
-  <li>Systematically inject new capabilities through structured knowledge representation</li>
-  <li>Validate improvements through quantitative benchmarks</li>
-  <li>Deploy fine-tuned models with minimal operational overhead</li>
-</ul>
-
-<h3 id="limitations-and-considerations">Limitations and Considerations</h3>
-
-<ul>
-  <li><strong>Model Constraints</strong>: Currently supports models up to 7B parameters effectively</li>
-  <li><strong>Resource Timeline</strong>: Typical deployment cycle from setup to production:
-    <ul>
-      <li>Initial setup: a few hours</li>
-      <li>Synthetic Data generation: 15 minutes to 1+ hours depending on computing resources</li>
-      <li>Training: several hours on consumer hardware</li>
-      <li>Evaluation and deployment: a few hours</li>
-    </ul>
-  </li>
-  <li><strong>Maintenance Requirements</strong>:
-    <ul>
-      <li>Regular model evaluations against new benchmarks</li>
-      <li>Periodic retraining with updated taxonomy</li>
-      <li>System updates and dependency management</li>
-      <li>Storage management for checkpoints and datasets</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="rag-vs-fine-tuning">RAG vs Fine-tuning</h3>
-
-<p>It’s important to recognise that fine-tuning isn’t always the optimal solution. For dynamic, frequently changing knowledge bases, Retrieval-Augmented Generation (RAG) often provides a more practical and maintainable solution. Fine-tuning through <a href="https://instructlab.ai/">InstructLab</a> is most valuable for:</p>
-<ul>
-  <li>Stable knowledge domains (e.g., natural sciences, engineering)</li>
-  <li>Consistent skill enhancement needs</li>
-  <li>Cases where inference latency is critical</li>
-</ul>
-
-<p>The system’s architecture strikes a careful balance between computational efficiency and training effectiveness, making it a practical tool for both experimentation and production use. While not eliminating the complexity of LLM fine-tuning entirely, <a href="https://instructlab.ai/">InstructLab</a> significantly reduces the technical barriers to entry in this crucial domain.</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Python version compatibility remains a significant consideration in the ML ecosystem. While newer versions (≥3.12) offer improved performance, they often lack compatibility with essential ML frameworks. This constraint informs <a href="https://instructlab.ai/">InstructLab</a>’s current version requirements. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="model-governance" /><category term="production" /><category term="quantisation" /><category term="python" /><category term="mlops" /><category term="best-practices" /><category term="data-science" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="openai" /><category term="openapi" /><category term="spec" /><summary type="html"><![CDATA[]]></summary></entry></feed>

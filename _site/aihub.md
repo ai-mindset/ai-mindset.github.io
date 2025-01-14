@@ -6,6 +6,7 @@ This document provides a curated list of high-quality sources for learning about
 ## Books
 - [Supervised Machine Learning for Science](https://ml-science-book.com/) is a comprehensive book that explores the role of supervised machine learning in scientific research. It provides a philosophical justification for using ML in science and discusses best practices for integrating it effectively.
 - [Essentials of Metaheuristics](https://cs.gmu.edu/~sean/book/metaheuristics/), an open set of lecture notes on metaheuristics algorithms, intended for undergraduate students, practitioners, programmers, and other non-experts. A metaheuristic is any stochastic optimization algorithm intended to be the last resort before giving up and using random or brute-force search.   
+- [Ollama in Action: Building Safe, Private AI with LLMs, Function Calling and Agents](https://leanpub.com/ollama) demonstrates how it's possible to run LLMs on-premise to maintain data privacy and control of your tech stack. It contains clear Python code examples and recommendations for effectively using Ollama, to get you started quickly as well as learn a few useful tips and techniques.
 
 ## Courses
 - [Building LLM Applications for Data Scientists and Software Engineers](https://xcancel.com/hugobowne/status/1870978490574704812) teaches how to build LLM-powered software reliably, from first principles. It's an authoritative source on GenAI software development lifecycle: agents, evals, iteration and others.  
@@ -20,6 +21,7 @@ This document provides a curated list of high-quality sources for learning about
 
 ## Research
 - [Emergent Mind](https://www.emergentmind.com/) is an AI research assistant that synthesizes the latest computer science research from arXiv. It is also a paper aggregator that surfaces trending pre-prints to keep informed about new and emerging research directions.
+- [The 2025 AI Engineer Reading List](https://www.latent.space/p/2025-papers) contains 50 paper/models/blogs across 10 fields in AI Eng: LLMs, Benchmarks, Prompting, RAG, Agents, CodeGen, Vision, Voice, Diffusion, Finetuning. A good place to start.
 
 ## Social Media
 - [Eric Topol](https://bsky.app/profile/erictopol.bsky.social) is a renowned cardiologist, scientist, and author who has written extensively on the future of medicine, including the impact of AI and digital technologies. His books and online presence are valuable resources for understanding the intersection of healthcare and technology.
