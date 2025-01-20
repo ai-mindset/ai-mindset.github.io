@@ -59,7 +59,7 @@ My toolchain starts with the following foundational choices that eliminate commo
 5. [iterative refinement]({{ site.baseurl }}{% link _posts/2024-11-22-iterative-refinement.md %}): An approach that tightly couples (doc)tests with code, ensuring [up-to-dateness](https://www.merriam-webster.com/thesaurus/up-to-dateness)  
 ~~[pytest](https://docs.pytest.org/en/stable/): Handles testing with minimal boilerplate and rich assertions~~
 
-### Cross-Platform Distribution:
+### Cross-Platform Distribution
 1. PyInstaller for creating stand-alone executables
 2. GitHub Actions workflow for automated builds:
 ```yaml
