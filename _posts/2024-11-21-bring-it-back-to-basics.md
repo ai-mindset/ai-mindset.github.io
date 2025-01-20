@@ -26,7 +26,7 @@ My toolchain starts with the following foundational choices that eliminate commo
     - Built-in virtual environment management
     - Direct integration with `pyproject.toml`
 
-2. [`pyproject.toml`](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/): The single source of truth for project configuration:
+2. [`pyproject.toml`](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/): The single source of truth for project configuration. For example:
 ```toml
     [project]
     name = "my-ds-project"
@@ -51,12 +51,12 @@ My toolchain starts with the following foundational choices that eliminate commo
     - Configurable through `pyproject.toml`
     - Significantly faster than Python-based alternatives
 
-4. [mypy](https://www.mypy-lang.org/): Static Typing for Python
-    - Type annotations validation during development, not runtime
-    - Type error catching before execution
-    - Configure within `pyproject.toml` 
+4. [pyright](https://github.com/microsoft/pyright): Static Type Checker for Python
+    - Static type checker 
+    - [Standards](https://htmlpreview.github.io/?https://github.com/python/typing/blob/main/conformance/results/results.html) compliant
+    - [Configurable](https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file) within `pyproject.toml` 
 
-5. [iterative refinement]({{ site.baseurl }}{% link _posts/2024-11-22-iterative-refinement.md %}): An approach that tightly couples (doc)tests with code, ensuring up-to-dateness[^1]  
+5. [iterative refinement]({{ site.baseurl }}{% link _posts/2024-11-22-iterative-refinement.md %}): An approach that tightly couples (doc)tests with code, ensuring [up-to-dateness](https://www.merriam-webster.com/thesaurus/up-to-dateness)  
 ~~[pytest](https://docs.pytest.org/en/stable/): Handles testing with minimal boilerplate and rich assertions~~
 
 ### Cross-Platform Distribution:
@@ -69,7 +69,7 @@ My toolchain starts with the following foundational choices that eliminate commo
 ```
 3. Local cross-compilation using [Podman](https://podman.io/):
 ```Dockerfile
-FROM python:3.11-slim
+FROM python:3.13-slim
 COPY . /app
 WORKDIR /app
 RUN pip install pyinstaller
@@ -156,7 +156,7 @@ A carefully selected set of powerful libraries that minimize overlap:
 ```
 - [MLFlow](https://mlflow.org): Managing the Machine Learning Lifecycle
 <center>
-    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/40_MLFlow.png"/>  
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/40_MLFlow.png"/>  
 </center><br />
 
 ### AI Engineering
@@ -253,7 +253,9 @@ With hybrid solutions becoming more prevalent nowadays, we can use a combination
         ]
         
         return list(db.documents.aggregate(pipeline))
-```
+```  
+
+_Update: Looking into [Weaviate](https://weaviate.io/) as an all-in-one DB solution._
 
 This stack provides everything needed for modern Data Science and AI work while maintaining clarity and minimising tool overlap.
 
@@ -272,6 +274,3 @@ Key benefits of this approach:
 While Python's ecosystem will likely remain fragmented, we don't have to accept the complexity. By carefully choosing modern tools that prioritise speed, simplicity, and clarity, we can create a development environment that's both powerful and pleasant to use.
 
 The beauty of this approach lies not in its prescriptiveness, but in its principles: _minimize tooling_, _maximise capability_, and _maintain clarity_. Whether you adopt this exact stack or use it as inspiration for your own, the goal remains the same: bring the focus back to solving problems rather than managing tools.
-
----
-[^1]: Yes this is a valid term. See Merriam-Webster.com Thesaurus, Merriam-Webster, [https://www.merriam-webster.com/thesaurus/up-to-dateness](https://www.merriam-webster.com/thesaurus/up-to-dateness)
