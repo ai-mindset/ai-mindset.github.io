@@ -256,7 +256,7 @@ The goal isn’t to prescribe another “right way” of doing things, but rathe
       <li>Direct integration with <code class="language-plaintext highlighter-rouge">pyproject.toml</code></li>
     </ul>
   </li>
-  <li><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/"><code class="language-plaintext highlighter-rouge">pyproject.toml</code></a>: The single source of truth for project configuration:
+  <li><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/"><code class="language-plaintext highlighter-rouge">pyproject.toml</code></a>: The single source of truth for project configuration. For example:
     <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nn">[project]</span>
  <span class="py">name</span> <span class="p">=</span> <span class="s">"my-ds-project"</span>
  <span class="py">version</span> <span class="p">=</span> <span class="s">"0.1.0"</span>
@@ -282,14 +282,14 @@ The goal isn’t to prescribe another “right way” of doing things, but rathe
       <li>Significantly faster than Python-based alternatives</li>
     </ul>
   </li>
-  <li><a href="https://www.mypy-lang.org/">mypy</a>: Static Typing for Python
+  <li><a href="https://github.com/microsoft/pyright">pyright</a>: Static Type Checker for Python
     <ul>
-      <li>Type annotations validation during development, not runtime</li>
-      <li>Type error catching before execution</li>
-      <li>Configure within <code class="language-plaintext highlighter-rouge">pyproject.toml</code></li>
+      <li>Static type checker</li>
+      <li><a href="https://htmlpreview.github.io/?https://github.com/python/typing/blob/main/conformance/results/results.html">Standards</a> compliant</li>
+      <li><a href="https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file">Configurable</a> within <code class="language-plaintext highlighter-rouge">pyproject.toml</code></li>
     </ul>
   </li>
-  <li><a href="/iterative-refinement/">iterative refinement</a>: An approach that tightly couples (doc)tests with code, ensuring up-to-dateness<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup><br />
+  <li><a href="/iterative-refinement/">iterative refinement</a>: An approach that tightly couples (doc)tests with code, ensuring <a href="https://www.merriam-webster.com/thesaurus/up-to-dateness">up-to-dateness</a><br />
 <del><a href="https://docs.pytest.org/en/stable/">pytest</a>: Handles testing with minimal boilerplate and rich assertions</del></li>
 </ol>
 
@@ -303,7 +303,7 @@ The goal isn’t to prescribe another “right way” of doing things, but rathe
 </code></pre></div>    </div>
   </li>
   <li>Local cross-compilation using <a href="https://podman.io/">Podman</a>:
-    <div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> python:3.11-slim</span>
+    <div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> python:3.13-slim</span>
 <span class="k">COPY</span><span class="s"> . /app</span>
 <span class="k">WORKDIR</span><span class="s"> /app</span>
 <span class="k">RUN </span>pip <span class="nb">install </span>pyinstaller
@@ -398,7 +398,7 @@ The goal isn’t to prescribe another “right way” of doing things, but rathe
   <li><a href="https://mlflow.org">MLFlow</a>: Managing the Machine Learning Lifecycle</li>
 </ul>
 <center>
-    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/40_MLFlow.png" />  
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/40_MLFlow.png" />  
 </center>
 <p><br /></p>
 
@@ -498,6 +498,8 @@ The goal isn’t to prescribe another “right way” of doing things, but rathe
   </li>
 </ul>
 
+<p><em>Update: Looking into <a href="https://weaviate.io/">Weaviate</a> as an all-in-one DB solution.</em></p>
+
 <p>This stack provides everything needed for modern Data Science and AI work while maintaining clarity and minimising tool overlap.</p>
 
 <h2 id="conclusions">Conclusions</h2>
@@ -517,15 +519,6 @@ The goal isn’t to prescribe another “right way” of doing things, but rathe
 <p>While Python’s ecosystem will likely remain fragmented, we don’t have to accept the complexity. By carefully choosing modern tools that prioritise speed, simplicity, and clarity, we can create a development environment that’s both powerful and pleasant to use.</p>
 
 <p>The beauty of this approach lies not in its prescriptiveness, but in its principles: <em>minimize tooling</em>, <em>maximise capability</em>, and <em>maintain clarity</em>. Whether you adopt this exact stack or use it as inspiration for your own, the goal remains the same: bring the focus back to solving problems rather than managing tools.</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Yes this is a valid term. See Merriam-Webster.com Thesaurus, Merriam-Webster, <a href="https://www.merriam-webster.com/thesaurus/up-to-dateness">https://www.merriam-webster.com/thesaurus/up-to-dateness</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
 
 </article>
 
