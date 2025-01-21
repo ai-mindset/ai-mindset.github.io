@@ -7,7 +7,7 @@ tags: [machine-learning, best-practices, mlops, monitoring, production, quality-
 <!--more-->
 
 ## Introduction
-This is a concise reference guide distilling Martin Zinkevich's [influential Google article on machine learning best practices](https://developers.google.com/machine-learning/guides/rules-of-ml. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you're starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.
+This is a concise reference guide distilling Martin Zinkevich's [influential Google article on machine learning best practices](https://developers.google.com/machine-learning/guides/rules-of-ml). While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you're starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.
 
 ## Core Philosophy
 > Do machine learning like the great engineer you are, not like the great machine learning expert you aren't.
