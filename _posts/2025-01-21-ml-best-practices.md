@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🔧 A 5-Minute Guide to Engineering Machine Learning Systems"
+title: "🔧 A 10-Minute Guide to Engineering Machine Learning Systems"
 date: 2025-01-21
 tags: [machine-learning, best-practices, mlops, monitoring, production, quality-assurance, data-science, decision-making]
 ---
