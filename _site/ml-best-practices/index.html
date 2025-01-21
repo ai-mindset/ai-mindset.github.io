@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>🔧 Rules of Machine Learning: Best Practices Summary | Just-in-Time learning</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="🔧 Rules of Machine Learning: Best Practices Summary" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
+<meta property="og:description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
+<link rel="canonical" href="http://0.0.0.0:4000/ml-best-practices/" />
+<meta property="og:url" content="http://0.0.0.0:4000/ml-best-practices/" />
+<meta property="og:site_name" content="Just-in-Time learning" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-01-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="🔧 Rules of Machine Learning: Best Practices Summary" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-21T00:00:00+00:00","datePublished":"2025-01-21T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"🔧 Rules of Machine Learning: Best Practices Summary","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/ml-best-practices/"},"url":"http://0.0.0.0:4000/ml-best-practices/"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Just-in-Time learning" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+delimiters: [
+{left: "$$", right: "$$", display: true},
+{left: "[%", right: "%]", display: true},
+{left: "$", right: "$", display: false}
+]}
+);
+        });
+</script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+                if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+                }
+                });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/theme.js"></script>
+
+</head>
+<body><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="/assets/js/search.js"></script>
+
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Just-in-Time learning</a>
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,12.031,18,12.696,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." aria-label="Search posts" class="search-input">
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <a class="page-link" href="/aihub">AI Hub</a>
+        <a class="page-link" href="/about">About</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
+  🌙 Dark
+</button>
+
+<script>
+function toggleTheme() {
+    const body = document.querySelector('body');
+    const button = document.getElementById('theme-toggle');
+    const isDark = body.classList.toggle('dark-theme');
+    
+    button.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('darkTheme', isDark);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('darkTheme') === 'true') {
+        document.querySelector('body').classList.add('dark-theme');
+        document.getElementById('theme-toggle').innerHTML = '☀️ Light';
+    }
+});
+</script>
+
+      </div>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+  <h1>🔧 Rules of Machine Learning: Best Practices Summary</h1>
+  
+  <!-- Debug info -->
+  <!-- <div style="color: red;"> -->
+  <!--   TOC enabled: true -->
+  <!--   Layout: post -->
+  <!-- </div> -->
+  
+  
+    <nav class="toc">
+  <div class="toc-header">
+    <h2>Contents</h2>
+    <button class="toc-toggle" aria-label="Toggle table of contents">
+      <svg class="toc-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path class="chevron-down" d="M6 9l6 6 6-6"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="toc-content">
+    <ul>
+      
+      
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#introduction">Introduction</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#core-philosophy">Core Philosophy</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#phase-i-before-machine-learning-rules-1-3">Phase I: Before Machine Learning (Rules #1-3)</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#phase-ii-first-pipeline-rules-4-11">Phase II: First Pipeline (Rules #4-11)</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#your-first-objective-rules-12-15">Your First Objective (Rules #12-15)</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#phase-iii-feature-engineering-rules-16-22">Phase III: Feature Engineering (Rules #16-22)</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#human-analysis-rules-23-28">Human Analysis (Rules #23-28)</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#training-serving-skew-rules-29-37">Training-Serving Skew (Rules #29-37)</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#phase-iv-optimization-and-complex-models-rules-38-43">Phase IV: Optimization and Complex Models (Rules #38-43)</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#final-recommendations">Final Recommendations</a>
+            
+            
+            
+          </li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+  
+  
+  <!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>This is a concise reference guide distilling Martin Zinkevich’s [influential Google article on machine learning best practices](https://developers.google.com/machine-learning/guides/rules-of-ml. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
+
+<h2 id="core-philosophy">Core Philosophy</h2>
+<blockquote>
+  <p>Do machine learning like the great engineer you are, not like the great machine learning expert you aren’t.</p>
+</blockquote>
+
+<p>Most ML gains come from great features, not algorithms. The basic approach should be:</p>
+<ol>
+  <li>Ensure solid end-to-end pipeline</li>
+  <li>Start with reasonable objective</li>
+  <li>Add common-sense features simply</li>
+  <li>Maintain pipeline integrity</li>
+</ol>
+
+<h2 id="phase-i-before-machine-learning-rules-1-3">Phase I: Before Machine Learning (Rules #1-3)</h2>
+<ol>
+  <li><strong>Don’t be afraid to launch without ML</strong>
+    <ul>
+      <li>Simple heuristics get you 50% of the way</li>
+      <li>Launch with heuristics when data is insufficient</li>
+      <li>Example: Use install rate for app ranking</li>
+    </ul>
+  </li>
+  <li><strong>First, design and implement metrics</strong>
+    <ul>
+      <li>Track everything possible in current system</li>
+      <li>Get early permission from users</li>
+      <li>Design systems with metric instrumentation</li>
+      <li>Implement experiment framework</li>
+    </ul>
+  </li>
+  <li><strong>Choose ML over complex heuristics</strong>
+    <ul>
+      <li>Simple heuristics for launching</li>
+      <li>Complex heuristics become unmaintainable</li>
+      <li>ML models are easier to maintain long-term</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="phase-ii-first-pipeline-rules-4-11">Phase II: First Pipeline (Rules #4-11)</h2>
+<ol>
+  <li><strong>Keep first model simple, get infrastructure right</strong>
+    <ul>
+      <li>Focus on data pipeline integrity</li>
+      <li>Define clear evaluation metrics</li>
+      <li>Plan model integration carefully</li>
+    </ul>
+  </li>
+  <li><strong>Pipeline Health is Critical</strong>
+    <ul>
+      <li>Test infrastructure independently</li>
+      <li>Monitor freshness requirements</li>
+      <li>Watch for silent failures</li>
+      <li>Give feature columns owners</li>
+      <li>Document feature expectations</li>
+    </ul>
+  </li>
+  <li><strong>Starting Your ML System</strong>
+    <ul>
+      <li>Test getting data into algorithm</li>
+      <li>Test getting models out correctly</li>
+      <li>Monitor data statistics continuously</li>
+      <li>Build alerting system</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="your-first-objective-rules-12-15">Your First Objective (Rules #12-15)</h2>
+<ol>
+  <li><strong>Choose Objectives Wisely</strong>
+    <ul>
+      <li>Don’t overthink initial objective choice</li>
+      <li>Start with simple, observable metrics</li>
+      <li>Use directly observed user behaviors</li>
+      <li>Example: clicks, downloads, shares</li>
+    </ul>
+  </li>
+  <li><strong>Model Selection Guidelines</strong>
+    <ul>
+      <li>Start with interpretable models</li>
+      <li>Separate spam filtering from quality ranking</li>
+      <li>Use simple linear models initially</li>
+      <li>Make debugging easier</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="phase-iii-feature-engineering-rules-16-22">Phase III: Feature Engineering (Rules #16-22)</h2>
+<ol>
+  <li><strong>Plan to launch and iterate</strong>
+    <ul>
+      <li>Expect regular model updates</li>
+      <li>Design for feature flexibility</li>
+      <li>Keep infrastructure clean</li>
+    </ul>
+  </li>
+  <li><strong>Feature Engineering Principles</strong>
+    <ul>
+      <li>Start with directly observed features</li>
+      <li>Use cross-product features wisely</li>
+      <li>Clean up unused features</li>
+      <li>Scale feature complexity with data</li>
+    </ul>
+  </li>
+  <li><strong>Feature Coverage and Quality</strong>
+    <ul>
+      <li>Features that generalize across contexts</li>
+      <li>Monitor feature coverage</li>
+      <li>Document feature ownership</li>
+      <li>Regular feature cleanup</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="human-analysis-rules-23-28">Human Analysis (Rules #23-28)</h2>
+<ol>
+  <li><strong>Testing and Validation</strong>
+    <ul>
+      <li>Use crowdsourcing or live experiments</li>
+      <li>Measure model deltas explicitly</li>
+      <li>Look for error patterns</li>
+      <li>Consider long-term effects</li>
+    </ul>
+  </li>
+  <li><strong>Common Pitfalls</strong>
+    <ul>
+      <li>Engineers aren’t typical users</li>
+      <li>Beware of confirmation bias</li>
+      <li>Quantify undesirable behaviors</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="training-serving-skew-rules-29-37">Training-Serving Skew (Rules #29-37)</h2>
+<ol>
+  <li><strong>Prevent Skew</strong>
+    <ul>
+      <li>Save serving-time features</li>
+      <li>Weight sampled data properly</li>
+      <li>Reuse code between training/serving</li>
+      <li>Test on future data</li>
+    </ul>
+  </li>
+  <li><strong>Monitor Everything</strong>
+    <ul>
+      <li>Track performance metrics</li>
+      <li>Watch data distributions</li>
+      <li>Monitor feature coverage</li>
+      <li>Check prediction bias</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="phase-iv-optimization-and-complex-models-rules-38-43">Phase IV: Optimization and Complex Models (Rules #38-43)</h2>
+<ol>
+  <li><strong>When to Add Complexity</strong>
+    <ul>
+      <li>After simple approaches plateau</li>
+      <li>When objectives are well-aligned</li>
+      <li>If maintenance cost justifies gains</li>
+    </ul>
+  </li>
+  <li><strong>Advanced Techniques</strong>
+    <ul>
+      <li>Keep ensembles simple</li>
+      <li>Look for new information sources</li>
+      <li>Balance complexity vs. benefits</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="final-recommendations">Final Recommendations</h2>
+<ol>
+  <li><strong>Launch Decisions</strong>
+    <ul>
+      <li>Consider multiple metrics</li>
+      <li>Use proxies for long-term goals</li>
+      <li>Balance simple vs. complex</li>
+    </ul>
+  </li>
+  <li><strong>System Evolution</strong>
+    <ul>
+      <li>Start simple, add complexity gradually</li>
+      <li>Monitor consistently</li>
+      <li>Keep infrastructure clean</li>
+      <li>Document everything</li>
+    </ul>
+  </li>
+</ol>
+
+</article>
+
+<!-- Theme toggle -->
+<script>
+// Initialize theme from localStorage
+if (localStorage.getItem('darkTheme') === 'true') {
+    document.body.classList.add('dark-theme');
+}
+</script>
+
+<!-- Collapsible TOC -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocHeader = document.querySelector('.toc-header');
+  const toc = document.querySelector('.toc');
+  
+  if (tocHeader && toc) {
+    tocHeader.addEventListener('click', function() {
+      toc.classList.toggle('collapsed');
+      
+      // Optional: Save state to localStorage
+      localStorage.setItem('tocCollapsed', toc.classList.contains('collapsed'));
+    });
+    
+    // Optional: Restore state from localStorage
+    const isCollapsed = localStorage.getItem('tocCollapsed') === 'true';
+    if (isCollapsed) {
+      toc.classList.add('collapsed');
+    }
+  }
+});
+</script>
+
+<div class="post-tags">
+  Tags: 
+  
+    <a href="/">machine-learning</a>, 
+  
+    <a href="/">best-practices</a>, 
+  
+    <a href="/">mlops</a>, 
+  
+    <a href="/">monitoring</a>, 
+  
+    <a href="/">production</a>, 
+  
+    <a href="/">quality-assurance</a>, 
+  
+    <a href="/">data-science</a>, 
+  
+    <a href="/">decision-making</a>
+  
+</div>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Just-in-Time learning</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Just-in-Time learning</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list">
+  <li><a href="https://github.com/ai-mindset"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ai-mindset</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

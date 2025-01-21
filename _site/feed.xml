@@ -1,4 +1,197 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-20T14:24:37+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🤖 Understanding AI Agents: Tools, Planning, and Evaluation</title><link href="http://0.0.0.0:4000/agents-chip-huyen/" rel="alternate" type="text/html" title="🤖 Understanding AI Agents: Tools, Planning, and Evaluation" /><published>2025-01-14T00:00:00+00:00</published><updated>2025-01-14T00:00:00+00:00</updated><id>http://0.0.0.0:4000/agents-chip-huyen</id><content type="html" xml:base="http://0.0.0.0:4000/agents-chip-huyen/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-21T11:26:42+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔧 Rules of Machine Learning: Best Practices Summary</title><link href="http://0.0.0.0:4000/ml-best-practices/" rel="alternate" type="text/html" title="🔧 Rules of Machine Learning: Best Practices Summary" /><published>2025-01-21T00:00:00+00:00</published><updated>2025-01-21T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ml-best-practices</id><content type="html" xml:base="http://0.0.0.0:4000/ml-best-practices/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>This is a concise reference guide distilling Martin Zinkevich’s [influential Google article on machine learning best practices](https://developers.google.com/machine-learning/guides/rules-of-ml. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
+
+<h2 id="core-philosophy">Core Philosophy</h2>
+<blockquote>
+  <p>Do machine learning like the great engineer you are, not like the great machine learning expert you aren’t.</p>
+</blockquote>
+
+<p>Most ML gains come from great features, not algorithms. The basic approach should be:</p>
+<ol>
+  <li>Ensure solid end-to-end pipeline</li>
+  <li>Start with reasonable objective</li>
+  <li>Add common-sense features simply</li>
+  <li>Maintain pipeline integrity</li>
+</ol>
+
+<h2 id="phase-i-before-machine-learning-rules-1-3">Phase I: Before Machine Learning (Rules #1-3)</h2>
+<ol>
+  <li><strong>Don’t be afraid to launch without ML</strong>
+    <ul>
+      <li>Simple heuristics get you 50% of the way</li>
+      <li>Launch with heuristics when data is insufficient</li>
+      <li>Example: Use install rate for app ranking</li>
+    </ul>
+  </li>
+  <li><strong>First, design and implement metrics</strong>
+    <ul>
+      <li>Track everything possible in current system</li>
+      <li>Get early permission from users</li>
+      <li>Design systems with metric instrumentation</li>
+      <li>Implement experiment framework</li>
+    </ul>
+  </li>
+  <li><strong>Choose ML over complex heuristics</strong>
+    <ul>
+      <li>Simple heuristics for launching</li>
+      <li>Complex heuristics become unmaintainable</li>
+      <li>ML models are easier to maintain long-term</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="phase-ii-first-pipeline-rules-4-11">Phase II: First Pipeline (Rules #4-11)</h2>
+<ol>
+  <li><strong>Keep first model simple, get infrastructure right</strong>
+    <ul>
+      <li>Focus on data pipeline integrity</li>
+      <li>Define clear evaluation metrics</li>
+      <li>Plan model integration carefully</li>
+    </ul>
+  </li>
+  <li><strong>Pipeline Health is Critical</strong>
+    <ul>
+      <li>Test infrastructure independently</li>
+      <li>Monitor freshness requirements</li>
+      <li>Watch for silent failures</li>
+      <li>Give feature columns owners</li>
+      <li>Document feature expectations</li>
+    </ul>
+  </li>
+  <li><strong>Starting Your ML System</strong>
+    <ul>
+      <li>Test getting data into algorithm</li>
+      <li>Test getting models out correctly</li>
+      <li>Monitor data statistics continuously</li>
+      <li>Build alerting system</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="your-first-objective-rules-12-15">Your First Objective (Rules #12-15)</h2>
+<ol>
+  <li><strong>Choose Objectives Wisely</strong>
+    <ul>
+      <li>Don’t overthink initial objective choice</li>
+      <li>Start with simple, observable metrics</li>
+      <li>Use directly observed user behaviors</li>
+      <li>Example: clicks, downloads, shares</li>
+    </ul>
+  </li>
+  <li><strong>Model Selection Guidelines</strong>
+    <ul>
+      <li>Start with interpretable models</li>
+      <li>Separate spam filtering from quality ranking</li>
+      <li>Use simple linear models initially</li>
+      <li>Make debugging easier</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="phase-iii-feature-engineering-rules-16-22">Phase III: Feature Engineering (Rules #16-22)</h2>
+<ol>
+  <li><strong>Plan to launch and iterate</strong>
+    <ul>
+      <li>Expect regular model updates</li>
+      <li>Design for feature flexibility</li>
+      <li>Keep infrastructure clean</li>
+    </ul>
+  </li>
+  <li><strong>Feature Engineering Principles</strong>
+    <ul>
+      <li>Start with directly observed features</li>
+      <li>Use cross-product features wisely</li>
+      <li>Clean up unused features</li>
+      <li>Scale feature complexity with data</li>
+    </ul>
+  </li>
+  <li><strong>Feature Coverage and Quality</strong>
+    <ul>
+      <li>Features that generalize across contexts</li>
+      <li>Monitor feature coverage</li>
+      <li>Document feature ownership</li>
+      <li>Regular feature cleanup</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="human-analysis-rules-23-28">Human Analysis (Rules #23-28)</h2>
+<ol>
+  <li><strong>Testing and Validation</strong>
+    <ul>
+      <li>Use crowdsourcing or live experiments</li>
+      <li>Measure model deltas explicitly</li>
+      <li>Look for error patterns</li>
+      <li>Consider long-term effects</li>
+    </ul>
+  </li>
+  <li><strong>Common Pitfalls</strong>
+    <ul>
+      <li>Engineers aren’t typical users</li>
+      <li>Beware of confirmation bias</li>
+      <li>Quantify undesirable behaviors</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="training-serving-skew-rules-29-37">Training-Serving Skew (Rules #29-37)</h2>
+<ol>
+  <li><strong>Prevent Skew</strong>
+    <ul>
+      <li>Save serving-time features</li>
+      <li>Weight sampled data properly</li>
+      <li>Reuse code between training/serving</li>
+      <li>Test on future data</li>
+    </ul>
+  </li>
+  <li><strong>Monitor Everything</strong>
+    <ul>
+      <li>Track performance metrics</li>
+      <li>Watch data distributions</li>
+      <li>Monitor feature coverage</li>
+      <li>Check prediction bias</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="phase-iv-optimization-and-complex-models-rules-38-43">Phase IV: Optimization and Complex Models (Rules #38-43)</h2>
+<ol>
+  <li><strong>When to Add Complexity</strong>
+    <ul>
+      <li>After simple approaches plateau</li>
+      <li>When objectives are well-aligned</li>
+      <li>If maintenance cost justifies gains</li>
+    </ul>
+  </li>
+  <li><strong>Advanced Techniques</strong>
+    <ul>
+      <li>Keep ensembles simple</li>
+      <li>Look for new information sources</li>
+      <li>Balance complexity vs. benefits</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="final-recommendations">Final Recommendations</h2>
+<ol>
+  <li><strong>Launch Decisions</strong>
+    <ul>
+      <li>Consider multiple metrics</li>
+      <li>Use proxies for long-term goals</li>
+      <li>Balance simple vs. complex</li>
+    </ul>
+  </li>
+  <li><strong>System Evolution</strong>
+    <ul>
+      <li>Start simple, add complexity gradually</li>
+      <li>Monitor consistently</li>
+      <li>Keep infrastructure clean</li>
+      <li>Document everything</li>
+    </ul>
+  </li>
+</ol>]]></content><author><name></name></author><category term="machine-learning" /><category term="best-practices" /><category term="mlops" /><category term="monitoring" /><category term="production" /><category term="quality-assurance" /><category term="data-science" /><category term="decision-making" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🤖 Understanding AI Agents: Tools, Planning, and Evaluation</title><link href="http://0.0.0.0:4000/agents-chip-huyen/" rel="alternate" type="text/html" title="🤖 Understanding AI Agents: Tools, Planning, and Evaluation" /><published>2025-01-14T00:00:00+00:00</published><updated>2025-01-14T00:00:00+00:00</updated><id>http://0.0.0.0:4000/agents-chip-huyen</id><content type="html" xml:base="http://0.0.0.0:4000/agents-chip-huyen/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 <p>This article summarises Chip Huyen’s comprehensive blog post “<a href="https://huyenchip.com//2025/01/07/agents.html">Agents</a>” adapted from her upcoming book AI Engineering (2025). The original piece provides an in-depth examination of intelligent agents, which represent a fundamental concept in AI, defined by Russell and Norvig in their seminal 1995 book <a href="https://en.wikipedia.org/wiki/Artificial_Intelligence:_A_Modern_Approach">Artificial Intelligence: A Modern Approach</a> as anything that can perceive its environment through sensors and act upon it through actuators. Huyen explores how the unprecedented capabilities of foundational models have transformed theoretical possibilities into practical applications, enabling agents to operate in diverse environments -from digital workspaces for coding to physical settings for robotics. These agents can now assist with tasks ranging from website creation to complex negotiations.</p>
@@ -504,34 +697,4 @@ While VSCode worked reasonably well on macOS, Fedora revealed its constraints: k
 
 <h2 id="conclusions">Conclusions</h2>
 <p>The journey from Vim to VSCode and finally to Neovim reflects a common pattern in software development: sometimes we need to step backward to move forward. While VSCode offered modern IDE features, its stability and resource issues on Linux highlighted the enduring value of minimal, portable tools.<br />
-Neovim strikes an elegant balance: it preserves Vim’s philosophy of simplicity and portability while providing modern IDE capabilities. Despite minor challenges with REPL colourisation, its single configuration file approach and robust plugin ecosystem make it a powerful choice for polyglot development. For developers who value both minimal tooling and modern features, Neovim proves that we don’t always have to choose between the two.</p>]]></content><author><name></name></author><category term="minimal" /><category term="cross-platform" /><category term="toolchain" /><category term="best-practices" /><category term="design-principles" /><category term="python" /><category term="deno" /><category term="zero-config" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: Exploring OpenAI’s API with Swagger</title><link href="http://0.0.0.0:4000/TIL-openai-openapi/" rel="alternate" type="text/html" title="💡 TIL: Exploring OpenAI’s API with Swagger" /><published>2024-12-23T00:00:00+00:00</published><updated>2024-12-23T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-openai-openapi</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-openai-openapi/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>OpenAI maintains a comprehensive <a href="https://github.com/openai/openai-openapi/">OpenAPI specification</a> that documents their entire API surface. While browsing through their GitHub repository, <a href="https://simonwillison.net/">Simon Willison</a><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> discovered you can easily explore this spec using Swagger’s web interface.</p>
-
-<h2 id="the-discovery">The Discovery</h2>
-<p>Willison recently highlighted a neat trick: you can browse OpenAI’s full API documentation by loading their <a href="https://github.com/openai/openai-openapi/blob/master/openapi.yaml">OpenAPI YAML file</a> directly into <a href="https://petstore.swagger.io/?url=https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml#/">Swagger’s web UI</a>.</p>
-
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>This approach offers several advantages:</p>
-<ul>
-  <li>Interactive exploration of all API endpoints</li>
-  <li>Complete request/response schemas</li>
-  <li>Built-in testing capability</li>
-  <li>Detailed parameter documentation</li>
-</ul>
-
-<p>For developers working with AI APIs, this provides a valuable reference point - especially when building services that need to maintain compatibility with OpenAI’s API structure.</p>
-
-<h2 id="try-it-yourself">Try It Yourself</h2>
-<p>Visit the <a href="https://petstore.swagger.io/">Swagger UI</a> and paste this URL: <br />
-<code class="language-plaintext highlighter-rouge">https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml</code></p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Co-founder of <a href="https://blog.natbat.net/post/61658401806/lanyrd-from-idea-to-exit">Lanyrd</a>, co-creator of <a href="https://simonwillison.net/2005/Jul/17/django/">Django</a> and <a href="https://datasette.io/">Datasette</a> and a prolific independent AI researcher <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="openai" /><category term="openapi" /><category term="spec" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+Neovim strikes an elegant balance: it preserves Vim’s philosophy of simplicity and portability while providing modern IDE capabilities. Despite minor challenges with REPL colourisation, its single configuration file approach and robust plugin ecosystem make it a powerful choice for polyglot development. For developers who value both minimal tooling and modern features, Neovim proves that we don’t always have to choose between the two.</p>]]></content><author><name></name></author><category term="minimal" /><category term="cross-platform" /><category term="toolchain" /><category term="best-practices" /><category term="design-principles" /><category term="python" /><category term="deno" /><category term="zero-config" /><summary type="html"><![CDATA[]]></summary></entry></feed>
