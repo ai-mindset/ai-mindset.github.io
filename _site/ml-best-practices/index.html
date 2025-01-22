@@ -3,9 +3,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>🔧 Rules of Machine Learning: Best Practices Summary | Just-in-Time learning</title>
+<title>🔧 A 10-Minute Guide to Engineering Machine Learning Systems | Just-in-Time learning</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="🔧 Rules of Machine Learning: Best Practices Summary" />
+<meta property="og:title" content="🔧 A 10-Minute Guide to Engineering Machine Learning Systems" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
 <meta property="og:description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
@@ -15,9 +15,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-01-21T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="🔧 Rules of Machine Learning: Best Practices Summary" />
+<meta property="twitter:title" content="🔧 A 10-Minute Guide to Engineering Machine Learning Systems" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-21T00:00:00+00:00","datePublished":"2025-01-21T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"🔧 Rules of Machine Learning: Best Practices Summary","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/ml-best-practices/"},"url":"http://0.0.0.0:4000/ml-best-practices/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-21T00:00:00+00:00","datePublished":"2025-01-21T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"🔧 A 10-Minute Guide to Engineering Machine Learning Systems","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/ml-best-practices/"},"url":"http://0.0.0.0:4000/ml-best-practices/"}</script>
 <!-- End Jekyll SEO tag -->
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Just-in-Time learning" />
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post">
-  <h1>🔧 Rules of Machine Learning: Best Practices Summary</h1>
+  <h1>🔧 A 10-Minute Guide to Engineering Machine Learning Systems</h1>
   
   <!-- Debug info -->
   <!-- <div style="color: red;"> -->
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>This is a concise reference guide distilling Martin Zinkevich’s [influential Google article on machine learning best practices](https://developers.google.com/machine-learning/guides/rules-of-ml. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
+<p>This is a concise reference guide distilling Martin Zinkevich’s <a href="https://developers.google.com/machine-learning/guides/rules-of-ml">influential Google article on machine learning best practices</a>. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
 
 <h2 id="core-philosophy">Core Philosophy</h2>
 <blockquote>
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <li><strong>Starting Your ML System</strong>
     <ul>
       <li>Test getting data into algorithm</li>
-      <li>Test getting models out correctly</li>
+      <li>Test getting models out of algorithm correctly</li>
       <li>Monitor data statistics continuously</li>
       <li>Build alerting system</li>
     </ul>
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <ul>
       <li>Don’t overthink initial objective choice</li>
       <li>Start with simple, observable metrics</li>
-      <li>Use directly observed user behaviors</li>
+      <li>Use directly observed user behaviours</li>
       <li>Example: clicks, downloads, shares</li>
     </ul>
   </li>
@@ -361,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <li><strong>Feature Engineering Principles</strong>
     <ul>
       <li>Start with directly observed features</li>
-      <li>Use cross-product features wisely</li>
+      <li>Use combined features (“crosses”) wisely</li>
       <li>Clean up unused features</li>
       <li>Scale feature complexity with data</li>
     </ul>
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <li>Features that generalize across contexts</li>
       <li>Monitor feature coverage</li>
       <li>Document feature ownership</li>
-      <li>Regular feature cleanup</li>
+      <li>Regular feature clean-up</li>
     </ul>
   </li>
 </ol>
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <ul>
       <li>Engineers aren’t typical users</li>
       <li>Beware of confirmation bias</li>
-      <li>Quantify undesirable behaviors</li>
+      <li>Quantify undesirable behaviours</li>
     </ul>
   </li>
 </ol>
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <ol>
   <li><strong>Prevent Skew</strong>
     <ul>
-      <li>Save serving-time features</li>
+      <li>Save features at serving time</li>
       <li>Weight sampled data properly</li>
       <li>Reuse code between training/serving</li>
       <li>Test on future data</li>
