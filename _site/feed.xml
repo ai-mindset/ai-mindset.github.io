@@ -1,7 +1,162 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-21T11:26:42+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔧 Rules of Machine Learning: Best Practices Summary</title><link href="http://0.0.0.0:4000/ml-best-practices/" rel="alternate" type="text/html" title="🔧 Rules of Machine Learning: Best Practices Summary" /><published>2025-01-21T00:00:00+00:00</published><updated>2025-01-21T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ml-best-practices</id><content type="html" xml:base="http://0.0.0.0:4000/ml-best-practices/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-22T14:26:51+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">⚙️ A Technical Comparison of JVM ☕ Languages for Machine Learning Engineering</title><link href="http://0.0.0.0:4000/jvm-languages-for-ml/" rel="alternate" type="text/html" title="⚙️ A Technical Comparison of JVM ☕ Languages for Machine Learning Engineering" /><published>2025-01-22T00:00:00+00:00</published><updated>2025-01-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/jvm-languages-for-ml</id><content type="html" xml:base="http://0.0.0.0:4000/jvm-languages-for-ml/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>This is a concise reference guide distilling Martin Zinkevich’s [influential Google article on machine learning best practices](https://developers.google.com/machine-learning/guides/rules-of-ml. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
+
+<p>While Python dominates the ML landscape due to its extensive ecosystem (PyTorch, TensorFlow, scikit-learn, XGBoost etc.), it presents significant challenges in production environments: dependency management is complex, deployment requires packaging entire Python environments, type safety is optional, and performance often requires rewriting critical paths in C++. JavaScript/TypeScript excel in web deployments but lack robust ML capabilities. Modern JVM languages, particularly Kotlin, address these limitations while offering a unique advantage: the ability to deploy ML solutions across a wide range of platforms without relying on cloud APIs or constant internet connectivity.</p>
+
+<p>These languages enable MLEs (Machine Learning Engineers) to:</p>
+<ul>
+  <li>Deploy models on edge devices (IoT, mobile, embedded systems)</li>
+  <li>Create standalone desktop applications with embedded ML capabilities</li>
+  <li>Run inference locally without API calls or network latency</li>
+  <li>Support air-gapped environments where internet access is restricted</li>
+  <li>Maintain consistent performance across different platforms</li>
+  <li>Leverage platform-specific hardware acceleration</li>
+</ul>
+
+<p>Additionally, these languages provide:</p>
+<ul>
+  <li>Superior performance and resource efficiency</li>
+  <li>Better concurrency and parallelism support</li>
+  <li>Strong typing (Kotlin/Scala) for safer ML pipelines</li>
+  <li>Excellent integration with enterprise systems</li>
+  <li>Rich ecosystem of battle-tested libraries</li>
+  <li>Seamless microservices integration when cloud deployment is needed</li>
+</ul>
+
+<p>For MLEs building production systems where flexibility in deployment options, performance, and offline capabilities are crucial, modern JVM languages with native compilation present a compelling alternative to Python’s research-first, often cloud-dependent ecosystem or JavaScript’s web-centric approach.</p>
+
+<h2 id="native-compilation-capabilities">Native Compilation Capabilities</h2>
+
+<h3 id="kotlin">Kotlin</h3>
+<ul>
+  <li><a href="https://kotlinlang.org/docs/native-overview.html">Kotlin Native</a> compiles to LLVM, supporting a wide range of platforms including macOS, iOS, Linux, Windows, and Android NDK</li>
+  <li>Strong interoperability with C/C++, Swift, and Objective-C</li>
+  <li>Native binaries run without a VM, perfect for edge ML deployment</li>
+</ul>
+
+<h3 id="scala-3">Scala 3</h3>
+<ul>
+  <li><a href="https://scala-native.org/en/stable/">Scala Native</a> provides ahead-of-time compilation via LLVM</li>
+  <li>Instant startup time with no JVM warmup</li>
+  <li>Low-level primitives for performance-critical code</li>
+  <li>Seamless C interop through extern objects</li>
+</ul>
+
+<h3 id="clojure">Clojure</h3>
+<ul>
+  <li><a href="https://clojure.org/guides/faq">Clojure</a> offers no direct native compilation support<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></li>
+  <li>Can leverage GraalVM for native image creation</li>
+  <li>More JVM-dependent compared to Kotlin and Scala</li>
+</ul>
+
+<h2 id="machine-learning-library-ecosystem">Machine Learning Library Ecosystem</h2>
+
+<h3 id="kotlin-1">Kotlin</h3>
+<ul>
+  <li>KotlinDL for deep learning (note: relatively new compared to Python ecosystem)</li>
+  <li>Strong integration with TensorFlow and debugging tools</li>
+  <li>Excellent interop with Java ML libraries and profiling tools</li>
+  <li>Growing ML ecosystem with deeplearning4j support</li>
+  <li>Unified development experience through JetBrains ecosystem</li>
+  <li>Single governing body (JetBrains) ensuring consistency and quality</li>
+  <li>Seamless tooling integration from development to deployment</li>
+</ul>
+
+<h3 id="scala-3-1">Scala 3</h3>
+<ul>
+  <li>Mature ML ecosystem through Spark MLlib (primarily JVM-based, limited in Native)</li>
+  <li>Strong type system helps catch ML pipeline errors early</li>
+  <li>Rich ecosystem of testing frameworks (ScalaTest, Specs2)</li>
+  <li>Excellent for distributed ML through Spark integration</li>
+  <li>Native numerical computing support</li>
+</ul>
+
+<h3 id="clojure-1">Clojure</h3>
+<ul>
+  <li>Rich numerical computing capabilities through Java interop</li>
+  <li>Exceptional data transformation capabilities with immutable data structures</li>
+  <li>Powerful REPL-driven development for rapid ML prototyping</li>
+  <li>Limited ML-specific libraries but strong Java ML interop</li>
+  <li>Active community focusing on data science tools</li>
+  <li>Strong REPL-driven development beneficial for ML experimentation</li>
+</ul>
+
+<h2 id="cloud-deployment-and-microservices">Cloud Deployment and Microservices</h2>
+
+<h3 id="kotlin-2">Kotlin</h3>
+<ul>
+  <li>First-class coroutines support for async operations</li>
+  <li>Strong adoption in production environments</li>
+  <li>Excellent cloud platform support</li>
+  <li>Clean Domain-Specific Language (DSL) creation for ML pipelines</li>
+</ul>
+
+<h3 id="scala-3-2">Scala 3</h3>
+<ul>
+  <li>Strong functional programming patterns for ML pipelines</li>
+  <li>Robust type system for safer deployments</li>
+  <li>Good cloud support through Scala ecosystems</li>
+  <li>Significant compile-time overhead</li>
+</ul>
+
+<h3 id="clojure-2">Clojure</h3>
+<ul>
+  <li>Simple deployment through immutable data structures</li>
+  <li>Excellent concurrency model through STM (Software Transactional Memory)</li>
+  <li>Strong emphasis on data transformation</li>
+  <li>Limited type safety for large ML pipelines</li>
+</ul>
+
+<h2 id="recommendation">Recommendation</h2>
+
+<p>For an MLE focused on end-to-end ML development:</p>
+
+<ol>
+  <li><strong>Kotlin</strong> emerges as the strongest choice due to:
+    <ul>
+      <li>Native compilation for edge ML deployment</li>
+      <li>Growing ML ecosystem</li>
+      <li>Excellent cloud support</li>
+      <li>Gentle learning curve</li>
+      <li>Production readiness</li>
+    </ul>
+  </li>
+  <li><strong>Scala 3</strong> is a strong second choice if:
+    <ul>
+      <li>Working extensively with Spark</li>
+      <li>Need strong type safety</li>
+      <li>Performance is critical</li>
+      <li>Team has some FP (Functional Programming) experience</li>
+    </ul>
+  </li>
+  <li><strong>Clojure</strong> might be suitable if:
+    <ul>
+      <li>Focus is on data transformation</li>
+      <li>Team values REPL-driven development<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></li>
+      <li>Simplicity is paramount</li>
+      <li>ML deployment is primarily cloud-based</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>For a greenfield ML engineering project requiring both cloud and edge deployment, Kotlin provides the best balance of features, ecosystem support, and native compilation capabilities. Its pragmatic approach to functional programming and strong interoperability make it particularly suitable for ML engineering workflows.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>“<em>Building a “Clojure native” would require a large amount of work to make a version of Clojure that was slower (probably much slower), less portable, and with significantly less functionality (as the Clojure library relies heavily on the JDK).</em>” <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>It’s worth noting that for the last few years, both <a href="https://docs.scala-lang.org/overviews/repl/overview.html">Scala</a> and <a href="https://www.jetbrains.com/help/idea/kotlin-repl.html">Kotlin</a> have very decent REPLs, alongside the venerable <a href="https://ipython.org/">IPython</a> interactive environment <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="machine-learning" /><category term="cross-platform" /><category term="data-science" /><category term="mlops" /><category term="code-quality" /><category term="deployment" /><category term="performance" /><category term="best-practices" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🔧 A 10-Minute Guide to Engineering Machine Learning Systems</title><link href="http://0.0.0.0:4000/ml-best-practices/" rel="alternate" type="text/html" title="🔧 A 10-Minute Guide to Engineering Machine Learning Systems" /><published>2025-01-21T00:00:00+00:00</published><updated>2025-01-21T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ml-best-practices</id><content type="html" xml:base="http://0.0.0.0:4000/ml-best-practices/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>This is a concise reference guide distilling Martin Zinkevich’s <a href="https://developers.google.com/machine-learning/guides/rules-of-ml">influential Google article on machine learning best practices</a>. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
 
 <h2 id="core-philosophy">Core Philosophy</h2>
 <blockquote>
@@ -63,7 +218,7 @@
   <li><strong>Starting Your ML System</strong>
     <ul>
       <li>Test getting data into algorithm</li>
-      <li>Test getting models out correctly</li>
+      <li>Test getting models out of algorithm correctly</li>
       <li>Monitor data statistics continuously</li>
       <li>Build alerting system</li>
     </ul>
@@ -76,7 +231,7 @@
     <ul>
       <li>Don’t overthink initial objective choice</li>
       <li>Start with simple, observable metrics</li>
-      <li>Use directly observed user behaviors</li>
+      <li>Use directly observed user behaviours</li>
       <li>Example: clicks, downloads, shares</li>
     </ul>
   </li>
@@ -102,7 +257,7 @@
   <li><strong>Feature Engineering Principles</strong>
     <ul>
       <li>Start with directly observed features</li>
-      <li>Use cross-product features wisely</li>
+      <li>Use combined features (“crosses”) wisely</li>
       <li>Clean up unused features</li>
       <li>Scale feature complexity with data</li>
     </ul>
@@ -112,7 +267,7 @@
       <li>Features that generalize across contexts</li>
       <li>Monitor feature coverage</li>
       <li>Document feature ownership</li>
-      <li>Regular feature cleanup</li>
+      <li>Regular feature clean-up</li>
     </ul>
   </li>
 </ol>
@@ -131,7 +286,7 @@
     <ul>
       <li>Engineers aren’t typical users</li>
       <li>Beware of confirmation bias</li>
-      <li>Quantify undesirable behaviors</li>
+      <li>Quantify undesirable behaviours</li>
     </ul>
   </li>
 </ol>
@@ -140,7 +295,7 @@
 <ol>
   <li><strong>Prevent Skew</strong>
     <ul>
-      <li>Save serving-time features</li>
+      <li>Save features at serving time</li>
       <li>Weight sampled data properly</li>
       <li>Reuse code between training/serving</li>
       <li>Test on future data</li>
@@ -675,26 +830,4 @@ The urgency is clear. Antimicrobial resistance threatens to undermine many advan
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>While everyone acknowledges evals’ importance, implementing them effectively remains challenging. The key insight is clear: robust automated evaluation isn’t just a quality check, it’s the foundation for building reliable LLM-powered systems.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="til" /><category term="prompt-engineering" /><category term="testing" /><category term="best-practices" /><category term="evaluation" /><category term="machine-learning" /><category term="ai-alignment" /><category term="system-prompts" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">📝 From Vim to VSCode to Neovim</title><link href="http://0.0.0.0:4000/vscode-to-neovim/" rel="alternate" type="text/html" title="📝 From Vim to VSCode to Neovim" /><published>2024-12-24T00:00:00+00:00</published><updated>2024-12-24T00:00:00+00:00</updated><id>http://0.0.0.0:4000/vscode-to-neovim</id><content type="html" xml:base="http://0.0.0.0:4000/vscode-to-neovim/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>Vim’s portable <code class="language-plaintext highlighter-rouge">.vimrc</code> embodies software minimalism at its best. One file, one minute to setup, resulting in a complete development environment. This simplicity served me well until Azure development motivated the use of VSCode.<br />
-While VSCode worked reasonably well on macOS, Fedora revealed its constraints: keyboard input failures, heavy resource usage, and <a href="https://stackoverflow.com/questions/35368889/how-can-i-export-settings">complex environment portability</a> compared to Vim’s <code class="language-plaintext highlighter-rouge">vim +PlugInstall</code>. These limitations drove my search for tools that could maintain simplicity while meeting my development requirements with simplicity and portability in mind.</p>
-
-<h2 id="vim---vscode---neovim">Vim -&gt; VSCode -&gt; Neovim</h2>
-<p>Azure development initially pulled me into VSCode’s ecosystem. While stable on macOS, Fedora revealed deal-breakers: random keyboard input failures that only responded to command palette (Ctrl+Shift+P). No amount of configuration resets or reinstalls resolved these issues.</p>
-
-<p>This instability, coupled with VSCode’s resource footprint, led me to Neovim. The timing aligned with my exploration of Clojure, where Neovim’s Conjure plugin offered a compelling Lisp development experience that rivaled Emacs.</p>
-
-<p>My requirements were specific:</p>
-<ul>
-  <li>A lightweight Python IDE</li>
-  <li>A lightweight Deno IDE</li>
-  <li>A lightweight Clojure IDE</li>
-</ul>
-
-<p>Through <a href="/dialogue-engineering/">Dialogue Engineering</a>, I crafted a complete IDE using a <a href="https://github.com/ai-mindset/init.vim">single configuration file</a>. Neovim’s mixed ecosystem of package managers and dual Vimscript/Lua support presents a learning curve, but the resulting environment is fast, stable, and precisely tailored to my needs. One minor drawback is the complexity of adding colour to Conjure’s output, especially when compared to the rich REPL experiences offered by <a href="https://ipython.org/">IPython</a>, <a href="https://deno.com/">Deno</a>, and Clojure with <a href="https://github.com/bhauman/rebel-readline">rebel-readline</a>.</p>
-
-<h2 id="conclusions">Conclusions</h2>
-<p>The journey from Vim to VSCode and finally to Neovim reflects a common pattern in software development: sometimes we need to step backward to move forward. While VSCode offered modern IDE features, its stability and resource issues on Linux highlighted the enduring value of minimal, portable tools.<br />
-Neovim strikes an elegant balance: it preserves Vim’s philosophy of simplicity and portability while providing modern IDE capabilities. Despite minor challenges with REPL colourisation, its single configuration file approach and robust plugin ecosystem make it a powerful choice for polyglot development. For developers who value both minimal tooling and modern features, Neovim proves that we don’t always have to choose between the two.</p>]]></content><author><name></name></author><category term="minimal" /><category term="cross-platform" /><category term="toolchain" /><category term="best-practices" /><category term="design-principles" /><category term="python" /><category term="deno" /><category term="zero-config" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<p>While everyone acknowledges evals’ importance, implementing them effectively remains challenging. The key insight is clear: robust automated evaluation isn’t just a quality check, it’s the foundation for building reliable LLM-powered systems.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="til" /><category term="prompt-engineering" /><category term="testing" /><category term="best-practices" /><category term="evaluation" /><category term="machine-learning" /><category term="ai-alignment" /><category term="system-prompts" /><summary type="html"><![CDATA[]]></summary></entry></feed>

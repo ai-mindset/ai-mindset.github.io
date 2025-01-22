@@ -5,8 +5,16 @@ A static site to share things I'd like to have known 6 months ago, while I learn
 A personal blog focused on AI, and engineering best practices, built with Neovim, fast_template, and Dialogue Engineering.
 
 ## Posts (Reverse Chronological Order)
-
-- December 24, 2024 - 📝 From Vim to VSCode to Neovim
+January 21, 2025 - 🔧 A 10-Minute Guide to Engineering Machine Learning Systems
+January 14, 2025 - 🤖 Understanding AI Agents: Tools, Planning, and Evaluation
+January 10, 2025 - 💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲
+January 09, 2025 - 📐 Sparse Autoencoders: A Technical Overview
+January 09, 2025 - 🔍 Understanding LLM Interpretability
+January 08, 2025 - 💡 TIL: The Matrix Equation That Makes Linear Regression Work
+January 08, 2025 - 💡 TIL: How Different Societies View and Value Choice
+January 07, 2025 - 💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics
+January 02, 2025 - 💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts
+December 24, 2024 - 📝 From Vim to VSCode to Neovim
 December 23, 2024 - 💡 TIL: Exploring OpenAI's API with Swagger
 December 19, 2024 - 🎛️ A Practical Guide to Fine-tuning LLMs with InstructLab
 December 07, 2024 - 💡 TIL: Understanding GGUF Model Quantisation
