@@ -50,7 +50,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 
 3. **Starting Your ML System**
    - Test getting data into algorithm
-   - Test getting models out of algorithm correctly
+   - Test getting models out correctly
    - Monitor data statistics continuously
    - Build alerting system
 
@@ -75,7 +75,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 
 2. **Feature Engineering Principles**
    - Start with directly observed features
-   - Use combined features ("crosses") wisely
+   - Use cross-product features wisely
    - Clean up unused features
    - Scale feature complexity with data
 
@@ -99,7 +99,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 
 ## Training-Serving Skew (Rules #29-37)
 1. **Prevent Skew**
-   - Save features at serving time
+   - Save serving-time features
    - Weight sampled data properly
    - Reuse code between training/serving
    - Test on future data
