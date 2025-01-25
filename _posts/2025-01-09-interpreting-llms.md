@@ -26,7 +26,7 @@ This process, while mathematically precise, creates a black box of neural connec
 
 These probabilities emerge from intricate interactions between neurons, leading to a phenomenon called _superposition_[^1].
 
-## The Superposition Phenomenon and Its Solution
+## Superposition and Its Solution
 Unlike vision models where neurons correspond to specific concepts, LLMs exhibit [polysemanticity](https://arxiv.org/abs/2210.01892) -individual neurons respond to multiple, unrelated concepts. This occurs because LLMs encode more concepts than available neurons by using specific neuron combinations.
 
 This complexity necessitated the development of [sparse autoencoders]({{ site.baseurl }}{% link _posts/2025-01-09-sparse-autoencoders.md %}), which:
@@ -46,4 +46,4 @@ While tools like sparse autoencoders have provided unprecedented insights into m
 This improved understanding represents not just academic progress, but a crucial step toward safer, more reliable AI systems.
 
 ---
-[^1]: superposition in the neural networks context is the ability of a single neuron to represent multiple features simultaneously.  [https://hdl.handle.net/1721.1/157073](https://hdl.handle.net/1721.1/157073)
+[^1]: superposition in the context of neural networks is the ability of a single neuron to represent multiple features simultaneously.  [https://hdl.handle.net/1721.1/157073](https://hdl.handle.net/1721.1/157073)
