@@ -20,8 +20,8 @@ Below I'm collecting some thoughts on aspects of Go I've seen so far and how the
 | Numerical Computing | [NumPy](https://github.com/numpy/numpy) | [gonum](https://github.com/gonum/gonum) |
 | Data Processing | [Pandas](https://github.com/pandas-dev/pandas) | [gota](https://github.com/go-gota/gota) |
 | Visualisation | [Plotly](https://github.com/plotly/plotly.py) | [go-plotly](https://github.com/MetalBlueberry/go-plotly) |
-| Gradient Boosting | [XGBoost](https://github.com/dmlc/xgboost) | go-xgboost |
-| Machine Learning | [Scikit-Learn](https://github.com/scikit-learn/scikit-learn) | golearn |
+| Gradient Boosting | [XGBoost](https://github.com/dmlc/xgboost) | [go-xgboost](https://github.com/Unity-Technologies/go-xgboost) |
+| Machine Learning | [Scikit-Learn](https://github.com/scikit-learn/scikit-learn) | [golearn](https://github.com/sjwhitworth/golearn) |
 | Deep Learning | [TensorFlow](https://github.com/tensorflow/tensorflow)<br>[PyTorch](https://github.com/pytorch/pytorch) | [tfgo](https://github.com/galeone/tfgo)<br>[gotch](https://github.com/sugarme/gotch) |
 | LLM Development | [LangChain](https://github.com/langchain-ai/langchain) | [langchaingo](https://github.com/tmc/langchaingo) |
 | Vector Search | [Weaviate Client](https://github.com/weaviate/weaviate-python-client) | [Weaviate Go Client](https://github.com/weaviate/weaviate-python-client) |
