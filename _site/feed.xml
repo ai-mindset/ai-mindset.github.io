@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-26T19:23:59+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go</title><link href="http://0.0.0.0:4000/go-pragmatic-modern-development/" rel="alternate" type="text/html" title="🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go" /><published>2025-01-26T00:00:00+00:00</published><updated>2025-01-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/go-pragmatic-modern-development</id><content type="html" xml:base="http://0.0.0.0:4000/go-pragmatic-modern-development/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-26T19:28:38+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go</title><link href="http://0.0.0.0:4000/go-pragmatic-modern-development/" rel="alternate" type="text/html" title="🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go" /><published>2025-01-26T00:00:00+00:00</published><updated>2025-01-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/go-pragmatic-modern-development</id><content type="html" xml:base="http://0.0.0.0:4000/go-pragmatic-modern-development/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -36,12 +36,12 @@ Below I’m collecting some thoughts on aspects of Go I’ve seen so far and how
     <tr>
       <td>Gradient Boosting</td>
       <td><a href="https://github.com/dmlc/xgboost">XGBoost</a></td>
-      <td>go-xgboost</td>
+      <td><a href="https://github.com/Unity-Technologies/go-xgboost">go-xgboost</a></td>
     </tr>
     <tr>
       <td>Machine Learning</td>
       <td><a href="https://github.com/scikit-learn/scikit-learn">Scikit-Learn</a></td>
-      <td>golearn</td>
+      <td><a href="https://github.com/sjwhitworth/golearn">golearn</a></td>
     </tr>
     <tr>
       <td>Deep Learning</td>
