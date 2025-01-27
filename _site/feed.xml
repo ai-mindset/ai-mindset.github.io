@@ -1,4 +1,125 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-25T10:11:12+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔧 A 10-Minute Guide to Engineering Machine Learning Systems</title><link href="http://0.0.0.0:4000/ml-best-practices/" rel="alternate" type="text/html" title="🔧 A 10-Minute Guide to Engineering Machine Learning Systems" /><published>2025-01-21T00:00:00+00:00</published><updated>2025-01-21T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ml-best-practices</id><content type="html" xml:base="http://0.0.0.0:4000/ml-best-practices/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-26T19:28:38+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go</title><link href="http://0.0.0.0:4000/go-pragmatic-modern-development/" rel="alternate" type="text/html" title="🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go" /><published>2025-01-26T00:00:00+00:00</published><updated>2025-01-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/go-pragmatic-modern-development</id><content type="html" xml:base="http://0.0.0.0:4000/go-pragmatic-modern-development/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Modern software development often involves navigating complex toolchains, opinionated frameworks, and resource-heavy development environments. Many languages require extensive configuration, multiple runtime dependencies, and introduce significant cognitive overhead through their vast feature sets and multiple approaches to solving the same problem. Node.js, JVM languages, and even Python with its extensive ecosystem can lead to analysis paralysis and team disagreements over tooling and style.<br />
+Go offers a refreshing alternative. With a language specification under 50 pages, a consolidated toolchain, and a “batteries included” approach, it provides a low-cognitive-overhead solution for developers seeking simplicity and productivity. Its zero-config philosophy, coupled with built-in formatting (<code class="language-plaintext highlighter-rouge">go fmt</code>), linting (<code class="language-plaintext highlighter-rouge">go vet</code>), and testing tools, promotes code uniformity and reduces team friction over stylistic choices.<br />
+While Go may lack a REPL as sophisticated as IPython or the Julia interactive environment, this limitation encourages proper Test-Driven Development practices rather than the post-implementation testing often seen in REPL-heavy environments. Tools like <a href="https://github.com/fatih/vim-go">vim-go</a> and Go Playground provide sufficient interactive development capabilities for most use cases.<br />
+Below I’m collecting some thoughts on aspects of Go I’ve seen so far and how they compare with other languages I’ve considered. The list is far from complete, for example I’ve not mentioned goroutines aside from others.</p>
+
+<h2 id="python-vs-go-libraries-comparison">Python vs Go Libraries Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Domain</th>
+      <th>Python Library</th>
+      <th>Go Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Numerical Computing</td>
+      <td><a href="https://github.com/numpy/numpy">NumPy</a></td>
+      <td><a href="https://github.com/gonum/gonum">gonum</a></td>
+    </tr>
+    <tr>
+      <td>Data Processing</td>
+      <td><a href="https://github.com/pandas-dev/pandas">Pandas</a></td>
+      <td><a href="https://github.com/go-gota/gota">gota</a></td>
+    </tr>
+    <tr>
+      <td>Visualisation</td>
+      <td><a href="https://github.com/plotly/plotly.py">Plotly</a></td>
+      <td><a href="https://github.com/MetalBlueberry/go-plotly">go-plotly</a></td>
+    </tr>
+    <tr>
+      <td>Gradient Boosting</td>
+      <td><a href="https://github.com/dmlc/xgboost">XGBoost</a></td>
+      <td><a href="https://github.com/Unity-Technologies/go-xgboost">go-xgboost</a></td>
+    </tr>
+    <tr>
+      <td>Machine Learning</td>
+      <td><a href="https://github.com/scikit-learn/scikit-learn">Scikit-Learn</a></td>
+      <td><a href="https://github.com/sjwhitworth/golearn">golearn</a></td>
+    </tr>
+    <tr>
+      <td>Deep Learning</td>
+      <td><a href="https://github.com/tensorflow/tensorflow">TensorFlow</a><br /><a href="https://github.com/pytorch/pytorch">PyTorch</a></td>
+      <td><a href="https://github.com/galeone/tfgo">tfgo</a><br /><a href="https://github.com/sugarme/gotch">gotch</a></td>
+    </tr>
+    <tr>
+      <td>LLM Development</td>
+      <td><a href="https://github.com/langchain-ai/langchain">LangChain</a></td>
+      <td><a href="https://github.com/tmc/langchaingo">langchaingo</a></td>
+    </tr>
+    <tr>
+      <td>Vector Search</td>
+      <td><a href="https://github.com/weaviate/weaviate-python-client">Weaviate Client</a></td>
+      <td><a href="https://github.com/weaviate/weaviate-python-client">Weaviate Go Client</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="development-experience">Development Experience</h2>
+
+<p>Go’s tooling is exceptional. With <a href="https://github.com/fatih/vim-go">vim-go</a> in <a href="https://neovim.io/">Neovim</a>, you get immediate access to formatting, linting, and code navigation. Unlike JVM languages or JavaScript frameworks that often require more complex build configurations, Go projects maintain a simple, predictable structure. The <code class="language-plaintext highlighter-rouge">go fmt</code> command enforces consistent code style, while <code class="language-plaintext highlighter-rouge">go vet</code> catches common mistakes early, eliminating debates over formatting and best practices.</p>
+
+<h2 id="error-handling-done-right">Error Handling Done Right</h2>
+
+<p>Go’s approach to error handling initially feels verbose:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">someFunction</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">err</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>But this explicitness pays dividends. By treating errors as values that must be handled, Go forces developers to think about failure cases upfront. The <code class="language-plaintext highlighter-rouge">defer</code> keyword complements this by ensuring cleanup code runs regardless of errors:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">file</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">err</span>
+<span class="p">}</span>
+<span class="k">defer</span> <span class="n">file</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="mlai-capabilities">ML/AI Capabilities</h2>
+
+<p>While Go isn’t the primary choice for ML/AI experimentation, its simplicity and performance make it excellent for production deployments. Its standard library and growing ecosystem provide solid foundations for numerical computing (gonum), data processing (<a href="https://github.com/go-gota/gota">gota</a>), and ML/AI applications (<a href="https://github.com/gorgonia/gorgonia">Gorgonia</a>, <a href="https://github.com/galeone/tfgo">tfgo</a>). The language’s focus on simplicity and performance makes it particularly suitable for model serving and inference workloads.</p>
+
+<h2 id="language-design">Language Design</h2>
+
+<p>Go’s remarkably concise specification (under 50 pages) contrasts sharply with other languages. Even Zig, a newer systems programming language, has a 74-page specification despite being younger and positioned as a simpler low-level language.</p>
+<figure>
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/Zig%20language%20spec.png" width="80%" height="80%" />
+    <figcaption>Zig's language spec</figcaption>
+</figure>
+
+<p>Go’s intentionally limited feature set and single way of solving problems promote maintainable, uniform code that’s easier to reason about and review, as reflected in its compact language spec.</p>
+<figure>
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/Go%20language%20spec.png" width="80%" height="80%" />
+    <figcaption>Go's language spec</figcaption>
+</figure>
+
+<p>For ML engineers and developers seeking a reliable, low-overhead language that excels at building robust, production-ready applications, Go offers a compelling choice. While it won’t replace Python for rapid prototyping and research, its simplicity, performance, and consolidated toolchain make it an excellent addition to any developer’s toolkit.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Go stands out as a pragmatic choice for modern development through its key strengths:</p>
+
+<ul>
+  <li>Minimal cognitive overhead with a 47-page specification</li>
+  <li>Zero-config toolchain including formatting, testing, and package management</li>
+  <li>Enforced error handling and clean resource management via <code class="language-plaintext highlighter-rouge">defer</code></li>
+  <li>Growing ML/AI ecosystem comparable to Python’s established libraries</li>
+  <li>Cross-platform compilation and efficient garbage collection</li>
+  <li>Single, clear way to solve problems, reducing team friction</li>
+  <li>Lightweight development environment compared to JVM, .NET, BEAM or Node.js</li>
+</ul>
+
+<p>While Python remains dominant for ML/AI research and prototyping, Go excels in production environments where code maintainability, performance, and team collaboration are crucial. Its intentionally limited feature set, combined with a comprehensive standard library and maturing ML ecosystem, makes it a very attractive choice for developers seeking simplicity without sacrificing capability.<br />
+The language’s design philosophy strongly aligns with my needs as a Data professional looking to reduce tooling complexity and maintain consistent, reliable codebases. Go’s lightweight yet rich toolchain allows writing safe, efficient AI and data-oriented code based on simplicity and reliability. This refreshing alternative in today’s complex development landscape has convinced me to base my practice on Go’s principled approach to software development.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="minimal" /><category term="machine-learning" /><category term="toolchain" /><category term="zero-config" /><category term="code-quality" /><category term="cross-platform" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🔧 A 10-Minute Guide to Engineering Machine Learning Systems</title><link href="http://0.0.0.0:4000/ml-best-practices/" rel="alternate" type="text/html" title="🔧 A 10-Minute Guide to Engineering Machine Learning Systems" /><published>2025-01-21T00:00:00+00:00</published><updated>2025-01-21T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ml-best-practices</id><content type="html" xml:base="http://0.0.0.0:4000/ml-best-practices/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 <p>This is a concise reference guide distilling Martin Zinkevich’s <a href="https://developers.google.com/machine-learning/guides/rules-of-ml">influential Google article on machine learning best practices</a>. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
@@ -675,26 +796,4 @@ The urgency is clear. Antimicrobial resistance threatens to undermine many advan
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>While everyone acknowledges evals’ importance, implementing them effectively remains challenging. The key insight is clear: robust automated evaluation isn’t just a quality check, it’s the foundation for building reliable LLM-powered systems.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="til" /><category term="prompt-engineering" /><category term="testing" /><category term="best-practices" /><category term="evaluation" /><category term="machine-learning" /><category term="ai-alignment" /><category term="system-prompts" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">📝 From Vim to VSCode to Neovim</title><link href="http://0.0.0.0:4000/vscode-to-neovim/" rel="alternate" type="text/html" title="📝 From Vim to VSCode to Neovim" /><published>2024-12-24T00:00:00+00:00</published><updated>2024-12-24T00:00:00+00:00</updated><id>http://0.0.0.0:4000/vscode-to-neovim</id><content type="html" xml:base="http://0.0.0.0:4000/vscode-to-neovim/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>Vim’s portable <code class="language-plaintext highlighter-rouge">.vimrc</code> embodies software minimalism at its best. One file, one minute to setup, resulting in a complete development environment. This simplicity served me well until Azure development motivated the use of VSCode.<br />
-While VSCode worked reasonably well on macOS, Fedora revealed its constraints: keyboard input failures, heavy resource usage, and <a href="https://stackoverflow.com/questions/35368889/how-can-i-export-settings">complex environment portability</a> compared to Vim’s <code class="language-plaintext highlighter-rouge">vim +PlugInstall</code>. These limitations drove my search for tools that could maintain simplicity while meeting my development requirements with simplicity and portability in mind.</p>
-
-<h2 id="vim---vscode---neovim">Vim -&gt; VSCode -&gt; Neovim</h2>
-<p>Azure development initially pulled me into VSCode’s ecosystem. While stable on macOS, Fedora revealed deal-breakers: random keyboard input failures that only responded to command palette (Ctrl+Shift+P). No amount of configuration resets or reinstalls resolved these issues.</p>
-
-<p>This instability, coupled with VSCode’s resource footprint, led me to Neovim. The timing aligned with my exploration of Clojure, where Neovim’s Conjure plugin offered a compelling Lisp development experience that rivaled Emacs.</p>
-
-<p>My requirements were specific:</p>
-<ul>
-  <li>A lightweight Python IDE</li>
-  <li>A lightweight Deno IDE</li>
-  <li>A lightweight Clojure IDE</li>
-</ul>
-
-<p>Through <a href="/dialogue-engineering/">Dialogue Engineering</a>, I crafted a complete IDE using a <a href="https://github.com/ai-mindset/init.vim">single configuration file</a>. Neovim’s mixed ecosystem of package managers and dual Vimscript/Lua support presents a learning curve, but the resulting environment is fast, stable, and precisely tailored to my needs. One minor drawback is the complexity of adding colour to Conjure’s output, especially when compared to the rich REPL experiences offered by <a href="https://ipython.org/">IPython</a>, <a href="https://deno.com/">Deno</a>, and Clojure with <a href="https://github.com/bhauman/rebel-readline">rebel-readline</a>.</p>
-
-<h2 id="conclusions">Conclusions</h2>
-<p>The journey from Vim to VSCode and finally to Neovim reflects a common pattern in software development: sometimes we need to step backward to move forward. While VSCode offered modern IDE features, its stability and resource issues on Linux highlighted the enduring value of minimal, portable tools.<br />
-Neovim strikes an elegant balance: it preserves Vim’s philosophy of simplicity and portability while providing modern IDE capabilities. Despite minor challenges with REPL colourisation, its single configuration file approach and robust plugin ecosystem make it a powerful choice for polyglot development. For developers who value both minimal tooling and modern features, Neovim proves that we don’t always have to choose between the two.</p>]]></content><author><name></name></author><category term="minimal" /><category term="cross-platform" /><category term="toolchain" /><category term="best-practices" /><category term="design-principles" /><category term="python" /><category term="deno" /><category term="zero-config" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<p>While everyone acknowledges evals’ importance, implementing them effectively remains challenging. The key insight is clear: robust automated evaluation isn’t just a quality check, it’s the foundation for building reliable LLM-powered systems.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="til" /><category term="prompt-engineering" /><category term="testing" /><category term="best-practices" /><category term="evaluation" /><category term="machine-learning" /><category term="ai-alignment" /><category term="system-prompts" /><summary type="html"><![CDATA[]]></summary></entry></feed>
