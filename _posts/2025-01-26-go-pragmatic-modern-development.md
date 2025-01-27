@@ -28,7 +28,7 @@ Below I'm collecting some thoughts on attractive aspects of Go I've discerned so
 
 ## Development Experience
 
-Go's tooling is exceptional. With [vim-go](https://github.com/fatih/vim-go) in [Neovim](https://neovim.io/), you get immediate access to formatting, linting, and code navigation. Unlike JVM languages or JavaScript frameworks that may require more complex build configurations, Go projects maintain a simple, predictable structure thanks to `go mod`. The `go fmt` command -triggered on save by default- enforces consistent code style, while `go vet` catches common mistakes early, eliminating debates over formatting and best practices.
+Go's tooling is exceptional. With [vim-go](https://github.com/fatih/vim-go) in [Neovim](https://neovim.io/), you get immediate access to formatting, linting, and code navigation. Unlike JVM languages or JavaScript frameworks that may require more complex build configurations, Go projects maintain a simple, predictable structure thanks to `go mod`. The `go fmt` command -triggered on save by default- enforces consistent code style eliminating debates over formatting and best practices, while `go vet` catches common mistakes early.
 
 ## Error Handling Done Right
 
@@ -84,5 +84,5 @@ To my eyes, Go stands out as a pragmatic choice for modern development through i
 - Single, clear way to solve problems, reducing team friction
 - Lightweight development environment compared to JVM, .NET, BEAM or Node.js
 
-While Python remains dominant for ML/AI research and prototyping, Go excels in production environments where code maintainability, performance, and team collaboration are crucial. Its intentionally limited feature set, combined with a comprehensive standard library and maturing ML ecosystem, makes it a very attractive choice for developers seeking simplicity without sacrificing capability.  
-The language's design philosophy strongly aligns with my needs as a Data professional looking to reduce tooling complexity and maintain consistent, reliable codebases. Go's lightweight yet rich toolchain allows writing safe, efficient AI and data-oriented code based on simplicity and reliability. This refreshing alternative in today's complex development landscape has convinced me to base my practice on Go's principled approach to software development.
+While Python remains dominant for ML/AI research, prototyping and -frequently- production, Go excels in production environments where code maintainability, performance, and team collaboration are crucial. Its intentionally limited feature set, combined with a comprehensive standard library and maturing ML ecosystem, makes it a very attractive choice for developers seeking simplicity without sacrificing capability.  
+The language's design philosophy strongly aligns with my needs as a Data professional looking to reduce tooling complexity and maintain consistent, reliable codebases. Go's lightweight yet rich toolchain allows writing safe, efficient AI and data-oriented code based on simplicity and reliability. This refreshing alternative in today's complex development landscape has strongly tempted me to start moving my practice to Go's more principled approach.
