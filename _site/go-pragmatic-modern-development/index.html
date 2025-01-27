@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go | Just-in-Time learning</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
+<meta property="og:description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
+<link rel="canonical" href="http://0.0.0.0:4000/go-pragmatic-modern-development/" />
+<meta property="og:url" content="http://0.0.0.0:4000/go-pragmatic-modern-development/" />
+<meta property="og:site_name" content="Just-in-Time learning" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-01-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-26T00:00:00+00:00","datePublished":"2025-01-26T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/go-pragmatic-modern-development/"},"url":"http://0.0.0.0:4000/go-pragmatic-modern-development/"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Just-in-Time learning" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+delimiters: [
+{left: "$$", right: "$$", display: true},
+{left: "[%", right: "%]", display: true},
+{left: "$", right: "$", display: false}
+]}
+);
+        });
+</script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+                if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+                }
+                });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/theme.js"></script>
+
+</head>
+<body><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="/assets/js/search.js"></script>
+
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Just-in-Time learning</a>
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,12.031,18,12.696,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." aria-label="Search posts" class="search-input">
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <a class="page-link" href="/aihub">AI Hub</a>
+        <a class="page-link" href="/about">About</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
+  🌙 Dark
+</button>
+
+<script>
+function toggleTheme() {
+    const body = document.querySelector('body');
+    const button = document.getElementById('theme-toggle');
+    const isDark = body.classList.toggle('dark-theme');
+    
+    button.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('darkTheme', isDark);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('darkTheme') === 'true') {
+        document.querySelector('body').classList.add('dark-theme');
+        document.getElementById('theme-toggle').innerHTML = '☀️ Light';
+    }
+});
+</script>
+
+      </div>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+  <h1>🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go</h1>
+  
+  <!-- Debug info -->
+  <!-- <div style="color: red;"> -->
+  <!--   TOC enabled: true -->
+  <!--   Layout: post -->
+  <!-- </div> -->
+  
+  
+    <nav class="toc">
+  <div class="toc-header">
+    <h2>Contents</h2>
+    <button class="toc-toggle" aria-label="Toggle table of contents">
+      <svg class="toc-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path class="chevron-down" d="M6 9l6 6 6-6"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="toc-content">
+    <ul>
+      
+      
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#introduction">Introduction</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#python-vs-go-libraries-comparison">Python vs Go Libraries Comparison</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#development-experience">Development Experience</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#error-handling-done-right">Error Handling Done Right</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#ml-ai-capabilities">ML/AI Capabilities</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#language-design">Language Design</a>
+            
+            
+            
+          </li>
+        
+      
+        
+          
+          <li class="toc-level-2">
+            <a href="#conclusion">Conclusion</a>
+            
+            
+            
+          </li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+  
+  
+  <!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Modern software development often involves navigating complex toolchains, opinionated frameworks, and resource-heavy development environments. Many languages require extensive configuration, multiple runtime dependencies, and introduce significant cognitive overhead through their vast feature sets and multiple approaches to solving the same problem. Node.js, JVM languages, and even Python with its extensive ecosystem can lead to analysis paralysis and team disagreements over tooling and style.<br />
+Go offers a refreshing alternative. With a language specification under 50 pages, a consolidated toolchain, and a “batteries included” approach, it provides a low-cognitive-overhead solution for developers seeking simplicity and productivity. Its zero-config philosophy, coupled with built-in formatting (<code class="language-plaintext highlighter-rouge">go fmt</code>), linting (<code class="language-plaintext highlighter-rouge">go vet</code>), and testing tools, promotes code uniformity and reduces team friction over stylistic choices.<br />
+While Go may lack a REPL as sophisticated as IPython or the Julia interactive environment, this limitation encourages proper Test-Driven Development practices rather than the post-implementation testing often seen in REPL-heavy environments. Tools like <a href="https://github.com/fatih/vim-go">vim-go</a> and Go Playground provide sufficient interactive development capabilities for most use cases.<br />
+Below I’m collecting some thoughts on aspects of Go I’ve seen so far and how they compare with other languages I’ve considered. The list is far from complete, for example I’ve not mentioned goroutines aside from others.</p>
+
+<h2 id="python-vs-go-libraries-comparison">Python vs Go Libraries Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Domain</th>
+      <th>Python Library</th>
+      <th>Go Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Numerical Computing</td>
+      <td><a href="https://github.com/numpy/numpy">NumPy</a></td>
+      <td><a href="https://github.com/gonum/gonum">gonum</a></td>
+    </tr>
+    <tr>
+      <td>Data Processing</td>
+      <td><a href="https://github.com/pandas-dev/pandas">Pandas</a></td>
+      <td><a href="https://github.com/go-gota/gota">gota</a></td>
+    </tr>
+    <tr>
+      <td>Visualisation</td>
+      <td><a href="https://github.com/plotly/plotly.py">Plotly</a></td>
+      <td><a href="https://github.com/MetalBlueberry/go-plotly">go-plotly</a></td>
+    </tr>
+    <tr>
+      <td>Gradient Boosting</td>
+      <td><a href="https://github.com/dmlc/xgboost">XGBoost</a></td>
+      <td><a href="https://github.com/Unity-Technologies/go-xgboost">go-xgboost</a></td>
+    </tr>
+    <tr>
+      <td>Machine Learning</td>
+      <td><a href="https://github.com/scikit-learn/scikit-learn">Scikit-Learn</a></td>
+      <td><a href="https://github.com/sjwhitworth/golearn">golearn</a></td>
+    </tr>
+    <tr>
+      <td>Deep Learning</td>
+      <td><a href="https://github.com/tensorflow/tensorflow">TensorFlow</a><br /><a href="https://github.com/pytorch/pytorch">PyTorch</a></td>
+      <td><a href="https://github.com/galeone/tfgo">tfgo</a><br /><a href="https://github.com/sugarme/gotch">gotch</a></td>
+    </tr>
+    <tr>
+      <td>LLM Development</td>
+      <td><a href="https://github.com/langchain-ai/langchain">LangChain</a></td>
+      <td><a href="https://github.com/tmc/langchaingo">langchaingo</a></td>
+    </tr>
+    <tr>
+      <td>Vector Search</td>
+      <td><a href="https://github.com/weaviate/weaviate-python-client">Weaviate Client</a></td>
+      <td><a href="https://github.com/weaviate/weaviate-python-client">Weaviate Go Client</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="development-experience">Development Experience</h2>
+
+<p>Go’s tooling is exceptional. With <a href="https://github.com/fatih/vim-go">vim-go</a> in <a href="https://neovim.io/">Neovim</a>, you get immediate access to formatting, linting, and code navigation. Unlike JVM languages or JavaScript frameworks that often require more complex build configurations, Go projects maintain a simple, predictable structure. The <code class="language-plaintext highlighter-rouge">go fmt</code> command enforces consistent code style, while <code class="language-plaintext highlighter-rouge">go vet</code> catches common mistakes early, eliminating debates over formatting and best practices.</p>
+
+<h2 id="error-handling-done-right">Error Handling Done Right</h2>
+
+<p>Go’s approach to error handling initially feels verbose:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">someFunction</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">err</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>But this explicitness pays dividends. By treating errors as values that must be handled, Go forces developers to think about failure cases upfront. The <code class="language-plaintext highlighter-rouge">defer</code> keyword complements this by ensuring cleanup code runs regardless of errors:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">file</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">err</span>
+<span class="p">}</span>
+<span class="k">defer</span> <span class="n">file</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="mlai-capabilities">ML/AI Capabilities</h2>
+
+<p>While Go isn’t the primary choice for ML/AI experimentation, its simplicity and performance make it excellent for production deployments. Its standard library and growing ecosystem provide solid foundations for numerical computing (gonum), data processing (<a href="https://github.com/go-gota/gota">gota</a>), and ML/AI applications (<a href="https://github.com/gorgonia/gorgonia">Gorgonia</a>, <a href="https://github.com/galeone/tfgo">tfgo</a>). The language’s focus on simplicity and performance makes it particularly suitable for model serving and inference workloads.</p>
+
+<h2 id="language-design">Language Design</h2>
+
+<p>Go’s remarkably concise specification (under 50 pages) contrasts sharply with other languages. Even Zig, a newer systems programming language, has a 74-page specification despite being younger and positioned as a simpler low-level language.</p>
+<figure>
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/Zig%20language%20spec.png" width="80%" height="80%" />
+    <figcaption>Zig's language spec</figcaption>
+</figure>
+
+<p>Go’s intentionally limited feature set and single way of solving problems promote maintainable, uniform code that’s easier to reason about and review, as reflected in its compact language spec.</p>
+<figure>
+    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/Go%20language%20spec.png" width="80%" height="80%" />
+    <figcaption>Go's language spec</figcaption>
+</figure>
+
+<p>For ML engineers and developers seeking a reliable, low-overhead language that excels at building robust, production-ready applications, Go offers a compelling choice. While it won’t replace Python for rapid prototyping and research, its simplicity, performance, and consolidated toolchain make it an excellent addition to any developer’s toolkit.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Go stands out as a pragmatic choice for modern development through its key strengths:</p>
+
+<ul>
+  <li>Minimal cognitive overhead with a 47-page specification</li>
+  <li>Zero-config toolchain including formatting, testing, and package management</li>
+  <li>Enforced error handling and clean resource management via <code class="language-plaintext highlighter-rouge">defer</code></li>
+  <li>Growing ML/AI ecosystem comparable to Python’s established libraries</li>
+  <li>Cross-platform compilation and efficient garbage collection</li>
+  <li>Single, clear way to solve problems, reducing team friction</li>
+  <li>Lightweight development environment compared to JVM, .NET, BEAM or Node.js</li>
+</ul>
+
+<p>While Python remains dominant for ML/AI research and prototyping, Go excels in production environments where code maintainability, performance, and team collaboration are crucial. Its intentionally limited feature set, combined with a comprehensive standard library and maturing ML ecosystem, makes it a very attractive choice for developers seeking simplicity without sacrificing capability.<br />
+The language’s design philosophy strongly aligns with my needs as a Data professional looking to reduce tooling complexity and maintain consistent, reliable codebases. Go’s lightweight yet rich toolchain allows writing safe, efficient AI and data-oriented code based on simplicity and reliability. This refreshing alternative in today’s complex development landscape has convinced me to base my practice on Go’s principled approach to software development.</p>
+
+</article>
+
+<!-- Theme toggle -->
+<script>
+// Initialize theme from localStorage
+if (localStorage.getItem('darkTheme') === 'true') {
+    document.body.classList.add('dark-theme');
+}
+</script>
+
+<!-- Collapsible TOC -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocHeader = document.querySelector('.toc-header');
+  const toc = document.querySelector('.toc');
+  
+  if (tocHeader && toc) {
+    tocHeader.addEventListener('click', function() {
+      toc.classList.toggle('collapsed');
+      
+      // Optional: Save state to localStorage
+      localStorage.setItem('tocCollapsed', toc.classList.contains('collapsed'));
+    });
+    
+    // Optional: Restore state from localStorage
+    const isCollapsed = localStorage.getItem('tocCollapsed') === 'true';
+    if (isCollapsed) {
+      toc.classList.add('collapsed');
+    }
+  }
+});
+</script>
+
+<div class="post-tags">
+  Tags: 
+  
+    <a href="/">ai</a>, 
+  
+    <a href="/">llm</a>, 
+  
+    <a href="/">minimal</a>, 
+  
+    <a href="/">machine-learning</a>, 
+  
+    <a href="/">toolchain</a>, 
+  
+    <a href="/">zero-config</a>, 
+  
+    <a href="/">code-quality</a>, 
+  
+    <a href="/">cross-platform</a>, 
+  
+    <a href="/">production</a>
+  
+</div>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Just-in-Time learning</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Just-in-Time learning</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list">
+  <li><a href="https://github.com/ai-mindset"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ai-mindset</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
