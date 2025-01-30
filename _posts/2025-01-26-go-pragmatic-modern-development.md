@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go"
+title: "🚀 A Minimal, Pragmatic Approach to Production-Ready AI & ML with Go"
 date: 2025-01-26
 tags: [ai, llm, minimal, machine-learning, toolchain, zero-config, code-quality, cross-platform, production]
 ---
@@ -25,6 +25,8 @@ Below I'm collecting some thoughts on attractive aspects of Go I've discerned so
 | Deep Learning | [TensorFlow](https://github.com/tensorflow/tensorflow)<br>[PyTorch](https://github.com/pytorch/pytorch) | [tfgo](https://github.com/galeone/tfgo)<br>[gotch](https://github.com/sugarme/gotch) |
 | LLM Development | [LangChain](https://github.com/langchain-ai/langchain) | [langchaingo](https://github.com/tmc/langchaingo) |
 | Vector Search | [Weaviate Client](https://github.com/weaviate/weaviate-python-client) | [Weaviate Go Client](https://github.com/weaviate/weaviate-python-client) |
+  
+_Update: [Awesome Golang.ai](https://github.com/Promacanthus/awesome-golang-ai) is a very nice curated list of AI-related Go libraries worth checking._
 
 ## Development Experience
 
