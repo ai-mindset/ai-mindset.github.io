@@ -3,9 +3,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go | Just-in-Time learning</title>
+<title>🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp; ML with Go | Just-in-Time learning</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go" />
+<meta property="og:title" content="🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp; ML with Go" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
 <meta property="og:description" content="Inquisitive. Learning. Sharing. Simplicity = Reliability" />
@@ -15,9 +15,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-01-26T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go" />
+<meta property="twitter:title" content="🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp; ML with Go" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-26T00:00:00+00:00","datePublished":"2025-01-26T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/go-pragmatic-modern-development/"},"url":"http://0.0.0.0:4000/go-pragmatic-modern-development/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-26T00:00:00+00:00","datePublished":"2025-01-26T00:00:00+00:00","description":"Inquisitive. Learning. Sharing. Simplicity = Reliability","headline":"🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp; ML with Go","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/go-pragmatic-modern-development/"},"url":"http://0.0.0.0:4000/go-pragmatic-modern-development/"}</script>
 <!-- End Jekyll SEO tag -->
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Just-in-Time learning" />
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post">
-  <h1>🚀 A Minimal and Pragmatic Approach to Production-Ready ML with Go</h1>
+  <h1>🚀 A Minimal, Pragmatic Approach to Production-Ready AI & ML with Go</h1>
   
   <!-- Debug info -->
   <!-- <div style="color: red;"> -->
@@ -231,10 +231,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Modern software development often involves navigating complex toolchains, opinionated frameworks, and resource-heavy development environments. Many languages require extensive configuration, multiple runtime dependencies, and introduce significant cognitive overhead through their vast feature sets and multiple approaches to solving the same problem. Node.js, JVM languages, and even Python with its extensive ecosystem can lead to analysis paralysis and team disagreements over tooling and style.<br />
-Go offers a refreshing alternative. With a language specification under 50 pages, a consolidated toolchain, and a “batteries included” approach, it provides a low-cognitive-overhead solution for developers seeking simplicity and productivity. Its zero-config philosophy, coupled with built-in formatting (<code class="language-plaintext highlighter-rouge">go fmt</code>), linting (<code class="language-plaintext highlighter-rouge">go vet</code>), and testing tools, promotes code uniformity and reduces team friction over stylistic choices.<br />
-While Go may lack a REPL as sophisticated as IPython or the Julia interactive environment, this limitation encourages proper Test-Driven Development practices rather than the post-implementation testing often seen in REPL-heavy environments. Tools like <a href="https://github.com/fatih/vim-go">vim-go</a> and Go Playground provide sufficient interactive development capabilities for most use cases.<br />
-Below I’m collecting some thoughts on aspects of Go I’ve seen so far and how they compare with other languages I’ve considered. The list is far from complete, for example I’ve not mentioned goroutines aside from others.</p>
+<p>Modern software development often involves navigating complex toolchains, opinionated frameworks, and resource-heavy development environments. Many languages require extensive configuration, multiple runtime dependencies, and introduce significant cognitive overhead through their vast feature sets and multiple approaches to solving the same problem. Node.js, JVM languages, and even Python with its extensive ecosystem can lead to analysis paralysis, code inhomogeneity and team disagreements over tooling and style.<br />
+Go offers a refreshing alternative. With a language specification under 50 pages, a consolidated toolchain, and a “batteries included” approach, it provides a low-cognitive-overhead solution for developers seeking simplicity and productivity. Its zero-config philosophy, coupled with built-in formatting (<code class="language-plaintext highlighter-rouge">go fmt</code>), linting (<code class="language-plaintext highlighter-rouge">go vet</code>), and testing tools, promotes code uniformity and reduces team friction over stylistic choices. The sizeable Go community is centralised, using Slack in this case, which serves as a focal point for communication, support, networking, and staying informed about the latest developments.<br />
+While Go may lack a REPL as sophisticated as IPython or the Julia interactive environment, this limitation encourages proper Test-Driven Development practices rather than the post-implementation testing often seen in REPL-heavy environments. Tools like <a href="https://github.com/fatih/vim-go">vim-go</a>’s <code class="language-plaintext highlighter-rouge">:GoRun</code> and Go Playground provide sufficient interactive development capabilities for most use cases.<br />
+Below I’m collecting some thoughts on attractive aspects of Go I’ve discerned so far and how they compare with other languages I’ve considered. The list of Go’s features is far from complete, for example I’ve not mentioned goroutines among others.</p>
 
 <h2 id="python-vs-go-libraries-comparison">Python vs Go Libraries Comparison</h2>
 
@@ -290,9 +290,11 @@ Below I’m collecting some thoughts on aspects of Go I’ve seen so far and how
   </tbody>
 </table>
 
+<p><em>Update: <a href="https://github.com/Promacanthus/awesome-golang-ai">Awesome Golang.ai</a> is a very nice curated list of AI-related Go libraries worth checking.</em></p>
+
 <h2 id="development-experience">Development Experience</h2>
 
-<p>Go’s tooling is exceptional. With <a href="https://github.com/fatih/vim-go">vim-go</a> in <a href="https://neovim.io/">Neovim</a>, you get immediate access to formatting, linting, and code navigation. Unlike JVM languages or JavaScript frameworks that often require more complex build configurations, Go projects maintain a simple, predictable structure. The <code class="language-plaintext highlighter-rouge">go fmt</code> command enforces consistent code style, while <code class="language-plaintext highlighter-rouge">go vet</code> catches common mistakes early, eliminating debates over formatting and best practices.</p>
+<p>Go’s tooling is exceptional. With <a href="https://github.com/fatih/vim-go">vim-go</a> in <a href="https://neovim.io/">Neovim</a>, you get immediate access to formatting, linting, and code navigation. Unlike JVM languages or JavaScript frameworks that may require more complex build configurations, Go projects maintain a simple, predictable structure thanks to <code class="language-plaintext highlighter-rouge">go mod</code>. The <code class="language-plaintext highlighter-rouge">go fmt</code> command -triggered on save by default- enforces consistent code style eliminating debates over formatting and best practices, while <code class="language-plaintext highlighter-rouge">go vet</code> catches common mistakes early.</p>
 
 <h2 id="error-handling-done-right">Error Handling Done Right</h2>
 
@@ -304,7 +306,7 @@ Below I’m collecting some thoughts on aspects of Go I’ve seen so far and how
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>But this explicitness pays dividends. By treating errors as values that must be handled, Go forces developers to think about failure cases upfront. The <code class="language-plaintext highlighter-rouge">defer</code> keyword complements this by ensuring cleanup code runs regardless of errors:</p>
+<p>But this explicitness pays dividends. By treating errors as values that must be handled, Go forces developers to think about failure cases upfront. The <code class="language-plaintext highlighter-rouge">defer</code> keyword complements this by ensuring clean-up code runs regardless of errors:</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">file</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
@@ -315,11 +317,11 @@ Below I’m collecting some thoughts on aspects of Go I’ve seen so far and how
 
 <h2 id="mlai-capabilities">ML/AI Capabilities</h2>
 
-<p>While Go isn’t the primary choice for ML/AI experimentation, its simplicity and performance make it excellent for production deployments. Its standard library and growing ecosystem provide solid foundations for numerical computing (gonum), data processing (<a href="https://github.com/go-gota/gota">gota</a>), and ML/AI applications (<a href="https://github.com/gorgonia/gorgonia">Gorgonia</a>, <a href="https://github.com/galeone/tfgo">tfgo</a>). The language’s focus on simplicity and performance makes it particularly suitable for model serving and inference workloads.</p>
+<p>While Go isn’t the primary choice for ML/AI experimentation, its simplicity and performance make it excellent for production deployments. Its standard library and growing ecosystem provide solid foundations for numerical computing (<a href="https://github.com/gonum/gonum">gonum</a>), data processing (<a href="https://github.com/go-gota/gota">gota</a>), and ML/AI applications (<a href="https://github.com/gorgonia/gorgonia">Gorgonia</a>, <a href="https://github.com/galeone/tfgo">tfgo</a>, <a href="https://github.com/sugarme/gotch">gotch</a>). The language’s focus on simplicity and performance makes it particularly suitable for model serving and inference workloads.</p>
 
 <h2 id="language-design">Language Design</h2>
 
-<p>Go’s remarkably concise specification (under 50 pages) contrasts sharply with other languages. Even Zig, a newer systems programming language, has a 74-page specification despite being younger and positioned as a simpler low-level language.</p>
+<p>Go’s refreshingly concise specification (under 50 pages) contrasts sharply with other languages. Even the highly promising Zig, a younger language half of Go’s age, has a 74-page specification despite being positioned as a simpler low-level language.</p>
 <figure>
     <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/Zig%20language%20spec.png" width="80%" height="80%" />
     <figcaption>Zig's language spec</figcaption>
@@ -331,15 +333,16 @@ Below I’m collecting some thoughts on aspects of Go I’ve seen so far and how
     <figcaption>Go's language spec</figcaption>
 </figure>
 
-<p>For ML engineers and developers seeking a reliable, low-overhead language that excels at building robust, production-ready applications, Go offers a compelling choice. While it won’t replace Python for rapid prototyping and research, its simplicity, performance, and consolidated toolchain make it an excellent addition to any developer’s toolkit.</p>
+<p>For ML engineers and developers seeking a reliable, low-overhead language that excels at building robust, production-ready applications, Go offers a compelling choice. While it won’t replace Python for rapid prototyping and research, its simplicity, performance, and consolidated toolchain make it an very compelling addition to any developer’s toolkit.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Go stands out as a pragmatic choice for modern development through its key strengths:</p>
+<p>To my eyes, Go stands out as a pragmatic choice for modern development through its key strengths:</p>
 
 <ul>
   <li>Minimal cognitive overhead with a 47-page specification</li>
   <li>Zero-config toolchain including formatting, testing, and package management</li>
+  <li>Centralised community, providing a single-source of truth</li>
   <li>Enforced error handling and clean resource management via <code class="language-plaintext highlighter-rouge">defer</code></li>
   <li>Growing ML/AI ecosystem comparable to Python’s established libraries</li>
   <li>Cross-platform compilation and efficient garbage collection</li>
@@ -347,8 +350,8 @@ Below I’m collecting some thoughts on aspects of Go I’ve seen so far and how
   <li>Lightweight development environment compared to JVM, .NET, BEAM or Node.js</li>
 </ul>
 
-<p>While Python remains dominant for ML/AI research and prototyping, Go excels in production environments where code maintainability, performance, and team collaboration are crucial. Its intentionally limited feature set, combined with a comprehensive standard library and maturing ML ecosystem, makes it a very attractive choice for developers seeking simplicity without sacrificing capability.<br />
-The language’s design philosophy strongly aligns with my needs as a Data professional looking to reduce tooling complexity and maintain consistent, reliable codebases. Go’s lightweight yet rich toolchain allows writing safe, efficient AI and data-oriented code based on simplicity and reliability. This refreshing alternative in today’s complex development landscape has convinced me to base my practice on Go’s principled approach to software development.</p>
+<p>While Python remains dominant for ML/AI research, prototyping and -frequently- production, Go excels in production environments where code maintainability, performance, and team collaboration are crucial. Its intentionally limited feature set, combined with a comprehensive standard library and maturing ML ecosystem, makes it a very attractive choice for developers seeking simplicity without sacrificing capability.<br />
+The language’s design philosophy strongly aligns with my needs as a Data professional looking to reduce tooling complexity and maintain consistent, reliable codebases. Go’s lightweight yet rich toolchain allows writing safe, efficient AI and data-oriented code based on simplicity and reliability. This refreshing alternative in today’s complex development landscape has strongly tempted me to start moving my practice to Go’s more principled approach.</p>
 
 </article>
 
