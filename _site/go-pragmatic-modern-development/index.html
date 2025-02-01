@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="introduction">Introduction</h2>
 
 <p>Modern software development often involves navigating complex toolchains, opinionated frameworks, and resource-heavy development environments. Many languages require extensive configuration, multiple runtime dependencies, and introduce significant cognitive overhead through their vast feature sets and multiple approaches to solving the same problem. Node.js, JVM languages, and even Python with its extensive ecosystem can lead to analysis paralysis, code inhomogeneity and team disagreements over tooling and style.<br />
-Go offers a refreshing alternative. With a language specification under 50 pages, a consolidated toolchain, and a “batteries included” approach, it provides a low-cognitive-overhead solution for developers seeking simplicity and productivity. Its zero-config philosophy, coupled with built-in formatting (<code class="language-plaintext highlighter-rouge">go fmt</code>), linting (<code class="language-plaintext highlighter-rouge">go vet</code>), and testing tools, promotes code uniformity and reduces team friction over stylistic choices. The sizeable Go community is centralised, using Slack in this case, which serves as a focal point for communication, support, networking, and staying informed about the latest developments.<br />
+Go offers a refreshing alternative. With a language specification under 50 pages, a consolidated toolchain, and a “batteries included” approach, it provides a low-cognitive-overhead solution for developers seeking simplicity and productivity. Its zero-config philosophy, coupled with built-in formatting (<code class="language-plaintext highlighter-rouge">go fmt</code>), linting<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> (<code class="language-plaintext highlighter-rouge">go vet</code>), and testing tools, promotes code uniformity and reduces team friction over stylistic choices. The sizeable Go community is centralised, using Slack in this case, which serves as a focal point for communication, support, networking, and staying informed about the latest developments.<br />
 While Go may lack a REPL as sophisticated as IPython or the Julia interactive environment, this limitation encourages proper Test-Driven Development practices rather than the post-implementation testing often seen in REPL-heavy environments. Tools like <a href="https://github.com/fatih/vim-go">vim-go</a>’s <code class="language-plaintext highlighter-rouge">:GoRun</code> and Go Playground provide sufficient interactive development capabilities for most use cases.<br />
 Below I’m collecting some thoughts on attractive aspects of Go I’ve discerned so far and how they compare with other languages I’ve considered. The list of Go’s features is far from complete, for example I’ve not mentioned goroutines among others.</p>
 
@@ -352,6 +352,15 @@ Below I’m collecting some thoughts on attractive aspects of Go I’ve discerne
 
 <p>While Python remains dominant for ML/AI research, prototyping and -frequently- production, Go excels in production environments where code maintainability, performance, and team collaboration are crucial. Its intentionally limited feature set, combined with a comprehensive standard library and maturing ML ecosystem, makes it a very attractive choice for developers seeking simplicity without sacrificing capability.<br />
 The language’s design philosophy strongly aligns with my needs as a Data professional looking to reduce tooling complexity and maintain consistent, reliable codebases. Go’s lightweight yet rich toolchain allows writing safe, efficient AI and data-oriented code based on simplicity and reliability. This refreshing alternative in today’s complex development landscape has strongly tempted me to start moving my practice to Go’s more principled approach.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Vet is -in essence- a linter, since it helps improve code quality. Quoting Gp’s <a href="https://go.dev/src/cmd/vet/doc.go">vet doc</a> <em>“Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string. Vet uses heuristics that do not guarantee all reports are genuine problems, but it can find errors not caught by the compilers.”</em> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
 </article>
 
