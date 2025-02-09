@@ -17,7 +17,7 @@ Howard emphasises a crucial pattern: technology doesn't just grow linearly. Each
 
 <center>
     <figure>
-        <img src="https://github.com/ai-mindset/ai-mindset.github.io/blob/0a6eced3bce4c70b7ba715fe7873d1659ce2e9a9/images/hockey-stick-growth.png" width="80%" height="80%" />
+        <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/0a6eced3bce4c70b7ba715fe7873d1659ce2e9a9/images/hockey-stick-growth.png" width="80%" height="80%" />
     <figcaption>Hockey stick growth</figcaption>
     </figure>
 </center>
