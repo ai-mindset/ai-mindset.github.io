@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-02-01T09:15:49+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp;amp; ML with Go</title><link href="http://0.0.0.0:4000/go-pragmatic-modern-development/" rel="alternate" type="text/html" title="🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp;amp; ML with Go" /><published>2025-01-26T00:00:00+00:00</published><updated>2025-01-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/go-pragmatic-modern-development</id><content type="html" xml:base="http://0.0.0.0:4000/go-pragmatic-modern-development/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-02-09T12:23:31+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔄 TIL: To Prepare for AI, Study History’s Tech Cycles</title><link href="http://0.0.0.0:4000/TIL-prepare-for-ai/" rel="alternate" type="text/html" title="🔄 TIL: To Prepare for AI, Study History’s Tech Cycles" /><published>2025-02-09T00:00:00+00:00</published><updated>2025-02-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-prepare-for-ai</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-prepare-for-ai/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p><a href="https://jeremy.fast.ai/">Jeremy Howard</a> isn’t just another voice in the AI conversation. As the creator of <a href="https://towardsdatascience.com/understanding-ulmfit-and-elmo-the-shift-towards-transfer-learning-in-nlp-b5d8e2e3f664">ULMFiT</a> (the algorithm that modern LLMs like ChatGPT are based on), founding researcher at <a href="https://course.fast.ai/">fast.ai</a>, and <a href="https://www.answer.ai/">Answer.AI</a>, Howard brings a unique perspective shaped by decades at the forefront of AI development. Recently, when <a href="https://xcancel.com/chrisbarber/status/1888037803566747942">asked about preparing for AI</a>, his response wasn’t about futuristic predictions or doomsday scenarios. Instead, he offered something more valuable: practical wisdom drawn from historical patterns.</p>
+
+<h2 id="why-this-matters-now">Why This Matters Now</h2>
+<p>We’re at a critical juncture with AI, similar to where we were with the internet in 1990. Just as the internet transformed every aspect of our lives, AI is poised to do the same. The difference? We can learn from history this time. Howard’s insights are particularly valuable because they come from someone who has not only observed but shaped these technological transitions.</p>
+
+<h2 id="key-insights-on-technology-evolution">Key Insights on Technology Evolution</h2>
+<p>Howard emphasises a crucial pattern: technology doesn’t just grow linearly. Each innovation follows a “hockey stick” growth curve before flattening into a sigmoid.</p>
+
+<center>
+    <figure>
+        <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/master/images/growth-curve.svg" width="80%" height="80%" />
+    <figcaption>Hockey stick growth</figcaption>
+    </figure>
+</center>
+
+<p>More importantly, new “hockey sticks” emerge unexpectedly in different areas. This pattern repeats “like clockwork” making historical understanding more valuable than future predictions.</p>
+
+<h2 id="practical-preparation-strategy">Practical Preparation Strategy</h2>
+<p>Rather than trying to predict AI’s future, Howard advocates for:</p>
+<ul>
+  <li>Embracing uncertainty while avoiding both dismissive fear and blind hype</li>
+  <li>Taking a counter-cyclical approach: pursuing opportunities others overlook</li>
+  <li>Investing months in mastering AI tools, accepting initial poor results as part of the learning process</li>
+  <li>Combining AI capabilities with deep domain expertise</li>
+  <li>Building practical knowledge through side projects and community engagement</li>
+</ul>
+
+<h2 id="the-education-perspective">The Education Perspective</h2>
+<p>Howard challenges traditional educational paths, suggesting alternatives:</p>
+<ul>
+  <li>Self-directed learning through resources like fast.ai</li>
+  <li>Multiple side hustles to build practical experience</li>
+  <li>Community building with like-minded innovators</li>
+  <li>Using AI itself to learn technical skills</li>
+  <li>Developing both technical and human skills as a generalist</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The key takeaway isn’t about predicting AI’s future -it’s about preparing for it intelligently. Howard’s message is: success in the AI era won’t come from perfect predictions or traditional career paths. Instead, it will come from practical engagement, continuous learning, and the ability to combine domain expertise with AI capabilities. As he puts it, those who master this combination will have “superpowers” compared to those who don’t adapt.<br />
+The most valuable insight? Even AI experts can’t predict AI’s future reliably. The best strategy is to engage deeply with the technology while maintaining a grounded, practical approach to learning and application. The future belongs to the tinkerers, the experimenters, and those willing to learn from both past and present.</p>]]></content><author><name></name></author><category term="til" /><category term="ai" /><category term="fast-ai" /><category term="llm" /><category term="machine-learning" /><category term="best-practices" /><category term="decision-making" /><category term="evolution" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp;amp; ML with Go</title><link href="http://0.0.0.0:4000/go-pragmatic-modern-development/" rel="alternate" type="text/html" title="🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp;amp; ML with Go" /><published>2025-01-26T00:00:00+00:00</published><updated>2025-01-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/go-pragmatic-modern-development</id><content type="html" xml:base="http://0.0.0.0:4000/go-pragmatic-modern-development/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -128,7 +170,7 @@ The language’s design philosophy strongly aligns with my needs as a Data profe
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
-      <p>Vet is -in essence- a linter, since it helps improve code quality. Quoting Gp’s <a href="https://go.dev/src/cmd/vet/doc.go">vet doc</a> <em>“Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string. Vet uses heuristics that do not guarantee all reports are genuine problems, but it can find errors not caught by the compilers.”</em> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Vet is -in essence- a linter, since it helps improve code quality. Quoting Go’s <a href="https://go.dev/src/cmd/vet/doc.go">vet doc</a> <em>“Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string. Vet uses heuristics that do not guarantee all reports are genuine problems, but it can find errors not caught by the compilers.”</em> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="minimal" /><category term="machine-learning" /><category term="toolchain" /><category term="zero-config" /><category term="code-quality" /><category term="cross-platform" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🔧 A 10-Minute Guide to Engineering Machine Learning Systems</title><link href="http://0.0.0.0:4000/ml-best-practices/" rel="alternate" type="text/html" title="🔧 A 10-Minute Guide to Engineering Machine Learning Systems" /><published>2025-01-21T00:00:00+00:00</published><updated>2025-01-21T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ml-best-practices</id><content type="html" xml:base="http://0.0.0.0:4000/ml-best-practices/"><![CDATA[<!--more-->
@@ -788,24 +830,4 @@ The urgency is clear. Antimicrobial resistance threatens to undermine many advan
       <p>World Health Organization (2024). Antimicrobial Resistance Fact Sheet. <a href="https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance">https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance</a> <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="iterative-refinement" /><category term="evolution" /><category term="data-science" /><category term="evaluation" /><category term="decision-making" /><category term="best-practices" /><category term="modelling-mindsets" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts</title><link href="http://0.0.0.0:4000/TIL-tdd-good-system-prompts/" rel="alternate" type="text/html" title="💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts" /><published>2025-01-02T00:00:00+00:00</published><updated>2025-01-02T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-tdd-good-system-prompts</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-tdd-good-system-prompts/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-
-<p>2024 has made clear that writing good automated evaluations for LLM-powered systems is the most critical skill for building useful applications. This insight parallels Anthropic’s internal approach to system prompt development. As usual, Simon Willison’s <a href="https://simonwillison.net/2024/Dec/31/llms-in-2024/#evals-really-matter">recent insightful 2024 LLM overview</a> was a treasure trove. One item I picked up on was evaluating system prompts using a test-driven approach.</p>
-
-<h2 id="the-evaluation-first-approach">The Evaluation-First Approach</h2>
-
-<p><a href="https://askell.io/">Amanda Askell</a>, leading fine-tuning at Anthropic, <a href="https://xcancel.com/amandaaskell/status/1866207266761760812">outlines a test-driven process</a> for system prompts:</p>
-<ol>
-  <li>Create a test set of messages where the model’s default behaviour fails to meet requirements</li>
-  <li>Develop a system prompt that passes these tests</li>
-  <li>Identify cases where the system prompt is misapplied and refine it</li>
-  <li>Expand the test set and repeat</li>
-</ol>
-
-<p>This methodology’s importance extends beyond prompt engineering. Companies with strong evaluation suites can adopt new models faster and build more reliable features than competitors. As <a href="https://xcancel.com/cramforce/status/1860436022347075667">Vercel’s experience demonstrates</a>, moving from complex prompt protection to robust testing enables rapid iteration and development.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>While everyone acknowledges evals’ importance, implementing them effectively remains challenging. The key insight is clear: robust automated evaluation isn’t just a quality check, it’s the foundation for building reliable LLM-powered systems.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="til" /><category term="prompt-engineering" /><category term="testing" /><category term="best-practices" /><category term="evaluation" /><category term="machine-learning" /><category term="ai-alignment" /><category term="system-prompts" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</div>]]></content><author><name></name></author><category term="iterative-refinement" /><category term="evolution" /><category term="data-science" /><category term="evaluation" /><category term="decision-making" /><category term="best-practices" /><category term="modelling-mindsets" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry></feed>
