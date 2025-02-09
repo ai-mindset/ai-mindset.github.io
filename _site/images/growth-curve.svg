@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- Background Grid -->
+  <defs>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#f0f0f0" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="500" height="300" fill="url(#grid)" />
+
+  <!-- Axes -->
+  <path d="M 50 250 L 450 250" stroke="black" stroke-width="2" />
+  <path d="M 50 250 L 50 50" stroke="black" stroke-width="2" />
+  
+  <!-- Axis Labels -->
+  <text x="470" y="255" font-family="Arial" font-size="14">Time</text>
+  <text x="35" y="40" font-family="Arial" font-size="14">Growth</text>
+  
+  <!-- Growth Curves -->
+  <path d="M 50 250 L 150 240 Q 200 230 250 180 T 350 80 Q 400 60 420 58" 
+        fill="none" stroke="#2563eb" stroke-width="3"/>
+  
+  <!-- Annotation -->
+  <text x="280" y="130" font-family="Arial" font-size="12" fill="#2563eb">Hockey Stick Growth</text>
+  <path d="M 350 80 Q 400 60 440 59" 
+        fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="4"/>
+  <text x="360" y="40" font-family="Arial" font-size="12" fill="#dc2626">Sigmoid Flattening</text>
+</svg>
