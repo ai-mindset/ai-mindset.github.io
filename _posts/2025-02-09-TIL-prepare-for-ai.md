@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🔄 TIL: To Prepare for AI, Study History's Tech Cycles"
+title: "💡 TIL: To Prepare for AI, Study History's Tech Cycles"
 date: 2025-02-09
 tags: [til, ai, fast-ai, llm, machine-learning, best-practices, decision-making, evolution]
 ---
