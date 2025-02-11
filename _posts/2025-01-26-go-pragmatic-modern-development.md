@@ -2,7 +2,7 @@
 layout: post
 title: "🚀 A Minimal, Pragmatic Approach to Production-Ready AI & ML with Go"
 date: 2025-01-26
-tags: [ai, llm, minimal, machine-learning, toolchain, zero-config, code-quality, cross-platform, production]
+tags: [ai, go, llm, minimal, machine-learning, toolchain, zero-config, code-quality, cross-platform, production]
 ---
 <!--more-->
 
