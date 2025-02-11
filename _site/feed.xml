@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-02-09T13:20:23+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔄 TIL: To Prepare for AI, Study History’s Tech Cycles</title><link href="http://0.0.0.0:4000/TIL-prepare-for-ai/" rel="alternate" type="text/html" title="🔄 TIL: To Prepare for AI, Study History’s Tech Cycles" /><published>2025-02-09T00:00:00+00:00</published><updated>2025-02-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-prepare-for-ai</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-prepare-for-ai/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-02-11T16:16:23+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🗄️ The Minimalist’s DB Choice for AI Engineering is SQLite</title><link href="http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering/" rel="alternate" type="text/html" title="🗄️ The Minimalist’s DB Choice for AI Engineering is SQLite" /><published>2025-02-11T00:00:00+00:00</published><updated>2025-02-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering</id><content type="html" xml:base="http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In today’s AI engineering landscape, choosing the right database can feel overwhelming. While specialized solutions like <a href="https://qdrant.tech/">Qdrant</a> (vectors), <a href="https://neo4j.com/">Neo4j</a> (graphs), and <a href="https://www.mongodb.com/">MongoDB</a> (documents) excel in their niches, there’s a compelling case for <a href="https://www.sqlite.org/index.html">SQLite</a> as a versatile, minimalist solution that comes pre-installed on most systems and supports multiple data structures effectively. Speaking of minimalist, <a href="https://github.com/tconbeer/harlequin">Harlequin</a> (borrowing its name from a <a href="https://en.wikipedia.org/wiki/Harlequin_duck">sea 🦆</a>) makes data exploration very enjoyable. 
+Credit for the SQLite idea goes to <a href="https://bsky.app/profile/simonwillison.net">Simon Willison</a>, a prolific AI researcher among many other things, who has been repeatedly posting <a href="https://simonwillison.net/tags/sqlite/">blog articles</a> and <a href="https://til.simonwillison.net/sqlite">TILs</a> (Today I Learned) about SQLite since 2003!</p>
+
+<h2 id="the-power-of-pre-installation">The Power of Pre-installation</h2>
+
+<p>SQLite’s ubiquity is remarkable. It comes pre-installed on:</p>
+<ul>
+  <li>macOS</li>
+  <li>Most Linux distributions (including Ubuntu, as evidenced by its <a href="https://releases.ubuntu.com/24.10/ubuntu-24.10-desktop-amd64.manifest">manifest</a>)</li>
+  <li>Python’s standard library</li>
+  <li>Android devices</li>
+  <li>iOS devices</li>
+</ul>
+
+<p>This universal availability means you can start developing immediately without additional setup or installation steps.</p>
+
+<h2 id="modern-data-structure-support">Modern Data Structure Support</h2>
+
+<p>Despite its lightweight nature, SQLite handles modern data structures surprisingly well:</p>
+
+<ol>
+  <li><strong>Vector Storage</strong><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="n">VIRTUAL</span> <span class="k">TABLE</span> <span class="n">vec_items</span> <span class="k">USING</span> <span class="n">vec0</span><span class="p">(</span><span class="n">embedding</span> <span class="nb">float</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</code></pre></div>    </div>
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>
+  <span class="n">rowid</span><span class="p">,</span>
+  <span class="n">distance</span>
+<span class="k">FROM</span> <span class="n">vec_items</span>
+<span class="k">WHERE</span> <span class="n">embedding</span> <span class="k">MATCH</span> <span class="o">?</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">distance</span>
+<span class="k">LIMIT</span> <span class="mi">3</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Graph Relationships</strong><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Create table `nodes`</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">nodes</span> <span class="p">(</span>
+ <span class="n">id</span> <span class="nb">TEXT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+ <span class="n">properties</span> <span class="nb">TEXT</span>
+<span class="p">)</span>
+</code></pre></div>    </div>
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Create table `edges`</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">edges</span> <span class="p">(</span>
+ <span class="k">source</span> <span class="nb">TEXT</span><span class="p">,</span>
+ <span class="n">target</span> <span class="nb">TEXT</span><span class="p">,</span>
+ <span class="n">relationship</span> <span class="nb">TEXT</span><span class="p">,</span>
+ <span class="n">weight</span> <span class="nb">REAL</span><span class="p">,</span>
+ <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="k">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">relationship</span><span class="p">),</span>
+ <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="k">source</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">nodes</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+ <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">nodes</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>    </div>
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Create indices of the `edges` between `source` and `target`, for improved performance</span>
+<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">source_idx</span> <span class="k">ON</span> <span class="n">edges</span><span class="p">(</span><span class="k">source</span><span class="p">)</span>
+<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">target_idx</span> <span class="k">ON</span> <span class="n">edges</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Count the no. of incoming and outgoing edges per node, known as 'degree centrality' </span>
+<span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span>
+    <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">edges</span> <span class="k">WHERE</span> <span class="k">source</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="o">+</span>
+    <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">edges</span> <span class="k">WHERE</span> <span class="n">target</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="k">as</span> <span class="n">degree</span>
+<span class="k">FROM</span> <span class="n">nodes</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">degree</span> <span class="k">DESC</span>
+<span class="k">LIMIT</span> <span class="mi">10</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Document Storage</strong>
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">documents</span> <span class="p">(</span>
+ <span class="n">id</span> <span class="nb">INTEGER</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+ <span class="n">content</span> <span class="n">JSON</span><span class="p">,</span>
+ <span class="n">metadata</span> <span class="n">JSON</span>
+<span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="portability-and-simplicity">Portability and Simplicity</h2>
+
+<p>One of SQLite’s strongest features is its <a href="https://www.sqlite.org/onefile.html">single-file</a> nature. Your entire database exists in one file that can be:</p>
+<ul>
+  <li>Backed up with a simple copy operation</li>
+  <li>Easily version controlled (for smaller databases)</li>
+  <li>Moved between systems effortlessly</li>
+  <li>Examined with standard SQLite tools</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>While specialized databases have their place, SQLite offers a compelling combination of features that make it ideal for many AI engineering projects:</p>
+<ul>
+  <li>Zero configuration</li>
+  <li>Pre-installed availability</li>
+  <li>Support for multiple data structures</li>
+  <li>Single-file portability</li>
+  <li>Wide language support, especially in Python and Go</li>
+  <li>ACID<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> compliance</li>
+</ul>
+
+<p><strong>TL;DR</strong>: When you need a lightweight, self-contained database that can handle documents, vectors, and graphs without the complexity of a full database server, SQLite is often an excellent choice.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Example from <a href="https://alexgarcia.xyz/sqlite-vec/python.html">sqlite-vec with Python</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Examples from <a href="https://dev.to/stephenc222/how-to-build-lightweight-graphrag-with-sqlite-53le">How to Build Lightweight GraphRAG with SQLite</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Atomicity, Consistency, Isolation, Durability (<a href="https://en.wikipedia.org/wiki/ACID">ACID</a>), per Wikipedia, “<em>is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps. In the context of databases, a sequence of database operations that satisfies the ACID properties (which can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.</em>” <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="data-modeling" /><category term="data-processing" /><category term="data-science" /><category term="go" /><category term="minimal" /><category term="production" /><category term="python" /><category term="zero-config" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: To Prepare for AI, Study History’s Tech Cycles</title><link href="http://0.0.0.0:4000/TIL-prepare-for-ai/" rel="alternate" type="text/html" title="💡 TIL: To Prepare for AI, Study History’s Tech Cycles" /><published>2025-02-09T00:00:00+00:00</published><updated>2025-02-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-prepare-for-ai</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-prepare-for-ai/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 <p><a href="https://jeremy.fast.ai/">Jeremy Howard</a> isn’t just another voice in the AI conversation. As the creator of <a href="https://towardsdatascience.com/understanding-ulmfit-and-elmo-the-shift-towards-transfer-learning-in-nlp-b5d8e2e3f664">ULMFiT</a> (the algorithm that modern LLMs like ChatGPT are based on), founding researcher at <a href="https://course.fast.ai/">fast.ai</a>, and <a href="https://www.answer.ai/">Answer.AI</a>, Howard brings a unique perspective shaped by decades at the forefront of AI development. Recently, when <a href="https://xcancel.com/chrisbarber/status/1888037803566747942">asked about preparing for AI</a>, his response wasn’t about futuristic predictions or doomsday scenarios. Instead, he offered something more valuable: practical wisdom drawn from historical patterns.</p>
@@ -173,7 +288,7 @@ The language’s design philosophy strongly aligns with my needs as a Data profe
       <p>Vet is -in essence- a linter, since it helps improve code quality. Quoting Go’s <a href="https://go.dev/src/cmd/vet/doc.go">vet doc</a> <em>“Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string. Vet uses heuristics that do not guarantee all reports are genuine problems, but it can find errors not caught by the compilers.”</em> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="minimal" /><category term="machine-learning" /><category term="toolchain" /><category term="zero-config" /><category term="code-quality" /><category term="cross-platform" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🔧 A 10-Minute Guide to Engineering Machine Learning Systems</title><link href="http://0.0.0.0:4000/ml-best-practices/" rel="alternate" type="text/html" title="🔧 A 10-Minute Guide to Engineering Machine Learning Systems" /><published>2025-01-21T00:00:00+00:00</published><updated>2025-01-21T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ml-best-practices</id><content type="html" xml:base="http://0.0.0.0:4000/ml-best-practices/"><![CDATA[<!--more-->
+</div>]]></content><author><name></name></author><category term="ai" /><category term="go" /><category term="llm" /><category term="minimal" /><category term="machine-learning" /><category term="toolchain" /><category term="zero-config" /><category term="code-quality" /><category term="cross-platform" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🔧 A 10-Minute Guide to Engineering Machine Learning Systems</title><link href="http://0.0.0.0:4000/ml-best-practices/" rel="alternate" type="text/html" title="🔧 A 10-Minute Guide to Engineering Machine Learning Systems" /><published>2025-01-21T00:00:00+00:00</published><updated>2025-01-21T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ml-best-practices</id><content type="html" xml:base="http://0.0.0.0:4000/ml-best-practices/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 <p>This is a concise reference guide distilling Martin Zinkevich’s <a href="https://developers.google.com/machine-learning/guides/rules-of-ml">influential Google article on machine learning best practices</a>. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
@@ -729,105 +844,4 @@ As a technologist, inundated with a very wide choice of tools that often offer s
       <p>A matrix is singular (or non-invertible) when its determinant is zero. In practical terms, this means one or more columns can be expressed as linear combinations of other columns. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="data-science" /><category term="machine-learning" /><category term="statistics" /><category term="ai" /><category term="linear-algebra" /><category term="til" /><category term="modelling-mindsets" /><category term="data-modeling" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics</title><link href="http://0.0.0.0:4000/golden-age-of-antibiotics/" rel="alternate" type="text/html" title="💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics" /><published>2025-01-07T00:00:00+00:00</published><updated>2025-01-07T00:00:00+00:00</updated><id>http://0.0.0.0:4000/golden-age-of-antibiotics</id><content type="html" xml:base="http://0.0.0.0:4000/golden-age-of-antibiotics/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-
-<p>In a thought-provoking analysis<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, Our World in Data reveals a striking paradox in medical progress: the most productive period in antibiotic development occurred in the two decades following World War II, with scientific capabilities far more limited than today. This “Golden Age of Antibiotics” (1940s-1960s) produced nearly two-thirds of the antibiotic drug classes we still rely on<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.<br />
-Even more surprisingly, since 1970 -despite exponential advances in computing power and biotechnology- only eight new classes of antibiotics have been approved<sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. This indicates a stark decline that threatens the foundation of modern medicine. Traditional screening methods now rediscover existing compounds most of the time rather than finding new ones<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.<br />
-Modern tools like genome sequencing and systematic screening methods offer unprecedented capabilities. We’ve only identified a small fraction of bacterial species, many of which could harbour new antibiotic compounds<sup id="fnref:2:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. Yet despite these capabilities, development has stagnated due to fundamental market failures and fragmented research efforts.<br />
-This article examines this paradoxical inverse relationship between technological capability and antibiotic development: How did the Golden Age achieve such remarkable success with limited tools? Why has progress slowed as our capabilities have grown? Most importantly, what combinations of economic incentives and modern technology could spark a new era of antibiotic discovery?</p>
-
-<h2 id="when-urgency-met-innovation">When Urgency Met Innovation</h2>
-
-<p>The Golden Age of Antibiotics stands as medicine’s most productive period in antimicrobial discovery, yielding over 20 new antibiotic classes -more than double what we’ve developed in the 50 years since<sup id="fnref:2:3" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. Three pivotal breakthroughs, coupled with unprecedented coordination, drove this remarkable success.<br />
-The foundation was laid by Paul Ehrlich’s systematic approach to drug discovery. By methodically testing hundreds of compounds, he discovered <a href="https://en.wikipedia.org/wiki/Arsphenamine">salvarsan</a> in 1910 -the first synthetic antibiotic that effectively treated syphilis<sup id="fnref:2:4" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. A second milestone emerged when Alexander Fleming discovered penicillin in 1928. However, the real innovation came through coordinated wartime effort. With infections being the second-most common cause of hospital admissions in the US Army, the U.S. Office of Scientific Research and Development (OSRD) launched a global search for more productive penicillin strains, ultimately finding a high-yielding strain on a cantaloupe<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>.<br />
-The third breakthrough came from Selman Waksman’s insight into soil bacteria. His discovery that soil-dwelling <a href="https://en.wikipedia.org/wiki/Actinomycetales">actinomycetes</a> bacteria naturally produce antibiotics led to <a href="https://en.wikipedia.org/wiki/Streptomycin">streptomycin</a>’s development and opened an entirely new avenue for antibiotic discovery<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>.<br />
-What transformed these breakthroughs into a “golden age” was unprecedented coordination. The U.S. War Production Board orchestrated collaboration between government, academia, and industry -removing patent restrictions, sharing data, and streamlining clinical trials<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>. The results were remarkable: some antibiotics, like <a href="https://en.wikipedia.org/wiki/Tetracycline_antibiotics">tetracyclines</a> and <a href="https://en.wikipedia.org/wiki/Macrolide">macrolides</a>, went from discovery to clinical use within the same year.</p>
-
-<h2 id="scientific-progress-and-market-failure">Scientific Progress and Market Failure</h2>
-
-<p>The contrast between the Golden Age and our current era reflects a fundamental misalignment between public health needs and market incentives<sup id="fnref:2:5" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. The market structure fundamentally disfavours antibiotics in two ways:</p>
-<ol>
-  <li>Revenue Structure: While chronic disease medications can generate billions in annual revenue over decades, new antibiotics typically generate only tens of millions annually<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>, by comparison. This revenue gap has driven many large pharmaceutical companies away from antibiotic development<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>.</li>
-  <li>Conservation Requirements: New antibiotics must be reserved for severe drug-resistant infections, reaching less than 1% of hospitalised patients<sup id="fnref:7:1" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>. This necessary conservation practice severely limits market potential.</li>
-</ol>
-
-<p>Meanwhile, our technological capabilities offer three particularly promising approaches:</p>
-<ol>
-  <li>Genome mining: a breakthrough technique that identifies hidden antibiotic genes in microbes that remain dormant under standard laboratory conditions. This computational approach has already yielded promising candidates like humimycins<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>.</li>
-  <li>Advanced bacterial exploration: research into extreme environments like deep oceans and deserts, where previously “unculturable” bacteria might harbour entirely new antibiotic classes<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</li>
-  <li>Smart combination strategies: exploiting the observation that bacterial resistance to one antibiotic can increase vulnerability to others, opening new therapeutic possibilities<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>.</li>
-</ol>
-
-<p>Yet these powerful tools remain underutilised due to insufficient investment and coordination. The challenge isn’t scientific capability -it’s the failure to create systems that effectively deploy these technologies within sustainable economic frameworks.</p>
-
-<h2 id="integrating-economics-and-technology">Integrating Economics and Technology</h2>
-
-<p>Drawing from evidence in antibiotic development research, several promising approaches could help overcome current market failures while leveraging modern technological capabilities<sup id="fnref:7:2" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>.</p>
-
-<h3 id="economic-solutions-to-market-failures">Economic Solutions to Market Failures</h3>
-
-<ol>
-  <li>Subscription Models: The UK has pioneered a system where healthcare systems pay annual fees for antibiotic access rather than per-volume pricing. This addresses both the revenue challenge and conservation requirements by providing stable income while supporting appropriate antibiotic use<sup id="fnref:7:3" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>.</li>
-  <li>Advance Market Commitments: These provide guaranteed payments to companies that successfully develop new antibiotics, similar to successful vaccine development programs. This directly addresses the revenue uncertainty that has driven companies away from antibiotic development<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup>.</li>
-  <li>Collaborative Funding Initiatives: Organisations like CARB-X and GARDP help smaller companies navigate costly clinical trials, distributing development risks that large pharmaceutical companies are unwilling to bear<sup id="fnref:7:4" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>.</li>
-</ol>
-
-<h3 id="leveraging-modern-technology">Leveraging Modern Technology</h3>
-
-<p>To maximise the impact of these economic incentives, three technological approaches show particular promise:</p>
-<ol>
-  <li>Systematic Genome Mining: Using computational power to identify promising antibiotic-producing genes in bacterial genomes, revealing compounds that traditional screening would miss<sup id="fnref:9:1" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>.</li>
-  <li>Environmental Exploration: Research into extreme environments could unlock entirely new antibiotic classes, enabled by modern sequencing technologies<sup id="fnref:3:2" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</li>
-  <li>Smart Combination Strategies: Systematic exploration of how resistance to one antibiotic can increase vulnerability to others, offering new therapeutic possibilities<sup id="fnref:10:1" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>.</li>
-</ol>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>The story of antibiotic development demonstrates that scientific capability alone cannot drive progress. The Golden Age succeeded through a powerful combination of systematic approaches, unprecedented collaboration, and removal of institutional barriers -even with limited technological tools<sup id="fnref:2:6" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.<br />
-Today’s challenge is fundamentally different. We possess sophisticated tools -from genome mining to advanced screening methods- yet development has stalled. This paradox reveals that progress requires three key elements working in concert: economic incentives, institutional coordination, and technological application<sup id="fnref:7:5" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>.<br />
-The evidence-based solutions presented in the original Our World in Data article<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> offer a path forward. Market reforms like subscription models and advance market commitments could help correct the fundamental economic misalignment in antibiotic development<sup id="fnref:8:1" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>. Meanwhile, systematic application of computational tools, genomic analysis, and bacterial exploration could help unlock new classes of antibiotics that traditional methods miss<sup id="fnref:9:2" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>.<br />
-The urgency is clear. Antimicrobial resistance threatens to undermine many advances in modern medicine<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>. However, by combining proven coordination approaches from the Golden Age with modern capabilities and sustainable economic frameworks, we can revitalise antibiotic development for the challenges ahead.</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Our World in Data (2024). “What was the Golden Age of Antibiotics, and how can we spark a new one?” <a href="https://ourworldindata.org/golden-age-antibiotics">https://ourworldindata.org/golden-age-antibiotics</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-    <li id="fn:2" role="doc-endnote">
-      <p>Hutchings, M. I., Truman, A. W., &amp; Wilkinson, B. (2019). Antibiotics: Past, present and future. Current Opinion in Microbiology, 51, 72–80. <a href="https://doi.org/10.1016/j.mib.2019.10.008">https://doi.org/10.1016/j.mib.2019.10.008</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:2:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a> <a href="#fnref:2:3" class="reversefootnote" role="doc-backlink">&#8617;<sup>4</sup></a> <a href="#fnref:2:4" class="reversefootnote" role="doc-backlink">&#8617;<sup>5</sup></a> <a href="#fnref:2:5" class="reversefootnote" role="doc-backlink">&#8617;<sup>6</sup></a> <a href="#fnref:2:6" class="reversefootnote" role="doc-backlink">&#8617;<sup>7</sup></a></p>
-    </li>
-    <li id="fn:3" role="doc-endnote">
-      <p>Kolter, R., &amp; Van Wezel, G. P. (2016). Goodbye to brute force in antibiotic discovery? Nature Microbiology, 1(2), 15020. <a href="https://doi.org/10.1038/nmicrobiol.2015.20">https://doi.org/10.1038/nmicrobiol.2015.20</a> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:3:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
-    </li>
-    <li id="fn:4" role="doc-endnote">
-      <p>Gaynes, R. (2017). The Discovery of Penicillin -New Insights After More Than 75 Years of Clinical Use. Emerging Infectious Diseases, 23(5), 849–853. <a href="https://doi.org/10.3201/eid2305.161556">https://doi.org/10.3201/eid2305.161556</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:5" role="doc-endnote">
-      <p>Waksman, S. A., &amp; Schatz, A. (1945). Streptomycin–Origin, Nature, and Properties. Journal of the American Pharmaceutical Association, 34(11), 273–291. <a href="https://doi.org/10.1002/jps.3030341102">https://doi.org/10.1002/jps.3030341102</a> <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:6" role="doc-endnote">
-      <p>Sampat, B. N. (2023). Second World War and the Direction of Medical Innovation. SSRN Electronic Journal. <a href="https://doi.org/10.2139/ssrn.4422261">https://doi.org/10.2139/ssrn.4422261</a> <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:7" role="doc-endnote">
-      <p>Årdal, C., et al. (2020). Antibiotic development -economic, regulatory and societal challenges. Nature Reviews Microbiology, 18(5), 267-274. <a href="https://doi.org/10.1038/s41579-019-0293-3">https://doi.org/10.1038/s41579-019-0293-3</a> <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:7:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:7:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a> <a href="#fnref:7:3" class="reversefootnote" role="doc-backlink">&#8617;<sup>4</sup></a> <a href="#fnref:7:4" class="reversefootnote" role="doc-backlink">&#8617;<sup>5</sup></a> <a href="#fnref:7:5" class="reversefootnote" role="doc-backlink">&#8617;<sup>6</sup></a></p>
-    </li>
-    <li id="fn:8" role="doc-endnote">
-      <p>Renwick, M. J., Brogan, D. M., &amp; Mossialos, E. (2016). A systematic review and critical assessment of incentive strategies for discovery and development of novel antibiotics. The Journal of Antibiotics, 69(2), 73-88. <a href="https://doi.org/10.1038/ja.2015.98">https://doi.org/10.1038/ja.2015.98</a> <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:8:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-    <li id="fn:9" role="doc-endnote">
-      <p>Chu, J., et al. (2016). Discovery of MRSA active antibiotics using primary sequence from the human microbiome. Nature Chemical Biology, 12(12), 1004-1006. <a href="https://doi.org/10.1038/nchembio.2207">https://doi.org/10.1038/nchembio.2207</a> <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:9:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:9:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
-    </li>
-    <li id="fn:10" role="doc-endnote">
-      <p>Baym, M., Stone, L. K., &amp; Kishony, R. (2016). Multidrug evolutionary strategies to reverse antibiotic resistance. Science, 351(6268), aad3292. <a href="https://doi.org/10.1126/science.aad3292">https://doi.org/10.1126/science.aad3292</a> <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:10:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-    <li id="fn:11" role="doc-endnote">
-      <p>Kremer, M., Levin, J., &amp; Snyder, C. M. (2020). Advance Market Commitments: Insights from Theory and Experience. AEA Papers and Proceedings, 110, 269-273. <a href="https://www.aeaweb.org/articles?id=10.1257/pandp.20201017">https://www.aeaweb.org/articles?id=10.1257/pandp.20201017</a> <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:12" role="doc-endnote">
-      <p>World Health Organization (2024). Antimicrobial Resistance Fact Sheet. <a href="https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance">https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance</a> <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name></name></author><category term="iterative-refinement" /><category term="evolution" /><category term="data-science" /><category term="evaluation" /><category term="decision-making" /><category term="best-practices" /><category term="modelling-mindsets" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</div>]]></content><author><name></name></author><category term="data-science" /><category term="machine-learning" /><category term="statistics" /><category term="ai" /><category term="linear-algebra" /><category term="til" /><category term="modelling-mindsets" /><category term="data-modeling" /><summary type="html"><![CDATA[]]></summary></entry></feed>
