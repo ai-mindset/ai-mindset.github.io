@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🗄️ The Minimalist's DB Choice for AI Engineering is SQLite"
+title: "🗄️ SQLite: The Minimalist Database for AI Engineering"
 date: 2025-02-11
 tags: [ai, data-modeling, data-processing, data-science, go, minimal, production, python, zero-config]
 ---
