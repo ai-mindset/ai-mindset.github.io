@@ -34,7 +34,7 @@ Rather than trying to predict AI's future, Howard advocates for:
 
 ## The Education Perspective
 Howard challenges traditional educational paths, suggesting alternatives:
-- Self-directed learning through resources like fast.ai
+- Self-directed learning through resources like [fast.ai](https://course.fast.ai/)
 - Multiple side hustles to build practical experience
 - Community building with like-minded innovators
 - Using AI itself to learn technical skills
