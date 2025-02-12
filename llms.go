@@ -11,9 +11,9 @@ import (
 )
 
 const (
-	postsHeader    = "## Posts (Reverse Chronological Order)"
-	readmeFilePath = "llms.txt"
-	postsDirectory = "_posts"
+	postsHeader     = "## Posts (Reverse Chronological Order)"
+	llmstxtFilePath = "llms.txt"
+	postsDirectory  = "_posts"
 )
 
 func main() {
@@ -27,13 +27,13 @@ func main() {
 	// Sort entries by date (newest first)
 	sortEntriesByDate(&entries)
 
-	// Update README.md with new entries
+	// Update llms.txt with new entries
 	if err := updateReadmePostsSection(entries); err != nil {
 		fmt.Printf("Error updating file: %v\n", err)
 		return
 	}
 
-	fmt.Printf("%v updated successfully.", readmeFilePath)
+	fmt.Printf("%v updated successfully.", llmstxtFilePath)
 }
 
 func generatePostEntries() ([]string, error) {
@@ -76,9 +76,9 @@ func processPostFile(filename string) (string, error) {
 }
 
 func updateReadmePostsSection(entries []string) error {
-	content, err := ioutil.ReadFile(readmeFilePath)
+	content, err := ioutil.ReadFile(llmstxtFilePath)
 	if err != nil {
-		return fmt.Errorf("reading README: %w", err)
+		return fmt.Errorf("reading llms.txt: %w", err)
 	}
 
 	var buf bytes.Buffer
@@ -107,10 +107,10 @@ func updateReadmePostsSection(entries []string) error {
 	}
 
 	if !foundPostsSection {
-		return fmt.Errorf("posts section not found in README")
+		return fmt.Errorf("posts section not found in %v", llmstxtFilePath)
 	}
 
-	return ioutil.WriteFile(readmeFilePath, buf.Bytes(), 0644)
+	return ioutil.WriteFile(llmstxtFilePath, buf.Bytes(), 0644)
 }
 
 func sortEntriesByDate(entries *[]string) {
