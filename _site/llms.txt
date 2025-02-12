@@ -5,41 +5,45 @@ A static site to share things I'd like to have known 6 months ago, while I learn
 A personal blog focused on AI, and engineering best practices, built with Neovim, fast_template, and Dialogue Engineering.
 
 ## Posts (Reverse Chronological Order)
-January 21, 2025 - 🔧 A 10-Minute Guide to Engineering Machine Learning Systems
-January 14, 2025 - 🤖 Understanding AI Agents: Tools, Planning, and Evaluation
-January 10, 2025 - 💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲
-January 09, 2025 - 📐 Sparse Autoencoders: A Technical Overview
-January 09, 2025 - 🔍 Understanding LLM Interpretability
-January 08, 2025 - 💡 TIL: The Matrix Equation That Makes Linear Regression Work
-January 08, 2025 - 💡 TIL: How Different Societies View and Value Choice
-January 07, 2025 - 💊 Lessons for Modern Drug Development from the Golden Age of Antibiotics
-January 02, 2025 - 💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts
-December 24, 2024 - 📝 From Vim to VSCode to Neovim
-December 23, 2024 - 💡 TIL: Exploring OpenAI's API with Swagger
-December 19, 2024 - 🎛️ A Practical Guide to Fine-tuning LLMs with InstructLab
-December 07, 2024 - 💡 TIL: Understanding GGUF Model Quantisation
-December 05, 2024 - 💡 TIL: LLM Evaluation using Critique Shadowing
-December 03, 2024 - ✍ A Path to Maintainable AI Systems using Norman's Design Principles
-December 02, 2024 - 🐼 Pandas or 🐻‍❄️ Polars?
-November 27, 2024 - 📊 Ten Ways to Model Data
-November 26, 2024 - 💡 TIL: Pydantic - Python's Data Validation Guard
-November 23, 2024 - 🏺 Historical Evolution of AI
-November 22, 2024 - 🔄 Considering Iterative Refinement Over Unit Testing
-November 21, 2024 - シ Back to Basics: A Modern, Minimal Python Toolchain
-November 20, 2024 - 💡 TIL: TF-IDF vs BM25
-November 15, 2024 - 🆙 Level Up With Dialogue Engineering
-November 14, 2024 - ✅ On-boarding that works
-November 14, 2024 - 💪 The Advantage
-November 14, 2024 - 🐢 Slow Down And Grow Smart, Not Fast
-November 14, 2024 - 🖥 The On-Prem Comeback (aka Cloud Repatriation)
-November 13, 2024 - 💡 TIL: vLLM Is A High-Performance Engine For LLM Serving
-November 11, 2024 - 🔀 Cross-Platform Builds In Python
-October 30, 2024 - 💡 TIL: 1.58-bit LLMs Match Full Performance @ 98.6% Energy Reduction
-October 29, 2024 - 🗃️ RAG Is Here To Stay
-October 25, 2024 - 💡 TIL: Useful Nuggets from AI Engineers
-October 08, 2024 - 🔁 GitHub Actions for yt-dlp-hq
-September 06, 2024 - 📖 Python To TypeScript Cheatsheet
-September 05, 2024 - 🏗️ Modern Data Science and AI Engineering with Deno 2.0
+
+February 11, 2025 - [Sqlite Minimalist Choice For Ai Engineering](https://ai-mindset.github.io/sqlite-minimalist-choice-for-ai-engineering/)
+February 9, 2025 - [TIL Prepare For Ai](https://ai-mindset.github.io/TIL-prepare-for-ai/)
+January 26, 2025 - [Go Pragmatic Modern Development](https://ai-mindset.github.io/go-pragmatic-modern-development/)
+January 21, 2025 - [Ml Best Practices](https://ai-mindset.github.io/ml-best-practices/)
+January 14, 2025 - [Agents Chip Huyen](https://ai-mindset.github.io/agents-chip-huyen/)
+January 10, 2025 - [TIL Model Soups](https://ai-mindset.github.io/TIL-model-soups/)
+January 9, 2025 - [Interpreting Llms](https://ai-mindset.github.io/interpreting-llms/)
+January 9, 2025 - [Sparse Autoencoders](https://ai-mindset.github.io/sparse-autoencoders/)
+January 8, 2025 - [TIL Lin Alg Applied To Stats](https://ai-mindset.github.io/TIL-lin-alg-applied-to-stats/)
+January 7, 2025 - [TIL The Art Of Choice](https://ai-mindset.github.io/TIL-the-art-of-choice/)
+January 5, 2025 - [Golden Age Of Antibiotics](https://ai-mindset.github.io/golden-age-of-antibiotics/)
+January 2, 2025 - [TIL Tdd Good System Prompts](https://ai-mindset.github.io/TIL-tdd-good-system-prompts/)
+December 24, 2024 - [Vscode To Neovim](https://ai-mindset.github.io/vscode-to-neovim/)
+December 23, 2024 - [TIL Openai Openapi](https://ai-mindset.github.io/TIL-openai-openapi/)
+December 19, 2024 - [Instructlab And Rag](https://ai-mindset.github.io/instructlab-and-rag/)
+December 7, 2024 - [TIL Llm Quantisation](https://ai-mindset.github.io/TIL-llm-quantisation/)
+December 5, 2024 - [TIL Llm Eval Critique Shadowing](https://ai-mindset.github.io/TIL-llm-eval-critique-shadowing/)
+December 3, 2024 - [Design Principles Ds Ai](https://ai-mindset.github.io/design-principles-ds-ai/)
+December 2, 2024 - [Pandas Polars](https://ai-mindset.github.io/pandas-polars/)
+November 27, 2024 - [Modelling Mindsets](https://ai-mindset.github.io/modelling-mindsets/)
+November 26, 2024 - [TIL Pydantic](https://ai-mindset.github.io/TIL-pydantic/)
+November 23, 2024 - [Ai Evolution](https://ai-mindset.github.io/ai-evolution/)
+November 22, 2024 - [Iterative Refinement](https://ai-mindset.github.io/iterative-refinement/)
+November 21, 2024 - [Bring It Back To Basics](https://ai-mindset.github.io/bring-it-back-to-basics/)
+November 20, 2024 - [TIL BM25 TFIDF](https://ai-mindset.github.io/TIL-BM25-TFIDF/)
+November 15, 2024 - [Dialogue Engineering](https://ai-mindset.github.io/dialogue-engineering/)
+November 15, 2024 - [Good Onboarding](https://ai-mindset.github.io/good-onboarding/)
+November 14, 2024 - [The Advantage](https://ai-mindset.github.io/the-advantage/)
+November 14, 2024 - [Slow Down](https://ai-mindset.github.io/slow-down/)
+November 14, 2024 - [Cloud Repatriation](https://ai-mindset.github.io/cloud-repatriation/)
+November 13, 2024 - [TIL VLLM](https://ai-mindset.github.io/TIL-vLLM/)
+November 11, 2024 - [Py Cross Compile](https://ai-mindset.github.io/py-cross-compile/)
+October 30, 2024 - [TIL 1bitLLM](https://ai-mindset.github.io/TIL-1bitLLM/)
+October 29, 2024 - [Rag Is Here To Stay](https://ai-mindset.github.io/rag-is-here-to-stay/)
+October 25, 2024 - [TIL Useful AI Nuggets](https://ai-mindset.github.io/TIL-useful-AI-nuggets/)
+October 8, 2024 - [Gh Actions Ytdlphq](https://ai-mindset.github.io/gh-actions-ytdlphq/)
+September 6, 2024 - [Python Typescript Cheatsheet](https://ai-mindset.github.io/python-typescript-cheatsheet/)
+September 5, 2024 - [Deno](https://ai-mindset.github.io/deno/)
 
 ## About the Author
 The author is an inquisitive learner who believes in sharing knowledge while learning. They strive to be precise, concise, and correct in their content.
