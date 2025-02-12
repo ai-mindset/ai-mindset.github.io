@@ -8,8 +8,8 @@ tags: [ai, data-modeling, data-processing, data-science, go, minimal, production
 
 ## Introduction
 
-In today's AI engineering landscape, choosing the right database can feel overwhelming. While specialized solutions like [Qdrant](https://qdrant.tech/) (vectors), [Neo4j](https://neo4j.com/) (graphs), and [MongoDB](https://www.mongodb.com/) (documents) excel in their niches, there's a compelling case for [SQLite](https://www.sqlite.org/index.html) as a versatile, minimalist solution that comes pre-installed on most systems and supports multiple data structures effectively. Speaking of minimalist, [Harlequin](https://github.com/tconbeer/harlequin) (borrowing its name from a [sea 🦆](https://en.wikipedia.org/wiki/Harlequin_duck)) makes data exploration very enjoyable. 
-Credit for the SQLite idea goes to [Simon Willison](https://bsky.app/profile/simonwillison.net), a prolific AI researcher among many other things, who has been repeatedly posting [blog articles](https://simonwillison.net/tags/sqlite/) and [TILs](https://til.simonwillison.net/sqlite) (Today I Learned) about SQLite since 2003! 
+In today's AI engineering landscape, choosing the right database can feel overwhelming. While specialised solutions like [Qdrant](https://qdrant.tech/) (vectors), [Neo4j](https://neo4j.com/) (graphs), and [MongoDB](https://www.mongodb.com/) (documents) excel in their niches, there's a compelling case for [SQLite](https://www.sqlite.org/index.html) as a versatile, minimalist solution that comes pre-installed on most systems and supports multiple data structures effectively. Speaking of minimalism, [Harlequin](https://github.com/tconbeer/harlequin) (named after a [sea 🦆](https://en.wikipedia.org/wiki/Harlequin_duck)) makes data exploration very enjoyable. 
+Credit for the SQLite idea goes to [Simon Willison](https://bsky.app/profile/simonwillison.net), a prolific AI researcher among others, who has been posting [blog articles](https://simonwillison.net/tags/sqlite/) and [TILs](https://til.simonwillison.net/sqlite) (Today I Learned) about it since 2003! 
 
 ## The Power of Pre-installation
 
@@ -94,7 +94,7 @@ One of SQLite's strongest features is its [single-file](https://www.sqlite.org/o
 
 ## Conclusion
 
-While specialized databases have their place, SQLite offers a compelling combination of features that make it ideal for many AI engineering projects:
+While specialised databases have their place, SQLite offers a compelling combination of features that make it ideal for many AI engineering projects:
 - Zero configuration
 - Pre-installed availability
 - Support for multiple data structures
