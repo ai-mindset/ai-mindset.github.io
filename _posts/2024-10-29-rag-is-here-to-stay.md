@@ -12,7 +12,8 @@ This morning I noticed that [Simon Willison shared some views on RAG](https://xc
 ## RAG
 RAG is not simply a workaround to context limits, it's a way to carefully curate information and data. It enables provenance and visibility of the data flowing through an LLM pipeline -compared to fine-tuning which bakes knowledge into the model itself. Importantly, RAG is not a synonym of embeddings. Embedding text is a fantastic way to enable semantic search, especially if it is done in a smart way (word, sentence, paragraph, or document) given project needs.   
 I have successfully reused existing infrastructure to provide one of the largest companies in the world with the ability to quickly retrieve information through Q & A. To achieve this, in the context of simplicity and leveraging existing infrastructure, I opted against adding moving parts like a Vector DB. Instead, I used plain JSON objects and an agentic system to meet the client's needs. It worked very well, with feedback from higher management being "_**thank you**, this is mind-blowing_".      
-A nice overview of RAG comes from [Jerry Liu's interview on Latent Space](https://www.latent.space/p/llamaindex). Update 2024-12-23: a useful open-source tool for [RAGLogging](https://github.com/Brandon-c-tech/RAG-logger) just came out. 
+A nice overview of RAG comes from [Jerry Liu's interview on Latent Space](https://www.latent.space/p/llamaindex).  
+_Update: a useful open-source tool for [RAGLogging](https://github.com/Brandon-c-tech/RAG-logger) just came out._ 
 
 ## U-Shaped Performance 
 One LLM behaviour that should be considered, before regarding RAG obsolete, is their tendency to attend to information from the beginning and end of the context window. See [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172) for an empirical analysis.  
