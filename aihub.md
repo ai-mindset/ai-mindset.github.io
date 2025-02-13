@@ -9,6 +9,7 @@ This document provides a curated list of high-quality sources for learning about
 - [Ollama in Action: Building Safe, Private AI with LLMs, Function Calling and Agents](https://leanpub.com/ollama) demonstrates how it's possible to run LLMs on-premise to maintain data privacy and control of your tech stack. It contains clear Python code examples and recommendations for effectively using Ollama, to get you started quickly as well as learn a few useful tips and techniques.
 
 ## Courses
+- fast.ai's [Practical Deep Learning](https://course.fast.ai/) teaches how to apply deep learning to practical problems. Not only it is a rich, practical-oriented course but importantly it's a treasure trove of technical information.  
 - [Building LLM Applications for Data Scientists and Software Engineers](https://xcancel.com/hugobowne/status/1870978490574704812) teaches how to build LLM-powered software reliably, from first principles. It's an authoritative source on GenAI software development lifecycle: agents, evals, iteration and others.  
 - [CS294/194-196 Large Language Model Agents](https://rdi.berkeley.edu/llm-agents/f24) is a course that discusses fundamental concepts for LLM agents, including the foundation of LLMs, essential LLM abilities required for task automation, and agent development infrastructure. Agent applications are discussed as well as limitations, potential risks and directions for further improvement.
 
