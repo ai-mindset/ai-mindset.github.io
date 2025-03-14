@@ -17,7 +17,7 @@ This systematic exploration serves two purposes:
 2. To make an informed choice: Which mindset(s) should I focus on mastering, given my goals and constraints?
 
 Each mindset represents a different way of approaching problems through data. From the probability-focused world of statistical modelling to the interactive realm of reinforcement learning, from the causality-oriented approach to the pattern-finding nature of unsupervised learning, each offers unique tools and perspectives.  
-By examining these mindsets systematically, I aim to make an informed decision about where to focus my learning efforts while maintaining enough breadth to recognize when I should switch approaches. This isn't just about theoretical understanding, it's about practical effectiveness in solving real-world problems.
+By examining these mindsets systematically, I aim to make an informed decision about where to focus my learning efforts while maintaining enough breadth to recognise when I should switch approaches. This isn't just about theoretical understanding, it's about practical effectiveness in solving real-world problems.
 
 Let's explore each mindset in turn, focusing on their fundamental premises, key strengths, and limitations to guide this decision.
 
@@ -117,7 +117,7 @@ Likelihoodism offers interesting theoretical insights but may be less immediatel
 _Causal inference moves beyond correlation to understand what actually causes observed effects, providing a framework for analysing interventions and their impacts._
 
 Key Aspects:
-- Uses Directed Acyclic Graphs (DAGs) to visualize relationships
+- Uses Directed Acyclic Graphs (DAGs) to visualise relationships
 - Distinguishes between association and causation
 - Requires explicit encoding of causal assumptions
 - Can work with both statistical models and machine learning
@@ -154,7 +154,7 @@ Primary Strengths:
 Notable Limitations:
 1. Less principled than statistical approaches
 2. Many competing approaches can be overwhelming
-3. Models often prioritize performance over interpretability
+3. Models often prioritise performance over interpretability
 4. Usually requires substantial data and computation
 
 For practitioners, machine learning offers powerful tools for automation and prediction, particularly valuable in industry settings. It's especially useful when theoretical understanding is less important than practical performance.
@@ -163,16 +163,16 @@ For practitioners, machine learning offers powerful tools for automation and pre
 _Supervised learning frames everything as a prediction problem, using labelled data to learn mappings from inputs to outputs._
 
 Key Aspects:
-- Learning is optimization and search in hypothesis space
+- Learning is optimisation and search in hypothesis space
 - Models evaluated on unseen data, not training data
-- Focuses on generalizing to new cases
+- Focuses on generalising to new cases
 - Highly automatable and competition-friendly
 
 Primary Strengths:
 1. Clear evaluation metrics
 2. Highly automatable
 3. Strong performance on prediction tasks
-4. Well-defined optimization objectives
+4. Well-defined optimisation objectives
 
 Notable Limitations:
 1. Requires labelled data
@@ -243,7 +243,7 @@ Key Aspects:
 Primary Strengths:
 1. Excels at complex data (images, text, speech)
 2. Learns useful feature representations
-3. Highly modular and customizable
+3. Highly modular and customisable
 4. Strong tooling and community support
 5. Can handle multiple inputs/outputs seamlessly
 

@@ -80,7 +80,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
    - Scale feature complexity with data
 
 3. **Feature Coverage and Quality**
-   - Features that generalize across contexts
+   - Features that generalise across contexts
    - Monitor feature coverage
    - Document feature ownership
    - Regular feature clean-up
@@ -110,7 +110,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
    - Monitor feature coverage
    - Check prediction bias
 
-## Phase IV: Optimization and Complex Models (Rules #38-43)
+## Phase IV: Optimisation and Complex Models (Rules #38-43)
 1. **When to Add Complexity**
    - After simple approaches plateau
    - When objectives are well-aligned
