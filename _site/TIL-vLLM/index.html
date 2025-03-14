@@ -220,10 +220,10 @@ document.addEventListener('DOMContentLoaded', function() {
   <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>As a Data Scientist / AI Engineer exploring local-first solutions<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, deploying Large Language Models (LLMs) presents significant resource management challenges. vLLM emerges as a breakthrough solution that fundamentally reimagines how we deploy and utilize these resource-intensive models<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">3</a></sup>.</p>
+<p>As a Data Scientist / AI Engineer exploring local-first solutions<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, deploying Large Language Models (LLMs) presents significant resource management challenges. vLLM emerges as a breakthrough solution that fundamentally reimagines how we deploy and utilise these resource-intensive models<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">3</a></sup>.</p>
 
 <h2 id="what-is-vllm">What Is vLLM?</h2>
-<p>vLLM is an open-source serving engine that optimizes LLM deployment through virtualization techniques<sup id="fnref:4:1" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">3</a></sup>. At its core, vLLM introduces PagedAttention, a novel attention algorithm that improves memory utilization through paged memory management<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">4</a></sup>. Similar to how operating systems manage virtual memory, PagedAttention segments the key-value memory into non-continuous pages, enabling more efficient memory usage and request handling.</p>
+<p>vLLM is an open-source serving engine that optimises LLM deployment through virtualisation techniques<sup id="fnref:4:1" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">3</a></sup>. At its core, vLLM introduces PagedAttention, a novel attention algorithm that improves memory utilisation through paged memory management<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">4</a></sup>. Similar to how operating systems manage virtual memory, PagedAttention segments the key-value memory into non-continuous pages, enabling more efficient memory usage and request handling.</p>
 
 <p>Key features<sup id="fnref:4:2" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">3</a></sup>:</p>
 <ul>
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">vllm</span> <span class="kn">import</span> <span class="n">LLM</span><span class="p">,</span> <span class="n">SamplingParams</span>
 
-<span class="c1"># Initialize the model
+<span class="c1"># Initialise the model
 </span><span class="n">llm</span> <span class="o">=</span> <span class="n">LLM</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s">"meta-llama/Llama-3.1-8B"</span><span class="p">)</span>
 
 <span class="c1"># Define sampling parameters
@@ -283,10 +283,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="best-practices-for-implementation">Best Practices for Implementation<sup id="fnref:4:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">3</a></sup></h2>
 <p>For optimal vLLM deployment:</p>
 <ul>
-  <li>Implement model optimization techniques</li>
-  <li>Utilize containerization for scalable deployment</li>
+  <li>Implement model optimisation techniques</li>
+  <li>Utilise containerisation for scalable deployment</li>
   <li>Maintain robust monitoring systems</li>
-  <li>Regular performance optimization</li>
+  <li>Regular performance optimisation</li>
 </ul>
 
 <h2 id="conclusion">Conclusion</h2>

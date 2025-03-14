@@ -321,7 +321,7 @@ The goal isn’t to prescribe another “right way” of doing things, but rathe
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kn">import</span> <span class="nn">polars</span> <span class="k">as</span> <span class="n">pl</span>
 
-    <span class="k">def</span> <span class="nf">analyze_customer_behavior</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">analyse_customer_behavior</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">pl</span><span class="p">.</span><span class="n">scan_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
             <span class="p">.</span><span class="n">with_columns</span><span class="p">([</span>
