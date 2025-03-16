@@ -6,6 +6,7 @@ A personal blog focused on AI, and engineering best practices, built with Neovim
 
 ## Posts (Reverse Chronological Order)
 
+March 15, 2025 - [Navigating Ais Frontier 2025](https://ai-mindset.github.io/navigating-ais-frontier-2025/)
 February 11, 2025 - [Sqlite Minimalist Choice For Ai Engineering](https://ai-mindset.github.io/sqlite-minimalist-choice-for-ai-engineering/)
 February 9, 2025 - [TIL Prepare For Ai](https://ai-mindset.github.io/TIL-prepare-for-ai/)
 January 26, 2025 - [Go Pragmatic Modern Development](https://ai-mindset.github.io/go-pragmatic-modern-development/)
