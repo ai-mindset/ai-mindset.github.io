@@ -55,3 +55,4 @@ This document provides a curated list of high-quality sources for learning about
 The article's authors provided their insights in the Vanishing Gradients podcast (episodes [29](https://vanishinggradients.fireside.fm/29) and [30](https://vanishinggradients.fireside.fm/30)). 
 - 📚 [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) is a research paper from Anthropic, exploring how to design robust AI agents. It presents agentic workflow approaches, alignment and methods on how to perform autonomous, reliable tasks.
 - 📚 [What are Embeddings](https://vickiboykis.com/what_are_embeddings/) is a comprehensive article exploring embeddings.
+- 📚 [Every Way To Get Structured Output From LLMs](https://www.boundaryml.com/blog/structured-output-from-llms) provides solutions for achieving LLM structured output when function calling or specific response formats become challenging to achieve.
