@@ -33,7 +33,7 @@ Q2_K (2-bit):
 
 Q3_K (3-bit):
 - Uses Type-0 formula (simpler one)
-- Same organization: 16 blocks × 16 weights
+- Same organisation: 16 blocks × 16 weights
 - Uses 6 bits to store scales
 - Takes exactly 3.4375 bits per weight
 - Better quality than Q2_K but bigger file size

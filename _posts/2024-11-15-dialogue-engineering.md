@@ -7,7 +7,7 @@ tags: [ai, llm, dialogue-engineering, prompt, iterative-refinement, rag]
 <!--more-->
 
 ## Introduction
-Dialogue Engineering is transforming how we interact with AI[^1]. Rather than relying on one-shot prompts, it's an iterative approach where we engage in structured, multi-turn conversations with LLMs (Large Language Models) to achieve complex goals. While I first encountered the term through Jeremy Howard[^2] [^3], the concept has deeper roots in human-AI interaction research. Though Howard popularized it recently through fast.ai and answer.ai, the concept has been discussed since 1986[^4].
+Dialogue Engineering is transforming how we interact with AI[^1]. Rather than relying on one-shot prompts, it's an iterative approach where we engage in structured, multi-turn conversations with LLMs (Large Language Models) to achieve complex goals. While I first encountered the term through Jeremy Howard[^2] [^3], the concept has deeper roots in human-AI interaction research. Though Howard popularised it recently through fast.ai and answer.ai, the concept has been discussed since 1986[^4].
 Dialogue engineering dramatically improves productivity by breaking down complex tasks, maintaining context across interactions, and guiding AI through iterative refinement. This systematic approach helps produce better results while reducing the cognitive load of prompt crafting. A nice overview of Dialogue Engineering comes from the Medium article [Dialog Engineering: AI as Your Research Assistant](https://medium.com/@fabioc/dialog-engineering-ai-as-your-research-assistant-616a625e9853).  
 Below, I'll summarise what I inferred from that article.
 
@@ -34,7 +34,7 @@ Throughout all steps, I maintain active oversight, checking for accuracy and pro
 Here are the key areas where dialogue engineering proves particularly valuable:
 
 - **Academic Research**  
-Researchers can leverage dialogue engineering to synthesize vast amounts of information, structure complex arguments, and ensure accurate citations. The iterative approach is particularly useful for literature reviews and thesis development.  
+Researchers can leverage dialogue engineering to synthesise vast amounts of information, structure complex arguments, and ensure accurate citations. The iterative approach is particularly useful for literature reviews and thesis development.  
 _Example:_ A researcher prompts AI to generate an annotated bibliography on AI-driven diagnostics, focusing on recent studies, then iteratively refines the summaries and findings.  
 - **Business Strategy and Reporting**  
 For corporate applications, dialogue engineering helps generate market reports, analyse trends, and produce comprehensive strategy documents. This systematic approach ensures consistency while maintaining analytical depth.  
