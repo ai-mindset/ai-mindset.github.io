@@ -84,7 +84,7 @@ A carefully selected set of powerful libraries that minimize overlap:
 ```python
     import polars as pl
 
-    def analyze_customer_behavior(path: str):
+    def analyse_customer_behavior(path: str):
         return (
             pl.scan_parquet(path)
             .with_columns([

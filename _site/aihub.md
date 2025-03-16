@@ -1,16 +1,19 @@
 # Authoritative Learning Resources
 
 ## What is this?
-This document provides a curated list of high-quality sources for learning about AI, data science, and related topics. These sources come from respected experts, researchers, and institutions, making them reliable and informative references.
+This document provides a curated list of high-quality sources for learning about AI, data science, and related topics. These sources come from respected experts, researchers, and institutions, making them reliable and informative references. 📚 indicates an authoritative reference source.
 
 ## Books
-- [Supervised Machine Learning for Science](https://ml-science-book.com/) is a comprehensive book that explores the role of supervised machine learning in scientific research. It provides a philosophical justification for using ML in science and discusses best practices for integrating it effectively.
-- [Essentials of Metaheuristics](https://cs.gmu.edu/~sean/book/metaheuristics/), an open set of lecture notes on metaheuristics algorithms, intended for undergraduate students, practitioners, programmers, and other non-experts. A metaheuristic is any stochastic optimization algorithm intended to be the last resort before giving up and using random or brute-force search.   
-- [Ollama in Action: Building Safe, Private AI with LLMs, Function Calling and Agents](https://leanpub.com/ollama) demonstrates how it's possible to run LLMs on-premise to maintain data privacy and control of your tech stack. It contains clear Python code examples and recommendations for effectively using Ollama, to get you started quickly as well as learn a few useful tips and techniques.
+- 📚 [Supervised Machine Learning for Science](https://ml-science-book.com/) is a comprehensive book that explores the role of supervised machine learning in scientific research. It provides a philosophical justification for using ML in science and discusses best practices for integrating it effectively.
+- 📚 [Essentials of Metaheuristics](https://cs.gmu.edu/~sean/book/metaheuristics/), an open set of lecture notes on metaheuristics algorithms, intended for undergraduate students, practitioners, programmers, and other non-experts. A metaheuristic is any stochastic optimization algorithm intended to be the last resort before giving up and using random or brute-force search.   
+- 📚 [Ollama in Action: Building Safe, Private AI with LLMs, Function Calling and Agents](https://leanpub.com/ollama) demonstrates how it's possible to run LLMs on-premise to maintain data privacy and control of your tech stack. It contains clear Python code examples and recommendations for effectively using Ollama, to get you started quickly as well as learn a few useful tips and techniques.
+- 📚 [The GenAI Guidebook](https://ravinkumar.com/GenAiGuidebook/book_intro.html) constitutes a guide that lays out the foundations for building products with Generative AI.
 
 ## Courses
-- [Building LLM Applications for Data Scientists and Software Engineers](https://xcancel.com/hugobowne/status/1870978490574704812) teaches how to build LLM-powered software reliably, from first principles. It's an authoritative source on GenAI software development lifecycle: agents, evals, iteration and others.  
-- [CS294/194-196 Large Language Model Agents](https://rdi.berkeley.edu/llm-agents/f24) is a course that discusses fundamental concepts for LLM agents, including the foundation of LLMs, essential LLM abilities required for task automation, and agent development infrastructure. Agent applications are discussed as well as limitations, potential risks and directions for further improvement.
+- 📚 fast.ai's [Practical Deep Learning](https://course.fast.ai/) teaches how to apply deep learning to practical problems. Not only it is a rich, practical-oriented course but importantly it's a treasure trove of technical information.   
+[Fastbook](https://github.com/fastai/fastbook) nicely complements this course.  
+- 📚 [Building LLM Applications for Data Scientists and Software Engineers](https://xcancel.com/hugobowne/status/1870978490574704812) teaches how to build LLM-powered software reliably, from first principles. It's an authoritative source on GenAI software development lifecycle: agents, evals, iteration and others.  
+- 📚 [CS294/194-196 Large Language Model Agents](https://rdi.berkeley.edu/llm-agents/f24) is a course that discusses fundamental concepts for LLM agents, including the foundation of LLMs, essential LLM abilities required for task automation, and agent development infrastructure. Agent applications are discussed as well as limitations, potential risks and directions for further improvement.
 
 ## Data-driven Insights
 - [Our World in Data](https://ourworldindata.org/) is a project of the Global Change Data Lab at the University of Oxford. It provides well-researched and data-driven insights into global issues, making it a valuable resource for understanding the world's largest problems and potential solutions.
@@ -44,3 +47,12 @@ This document provides a curated list of high-quality sources for learning about
 - [The .CLUB Club](https://dotclub.club/), offering insightful talks on egoless engineering, straightforward tech solutions, and workplace politics as seen from an engineering leadership perspective (highly recommended!).  
 - [ccc.de](https://media.ccc.de/) hosts a vast collection of presentations by the Chaos Computer Club, Europe's largest hacker association. Topics range from reverse engineering to cutting-edge exploration and more, making it an invaluable source of practical ideas, scientific exploration, and authentic engineering concepts.
 
+## Articles
+- [MLOps vs. DevOps: Why data makes it different](https://venturebeat.com/ai/mlops-vs-devops-why-data-makes-it-different/) explains how machine learning operations (MLOps) differ from traditional DevOps due to ML's direct exposure to messy real-world data, requiring specialised infrastructure that combines data-centric programming with robust production systems. 
+- 📚 [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) is a very nicely structured, comprehensive resource on how to construct domain-specific evaluation systems. 
+- 📚 [Data Flywheels for LLM Applications](https://www.sh-reya.com/blog/ai-engineering-flywheel/) breaks down how to improve AI systems in an iterative fashion, with the help of logging, evals and continuous refinement. 
+- 📚 [What We’ve Learned From A Year of Building with LLMs](https://applied-llms.org/) is a practical guide to building successful LLM products, covering the tactical, operational, and strategic.  
+The article's authors provided their insights in the Vanishing Gradients podcast (episodes [29](https://vanishinggradients.fireside.fm/29) and [30](https://vanishinggradients.fireside.fm/30)). 
+- 📚 [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) is a research paper from Anthropic, exploring how to design robust AI agents. It presents agentic workflow approaches, alignment and methods on how to perform autonomous, reliable tasks.
+- 📚 [What are Embeddings](https://vickiboykis.com/what_are_embeddings/) is a comprehensive article exploring embeddings.
+- 📚 [Every Way To Get Structured Output From LLMs](https://www.boundaryml.com/blog/structured-output-from-llms) provides solutions for achieving LLM structured output when function calling or specific response formats become challenging to achieve.

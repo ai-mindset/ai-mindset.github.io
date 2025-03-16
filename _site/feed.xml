@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-02-12T15:10:20+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🗄️ SQLite: The Minimalist Database for AI Engineering</title><link href="http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering/" rel="alternate" type="text/html" title="🗄️ SQLite: The Minimalist Database for AI Engineering" /><published>2025-02-11T00:00:00+00:00</published><updated>2025-02-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering</id><content type="html" xml:base="http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-16T07:46:05+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🤖 The State of AI Agents in 2025</title><link href="http://0.0.0.0:4000/navigating-ais-frontier-2025/" rel="alternate" type="text/html" title="🤖 The State of AI Agents in 2025" /><published>2025-03-15T00:00:00+00:00</published><updated>2025-03-15T00:00:00+00:00</updated><id>http://0.0.0.0:4000/navigating-ais-frontier-2025</id><content type="html" xml:base="http://0.0.0.0:4000/navigating-ais-frontier-2025/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The AI landscape has evolved at a breathtaking pace over the past few years, with autonomous AI agents being positioned as the next revolutionary frontier. At the 2025 AI Engineer Summit, Grace Isford, a partner at Lux Capital, delivered an <a href="https://www.youtube.com/watch?v=HS5a8VIKsvA">insightful keynote</a> on “The State of the AI Frontier” that challenged the prevailing narrative about AI agents. While many industry players proclaim that 2025 marks the “perfect storm” for AI agents, Isford’s presentation offered a more nuanced view, highlighting both the tremendous progress and the significant challenges that remain. This article summarises the key insights from her keynote, examining the current state of AI agents and the strategies developers can employ to overcome persistent limitations.</p>
+
+<h2 id="the-perfect-storm-for-ai-agents">The Perfect Storm for AI Agents</h2>
+
+<p>The speaker began by acknowledging the remarkable progress in AI over the past two and a half years. The industry has seen exponential advancements since the release of Stable Diffusion in August 2022, with the pace of innovation only accelerating. 2025 has already witnessed several landmark developments:</p>
+
+<ul>
+  <li>The announcement of the $500 billion Stargate project collaboration between the U.S. government, OpenAI, SoftBank, and Oracle</li>
+  <li>OpenAI’s o3 model exceeding human performance in the Arc AGI challenge</li>
+  <li>DeepSeq’s R1 model launch causing market disruptions and reaching the top of the App Store</li>
+  <li>France’s new AI initiative announced at the France AI Summit, bringing Europe back into the global AI race</li>
+</ul>
+
+<p>These developments, alongside other factors, have created what many call the “perfect storm” for AI agents:</p>
+
+<ol>
+  <li>Reasoning models (like OpenAI’s o1 and o3, DeepSeq’s R1, and Grok’s latest offering) now outperform humans in various benchmarks</li>
+  <li>Increased test-time compute (more resources allocated to inference rather than just training)</li>
+  <li>Engineering and hardware optimisations driving efficiency</li>
+  <li>Cheaper inference and hardware costs</li>
+  <li>A narrowing gap between open-source and closed-source models</li>
+  <li>Massive infrastructure investments from governments and corporations worldwide</li>
+</ol>
+
+<h2 id="the-reality-gap-why-ai-agents-arent-quite-working-yet">The Reality Gap: Why AI Agents Aren’t Quite Working Yet</h2>
+
+<p>Despite this promising landscape, Isford argued that truly autonomous AI agents aren’t functioning as seamlessly as industry hype suggests. To illustrate this point, she shared a real-world example of trying to use OpenAI’s operator to book a flight from New York to San Francisco with specific requirements. Despite seemingly straightforward criteria (departure time after 3 PM, avoiding rush hour, specific airlines, budget constraints, seat preferences), the agent failed to deliver a satisfactory result.</p>
+
+<p>The presenter identified five categories of cumulative errors that prevent AI agents from delivering consistent, reliable results:</p>
+
+<ol>
+  <li><strong>Decision Errors</strong>: Choosing incorrect facts or overthinking/exaggerating scenarios</li>
+  <li><strong>Implementation Errors</strong>: Encountering access issues or integration failures (like CAPTCHA challenges)</li>
+  <li><strong>Heuristic Errors</strong>: Applying wrong criteria or missing critical contextual information</li>
+  <li><strong>Taste Errors</strong>: Failing to account for personal preferences not explicitly stated</li>
+  <li><strong>Perfection Paradox</strong>: User expectations heightened by AI’s capabilities in some areas lead to frustration when agents perform at merely human speed or make basic errors</li>
+</ol>
+
+<p>These errors compound dramatically in complex multi-agent systems with multi-step tasks. Isford presented a compelling visual example showing how even agents with impressive 99% and 95% accuracy rates drop to 60% and 8% reliability respectively after just 50 consecutive steps.</p>
+
+<h2 id="five-strategies-for-building-better-ai-agents">Five Strategies for Building Better AI Agents</h2>
+
+<p>The keynote then shifted to offering concrete strategies for mitigating these challenges and building more effective AI agents:</p>
+
+<h3 id="1-data-curation">1. Data Curation</h3>
+<ul>
+  <li>Recognise that data is increasingly diverse (text, images, video, audio, sensor data)</li>
+  <li>Curate proprietary data, including data generated by the agent itself</li>
+  <li>Design “data flywheels” that automatically improve agent performance through user interactions</li>
+  <li>Recycle and adapt to user preferences in real-time</li>
+</ul>
+
+<h3 id="2-robust-evaluation-systems">2. Robust Evaluation Systems</h3>
+<ul>
+  <li>Move beyond evaluations for verifiable domains (math, science) to develop frameworks for subjective assessments</li>
+  <li>Collect signals about human preferences</li>
+  <li>Build personalised evaluation systems that reflect actual user needs</li>
+  <li>Sometimes the best evaluation is direct human testing rather than relying solely on benchmarks</li>
+</ul>
+
+<h3 id="3-scaffolding-systems">3. Scaffolding Systems</h3>
+<ul>
+  <li>Implement safeguards to prevent cascading failures when errors occur</li>
+  <li>Build complex compound systems that can work together harmoniously</li>
+  <li>Incorporate human intervention at critical junctures</li>
+  <li>Develop self-healing agents that can recognise their own mistakes and correct course</li>
+</ul>
+
+<h3 id="4-user-experience-as-a-competitive-moat">4. User Experience as a Competitive Moat</h3>
+<ul>
+  <li>Recognise that UX differentiation is crucial when most applications are using the same foundation models</li>
+  <li>Deeply understand user workflows to create elegant human-machine collaboration</li>
+  <li>Integrate seamlessly with existing systems to deliver tangible ROI</li>
+  <li>Focus on industries with proprietary data sources and specialised workflows (robotics, manufacturing, life sciences)</li>
+</ul>
+
+<h3 id="5-multimodal-approaches">5. Multimodal Approaches</h3>
+<ul>
+  <li>Move beyond basic chatbot interfaces to create more human-like experiences</li>
+  <li>Incorporate multiple sensory capabilities (vision, voice, and potentially touch or smell)</li>
+  <li>Build personal memory systems that understand users on a deeper level</li>
+  <li>Transform inconsistent but visionary products into experiences that exceed expectations through novel interfaces</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>While 2025 has created what appears to be a perfect storm for AI agents with advanced reasoning models, increased compute efficiency, and massive infrastructure investments, the reality is that autonomous AI agents still face significant challenges. The cumulative effect of small errors across decision-making, implementation, heuristics, and user preferences creates substantial reliability issues in complex agent systems.</p>
+
+<p>However, as this keynote emphasised, these challenges are not insurmountable. By focusing on meticulous data curation, developing sophisticated evaluation frameworks, implementing robust scaffolding systems, prioritising distinctive user experiences, and embracing multimodal approaches, developers can build AI agents that deliver on their transformative potential. The lightning strike of truly autonomous, reliable AI agents may not have happened yet, but with these strategies, the industry is moving steadily toward that breakthrough moment.</p>]]></content><author><name></name></author><category term="ai" /><category term="machine-learning" /><category term="llm" /><category term="ai-alignment" /><category term="best-practices" /><category term="evaluation" /><category term="prompt-engineering" /><category term="decision-making" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🗄️ SQLite: The Minimalist Database for AI Engineering</title><link href="http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering/" rel="alternate" type="text/html" title="🗄️ SQLite: The Minimalist Database for AI Engineering" /><published>2025-02-11T00:00:00+00:00</published><updated>2025-02-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering</id><content type="html" xml:base="http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -408,7 +500,7 @@ The language’s design philosophy strongly aligns with my needs as a Data profe
   </li>
   <li><strong>Feature Coverage and Quality</strong>
     <ul>
-      <li>Features that generalize across contexts</li>
+      <li>Features that generalise across contexts</li>
       <li>Monitor feature coverage</li>
       <li>Document feature ownership</li>
       <li>Regular feature clean-up</li>
@@ -455,7 +547,7 @@ The language’s design philosophy strongly aligns with my needs as a Data profe
   </li>
 </ol>
 
-<h2 id="phase-iv-optimization-and-complex-models-rules-38-43">Phase IV: Optimization and Complex Models (Rules #38-43)</h2>
+<h2 id="phase-iv-optimisation-and-complex-models-rules-38-43">Phase IV: Optimisation and Complex Models (Rules #38-43)</h2>
 <ol>
   <li><strong>When to Add Complexity</strong>
     <ul>
@@ -532,7 +624,7 @@ Foundational Model planners require minimal training but need careful prompting,
 <p>Agent evaluation requires a comprehensive approach to failure mode analysis. Planning failures might involve invalid tools or incorrect parameters, while tool-specific failures demand targeted analysis. Efficiency metrics must consider not just step count and costs, but also completion time constraints. When comparing AI and human agents, it’s essential to recognise their different operational patterns -what’s efficient for one may be inefficient for the other. Working with domain experts helps identify missing tools and validate performance metrics.</p>
 
 <h2 id="conclusion">Conclusion</h2>
-<p>Huyen’s analysis demonstrates that successful AI agents emerge from the careful orchestration of three key elements: strategic tool selection, sophisticated planning mechanisms, and robust evaluation frameworks. While tools dramatically enhance agent capabilities -as evidenced by Chameleon’s significant performance improvements- their effectiveness depends on thoughtful curation, balancing between Toolformer’s minimal approach and Gorilla’s extensive API integration. The integration of planning frameworks like ReAct and Reflexion shows how combining reasoning with action and incorporating systematic reflection can enhance agent performance. However, as an emerging field without established theoretical frameworks, significant challenges remain in tool selection, planning efficiency, and error management. Future developments will focus on agent framework evaluation and memory systems for handling information beyond context limits, while maintaining the delicate balance between capability and control that Huyen emphasizes throughout her analysis.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="prompt-engineering" /><category term="system-prompts" /><category term="evaluation" /><category term="best-practices" /><category term="toolchain" /><category term="machine-learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲</title><link href="http://0.0.0.0:4000/TIL-model-soups/" rel="alternate" type="text/html" title="💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲" /><published>2025-01-10T00:00:00+00:00</published><updated>2025-01-10T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-model-soups</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-model-soups/"><![CDATA[<!--more-->
+<p>Huyen’s analysis demonstrates that successful AI agents emerge from the careful orchestration of three key elements: strategic tool selection, sophisticated planning mechanisms, and robust evaluation frameworks. While tools dramatically enhance agent capabilities -as evidenced by Chameleon’s significant performance improvements- their effectiveness depends on thoughtful curation, balancing between Toolformer’s minimal approach and Gorilla’s extensive API integration. The integration of planning frameworks like ReAct and Reflexion shows how combining reasoning with action and incorporating systematic reflection can enhance agent performance. However, as an emerging field without established theoretical frameworks, significant challenges remain in tool selection, planning efficiency, and error management. Future developments will focus on agent framework evaluation and memory systems for handling information beyond context limits, while maintaining the delicate balance between capability and control that Huyen emphasises throughout her analysis.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="prompt-engineering" /><category term="system-prompts" /><category term="evaluation" /><category term="best-practices" /><category term="toolchain" /><category term="machine-learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲</title><link href="http://0.0.0.0:4000/TIL-model-soups/" rel="alternate" type="text/html" title="💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲" /><published>2025-01-10T00:00:00+00:00</published><updated>2025-01-10T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-model-soups</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-model-soups/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 <p>While most ensemble methods in machine learning combine model predictions, thanks to <a href="https://bsky.app/profile/chrisalbon.com/post/3lfbbixka7c25">Chris Albon</a> I recently learned about an alternative approach called “<em>model soups</em>” that works directly with model parameters. Instead of aggregating outputs, model soups blend the actual weights and biases of neural networks, showing promising results in computer vision and language tasks.</p>
@@ -779,78 +871,4 @@ The basic architecture is:</p>
 
 <h2 id="conclusions">Conclusions</h2>
 <p>The TL;DR is: Through cross-cultural research, Prof. Iyengar shows that how we understand and value choice varies dramatically across cultures. Sometimes, having fewer choices or letting others choose for us might actually lead to better outcomes. <br />
-As a technologist, inundated with a very wide choice of tools that often offer similar results, I have made the conscious decision to reduce my tooling footprint to the minimum viable toolstack possible. I’m happy to let more knowledgeable professionals choose, with <em>adequate justification</em>, tools for my line of work but I do disagree with the zealotry that’s occasionally observed in tech and complemented by big egos.</p>]]></content><author><name></name></author><category term="til" /><category term="decision-making" /><category term="best-practices" /><category term="evaluation" /><category term="statistics" /><category term="design-principles" /><category term="modelling-mindsets" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: The Matrix Equation That Makes Linear Regression Work</title><link href="http://0.0.0.0:4000/TIL-lin-alg-applied-to-stats/" rel="alternate" type="text/html" title="💡 TIL: The Matrix Equation That Makes Linear Regression Work" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-lin-alg-applied-to-stats</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-lin-alg-applied-to-stats/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>This morning <a href="https://xcancel.com/andrew_n_carr/status/1876855682529480844">an interesting interview question</a> motivated me to remind myself how it’s possible to solve linear regression through matrix algebra. Below is what I learned:</p>
-
-<h2 id="the-theory-an-elegant-mathematical-solution">The Theory: An Elegant Mathematical Solution</h2>
-<p>Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors. The equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves this optimization problem using matrix algebra.</p>
-
-<p>The solution involves these key components:</p>
-<ol>
-  <li>$X$ is our feature matrix (n samples × p features)</li>
-  <li>$y$ is our target values (n × 1)</li>
-  <li>$X^T$ is the transpose of X</li>
-  <li>$\beta$ is our solution vector (p × 1) of coefficients</li>
-</ol>
-
-<p>Here’s how this elegant solution works:</p>
-<ol>
-  <li>$X^TX$ creates a $(p \times p)$ matrix of feature products:
-    <ul>
-      <li>Each element $(i,j)$ contains the dot product between features $i$ and $j$</li>
-      <li>When features are centred, these products are proportional to covariances<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></li>
-      <li>When features are also standardised, it yields correlations scaled by $n$</li>
-    </ul>
-  </li>
-  <li>$(X^TX)^{-1}$ computes the inverse of this matrix:
-    <ul>
-      <li>Compensates for feature correlations in coefficient calculations<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></li>
-      <li>Required for solving the normal equations $X^TX\beta = X^Ty$</li>
-      <li>Exists only when no feature is a linear combination of others</li>
-    </ul>
-  </li>
-  <li>$X^Ty$ creates a $(p \times 1)$ vector of feature-target products:
-    <ul>
-      <li>Each element $i$ contains the dot product of feature $i$ with target $y$</li>
-      <li>Represents raw feature-target relationships before adjustment</li>
-      <li>When centred, proportional to feature-target covariances<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></li>
-    </ul>
-  </li>
-  <li>Final multiplication $(X^TX)^{-1}X^Ty$:
-    <ul>
-      <li>Solves the normal equations $X^TX\beta = X^Ty$</li>
-      <li>Accounts for inter-feature correlations in determining coefficients</li>
-      <li>Mathematically guarantees minimum squared error</li>
-    </ul>
-  </li>
-</ol>
-
-<p>For more information, check Hastie, Tibshirani &amp; Friedman’s “<a href="https://archive.org/details/elementsofstatis0000hast">Elements of Statistical Learning</a>” seminal book.</p>
-
-<h2 id="the-real-world-catch">The Real-World Catch</h2>
-<p>While mathematically elegant, this direct solution has practical limitations in real-world applications:</p>
-<ol>
-  <li><em>Computational Complexity</em>: Computing $(X^TX)^{-1}$ requires $\Omicron(n^3)$ operations, becoming prohibitively expensive for large feature sets. This is why gradient descent, with its $\Omicron(n^2)$  per-iteration complexity, often proves more practical.</li>
-  <li><em>Numerical Instability</em>: When features are highly correlated (like monthly and annual income), $X^TX$ becomes nearly singular<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>. Even small rounding errors in the computation of its inverse can lead to large errors in $\beta$. In extreme cases, when features are perfectly correlated, the inverse doesn’t exist at all. Gradient descent avoids this matrix inversion entirely.</li>
-  <li><em>Memory Constraints</em>: Large datasets require holding the entire $X^TX$ matrix in memory, while gradient descent can work with mini-batches, making it more memory-efficient.</li>
-</ol>
-
-<h2 id="conclusions">Conclusions</h2>
-<p>While this equation brilliantly demonstrates the power of linear algebra in statistics, real-world machine learning often favours gradient descent’s iterative approach. Think of it as choosing between a perfect GPS route through heavy traffic (direct solution) versus taking smaller, adaptable steps through clear side streets (gradient descent). Both reach the same destination, but the practical path often wins in real-world conditions.</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>When features are centred (mean = 0), each product becomes $n$ times the covariance. This means $X^TX$ captures how features vary together, which is crucial because correlated features can lead to unstable coefficients if not accounted for. The relationship between $X^TX$ and covariance comes from the definition of sample covariance: $cov(X_i, X_j) = \frac{1}{n-1}\sum_{k=1}^n (x_{ki} - \bar{x_i})(x_{kj} - \bar{x_j})$. When data is centred, this simplifies to $\frac{1}{n-1}(X^TX)_{ij}$.  $\frac{X^TX}{n-1}$ returns the sample covariance matrix. This matters because a) when features are uncentred, $(X^TX)$ gives the sum of products, b) when centred $\frac{X^TX}{n-1}$ gives covariances, c) when also standardised (std = 1), $\frac{X^TX}{n-1}$ gives correlations. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2" role="doc-endnote">
-      <p>Adjusts coefficient estimates to account for shared information between features. For example, if height and weight are correlated, we need to determine each variable’s unique contribution to the prediction, not their overlapping effect. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3" role="doc-endnote">
-      <p>A matrix is singular (or non-invertible) when its determinant is zero. In practical terms, this means one or more columns can be expressed as linear combinations of other columns. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name></name></author><category term="data-science" /><category term="machine-learning" /><category term="statistics" /><category term="ai" /><category term="linear-algebra" /><category term="til" /><category term="modelling-mindsets" /><category term="data-modeling" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+As a technologist, inundated with a very wide choice of tools that often offer similar results, I have made the conscious decision to reduce my tooling footprint to the minimum viable toolstack possible. I’m happy to let more knowledgeable professionals choose, with <em>adequate justification</em>, tools for my line of work but I do disagree with the zealotry that’s occasionally observed in tech and complemented by big egos.</p>]]></content><author><name></name></author><category term="til" /><category term="decision-making" /><category term="best-practices" /><category term="evaluation" /><category term="statistics" /><category term="design-principles" /><category term="modelling-mindsets" /><summary type="html"><![CDATA[]]></summary></entry></feed>

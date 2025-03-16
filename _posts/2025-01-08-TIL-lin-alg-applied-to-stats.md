@@ -10,7 +10,7 @@ tags: [data-science, machine-learning, statistics, ai, linear-algebra, til, mode
 This morning [an interesting interview question](https://xcancel.com/andrew_n_carr/status/1876855682529480844) motivated me to remind myself how it's possible to solve linear regression through matrix algebra. Below is what I learned:  
 
 ## The Theory: An Elegant Mathematical Solution
-Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors. The equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves this optimization problem using matrix algebra.
+Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors. The equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves this optimisation problem using matrix algebra.
 
 The solution involves these key components:
 1. $X$ is our feature matrix (n samples × p features)
