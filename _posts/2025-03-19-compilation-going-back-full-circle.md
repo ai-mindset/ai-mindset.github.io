@@ -41,7 +41,7 @@ The key benefits include:
 
 Deno 2.0 enhances these capabilities further with support for npm packages, web workers, cross-compilation, smaller binary sizes, and code signing with custom icons—making it viable for complete applications, not just scripts.
 
-## The "One Language" Advantage
+## The Single Language Advantage
 
 Beyond deployment simplicity, using a single language across an entire project stack creates significant organisational benefits. I've experienced first-hand how using different languages for front-end, back-end, and data science work can create silos within teams.  
 [Amplified's case study](https://dockyard.com/blog/2024/02/06/5-benefts-amplified-saw-switching-to-elixir) demonstrates this point clearly. After switching from a React/JS front-end and Phoenix/Elixir back-end to an all-Elixir approach with LiveView, they reported:
