@@ -46,6 +46,7 @@ This document provides a curated list of high-quality sources for learning about
 ## Talks
 - [The .CLUB Club](https://dotclub.club/), offering insightful talks on egoless engineering, straightforward tech solutions, and workplace politics as seen from an engineering leadership perspective (highly recommended!).  
 - [ccc.de](https://media.ccc.de/) hosts a vast collection of presentations by the Chaos Computer Club, Europe's largest hacker association. Topics range from reverse engineering to cutting-edge exploration and more, making it an invaluable source of practical ideas, scientific exploration, and authentic engineering concepts.
+- [GPU MODE](https://www.youtube.com/channel/UCJgIbYl6C5no72a0NUAPcTA) contains excellent and rich material on GPU programming, including CUDA kernels, Flash Attention, Triton, quantisation among others.
 
 ## Articles
 - [MLOps vs. DevOps: Why data makes it different](https://venturebeat.com/ai/mlops-vs-devops-why-data-makes-it-different/) explains how machine learning operations (MLOps) differ from traditional DevOps due to ML's direct exposure to messy real-world data, requiring specialised infrastructure that combines data-centric programming with robust production systems. 

@@ -1,4 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-16T07:46:05+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🤖 The State of AI Agents in 2025</title><link href="http://0.0.0.0:4000/navigating-ais-frontier-2025/" rel="alternate" type="text/html" title="🤖 The State of AI Agents in 2025" /><published>2025-03-15T00:00:00+00:00</published><updated>2025-03-15T00:00:00+00:00</updated><id>http://0.0.0.0:4000/navigating-ais-frontier-2025</id><content type="html" xml:base="http://0.0.0.0:4000/navigating-ais-frontier-2025/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-18T18:16:05+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🧠 RAG vs CAG: Understanding Knowledge Augmentation in LLMs</title><link href="http://0.0.0.0:4000/rag-or-cag/" rel="alternate" type="text/html" title="🧠 RAG vs CAG: Understanding Knowledge Augmentation in LLMs" /><published>2025-03-18T00:00:00+00:00</published><updated>2025-03-18T00:00:00+00:00</updated><id>http://0.0.0.0:4000/rag-or-cag</id><content type="html" xml:base="http://0.0.0.0:4000/rag-or-cag/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Large Language Models (LLMs) face a fundamental knowledge problem: they’re limited to information present in their training data. This creates challenges when dealing with recent events that occurred after training or proprietary information specific to an organization.<br />
+To address these limitations, two primary augmentation techniques have emerged: Retrieval Augmented Generation (RAG) and Cache Augmented Generation (CAG). This article breaks down both approaches based on  <a href="https://www.youtube.com/channel/UCKWaEZ-_VweaEx1j62do_vQ">IBM Technology</a>’s comprehensive explanation from their <a href="https://youtube.com/watch?v=HdafI0t3sEY">video on RAG vs CAG</a>, examining how they work, their capabilities, and when to use each one.</p>
+
+<h2 id="understanding-rag-and-cag">Understanding RAG and CAG</h2>
+
+<h3 id="retrieval-augmented-generation-rag">Retrieval Augmented Generation (RAG)</h3>
+
+<p>RAG operates through a two-phase system:</p>
+
+<ol>
+  <li><strong>Offline Phase (Preparation)</strong>
+    <ul>
+      <li>Documents are broken into manageable chunks.</li>
+      <li>Vector embeddings are created for each chunk using an embedding model.</li>
+      <li>These embeddings are stored in a vector database, creating a searchable knowledge index.</li>
+    </ul>
+  </li>
+  <li><strong>Online Phase (Query &amp; Response)</strong>
+    <ul>
+      <li>The user submits a query.</li>
+      <li>The RAG retriever converts this query to a vector using the same embedding model.</li>
+      <li>The system performs a similarity search in the vector database.</li>
+      <li>It retrieves the most relevant document chunks (typically 3-5 passages).</li>
+      <li>These chunks and the user’s query are placed in the LLM’s context window.</li>
+      <li>The LLM generates an answer based on both the query and the retrieved context.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>For example, if asked <em>“What film won Best Picture this year?”</em>, the system might retrieve information about <em>“Anora”</em> winning the award, even if this occurred after the model’s original training.</p>
+
+<p>A key advantage of RAG is its modularity—components like the vector database, embedding model, or LLM can be swapped independently without rebuilding the entire system.</p>
+
+<h3 id="cache-augmented-generation-cag">Cache Augmented Generation (CAG)</h3>
+
+<p>CAG takes a fundamentally different approach:</p>
+
+<ul>
+  <li>Instead of retrieving knowledge on demand, CAG preloads all available information into the model’s context window</li>
+  <li>The entire knowledge corpus is formatted into one massive prompt that fits within the model’s context limits</li>
+  <li>The LLM processes this extensive input in a single forward pass</li>
+  <li>The model’s internal state is captured in what’s called a “KV cache” (key-value cache)</li>
+  <li>When a user query arrives, it’s added to this pre-existing KV cache</li>
+  <li>The model can access any relevant information from the cache without reprocessing the entire knowledge base</li>
+</ul>
+
+<p>The fundamental distinction: RAG fetches only what it predicts is needed, while CAG loads everything upfront and remembers it for later use.</p>
+
+<h2 id="comparing-capabilities">Comparing Capabilities</h2>
+
+<h3 id="accuracy">Accuracy</h3>
+<ul>
+  <li><strong>RAG</strong>: Accuracy depends heavily on the retriever component. If the retriever fails to fetch relevant documents, the LLM won’t have the facts needed to answer correctly.</li>
+  <li><strong>CAG</strong>: Guarantees that all information is available (assuming it exists in the knowledge base), but places the burden on the LLM to extract the right information from a large context.</li>
+</ul>
+
+<h3 id="latency">Latency</h3>
+<ul>
+  <li><strong>RAG</strong>: Higher latency due to additional steps of embedding the query, searching the index, and processing retrieved text.</li>
+  <li><strong>CAG</strong>: Lower latency once knowledge is cached, as answering queries requires only one forward pass without retrieval lookup time.</li>
+</ul>
+
+<h3 id="scalability">Scalability</h3>
+<ul>
+  <li><strong>RAG</strong>: Can scale to millions of documents as only a small portion is retrieved per query.</li>
+  <li><strong>CAG</strong>: Limited by the model’s context window size (typically ~32k-100k tokens), restricting it to a few hundred documents at most.</li>
+</ul>
+
+<h3 id="data-freshness">Data Freshness</h3>
+<ul>
+  <li><strong>RAG</strong>: Easy to update incrementally as you add new document embeddings or remove outdated ones.</li>
+  <li><strong>CAG</strong>: Requires recomputation when data changes, making it less suitable for frequently updated information.</li>
+</ul>
+
+<h2 id="when-to-use-each-approach">When to Use Each Approach</h2>
+
+<p>The video presents several scenarios to illustrate when each approach is more appropriate:</p>
+
+<ol>
+  <li><strong>IT Help Desk Bot with Static Manual (200 pages, rarely updated)</strong>
+    <ul>
+      <li><strong>Best Choice</strong>: CAG</li>
+      <li><strong>Rationale</strong>: Knowledge base is small enough to fit in most LLM context windows, information is static, and caching enables faster query responses.</li>
+    </ul>
+  </li>
+  <li><strong>Legal Research Assistant (Thousands of constantly updated documents)</strong>
+    <ul>
+      <li><strong>Best Choice</strong>: RAG</li>
+      <li><strong>Rationale</strong>: Knowledge base is massive and dynamic, precise citations are required, and incremental updates are essential.</li>
+    </ul>
+  </li>
+  <li><strong>Clinical Decision Support System (Patient records, treatment guides, drug interactions)</strong>
+    <ul>
+      <li><strong>Best Choice</strong>: Hybrid Approach</li>
+      <li><strong>Rationale</strong>: Use RAG to retrieve relevant subsets from the massive knowledge base, then load that retrieved content into a long-context model using CAG for follow-up questions.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The choice between RAG and CAG ultimately depends on your specific use case. Consider RAG when dealing with large or frequently updated knowledge sources, when citations are necessary, or when resources for running long-context models are limited. CAG is preferable when working with a fixed knowledge set that fits within your model’s context window, when low latency is crucial, or when you want to simplify deployment.<br />
+As LLM technology evolves with expanding context windows and improved retrieval mechanisms, we may see these approaches converge or new hybrid solutions emerge. For now, understanding the strengths and limitations of both RAG and CAG allows AI engineers to make informed decisions about knowledge augmentation strategies that best suit their specific applications.</p>]]></content><author><name></name></author><category term="rag" /><category term="llm" /><category term="ai" /><category term="machine-learning" /><category term="prompt-engineering" /><category term="nlp" /><category term="data-processing" /><category term="best-practices" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🤖 The State of AI Agents in 2025</title><link href="http://0.0.0.0:4000/navigating-ais-frontier-2025/" rel="alternate" type="text/html" title="🤖 The State of AI Agents in 2025" /><published>2025-03-15T00:00:00+00:00</published><updated>2025-03-15T00:00:00+00:00</updated><id>http://0.0.0.0:4000/navigating-ais-frontier-2025</id><content type="html" xml:base="http://0.0.0.0:4000/navigating-ais-frontier-2025/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -855,20 +961,4 @@ The basic architecture is:</p>
   <li>Robust feature learning even with <a href="https://en.wikipedia.org/wiki/Overcompleteness">overcomplete</a> hidden layers</li>
 </ul>
 
-<p>The practical value of sparse autoencoders extends beyond their theoretical elegance -they provide a foundation for understanding how neural networks can learn meaningful data representations without supervision. Their success in learning biologically plausible features validates both their design principles and their potential for advanced machine learning applications. Their main limitation lies in hyperparameter sensitivity, particularly to the sparsity target ρ and weight β, requiring careful tuning for optimal performance.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="neural-network" /><category term="machine-learning" /><category term="data-science" /><category term="linear-algebra" /><category term="statistics" /><category term="evaluation" /><category term="interpretability" /><category term="modelling-mindsets" /><category term="design-principles" /><category term="best-practices" /><category term="data-processing" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: How Different Societies View and Value Choice</title><link href="http://0.0.0.0:4000/TIL-the-art-of-choice/" rel="alternate" type="text/html" title="💡 TIL: How Different Societies View and Value Choice" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-the-art-of-choice</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-the-art-of-choice/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>Today I revisited a talk on <a href="https://www.youtube.com/watch?v=lDq9-QxvsNU">the art of choosing</a> by Sheena Iyengar. A humourous and informative presentation, it reminded me that our assumptions about choice –as studied by Prof. Iyengar through research spanning American, European and Asian populations– reveals fascinating cultural differences in how we perceive and respond to choice. Her research reveals some eye-opening insights that I’ll briefly summarise below.</p>
-
-<h2 id="perceiving-choice">Perceiving Choice</h2>
-<p>First, while Americans believe individual choice is sacred (think “have it your way”), research shows this isn’t universal. When studying children solving puzzles, Asian-American children actually performed better when their mothers chose for them, while Anglo-American children did better choosing for themselves. This reveals how deeply cultural context shapes not just our preferences, but the actual effectiveness of our choices.</p>
-
-<p>Second, remember how overwhelming it feels staring at 50 different breakfast cereals? Turns out, people from post-communist countries often saw seven different sodas as just one choice: “soda or no soda.” This isn’t because they’re less sophisticated, it’s because the ability to spot tiny differences between products is a learned skill -not a natural one.</p>
-
-<p>Most striking was the research on medical decisions. When comparing American and French parents making end-of-life decisions for infants, American parents had more negative emotions and guilt despite insisting on having the choice, while French parents, whose doctors made the decisions, coped better. This challenges the core American belief that having choice is always better.</p>
-
-<p>Concluding with a personal story, Prof. Iyengar -who is blind- shared how she once brought two “clearly different” shades of pink nail polish to her lab. When she removed the labels, half the participants couldn’t tell them apart. Those who could, chose differently when the labels were present versus absent, showing how marketing narratives shape what we think we’re choosing.</p>
-
-<h2 id="conclusions">Conclusions</h2>
-<p>The TL;DR is: Through cross-cultural research, Prof. Iyengar shows that how we understand and value choice varies dramatically across cultures. Sometimes, having fewer choices or letting others choose for us might actually lead to better outcomes. <br />
-As a technologist, inundated with a very wide choice of tools that often offer similar results, I have made the conscious decision to reduce my tooling footprint to the minimum viable toolstack possible. I’m happy to let more knowledgeable professionals choose, with <em>adequate justification</em>, tools for my line of work but I do disagree with the zealotry that’s occasionally observed in tech and complemented by big egos.</p>]]></content><author><name></name></author><category term="til" /><category term="decision-making" /><category term="best-practices" /><category term="evaluation" /><category term="statistics" /><category term="design-principles" /><category term="modelling-mindsets" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<p>The practical value of sparse autoencoders extends beyond their theoretical elegance -they provide a foundation for understanding how neural networks can learn meaningful data representations without supervision. Their success in learning biologically plausible features validates both their design principles and their potential for advanced machine learning applications. Their main limitation lies in hyperparameter sensitivity, particularly to the sparsity target ρ and weight β, requiring careful tuning for optimal performance.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="neural-network" /><category term="machine-learning" /><category term="data-science" /><category term="linear-algebra" /><category term="statistics" /><category term="evaluation" /><category term="interpretability" /><category term="modelling-mindsets" /><category term="design-principles" /><category term="best-practices" /><category term="data-processing" /><summary type="html"><![CDATA[]]></summary></entry></feed>
