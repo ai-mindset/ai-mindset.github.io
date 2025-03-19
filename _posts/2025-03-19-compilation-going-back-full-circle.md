@@ -71,4 +71,4 @@ While Elixir offers similar single language benefits, its distribution story rem
 The future of deployment may look surprisingly like its past, just with better languages and tools at our disposal -offering a path toward more cohesive, efficient software development that reduces complexity without sacrificing capability.
 
 ---
-[^1]: Go, Zig, Rust, C/C++ D, Nim, Common Lisp are some prominent examples of ahead-of-time compiled languages that -with the exception of Common Lisp- excel in systems programming. However, Deno allows a ubiquitous, higher-level language like JS and its superset TS to join the compiled languages club. 
+[^1]: Go, Zig, Rust, C/C++ D, Nim, Common Lisp are some prominent examples of ahead-of-time compiled languages that -with the exception of Common Lisp- excel in systems programming. However, Deno allows a ubiquitous, higher-level language like JS and its superset TS to join the club of languages that can easily package code to a cross-platform single binary. 
