@@ -31,7 +31,7 @@ Key Aspects:
 - Uses same data for fitting and evaluation, unlike machine learning approaches
 
 Primary Strengths:
-1. Provides rigourous mathematical framework for handling uncertainty
+1. Provides rigorous mathematical framework for handling uncertainty
 2. Strong theoretical foundation spanning decades of research
 3. Forces explicit consideration of data-generating processes
 4. Versatile for decisions, predictions, and understanding

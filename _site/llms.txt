@@ -6,6 +6,8 @@ A personal blog focused on AI, and engineering best practices, built with Neovim
 
 ## Posts (Reverse Chronological Order)
 
+March 20, 2025 - [Cloud Repatriation Trends Implications](https://ai-mindset.github.io/cloud-repatriation-trends-implications/)
+March 19, 2025 - [Compilation Going Back Full Circle](https://ai-mindset.github.io/compilation-going-back-full-circle/)
 March 18, 2025 - [Rag Or Cag](https://ai-mindset.github.io/rag-or-cag/)
 March 15, 2025 - [Navigating Ais Frontier 2025](https://ai-mindset.github.io/navigating-ais-frontier-2025/)
 February 11, 2025 - [Sqlite Minimalist Choice For Ai Engineering](https://ai-mindset.github.io/sqlite-minimalist-choice-for-ai-engineering/)
