@@ -6,6 +6,7 @@ A personal blog focused on AI, and engineering best practices, built with Neovim
 
 ## Posts (Reverse Chronological Order)
 
+March 22, 2025 - [Fasttransform For Reversible Data Transformations](https://ai-mindset.github.io/fasttransform-for-reversible-data-transformations/)
 March 21, 2025 - [The Drivetrain Method](https://ai-mindset.github.io/the-drivetrain-method/)
 March 20, 2025 - [Cloud Repatriation Trends Implications](https://ai-mindset.github.io/cloud-repatriation-trends-implications/)
 March 19, 2025 - [Compilation Going Back Full Circle](https://ai-mindset.github.io/compilation-going-back-full-circle/)
@@ -36,8 +37,8 @@ November 23, 2024 - [Ai Evolution](https://ai-mindset.github.io/ai-evolution/)
 November 22, 2024 - [Iterative Refinement](https://ai-mindset.github.io/iterative-refinement/)
 November 21, 2024 - [Bring It Back To Basics](https://ai-mindset.github.io/bring-it-back-to-basics/)
 November 20, 2024 - [TIL BM25 TFIDF](https://ai-mindset.github.io/TIL-BM25-TFIDF/)
-November 15, 2024 - [Dialogue Engineering](https://ai-mindset.github.io/dialogue-engineering/)
 November 15, 2024 - [Good Onboarding](https://ai-mindset.github.io/good-onboarding/)
+November 15, 2024 - [Dialogue Engineering](https://ai-mindset.github.io/dialogue-engineering/)
 November 14, 2024 - [The Advantage](https://ai-mindset.github.io/the-advantage/)
 November 14, 2024 - [Slow Down](https://ai-mindset.github.io/slow-down/)
 November 14, 2024 - [Cloud Repatriation](https://ai-mindset.github.io/cloud-repatriation/)
