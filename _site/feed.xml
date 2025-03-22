@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-22T10:23:42+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">⏪ Making Data Transformations Reversible uith fasttransform</title><link href="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/" rel="alternate" type="text/html" title="⏪ Making Data Transformations Reversible uith fasttransform" /><published>2025-03-22T00:00:00+00:00</published><updated>2025-03-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations</id><content type="html" xml:base="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-22T17:40:46+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">⏪ Making Data Transformations Reversible uith fasttransform</title><link href="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/" rel="alternate" type="text/html" title="⏪ Making Data Transformations Reversible uith fasttransform" /><published>2025-03-22T00:00:00+00:00</published><updated>2025-03-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations</id><content type="html" xml:base="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -115,7 +115,120 @@ Those interested in trying fasttransform can install it with <code class="langua
       <p>“<a href="https://docs.julialang.org/en/v1/manual/methods/">Methods · The Julia Language</a>” Julia Documentation, docs.julialang.org. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="machine-learning" /><category term="data-processing" /><category term="fast-ai" /><category term="python" /><category term="data-science" /><category term="optimisation" /><category term="best-practices" /><category term="interpretability" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🏠 Why Companies and Individuals Are Moving Back from the Cloud</title><link href="http://0.0.0.0:4000/cloud-repatriation-trends-implications/" rel="alternate" type="text/html" title="🏠 Why Companies and Individuals Are Moving Back from the Cloud" /><published>2025-03-20T00:00:00+00:00</published><updated>2025-03-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/cloud-repatriation-trends-implications</id><content type="html" xml:base="http://0.0.0.0:4000/cloud-repatriation-trends-implications/"><![CDATA[<!--more-->
+</div>]]></content><author><name></name></author><category term="machine-learning" /><category term="data-processing" /><category term="fast-ai" /><category term="python" /><category term="data-science" /><category term="optimisation" /><category term="best-practices" /><category term="interpretability" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: A Reactive Python Notebook That Might Replace Jupyter</title><link href="http://0.0.0.0:4000/git-friendly-literate-programming-with-marimo/" rel="alternate" type="text/html" title="💡 TIL: A Reactive Python Notebook That Might Replace Jupyter" /><published>2025-03-22T00:00:00+00:00</published><updated>2025-03-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/git-friendly-literate-programming-with-marimo</id><content type="html" xml:base="http://0.0.0.0:4000/git-friendly-literate-programming-with-marimo/"><![CDATA[<!--more-->
+
+<p>As a long-time Vim/Neovim and IPython user, I’m quite particular about my development environment. So when I say a notebook platform caught my attention enough to consider switching, that’s significant. Recently, I stumbled upon <a href="https://marimo.io/">Marimo</a>, and it might just be the Jupyter alternative I’ve been searching for.</p>
+
+<h2 id="what-is-marimo">What is Marimo?</h2>
+
+<p>Marimo is a reactive Python notebook environment that solves many long-standing issues with traditional notebooks. Unlike Jupyter, which stores notebooks as JSON with embedded code and outputs, Marimo notebooks are pure Python files that are:</p>
+
+<ul>
+  <li><strong>Reactive</strong>: Run a cell, and Marimo automatically runs dependent cells or marks them as stale</li>
+  <li><strong>Consistent</strong>: No hidden state problems that plague traditional notebooks</li>
+  <li><strong>Executable</strong>: Can run as standard Python scripts from the command line</li>
+  <li><strong>Git-friendly</strong>: Since they’re just <code class="language-plaintext highlighter-rouge">.py</code> files, they work seamlessly with version control</li>
+  <li><strong>Deployable</strong>: Easily share as interactive web apps or slides</li>
+</ul>
+
+<h2 id="why-this-matters-for-literate-programming">Why This Matters for Literate Programming</h2>
+
+<p>Literate programming -the approach of writing code as a narrative explanation interleaved with executable components- is incredibly powerful for data science, ML, and AI work. It helps create self-documenting, reproducible research and applications.<br />
+The problem with Jupyter has always been that while it looks like literate programming, its execution model (arbitrary cell execution order) and hidden state make it fundamentally unreliable. Marimo solves this by ensuring deterministic execution based on variable dependencies rather than cell position.</p>
+
+<h2 id="key-features-that-won-me-over">Key Features That Won Me Over</h2>
+
+<ol>
+  <li><strong>Vim keybindings</strong>: As a Neovim user, this is non-negotiable</li>
+  <li><strong>Modern editor features</strong>: GitHub Copilot integration, AI completion, and variable explorer</li>
+  <li><strong>Reactive runtime</strong>: No more “did I run all the cells in the right order?” problems</li>
+  <li><strong>Interactive elements</strong>: Sliders, tables, and plots that automatically update dependent cells</li>
+  <li><strong>SQL integration</strong>: Write SQL against dataframes, databases, or other sources right in your notebook</li>
+  <li><strong>Package management</strong>: Built-in support for dependency tracking and isolated environments</li>
+  <li><strong>Pure Python storage</strong>: No more JSON files with embedded outputs making git diffs unreadable</li>
+</ol>
+
+<h2 id="comparisons-with-other-literate-programming-tools">Comparisons with Other Literate Programming Tools</h2>
+
+<h3 id="plutojl-julia">Pluto.jl (Julia)</h3>
+
+<p>Pluto.jl pioneered the reactive notebook concept that Marimo implements. Both share:</p>
+<ul>
+  <li>Automatic reactivity based on variable dependencies</li>
+  <li>Deterministic execution order</li>
+  <li>Interactive UI elements</li>
+</ul>
+
+<p><strong>Differences</strong>:</p>
+<ul>
+  <li>Pluto is Julia-specific; Marimo is Python-specific</li>
+  <li>Marimo stores notebooks as standard <code class="language-plaintext highlighter-rouge">.py</code> files; Pluto uses a custom format</li>
+  <li>Marimo has more built-in integrations with Python data science libraries</li>
+  <li>Pluto has tighter integration with Julia’s capabilities</li>
+</ul>
+
+<h3 id="livebook-elixir">Livebook (Elixir)</h3>
+
+<p>Livebook brings reactive notebooks to the Elixir ecosystem, with:</p>
+<ul>
+  <li>Smart cells for common tasks</li>
+  <li>Built-in deployment capabilities</li>
+  <li>Collaborative editing</li>
+</ul>
+
+<p><strong>Differences</strong>:</p>
+<ul>
+  <li>Livebook embraces Elixir’s concurrency model; Marimo follows Python’s execution model</li>
+  <li>Marimo’s Python foundation makes it more accessible for data science work</li>
+  <li>Livebook has more built-in tools for building distributed systems</li>
+</ul>
+
+<h2 id="pros-and-cons">Pros and Cons</h2>
+
+<h3 id="pros">Pros</h3>
+<ul>
+  <li><strong>Reproducibility</strong>: Deterministic execution eliminates the “run cells in wrong order” problem</li>
+  <li><strong>Git-friendly</strong>: Pure Python files make version control and collaboration much easier</li>
+  <li><strong>No hidden state</strong>: Deleted cell variables are removed from memory</li>
+  <li><strong>Deployability</strong>: From notebook to web app with minimal effort</li>
+  <li><strong>Testability</strong>: Run standard test suites against your notebooks</li>
+  <li><strong>Modern IDE features</strong>: Seems like they’ve thought of everything</li>
+</ul>
+
+<h3 id="cons">Cons</h3>
+<ul>
+  <li><strong>Learning curve</strong>: The reactive model requires a shift in thinking if you’re used to Jupyter</li>
+  <li><strong>Ecosystem maturity</strong>: Newer than Jupyter, so fewer third-party extensions</li>
+  <li><strong>Performance considerations</strong>: Automatic reactivity could cause issues with expensive computations (though there are options to mitigate this<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>)</li>
+  <li><strong>Language limitation</strong>: Python-only, unlike Jupyter which supports multiple kernels</li>
+</ul>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Installation is straightforward:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv pip <span class="nb">install </span>marimo
+<span class="c"># or with recommended extras</span>
+uv pip <span class="nb">install </span>marimo[recommended]
+
+<span class="c"># Try the tutorial</span>
+marimo tutorial intro
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>As someone deeply invested in both Vim/Neovim and the Python data ecosystem, Marimo strikes an impressive balance. It brings the benefits of reactive programming to Python notebooks while maintaining the flexibility and familiarity that Python users expect.<br />
+What truly sets Marimo apart is how it addresses the fundamental issues of reproducibility and hidden state that have plagued notebooks for years. By treating notebooks as actual programs with deterministic execution, it enables literate programming in a way that Jupyter always promised but never fully delivered.<br />
+Is it perfect? No. But it’s the most compelling alternative I’ve seen so far, and I’m seriously considering making the switch for my daily work.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Marimo provides a “lazy” configuration option where cells that would be automatically re-executed are instead marked as “stale”, allowing users to manually control when expensive computations run. Users can also implement caching strategies using Marimo’s built-in caching functionality, compartmentalise heavy computations into separate cells to control their execution flow, or use the @mo.cell decorator with runtime configurations to customise how specific cells behave when dependencies change. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="til" /><category term="data-science" /><category term="python" /><category term="best-practices" /><category term="reproducibility" /><category term="literate-programming" /><category term="jupyter-alternative" /><category term="reactivity" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🏠 Why Companies and Individuals Are Moving Back from the Cloud</title><link href="http://0.0.0.0:4000/cloud-repatriation-trends-implications/" rel="alternate" type="text/html" title="🏠 Why Companies and Individuals Are Moving Back from the Cloud" /><published>2025-03-20T00:00:00+00:00</published><updated>2025-03-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/cloud-repatriation-trends-implications</id><content type="html" xml:base="http://0.0.0.0:4000/cloud-repatriation-trends-implications/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -859,197 +972,4 @@ The language’s design philosophy strongly aligns with my needs as a Data profe
       <p>Vet is -in essence- a linter, since it helps improve code quality. Quoting Go’s <a href="https://go.dev/src/cmd/vet/doc.go">vet doc</a> <em>“Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string. Vet uses heuristics that do not guarantee all reports are genuine problems, but it can find errors not caught by the compilers.”</em> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="go" /><category term="llm" /><category term="minimal" /><category term="machine-learning" /><category term="toolchain" /><category term="zero-config" /><category term="code-quality" /><category term="cross-platform" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🔧 A 10-Minute Guide to Engineering Machine Learning Systems</title><link href="http://0.0.0.0:4000/ml-best-practices/" rel="alternate" type="text/html" title="🔧 A 10-Minute Guide to Engineering Machine Learning Systems" /><published>2025-01-21T00:00:00+00:00</published><updated>2025-01-21T00:00:00+00:00</updated><id>http://0.0.0.0:4000/ml-best-practices</id><content type="html" xml:base="http://0.0.0.0:4000/ml-best-practices/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>This is a concise reference guide distilling Martin Zinkevich’s <a href="https://developers.google.com/machine-learning/guides/rules-of-ml">influential Google article on machine learning best practices</a>. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
-
-<h2 id="core-philosophy">Core Philosophy</h2>
-<blockquote>
-  <p>Do machine learning like the great engineer you are, not like the great machine learning expert you aren’t.</p>
-</blockquote>
-
-<p>Most ML gains come from great features, not algorithms. The basic approach should be:</p>
-<ol>
-  <li>Ensure solid end-to-end pipeline</li>
-  <li>Start with reasonable objective</li>
-  <li>Add common-sense features simply</li>
-  <li>Maintain pipeline integrity</li>
-</ol>
-
-<h2 id="phase-i-before-machine-learning-rules-1-3">Phase I: Before Machine Learning (Rules #1-3)</h2>
-<ol>
-  <li><strong>Don’t be afraid to launch without ML</strong>
-    <ul>
-      <li>Simple heuristics get you 50% of the way</li>
-      <li>Launch with heuristics when data is insufficient</li>
-      <li>Example: Use install rate for app ranking</li>
-    </ul>
-  </li>
-  <li><strong>First, design and implement metrics</strong>
-    <ul>
-      <li>Track everything possible in current system</li>
-      <li>Get early permission from users</li>
-      <li>Design systems with metric instrumentation</li>
-      <li>Implement experiment framework</li>
-    </ul>
-  </li>
-  <li><strong>Choose ML over complex heuristics</strong>
-    <ul>
-      <li>Simple heuristics for launching</li>
-      <li>Complex heuristics become unmaintainable</li>
-      <li>ML models are easier to maintain long-term</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="phase-ii-first-pipeline-rules-4-11">Phase II: First Pipeline (Rules #4-11)</h2>
-<ol>
-  <li><strong>Keep first model simple, get infrastructure right</strong>
-    <ul>
-      <li>Focus on data pipeline integrity</li>
-      <li>Define clear evaluation metrics</li>
-      <li>Plan model integration carefully</li>
-    </ul>
-  </li>
-  <li><strong>Pipeline Health is Critical</strong>
-    <ul>
-      <li>Test infrastructure independently</li>
-      <li>Monitor freshness requirements</li>
-      <li>Watch for silent failures</li>
-      <li>Give feature columns owners</li>
-      <li>Document feature expectations</li>
-    </ul>
-  </li>
-  <li><strong>Starting Your ML System</strong>
-    <ul>
-      <li>Test getting data into algorithm</li>
-      <li>Test getting models out correctly</li>
-      <li>Monitor data statistics continuously</li>
-      <li>Build alerting system</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="your-first-objective-rules-12-15">Your First Objective (Rules #12-15)</h2>
-<ol>
-  <li><strong>Choose Objectives Wisely</strong>
-    <ul>
-      <li>Don’t overthink initial objective choice</li>
-      <li>Start with simple, observable metrics</li>
-      <li>Use directly observed user behaviours</li>
-      <li>Example: clicks, downloads, shares</li>
-    </ul>
-  </li>
-  <li><strong>Model Selection Guidelines</strong>
-    <ul>
-      <li>Start with interpretable models</li>
-      <li>Separate spam filtering from quality ranking</li>
-      <li>Use simple linear models initially</li>
-      <li>Make debugging easier</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="phase-iii-feature-engineering-rules-16-22">Phase III: Feature Engineering (Rules #16-22)</h2>
-<ol>
-  <li><strong>Plan to launch and iterate</strong>
-    <ul>
-      <li>Expect regular model updates</li>
-      <li>Design for feature flexibility</li>
-      <li>Keep infrastructure clean</li>
-    </ul>
-  </li>
-  <li><strong>Feature Engineering Principles</strong>
-    <ul>
-      <li>Start with directly observed features</li>
-      <li>Use cross-product features wisely</li>
-      <li>Clean up unused features</li>
-      <li>Scale feature complexity with data</li>
-    </ul>
-  </li>
-  <li><strong>Feature Coverage and Quality</strong>
-    <ul>
-      <li>Features that generalise across contexts</li>
-      <li>Monitor feature coverage</li>
-      <li>Document feature ownership</li>
-      <li>Regular feature clean-up</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="human-analysis-rules-23-28">Human Analysis (Rules #23-28)</h2>
-<ol>
-  <li><strong>Testing and Validation</strong>
-    <ul>
-      <li>Use crowdsourcing or live experiments</li>
-      <li>Measure model deltas explicitly</li>
-      <li>Look for error patterns</li>
-      <li>Consider long-term effects</li>
-    </ul>
-  </li>
-  <li><strong>Common Pitfalls</strong>
-    <ul>
-      <li>Engineers aren’t typical users</li>
-      <li>Beware of confirmation bias</li>
-      <li>Quantify undesirable behaviours</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="training-serving-skew-rules-29-37">Training-Serving Skew (Rules #29-37)</h2>
-<ol>
-  <li><strong>Prevent Skew</strong>
-    <ul>
-      <li>Save serving-time features</li>
-      <li>Weight sampled data properly</li>
-      <li>Reuse code between training/serving</li>
-      <li>Test on future data</li>
-    </ul>
-  </li>
-  <li><strong>Monitor Everything</strong>
-    <ul>
-      <li>Track performance metrics</li>
-      <li>Watch data distributions</li>
-      <li>Monitor feature coverage</li>
-      <li>Check prediction bias</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="phase-iv-optimisation-and-complex-models-rules-38-43">Phase IV: Optimisation and Complex Models (Rules #38-43)</h2>
-<ol>
-  <li><strong>When to Add Complexity</strong>
-    <ul>
-      <li>After simple approaches plateau</li>
-      <li>When objectives are well-aligned</li>
-      <li>If maintenance cost justifies gains</li>
-    </ul>
-  </li>
-  <li><strong>Advanced Techniques</strong>
-    <ul>
-      <li>Keep ensembles simple</li>
-      <li>Look for new information sources</li>
-      <li>Balance complexity vs. benefits</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="final-recommendations">Final Recommendations</h2>
-<ol>
-  <li><strong>Launch Decisions</strong>
-    <ul>
-      <li>Consider multiple metrics</li>
-      <li>Use proxies for long-term goals</li>
-      <li>Balance simple vs. complex</li>
-    </ul>
-  </li>
-  <li><strong>System Evolution</strong>
-    <ul>
-      <li>Start simple, add complexity gradually</li>
-      <li>Monitor consistently</li>
-      <li>Keep infrastructure clean</li>
-      <li>Document everything</li>
-    </ul>
-  </li>
-</ol>]]></content><author><name></name></author><category term="machine-learning" /><category term="best-practices" /><category term="mlops" /><category term="monitoring" /><category term="production" /><category term="quality-assurance" /><category term="data-science" /><category term="decision-making" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="go" /><category term="llm" /><category term="minimal" /><category term="machine-learning" /><category term="toolchain" /><category term="zero-config" /><category term="code-quality" /><category term="cross-platform" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry></feed>
