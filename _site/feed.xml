@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-21T11:03:56+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🏠 Why Companies and Individuals Are Moving Back from the Cloud</title><link href="http://0.0.0.0:4000/cloud-repatriation-trends-implications/" rel="alternate" type="text/html" title="🏠 Why Companies and Individuals Are Moving Back from the Cloud" /><published>2025-03-20T00:00:00+00:00</published><updated>2025-03-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/cloud-repatriation-trends-implications</id><content type="html" xml:base="http://0.0.0.0:4000/cloud-repatriation-trends-implications/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-22T10:23:42+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">⏪ Making Data Transformations Reversible uith fasttransform</title><link href="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/" rel="alternate" type="text/html" title="⏪ Making Data Transformations Reversible uith fasttransform" /><published>2025-03-22T00:00:00+00:00</published><updated>2025-03-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations</id><content type="html" xml:base="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Machine learning practitioners face a common problem: after applying multiple transformations to prepare data for training, it becomes difficult to visualise what the model actually sees. This visualisation gap makes debugging challenging and often leads to missing critical insights about model behaviour.<br />
+For example, consider a model built to distinguish wolves from huskies that performs poorly on certain images. Without the ability to easily inspect how transformations affect the input data, one might miss that the model is actually detecting snow (common in wolf photos) rather than the animals themselves.<br />
+Fast.ai’s solution to this problem is <a href="https://github.com/AnswerDotAI/fasttransform">fasttransform</a><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, a library that ensures any transformation applied to data can be easily reversed. Let’s explore how it works and why it matters.</p>
+
+<h2 id="reversible-pipelines-made-simple">Reversible Pipelines Made Simple</h2>
+
+<h3 id="the-problem-with-one-way-transforms">The Problem with One-Way Transforms</h3>
+
+<p>Traditional data transformation pipelines in libraries like PyTorch are one-way streets. Consider this simple example of normalising an image:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span> <span class="k">as</span> <span class="n">T</span>
+<span class="n">transforms_pt</span> <span class="o">=</span> <span class="n">T</span><span class="p">.</span><span class="n">Compose</span><span class="p">([</span>
+    <span class="n">T</span><span class="p">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
+    <span class="n">T</span><span class="p">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span>
+    <span class="n">T</span><span class="p">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+    <span class="n">T</span><span class="p">.</span><span class="n">Normalize</span><span class="p">(</span><span class="o">*</span><span class="n">imagenet_stats</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="s">"husky.jpeg"</span><span class="p">)</span>
+<span class="n">img_transformed</span> <span class="o">=</span> <span class="n">transforms_pt</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Attempting to visualise <code class="language-plaintext highlighter-rouge">img_transformed</code> results in a mess of pixel values outside the displayable range. To see what the model sees, one needs to manually write an inverse transform function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decode_pt</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">.</span><span class="n">clone</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">):</span> <span class="n">t</span><span class="p">.</span><span class="n">mul_</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="n">add_</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="p">.</span><span class="n">mul</span><span class="p">(</span><span class="mi">255</span><span class="p">).</span><span class="n">clamp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">).</span><span class="n">byte</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">out</span>
+</code></pre></div></div>
+
+<p>This is tedious and error-prone, especially as your transformation pipeline grows more complex.</p>
+
+<h3 id="an-elegant-solution">An Elegant Solution</h3>
+
+<p>fasttransform takes a fundamentally different approach by pairing each transformation with its inverse. Here’s the same pipeline using fasttransform:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastai.vision.all</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">transforms_ft</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+   <span class="n">PILImage</span><span class="p">.</span><span class="n">create</span><span class="p">,</span>
+   <span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">"squish"</span><span class="p">),</span>
+   <span class="n">Resize</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">"crop"</span><span class="p">),</span>
+   <span class="n">ToTensor</span><span class="p">(),</span>
+   <span class="n">IntToFloatTensor</span><span class="p">(),</span>
+   <span class="n">Normalize</span><span class="p">.</span><span class="n">from_stats</span><span class="p">(</span><span class="o">*</span><span class="n">imagenet_stats</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="c1"># Transform our image
+</span><span class="n">fpath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s">"./huskies_vs_wolves/train/husky/husky_0.jpeg"</span><span class="p">)</span>
+<span class="n">img_transformed</span> <span class="o">=</span> <span class="n">transforms_ft</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+<span class="c1"># To reverse the transformations:
+</span><span class="n">img_decoded</span> <span class="o">=</span> <span class="n">transforms_ft</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">img_transformed</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The magic lies in how each transform defines both forward and reverse operations:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Normalize</span><span class="p">(</span><span class="n">Transform</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">mean</span> <span class="o">=</span> <span class="n">mean</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">std</span> <span class="o">=</span> <span class="n">std</span>
+        
+    <span class="k">def</span> <span class="nf">encodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="bp">self</span><span class="p">.</span><span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="p">.</span><span class="n">std</span>  <span class="c1"># forward transform
+</span>    <span class="k">def</span> <span class="nf">decodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">std</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">mean</span>    <span class="c1"># inverse transform
+</span></code></pre></div></div>
+
+<p>By defining both <code class="language-plaintext highlighter-rouge">encodes</code> and <code class="language-plaintext highlighter-rouge">decodes</code> methods, fasttransform automatically knows how to reverse your transformations. This is particularly valuable when working with fast.ai v2, where this kind of visualisation capability is built directly into core functions like <code class="language-plaintext highlighter-rouge">show_batch</code> and <code class="language-plaintext highlighter-rouge">show_results</code>.</p>
+
+<h3 id="multiple-dispatch-the-secret-sauce">Multiple Dispatch: The Secret Sauce</h3>
+
+<p>Another powerful feature of fasttransform is how it handles different types of data. Using a concept called <a href="https://www.youtube.com/watch?v=kc9HwsxE1OY">multiple dispatch</a><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, transformations can apply differently based on the type of data they receive.</p>
+
+<p>This becomes particularly valuable when dealing with images and their labels, allowing a single pipeline to handle both:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Function that loads both image and its label
+</span><span class="k">def</span> <span class="nf">load_img_and_label</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span> <span class="k">return</span> <span class="n">PILImage</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">fp</span><span class="p">),</span> <span class="n">parent_label</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+
+<span class="n">transforms_ft</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+   <span class="n">load_img_and_label</span><span class="p">,</span>  <span class="c1"># Loads both image and label as a tuple
+</span>   <span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">"squish"</span><span class="p">),</span>
+   <span class="n">Resize</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">"crop"</span><span class="p">),</span>
+   <span class="n">ToTensor</span><span class="p">(),</span>
+   <span class="n">IntToFloatTensor</span><span class="p">(),</span>
+   <span class="n">Normalize</span><span class="p">.</span><span class="n">from_stats</span><span class="p">(</span><span class="o">*</span><span class="n">imagenet_stats</span><span class="p">)</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<p>The pipeline intelligently applies each transform only to the appropriate data types, eliminating the need for separate transformation pipelines.</p>
+
+<h3 id="connections-to-julias-multiple-dispatch">Connections to Julia’s Multiple Dispatch</h3>
+
+<p>Interestingly, the concept of multiple dispatch that fasttransform leverages is a core feature of the Julia programming language. In Julia, which method of a function gets called depends on the types of all arguments, not just the first one (as in traditional object-oriented programming).<br />
+As explained in Julia’s documentation: “<em>Using all of a function’s arguments to choose which method should be invoked, rather than just the first, is known as multiple dispatch. Multiple dispatch is particularly useful for mathematical code, where it makes little sense to artificially deem the operations to ‘belong’ to one argument more than any of the others</em>”.<br />
+The connection to Julia is particularly illuminating, as it demonstrates how concepts from one language can inspire powerful design patterns in another. Just as Julia’s multiple dispatch enables elegant mathematical code, fasttransform’s implementation of this concept allows for cleaner, more intuitive data pipelines in Python.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>fasttransform represents a significant step forward in making machine learning workflows more intuitive and debugging more accessible. By making transformations reversible through paired encode/decode methods and leveraging multiple dispatch to handle different data types intelligently, it solves two fundamental problems in data processing pipelines: the inability to easily reverse transformations to inspect data, and the need for separate transformation pipelines for different types of data.<br />
+The ability to easily visualise transformed data isn’t just convenient -it’s essential for understanding model behaviour and catching issues like the wolf/husky example, where models learn spurious correlations rather than intended features.<br />
+As machine learning systems grow more complex, tools like fasttransform that improve transparency and the ability to debug become increasingly valuable. Whether working with images, text, time series, or other data types, being able to see what a model sees provides critical insights that might otherwise be missed.<br />
+Returning to our wolf/husky example, the ability to easily visualise transformed data allows researchers to immediately identify that their model is learning to detect snow backgrounds rather than animal features -a crucial insight for building more robust models.<br />
+Those interested in trying fasttransform can install it with <code class="language-plaintext highlighter-rouge">pip install fasttransform</code> and check out the <a href="https://github.com/AnswerDotAI/fasttransform">official fasttransform documentation</a> for more examples and detailed API references. The library offers these capabilities with minimal performance overhead, as the paired transformation approach adds negligible computational cost while providing significant benefits for debugging and understanding model behaviour.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Rens Dimmendaal, Hamel Husain, &amp; Jeremy Howard. “<a href="https://www.fast.ai/posts/2025-02-20-fasttransform.html">fasttransform: Reversible Pipelines Made Simple</a>” fast.ai blog, February 20, 2025. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>“<a href="https://docs.julialang.org/en/v1/manual/methods/">Methods · The Julia Language</a>” Julia Documentation, docs.julialang.org. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="machine-learning" /><category term="data-processing" /><category term="fast-ai" /><category term="python" /><category term="data-science" /><category term="optimisation" /><category term="best-practices" /><category term="interpretability" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🏠 Why Companies and Individuals Are Moving Back from the Cloud</title><link href="http://0.0.0.0:4000/cloud-repatriation-trends-implications/" rel="alternate" type="text/html" title="🏠 Why Companies and Individuals Are Moving Back from the Cloud" /><published>2025-03-20T00:00:00+00:00</published><updated>2025-03-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/cloud-repatriation-trends-implications</id><content type="html" xml:base="http://0.0.0.0:4000/cloud-repatriation-trends-implications/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -935,46 +1052,4 @@ The language’s design philosophy strongly aligns with my needs as a Data profe
       <li>Document everything</li>
     </ul>
   </li>
-</ol>]]></content><author><name></name></author><category term="machine-learning" /><category term="best-practices" /><category term="mlops" /><category term="monitoring" /><category term="production" /><category term="quality-assurance" /><category term="data-science" /><category term="decision-making" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🤖 Understanding AI Agents: Tools, Planning, and Evaluation</title><link href="http://0.0.0.0:4000/agents-chip-huyen/" rel="alternate" type="text/html" title="🤖 Understanding AI Agents: Tools, Planning, and Evaluation" /><published>2025-01-14T00:00:00+00:00</published><updated>2025-01-14T00:00:00+00:00</updated><id>http://0.0.0.0:4000/agents-chip-huyen</id><content type="html" xml:base="http://0.0.0.0:4000/agents-chip-huyen/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>This article summarises Chip Huyen’s comprehensive blog post “<a href="https://huyenchip.com//2025/01/07/agents.html">Agents</a>” adapted from her upcoming book AI Engineering (2025). The original piece provides an in-depth examination of intelligent agents, which represent a fundamental concept in AI, defined by Russell and Norvig in their seminal 1995 book <a href="https://en.wikipedia.org/wiki/Artificial_Intelligence:_A_Modern_Approach">Artificial Intelligence: A Modern Approach</a> as anything that can perceive its environment through sensors and act upon it through actuators. Huyen explores how the unprecedented capabilities of foundational models have transformed theoretical possibilities into practical applications, enabling agents to operate in diverse environments -from digital workspaces for coding to physical settings for robotics. These agents can now assist with tasks ranging from website creation to complex negotiations.</p>
-
-<h2 id="understanding-agents-and-their-tools">Understanding Agents and Their Tools</h2>
-<p>An agent’s effectiveness is determined by two key factors: its environment and its tool inventory. The environment defines the scope of possible actions, while tools enable the agent to perceive and act within this environment. Modern agents leverage three distinct categories of tools.<br />
-Knowledge augmentation tools, including text retrievers and web browsing capabilities, prevent model staleness by enabling access to current information. However, web browsing tools require careful API selection to protect against unreliable or harmful content. Capability extension tools address inherent model limitations -for instance, providing calculators for precise arithmetic or code interpreters for programming tasks. These interpreters demand robust security measures to prevent code injection attacks.<br />
-Write actions represent the most powerful and potentially risky category, enabling agents to modify databases or send emails. These tools are distinguished from read-only actions by their ability to affect the environment directly. The <a href="https://arxiv.org/abs/2304.09842">Chameleon</a> system demonstrated the power of tool augmentation, achieving an 11.37% improvement on ScienceQA (a science question answering task) and 17% on TabMWP (a tabular math problem-solving task) through strategic tool combination.</p>
-
-<center>
-    <figure>
-           <a href="https://huyenchip.com//2025/01/07/agents.html"><img src="https://huyenchip.com/assets/pics/agents/8-tool-transition.png" width="80%" height="80%" /></a>
-        <figcaption>A tool transition tree by Chameleon</figcaption>
-    </figure>
-</center>
-
-<h2 id="planning-and-execution-strategies">Planning and Execution Strategies</h2>
-<p>Effective planning requires balancing granularity and flexibility. While <a href="https://arxiv.org/abs/2302.04761">Toolformer</a> managed with 5 tools and <a href="https://arxiv.org/abs/2304.09842">Chameleon</a> with 13, <a href="https://arxiv.org/abs/2305.15334">Gorilla</a> attempted to handle 1,645 APIs, illustrating the complexity of tool selection. Plans can be expressed either in natural language or specific function calls, each approach offering different advantages in maintainability and precision.<br />
-Foundational Model planners require minimal training but need careful prompting, while Reinforcement Learning planners demand extensive training for robustness. Modern planning systems support multiple control flows: sequential, parallel, conditional, and iterative patterns. The <a href="https://arxiv.org/abs/2210.03629">ReAct</a> framework successfully combines reasoning with action,</p>
-<center>
-    <figure>
-        <a href="https://huyenchip.com//2025/01/07/agents.html"><img src="https://huyenchip.com/assets/pics/agents/5-ReAct.png" width="80%" height="80%" /></a>
-        <figcaption>ReAct agent</figcaption>
-    </figure>
-</center>
-
-<p>while <a href="https://arxiv.org/abs/2303.11366">Reflexion</a> separates evaluation and self-reflection for improved performance.</p>
-<center>
-    <figure>
-        <a href="https://huyenchip.com//2025/01/07/agents.html"><img src="https://huyenchip.com/assets/pics/agents/6-reflexion.png" width="80%" height="80%" /></a>
-        <figcaption>Reflexion agent</figcaption>
-    </figure>
-</center>
-
-<h2 id="reflection-and-error-management">Reflection and Error Management</h2>
-<p>Continuous reflection and error correction form the backbone of reliable agent systems. The process begins with query validation, continues through plan assessment, and extends to execution monitoring. Chameleon’s tool transition analysis shows how tools are commonly used together, while Voyager’s skill manager builds on this by tracking and reusing successful tool combinations.</p>
-
-<h2 id="evaluation-framework">Evaluation Framework</h2>
-<p>Agent evaluation requires a comprehensive approach to failure mode analysis. Planning failures might involve invalid tools or incorrect parameters, while tool-specific failures demand targeted analysis. Efficiency metrics must consider not just step count and costs, but also completion time constraints. When comparing AI and human agents, it’s essential to recognise their different operational patterns -what’s efficient for one may be inefficient for the other. Working with domain experts helps identify missing tools and validate performance metrics.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>Huyen’s analysis demonstrates that successful AI agents emerge from the careful orchestration of three key elements: strategic tool selection, sophisticated planning mechanisms, and robust evaluation frameworks. While tools dramatically enhance agent capabilities -as evidenced by Chameleon’s significant performance improvements- their effectiveness depends on thoughtful curation, balancing between Toolformer’s minimal approach and Gorilla’s extensive API integration. The integration of planning frameworks like ReAct and Reflexion shows how combining reasoning with action and incorporating systematic reflection can enhance agent performance. However, as an emerging field without established theoretical frameworks, significant challenges remain in tool selection, planning efficiency, and error management. Future developments will focus on agent framework evaluation and memory systems for handling information beyond context limits, while maintaining the delicate balance between capability and control that Huyen emphasises throughout her analysis.</p>]]></content><author><name></name></author><category term="ai" /><category term="llm" /><category term="prompt-engineering" /><category term="system-prompts" /><category term="evaluation" /><category term="best-practices" /><category term="toolchain" /><category term="machine-learning" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</ol>]]></content><author><name></name></author><category term="machine-learning" /><category term="best-practices" /><category term="mlops" /><category term="monitoring" /><category term="production" /><category term="quality-assurance" /><category term="data-science" /><category term="decision-making" /><summary type="html"><![CDATA[]]></summary></entry></feed>
