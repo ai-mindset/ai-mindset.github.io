@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-22T17:49:27+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">⏪ Making Data Transformations Reversible uith fasttransform</title><link href="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/" rel="alternate" type="text/html" title="⏪ Making Data Transformations Reversible uith fasttransform" /><published>2025-03-22T00:00:00+00:00</published><updated>2025-03-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations</id><content type="html" xml:base="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-23T11:25:27+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">😌 It Doesn’t Have to Be Crazy at Work</title><link href="http://0.0.0.0:4000/it-doesnt-have-to-be-crazy-at-work-37-signals/" rel="alternate" type="text/html" title="😌 It Doesn’t Have to Be Crazy at Work" /><published>2025-03-23T00:00:00+00:00</published><updated>2025-03-23T00:00:00+00:00</updated><id>http://0.0.0.0:4000/it-doesnt-have-to-be-crazy-at-work-37-signals</id><content type="html" xml:base="http://0.0.0.0:4000/it-doesnt-have-to-be-crazy-at-work-37-signals/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In today’s hyperactive business environment, “crazy busy” has become a badge of honour. Endless workweeks, constant interruptions, and the expectation of instant responses have created workplaces where stress is the norm and burnout is inevitable. But does it have to be this way? Jason Fried and David Heinemeier-Hansson, the founders of Basecamp, argue emphatically that it doesn’t. In their book “<a href="https://basecamp.com/books/calm">It Doesn’t Have to Be Crazy at Work</a>” they present a compelling case for a calmer, more sustainable approach to work-one where companies can still be successful without sacrificing the well-being of their employees.<br />
+The authors, who have built a profitable business with minimal stress and reasonable working hours, dismiss the idea that growth-at-all-costs and around-the-clock work schedules are necessary for success. Instead, they advocate for what they call a “calm company” -an organisation that values sustainable workloads, reasonable expectations, sufficient rest, and focused productivity. Let’s dive into the key principles that can help transform a frantic workplace into a calm and productive environment.</p>
+
+<h2 id="the-calm-company-philosophy">The Calm Company Philosophy</h2>
+
+<h3 id="rethinking-time-and-attention">Rethinking Time and Attention</h3>
+
+<p>One of the core insights from the book is that modern workplaces have become “interruption factories” where meaningful work is nearly impossible. Offices chop the workday into tiny fragments -fifteen minutes here, ten minutes there-with meetings, calls, and constant distractions preventing sustained focus.<br />
+The authors argue that 8-hour workdays and 40-hour workweeks are plenty of time to accomplish great work, provided that time is actually protected. Instead of measuring commitment by hours spent at a desk, a calm company measures results and respects boundaries. Basecamp’s philosophy is straightforward: “Work 40 hours a week, then stop. No all-nighters, no weekends”.<br />
+To protect time, the book advocates for asynchronous communication whenever possible. Not everything requires an immediate response. By promoting a culture of eventual response rather than instant reaction, companies give employees the space for deep, focused work. This might mean designating “library rules” in the office-quiet, focused concentration-and setting clear boundaries for when real-time collaboration is truly necessary.</p>
+
+<h3 id="eliminate-excessive-mms-meetings-and-managers">Eliminate Excessive M&amp;Ms: Meetings and Managers</h3>
+
+<p>Meetings and micromanagement are two primary culprits behind workplace chaos. The authors are particularly critical of the modern meeting culture, noting that “a one-hour meeting with ten people isn’t a one-hour meeting -it’s a ten-hour meeting”. Before calling a meeting, they suggest asking whether it’s truly worth pulling multiple people away from their focused work.<br />
+Similarly, the book challenges managers to stop “managing the chairs” (monitoring when people arrive and leave) and instead focus on managing the work itself. This means setting clear expectations, providing necessary resources, removing obstacles, and then trusting people to execute without constant supervision.<br />
+At Basecamp, they’ve institutionalised practices like “office hours” for experts, where rather than being constantly available for interruption, they designate specific times when they’re available for questions. They’ve also moved away from real-time chat for important discussions, recognising that this medium often creates an unhealthy expectation of immediate response.</p>
+
+<h3 id="reasonable-expectations-and-focused-scope">Reasonable Expectations and Focused Scope</h3>
+
+<p>Perhaps the most radical departure from conventional business thinking is the authors’ approach to goals and expectations. They proudly declare: “We don’t do goals at Basecamp.” Instead of chasing arbitrary targets, they focus on doing excellent work consistently and sustainably.<br />
+The book introduces the concept of “dreadlines” versus deadlines. A dreadline appears when a deadline is paired with an ever-expanding scope. To combat this, Basecamp keeps deadlines fixed but makes scope flexible. Projects can only get smaller over time, not larger, ensuring teams can deliver quality work without burning out.<br />
+This means being deliberate about what not to do. As the authors put it: “Having less to do isn’t a problem, it’s an advantage”. They suggest developing the skill of “narrowing as you go” -starting projects with exploration, then gradually focusing in on what’s truly important as you approach the deadline.<br />
+Basecamp also embraces the “disagree and commit” approach to decision-making. Rather than requiring consensus, which can lead to endless debate, someone makes the final call after everyone has been heard-and then the whole team commits to making it work, even if some initially disagreed.</p>
+
+<h3 id="building-a-healthy-remote-work-culture">Building a Healthy Remote Work Culture</h3>
+
+<p>Remote work features prominently in Basecamp’s approach to building a calm company. By removing the expectation that everyone must be in the same physical space, they’ve created more flexibility while maintaining productivity.<br />
+However, they emphasise that remote work requires intentionality. Teams need sufficient overlap in working hours, clear communication practices, and strong writing skills. In fact, the authors consider good writing essential for remote teams, as it eliminates ambiguity and creates a clear record of decisions and rationales.<br />
+The authors also address the concern that remote work might lead to isolation or disconnection. They recommend regular in-person meetups and maintaining a strong company culture based on shared values and respect, not forced socialisation or perks designed to keep people at the office longer.</p>
+
+<h3 id="hiring-and-benefits-that-support-life-outside-work">Hiring and Benefits That Support Life Outside Work</h3>
+
+<p>Basecamp’s approach to hiring focuses on finding talented people who value calm productivity over chaotic hustle. Their compensation philosophy is refreshingly straightforward: equal pay for equal work, regardless of location, with no complex negotiation processes.<br />
+Their benefits are specifically designed to encourage life beyond work. Rather than offering free meals to keep employees in the office longer, they provide benefits that help people disconnect -like paid sabbaticals, summer hours (32-hour workweeks from May through August), and even covering the cost of employees’ vacations. This reinforces their belief that the best workers are well-rested ones with rich lives outside the office.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>“It Doesn’t Have to Be Crazy at Work” presents a refreshing alternative to the burnout culture that pervades much of today’s business world. The calm company model isn’t about doing less or lowering standards -it’s about working smarter, focusing on what truly matters, and creating sustainable conditions where people can do their best work without sacrificing their health and happiness.</p>
+
+<p>The key takeaways from the book include:</p>
+
+<ol>
+  <li>Protect people’s time and attention by eliminating unnecessary interruptions</li>
+  <li>Stick to reasonable work hours (40 hours per week is plenty)</li>
+  <li>Replace constant meetings with more thoughtful, asynchronous communication</li>
+  <li>Focus on the quality of work rather than hours logged</li>
+  <li>Keep deadlines fixed but be flexible about scope</li>
+  <li>Build a culture of trust where remote work can thrive</li>
+  <li>Be intentional about what you say no to</li>
+</ol>
+
+<p>As the authors suggest, “calm is contagious” -and so is crazy. By choosing calm, companies can create environments where employees thrive, creativity flourishes, and sustainable success becomes possible. The choice, as they say, is yours.</p>]]></content><author><name></name></author><category term="37signals" /><category term="advantage" /><category term="best-practices" /><category term="decision-making" /><category term="business-value" /><category term="slow-down" /><category term="on-boarding" /><category term="remote-work" /><category term="productivity" /><category term="company-culture" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">⏪ Making Data Transformations Reversible uith fasttransform</title><link href="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/" rel="alternate" type="text/html" title="⏪ Making Data Transformations Reversible uith fasttransform" /><published>2025-03-22T00:00:00+00:00</published><updated>2025-03-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations</id><content type="html" xml:base="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -232,12 +287,12 @@ Is it perfect? No. But it’s the most compelling alternative I’ve seen so far
 
 <h2 id="introduction">Introduction</h2>
 
-<p>The last decade has witnessed the meteoric rise of cloud computing, with organisations large and small migrating their data, applications, and infrastructure to public cloud environments. The promises were compelling: reduced capital expenditure, unlimited scalability, enhanced flexibility, and access to cutting-edge technologies without the overhead of managing physical infrastructure. However, a notable countertrend has emerged in recent years – cloud repatriation. This phenomenon, sometimes referred to as “reverse cloud migration,” involves moving workloads, applications, and data back from public cloud environments to on-premises data centres, private clouds, or hybrid setups (<a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International, 2023</a>). I’ve previously explored this topic in my article <a href="/cloud-repatriation/">The On-Prem Comeback (aka Cloud Repatriation)</a>, where I introduced the basic concepts and early examples of this trend.<br />
+<p>The last decade has witnessed the meteoric rise of cloud computing, with organisations large and small migrating their data, applications, and infrastructure to public cloud environments. The promises were compelling: reduced capital expenditure, unlimited scalability, enhanced flexibility, and access to cutting-edge technologies without the overhead of managing physical infrastructure. However, a notable countertrend has emerged in recent years -cloud repatriation. This phenomenon, sometimes referred to as “reverse cloud migration,” involves moving workloads, applications, and data back from public cloud environments to on-premises data centres, private clouds, or hybrid setups (<a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International, 2023</a>). I’ve previously explored this topic in my article <a href="/cloud-repatriation/">The On-Prem Comeback (aka Cloud Repatriation)</a>, where I introduced the basic concepts and early examples of this trend.<br />
 This article explores the growing cloud repatriation movement, examining why organisations and individuals are reconsidering their cloud-first strategies, the key drivers behind these decisions, and how they’re implementing these transitions to achieve more balanced and optimised IT infrastructures.</p>
 
 <h2 id="the-scale-of-the-cloud-repatriation-movement">The Scale of the Cloud Repatriation Movement</h2>
 
-<p>The repatriation trend is not isolated but represents a significant shift in how organisations approach their IT infrastructure strategy. According to a 2021 survey by IDC cited by <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a>, 80% of organisations reported repatriating workloads or data from public cloud environments. More recent data from the end of 2024 showed that 86% of CIOs planned to move some public cloud workloads back to private cloud or on-premises – the highest on record for the Barclays CIO Survey (<a href="https://www.puppet.com/blog/cloud-repatriation">Puppet, 2025</a>).<br />
+<p>The repatriation trend is not isolated but represents a significant shift in how organisations approach their IT infrastructure strategy. According to a 2021 survey by IDC cited by <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a>, 80% of organisations reported repatriating workloads or data from public cloud environments. More recent data from the end of 2024 showed that 86% of CIOs planned to move some public cloud workloads back to private cloud or on-premises -the highest on record for the Barclays CIO Survey (<a href="https://www.puppet.com/blog/cloud-repatriation">Puppet, 2025</a>).<br />
 A recent survey by Rackspace found that nearly seven in 10 companies (69%) have moved at least some applications off the cloud and back to on-premise systems or private clouds (<a href="https://www.zdnet.com/article/why-some-companies-are-backing-away-from-the-public-cloud/">ZDNet, 2025</a>).<br />
 It’s important to note that this doesn’t represent a wholesale abandonment of cloud computing. Only about 8% of organisations are moving their entire workloads off the cloud, according to an October 2024 IDC survey (<a href="https://www.puppet.com/blog/cloud-repatriation">Puppet, 2025</a>). Most are selectively repatriating specific workloads while maintaining others in the cloud, resulting in more nuanced, hybrid approaches to IT infrastructure.</p>
 
@@ -246,24 +301,24 @@ It’s important to note that this doesn’t represent a wholesale abandonment o
 <h3 id="cost-optimisation">Cost Optimisation</h3>
 
 <p>While the cloud initially promised cost savings through reduced capital expenditure and operational flexibility, many organisations have experienced what industry experts call “bill shock” as their cloud usage scales. According to <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a>, “a Gartner study predicts that through 2024, 60% of infrastructure and operations leaders will encounter public cloud cost overruns that negatively impact their on-premises budgets”.<br />
-This cost concern is particularly relevant for organisations with predictable, high-volume workloads. According to <a href="https://www.rsa.com/resources/blog/identity-governance-and-administration/cloud-repatriation-why-enterprise-it-is-returning-from-the-cloud/">RSA</a>, the company 37Signals announced that its ‘cloud exit’ would save more than $10 million over five years. Similarly, a 2022 report by Andreessen Horowitz found that repatriation of cloud workloads could reduce cloud bills by 50% or more for some companies (<a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International, 2023</a>).<br />
-David Linthicum, a leading consultant and former CTO with Deloitte, attributes much of this cost issue to technical debt: “They didn’t refactor the applications to make them more efficient in running on the public cloud providers. So the public cloud providers, much like if we’re pulling too much electricity off the grid, just hit them with huge bills to support the computational and storage needs of those under-optimized applications” (<a href="https://www.zdnet.com/article/why-some-companies-are-backing-away-from-the-public-cloud/">ZDNet, 2025</a>).</p>
+This cost concern is particularly relevant for organisations with predictable, high-volume workloads. According to <a href="https://www.rsa.com/resources/blog/identity-governance-and-administration/cloud-repatriation-why-enterprise-it-is-returning-from-the-cloud/">RSA</a>, the company 37Signals announced that its “cloud exit” would save more than $10 million over five years. Similarly, a 2022 report by Andreessen Horowitz found that repatriation of cloud workloads could reduce cloud bills by 50% or more for some companies (<a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International, 2023</a>).<br />
+David Linthicum, a leading consultant and former CTO with Deloitte, attributes much of this cost issue to technical debt: “<em>They didn’t refactor the applications to make them more efficient in running on the public cloud providers. So the public cloud providers, much like if we’re pulling too much electricity off the grid, just hit them with huge bills to support the computational and storage needs of those under-optimized applications</em>” (<a href="https://www.zdnet.com/article/why-some-companies-are-backing-away-from-the-public-cloud/">ZDNet, 2025</a>).</p>
 
 <h3 id="performance-and-latency">Performance and Latency</h3>
 
 <p>Performance requirements are driving many repatriation decisions, particularly for applications requiring ultra-low latency. According to <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a>, “a study by the IEEE found that for certain AI workloads, on-premises GPU clusters outperformed cloud-based solutions by up to 30% in terms of performance per dollar”.<br />
-This performance concern is especially critical in fields like financial trading, scientific research, and manufacturing where latency can significantly impact outcomes. As <a href="https://www.computerweekly.com/feature/Cloud-repatriation-How-to-do-it-successfully">ComputerWeekly</a> notes, “time-sensitive data includes information that users need to access as rapidly as possible – think financial trading feeds – or where the application is sensitive to latency”.</p>
+This performance concern is especially critical in fields like financial trading, scientific research, and manufacturing where latency can significantly impact outcomes. As <a href="https://www.computerweekly.com/feature/Cloud-repatriation-How-to-do-it-successfully">ComputerWeekly</a> notes, “time-sensitive data includes information that users need to access as rapidly as possible -think financial trading feeds -or where the application is sensitive to latency”.</p>
 
 <h3 id="security-and-compliance">Security and Compliance</h3>
 
 <p>Security concerns and regulatory compliance requirements are powerful motivators for cloud repatriation. According to the Rackspace survey cited by <a href="https://www.zdnet.com/article/why-some-companies-are-backing-away-from-the-public-cloud/">ZDNet</a>, data security and compliance concerns were the most common reason for repatriation, cited by 50% of respondents. <br />
-The implementation of stringent regulations like GDPR has compelled many organisations to keep certain data within specific geographic boundaries. As <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a> highlights, “The Data Protection Commission reported a 59% increase in GDPR complaints in 2022, underscoring the importance of data sovereignty”.<br />
-Despite cloud providers’ significant security investments, many organisations prefer to maintain direct control over their most sensitive data. According to <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a>, “a 2023 Thales Cloud Security Study found that 45% of businesses have experienced a cloud-based data breach or failed audit in the past 12 months, highlighting ongoing security concerns”.</p>
+The implementation of stringent regulations like GDPR has compelled many organisations to keep certain data within specific geographic boundaries. As <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a> highlights, “<em>The Data Protection Commission reported a 59% increase in GDPR complaints in 2022, underscoring the importance of data sovereignty</em>”.<br />
+Despite cloud providers’ significant security investments, many organisations prefer to maintain direct control over their most sensitive data. According to <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a>, “<em>a 2023 Thales Cloud Security Study found that 45% of businesses have experienced a cloud-based data breach or failed audit in the past 12 months, highlighting ongoing security concerns</em>”.</p>
 
 <h3 id="control-and-vendor-lock-in">Control and Vendor Lock-in</h3>
 
 <p>The desire for greater control over hardware and software configurations, along with concerns about vendor lock-in, are also driving repatriation efforts. On-premises infrastructure offers more customisation possibilities that may not be available in public cloud environments.<br />
-Richard Robbins, founder of TheTechnologyVault.com, observes that “enterprises don’t like being dependent upon someone else’s cloud infrastructure” (<a href="https://www.zdnet.com/article/why-some-companies-are-backing-away-from-the-public-cloud/">ZDNet, 2025</a>). This concern is particularly acute among regulated industries such as financial institutions, which are “moving some or all of their web apps from the cloud back to on-prem or to hybrid setups” due to “vulnerability and downsides to cloud hosting” that make “executives feel nervous about not having more control”.</p>
+Richard Robbins, founder of TheTechnologyVault.com, observes that “<em>enterprises don’t like being dependent upon someone else’s cloud infrastructure</em>” (<a href="https://www.zdnet.com/article/why-some-companies-are-backing-away-from-the-public-cloud/">ZDNet, 2025</a>). This concern is particularly acute among regulated industries such as financial institutions, which are “<em>moving some or all of their web apps from the cloud back to on-prem or to hybrid setups</em>” due to “vulnerability and downsides to cloud hosting” that make “executives feel nervous about not having more control”.</p>
 
 <h2 id="the-emergence-of-balanced-approaches">The Emergence of Balanced Approaches</h2>
 
@@ -275,29 +330,29 @@ Richard Robbins, founder of TheTechnologyVault.com, observes that “enterprises
   <li>Maintain flexibility to adapt to changing business needs</li>
 </ul>
 
-<p>According to <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a>, “The hybrid cloud market is expected to grow from $85.3 billion in 2022 to $262.4 billion by 2027, according to MarketsandMarkets research”. Similarly, “Flexera’s 2023 State of the Cloud Report revealed that 71% of enterprises are pursuing a hybrid cloud strategy, combining public cloud, private cloud, and on-premises infrastructure”.</p>
+<p>According to <a href="https://blog.trginternational.com/cloud-repatriation-business-return-on-premises">TRG International</a>, “<em>The hybrid cloud market is expected to grow from $85.3 billion in 2022 to $262.4 billion by 2027, according to MarketsandMarkets research</em>”. Similarly, “<em>Flexera’s 2023 State of the Cloud Report revealed that 71% of enterprises are pursuing a hybrid cloud strategy, combining public cloud, private cloud, and on-premises infrastructure</em>”.</p>
 
 <h2 id="personal-cloud-repatriation">Personal Cloud Repatriation</h2>
 
 <p>The repatriation trend isn’t limited to enterprises. Individuals are also exploring self-hosting options for personal data.<br />
-For example, <a href="https://hachyderm.io/@Jeffrey04/114175854454606516">a fediverse user</a> recently posted about developing a self-hosted photo album application when faced with cloud storage limitations: “Being an enthusiastic photographer, my partner captured moments of us together. However, the increasing stack of photos is accelerating the imminent explosion of my cloud storage” (<a href="https://kitfucoda.medium.com/a-love-story-in-code-building-my-self-hosted-photo-album-b56a4e89ebdd">KitFu Coda, 2023</a>). This personal project highlights how individuals with technical skills can leverage idle hardware to create cost-effective alternatives to cloud storage services.<br />
-As <a href="https://kitfucoda.medium.com/a-love-story-in-code-building-my-self-hosted-photo-album-b56a4e89ebdd">they note</a>, “Self-hosting your own data is becoming a trend these days, and it is really not hard to get started”. This trend parallels the enterprise movement, with individuals seeking greater control, cost savings, and privacy for their personal data.</p>
+For example, <a href="https://hachyderm.io/@Jeffrey04/114175854454606516">a fediverse user</a> recently posted about developing a self-hosted photo album application when faced with cloud storage limitations: “<em>Being an enthusiastic photographer, my partner captured moments of us together. However, the increasing stack of photos is accelerating the imminent explosion of my cloud storage</em>” (<a href="https://kitfucoda.medium.com/a-love-story-in-code-building-my-self-hosted-photo-album-b56a4e89ebdd">KitFu Coda, 2023</a>). This personal project highlights how individuals with technical skills can leverage idle hardware to create cost-effective alternatives to cloud storage services.<br />
+As <a href="https://kitfucoda.medium.com/a-love-story-in-code-building-my-self-hosted-photo-album-b56a4e89ebdd">they note</a>, “<em>Self-hosting your own data is becoming a trend these days, and it is really not hard to get started</em>”. This trend parallels the enterprise movement, with individuals seeking greater control, cost savings, and privacy for their personal data.</p>
 
 <h2 id="planning-for-successful-repatriation">Planning for Successful Repatriation</h2>
 
 <p>For organisations considering cloud repatriation, careful planning is essential. Key considerations include:</p>
 
 <ol>
-  <li><strong>Workload Assessment</strong>: Not all workloads benefit equally from repatriation. <a href="https://www.computerweekly.com/feature/Cloud-repatriation-How-to-do-it-successfully">ComputerWeekly</a> advises that “broadly, repatriation might be the best option where data is sensitive, time sensitive or expensive to store in the cloud”.</li>
-  <li><strong>Infrastructure Preparation</strong>: Organisations must ensure they have the physical capacity, networking, power, and cooling capabilities to support repatriated workloads. According to <a href="https://www.computerweekly.com/feature/Cloud-repatriation-How-to-do-it-successfully">ComputerWeekly</a>, “a large repatriation project might be a prompt to reorganise the datacentre, perhaps by moving to newer equipment that can pack more storage into a single rack or that consumes less power”.</li>
-  <li><strong>Skills Assessment</strong>: <a href="https://www.computerweekly.com/feature/Cloud-repatriation-How-to-do-it-successfully">ComputerWeekly</a> notes the importance of having “enough staff to provision and manage a larger system” with the necessary “security and privacy skills needed to handle sensitive data” and “technical know-how to handle mission-critical, latency sensitive applications”.</li>
-  <li><strong>Future-Proofing</strong>: <a href="https://www.rsa.com/resources/blog/identity-governance-and-administration/cloud-repatriation-why-enterprise-it-is-returning-from-the-cloud/">RSA</a> emphasises the importance of maintaining flexibility: “Organizations should consider the long-term implications of repatriation for their overall IT strategy. This includes planning for future scalability, considering how repatriation fits into the broader digital transformation initiatives, and ensuring that the new infrastructure aligns with long-term business goals”.</li>
+  <li><strong>Workload Assessment</strong>: Not all workloads benefit equally from repatriation. <a href="https://www.computerweekly.com/feature/Cloud-repatriation-How-to-do-it-successfully">ComputerWeekly</a> advises that “<em>broadly, repatriation might be the best option where data is sensitive, time sensitive or expensive to store in the cloud</em>”.</li>
+  <li><strong>Infrastructure Preparation</strong>: Organisations must ensure they have the physical capacity, networking, power, and cooling capabilities to support repatriated workloads. According to <a href="https://www.computerweekly.com/feature/Cloud-repatriation-How-to-do-it-successfully">ComputerWeekly</a>, “<em>a large repatriation project might be a prompt to reorganise the datacentre, perhaps by moving to newer equipment that can pack more storage into a single rack or that consumes less power</em>”.</li>
+  <li><strong>Skills Assessment</strong>: <a href="https://www.computerweekly.com/feature/Cloud-repatriation-How-to-do-it-successfully">ComputerWeekly</a> notes the importance of having “<em>enough staff to provision and manage a larger system</em>” with the necessary “<em>security and privacy skills needed to handle sensitive data</em>” and “<em>technical know-how to handle mission-critical, latency sensitive applications</em>”.</li>
+  <li><strong>Future-Proofing</strong>: <a href="https://www.rsa.com/resources/blog/identity-governance-and-administration/cloud-repatriation-why-enterprise-it-is-returning-from-the-cloud/">RSA</a> emphasises the importance of maintaining flexibility: “<em>Organizations should consider the long-term implications of repatriation for their overall IT strategy. This includes planning for future scalability, considering how repatriation fits into the broader digital transformation initiatives, and ensuring that the new infrastructure aligns with long-term business goals</em>”.</li>
 </ol>
 
 <h2 id="conclusion">Conclusion</h2>
 
 <p>Cloud repatriation represents a maturing perspective on IT infrastructure strategy rather than a rejection of cloud computing. As organisations gain experience with cloud environments, they’re becoming more strategic about which workloads belong where, based on factors like cost, performance, security, and control.<br />
-The future likely belongs to balanced, hybrid approaches that leverage the strengths of both cloud and on-premises infrastructure. As <a href="https://www.puppet.com/blog/cloud-repatriation">Puppet</a> notes, “Cloud repatriation is not an endpoint, but rather a strategic tool in the ongoing evolution of enterprise IT. It empowers organizations to take control of their digital assets, enhance their security posture, and align their technology infrastructure with their business objectives”.<br />
+The future likely belongs to balanced, hybrid approaches that leverage the strengths of both cloud and on-premises infrastructure. As <a href="https://www.puppet.com/blog/cloud-repatriation">Puppet</a> notes, “<em>Cloud repatriation is not an endpoint, but rather a strategic tool in the ongoing evolution of enterprise IT. It empowers organizations to take control of their digital assets, enhance their security posture, and align their technology infrastructure with their business objectives</em>”.<br />
 For both organisations and individuals, the key is making informed decisions about where and how to deploy IT resources based on specific needs rather than following blanket “cloud-first” or “on-premises-first” policies. This nuanced approach to infrastructure strategy will likely characterise the next phase of digital transformation as the industry moves beyond the initial hype cycles of cloud adoption.</p>]]></content><author><name></name></author><category term="cloud" /><category term="on-prem" /><category term="performance" /><category term="security" /><category term="mlops" /><category term="deployment" /><category term="best-practices" /><category term="data-science" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">⚙️ Turning Data Science into Real-World Value with The Drivetrain Framework</title><link href="http://0.0.0.0:4000/the-drivetrain-method/" rel="alternate" type="text/html" title="⚙️ Turning Data Science into Real-World Value with The Drivetrain Framework" /><published>2025-03-20T00:00:00+00:00</published><updated>2025-03-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/the-drivetrain-method</id><content type="html" xml:base="http://0.0.0.0:4000/the-drivetrain-method/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
@@ -839,137 +894,4 @@ Credit for the SQLite idea goes to <a href="https://bsky.app/profile/simonwillis
 
 <h2 id="conclusion">Conclusion</h2>
 <p>The key takeaway isn’t about predicting AI’s future -it’s about preparing for it intelligently. Howard’s message is: success in the AI era won’t come from perfect predictions or traditional career paths. Instead, it will come from practical engagement, continuous learning, and the ability to combine domain expertise with AI capabilities. As he puts it, those who master this combination will have “superpowers” compared to those who don’t adapt.<br />
-The most valuable insight? Even AI experts can’t predict AI’s future reliably. The best strategy is to engage deeply with the technology while maintaining a grounded, practical approach to learning and application. The future belongs to the tinkerers, the experimenters, and those willing to learn from both past and present.</p>]]></content><author><name></name></author><category term="til" /><category term="ai" /><category term="fast-ai" /><category term="llm" /><category term="machine-learning" /><category term="best-practices" /><category term="decision-making" /><category term="evolution" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp;amp; ML with Go</title><link href="http://0.0.0.0:4000/go-pragmatic-modern-development/" rel="alternate" type="text/html" title="🚀 A Minimal, Pragmatic Approach to Production-Ready AI &amp;amp; ML with Go" /><published>2025-01-26T00:00:00+00:00</published><updated>2025-01-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/go-pragmatic-modern-development</id><content type="html" xml:base="http://0.0.0.0:4000/go-pragmatic-modern-development/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-
-<p>Modern software development often involves navigating complex toolchains, opinionated frameworks, and resource-heavy development environments. Many languages require extensive configuration, multiple runtime dependencies, and introduce significant cognitive overhead through their vast feature sets and multiple approaches to solving the same problem. Node.js, JVM languages, and even Python with its extensive ecosystem can lead to analysis paralysis, code inhomogeneity and team disagreements over tooling and style.<br />
-Go offers a refreshing alternative. With a language specification under 50 pages, a consolidated toolchain, and a “batteries included” approach, it provides a low-cognitive-overhead solution for developers seeking simplicity and productivity. Its zero-config philosophy, coupled with built-in formatting (<code class="language-plaintext highlighter-rouge">go fmt</code>), linting<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> (<code class="language-plaintext highlighter-rouge">go vet</code>), and testing tools, promotes code uniformity and reduces team friction over stylistic choices. The sizeable Go community is centralised, using Slack in this case, which serves as a focal point for communication, support, networking, and staying informed about the latest developments.<br />
-While Go may lack a REPL as sophisticated as IPython or the Julia interactive environment, this limitation encourages proper Test-Driven Development practices rather than the post-implementation testing often seen in REPL-heavy environments. Tools like <a href="https://github.com/fatih/vim-go">vim-go</a>’s <code class="language-plaintext highlighter-rouge">:GoRun</code> and Go Playground provide sufficient interactive development capabilities for most use cases.<br />
-Below I’m collecting some thoughts on attractive aspects of Go I’ve discerned so far and how they compare with other languages I’ve considered. The list of Go’s features is far from complete, for example I’ve not mentioned goroutines among others.</p>
-
-<h2 id="python-vs-go-libraries-comparison">Python vs Go Libraries Comparison</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Domain</th>
-      <th>Python Library</th>
-      <th>Go Equivalent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Numerical Computing</td>
-      <td><a href="https://github.com/numpy/numpy">NumPy</a></td>
-      <td><a href="https://github.com/gonum/gonum">gonum</a></td>
-    </tr>
-    <tr>
-      <td>Data Processing</td>
-      <td><a href="https://github.com/pandas-dev/pandas">Pandas</a></td>
-      <td><a href="https://github.com/go-gota/gota">gota</a></td>
-    </tr>
-    <tr>
-      <td>Visualisation</td>
-      <td><a href="https://github.com/plotly/plotly.py">Plotly</a></td>
-      <td><a href="https://github.com/MetalBlueberry/go-plotly">go-plotly</a></td>
-    </tr>
-    <tr>
-      <td>Gradient Boosting</td>
-      <td><a href="https://github.com/dmlc/xgboost">XGBoost</a></td>
-      <td><a href="https://github.com/Unity-Technologies/go-xgboost">go-xgboost</a></td>
-    </tr>
-    <tr>
-      <td>Machine Learning</td>
-      <td><a href="https://github.com/scikit-learn/scikit-learn">Scikit-Learn</a></td>
-      <td><a href="https://github.com/sjwhitworth/golearn">golearn</a></td>
-    </tr>
-    <tr>
-      <td>Deep Learning</td>
-      <td><a href="https://github.com/tensorflow/tensorflow">TensorFlow</a><br /><a href="https://github.com/pytorch/pytorch">PyTorch</a></td>
-      <td><a href="https://github.com/galeone/tfgo">tfgo</a><br /><a href="https://github.com/sugarme/gotch">gotch</a></td>
-    </tr>
-    <tr>
-      <td>LLM Development</td>
-      <td><a href="https://github.com/langchain-ai/langchain">LangChain</a></td>
-      <td><a href="https://github.com/tmc/langchaingo">langchaingo</a></td>
-    </tr>
-    <tr>
-      <td>Vector Search</td>
-      <td><a href="https://github.com/weaviate/weaviate-python-client">Weaviate Client</a></td>
-      <td><a href="https://github.com/weaviate/weaviate-python-client">Weaviate Go Client</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<p><em>Update: <a href="https://github.com/Promacanthus/awesome-golang-ai">Awesome Golang.ai</a> is a very nice curated list of AI-related Go libraries worth checking.</em></p>
-
-<h2 id="development-experience">Development Experience</h2>
-
-<p>Go’s tooling is exceptional. With <a href="https://github.com/fatih/vim-go">vim-go</a> in <a href="https://neovim.io/">Neovim</a>, you get immediate access to formatting, linting, and code navigation. Unlike JVM languages or JavaScript frameworks that may require more complex build configurations, Go projects maintain a simple, predictable structure thanks to <code class="language-plaintext highlighter-rouge">go mod</code>. The <code class="language-plaintext highlighter-rouge">go fmt</code> command -triggered on save by default- enforces consistent code style eliminating debates over formatting and best practices, while <code class="language-plaintext highlighter-rouge">go vet</code> catches common mistakes early.</p>
-
-<h2 id="error-handling-done-right">Error Handling Done Right</h2>
-
-<p>Go’s approach to error handling initially feels verbose:</p>
-
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">someFunction</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">err</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>But this explicitness pays dividends. By treating errors as values that must be handled, Go forces developers to think about failure cases upfront. The <code class="language-plaintext highlighter-rouge">defer</code> keyword complements this by ensuring clean-up code runs regardless of errors:</p>
-
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">file</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">err</span>
-<span class="p">}</span>
-<span class="k">defer</span> <span class="n">file</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h2 id="mlai-capabilities">ML/AI Capabilities</h2>
-
-<p>While Go isn’t the primary choice for ML/AI experimentation, its simplicity and performance make it excellent for production deployments. Its standard library and growing ecosystem provide solid foundations for numerical computing (<a href="https://github.com/gonum/gonum">gonum</a>), data processing (<a href="https://github.com/go-gota/gota">gota</a>), and ML/AI applications (<a href="https://github.com/gorgonia/gorgonia">Gorgonia</a>, <a href="https://github.com/galeone/tfgo">tfgo</a>, <a href="https://github.com/sugarme/gotch">gotch</a>). The language’s focus on simplicity and performance makes it particularly suitable for model serving and inference workloads.</p>
-
-<h2 id="language-design">Language Design</h2>
-
-<p>Go’s refreshingly concise specification (under 50 pages) contrasts sharply with other languages. Even the highly promising Zig, a younger language half of Go’s age, has a 74-page specification despite being positioned as a simpler low-level language.</p>
-<figure>
-    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/Zig%20language%20spec.png" width="80%" height="80%" />
-    <figcaption>Zig's language spec</figcaption>
-</figure>
-
-<p>Go’s intentionally limited feature set and single way of solving problems promote maintainable, uniform code that’s easier to reason about and review, as reflected in its compact language spec.</p>
-<figure>
-    <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/Go%20language%20spec.png" width="80%" height="80%" />
-    <figcaption>Go's language spec</figcaption>
-</figure>
-
-<p>For ML engineers and developers seeking a reliable, low-overhead language that excels at building robust, production-ready applications, Go offers a compelling choice. While it won’t replace Python for rapid prototyping and research, its simplicity, performance, and consolidated toolchain make it an very compelling addition to any developer’s toolkit.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>To my eyes, Go stands out as a pragmatic choice for modern development through its key strengths:</p>
-
-<ul>
-  <li>Minimal cognitive overhead with a 47-page specification</li>
-  <li>Zero-config toolchain including formatting, testing, and package management</li>
-  <li>Centralised community, providing a single-source of truth</li>
-  <li>Enforced error handling and clean resource management via <code class="language-plaintext highlighter-rouge">defer</code></li>
-  <li>Growing ML/AI ecosystem comparable to Python’s established libraries</li>
-  <li>Cross-platform compilation and efficient garbage collection</li>
-  <li>Single, clear way to solve problems, reducing team friction</li>
-  <li>Lightweight development environment compared to JVM, .NET, BEAM or Node.js</li>
-</ul>
-
-<p>While Python remains dominant for ML/AI research, prototyping and -frequently- production, Go excels in production environments where code maintainability, performance, and team collaboration are crucial. Its intentionally limited feature set, combined with a comprehensive standard library and maturing ML ecosystem, makes it a very attractive choice for developers seeking simplicity without sacrificing capability.<br />
-The language’s design philosophy strongly aligns with my needs as a Data professional looking to reduce tooling complexity and maintain consistent, reliable codebases. Go’s lightweight yet rich toolchain allows writing safe, efficient AI and data-oriented code based on simplicity and reliability. This refreshing alternative in today’s complex development landscape has strongly tempted me to start moving my practice to Go’s more principled approach.</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Vet is -in essence- a linter, since it helps improve code quality. Quoting Go’s <a href="https://go.dev/src/cmd/vet/doc.go">vet doc</a> <em>“Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string. Vet uses heuristics that do not guarantee all reports are genuine problems, but it can find errors not caught by the compilers.”</em> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="go" /><category term="llm" /><category term="minimal" /><category term="machine-learning" /><category term="toolchain" /><category term="zero-config" /><category term="code-quality" /><category term="cross-platform" /><category term="production" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+The most valuable insight? Even AI experts can’t predict AI’s future reliably. The best strategy is to engage deeply with the technology while maintaining a grounded, practical approach to learning and application. The future belongs to the tinkerers, the experimenters, and those willing to learn from both past and present.</p>]]></content><author><name></name></author><category term="til" /><category term="ai" /><category term="fast-ai" /><category term="llm" /><category term="machine-learning" /><category term="best-practices" /><category term="decision-making" /><category term="evolution" /><summary type="html"><![CDATA[]]></summary></entry></feed>
