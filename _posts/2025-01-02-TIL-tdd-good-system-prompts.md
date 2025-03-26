@@ -2,7 +2,7 @@
 layout: post
 title: "💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts"
 date: 2025-01-02
-tags: [ai, llm, til, prompt-engineering, testing, best-practices, evaluation, machine-learning, ai-alignment, system-prompts]
+tags: [ai, llm, til, prompt-engineering, testing, best-practices, evaluation, machine-learning, system-prompts]
 ---
 <!--more-->
 
