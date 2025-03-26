@@ -2,7 +2,7 @@
 layout: post
 title: "😌 It Doesn't Have to Be Crazy at Work"
 date: 2025-03-23
-tags: [37signals, advantage, best-practices, decision-making, business-value, slow-down, on-boarding, remote-work, productivity, company-culture]
+tags: [37signals, advantage, best-practices, decision-making, business-value, slow-down, onboarding, remote-work, productivity, company-culture]
 ---
 <!--more-->
 
