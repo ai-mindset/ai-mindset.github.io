@@ -2,7 +2,7 @@
 layout: post
 title: "🔍 Understanding LLM Interpretability"
 date: 2025-01-09
-tags: [ai, llm, machine-learning, neural-network, model-governance, ai-alignment, interpretability]
+tags: [ai, llm, machine-learning, neural-network, model-governance, interpretability]
 ---
 <!--more-->
 

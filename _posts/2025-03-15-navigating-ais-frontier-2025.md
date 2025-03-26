@@ -2,7 +2,7 @@
 layout: post
 title: "🤖 The State of AI Agents in 2025"
 date: 2025-03-15
-tags: [ai, machine-learning, llm, ai-alignment, best-practices, evaluation, prompt-engineering, decision-making]
+tags: [ai, machine-learning, llm, best-practices, evaluation, prompt-engineering, decision-making]
 ---
 <!--more-->
 
