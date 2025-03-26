@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "⏪ Making Data Transformations Reversible uith fasttransform"
+title: "⏪ Making Data Transformations Reversible with fasttransform"
 date: 2025-03-22
 tags: [machine-learning, data-processing, fast-ai, python, data-science, optimisation, best-practices, interpretability]
 ---
