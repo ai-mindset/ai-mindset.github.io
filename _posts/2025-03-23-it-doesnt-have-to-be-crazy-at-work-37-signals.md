@@ -2,7 +2,7 @@
 layout: post
 title: "😌 It Doesn't Have to Be Crazy at Work"
 date: 2025-03-23
-tags: [37signals, advantage, best-practices, decision-making, business-value, slow-down, on-boarding, remote-work, productivity, company-culture]
+tags: [37signals, advantage, best-practices, decision-making, business-value, slow-down, onboarding, remote-work, productivity, company-culture]
 ---
 <!--more-->
 
@@ -36,7 +36,7 @@ Basecamp also embraces the "disagree and commit" approach to decision-making. Ra
 
 Remote work features prominently in Basecamp's approach to building a calm company. By removing the expectation that everyone must be in the same physical space, they've created more flexibility while maintaining productivity.  
 However, they emphasise that remote work requires intentionality. Teams need sufficient overlap in working hours, clear communication practices, and strong writing skills. In fact, the authors consider good writing essential for remote teams, as it eliminates ambiguity and creates a clear record of decisions and rationales.  
-The authors also address the concern that remote work might lead to isolation or disconnection. They recommend regular in-person meetups and maintaining a strong company culture based on shared values and respect, not forced socialisation or perks designed to keep people at the office longer.
+The authors also address the concern that remote work might lead to isolation or disconnection. They recommend regular in-person meetups[^1] and maintaining a strong company culture based on shared values and respect, not forced socialisation or perks designed to keep people at the office longer.
 
 ### Hiring and Benefits That Support Life Outside Work
 
@@ -58,3 +58,6 @@ The key takeaways from the book include:
 7. Be intentional about what you say no to
 
 As the authors suggest, "calm is contagious" -and so is crazy. By choosing calm, companies can create environments where employees thrive, creativity flourishes, and sustainable success becomes possible. The choice, as they say, is yours.
+
+---
+[^1]: Reasonable adjustments must be considered for those who are not able to travel far due to health, family or other reasons beyond their control. It is possible to build and maintain a strong culture that does not necessitate travelling, or at least not travelling often or far, if circumstances don't allow. 

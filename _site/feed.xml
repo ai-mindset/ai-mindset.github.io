@@ -1,8 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-25T22:11:46+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">😌 It Doesn’t Have to Be Crazy at Work</title><link href="http://0.0.0.0:4000/it-doesnt-have-to-be-crazy-at-work-37-signals/" rel="alternate" type="text/html" title="😌 It Doesn’t Have to Be Crazy at Work" /><published>2025-03-23T00:00:00+00:00</published><updated>2025-03-23T00:00:00+00:00</updated><id>http://0.0.0.0:4000/it-doesnt-have-to-be-crazy-at-work-37-signals</id><content type="html" xml:base="http://0.0.0.0:4000/it-doesnt-have-to-be-crazy-at-work-37-signals/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-26T16:23:41+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🌐 Remote: Office Not Required</title><link href="http://0.0.0.0:4000/remote-office-not-required/" rel="alternate" type="text/html" title="🌐 Remote: Office Not Required" /><published>2025-03-26T00:00:00+00:00</published><updated>2025-03-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/remote-office-not-required</id><content type="html" xml:base="http://0.0.0.0:4000/remote-office-not-required/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
-<p>In today’s hyperactive business environment, “crazy busy” has become a badge of honour. Endless workweeks, constant interruptions, and the expectation of instant responses have created workplaces where stress is the norm and burnout is inevitable. But does it have to be this way? Jason Fried and David Heinemeier-Hansson, the founders of Basecamp, argue emphatically that it doesn’t. In their book “<a href="https://basecamp.com/books/calm">It Doesn’t Have to Be Crazy at Work</a>” they present a compelling case for a calmer, more sustainable approach to work -one where companies can still be successful without sacrificing the well-being of their employees.<br />
+<p>In the rapidly evolving landscape of modern business, few changes have been as transformative as the shift toward remote work. In their insightful book “<a href="https://basecamp.com/books#remote">Remote: Office Not Required</a>”, <a href="https://world.hey.com/jason">Jason Fried</a> and <a href="https://world.hey.com/david">David Heinemeier Hansson</a> of <a href="https://en.wikipedia.org/w/index.php?title=Basecamp_(company)&amp;redirect=no">Basecamp</a> (now <a href="https://en.wikipedia.org/wiki/37signals">37signals</a>) present a compelling case for why working remotely isn’t just a viable option—it’s often superior to the traditional office-based model.<br />
+Written in 2013, well before the pandemic forced companies to adopt remote work en masse, the book now seems prophetic. Fried and Hansson argue that remote work is not a fleeting trend but an inevitable evolution in how businesses operate. The authors, who built their successful software company with team members scattered across the globe, offer practical advice for implementing and thriving in a remote work environment.<br />
+Let’s explore the core principles of “Remote” that can help businesses and workers navigate this new reality.</p>
+
+<h2 id="why-remote-work-makes-sense">Why Remote Work Makes Sense</h2>
+
+<h3 id="the-office-paradox">The Office Paradox</h3>
+
+<p>One of the book’s most compelling arguments is that traditional offices often hinder productivity rather than enhance it. Fried and Hansson point out that when people need to get serious work done, they rarely cite the office as their preferred location. Instead, they choose early mornings, late evenings, or weekends—times when interruptions are minimal.<br />
+Offices have become “interruption factories” where meaningful work is chopped into small, ineffective chunks. Meetings, impromptu desk visits, and constant noise create an environment where deep, focused work becomes nearly impossible. Remote work, by contrast, allows people to create their own distraction-free environments.</p>
+
+<h3 id="the-end-of-commuting">The End of Commuting</h3>
+
+<p>Another significant advantage of remote work is eliminating the commute. Beyond the obvious time savings, research shows that long commutes correlate with increased obesity, stress, neck and back pain, and even higher divorce rates. The authors calculate that an average commute consumes 300-400 hours per year—time that could be redirected toward productive work or personal well-being.</p>
+
+<h3 id="access-to-global-talent">Access to Global Talent</h3>
+
+<p>Perhaps most importantly, remote work dramatically expands the talent pool. Instead of limiting hiring to a specific geographical area, companies can recruit from anywhere in the world. This not only increases the chances of finding exceptional talent but also naturally leads to a more diverse workforce with varied perspectives.</p>
+
+<h2 id="making-remote-work-work">Making Remote Work Work</h2>
+
+<h3 id="communication-the-key-to-success">Communication: The Key to Success</h3>
+
+<p>Effective remote work hinges on communication. The book advocates for a blend of synchronous and asynchronous communication methods:</p>
+
+<ol>
+  <li><strong>Overlap Time</strong>: Ensure team members have at least 4 hours of overlap in their workdays to allow for real-time collaboration when needed.</li>
+  <li><strong>Screen Sharing</strong>: Use tools like WebEx, GoToMeeting, or Join.me to collaborate visually, making it feel more like sitting side-by-side.</li>
+  <li><strong>Transparent Documentation</strong>: Make information accessible to everyone regardless of time zone, eliminating bottlenecks. Basecamp, their project management tool, was designed specifically with this in mind.</li>
+  <li><strong>Virtual Water Cooler</strong>: Create spaces for casual conversation to maintain company culture and social connections. The authors used Campfire, their web-based chat service, for this purpose. While Campfire was discontinued as a standalone product, it was recently relaunched in 2024 as part of their ONCE line—allowing users to purchase and self-host the software on their own servers rather than subscribing to a SaaS model.</li>
+</ol>
+
+<h3 id="navigating-legal-and-financial-considerations">Navigating Legal and Financial Considerations</h3>
+
+<p>The book doesn’t shy away from the practical challenges of remote work. In the chapter “Taxes, accounting, laws, oh my!” the authors tackle the nuts and bolts of remote employment:</p>
+<ul>
+  <li><strong>Domestic remote work</strong> is relatively straightforward from a legal standpoint, with few complications beyond potential state tax implications if employees work across state lines.</li>
+  <li><strong>International remote work</strong> presents more challenges. The authors outline two main approaches: establishing a local office (expensive but comprehensive) or hiring people as contractors (simpler but with limitations on benefits and employment protections).</li>
+  <li><strong>For remote workers</strong>, they recommend setting up a personal company and billing as a contractor if working for an international company, though they acknowledge this isn’t a perfect solution.</li>
+</ul>
+
+<p>The authors are refreshingly honest here, acknowledging that running with a less-than-perfect legal setup is common practice—though they recommend consulting professionals for complex situations.</p>
+
+<h3 id="overcoming-common-objections">Overcoming Common Objections</h3>
+
+<p>Fried and Hansson systematically address the objections typically raised against remote work:</p>
+
+<ul>
+  <li><strong>“How do I know people are working?”</strong> If you can’t trust employees to work remotely, the issue is hiring, not location.</li>
+  <li><strong>“What about security?”</strong> With proper protocols, remote work can be just as secure as office work.</li>
+  <li><strong>“We need face-to-face meetings.”</strong> Most meetings can be conducted effectively online, and occasional in-person gatherings can satisfy the need for face time.</li>
+  <li><strong>“We need to maintain our culture.”</strong> Culture stems from values and actions, not physical proximity.</li>
+</ul>
+
+<h3 id="avoiding-remote-work-pitfalls">Avoiding Remote Work Pitfalls</h3>
+
+<p>The book doesn’t gloss over remote work’s challenges:</p>
+
+<ol>
+  <li><strong>Isolation</strong>: Combat loneliness by encouraging employees to work from co-working spaces or cafés occasionally.</li>
+  <li><strong>Overwork</strong>: Without clear boundaries, remote workers may struggle to disconnect. Managers should focus on results rather than hours worked and look out for signs of burnout.</li>
+  <li><strong>Communication Barriers</strong>: When face-to-face interaction is limited, misunderstandings can occur. Clear, thoughtful communication becomes even more crucial.</li>
+</ol>
+
+<h2 id="building-and-managing-a-remote-team">Building and Managing a Remote Team</h2>
+
+<h3 id="hiring-for-remote-work">Hiring for Remote Work</h3>
+
+<p>The authors emphasise that great remote workers possess certain qualities:</p>
+<ul>
+  <li><strong>Self-motivation</strong>: They can stay productive without direct supervision.</li>
+  <li><strong>Strong writing skills</strong>: Since much of remote communication is written, clear writing is essential.</li>
+  <li><strong>Results-oriented mindset</strong>: They focus on output rather than hours at a desk.</li>
+</ul>
+
+<h3 id="creating-trust-and-accountability">Creating Trust and Accountability</h3>
+
+<p>Rather than micromanaging, successful remote teams are built on trust. The book recommends:</p>
+<ul>
+  <li><strong>Focus on outputs</strong>: Judge work by what’s accomplished, not when or how it’s done.</li>
+  <li><strong>Regular check-ins</strong>: Brief one-on-ones help maintain connection without becoming burdensome.</li>
+  <li><strong>Eliminate roadblocks</strong>: Ensure remote workers have the authority and access they need to be effective.</li>
+</ul>
+
+<h3 id="the-remote-toolbox">The Remote Toolbox</h3>
+
+<p>The authors provide a practical “Remote Toolbox” with specific recommendations:</p>
+<ul>
+  <li><strong>Basecamp</strong>: Their own project management tool for organising tasks, discussions, and files in one central location.</li>
+  <li><strong>Video conferencing tools</strong>: Google Hangouts (now Google Meet) for group video calls with up to 10 people.</li>
+  <li><strong>Screen sharing</strong>: WebEx, GoToMeeting, and Join.me for collaboration and demonstrations.</li>
+  <li><strong>File sharing</strong>: Dropbox for keeping files synchronised across multiple devices and locations.</li>
+  <li><strong>Collaborative documents</strong>: Google Docs for real-time collaboration on text documents and spreadsheets.</li>
+  <li><strong>Co-working directories</strong>: Resources like Regus, LiquidSpace, Desktime, and the Coworking Wiki to find workspaces while travelling or to escape home office isolation.</li>
+</ul>
+
+<p>Many of these tools have evolved since the book’s publication, but the core functions they serve remain essential to remote work.</p>
+
+<h3 id="the-importance-of-meetups">The Importance of Meetups</h3>
+
+<p>Despite advocating for remote work, the authors stress the value of occasional in-person gatherings. At their company, they met at least twice yearly for 4-5 days<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. These meetups strengthen personal bonds, allow for intensive collaboration, and reinforce company culture.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>“Remote: Office Not Required” provides a comprehensive blueprint for implementing successful remote work practices. The authors convincingly argue that remote work offers numerous advantages: increased productivity, access to global talent, better work-life balance, and reduced overhead costs.<br />
+What makes this book particularly valuable is its grounding in real-world experience. Fried and Hansson have built their business on these principles and have navigated the challenges they describe.<br />
+As we continue to redefine what work means in the 21st century, the insights from “Remote” remain highly relevant. The authors envision a future where work is judged by results rather than location, where talent knows no geographical boundaries, and where both companies and employees enjoy greater freedom and flexibility.<br />
+For businesses looking to thrive in this new landscape, “Remote” offers not just philosophy but practical strategies for turning the challenges of distributed work into competitive advantages. The future of work is indeed remote—and this book provides an excellent road map for that journey.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Reasonable adjustments must be considered for those who are not able to travel far due to health, family or other reasons beyond their control. It is possible to build and maintain a strong culture that does not necessitate travelling, or at least not travelling often or far, if circumstances don’t allow. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="37signals" /><category term="remote-work" /><category term="advantage" /><category term="company-culture" /><category term="productivity" /><category term="best-practices" /><category term="decision-making" /><category term="onboarding" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">😌 It Doesn’t Have to Be Crazy at Work</title><link href="http://0.0.0.0:4000/it-doesnt-have-to-be-crazy-at-work-37-signals/" rel="alternate" type="text/html" title="😌 It Doesn’t Have to Be Crazy at Work" /><published>2025-03-23T00:00:00+00:00</published><updated>2025-03-23T00:00:00+00:00</updated><id>http://0.0.0.0:4000/it-doesnt-have-to-be-crazy-at-work-37-signals</id><content type="html" xml:base="http://0.0.0.0:4000/it-doesnt-have-to-be-crazy-at-work-37-signals/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In today’s hyperactive business environment, “crazy busy” has become a badge of honour. Endless workweeks, constant interruptions, and the expectation of instant responses have created workplaces where stress is the norm and burnout is inevitable. But does it have to be this way? <a href="https://world.hey.com/jason">Jason Fried</a> and <a href="https://world.hey.com/david">David Heinemeier Hansson</a>, the founders of <a href="https://en.wikipedia.org/w/index.php?title=Basecamp_(company)&amp;redirect=no">Basecamp</a> (renamed to <a href="https://en.wikipedia.org/wiki/37signals">37signals</a> since 2014), argue emphatically that it doesn’t. In their book “<a href="https://basecamp.com/books/calm">It Doesn’t Have to Be Crazy at Work</a>” they present a compelling case for a calmer, more sustainable approach to work -one where companies can still be successful without sacrificing the well-being of their employees.<br />
 The authors, who have built a profitable business with minimal stress and reasonable working hours, dismiss the idea that growth-at-all-costs and around-the-clock work schedules are necessary for success. Instead, they advocate for what they call a “calm company” -an organisation that values sustainable workloads, reasonable expectations, sufficient rest, and focused productivity. Let’s dive into the key principles that can help transform a frantic workplace into a calm and productive environment.</p>
 
 <h2 id="the-calm-company-philosophy">The Calm Company Philosophy</h2>
@@ -30,7 +150,7 @@ Basecamp also embraces the “disagree and commit” approach to decision-making
 
 <p>Remote work features prominently in Basecamp’s approach to building a calm company. By removing the expectation that everyone must be in the same physical space, they’ve created more flexibility while maintaining productivity.<br />
 However, they emphasise that remote work requires intentionality. Teams need sufficient overlap in working hours, clear communication practices, and strong writing skills. In fact, the authors consider good writing essential for remote teams, as it eliminates ambiguity and creates a clear record of decisions and rationales.<br />
-The authors also address the concern that remote work might lead to isolation or disconnection. They recommend regular in-person meetups and maintaining a strong company culture based on shared values and respect, not forced socialisation or perks designed to keep people at the office longer.</p>
+The authors also address the concern that remote work might lead to isolation or disconnection. They recommend regular in-person meetups<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> and maintaining a strong company culture based on shared values and respect, not forced socialisation or perks designed to keep people at the office longer.</p>
 
 <h3 id="hiring-and-benefits-that-support-life-outside-work">Hiring and Benefits That Support Life Outside Work</h3>
 
@@ -53,7 +173,16 @@ Their benefits are specifically designed to encourage life beyond work. Rather t
   <li>Be intentional about what you say no to</li>
 </ol>
 
-<p>As the authors suggest, “calm is contagious” -and so is crazy. By choosing calm, companies can create environments where employees thrive, creativity flourishes, and sustainable success becomes possible. The choice, as they say, is yours.</p>]]></content><author><name></name></author><category term="37signals" /><category term="advantage" /><category term="best-practices" /><category term="decision-making" /><category term="business-value" /><category term="slow-down" /><category term="on-boarding" /><category term="remote-work" /><category term="productivity" /><category term="company-culture" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">⏪ Making Data Transformations Reversible uith fasttransform</title><link href="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/" rel="alternate" type="text/html" title="⏪ Making Data Transformations Reversible uith fasttransform" /><published>2025-03-22T00:00:00+00:00</published><updated>2025-03-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations</id><content type="html" xml:base="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/"><![CDATA[<!--more-->
+<p>As the authors suggest, “calm is contagious” -and so is crazy. By choosing calm, companies can create environments where employees thrive, creativity flourishes, and sustainable success becomes possible. The choice, as they say, is yours.</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Reasonable adjustments must be considered for those who are not able to travel far due to health, family or other reasons beyond their control. It is possible to build and maintain a strong culture that does not necessitate travelling, or at least not travelling often or far, if circumstances don’t allow. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="37signals" /><category term="advantage" /><category term="best-practices" /><category term="decision-making" /><category term="business-value" /><category term="slow-down" /><category term="onboarding" /><category term="remote-work" /><category term="productivity" /><category term="company-culture" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">⏪ Making Data Transformations Reversible uith fasttransform</title><link href="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/" rel="alternate" type="text/html" title="⏪ Making Data Transformations Reversible uith fasttransform" /><published>2025-03-22T00:00:00+00:00</published><updated>2025-03-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations</id><content type="html" xml:base="http://0.0.0.0:4000/fasttransform-for-reversible-data-transformations/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -852,46 +981,4 @@ Credit for the SQLite idea goes to <a href="https://bsky.app/profile/simonwillis
       <p>Atomicity, Consistency, Isolation, Durability (<a href="https://en.wikipedia.org/wiki/ACID">ACID</a>), per Wikipedia, “<em>is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps. In the context of databases, a sequence of database operations that satisfies the ACID properties (which can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.</em>” <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="data-modeling" /><category term="data-processing" /><category term="data-science" /><category term="go" /><category term="minimal" /><category term="production" /><category term="python" /><category term="zero-config" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">💡 TIL: To Prepare for AI, Study History’s Tech Cycles</title><link href="http://0.0.0.0:4000/TIL-prepare-for-ai/" rel="alternate" type="text/html" title="💡 TIL: To Prepare for AI, Study History’s Tech Cycles" /><published>2025-02-09T00:00:00+00:00</published><updated>2025-02-09T00:00:00+00:00</updated><id>http://0.0.0.0:4000/TIL-prepare-for-ai</id><content type="html" xml:base="http://0.0.0.0:4000/TIL-prepare-for-ai/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p><a href="https://jeremy.fast.ai/">Jeremy Howard</a> isn’t just another voice in the AI conversation. As the creator of <a href="https://towardsdatascience.com/understanding-ulmfit-and-elmo-the-shift-towards-transfer-learning-in-nlp-b5d8e2e3f664">ULMFiT</a> (the algorithm that modern LLMs like ChatGPT are based on), founding researcher at <a href="https://course.fast.ai/">fast.ai</a>, and <a href="https://www.answer.ai/">Answer.AI</a>, Howard brings a unique perspective shaped by decades at the forefront of AI development. Recently, when <a href="https://xcancel.com/chrisbarber/status/1888037803566747942">asked about preparing for AI</a>, his response wasn’t about futuristic predictions or doomsday scenarios. Instead, he offered something more valuable: practical wisdom drawn from historical patterns.</p>
-
-<h2 id="why-this-matters-now">Why This Matters Now</h2>
-<p>We’re at a critical juncture with AI, similar to where we were with the internet in 1990. Just as the internet transformed every aspect of our lives, AI is poised to do the same. The difference? We can learn from history this time. Howard’s insights are particularly valuable because they come from someone who has not only observed but shaped these technological transitions.</p>
-
-<h2 id="key-insights-on-technology-evolution">Key Insights on Technology Evolution</h2>
-<p>Howard emphasises a crucial pattern: technology doesn’t just grow linearly. Each innovation follows a “hockey stick” growth curve before flattening into a sigmoid.</p>
-
-<center>
-    <figure>
-        <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/0a6eced3bce4c70b7ba715fe7873d1659ce2e9a9/images/hockey-stick-growth.png" width="80%" height="80%" />
-    <figcaption>Hockey stick growth</figcaption>
-    </figure>
-</center>
-
-<p>More importantly, new “hockey sticks” emerge unexpectedly in different areas. This pattern repeats “like clockwork” making historical understanding more valuable than future predictions.</p>
-
-<h2 id="practical-preparation-strategy">Practical Preparation Strategy</h2>
-<p>Rather than trying to predict AI’s future, Howard advocates for:</p>
-<ul>
-  <li>Embracing uncertainty while avoiding both dismissive fear and blind hype</li>
-  <li>Taking a counter-cyclical approach: pursuing opportunities others overlook</li>
-  <li>Investing months in mastering AI tools, accepting initial poor results as part of the learning process</li>
-  <li>Combining AI capabilities with deep domain expertise</li>
-  <li>Building practical knowledge through side projects and community engagement</li>
-</ul>
-
-<h2 id="the-education-perspective">The Education Perspective</h2>
-<p>Howard challenges traditional educational paths, suggesting alternatives:</p>
-<ul>
-  <li>Self-directed learning through resources like <a href="https://course.fast.ai/">fast.ai</a></li>
-  <li>Multiple side hustles to build practical experience</li>
-  <li>Community building with like-minded innovators</li>
-  <li>Using AI itself to learn technical skills</li>
-  <li>Developing both technical and human skills as a generalist</li>
-</ul>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>The key takeaway isn’t about predicting AI’s future -it’s about preparing for it intelligently. Howard’s message is: success in the AI era won’t come from perfect predictions or traditional career paths. Instead, it will come from practical engagement, continuous learning, and the ability to combine domain expertise with AI capabilities. As he puts it, those who master this combination will have “superpowers” compared to those who don’t adapt.<br />
-The most valuable insight? Even AI experts can’t predict AI’s future reliably. The best strategy is to engage deeply with the technology while maintaining a grounded, practical approach to learning and application. The future belongs to the tinkerers, the experimenters, and those willing to learn from both past and present.</p>]]></content><author><name></name></author><category term="til" /><category term="ai" /><category term="fast-ai" /><category term="llm" /><category term="machine-learning" /><category term="best-practices" /><category term="decision-making" /><category term="evolution" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</div>]]></content><author><name></name></author><category term="ai" /><category term="data-modeling" /><category term="data-processing" /><category term="data-science" /><category term="go" /><category term="minimal" /><category term="production" /><category term="python" /><category term="zero-config" /><summary type="html"><![CDATA[]]></summary></entry></feed>
