@@ -6,6 +6,7 @@ A personal blog focused on AI, and engineering best practices, built with Neovim
 
 ## Posts (Reverse Chronological Order)
 
+March 26, 2025 - [Remote Office Not Required](https://ai-mindset.github.io/remote-office-not-required/)
 March 23, 2025 - [It Doesnt Have To Be Crazy At Work 37 Signals](https://ai-mindset.github.io/it-doesnt-have-to-be-crazy-at-work-37-signals/)
 March 22, 2025 - [Git Friendly Literate Programming With Marimo](https://ai-mindset.github.io/git-friendly-literate-programming-with-marimo/)
 March 22, 2025 - [Fasttransform For Reversible Data Transformations](https://ai-mindset.github.io/fasttransform-for-reversible-data-transformations/)
@@ -20,8 +21,8 @@ January 26, 2025 - [Go Pragmatic Modern Development](https://ai-mindset.github.i
 January 21, 2025 - [Ml Best Practices](https://ai-mindset.github.io/ml-best-practices/)
 January 14, 2025 - [Agents Chip Huyen](https://ai-mindset.github.io/agents-chip-huyen/)
 January 10, 2025 - [TIL Model Soups](https://ai-mindset.github.io/TIL-model-soups/)
-January 9, 2025 - [Interpreting Llms](https://ai-mindset.github.io/interpreting-llms/)
 January 9, 2025 - [Sparse Autoencoders](https://ai-mindset.github.io/sparse-autoencoders/)
+January 9, 2025 - [Interpreting Llms](https://ai-mindset.github.io/interpreting-llms/)
 January 8, 2025 - [TIL Lin Alg Applied To Stats](https://ai-mindset.github.io/TIL-lin-alg-applied-to-stats/)
 January 7, 2025 - [TIL The Art Of Choice](https://ai-mindset.github.io/TIL-the-art-of-choice/)
 January 5, 2025 - [Golden Age Of Antibiotics](https://ai-mindset.github.io/golden-age-of-antibiotics/)
