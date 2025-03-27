@@ -83,7 +83,7 @@ _Ethical implications_ also demand attention. While AI can streamline work proce
 AI's current _limitations in understanding context and nuance_ present another challenge. Models may struggle with subtle distinctions or produce oversimplified explanations, especially in specialised fields. Technical constraints, particularly token limits and handling complex, multi-layered reasoning tasks, further necessitate careful planning and task breakdown.
 These limitations underscore a crucial point: dialogue engineering works best as a _collaborative tool_ that _enhances_, rather than replaces, human expertise and judgement.
 
-## Conclusions
+## Conclusion
 Dialogue Engineering represents a significant evolution in human-AI interaction, moving beyond simple prompt engineering to create a dynamic, iterative approach. Through structured conversations and systematic refinement, it enables us to tackle complex tasks more efficiently across academic, business, and creative domains. While the technique requires careful attention to limitations like AI hallucinations and demands consistent human oversight, its power lies in treating AI as a collaborative partner rather than a one-shot tool. By following best practices and understanding its constraints, dialogue engineering becomes a force multiplier for productivity, helping us create better outputs while maintaining human expertise at the core of the process. This balance of systematic interaction and human judgement makes dialogue engineering a valuable framework for anyone looking to maximise the potential of AI tools in their workflow.
 
 ---

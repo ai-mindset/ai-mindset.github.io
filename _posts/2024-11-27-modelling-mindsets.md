@@ -256,7 +256,7 @@ Notable Limitations:
 
 For practitioners, deep learning is essential for complex data types but may be overkill for simpler problems. Most valuable in computer vision, natural language processing, and other complex pattern recognition tasks.
 
-## Conclusions
+## Conclusion
 ***aka Choosing Your Modelling Path***  
 
 For developing T-shaped expertise in modelling, the practitioner's choice should align with their primary domain while maintaining broader awareness. Here's how to approach this decision:

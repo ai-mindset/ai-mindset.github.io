@@ -41,7 +41,7 @@ Understanding LLM internals has crucial implications:
 - **Deployment**: Enhanced ability to predict and prevent unwanted behaviours
 - **Trust**: Greater transparency in AI decision-making processes
 
-## Conclusions
+## Conclusion
 While tools like sparse autoencoders have provided unprecedented insights into model behaviour, they've also revealed the vast complexity of LLM internal mechanisms -the "dark matter" of AI. As these models become more integral to society, advancing our ability to interpret and control them becomes increasingly critical for responsible AI development.  
 This improved understanding represents not just academic progress, but a crucial step toward safer, more reliable AI systems.
 
