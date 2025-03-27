@@ -16,5 +16,5 @@ Cloud repatriation refers to the process of moving applications, services and da
 Several key factors are driving this trend. For larger companies, cost is a real consideration, with scale-ups such as 37signals projecting savings of £2 million p.a. by leaving AWS. Performance issues and rising cloud costs have led major organisations like GEICO to reconsider their cloud strategy after experiencing 2.5x increases in their bills alongside reliability challenges.
 _Data privacy_, _compliance_ requirements and the desire to avoid _vendor lock-in_ are also significant motivators aside from growing costs. Many organisations are finding that running certain workloads on-premises or in hybrid environments offers better control over their infrastructure and data. See [optimising infrastructure for AI](https://www.youtube.com/watch?v=kyJJeik9loU) for a nice overview on cloud<->on-prem.
 
-## Conclusions
+## Conclusion
 Cloud repatriation isn't about completely abandoning public clouds but rather about finding the right balance. For organisations with predictable workloads and sufficient technical expertise, a strategic combination of on-premises, private cloud and public cloud infrastructure might prove more effective than a public-cloud-only approach.

@@ -18,6 +18,6 @@ Most striking was the research on medical decisions. When comparing American and
 
 Concluding with a personal story, Prof. Iyengar -who is blind- shared how she once brought two "clearly different" shades of pink nail polish to her lab. When she removed the labels, half the participants couldn't tell them apart. Those who could, chose differently when the labels were present versus absent, showing how marketing narratives shape what we think we're choosing.
 
-## Conclusions
+## Conclusion
 The TL;DR is: Through cross-cultural research, Prof. Iyengar shows that how we understand and value choice varies dramatically across cultures. Sometimes, having fewer choices or letting others choose for us might actually lead to better outcomes.   
 As a technologist, inundated with a very wide choice of tools that often offer similar results, I have made the conscious decision to reduce my tooling footprint to the minimum viable toolstack possible. I'm happy to let more knowledgeable professionals choose, with _adequate justification_, tools for my line of work but I do disagree with the zealotry that's occasionally observed in tech and complemented by big egos. 

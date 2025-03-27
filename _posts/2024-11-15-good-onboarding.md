@@ -32,7 +32,7 @@ These principles translate into concrete best practices that any organisation ca
 - **Use checklists and frequent practice with feedback**. Clear checkpoints provide motivation and progress tracking, while regular feedback prevents learners from developing incorrect habits 
 - **Focus on mechanical competency to reduce cognitive load**. When basic operations become automatic, developers can focus their mental energy on solving more complex problems 
 
-## Conclusions
+## Conclusion
 Effective onboarding is not just a nice-to-have, it's a competitive necessity in today's software industry. While poor onboarding practices continue to cost companies valuable time and talent, the path to improvement is clear. By _breaking down_ complex skills, providing _structured learning_ paths, and _respecting_ cognitive limitations, organisations can dramatically reduce the time it takes for new hires to become productive team members. This investment in structured onboarding not only accelerates developer productivity but also expands hiring possibilities, allowing companies to tap into a broader talent pool. The choice is simple: continue losing months of productivity to ineffective onboarding, or implement these evidence-based practices to build stronger, more capable engineering teams.
 
 

@@ -43,5 +43,5 @@ Organisational health is the _single greatest competitive advantage_ a company c
 - Low employee turnover
 - High morale and productivity
 
-## Conclusions
+## Conclusion
 The book's fundamental message is that creating a healthy organisation through strong leadership, clear communication, and aligned values is more important than traditional business metrics for long-term success. It's not about being the "smartest" in the market, but about creating the healthiest internal environment.

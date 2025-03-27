@@ -259,7 +259,7 @@ _Update: Looking into [Weaviate](https://weaviate.io/) as an all-in-one DB solut
 
 This stack provides everything needed for modern Data Science and AI work while maintaining clarity and minimising tool overlap.
 
-## Conclusions
+## Conclusion
 Returning to Python with this minimal, modern toolchain has proven to be a pragmatic choice. The combination of uv, Ruff, and Pytest creates a more unified development workflow, while retaining access to Python's mature scientific computing ecosystem.
 
 Key benefits of this approach:
