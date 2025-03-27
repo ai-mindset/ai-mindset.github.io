@@ -6,6 +6,8 @@ tags: [til, data-science, python, best-practices, reproducibility, literate-prog
 ---
 <!--more-->
 
+## Introduction
+
 As a long-time Vim/Neovim and IPython user, I'm quite particular about my development environment. So when I say a notebook platform caught my attention enough to consider switching, that's significant. Recently, I stumbled upon [Marimo](https://marimo.io/), and it might just be the Jupyter alternative I've been searching for.
 
 ## What is Marimo?
