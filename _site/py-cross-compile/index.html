@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
           
           <li class="toc-level-2">
-            <a href="#conclusions">Conclusions</a>
+            <a href="#conclusion">Conclusion</a>
             
             
             
@@ -249,7 +249,7 @@ Being doubtful as to whether this tech stack could meet all my current needs, be
 
 <p>I wrote two pipelines, one for generating a <a href="https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/unix-build.yml">Unix build</a> and one for <a href="https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/win-build.yml">Windows</a>. The result is pretty decent, however the cumbersome process and reliance on third party tech (GitHub Actions in this case) strengthened my conviction that Deno and TypeScript are worth investing in, for a more complete solution. The JS/DS Data<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> ecosystem is not as mature yet but it’s evolving pretty fast.</p>
 
-<h2 id="conclusions">Conclusions</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>The process of cross-compiling a simple Python app was pretty instructive. The main downside I see is the reliance on a hosting service and a CI/CD platform. Frankly, having access to a hosting service and using CI/CD is almost a given in my line of work. Still, it’s nowhere near as straightforward as running <code class="language-plaintext highlighter-rouge">$ deno compile main.ts</code>
 I am considering attempting the same using <a href="https://podman.io/">Podman</a>, since <a href="https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images">Windows</a>, <a href="https://github.com/sickcodes/Docker-OSX">macOS</a> and <a href="https://hub.docker.com/_/ubuntu/">Linux</a> containers are available. Stay tuned for updates!</p>
 
