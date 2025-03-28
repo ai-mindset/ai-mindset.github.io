@@ -1,4 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-27T17:07:56+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🌐 Remote: Office Not Required</title><link href="http://0.0.0.0:4000/remote-office-not-required/" rel="alternate" type="text/html" title="🌐 Remote: Office Not Required" /><published>2025-03-26T00:00:00+00:00</published><updated>2025-03-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/remote-office-not-required</id><content type="html" xml:base="http://0.0.0.0:4000/remote-office-not-required/"><![CDATA[<!--more-->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-03-28T15:23:15+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Just-in-Time learning</title><subtitle>Inquisitive. Learning. Sharing. Simplicity = Reliability</subtitle><entry><title type="html">🔨 REWORK</title><link href="http://0.0.0.0:4000/rework-the-art-of-working-smarter/" rel="alternate" type="text/html" title="🔨 REWORK" /><published>2025-03-28T00:00:00+00:00</published><updated>2025-03-28T00:00:00+00:00</updated><id>http://0.0.0.0:4000/rework-the-art-of-working-smarter</id><content type="html" xml:base="http://0.0.0.0:4000/rework-the-art-of-working-smarter/"><![CDATA[<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The traditional approach to business often involves comprehensive planning, rapid growth, long hours, and complex processes. But is this truly the most effective way to succeed? <a href="https://world.hey.com/jason">Jason Fried</a> and <a href="https://world.hey.com/david">David Heinemeier Hansson</a>, founders of <a href="https://en.wikipedia.org/w/index.php?title=Basecamp_(company)&amp;redirect=no">Basecamp</a> (now <a href="https://en.wikipedia.org/wiki/37signals">37signals</a>), challenge these conventional notions in their influential book “<a href="https://basecamp.com/books/rework">Rework</a>”. Published in 2010, this manifesto presents an alternative philosophy for building successful businesses in the digital age -one that emphasises simplicity, efficiency, and balance. Drawing from their experience creating profitable web applications with a small team, Fried and Hansson offer practical insights for entrepreneurs and companies of all sizes. Their approach advocates working smarter rather than harder, focusing on what truly matters, and challenging business orthodoxy at every turn.</p>
+
+<h2 id="foundational-principles-of-rework">Foundational Principles of “Rework”</h2>
+
+<h3 id="embrace-simplicity-and-constraints">Embrace Simplicity and Constraints</h3>
+
+<p>Fried and Hansson consistently emphasise that constraints aren’t limitations but advantages. With limited resources, you’re forced to focus on what’s essential:</p>
+<ul>
+  <li><strong>Build half a product, not a half-ar🤬ed product</strong>: It’s better to do fewer things exceptionally well than to attempt everything poorly. Quality trumps quantity.</li>
+  <li><strong>Embrace constraints</strong>: Limited time, budget, or people can spark creativity and force efficiency. They make you focus on doing more with less.</li>
+  <li><strong>Underdo your competition</strong>: Instead of adding more features than competitors, focus on solving core problems elegantly. Simplicity is a competitive advantage.</li>
+</ul>
+
+<p>The authors point to specific examples, such as how Basecamp launched without billing functionality (adding it 30 days later) and how the Flip video camera succeeded by deliberately omitting features that competitors deemed essential.</p>
+
+<h3 id="challenge-traditional-business-thinking">Challenge Traditional Business Thinking</h3>
+
+<p>“Rework” consistently questions business conventions that many take for granted:</p>
+<ul>
+  <li><strong>Planning is guessing</strong>: Detailed long-term business plans are often exercises in fiction. Instead, make decisions just in time with the most current information available.</li>
+  <li><strong>Working long hours is counterproductive</strong>: “Workaholism” leads to burnout and mediocre output. Productivity isn’t about hours worked but about focused, quality work.</li>
+  <li><strong>Growth isn’t always good</strong>: The authors argue against the obsession with expansion, suggesting companies find their “right size” and focus on sustainability rather than constant growth.</li>
+  <li><strong>Skip the “rock stars”</strong>: Instead of obsessing over hiring “ninjas” or “rock stars,” create an environment where ordinary people can do extraordinary work.</li>
+</ul>
+
+<h3 id="focus-on-action-over-discussion">Focus on Action Over Discussion</h3>
+
+<p>A central theme in “Rework” is the importance of creating rather than just talking about creating:</p>
+<ul>
+  <li><strong>Start making something</strong>: Ideas are worthless without execution. The world is filled with people who “had that idea first” but never acted on it.</li>
+  <li><strong>Launch now</strong>: Perfection is unattainable; get your product out quickly and iterate based on real feedback rather than assumptions.</li>
+  <li><strong>Meetings are toxic</strong>: They interrupt productivity, waste collective time, and often accomplish little. Minimise them ruthlessly.</li>
+</ul>
+
+<p>The authors illustrate this with their own experience building Basecamp, launching quickly with core functionality and improving based on actual customer feedback rather than theoretical market research.</p>
+
+<h3 id="build-an-audience-focused-business">Build an Audience-Focused Business</h3>
+
+<p>Fried and Hansson outline a customer-centric approach to business development:</p>
+<ul>
+  <li><strong>Out-teach your competition</strong>: Share knowledge generously through blogs, articles, and tutorials. Teaching establishes authority and builds trust with potential customers.</li>
+  <li><strong>Build an audience</strong>: Develop a following of people interested in what you have to say. When you launch products, you’ll already have an engaged audience.</li>
+  <li><strong>Emulate chefs</strong>: Like celebrity chefs who share their recipes freely, sharing your expertise doesn’t diminish your business -it enhances it.</li>
+</ul>
+
+<p>Their company blog, Signal vs. Noise, exemplifies this approach, having built an audience of over 100,000 daily readers who became a natural customer base.</p>
+
+<h3 id="create-a-sustainable-work-culture">Create a Sustainable Work Culture</h3>
+
+<p>The authors advocate for work environments that prioritise sustainability over burnout:</p>
+<ul>
+  <li><strong>Send people home at 5</strong>: Reasonable working hours increase per-hour productivity and lead to more creative solutions.</li>
+  <li><strong>Avoid policies that treat people like children</strong>: Trust adults to manage their time and make good decisions.</li>
+  <li><strong>Avoid unnecessary formality</strong>: Communicate in a human voice rather than corporate-speak. Sound like yourself, not like a faceless entity.</li>
+</ul>
+
+<h2 id="potential-limitations">Potential Limitations</h2>
+
+<p>While “Rework” offers valuable counter-conventional wisdom, some of its approaches may not suit all business contexts. The authors’ philosophy works particularly well for software and service businesses with low overhead, but manufacturing or capital-intensive industries may require more traditional planning. Additionally, their “do less” approach might not always scale for businesses with complex regulatory requirements or those serving enterprise clients with extensive needs.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>“Rework” offers a refreshing alternative to conventional business wisdom, advocating for a more thoughtful, balanced, and human approach to work. The book’s central message is that success doesn’t require sixty-hour workweeks, venture capital, or extensive planning -it requires focus on what matters, elimination of what doesn’t, and dedication to quality execution.<br />
+By challenging assumptions about growth, working hours, planning, and hiring, Fried and Hansson present a blueprint for building businesses that are not only profitable but also sustainable and enjoyable to run. Their philosophy can be distilled to a few key principles: embrace constraints, focus on quality over quantity, prioritise action over planning, and build businesses that respect both customers and employees.<br />
+Whether you’re running a startup, managing a team, or simply looking to work more effectively, “Rework” provides valuable insights for doing more with less and building something that lasts. It’s not about working more -it’s about working smarter.</p>]]></content><author><name></name></author><category term="37signals" /><category term="best-practices" /><category term="productivity" /><category term="efficiency" /><category term="company-culture" /><category term="remote-work" /><category term="minimal" /><category term="business-value" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🌐 Remote: Office Not Required</title><link href="http://0.0.0.0:4000/remote-office-not-required/" rel="alternate" type="text/html" title="🌐 Remote: Office Not Required" /><published>2025-03-26T00:00:00+00:00</published><updated>2025-03-26T00:00:00+00:00</updated><id>http://0.0.0.0:4000/remote-office-not-required</id><content type="html" xml:base="http://0.0.0.0:4000/remote-office-not-required/"><![CDATA[<!--more-->
 
 <h2 id="introduction">Introduction</h2>
 
@@ -859,128 +927,4 @@ As LLM technology evolves with expanding context windows and improved retrieval 
 
 <p>While 2025 has created what appears to be a perfect storm for AI agents with advanced reasoning models, increased compute efficiency, and massive infrastructure investments, the reality is that autonomous AI agents still face significant challenges. The cumulative effect of small errors across decision-making, implementation, heuristics, and user preferences creates substantial reliability issues in complex agent systems.</p>
 
-<p>However, as this keynote emphasised, these challenges are not insurmountable. By focusing on meticulous data curation, developing sophisticated evaluation frameworks, implementing robust scaffolding systems, prioritising distinctive user experiences, and embracing multimodal approaches, developers can build AI agents that deliver on their transformative potential. The lightning strike of truly autonomous, reliable AI agents may not have happened yet, but with these strategies, the industry is moving steadily toward that breakthrough moment.</p>]]></content><author><name></name></author><category term="ai" /><category term="machine-learning" /><category term="llm" /><category term="best-practices" /><category term="evaluation" /><category term="prompt-engineering" /><category term="decision-making" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">🗄️ SQLite: The Minimalist Database for AI Engineering</title><link href="http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering/" rel="alternate" type="text/html" title="🗄️ SQLite: The Minimalist Database for AI Engineering" /><published>2025-02-11T00:00:00+00:00</published><updated>2025-02-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering</id><content type="html" xml:base="http://0.0.0.0:4000/sqlite-minimalist-choice-for-ai-engineering/"><![CDATA[<!--more-->
-
-<h2 id="introduction">Introduction</h2>
-
-<p>In today’s AI engineering landscape, choosing the right database can feel overwhelming. While specialised solutions like <a href="https://qdrant.tech/">Qdrant</a> (vectors), <a href="https://neo4j.com/">Neo4j</a> (graphs), and <a href="https://www.mongodb.com/">MongoDB</a> (documents) excel in their niches, there’s a compelling case for <a href="https://www.sqlite.org/index.html">SQLite</a> as a versatile, minimalist solution that comes pre-installed on most systems and supports multiple data structures effectively. Speaking of minimalism, <a href="https://github.com/tconbeer/harlequin">Harlequin</a> (named after a <a href="https://en.wikipedia.org/wiki/Harlequin_duck">sea 🦆</a>) makes data exploration very enjoyable. 
-Credit for the SQLite idea goes to <a href="https://bsky.app/profile/simonwillison.net">Simon Willison</a>, a prolific AI researcher among others, who has been posting <a href="https://simonwillison.net/tags/sqlite/">blog articles</a> and <a href="https://til.simonwillison.net/sqlite">TILs</a> (Today I Learned) about it since 2003!</p>
-
-<h2 id="the-power-of-pre-installation">The Power of Pre-installation</h2>
-
-<p>SQLite’s ubiquity is remarkable. It comes pre-installed on:</p>
-<ul>
-  <li>macOS</li>
-  <li>Most Linux distributions (including Ubuntu, as evidenced by its <a href="https://releases.ubuntu.com/24.10/ubuntu-24.10-desktop-amd64.manifest">manifest</a>)</li>
-  <li>Python’s standard library</li>
-  <li>Android devices</li>
-  <li>iOS devices</li>
-</ul>
-
-<p>This universal availability means you can start developing immediately without additional setup or installation steps.</p>
-
-<h2 id="modern-data-structure-support">Modern Data Structure Support</h2>
-
-<p>Despite its lightweight nature, SQLite handles modern data structures surprisingly well:</p>
-
-<ol>
-  <li><strong>Vector Storage</strong><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
-    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="n">VIRTUAL</span> <span class="k">TABLE</span> <span class="n">vec_items</span> <span class="k">USING</span> <span class="n">vec0</span><span class="p">(</span><span class="n">embedding</span> <span class="nb">float</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-</code></pre></div>    </div>
-    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- vectors can be provided as JSON or in a compact binary format</span>
-<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">vec_items</span><span class="p">(</span><span class="n">rowid</span><span class="p">,</span> <span class="n">embedding</span><span class="p">)</span>
-  <span class="k">VALUES</span>
- <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'[-0.200, 0.250, 0.341, -0.211, 0.645, 0.935, -0.316, -0.924]'</span><span class="p">),</span>
- <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'[0.443, -0.501, 0.355, -0.771, 0.707, -0.708, -0.185, 0.362]'</span><span class="p">),</span>
- <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'[0.716, -0.927, 0.134, 0.052, -0.669, 0.793, -0.634, -0.162]'</span><span class="p">),</span>
- <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'[-0.710, 0.330, 0.656, 0.041, -0.990, 0.726, 0.385, -0.958]'</span><span class="p">);</span>
-</code></pre></div>    </div>
-    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- KNN-style query</span>
-<span class="k">SELECT</span>
-  <span class="n">rowid</span><span class="p">,</span>
-  <span class="n">distance</span>
-<span class="k">FROM</span> <span class="n">vec_items</span>
-<span class="k">WHERE</span> <span class="n">embedding</span> <span class="k">MATCH</span> <span class="s1">'[0.890, 0.544, 0.825, 0.961, 0.358, 0.0196, 0.521, 0.175]'</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">distance</span>
-<span class="k">LIMIT</span> <span class="mi">3</span>
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Graph Relationships</strong><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>
-    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Create table `nodes`</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">nodes</span> <span class="p">(</span>
- <span class="n">id</span> <span class="nb">TEXT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
- <span class="n">properties</span> <span class="nb">TEXT</span>
-<span class="p">)</span>
-</code></pre></div>    </div>
-    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Create table `edges`</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">edges</span> <span class="p">(</span>
- <span class="k">source</span> <span class="nb">TEXT</span><span class="p">,</span>
- <span class="n">target</span> <span class="nb">TEXT</span><span class="p">,</span>
- <span class="n">relationship</span> <span class="nb">TEXT</span><span class="p">,</span>
- <span class="n">weight</span> <span class="nb">REAL</span><span class="p">,</span>
- <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="k">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">relationship</span><span class="p">),</span>
- <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="k">source</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">nodes</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
- <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">nodes</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
-<span class="p">)</span>
-</code></pre></div>    </div>
-    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Create indices of the `edges` between `source` and `target`, for improved performance</span>
-<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">source_idx</span> <span class="k">ON</span> <span class="n">edges</span><span class="p">(</span><span class="k">source</span><span class="p">)</span>
-<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">target_idx</span> <span class="k">ON</span> <span class="n">edges</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
-</code></pre></div>    </div>
-    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Count the no. of incoming and outgoing edges per node, known as 'degree centrality' </span>
-<span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span>
-    <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">edges</span> <span class="k">WHERE</span> <span class="k">source</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="o">+</span>
-    <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">edges</span> <span class="k">WHERE</span> <span class="n">target</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="k">as</span> <span class="n">degree</span>
-<span class="k">FROM</span> <span class="n">nodes</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">degree</span> <span class="k">DESC</span>
-<span class="k">LIMIT</span> <span class="mi">10</span>
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Document Storage</strong>
-    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">documents</span> <span class="p">(</span>
- <span class="n">id</span> <span class="nb">INTEGER</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
- <span class="n">content</span> <span class="n">JSON</span><span class="p">,</span>
- <span class="n">metadata</span> <span class="n">JSON</span>
-<span class="p">);</span>
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h2 id="portability-and-simplicity">Portability and Simplicity</h2>
-
-<p>One of SQLite’s strongest features is its <a href="https://www.sqlite.org/onefile.html">single-file</a> nature. Your entire database exists in one file that can be:</p>
-<ul>
-  <li>Backed up with a simple copy operation</li>
-  <li>Easily version controlled (for smaller databases)</li>
-  <li>Moved between systems effortlessly</li>
-  <li>Examined with standard SQLite tools</li>
-</ul>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>While specialised databases have their place, SQLite offers a compelling combination of features that make it ideal for many AI engineering projects:</p>
-<ul>
-  <li>Zero configuration</li>
-  <li>Pre-installed availability</li>
-  <li>Support for multiple data structures</li>
-  <li>Single-file portability</li>
-  <li>Wide language support, especially in Python and Go</li>
-  <li>ACID<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> compliance</li>
-</ul>
-
-<p><strong>TL;DR</strong>: When you need a lightweight, self-contained database that can handle documents, vectors, and graphs without the complexity of a full database server, SQLite is often an excellent choice.</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Example from <a href="https://alexgarcia.xyz/sqlite-vec/python.html">sqlite-vec with Python</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2" role="doc-endnote">
-      <p>Examples from <a href="https://dev.to/stephenc222/how-to-build-lightweight-graphrag-with-sqlite-53le">How to Build Lightweight GraphRAG with SQLite</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3" role="doc-endnote">
-      <p>Atomicity, Consistency, Isolation, Durability (<a href="https://en.wikipedia.org/wiki/ACID">ACID</a>), per Wikipedia, “<em>is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps. In the context of databases, a sequence of database operations that satisfies the ACID properties (which can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.</em>” <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name></name></author><category term="ai" /><category term="data-modeling" /><category term="data-processing" /><category term="data-science" /><category term="go" /><category term="minimal" /><category term="production" /><category term="python" /><category term="zero-config" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<p>However, as this keynote emphasised, these challenges are not insurmountable. By focusing on meticulous data curation, developing sophisticated evaluation frameworks, implementing robust scaffolding systems, prioritising distinctive user experiences, and embracing multimodal approaches, developers can build AI agents that deliver on their transformative potential. The lightning strike of truly autonomous, reliable AI agents may not have happened yet, but with these strategies, the industry is moving steadily toward that breakthrough moment.</p>]]></content><author><name></name></author><category term="ai" /><category term="machine-learning" /><category term="llm" /><category term="best-practices" /><category term="evaluation" /><category term="prompt-engineering" /><category term="decision-making" /><summary type="html"><![CDATA[]]></summary></entry></feed>
