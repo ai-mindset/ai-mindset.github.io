@@ -128,6 +128,19 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="wrapper">
         <article class="post">
   <h1>💡 TIL: The Matrix Equation That Makes Linear Regression Work</h1>
+
+  <div class="post-meta">
+    <span class="post-date">Jan 8, 2025</span>
+    <span class="reading-time">
+
+
+
+
+
+  3 minutes read
+
+</span>
+  </div>
   
   <!-- Debug info -->
   <!-- <div style="color: red;"> -->
@@ -184,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
           
           <li class="toc-level-2">
-            <a href="#conclusions">Conclusions</a>
+            <a href="#conclusion">Conclusion</a>
             
             
             
@@ -203,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>This morning <a href="https://xcancel.com/andrew_n_carr/status/1876855682529480844">an interesting interview question</a> motivated me to remind myself how it’s possible to solve linear regression through matrix algebra. Below is what I learned:</p>
 
 <h2 id="the-theory-an-elegant-mathematical-solution">The Theory: An Elegant Mathematical Solution</h2>
-<p>Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors. The equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves this optimization problem using matrix algebra.</p>
+<p>Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors. The equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves this optimisation problem using matrix algebra.</p>
 
 <p>The solution involves these key components:</p>
 <ol>
@@ -255,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <li><em>Memory Constraints</em>: Large datasets require holding the entire $X^TX$ matrix in memory, while gradient descent can work with mini-batches, making it more memory-efficient.</li>
 </ol>
 
-<h2 id="conclusions">Conclusions</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>While this equation brilliantly demonstrates the power of linear algebra in statistics, real-world machine learning often favours gradient descent’s iterative approach. Think of it as choosing between a perfect GPS route through heavy traffic (direct solution) versus taking smaller, adaptable steps through clear side streets (gradient descent). Both reach the same destination, but the practical path often wins in real-world conditions.</p>
 
 <hr />

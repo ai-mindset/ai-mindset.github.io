@@ -24,7 +24,7 @@ Big Data and Deep Learning foundations emerged as the _analogiser_ school gained
 ### Contemporary AI: The Era of Integration (2020s)
 Current AI systems, particularly large language models, represent a synthesis of multiple schools. They combine symbolic reasoning[^1], neural architectures[^2], and statistical learning[^3], achieving impressive generative capabilities and few-shot learning. However, they face challenges in resource requirements, reliability, and alignment with human values. A nicely distilled overview of what is today's AI, comes from an [Andrej Karpathy Tweet](https://xcancel.com/karpathy/status/1864033537479135369).  
 
-## Conclusions
+## Conclusion
 The evolution of AI reveals a field shaped by competing philosophies, each contributing essential insights. As Domingos argues, the future likely lies not in the dominance of any single approach but in their unification. While recent advances demonstrate the potential of synthesising different methods, significant challenges remain in creating truly intelligent systems that are both powerful and reliable.
 
 The path forward requires building on these foundations while addressing core challenges in efficiency, interpretability, and alignment. Rather than choosing between different schools of thought, the field must continue to integrate their strengths while mitigating their individual weaknesses.

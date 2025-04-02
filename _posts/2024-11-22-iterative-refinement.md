@@ -64,7 +64,7 @@ This iterative philosophy extends to mathematical animations. In Grant Sanderson
 ### The Problem with Traditional Testing
 Traditional unit testing often fragments development workflow by requiring separate test maintenance and can lead to ossified code structures. When tests aren't exercised regularly, they become outdated, creating false confidence. This is particularly problematic in rapidly evolving domains like AI, where interfaces and requirements frequently change.
 
-## Conclusions
+## Conclusion
 Instead of extensive unit test suites, it's worth considering:
 1. Writing working code first
 2. Using doctests for critical functions

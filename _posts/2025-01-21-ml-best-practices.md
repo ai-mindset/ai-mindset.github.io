@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🔧 A 10-Minute Guide to Engineering Machine Learning Systems"
+title: "🔧 A 5-Minute Guide to Engineering Machine Learning Systems"
 date: 2025-01-21
 tags: [machine-learning, best-practices, mlops, monitoring, production, quality-assurance, data-science, decision-making]
 ---
@@ -80,7 +80,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
    - Scale feature complexity with data
 
 3. **Feature Coverage and Quality**
-   - Features that generalize across contexts
+   - Features that generalise across contexts
    - Monitor feature coverage
    - Document feature ownership
    - Regular feature clean-up
@@ -110,7 +110,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
    - Monitor feature coverage
    - Check prediction bias
 
-## Phase IV: Optimization and Complex Models (Rules #38-43)
+## Phase IV: Optimisation and Complex Models (Rules #38-43)
 1. **When to Add Complexity**
    - After simple approaches plateau
    - When objectives are well-aligned

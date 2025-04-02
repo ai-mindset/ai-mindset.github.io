@@ -51,5 +51,5 @@ print(order.price)    # 9.99 (float)
 3. **Self-Documenting**: Type hints serve as both validation rules and documentation
 4. **Performance**: Compiled validation code runs efficiently
 
-## Conclusions
+## Conclusion
 Pydantic transforms Python's type hints from passive documentation into active data validators, significantly reducing runtime errors and improving code reliability.

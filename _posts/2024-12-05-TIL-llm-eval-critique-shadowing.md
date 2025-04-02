@@ -12,7 +12,7 @@ As LLMs increasingly drive critical business decisions, ensuring their reliabili
 ## The Critique Shadowing Method
 The key insight behind Critique Shadowing is deceptively simple: start with binary (pass/fail) expert judgements and detailed critiques before building automated evaluation systems. This approach solves two critical challenges: capturing domain expertise and scaling evaluation processes.
 
-This expert-centric approach echoes [knowledge engineering](https://en.wikipedia.org/wiki/Knowledge_engineering) practices from the 1970-80s, when AI researchers first recognized the necessity of systematically capturing domain expertise. Just as [MYCIN](https://en.wikipedia.org/wiki/Mycin)'s creators worked closely with medical doctors to encode diagnostic knowledge, Critique Shadowing similarly structures the process of extracting expert judgement for LLM evaluation. While the technology has evolved from rule-based systems to large language models, the fundamental challenge of effectively capturing and operationalising expert knowledge remains central.
+This expert-centric approach echoes [knowledge engineering](https://en.wikipedia.org/wiki/Knowledge_engineering) practices from the 1970-80s, when AI researchers first recognised the necessity of systematically capturing domain expertise. Just as [MYCIN](https://en.wikipedia.org/wiki/Mycin)'s creators worked closely with medical doctors to encode diagnostic knowledge, Critique Shadowing similarly structures the process of extracting expert judgement for LLM evaluation. While the technology has evolved from rule-based systems to large language models, the fundamental challenge of effectively capturing and operationalising expert knowledge remains central.
 
 ### Implementation Process
 The methodology follows a structured, iterative process:
@@ -26,8 +26,8 @@ The methodology follows a structured, iterative process:
 3. Expert conducts binary pass/fail judgements with detailed critiques
 4. Address discovered issues and verify fixes
 5. Develop LLM-based judges using expert critiques as few-shot examples
-6. Analyze error patterns and root causes
-7. Create specialized judges for persistent issues
+6. Analyse error patterns and root causes
+7. Create specialised judges for persistent issues
 
 The process is continuous, repeating periodically or when material changes occur. For simpler applications or when manual review is feasible, teams can adapt or streamline these steps while maintaining the core principle of systematic data examination.
 
@@ -35,7 +35,7 @@ The process is continuous, repeating periodically or when material changes occur
 Husain's most striking observation is that the process of developing evaluation systems often provides more value than the resulting automated judges. The systematic collection of expert feedback reveals product insights, user needs, and failure modes that might otherwise remain hidden. This understanding drives improvements in the core system, not just its evaluation.
 
 ## Conclusion
-The Critique Shadowing methodology succeeds by prioritizing expert knowledge and systematic data collection over premature automation. For teams building LLM applications, this approach offers a clear path to reliable evaluation systems while simultaneously deepening their understanding of their product and users.  
+The Critique Shadowing methodology succeeds by prioritising expert knowledge and systematic data collection over premature automation. For teams building LLM applications, this approach offers a clear path to reliable evaluation systems while simultaneously deepening their understanding of their product and users.  
 LLM evaluation is an active area of interest and research both in academia and industry. Here is a short list of resources to look into: 
 - [IBM LLM Evaluation](https://www.ibm.com/think/topics/llm-evaluation)
 - [Mistral AI - Evaluation](https://docs.mistral.ai/guides/evaluation/)

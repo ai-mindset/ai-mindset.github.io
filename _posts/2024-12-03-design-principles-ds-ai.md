@@ -138,7 +138,7 @@ def safe_predict(features):
    - Implement validation pipelines
    - Monitor data distributions
 
-## Conclusions
+## Conclusion
 By focusing on a minimal set of powerful tools ([MLflow](https://mlflow.org/), [Prometheus/Grafana](https://prometheus.io/docs/visualization/grafana/), and [Great Expectations](https://greatexpectations.io/)), you can implement Norman's design principles effectively while maintaining system simplicity. This approach provides:
 
 - Comprehensive visibility through unified logging and monitoring

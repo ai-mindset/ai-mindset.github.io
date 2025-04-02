@@ -794,3 +794,10 @@ body.dark-theme .site-nav .search-results {
   background-color: var(--bg-dark);
   border-color: var(--table-border-dark);
 }
+
+/* Reading time */
+.reading-time {
+  font-size: 0.9em;
+  color: #828282;
+  margin-left: 8px;
+}

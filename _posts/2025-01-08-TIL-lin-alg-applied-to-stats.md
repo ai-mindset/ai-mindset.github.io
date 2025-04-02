@@ -10,7 +10,7 @@ tags: [data-science, machine-learning, statistics, ai, linear-algebra, til, mode
 This morning [an interesting interview question](https://xcancel.com/andrew_n_carr/status/1876855682529480844) motivated me to remind myself how it's possible to solve linear regression through matrix algebra. Below is what I learned:  
 
 ## The Theory: An Elegant Mathematical Solution
-Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors. The equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves this optimization problem using matrix algebra.
+Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors. The equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves this optimisation problem using matrix algebra.
 
 The solution involves these key components:
 1. $X$ is our feature matrix (n samples × p features)
@@ -47,7 +47,7 @@ While mathematically elegant, this direct solution has practical limitations in 
 2. _Numerical Instability_: When features are highly correlated (like monthly and annual income), $X^TX$ becomes nearly singular[^3]. Even small rounding errors in the computation of its inverse can lead to large errors in $\beta$. In extreme cases, when features are perfectly correlated, the inverse doesn't exist at all. Gradient descent avoids this matrix inversion entirely.    
 3. _Memory Constraints_: Large datasets require holding the entire $X^TX$ matrix in memory, while gradient descent can work with mini-batches, making it more memory-efficient.  
 
-## Conclusions
+## Conclusion
 While this equation brilliantly demonstrates the power of linear algebra in statistics, real-world machine learning often favours gradient descent's iterative approach. Think of it as choosing between a perfect GPS route through heavy traffic (direct solution) versus taking smaller, adaptable steps through clear side streets (gradient descent). Both reach the same destination, but the practical path often wins in real-world conditions.
 
 ---

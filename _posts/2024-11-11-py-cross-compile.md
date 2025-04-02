@@ -29,7 +29,7 @@ More recently, especially given many AI Engineering APIs are written both in Pyt
 
 I wrote two pipelines, one for generating a [Unix build](https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/unix-build.yml) and one for [Windows](https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/win-build.yml). The result is pretty decent, however the cumbersome process and reliance on third party tech (GitHub Actions in this case) strengthened my conviction that Deno and TypeScript are worth investing in, for a more complete solution. The JS/DS Data[^2] ecosystem is not as mature yet but it's evolving pretty fast.  
 
-## Conclusions
+## Conclusion
 The process of cross-compiling a simple Python app was pretty instructive. The main downside I see is the reliance on a hosting service and a CI/CD platform. Frankly, having access to a hosting service and using CI/CD is almost a given in my line of work. Still, it's nowhere near as straightforward as running `$ deno compile main.ts`
 I am considering attempting the same using [Podman](https://podman.io/), since [Windows](https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images), [macOS](https://github.com/sickcodes/Docker-OSX) and [Linux](https://hub.docker.com/_/ubuntu/) containers are available. Stay tuned for updates!
 

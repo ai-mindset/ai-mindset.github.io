@@ -93,7 +93,7 @@ $ curl -L -O https://github.com/ai-mindset/yt-dlp-hq/releases/download/1.0.0/yt-
 $ ./yt-dlp-hq-intel-linux https://www.youtube.com/watch?v=dQw4w9WgXcQ
 ```
 
-## Conclusions
+## Conclusion
 I'm glad I learned something more about GitHub and Actions, its idiosyncrasies and abilities. It took me a couple days, which made me consider the benefits of [automation](https://xkcd.com/1319/). Being more minimalistic, I tend to opt for simple automation when possible [_if_ it's worth it](https://xkcd.com/1205/). To quote [Alan Perlis](https://en.wikiquote.org/wiki/Alan_Perlis), "_Simplicity does not precede complexity, but follows it_".
 
 ---

@@ -128,6 +128,19 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="wrapper">
         <article class="post">
   <h1>シ Back to Basics: A Modern, Minimal Python Toolchain</h1>
+
+  <div class="post-meta">
+    <span class="post-date">Nov 21, 2024</span>
+    <span class="reading-time">
+
+
+
+
+
+  11 minutes read
+
+</span>
+  </div>
   
   <!-- Debug info -->
   <!-- <div style="color: red;"> -->
@@ -218,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
           
           <li class="toc-level-2">
-            <a href="#conclusions">Conclusions</a>
+            <a href="#conclusion">Conclusion</a>
             
             
             
@@ -321,7 +334,7 @@ The goal isn’t to prescribe another “right way” of doing things, but rathe
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kn">import</span> <span class="nn">polars</span> <span class="k">as</span> <span class="n">pl</span>
 
-    <span class="k">def</span> <span class="nf">analyze_customer_behavior</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">analyse_customer_behavior</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">pl</span><span class="p">.</span><span class="n">scan_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
             <span class="p">.</span><span class="n">with_columns</span><span class="p">([</span>
@@ -502,7 +515,7 @@ The goal isn’t to prescribe another “right way” of doing things, but rathe
 
 <p>This stack provides everything needed for modern Data Science and AI work while maintaining clarity and minimising tool overlap.</p>
 
-<h2 id="conclusions">Conclusions</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>Returning to Python with this minimal, modern toolchain has proven to be a pragmatic choice. The combination of uv, Ruff, and Pytest creates a more unified development workflow, while retaining access to Python’s mature scientific computing ecosystem.</p>
 
 <p>Key benefits of this approach:</p>
