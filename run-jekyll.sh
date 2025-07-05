@@ -16,10 +16,14 @@ cleanup
 # Create required directories if they don't exist
 mkdir -p _posts _site
 
-# Check if container image exists
-if ! podman image exists $CONTAINER_NAME; then
-   echo "Building container image..."
-   podman build -t $CONTAINER_NAME -f Containerfile .
+# Force rebuild to ensure image exists properly
+echo "Building container image..."
+podman build -t $CONTAINER_NAME -f Containerfile .
+
+# Verify build succeeded
+if [ $? -ne 0 ]; then
+    echo "Build failed, exiting"
+    exit 1
 fi
 
 echo "Starting container..."
