@@ -6,6 +6,7 @@ A personal blog focused on AI, and engineering best practices, built with Neovim
 
 ## Posts (Reverse Chronological Order)
 
+August 26, 2025 - [TIL Solveit](https://ai-mindset.github.io/TIL-solveit/)
 July 3, 2025 - [TIL Prompts As Human Checklists](https://ai-mindset.github.io/TIL-prompts-as-human-checklists/)
 March 28, 2025 - [Rework The Art Of Working Smarter](https://ai-mindset.github.io/rework-the-art-of-working-smarter/)
 March 26, 2025 - [Remote Office Not Required](https://ai-mindset.github.io/remote-office-not-required/)
