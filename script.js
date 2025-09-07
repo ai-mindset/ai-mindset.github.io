@@ -108,16 +108,23 @@ function renderTags(posts) {
     tagElement.textContent = tag;
     
     tagElement.addEventListener('click', () => {
+      // Check if this tag is already active
+      const isActive = tagElement.classList.contains('active');
+      
       // Clear active state from all tags
       document.querySelectorAll('.tag').forEach(t => {
         t.classList.remove('active');
       });
       
-      // Set active state on clicked tag
-      tagElement.classList.add('active');
-      
-      // Filter posts
-      renderPosts(posts, tag);
+      // If tag wasn't active, activate it and filter posts
+      // If it was already active, leave it deactivated and show all posts
+      if (!isActive) {
+        tagElement.classList.add('active');
+        renderPosts(posts, tag);
+      } else {
+        // Show all posts when unselecting a tag
+        renderPosts(posts);
+      }
     });
     
     tagsContainer.appendChild(tagElement);
@@ -152,7 +159,7 @@ function setupTagsToggle() {
     if (tagsContainer.classList.contains('collapsed')) {
       chevron.style.transform = 'rotate(0deg)';
     } else {
-      chevron.style.transform = 'rotate(180deg)';
+      chevron.style.transform = 'rotate(90deg)';
     }
   });
 }

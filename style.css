@@ -66,11 +66,21 @@ body.dark-theme header {
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: #2c3e50;
+}
+
+body.dark-theme header h1 {
+  color: #ecf0f1;
 }
 
 .subtitle {
   color: #666;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 300;
 }
 
 body.dark-theme .subtitle {
@@ -124,6 +134,9 @@ body.dark-theme #toggle-tags {
 .chevron {
   display: inline-block;
   transition: transform 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1;
 }
 
 #tags-container {
