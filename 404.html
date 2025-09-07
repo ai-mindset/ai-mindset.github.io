@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>404 - Page Not Found - Just-in-Time Learning</title>
     <link rel="stylesheet" href="/style.css">
     <style>
         .error-container {
@@ -18,11 +18,21 @@
             font-weight: bold;
             margin: 0;
             animation: float 3s ease-in-out infinite;
+            color: var(--text-light);
+        }
+        
+        body.dark-theme .error-code {
+            color: var(--text-dark);
         }
         
         .error-message {
             font-size: 24px;
             margin: 20px 0 40px;
+            color: var(--text-light);
+        }
+        
+        body.dark-theme .error-message {
+            color: var(--text-dark);
         }
         
         .portal {
@@ -44,9 +54,14 @@
             left: 15px;
             right: 15px;
             bottom: 15px;
-            background: white;
+            background: var(--bg-light);
             border-radius: 50%;
             z-index: 1;
+            transition: background-color 0.3s ease;
+        }
+        
+        body.dark-theme .portal::before {
+            background: var(--bg-dark);
         }
         
         .portal::after {
@@ -58,6 +73,12 @@
             font-size: 20px;
             font-weight: bold;
             z-index: 2;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+        
+        body.dark-theme .portal::after {
+            color: var(--text-dark);
         }
         
         .home-link {
@@ -69,12 +90,31 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s, color 0.3s;
+        }
+        
+        body.dark-theme .home-link {
+            background-color: #2980b9;
+            color: white;
         }
         
         .home-link:hover {
             background-color: #2980b9;
             transform: scale(1.05);
+        }
+        
+        body.dark-theme .home-link:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+        
+        .error-text {
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        body.dark-theme .error-text {
+            color: var(--text-dark);
         }
         
         @keyframes float {
@@ -86,22 +126,115 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: none;
+            border: 1px solid var(--border-light);
+            color: var(--text-light);
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        body.dark-theme .theme-toggle {
+            border-color: var(--border-dark);
+            color: var(--text-dark);
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        header {
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        body.dark-theme header {
+            border-bottom-color: var(--border-dark);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: #2c3e50;
+        }
+        
+        body.dark-theme header h1 {
+            color: #ecf0f1;
+        }
+        
+        header a {
+            text-decoration: none;
+            color: inherit;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1><a href="/">Just-in-Time Learning</a></h1>
+        </div>
+    </header>
+
     <div class="error-container">
         <h1 class="error-code">404</h1>
         <p class="error-message">Oops! You've ventured into the knowledge void.</p>
         
         <div class="portal"></div>
         
-        <p>The page you're looking for has been consumed by the void or never existed in the first place.</p>
-        <p>Perhaps it was an experiment that failed, or knowledge that hasn't been discovered yet.</p>
+        <p class="error-text">The page you're looking for has been consumed by the void or never existed in the first place.</p>
+        <p class="error-text">Perhaps it was an experiment that failed, or knowledge that hasn't been discovered yet.</p>
         
         <a href="/" class="home-link">Return to Reality</a>
     </div>
 
     <script>
+        // Check for dark mode preference
+        function setThemePreference() {
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const savedTheme = localStorage.getItem("theme");
+            
+            if (savedTheme === "dark" || (savedTheme === null && prefersDarkScheme)) {
+                document.body.classList.add("dark-theme");
+            }
+        }
+
+        // Add theme toggle button
+        function createThemeToggle() {
+            const themeToggle = document.createElement("button");
+            themeToggle.className = "theme-toggle";
+            themeToggle.setAttribute("aria-label", "Toggle dark mode");
+            themeToggle.textContent = "🌓";
+            
+            themeToggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-theme");
+                localStorage.setItem(
+                    "theme", 
+                    document.body.classList.contains("dark-theme") ? "dark" : "light"
+                );
+            });
+            
+            document.body.appendChild(themeToggle);
+        }
+
+        // Initialize theme
+        setThemePreference();
+        createThemeToggle();
+
         // Add some interactivity to make it more fun
         document.querySelector('.error-code').addEventListener('click', function() {
             this.style.transform = 'scale(1.2) rotate(10deg)';
