@@ -164,6 +164,118 @@ function setupTagsToggle() {
   });
 }
 
+// Generate timeline strip
+function renderTimeline(posts) {
+  const timelineContainer = document.getElementById('timeline-strip');
+  if (!timelineContainer) return;
+  
+  // Extract dates and organize by year/month
+  const dateMap = new Map();
+  
+  posts.forEach(post => {
+    const date = new Date(post.date);
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    
+    if (!dateMap.has(year)) {
+      dateMap.set(year, new Set());
+    }
+    
+    dateMap.get(year).add(month);
+  });
+  
+  // Sort years in descending order
+  const years = [...dateMap.keys()].sort((a, b) => b - a);
+  
+  // Create timeline elements
+  years.forEach(year => {
+    const yearContainer = document.createElement('div');
+    yearContainer.className = 'year-container';
+    
+    const yearLabel = document.createElement('span');
+    yearLabel.className = 'year-label';
+    yearLabel.textContent = year;
+    yearLabel.setAttribute('data-year', year);
+    yearLabel.addEventListener('click', () => {
+      // Toggle year selection
+      const isActive = yearLabel.classList.contains('active');
+      
+      // Clear all active states
+      document.querySelectorAll('.year-label, .month-dot').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      if (!isActive) {
+        yearLabel.classList.add('active');
+        
+        // Filter posts by year
+        const filteredPosts = posts.filter(post => {
+          const postDate = new Date(post.date);
+          return postDate.getFullYear() === year;
+        });
+        
+        renderPosts(filteredPosts);
+      } else {
+        // Show all posts
+        renderPosts(posts);
+      }
+    });
+    
+    const monthLetters = document.createElement('div');
+    monthLetters.className = 'month-letters';
+    
+    // Create letters for all months (0-11)
+    for (let month = 0; month < 12; month++) {
+      const monthLetter = document.createElement('div');
+      monthLetter.className = 'month-letter';
+      monthLetter.setAttribute('data-month', month);
+      monthLetter.setAttribute('data-year', year);
+      
+      // Get first letter of month name
+      const monthName = new Date(year, month).toLocaleString('default', { month: 'long' });
+      monthLetter.textContent = monthName[0];
+      monthLetter.title = monthName;
+      
+      // If this month has posts, mark it and make it clickable
+      if (dateMap.get(year).has(month)) {
+        monthLetter.classList.add('has-posts');
+        
+        monthLetter.addEventListener('click', () => {
+          // Toggle month selection
+          const isActive = monthLetter.classList.contains('active');
+          
+          // Clear all active states
+          document.querySelectorAll('.year-label, .month-letter').forEach(el => {
+            el.classList.remove('active');
+          });
+          
+          if (!isActive) {
+            monthLetter.classList.add('active');
+            yearLabel.classList.add('active');
+            
+            // Filter posts by month and year
+            const filteredPosts = posts.filter(post => {
+              const postDate = new Date(post.date);
+              return postDate.getFullYear() === year && postDate.getMonth() === month;
+            });
+            
+            renderPosts(filteredPosts);
+          } else {
+            // Show all posts
+            renderPosts(posts);
+          }
+        });
+      }
+      
+      monthLetters.appendChild(monthLetter);
+    }
+    
+    yearContainer.appendChild(yearLabel);
+    yearContainer.appendChild(monthLetters);
+    timelineContainer.appendChild(yearContainer);
+  });
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
   setThemePreference();
@@ -172,5 +284,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const posts = await loadPosts();
   renderPosts(posts);
   renderTags(posts);
+  renderTimeline(posts);
   setupTagsToggle();
 });
