@@ -1,24 +1,122 @@
----
-permalink: /404.html
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            margin: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .error-message {
+            font-size: 24px;
+            margin: 20px 0 40px;
+        }
+        
+        .portal {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3498db, #9b59b6, #e74c3c, #f1c40f);
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            animation: rotate 8s linear infinite;
+        }
+        
+        .portal::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            background: white;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .portal::after {
+            content: "VOID";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .home-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .home-link:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Oops! You've ventured into the knowledge void.</p>
+        
+        <div class="portal"></div>
+        
+        <p>The page you're looking for has been consumed by the void or never existed in the first place.</p>
+        <p>Perhaps it was an experiment that failed, or knowledge that hasn't been discovered yet.</p>
+        
+        <a href="/" class="home-link">Return to Reality</a>
+    </div>
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+    <script>
+        // Add some interactivity to make it more fun
+        document.querySelector('.error-code').addEventListener('click', function() {
+            this.style.transform = 'scale(1.2) rotate(10deg)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 500);
+        });
+        
+        document.querySelector('.portal').addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 0 50px rgba(52, 152, 219, 0.8)';
+        });
+        
+        document.querySelector('.portal').addEventListener('mouseleave', function() {
+            this.style.boxShadow = '0 0 30px rgba(0, 0, 0, 0.5)';
+        });
+    </script>
+</body>
+</html>
