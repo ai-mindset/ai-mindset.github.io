@@ -206,6 +206,100 @@ body.dark-theme #show-all-btn:hover {
   color: white;
 }
 
+/* Timeline filter */
+.timeline-filter {
+  margin: 1.5rem 0;
+}
+
+#timeline-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.year-container {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+}
+
+body.dark-theme .year-container {
+  color: var(--text-dark);
+}
+
+.year-label {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.year-label:hover {
+  color: var(--link-light);
+}
+
+body.dark-theme .year-label:hover {
+  color: var(--link-dark);
+}
+
+.year-label.active {
+  color: var(--link-light);
+}
+
+body.dark-theme .year-label.active {
+  color: var(--link-dark);
+}
+
+.month-letters {
+  display: flex;
+  gap: 5px;
+}
+
+.month-letter {
+  font-size: 0.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
+  line-height: 1.2rem;
+  color: #ccc;
+  transition: transform 0.2s, color 0.2s;
+  font-weight: 400;
+}
+
+.month-letter.has-posts {
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+body.dark-theme .month-letter {
+  color: #555;
+}
+
+.month-letter.has-posts:hover {
+  transform: scale(1.2);
+  color: var(--link-light);
+}
+
+body.dark-theme .month-letter.has-posts:hover {
+  color: var(--link-dark);
+}
+
+.month-letter.has-posts.active {
+  color: var(--link-light);
+  font-weight: 700;
+  transform: scale(1.2);
+}
+
+body.dark-theme .month-letter.has-posts.active {
+  color: var(--link-dark);
+}
+
+body.dark-theme .month-letter.has-posts {
+  color: var(--text-dark);
+}
+
 /* Posts */
 .post-item {
   margin-bottom: 1.5rem;
