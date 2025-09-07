@@ -4,6 +4,9 @@ title: "🗄️ SQLite: The Minimalist Database for AI Engineering"
 date: 2025-02-11
 tags: [ai, data-modeling, data-processing, data-science, go, minimal, production, python, zero-config]
 ---
+
+**TL;DR:** SQLite offers a zero-configuration, pre-installed database solution ideal for AI engineering projects, supporting modern data structures including vectors, graphs, and JSON documents whilst providing single-file portability, ACID compliance, and broad language compatibility - making it an excellent minimalist choice when specialised database systems would be overkill.
+
 <!--more-->
 
 ## Introduction

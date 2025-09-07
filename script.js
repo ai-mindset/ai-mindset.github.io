@@ -89,6 +89,17 @@ function renderPosts(posts, filterTag = null) {
     postElement.appendChild(titleElement);
     postElement.appendChild(tagsElement);
     
+    // Extract and add TL;DR if available
+    if (post.content) {
+      const tldrMatch = post.content.match(/<p><strong>TL;DR:<\/strong>(.*?)<\/p>/i);
+      if (tldrMatch && tldrMatch[1]) {
+        const tldrElement = document.createElement('p');
+        tldrElement.className = 'post-tldr';
+        tldrElement.innerHTML = '<strong>TL;DR:</strong>' + tldrMatch[1];
+        postElement.appendChild(tldrElement);
+      }
+    }
+    
     postsContainer.appendChild(postElement);
   });
 }

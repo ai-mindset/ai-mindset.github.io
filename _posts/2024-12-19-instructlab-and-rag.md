@@ -4,6 +4,9 @@ title: "🎛️ A Practical Guide to Fine-tuning LLMs with InstructLab"
 date: 2024-12-19
 tags: [ai, llm, model-governance, production, quantisation, python, mlops, best-practices, data-science]
 ---
+
+**TL;DR:** InstructLab democratises LLM fine-tuning through its structured LAB methodology, offering three hardware-adaptive QLoRA-based training pipelines (Simple, Full, and Accelerated) that enable organisations to create domain-specific models without massive computing resources whilst maintaining comprehensive evaluation frameworks.
+
 <!--more-->
 
 ## Introduction
