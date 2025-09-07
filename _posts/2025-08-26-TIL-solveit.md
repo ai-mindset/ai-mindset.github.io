@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "💡 TIL: Solveit, "
+title: "💡 TIL: Incremental AI Problem-Solving with Solveit"
 date: 2025-08-26
-tags: [til, ]
+tags: [til, fast-ai, answer-ai, solveit, ai, best-practices, llm, performance, productivity, prompt-engineering]
 ---
 <!--more-->
 
