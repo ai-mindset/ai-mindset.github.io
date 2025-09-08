@@ -1,4 +1,4 @@
-# AI Mindset - Lightweight Blog
+# Just-in-Time Learning
 
 A minimalist, lightweight blog implementation without the heavyweight Jekyll framework. This blog is designed to be:
 
