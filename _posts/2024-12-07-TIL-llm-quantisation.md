@@ -4,6 +4,9 @@ title: "💡 TIL: Understanding GGUF Model Quantisation"
 date: 2024-12-07
 tags: [ai, llm, energy-reduction, performance, quantisation]
 ---
+
+**TL;DR:** GGUF quantisation converts LLM weights from 16-bit to lower precision formats (2-bit to 6-bit) to run large models on consumer hardware. Each format offers different tradeoffs between size, speed, and quality, with Q4_K_S (4-bit) representing the sweet spot for most users—providing 3.7x size reduction while maintaining good quality. Mixed precision strategies (_S/_M/_L variants) further optimize performance by targeting attention and feed-forward layers with higher precision bits.
+
 <!--more-->
 
 ## Introduction
