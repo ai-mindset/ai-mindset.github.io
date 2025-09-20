@@ -1,6 +1,6 @@
-# AI Mindset - Lightweight Blog
+# My lightweight Blog
 
-A minimalist, lightweight blog implementation without the heavyweight Jekyll framework. This blog is designed to be:
+A minimalist, lightweight blog implementation, designed to be:
 
 - Simple to maintain
 - Fast to load
@@ -39,6 +39,7 @@ npm run dev
 ```
 
 This will:
+
 1. Convert all markdown posts to HTML
 2. Generate a posts.json file
 3. Start a local server
@@ -53,7 +54,8 @@ npm run build
 
 ### Adding New Posts
 
-1. Create a new markdown file in the `_posts` directory with the naming format: `YYYY-MM-DD-slug.md`
+1. Create a new markdown file in the `_posts` directory with the naming format:
+   `YYYY-MM-DD-slug.md`
 2. Add front matter at the top of your file:
 
 ```markdown
