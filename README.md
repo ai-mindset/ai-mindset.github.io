@@ -1,4 +1,4 @@
-# My lightweight Blog
+# Just-in-Time Learning
 
 A minimalist, lightweight blog implementation, designed to be:
 
