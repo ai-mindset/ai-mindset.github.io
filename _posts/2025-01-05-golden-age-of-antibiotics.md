@@ -4,6 +4,9 @@ title: "💊 Lessons for Modern Drug Development from the Golden Age of Antibiot
 date: 2025-01-07
 tags: [iterative-refinement, evolution, data-science, evaluation, decision-making, best-practices, modelling-mindsets, production]
 ---
+
+**TL;DR:** Despite our vastly superior modern technology, antibiotic development has dramatically declined since the post-WWII "Golden Age" (1940s-1960s) that produced most antibiotic classes we still use today-highlighting how scientific capability alone cannot drive progress without three key elements working together: economic incentives that correct market failures, institutional coordination, and systematic application of technological tools.
+
 <!--more-->
 
 ## Introduction 

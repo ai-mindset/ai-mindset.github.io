@@ -4,6 +4,9 @@ title: "💡 TIL: Exploring OpenAI's API with Swagger"
 date: 2024-12-23
 tags: [ai, llm, openai, openapi, spec]
 ---
+
+**TL;DR:** You can easily explore OpenAI's complete API documentation by loading their GitHub-hosted OpenAPI YAML file directly into Swagger's web interface. This approach lets you interactively examine all endpoints, request/response schemas, and test functionality—a valuable reference for anyone building services that need to maintain compatibility with OpenAI's API structure.
+
 <!--more-->
 
 ## Introduction 

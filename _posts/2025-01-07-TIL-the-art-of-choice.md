@@ -4,6 +4,9 @@ title: "💡 TIL: How Different Societies View and Value Choice"
 date: 2025-01-08
 tags: [til, decision-making, best-practices, evaluation, statistics, design-principles, modelling-mindsets]
 ---
+
+**TL;DR:** Sheena Iyengar's cross-cultural research reveals that how we perceive and respond to choice varies dramatically between societies - with evidence showing that sometimes having fewer choices or allowing others to choose for us can lead to better outcomes, challenging the widely-held Western belief that more individual choice is always beneficial.
+
 <!--more-->
 
 ## Introduction

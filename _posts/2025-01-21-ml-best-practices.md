@@ -4,6 +4,9 @@ title: "🔧 A 5-Minute Guide to Engineering Machine Learning Systems"
 date: 2025-01-21
 tags: [machine-learning, best-practices, mlops, monitoring, production, quality-assurance, data-science, decision-making]
 ---
+
+**TL;DR:** This concise guide distils Google's 43 machine learning best practices into essential principles across four phases: starting with simple heuristics before ML, building robust data pipelines, prioritising feature engineering over complex algorithms, and gradually introducing complexity only after monitoring systems are established - emphasising engineering excellence over ML expertise.
+
 <!--more-->
 
 ## Introduction

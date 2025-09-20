@@ -4,6 +4,9 @@ title: "📊 Ten Ways to Model Data"
 date: 2024-11-27
 tags: [modelling-mindsets, data-science, ai, data-modeling, neural-network, best-practices, statistics, machine-learning, decision-making]
 ---
+
+**TL;DR:** This comprehensive guide explores ten distinct modelling approaches across statistics, machine learning, and causal inference-advocating for "T-shaped" expertise where practitioners develop deep knowledge in one or two mindsets aligned with their domain needs whilst maintaining sufficient breadth to recognise when different approaches are required, with specific recommendations for research, business, and product development contexts.
+
 <!--more-->
 
 ## Introduction 

@@ -1,116 +1,54 @@
----
-layout: default
----
-
-<p>
-A minimalist, tracking-free website<sup><a href="#ref1">1</a></sup> sharing insights I wish I'd known earlier -my way of <a href="https://www.swyx.io/learn-in-public">learning in public</a> and building personal branding<sup><a href="#ref2">2</a></sup> <sup><a href="#ref3">3</a></sup> <sup><a href="#ref4">4</a></sup>.
-</p>
-<p>
-Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, <a href="https://github.com/fastai/fast_template">fast_template</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering"/>AI</a> to help process and curate content ✨.
-</p>
-
-<p>
-    <center>
-        <figure>
-            <a href="https://xcancel.com/HamelHusain/status/1867289397898752222"><img src="https://pbs.twimg.com/media/GenxqRbawAAN6UZ.jpg?name=orig" width="80%" height="80%"/></a>
-            <!-- <figcaption>How to evaluate MLOps tools</figcaption> -->
-            </figure>
-    </center>
-</p>
-</br>
-
-<div class="tags-nav">
-  <div class="tags-header">
-    <h2>Tags</h2>
-    <button class="tags-toggle" aria-label="Toggle tags list">
-      <svg class="tags-icon" viewBox="0 0 24 24" width="24" height="24">
-        <path class="chevron-down" d="M6 9l6 6 6-6"></path>
-      </svg>
-    </button>
-  </div>
-  <div class="tags-content">
-    <div class="tags-list">
-      {% assign sorted_tags = site.tags | sort %}
-      {% for tag in sorted_tags %}
-      <a href="javascript:void(0)" onclick="filterByTag('{{ tag[0] }}')" class="tag">{{ tag[0] }}</a>
-      {% unless forloop.last %} • {% endunless %}
-      {% endfor %}
-      <a href="javascript:void(0)" onclick="showAllPosts()" class="tag" id="show-all">(Show All)</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just-in-Time Learning</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+      </nav>
     </div>
-  </div>
-</div>
+  </header>
 
-<div class="posts-section">
-    <h2>All Posts</h2>
-    {% for post in site.posts %}
-    <div class="post-item" data-tags="{{ post.tags | join: ' ' }}">
-        <time class="post-date">{{ post.date | date: "%B %d, %Y" }}</time>
-        <h3>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-        </h3>
+  <main class="container">
+    <div class="tag-filter">
+      <div class="tag-header">
+        <h2>Filter by tag</h2>
+        <button id="toggle-tags" aria-label="Toggle tags visibility">
+          <span class="chevron">›</span>
+        </button>
+      </div>
+      <div id="tags-container" class="collapsed">
+        <div id="tags"></div>
+        <button id="show-all-btn">Show All</button>
+      </div>
     </div>
-    {% endfor %}
-</div>
 
-<hr>
-<div class="references">
-    <p id="ref1"><sup>1</sup> No ads, cookies, tracking, pop-ups, comments, social widgets, syndicated content, or 
-        newsletters. Daily and total visits are <em>approximate</em> and <em>anonymous</em>, calculated by counting page 
-loads.</p>
-    <p id="ref2"><sup>2</sup> <a href="https://www.fast.ai/posts/2017-12-18-personal-brand.html">Making Peace with Personal Branding</a></p>
-    <p id="ref3"><sup>3</sup> <a href="https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045">Why you (yes, you) should blog</a></p>
-    <p id="ref4"><sup>4</sup> <a href="https://bsky.app/profile/simonwillison.net/post/3leuuhotnpk27">Writing productivity hack</a></p>
-</div>
+    <div class="timeline-filter">
+      <div id="timeline-strip"></div>
+    </div>
 
-<!-- Visitor Counter -->
-<div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #eee;">
-    {% assign today = site.time | date: '%Y-%m-%d' %}
-    <p>Daily Visitors: {{ site.data.visitors.daily[today] | default: 0 }} | 
-    Total Visitors: {{ site.data.visitors.total }}</p>
-</div>
+    <div class="posts">
+      <h2>All Posts</h2>
+      <div id="posts-list"></div>
+    </div>
+  </main>
 
-<!-- Scripts -->
-<script>
-function filterByTag(tag) {
-  const posts = document.querySelectorAll('.post-item');
-  posts.forEach(post => {
-    const postTags = post.getAttribute('data-tags')?.split(' ') || [];
-    post.style.display = postTags.includes(tag) ? 'block' : 'none';
-  });
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
 
-  // Update active tag styling
-  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
-  document.getElementById('show-all').classList.remove('active');
-}
-
-function showAllPosts() {
-  document.querySelectorAll('.post-item').forEach(post => {
-    post.style.display = 'block';
-  });
-  
-  // Update active tag styling
-  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
-  document.getElementById('show-all').classList.add('active');
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    const tagsNav = document.querySelector('.tags-nav');
-    const tagsHeader = document.querySelector('.tags-header');
-    const tagsContent = document.querySelector('.tags-content');
-    
-    if (tagsHeader && tagsContent) {
-        // Tags toggle functionality
-        tagsHeader.addEventListener('click', function() {
-            tagsNav.classList.toggle('collapsed');
-            tagsContent.classList.toggle('collapsed');
-            localStorage.setItem('tagsCollapsed', tagsNav.classList.contains('collapsed'));
-        });
-        
-        // Initialize state (start collapsed)
-        tagsNav.classList.add('collapsed');
-        tagsContent.classList.add('collapsed');
-        localStorage.setItem('tagsCollapsed', 'true');
-    }
-});
-</script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -4,6 +4,9 @@ title: "⚙️ Turning Data Science into Real-World Value with The Drivetrain Fr
 date: 2025-03-20
 tags: [data-science, decision-making, machine-learning, modelling-mindsets, optimisation, fast-ai, advantage, best-practices, design-principles, causal-inference, business-value, predictive-modelling, integration, deliberate-experimentation, real-value]
 ---
+
+**TL;DR:** Jeremy Howard's Drivetrain Framework transforms data science from isolated predictions to value-creating systems through four steps: defining clear objectives, identifying controllable levers, collecting causal data through deliberate experimentation, and building integrated systems that combine predictive models with optimisation - bridging the gap between analytics and measurable business results.
+
 <!--more-->
 
 ## Introduction

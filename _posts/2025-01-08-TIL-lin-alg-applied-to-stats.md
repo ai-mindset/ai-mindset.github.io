@@ -4,6 +4,9 @@ title: "💡 TIL: The Matrix Equation That Makes Linear Regression Work"
 date: 2025-01-08
 tags: [data-science, machine-learning, statistics, ai, linear-algebra, til, modelling-mindsets, data-modeling]
 ---
+
+**TL;DR:** Linear regression can be elegantly solved using the matrix equation β = (X^TX)^(-1)X^Ty, which mathematically guarantees minimum squared error by accounting for feature correlations - though real-world applications often favour gradient descent due to the direct solution's computational complexity, numerical instability with correlated features, and memory constraints.
+
 <!--more-->
 
 ## Introduction

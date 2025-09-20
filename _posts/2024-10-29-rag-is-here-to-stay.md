@@ -4,6 +4,9 @@ title: "🗃️ RAG Is Here To Stay"
 date: 2024-10-29
 tags: [rag, llm, ai, performance]
 ---
+
+**TL;DR:** Despite larger LLM context windows, Retrieval-Augmented Generation (RAG) remains essential for information curation, data provenance, and overcoming the "lost in the middle" effect where models struggle with information placed centrally in long contexts-making careful retrieval strategies more valuable than simply dumping large amounts of text into expanded context windows.
+
 <!--more-->
 
 ## Introduction
