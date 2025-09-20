@@ -4,6 +4,9 @@ title: "💡 TIL: Useful Nuggets from AI Engineers"
 date: 2024-10-25
 tags: [til, ai, llm]
 ---
+
+**TL;DR:** Leading AI researchers emphasise that success in the field now depends more on engineering skills and adaptability than academic credentials, with the most valuable skills being prioritisation, communication, project selection, and willingness to manually inspect data-suggesting that choosing the right problem can multiply output by 10-100x more effectively than simply working longer hours.
+
 <!--more-->
 
 ## Introduction

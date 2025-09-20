@@ -4,6 +4,9 @@ title: "シ Back to Basics: A Modern, Minimal Python Toolchain"
 date: 2024-11-21
 tags: [python, type-checking, code-quality, github-actions, ci-cd, cross-platform, minimal, toolchain]
 ---
+
+**TL;DR:** This article presents a streamlined Python toolchain that reduces cognitive load while maintaining the language's data science capabilities, featuring Rust-based tools like uv (package manager) and Ruff (linter/formatter), along with pyright for type checking-all configured through a single pyproject.toml file and complemented by essential libraries for data processing, visualisation, and AI development.
+
 <!--more-->
 
 ## Introduction
