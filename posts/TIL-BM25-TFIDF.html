@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💡 TIL: TF-IDF vs BM25 - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>💡 TIL: TF-IDF vs BM25</h1>
+        <span class="post-date">November 20, 2024</span>
+        <div class="post-tags">
+          <span class="post-tag">til</span><span class="post-tag">tf-idf</span><span class="post-tag">bm25</span><span class="post-tag">text-ranking</span><span class="post-tag">nlp</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> While TF-IDF ranks documents based on term frequency weighted by rarity across a corpus, BM25 improves upon this foundation by adding term frequency saturation and document length normalisation. Choose TF-IDF for simpler tasks with uniformly-sized documents, but prefer BM25 for search engines handling varied document lengths where its sophisticated algorithm delivers superior retrieval performance despite requiring more complex implementation and parameter tuning.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>When building search engines or document retrieval systems, two algorithms often come up: <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">TF-IDF</a> and <a href="https://en.wikipedia.org/wiki/Okapi_BM25">Okapi BM25</a>. While both aim to rank documents by relevance, they differ significantly in their approach and effectiveness. Today, I learned the key differences between these techniques and when to use each one.</p>
+<h2 id="tf-idf-the-classic-approach">TF-IDF: The Classic Approach</h2>
+<p>TF-IDF (Term Frequency-Inverse Document Frequency) ranks documents based on how frequently terms appear in a document, weighted by how rare those terms are across all documents. It&#39;s straightforward: if a word appears often in a document but is rare across the corpus, it&#39;s probably important[^1]. $idf$ is calculated as follows:  </p>
+<p>$idf(t) = \log\frac{N}{n_t}$  </p>
+<p>where:<br>$N$ : Total number of documents in corpus<br>$n_t$ : Number of documents containing term $t$  </p>
+<p>TF-IDF is derived by the following calculation:  </p>
+<p>$TF\text{-}IDF(t,d) = tf(t,d) \cdot idf(t)$  </p>
+<p>where:<br>$tf(t,d)$ : Frequency of term $t$ in document $d$  </p>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>Simple to understand and implement</li>
+<li>Computationally efficient</li>
+<li>Works well for documents of similar length</li>
+<li>Great for basic document classification</li>
+</ul>
+<h3 id="disadvantages">Disadvantages</h3>
+<ul>
+<li>No term frequency saturation (more occurrences always mean higher scores)</li>
+<li>Doesn&#39;t handle varying document lengths well</li>
+<li>Can overemphasise common terms in long documents</li>
+</ul>
+<h2 id="bm25-the-modern-evolution">BM25: The Modern Evolution</h2>
+<p>BM25 (Best Match 25) builds upon TF-IDF&#39;s foundation but adds two crucial improvements: term frequency saturation and document length normalisation. Note how the $idf_{BM25}$ component differs from TF-IDF&#39;s:  </p>
+<p>$idf_{BM25}(t) = \log\frac{N - n_t + 0.5}{n_t + 0.5}$</p>
+<p>This modification provides smoother IDF weights and better handles edge cases.</p>
+<p>$BM25(t,d) = \frac{tf(t,d) \cdot (k_1 + 1)}{tf(t,d) + k_1 \cdot (1 - b + b \cdot \frac{|d|}{avgdl})} \cdot idf_{BM25}$</p>
+<p>where:<br>$tf(t,d)$ : Frequency of term $t$ in document $d$<br>$|d|$ : Length of document $d$ (in words)<br>$avgdl$ : Average document length in corpus<br>$k_1$ : Term frequency saturation parameter (typically 1.2-2.0)<br>$b$ : Length normalisation parameter (typically 0.75)<br>$N$ : Total number of documents in corpus<br>$n_t$ : Number of documents containing term $t$  </p>
+<h3 id="advantages-1">Advantages</h3>
+<ul>
+<li>Better handles varying document lengths</li>
+<li>Prevents term frequency from dominating scores</li>
+<li>More nuanced relevance rankings</li>
+<li>Industry standard for search engines</li>
+</ul>
+<h3 id="disadvantages-1">Disadvantages</h3>
+<ul>
+<li>More complex implementation</li>
+<li>Requires parameter tuning</li>
+<li>Slightly higher computational cost</li>
+<li>Less interpretable than TF-IDF</li>
+</ul>
+<h2 id="which-to-choose">Which to Choose?</h2>
+<h3 id="choose-tf-idf-when">Choose TF-IDF when:</h3>
+<ul>
+<li>Building basic document classification systems</li>
+<li>Working with uniformly-sized documents</li>
+<li>Needing interpretable results</li>
+<li>Prioritising implementation simplicity</li>
+</ul>
+<h3 id="choose-bm25-when">Choose BM25 when:</h3>
+<ul>
+<li>Building a search engine</li>
+<li>Handling documents of varying lengths</li>
+<li>Requiring state-of-the-art retrieval performance</li>
+<li>Working with user queries</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>While TF-IDF remains valuable for simpler tasks and educational purposes, BM25 is generally superior for serious search applications. The choice between them often comes down to the trade-off between simplicity and sophistication. For modern search engines, BM25 is the clear winner, but TF-IDF&#39;s simplicity makes it perfect for learning and basic applications.</p>
+<p>Remember: the best algorithm is the one that meets your specific needs. Don&#39;t automatically reach for BM25 just because it&#39;s more advanced – sometimes, simpler is better.</p>
+<p>[^1]: This is why TF-IDF is effective at identifying characteristic terms in documents. It automatically downweights common words like &quot;the&quot;, &quot;and&quot;, &quot;is&quot; while highlighting distinctive terms that appear frequently in specific documents.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

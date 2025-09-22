@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>シ Back to Basics: A Modern, Minimal Python Toolchain - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>シ Back to Basics: A Modern, Minimal Python Toolchain</h1>
+        <span class="post-date">November 21, 2024</span>
+        <div class="post-tags">
+          <span class="post-tag">python</span><span class="post-tag">type-checking</span><span class="post-tag">code-quality</span><span class="post-tag">github-actions</span><span class="post-tag">ci-cd</span><span class="post-tag">cross-platform</span><span class="post-tag">minimal</span><span class="post-tag">toolchain</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> This article presents a streamlined Python toolchain that reduces cognitive load while maintaining the language&#39;s data science capabilities, featuring Rust-based tools like uv (package manager) and Ruff (linter/formatter), along with pyright for type checking-all configured through a single pyproject.toml file and complemented by essential libraries for data processing, visualisation, and AI development.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Python&#39;s ecosystem for Data Science and AI is unmatched in its depth and maturity. Yet, its fragmented tooling landscape often leads to decision paralysis and opinions galore: virtualenv or venv? pip or conda? black or flake8? These choices, while providing flexibility, can create unnecessary cognitive load and often foster dogmatic opinions about &quot;the right way&quot; to do things.
+After exploring alternative stacks, I&#39;m returning to Python. Not least because it&#39;s perfect, but because it&#39;s productive. The challenge isn&#39;t Python&#39;s capabilities; it&#39;s the abundance and complexity of its tooling. This article presents a carefully curated, minimal toolkit that leverages Python&#39;s ecosystem while avoiding its common setup pitfalls.</p>
+<h2 id="motivation">Motivation</h2>
+<p>The appeal of integrated toolchains like Deno 2.0 is undeniable. Zero setup, immediate productivity, and a cohesive development experience. My recent exploration of alternative stacks revealed the value of unified tools that just work. While JavaScript&#39;s ecosystem for Data Science and AI is growing rapidly, it still lacks the depth and maturity of Python&#39;s scientific computing stack.<br>This exploration led to an important realisation: aside from an expansive Data and AI ecosystem, Python development can be achieved with a streamlined workflow that increases productivity and decreases complexity. Rather than accepting the cognitive overhead of multiple competing tools, I decided to create my own compact toolchain that meets most Data Science and AI requirements with minimalism, simplicity, and clarity in mind.
+The goal isn&#39;t to prescribe another &quot;right way&quot; of doing things, but rather to demonstrate how a carefully chosen set of modern tools can create a development experience that rivals the integrated approaches of newer platforms while leveraging Python&#39;s mature ecosystem.  </p>
+<h2 id="my-approach">My Approach</h2>
+<h3 id="local-development">Local Development</h3>
+<p>My toolchain starts with the following foundational choices that eliminate common Python setup headaches:</p>
+<ol start="0">
+<li><p><a href="https://peps.python.org/pep-0008/">PEP8</a>: Let&#39;s start with a style guide, so that the team is on the same page  </p>
+</li>
+<li><p><a href="https://docs.astral.sh/uv/">uv</a>: A blazing-fast Python package and project manager, written in Rust. It replaces pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, and more, providing: </p>
+<ul>
+<li>Consistent dependency resolution</li>
+<li>Lightning-fast package installations</li>
+<li>Built-in virtual environment management</li>
+<li>Direct integration with <code>pyproject.toml</code></li>
+</ul>
+</li>
+<li><p><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/"><code>pyproject.toml</code></a>: The single source of truth for project configuration. For example:</p>
+</li>
+</ol>
+<pre><code class="language-toml">    [project]
+    name = &quot;my-ds-project&quot;
+    version = &quot;0.1.0&quot;
+    dependencies = [
+        &quot;polars&quot;,
+        &quot;tensorflow&quot;,
+        &quot;plotly&quot;
+    ]
+
+    [tool.ruff]
+    line-length = 90 
+    select = [&quot;E&quot;, &quot;F&quot;, &quot;I&quot;]
+
+    # Required only if you use pytest for unit testing
+    [tool.pytest.ini_options]
+    testpaths = [&quot;tests&quot;]
+</code></pre>
+<ol start="3">
+<li><p><a href="https://docs.astral.sh/ruff/">Ruff</a>: A Rust-based tool that combines formatting and linting, replacing the need for black, flake8, isort etc.:</p>
+<ul>
+<li>Single-tool code quality enforcement</li>
+<li>Configurable through <code>pyproject.toml</code></li>
+<li>Significantly faster than Python-based alternatives</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/microsoft/pyright">pyright</a>: Static Type Checker for Python</p>
+<ul>
+<li>Static type checker </li>
+<li><a href="https://htmlpreview.github.io/?https://github.com/python/typing/blob/main/conformance/results/results.html">Standards</a> compliant</li>
+<li><a href="https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file">Configurable</a> within <code>pyproject.toml</code></li>
+</ul>
+</li>
+<li><p>[iterative refinement]({{ site.baseurl }}{% link _posts/2024-11-22-iterative-refinement.md %}): An approach that tightly couples (doc)tests with code, ensuring <a href="https://www.merriam-webster.com/thesaurus/up-to-dateness">up-to-dateness</a><br><del><a href="https://docs.pytest.org/en/stable/">pytest</a>: Handles testing with minimal boilerplate and rich assertions</del></p>
+</li>
+</ol>
+<h3 id="cross-platform-distribution">Cross-Platform Distribution</h3>
+<ol>
+<li>PyInstaller for creating stand-alone executables</li>
+<li>GitHub Actions workflow for automated builds:</li>
+</ol>
+<pre><code class="language-yaml">- name: Build executables
+  run: |
+    pyinstaller --onefile src/main.py
+</code></pre>
+<ol start="3">
+<li>Local cross-compilation using <a href="https://podman.io/">Podman</a>:</li>
+</ol>
+<pre><code class="language-Dockerfile">FROM python:3.13-slim
+COPY . /app
+WORKDIR /app
+RUN pip install pyinstaller
+CMD pyinstaller --onefile src/main.py
+</code></pre>
+<h3 id="data-science">Data Science</h3>
+<p>A carefully selected set of powerful libraries that minimize overlap:</p>
+<ul>
+<li><a href="https://pola.rs/">Polars</a>: Fast DataFrame operations with a cohesive API. <a href="https://xcancel.com/charliermarsh/status/1860388882015223835">Why?</a></li>
+</ul>
+<pre><code class="language-python">    import polars as pl
+
+    def analyse_customer_behavior(path: str):
+        return (
+            pl.scan_parquet(path)
+            .with_columns([
+                pl.col(&quot;purchase_date&quot;).str.to_datetime(),
+                (pl.col(&quot;amount&quot;) * pl.col(&quot;quantity&quot;)).alias(&quot;total_spend&quot;)
+            ])
+            .group_by([
+                pl.col(&quot;customer_id&quot;),
+                pl.col(&quot;purchase_date&quot;).dt.month().alias(&quot;month&quot;)
+            ])
+            .agg([
+                pl.col(&quot;total_spend&quot;).sum().alias(&quot;monthly_spend&quot;),
+                pl.col(&quot;product_id&quot;).n_unique().alias(&quot;unique_products&quot;),
+                pl.col(&quot;purchase_date&quot;).count().alias(&quot;purchase_frequency&quot;)
+            ])
+            .sort([&quot;customer_id&quot;, &quot;month&quot;])
+            .collect()
+        )
+</code></pre>
+<ul>
+<li><a href="https://www.tensorflow.org/">TensorFlow 2</a>: Deep learning when needed</li>
+</ul>
+<pre><code class="language-python">    import tensorflow as tf
+    mnist = tf.keras.datasets.mnist
+
+    (x_train, y_train),(x_test, y_test) = mnist.load_data()
+    x_train, x_test = x_train / 255.0, x_test / 255.0
+
+    model = tf.keras.models.Sequential([
+      tf.keras.layers.Flatten(input_shape=(28, 28)),
+      tf.keras.layers.Dense(128, activation=&#39;relu&#39;),
+      tf.keras.layers.Dropout(0.2),
+      tf.keras.layers.Dense(10, activation=&#39;softmax&#39;)
+    ])
+
+    model.compile(optimiser=&#39;adam&#39;,
+      loss=&#39;sparse_categorical_crossentropy&#39;,
+      metrics=[&#39;accuracy&#39;])
+
+    model.fit(x_train, y_train, epochs=5)
+    model.evaluate(x_test, y_test)
+</code></pre>
+<ul>
+<li><a href="https://xgboost.ai/">XGBoost</a>: Gradient boosting for structured data</li>
+</ul>
+<pre><code class="language-python">    from xgboost import XGBClassifier
+    # read data
+    from sklearn.datasets import load_iris
+    from sklearn.model_selection import train_test_split
+    data = load_iris()
+    X_train, X_test, y_train, y_test = train_test_split(data[&#39;data&#39;], data[&#39;target&#39;], test_size=.2)
+    # create model instance
+    bst = XGBClassifier(n_estimators=2, max_depth=2, learning_rate=1, objective=&#39;binary:logistic&#39;)
+    # fit model
+    bst.fit(X_train, y_train)
+    # make predictions
+    preds = bst.predict(X_test)
+</code></pre>
+<ul>
+<li><a href="https://plotly.com/python/">Plotly</a>: Interactive visualizations</li>
+</ul>
+<pre><code class="language-python">    import plotly.express as px
+    df = px.data.iris()
+    fig = px.scatter(df, x=&quot;sepal_width&quot;, y=&quot;sepal_length&quot;, color=&quot;species&quot;, symbol=&quot;species&quot;)
+    fig.show()
+</code></pre>
+<ul>
+<li><a href="https://mlflow.org">MLFlow</a>: Managing the Machine Learning Lifecycle<center>
+  <img src="https://raw.githubusercontent.com/ai-mindset/ai-mindset.github.io/refs/heads/main/images/40_MLFlow.png"/>  
+</center><br /></li>
+</ul>
+<h3 id="ai-engineering">AI Engineering</h3>
+<p>With hybrid solutions becoming more prevalent nowadays, we can use a combination of tools.</p>
+<ul>
+<li><a href="https://ollama.com/">Ollama</a>: Local model deployment and inference</li>
+</ul>
+<pre><code class="language-python">    import ollama
+
+    def technical_advisor():
+        messages = [
+            {
+                &quot;role&quot;: &quot;system&quot;,
+                &quot;content&quot;: &quot;You are a technical advisor specializing in Python architecture.&quot;
+            },
+            {
+                &quot;role&quot;: &quot;user&quot;,
+                &quot;content&quot;: &quot;What&#39;s the best way to handle database migrations?&quot;
+            }
+        ]
+        
+        response = ollama.chat(model=&#39;llama2&#39;, messages=messages)
+        messages.append(response[&#39;message&#39;])
+        
+        # Follow-up question with context
+        messages.append({
+            &quot;role&quot;: &quot;user&quot;,
+            &quot;content&quot;: &quot;How would that work with SQLAlchemy specifically?&quot;
+        })
+        
+        return ollama.chat(model=&#39;llama2&#39;, messages=messages)
+</code></pre>
+<ul>
+<li><a href="https://docs.llamaindex.ai/">LlamaIndex</a>: RAG pipeline construction using local LLMs or external APIs</li>
+</ul>
+<pre><code class="language-python">    from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
+    from llama_index.core.node_parser import SentenceSplitter
+    from llama_index.core.retrievers import VectorIndexRetriever
+    from llama_index.core.query_engine import RetrieverQueryEngine
+
+    def create_custom_rag():
+        # Load and parse documents
+        documents = SimpleDirectoryReader(&quot;technical_docs&quot;).load_data()
+        parser = SentenceSplitter(chunk_size=1024, chunk_overlap=20)
+        nodes = parser.get_nodes_from_documents(documents)
+        
+        # Create index with custom settings
+        index = VectorStoreIndex(nodes)
+        
+        # Custom retriever with similarity threshold
+        retriever = VectorIndexRetriever(
+            index=index,
+            similarity_top_k=3,
+            filters=lambda x: float(x.get_score()) &gt; 0.7
+        )
+        
+        # Create query engine with custom retriever
+        query_engine = RetrieverQueryEngine(retriever=retriever)
+        return query_engine
+</code></pre>
+<ul>
+<li><a href="https://www.mongodb.com/">MongoDB</a>: A distributed document DB that supports vector storage and graph operations</li>
+</ul>
+<pre><code class="language-python">    from pymongo import MongoClient
+    import numpy as np
+
+    def vector_search(text_embedding: np.ndarray, threshold: float = 0.8):
+        client = MongoClient(&quot;mongodb://localhost:27017/&quot;)
+        db = client.vector_db
+        
+        pipeline = [
+            {
+                &quot;$search&quot;: {
+                    &quot;index&quot;: &quot;vector_index&quot;,
+                    &quot;knnBeta&quot;: {
+                        &quot;vector&quot;: text_embedding.tolist(),
+                        &quot;path&quot;: &quot;embedding&quot;,
+                        &quot;k&quot;: 5
+                    }
+                }
+            },
+            {
+                &quot;$match&quot;: {
+                    &quot;score&quot;: {&quot;$gt&quot;: threshold}
+                }
+            },
+            {
+                &quot;$project&quot;: {
+                    &quot;_id&quot;: 0,
+                    &quot;text&quot;: 1,
+                    &quot;score&quot;: {&quot;$meta&quot;: &quot;searchScore&quot;}
+                }
+            }
+        ]
+        
+        return list(db.documents.aggregate(pipeline))
+</code></pre>
+<p><em>Update: Looking into <a href="https://weaviate.io/">Weaviate</a> as an all-in-one DB solution.</em></p>
+<p>This stack provides everything needed for modern Data Science and AI work while maintaining clarity and minimising tool overlap.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Returning to Python with this minimal, modern toolchain has proven to be a pragmatic choice. The combination of uv, Ruff, and Pytest creates a more unified development workflow, while retaining access to Python&#39;s mature scientific computing ecosystem.</p>
+<p>Key benefits of this approach:</p>
+<ol>
+<li><strong>Reduced Cognitive Load</strong>: One tool per task eliminates decision fatigue</li>
+<li><strong>Modern Performance</strong>: Rust-based tools (uv, Ruff) provide near-instant feedback</li>
+<li><strong>Simplified Configuration</strong>: Single <code>pyproject.toml</code> as source of truth</li>
+<li><strong>Production Ready</strong>: Direct path from development to cross-platform deployment</li>
+<li><strong>Full Feature Set</strong>: Complete Data Science and AI capabilities without bloat</li>
+<li><strong>Flexible AI Stack</strong>: Seamless integration between local models (Ollama), RAG pipelines (LlamaIndex), and vector storage (MongoDB)</li>
+<li><strong>Production AI</strong>: Easy transition from experimentation to production AI systems with consistent tooling</li>
+</ol>
+<p>While Python&#39;s ecosystem will likely remain fragmented, we don&#39;t have to accept the complexity. By carefully choosing modern tools that prioritise speed, simplicity, and clarity, we can create a development environment that&#39;s both powerful and pleasant to use.</p>
+<p>The beauty of this approach lies not in its prescriptiveness, but in its principles: <em>minimize tooling</em>, <em>maximise capability</em>, and <em>maintain clarity</em>. Whether you adopt this exact stack or use it as inspiration for your own, the goal remains the same: bring the focus back to solving problems rather than managing tools.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

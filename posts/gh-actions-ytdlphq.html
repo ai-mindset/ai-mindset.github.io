@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔁 GitHub Actions for yt-dlp-hq - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>🔁 GitHub Actions for yt-dlp-hq</h1>
+        <span class="post-date">October 8, 2024</span>
+        <div class="post-tags">
+          <span class="post-tag">github-actions</span><span class="post-tag">ci-cd</span><span class="post-tag">yt-dlp</span><span class="post-tag">deno</span><span class="post-tag">typescript</span><span class="post-tag">cross-platform</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> This article details the development of a Deno-based tool for downloading high-quality videos with audio using yt-dlp, highlighting unexpected challenges with GitHub Actions where compiled executables became unusable after release-ultimately solved by compressing executables into .tar files, preserving functionality whilst revealing potential limitations in GitHub&#39;s release mechanisms.</p>
+<!--more-->
+<p><strong><a href="https://xkcd.com/1205/">Was it worth my time</a>?</strong> </p>
+<h2 id="introduction">Introduction</h2>
+<p>There are times where I need to use my computer offline, e.g. when I&#39;m travelling. Having to stay offline is a good opportunity for me to study some lectures of interest, without distractions. For that, I need offline access to the videos I&#39;m interested in.<br><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> is a great open-source project that allows the user to download audio and/or video from a wide array of platforms including YouTube. Recently, I noticed that it&#39;s no longer as straightforward to download a video with audio, using <code>yt-dlp</code>. One workaround is to download the audio and video streams separately, and merge them using <a href="https://ffmpeg.org/">FFmpeg</a>. This was a good opportunity to write a small automation project in a language I&#39;m interested in.  </p>
+<h3 id="yt-dlp-and-youtube"><code>yt-dlp</code> And YouTube</h3>
+<p>Here&#39;s an example that motivates implementing this project. Imagine I&#39;d like to download a video from the excellent <a href="https://www.youtube.com/channel/UCKWaEZ-_VweaEx1j62do_vQ">IBM Technology</a> YouTube channel, for instance <a href="https://www.youtube.com/watch?v=F8NKVhkZZWI">What are AI Agents</a>. Listing the video&#39;s available formats, returns the following table   </p>
+<pre><code class="language-console">$ yt-dlp -F https://www.youtube.com/watch\?v\=F8NKVhkZZWI
+[youtube] Extracting URL: https://www.youtube.com/watch?v=F8NKVhkZZWI
+[youtube] F8NKVhkZZWI: Downloading webpage
+[youtube] F8NKVhkZZWI: Downloading ios player API JSON
+[youtube] F8NKVhkZZWI: Downloading web creator player API JSON
+[youtube] F8NKVhkZZWI: Downloading m3u8 information
+[info] Available formats for F8NKVhkZZWI:
+ID      EXT   RESOLUTION FPS CH │   FILESIZE   TBR PROTO │ VCODEC          VBR ACODEC      ABR ASR MORE INFO
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+sb3     mhtml 48x27        0    │                  mhtml │ images                                  storyboard
+sb2     mhtml 80x45        0    │                  mhtml │ images                                  storyboard
+sb1     mhtml 160x90       0    │                  mhtml │ images                                  storyboard
+sb0     mhtml 320x180      0    │                  mhtml │ images                                  storyboard
+233     mp4   audio only        │                  m3u8  │ audio only          unknown             [en] Default
+234     mp4   audio only        │                  m3u8  │ audio only          unknown             [en] Default
+139-drc m4a   audio only      2 │    4.35MiB   49k https │ audio only          mp4a.40.5   49k 22k [en] low, DRC, m4a_dash
+139     m4a   audio only      2 │    4.35MiB   49k https │ audio only          mp4a.40.5   49k 22k [en] low, m4a_dash
+249     webm  audio only      2 │    4.37MiB   49k https │ audio only          opus        49k 48k [en] low, webm_dash
+250     webm  audio only      2 │    5.27MiB   59k https │ audio only          opus        59k 48k [en] low, webm_dash
+140-drc m4a   audio only      2 │   11.55MiB  129k https │ audio only          mp4a.40.2  129k 44k [en] medium, DRC, m4a_dash
+140     m4a   audio only      2 │   11.55MiB  129k https │ audio only          mp4a.40.2  129k 44k [en] medium, m4a_dash
+251     webm  audio only      2 │    9.45MiB  106k https │ audio only          opus       106k 48k [en] medium, webm_dash
+602     mp4   256x144     15    │ ~  7.26MiB   81k m3u8  │ vp09.00.10.08   81k video only
+394     mp4   256x144     30    │    4.36MiB   49k https │ av01.0.00M.08   49k video only          144p, mp4_dash
+269     mp4   256x144     30    │ ~ 11.26MiB  126k m3u8  │ avc1.4D400C    126k video only
+160     mp4   256x144     30    │    2.97MiB   33k https │ avc1.4D400C     33k video only          144p, mp4_dash
+603     mp4   256x144     30    │ ~ 13.63MiB  153k m3u8  │ vp09.00.11.08  153k video only
+278     webm  256x144     30    │    7.23MiB   81k https │ vp09.00.11.08   81k video only          144p, webm_dash
+395     mp4   426x240     30    │    5.90MiB   66k https │ av01.0.00M.08   66k video only          240p, mp4_dash
+229     mp4   426x240     30    │ ~ 14.99MiB  168k m3u8  │ avc1.4D4015    168k video only
+133     mp4   426x240     30    │    4.49MiB   50k https │ avc1.4D4015     50k video only          240p, mp4_dash
+604     mp4   426x240     30    │ ~ 21.46MiB  241k m3u8  │ vp09.00.20.08  241k video only
+242     webm  426x240     30    │    7.38MiB   83k https │ vp09.00.20.08   83k video only          240p, webm_dash
+396     mp4   640x360     30    │   10.27MiB  115k https │ av01.0.01M.08  115k video only          360p, mp4_dash
+230     mp4   640x360     30    │ ~ 29.86MiB  335k m3u8  │ avc1.4D401E    335k video only
+134     mp4   640x360     30    │    7.76MiB   87k https │ avc1.4D401E     87k video only          360p, mp4_dash
+18      mp4   640x360     30  2 │   32.38MiB  363k https │ avc1.42001E         mp4a.40.2       44k [en] 360p
+605     mp4   640x360     30    │ ~ 39.56MiB  444k m3u8  │ vp09.00.21.08  444k video only
+243     webm  640x360     30    │   12.52MiB  140k https │ vp09.00.21.08  140k video only          360p, webm_dash
+397     mp4   854x480     30    │   17.06MiB  191k https │ av01.0.04M.08  191k video only          480p, mp4_dash
+231     mp4   854x480     30    │ ~ 37.90MiB  425k m3u8  │ avc1.4D401F    425k video only
+135     mp4   854x480     30    │   11.28MiB  126k https │ avc1.4D401F    126k video only          480p, mp4_dash
+606     mp4   854x480     30    │ ~ 50.26MiB  564k m3u8  │ vp09.00.30.08  564k video only
+244     webm  854x480     30    │   17.41MiB  195k https │ vp09.00.30.08  195k video only          480p, webm_dash
+398     mp4   1280x720    30    │   31.31MiB  351k https │ av01.0.05M.08  351k video only          720p, mp4_dash
+232     mp4   1280x720    30    │ ~ 57.85MiB  649k m3u8  │ avc1.4D401F    649k video only
+136     mp4   1280x720    30    │   20.16MiB  226k https │ avc1.4D401F    226k video only          720p, mp4_dash
+609     mp4   1280x720    30    │ ~ 72.26MiB  810k m3u8  │ vp09.00.31.08  810k video only
+247     webm  1280x720    30    │   27.69MiB  310k https │ vp09.00.31.08  310k video only          720p, webm_dash
+399     mp4   1920x1080   30    │   63.06MiB  707k https │ av01.0.08M.08  707k video only          1080p, mp4_dash
+270     mp4   1920x1080   30    │ ~193.27MiB 2167k m3u8  │ avc1.640028   2167k video only
+137     mp4   1920x1080   30    │   96.17MiB 1078k https │ avc1.640028   1078k video only          1080p, mp4_dash
+614     mp4   1920x1080   30    │ ~164.68MiB 1847k m3u8  │ vp09.00.40.08 1847k video only
+248     webm  1920x1080   30    │   91.43MiB 1025k https │ vp09.00.40.08 1025k video only          1080p, webm_dash
+616     mp4   1920x1080   30    │ ~322.53MiB 3617k m3u8  │ vp09.00.40.08 3617k video only          Premium
+</code></pre>
+<p>It looks like the only ID containing a video <em>with</em> audio, is <code>18</code>, i.e. a 420p, 640x360 video according to my media player. This might be sufficient for a video like the above, but such low resolution would make it almost impossible to read code or smaller writing.</p>
+<h2 id="my-solution">My Solution</h2>
+<p>Given I have started leveraging Deno for my needs, I wrote a small tool called <a href="https://github.com/ai-mindset/yt-dlp-hq">yt-dlp-hq</a>. It&#39;s certainly basic, with lots of room for improvement. However it does exactly what I need and I&#39;m relatively happy with the result, pending some improvements[^1].<br>Deno is great for cross-compilation. Also, GitHub Actions can be a good method for automating testing, running, compiling etc.[^2] Is it though? Let&#39;s see.  </p>
+<h2 id="my-ci-pipeline">My CI Pipeline</h2>
+<p>I started off by using <a href="https://nektosact.com/introduction.html">act</a>, a very nice tool that allows for testing pipelines locally. The main downside I found was that for an intermediate Docker user with little <code>act</code> experience, sometimes GitHub Actions don&#39;t behave the same way locally as they would online. Also, I like <a href="https://podman.io/">podman</a> considerably better, since it&#39;s daemonless and not as resource-hungry among others.<br>Putting <code>act</code> aside, I focused on setting up a <a href="https://github.com/ai-mindset/yt-dlp-hq/blob/main/.github/workflows/ci.yml">pipeline</a> that&#39;d work well enough with every new PR opened against <code>main</code> aside from others.<br>The pipeline ran successfully, where in theory it built and released <code>yt-dlp-hq</code> executables. However, when I downloaded the corresponding executable for my OS and CPU architecture, it did not run. When I locally built the same set of executables, running <code>deno task build</code>, the executable for my OS &amp; arch worked as expected. This made me wonder whether I&#39;m doing something wrong, if it&#39;s a GitHub Action intricacy or some other issue I needed to resolve. 
+Inspired by Medicine, I tried approaching the issue through differential diagnosis, which to my understanding works by excluding other causes in order to hone in on the actual medical condition. I.e. I first created a release directory locally. I then manually created a release on GitHub. To my dismay, the executable I manually uploaded didn&#39;t run when I downloaded it back from GitHub. This made me wonder if there is a conversion involved when a pipeline generates executables or the user uploads them manually for release. Spoiler alert: I still don&#39;t know if that&#39;s the case, but I suspect that GitHub indeed doesn&#39;t save executables without some change taking place during upload. </p>
+<h3 id="fixing-executables-github-release">Fixing Executables GitHub Release</h3>
+<p>Initially, I changed the following setting on my repository:<br><em>&quot;Settings -&gt; Actions -&gt; General -&gt; Workflow permissions&quot;</em> select  <em>&quot;Read and write permissions&quot;</em>.
+Then, I experimented with compressing each generated executable into a .tar file. This did the trick. Simply compressing an executable is enough to maintain its function. Thus, the way to install <code>yt-dlp-hq</code> takes one extra step.<br>For example, if you&#39;re a Linux user on an Intel-based machine, here&#39;s how you can use my tool   </p>
+<pre><code class="language-console">$ curl -L -O https://github.com/ai-mindset/yt-dlp-hq/releases/download/1.0.0/yt-dlp-hq-intel-linux.tar &amp;&amp; tar xvf yt-dlp-hq-intel-linux.tar &amp;&amp; cd release
+$ ./yt-dlp-hq-intel-linux https://www.youtube.com/watch?v=dQw4w9WgXcQ
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>I&#39;m glad I learned something more about GitHub and Actions, its idiosyncrasies and abilities. It took me a couple days, which made me consider the benefits of <a href="https://xkcd.com/1319/">automation</a>. Being more minimalistic, I tend to opt for simple automation when possible <a href="https://xkcd.com/1205/"><em>if</em> it&#39;s worth it</a>. To quote <a href="https://en.wikiquote.org/wiki/Alan_Perlis">Alan Perlis</a>, &quot;<em>Simplicity does not precede complexity, but follows it</em>&quot;.</p>
+<hr>
+<p>[^1]: Some improvements I&#39;m planning include unit testing, automatic audio &amp; video ID selection and possibly automatic FFmpeg installation when it&#39;s not available in <code>$PATH</code>.<br>[^2]: A <a href="https://julialang.org/">Juiia</a> enthusiast introduced me to <a href="https://woodpecker-ci.org/">Woodpecker CI</a> and <a href="https://codeberg.org/">Codeberg</a>. I&#39;m definitely considering switching, following my recent GitHub Actions experience 🤔 </p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧠 RAG vs CAG: Understanding Knowledge Augmentation in LLMs - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>🧠 RAG vs CAG: Understanding Knowledge Augmentation in LLMs</h1>
+        <span class="post-date">March 18, 2025</span>
+        <div class="post-tags">
+          <span class="post-tag">rag</span><span class="post-tag">llm</span><span class="post-tag">ai</span><span class="post-tag">machine-learning</span><span class="post-tag">prompt-engineering</span><span class="post-tag">nlp</span><span class="post-tag">data-processing</span><span class="post-tag">best-practices</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> Retrieval Augmented Generation (RAG) and Cache Augmented Generation (CAG) represent two distinct approaches to expanding LLM knowledge: RAG dynamically retrieves relevant documents for each query, offering scalability for large datasets, whilst CAG preloads all information into the model&#39;s context window, providing faster responses for smaller, static knowledge bases.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Large Language Models (LLMs) face a fundamental knowledge problem: they&#39;re limited to information present in their training data. This creates challenges when dealing with recent events that occurred after training or proprietary information specific to an organization.<br>To address these limitations, two primary augmentation techniques have emerged: Retrieval Augmented Generation (RAG) and Cache Augmented Generation (CAG). This article breaks down both approaches based on  <a href="https://www.youtube.com/channel/UCKWaEZ-_VweaEx1j62do_vQ">IBM Technology</a>&#39;s comprehensive explanation from their <a href="https://youtube.com/watch?v=HdafI0t3sEY">video on RAG vs CAG</a>, examining how they work, their capabilities, and when to use each one.</p>
+<h2 id="understanding-rag-and-cag">Understanding RAG and CAG</h2>
+<h3 id="retrieval-augmented-generation-rag">Retrieval Augmented Generation (RAG)</h3>
+<p>RAG operates through a two-phase system:</p>
+<ol>
+<li><strong>Offline Phase (Preparation)</strong><ul>
+<li>Documents are broken into manageable chunks.</li>
+<li>Vector embeddings are created for each chunk using an embedding model.</li>
+<li>These embeddings are stored in a vector database, creating a searchable knowledge index.</li>
+</ul>
+</li>
+<li><strong>Online Phase (Query &amp; Response)</strong><ul>
+<li>The user submits a query.</li>
+<li>The RAG retriever converts this query to a vector using the same embedding model.</li>
+<li>The system performs a similarity search in the vector database.</li>
+<li>It retrieves the most relevant document chunks (typically 3-5 passages).</li>
+<li>These chunks and the user&#39;s query are placed in the LLM&#39;s context window.</li>
+<li>The LLM generates an answer based on both the query and the retrieved context.</li>
+</ul>
+</li>
+</ol>
+<p>For example, if asked <em>&quot;What film won Best Picture this year?&quot;</em>, the system might retrieve information about <em>&quot;Anora&quot;</em> winning the award, even if this occurred after the model&#39;s original training.</p>
+<p>A key advantage of RAG is its modularity - components like the vector database, embedding model, or LLM can be swapped independently without rebuilding the entire system.</p>
+<h3 id="cache-augmented-generation-cag">Cache Augmented Generation (CAG)</h3>
+<p>CAG takes a fundamentally different approach:</p>
+<ul>
+<li>Instead of retrieving knowledge on demand, CAG preloads all available information into the model&#39;s context window</li>
+<li>The entire knowledge corpus is formatted into one massive prompt that fits within the model&#39;s context limits</li>
+<li>The LLM processes this extensive input in a single forward pass</li>
+<li>The model&#39;s internal state is captured in what&#39;s called a &quot;KV cache&quot; (key-value cache)</li>
+<li>When a user query arrives, it&#39;s added to this pre-existing KV cache</li>
+<li>The model can access any relevant information from the cache without reprocessing the entire knowledge base</li>
+</ul>
+<p>The fundamental distinction: RAG fetches only what it predicts is needed, while CAG loads everything upfront and remembers it for later use.</p>
+<h2 id="comparing-capabilities">Comparing Capabilities</h2>
+<h3 id="accuracy">Accuracy</h3>
+<ul>
+<li><strong>RAG</strong>: Accuracy depends heavily on the retriever component. If the retriever fails to fetch relevant documents, the LLM won&#39;t have the facts needed to answer correctly.</li>
+<li><strong>CAG</strong>: Guarantees that all information is available (assuming it exists in the knowledge base), but places the burden on the LLM to extract the right information from a large context.</li>
+</ul>
+<h3 id="latency">Latency</h3>
+<ul>
+<li><strong>RAG</strong>: Higher latency due to additional steps of embedding the query, searching the index, and processing retrieved text.</li>
+<li><strong>CAG</strong>: Lower latency once knowledge is cached, as answering queries requires only one forward pass without retrieval lookup time.</li>
+</ul>
+<h3 id="scalability">Scalability</h3>
+<ul>
+<li><strong>RAG</strong>: Can scale to millions of documents as only a small portion is retrieved per query.</li>
+<li><strong>CAG</strong>: Limited by the model&#39;s context window size (typically ~32k-100k tokens), restricting it to a few hundred documents at most.</li>
+</ul>
+<h3 id="data-freshness">Data Freshness</h3>
+<ul>
+<li><strong>RAG</strong>: Easy to update incrementally as you add new document embeddings or remove outdated ones.</li>
+<li><strong>CAG</strong>: Requires recomputation when data changes, making it less suitable for frequently updated information.</li>
+</ul>
+<h2 id="when-to-use-each-approach">When to Use Each Approach</h2>
+<p>The video presents several scenarios to illustrate when each approach is more appropriate:</p>
+<ol>
+<li><strong>IT Help Desk Bot with Static Manual (200 pages, rarely updated)</strong><ul>
+<li><strong>Best Choice</strong>: CAG</li>
+<li><strong>Rationale</strong>: Knowledge base is small enough to fit in most LLM context windows, information is static, and caching enables faster query responses.</li>
+</ul>
+</li>
+<li><strong>Legal Research Assistant (Thousands of constantly updated documents)</strong><ul>
+<li><strong>Best Choice</strong>: RAG</li>
+<li><strong>Rationale</strong>: Knowledge base is massive and dynamic, precise citations are required, and incremental updates are essential.</li>
+</ul>
+</li>
+<li><strong>Clinical Decision Support System (Patient records, treatment guides, drug interactions)</strong><ul>
+<li><strong>Best Choice</strong>: Hybrid Approach</li>
+<li><strong>Rationale</strong>: Use RAG to retrieve relevant subsets from the massive knowledge base, then load that retrieved content into a long-context model using CAG for follow-up questions.</li>
+</ul>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The choice between RAG and CAG ultimately depends on your specific use case. Consider RAG when dealing with large or frequently updated knowledge sources, when citations are necessary, or when resources for running long-context models are limited. CAG is preferable when working with a fixed knowledge set that fits within your model&#39;s context window, when low latency is crucial, or when you want to simplify deployment.<br>As LLM technology evolves with expanding context windows and improved retrieval mechanisms, we may see these approaches converge or new hybrid solutions emerge. For now, understanding the strengths and limitations of both RAG and CAG allows AI engineers to make informed decisions about knowledge augmentation strategies that best suit their specific applications.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

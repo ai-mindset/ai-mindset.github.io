@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💡 TIL: Exploring OpenAI's API with Swagger - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>💡 TIL: Exploring OpenAI's API with Swagger</h1>
+        <span class="post-date">December 23, 2024</span>
+        <div class="post-tags">
+          <span class="post-tag">ai</span><span class="post-tag">llm</span><span class="post-tag">openai</span><span class="post-tag">openapi</span><span class="post-tag">spec</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> You can easily explore OpenAI&#39;s complete API documentation by loading their GitHub-hosted OpenAPI YAML file directly into Swagger&#39;s web interface. This approach lets you interactively examine all endpoints, request/response schemas, and test functionality—a valuable reference for anyone building services that need to maintain compatibility with OpenAI&#39;s API structure.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>OpenAI maintains a comprehensive <a href="https://github.com/openai/openai-openapi/">OpenAPI specification</a> that documents their entire API surface. While browsing through their GitHub repository, <a href="https://simonwillison.net/">Simon Willison</a>[^1] discovered you can easily explore this spec using Swagger&#39;s web interface.</p>
+<h2 id="the-discovery">The Discovery</h2>
+<p>Willison recently highlighted a neat trick: you can browse OpenAI&#39;s full API documentation by loading their <a href="https://github.com/openai/openai-openapi/blob/master/openapi.yaml">OpenAPI YAML file</a> directly into <a href="https://petstore.swagger.io/?url=https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml#/">Swagger&#39;s web UI</a>.</p>
+<h2 id="why-this-matters">Why This Matters</h2>
+<p>This approach offers several advantages:</p>
+<ul>
+<li>Interactive exploration of all API endpoints</li>
+<li>Complete request/response schemas</li>
+<li>Built-in testing capability</li>
+<li>Detailed parameter documentation</li>
+</ul>
+<p>For developers working with AI APIs, this provides a valuable reference point - especially when building services that need to maintain compatibility with OpenAI&#39;s API structure.</p>
+<h2 id="try-it-yourself">Try It Yourself</h2>
+<p>Visit the <a href="https://petstore.swagger.io/">Swagger UI</a> and paste this URL:<br><code>https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml</code></p>
+<hr>
+<p>[^1]: Co-founder of <a href="https://blog.natbat.net/post/61658401806/lanyrd-from-idea-to-exit">Lanyrd</a>, co-creator of <a href="https://simonwillison.net/2005/Jul/17/django/">Django</a> and <a href="https://datasette.io/">Datasette</a> and a prolific independent AI researcher</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
