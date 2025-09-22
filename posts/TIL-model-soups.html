@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲 - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲</h1>
+        <span class="post-date">January 10, 2025</span>
+        <div class="post-tags">
+          <span class="post-tag">neural-network</span><span class="post-tag">machine-learning</span><span class="post-tag">performance</span><span class="post-tag">mlops</span><span class="post-tag">production</span><span class="post-tag">evaluation</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> Model soups provide a computationally efficient ensemble technique by averaging the weights of similarly trained neural networks, outperforming both individual models and traditional prediction-averaging ensembles while maintaining single-model inference speed.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>While most ensemble methods in machine learning combine model predictions, thanks to <a href="https://bsky.app/profile/chrisalbon.com/post/3lfbbixka7c25">Chris Albon</a> I recently learned about an alternative approach called &quot;<em>model soups</em>&quot; that works directly with model parameters. Instead of aggregating outputs, model soups blend the actual weights and biases of neural networks, showing promising results in computer vision and language tasks.</p>
+<center>
+   <a href="https://bsky.app/profile/chrisalbon.com/post/3lfbbixka7c25"><img src="https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:umpsiyampiq3bpgce7kigydz/bafkreihvr4b4gid7v6y7karhiusawtqfdbhoen2bt6q55pmugyioj3q3gq@jpeg" width="80%" height="80%"/></a>
+</center>
+
+<h2 id="main-concept">Main Concept</h2>
+<p>Model soups are created by averaging the parameters (weights and biases) of multiple independently trained neural networks that share the same architecture and training setup. For example, if we have three models with weights 2.32, 4.21, and 1.23 for a particular parameter, the &quot;souped&quot; model would use (2.32 + 4.21 + 1.23) / 3 = 2.587 for that parameter. This process is repeated across all parameters in the network. However, not all parameter combinations lead to improvements -models typically need similar training datasets, optimisation methods, and hyperparameters (like learning rate and batch size) to blend effectively. When done right, parameter-averaged models can outperform both individual networks and traditional prediction-averaging ensembles, while maintaining the inference speed of a single model.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Model soups challenge our intuitions about neural networks by showing that directly averaging weights can produce better results than averaging predictions. While the technique requires careful consideration of training conditions, it provides a computationally efficient way to combine multiple models into a single network, making it particularly valuable for resource-constrained production environments where running multiple models in parallel isn&#39;t feasible.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

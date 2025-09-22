@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📝 From Vim to VSCode to Neovim - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>📝 From Vim to VSCode to Neovim</h1>
+        <span class="post-date">December 24, 2024</span>
+        <div class="post-tags">
+          <span class="post-tag">minimal</span><span class="post-tag">cross-platform</span><span class="post-tag">toolchain</span><span class="post-tag">best-practices</span><span class="post-tag">design-principles</span><span class="post-tag">python</span><span class="post-tag">deno</span><span class="post-tag">zero-config</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> For me, Neovim strikes the perfect balance between Vim&#39;s simplicity and VSCode&#39;s features. After wrestling with VSCode&#39;s keyboard input failures on Fedora and its resource demands, I found that Neovim&#39;s single configuration file, robust plugins, and cross-platform reliability make it ideal for my Python, Deno, and Clojure development needs. Sometimes stepping back to move forward is exactly what we need!</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Vim&#39;s portable <code>.vimrc</code> embodies software minimalism at its best. One file, one minute to setup, resulting in a complete development environment. This simplicity served me well until Azure development motivated the use of VSCode.<br>While VSCode worked reasonably well on macOS, Fedora revealed its constraints: keyboard input failures, heavy resource usage, and <a href="https://stackoverflow.com/questions/35368889/how-can-i-export-settings">complex environment portability</a> compared to Vim&#39;s <code>vim +PlugInstall</code>. These limitations drove my search for tools that could maintain simplicity while meeting my development requirements with simplicity and portability in mind.</p>
+<h2 id="vim---vscode---neovim">Vim -&gt; VSCode -&gt; Neovim</h2>
+<p>Azure development initially pulled me into VSCode&#39;s ecosystem. While stable on macOS, Fedora revealed deal-breakers: random keyboard input failures that only responded to command palette (Ctrl+Shift+P). No amount of configuration resets or reinstalls resolved these issues.</p>
+<p>This instability, coupled with VSCode&#39;s resource footprint, led me to Neovim. The timing aligned with my exploration of Clojure, where Neovim&#39;s Conjure plugin offered a compelling Lisp development experience that rivaled Emacs.</p>
+<p>My requirements were specific:</p>
+<ul>
+<li>A lightweight Python IDE</li>
+<li>A lightweight Deno IDE</li>
+<li>A lightweight Clojure IDE</li>
+</ul>
+<p>Through [Dialogue Engineering]({{ site.baseurl }}{% link _posts/2024-11-15-dialogue-engineering.md %}), I crafted a complete IDE using a <a href="https://github.com/ai-mindset/init.vim">single configuration file</a>. Neovim&#39;s mixed ecosystem of package managers and dual Vimscript/Lua support presents a learning curve, but the resulting environment is fast, stable, and precisely tailored to my needs. One minor drawback is the complexity of adding colour to Conjure&#39;s output, especially when compared to the rich REPL experiences offered by <a href="https://ipython.org/">IPython</a>, <a href="https://deno.com/">Deno</a>, and Clojure with <a href="https://github.com/bhauman/rebel-readline">rebel-readline</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The journey from Vim to VSCode and finally to Neovim reflects a common pattern in software development: sometimes we need to step backward to move forward. While VSCode offered modern IDE features, its stability and resource issues on Linux highlighted the enduring value of minimal, portable tools.<br>Neovim strikes an elegant balance: it preserves Vim&#39;s philosophy of simplicity and portability while providing modern IDE capabilities. Despite minor challenges with REPL colourisation, its single configuration file approach and robust plugin ecosystem make it a powerful choice for polyglot development. For developers who value both minimal tooling and modern features, Neovim proves that we don&#39;t always have to choose between the two.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

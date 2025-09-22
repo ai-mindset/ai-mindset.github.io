@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🗄️ SQLite: The Minimalist Database for AI Engineering - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>🗄️ SQLite: The Minimalist Database for AI Engineering</h1>
+        <span class="post-date">February 11, 2025</span>
+        <div class="post-tags">
+          <span class="post-tag">ai</span><span class="post-tag">data-modeling</span><span class="post-tag">data-processing</span><span class="post-tag">data-science</span><span class="post-tag">go</span><span class="post-tag">minimal</span><span class="post-tag">production</span><span class="post-tag">python</span><span class="post-tag">zero-config</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> SQLite offers a zero-configuration, pre-installed database solution ideal for AI engineering projects, supporting modern data structures including vectors, graphs, and JSON documents whilst providing single-file portability, ACID compliance, and broad language compatibility - making it an excellent minimalist choice when specialised database systems would be overkill.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>In today&#39;s AI engineering landscape, choosing the right database can feel overwhelming. While specialised solutions like <a href="https://qdrant.tech/">Qdrant</a> (vectors), <a href="https://neo4j.com/">Neo4j</a> (graphs), and <a href="https://www.mongodb.com/">MongoDB</a> (documents) excel in their niches, there&#39;s a compelling case for <a href="https://www.sqlite.org/index.html">SQLite</a> as a versatile, minimalist solution that comes pre-installed on most systems and supports multiple data structures effectively. Speaking of minimalism, <a href="https://github.com/tconbeer/harlequin">Harlequin</a> (named after a <a href="https://en.wikipedia.org/wiki/Harlequin_duck">sea 🦆</a>) makes data exploration very enjoyable. 
+Credit for the SQLite idea goes to <a href="https://bsky.app/profile/simonwillison.net">Simon Willison</a>, a prolific AI researcher among others, who has been posting <a href="https://simonwillison.net/tags/sqlite/">blog articles</a> and <a href="https://til.simonwillison.net/sqlite">TILs</a> (Today I Learned) about it since 2003! </p>
+<h2 id="the-power-of-pre-installation">The Power of Pre-installation</h2>
+<p>SQLite&#39;s ubiquity is remarkable. It comes pre-installed on:</p>
+<ul>
+<li>macOS</li>
+<li>Most Linux distributions (including Ubuntu, as evidenced by its <a href="https://releases.ubuntu.com/24.10/ubuntu-24.10-desktop-amd64.manifest">manifest</a>)</li>
+<li>Python&#39;s standard library</li>
+<li>Android devices</li>
+<li>iOS devices</li>
+</ul>
+<p>This universal availability means you can start developing immediately without additional setup or installation steps.</p>
+<h2 id="modern-data-structure-support">Modern Data Structure Support</h2>
+<p>Despite its lightweight nature, SQLite handles modern data structures surprisingly well:</p>
+<ol>
+<li><strong>Vector Storage</strong>[^1]</li>
+</ol>
+<pre><code class="language-sql">CREATE VIRTUAL TABLE vec_items USING vec0(embedding float[4])
+</code></pre>
+<pre><code class="language-sql">-- vectors can be provided as JSON or in a compact binary format
+INSERT INTO vec_items(rowid, embedding)
+  VALUES
+    (1, &#39;[-0.200, 0.250, 0.341, -0.211, 0.645, 0.935, -0.316, -0.924]&#39;),
+    (2, &#39;[0.443, -0.501, 0.355, -0.771, 0.707, -0.708, -0.185, 0.362]&#39;),
+    (3, &#39;[0.716, -0.927, 0.134, 0.052, -0.669, 0.793, -0.634, -0.162]&#39;),
+    (4, &#39;[-0.710, 0.330, 0.656, 0.041, -0.990, 0.726, 0.385, -0.958]&#39;);
+</code></pre>
+<pre><code class="language-sql">-- KNN-style query
+SELECT
+  rowid,
+  distance
+FROM vec_items
+WHERE embedding MATCH &#39;[0.890, 0.544, 0.825, 0.961, 0.358, 0.0196, 0.521, 0.175]&#39;
+ORDER BY distance
+LIMIT 3
+</code></pre>
+<ol start="2">
+<li><strong>Graph Relationships</strong>[^2]</li>
+</ol>
+<pre><code class="language-sql">-- Create table `nodes`
+CREATE TABLE IF NOT EXISTS nodes (
+    id TEXT PRIMARY KEY,
+    properties TEXT
+)
+</code></pre>
+<pre><code class="language-sql">-- Create table `edges`
+CREATE TABLE IF NOT EXISTS edges (
+    source TEXT,
+    target TEXT,
+    relationship TEXT,
+    weight REAL,
+    PRIMARY KEY (source, target, relationship),
+    FOREIGN KEY (source) REFERENCES nodes(id),
+    FOREIGN KEY (target) REFERENCES nodes(id)
+)
+</code></pre>
+<pre><code class="language-sql">-- Create indices of the `edges` between `source` and `target`, for improved performance
+CREATE INDEX IF NOT EXISTS source_idx ON edges(source)
+CREATE INDEX IF NOT EXISTS target_idx ON edges(target)
+</code></pre>
+<pre><code class="language-sql">-- Count the no. of incoming and outgoing edges per node, known as &#39;degree centrality&#39; 
+SELECT id,
+       (SELECT COUNT(*) FROM edges WHERE source = nodes.id) +
+       (SELECT COUNT(*) FROM edges WHERE target = nodes.id) as degree
+FROM nodes
+ORDER BY degree DESC
+LIMIT 10
+</code></pre>
+<ol start="3">
+<li><strong>Document Storage</strong></li>
+</ol>
+<pre><code class="language-sql">CREATE TABLE documents (
+    id INTEGER PRIMARY KEY,
+    content JSON,
+    metadata JSON
+);
+</code></pre>
+<h2 id="portability-and-simplicity">Portability and Simplicity</h2>
+<p>One of SQLite&#39;s strongest features is its <a href="https://www.sqlite.org/onefile.html">single-file</a> nature. Your entire database exists in one file that can be:</p>
+<ul>
+<li>Backed up with a simple copy operation</li>
+<li>Easily version controlled (for smaller databases)</li>
+<li>Moved between systems effortlessly</li>
+<li>Examined with standard SQLite tools</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>While specialised databases have their place, SQLite offers a compelling combination of features that make it ideal for many AI engineering projects:</p>
+<ul>
+<li>Zero configuration</li>
+<li>Pre-installed availability</li>
+<li>Support for multiple data structures</li>
+<li>Single-file portability</li>
+<li>Wide language support, especially in Python and Go</li>
+<li>ACID[^3] compliance</li>
+</ul>
+<p><strong>TL;DR</strong>: When you need a lightweight, self-contained database that can handle documents, vectors, and graphs without the complexity of a full database server, SQLite is often an excellent choice.</p>
+<hr>
+<p>[^1]: Example from <a href="https://alexgarcia.xyz/sqlite-vec/python.html">sqlite-vec with Python</a>
+[^2]: Examples from <a href="https://dev.to/stephenc222/how-to-build-lightweight-graphrag-with-sqlite-53le">How to Build Lightweight GraphRAG with SQLite</a>
+[^3]: Atomicity, Consistency, Isolation, Durability (<a href="https://en.wikipedia.org/wiki/ACID">ACID</a>), per Wikipedia, &quot;<em>is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps. In the context of databases, a sequence of database operations that satisfies the ACID properties (which can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.</em>&quot;</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

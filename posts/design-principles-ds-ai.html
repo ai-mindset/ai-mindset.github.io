@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✍ A Path to Maintainable AI Systems using Norman's Design Principles - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>✍ A Path to Maintainable AI Systems using Norman's Design Principles</h1>
+        <span class="post-date">December 3, 2024</span>
+        <div class="post-tags">
+          <span class="post-tag">ai</span><span class="post-tag">data-science</span><span class="post-tag">design-principles</span><span class="post-tag">code-quality</span><span class="post-tag">mlops</span><span class="post-tag">monitoring</span><span class="post-tag">observability</span><span class="post-tag">production</span><span class="post-tag">model-governance</span><span class="post-tag">minimal</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> Don Norman&#39;s timeless design principles - visibility, feedback, constraints, mappings, and error prevention - apply powerfully to AI systems, where abstract interfaces and complex workflows often become overwhelming. By implementing these principles with a carefully selected, minimal toolset, we can create maintainable, observable AI systems that reduce complexity while providing comprehensive functionality - just as Norman observed in physical objects, good design in AI leads to fewer errors and greater user satisfaction.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>Don Norman&#39;s principles of good design, outlined in <a href="https://archive.org/details/thedesignofeverydaythingsbydonnorman">The Design of Everyday Things</a>, are particularly relevant to Data Science and AI Engineering, where systems often suffer from unnecessary complexity. This article presents a minimalist approach to implementing these principles using a carefully selected set of tools that maximise impact while reducing operational overhead. Norman&#39;s insights about visibility, feedback, constraints, and mappings translate powerfully to AI system design, where abstract interfaces and complex workflows can easily become overwhelming. Just as Norman observed that poorly designed physical objects lead to user frustration and errors, poorly architected AI systems can result in maintenance nightmares, hidden failure modes, and costly debugging cycles. By applying his principles - making system states visible, providing clear feedback, implementing appropriate constraints, and creating natural mappings between components, we can build AI systems that are not only more intuitive to use but also easier to maintain, debug, and evolve over time.</p>
+<h2 id="design-principles-implementation">Design Principles Implementation</h2>
+<h3 id="1-visibility">1. Visibility</h3>
+<p>Implement comprehensive system observability using <a href="https://mlflow.org/">MLflow</a> as your central platform:</p>
+<ul>
+<li>Track experiments, parameters, and metrics</li>
+<li>Version models and artefacts</li>
+<li>Log production predictions and outcomes</li>
+<li>Monitor model performance metrics</li>
+</ul>
+<p>For system-level metrics, use <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> to:</p>
+<ul>
+<li>Track resource utilisation (CPU, memory, latency)</li>
+<li>Monitor prediction throughput</li>
+<li>Create dashboards for key performance indicators</li>
+</ul>
+<p>Implement adaptive sampling for high-volume systems:</p>
+<pre><code class="language-python">def should_log(request_id, sampling_rate=0.1):
+    return hash(request_id) % 100 &lt; (sampling_rate * 100)
+</code></pre>
+<h3 id="2-feedback">2. Feedback</h3>
+<p>Use <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> for real-time monitoring and alerting:</p>
+<ul>
+<li>Set up alerts for model performance degradation</li>
+<li>Monitor data distribution shifts</li>
+<li>Track system health metrics</li>
+<li>Configure tiered alerting based on severity</li>
+</ul>
+<p>Example metric collection:</p>
+<pre><code class="language-python">from prometheus_client import Counter, Histogram
+
+PREDICTIONS = Counter(&#39;model_predictions_total&#39;, &#39;Total predictions made&#39;)
+LATENCY = Histogram(&#39;prediction_latency_seconds&#39;, &#39;Time spent processing prediction&#39;)
+
+def predict(features):
+    with LATENCY.time():
+        prediction = model.predict(features)
+        PREDICTIONS.inc()
+        return prediction
+</code></pre>
+<h3 id="3-constraints">3. Constraints</h3>
+<p>Implement data and model guardrails using <a href="https://greatexpectations.io/">Great Expectations</a>:</p>
+<ul>
+<li>Define data quality expectations</li>
+<li>Set distribution bounds for features</li>
+<li>Monitor for data drift</li>
+<li>Generate validation reports</li>
+</ul>
+<p>Example constraint implementation:</p>
+<pre><code class="language-python">from great_expectations.dataset import Dataset
+
+def validate_features(df):
+    dataset = Dataset(df)
+    dataset.expect_column_values_to_be_between(&quot;age&quot;, 0, 120)
+    dataset.expect_column_values_to_not_be_null(&quot;critical_feature&quot;)
+    validation_result = dataset.validate()
+    return validation_result.success
+</code></pre>
+<h3 id="4-mappings">4. Mappings</h3>
+<p>Use <a href="https://mlflow.org/">MLflow</a> to maintain clear relationships between:</p>
+<ul>
+<li>Experiments and business objectives</li>
+<li>Models and their training data</li>
+<li>Predictions and outcomes</li>
+<li>Performance metrics and business KPIs</li>
+</ul>
+<p>Example mapping structure:</p>
+<pre><code class="language-python">with mlflow.start_run(run_name=&quot;production_model_v1&quot;):
+    mlflow.log_param(&quot;business_objective&quot;, &quot;customer_churn&quot;)
+    mlflow.log_param(&quot;data_version&quot;, data_hash)
+    mlflow.log_metric(&quot;business_impact&quot;, revenue_improvement)
+    mlflow.log_artifact(&quot;feature_importance.json&quot;)
+</code></pre>
+<h3 id="5-error-prevention-and-recovery">5. Error Prevention and Recovery</h3>
+<p>Integrate safeguards using your core toolset:</p>
+<p><a href="https://mlflow.org/">MLflow</a>:</p>
+<ul>
+<li>Version control for models and artefacts</li>
+<li>Rollback capabilities</li>
+<li>Experiment tracking for reproducibility</li>
+</ul>
+<p><a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>:</p>
+<ul>
+<li>Early warning system for issues</li>
+<li>Performance degradation detection</li>
+<li>Resource exhaustion prevention</li>
+</ul>
+<p><a href="https://greatexpectations.io/">Great Expectations</a>:</p>
+<ul>
+<li>Data quality validation</li>
+<li>Schema enforcement</li>
+<li>Distribution monitoring</li>
+</ul>
+<p>Example error prevention:</p>
+<pre><code class="language-python">def safe_predict(features):
+    if not validate_features(features):
+        return fallback_prediction()
+    
+    try:
+        with LATENCY.time():
+            prediction = model.predict(features)
+            PREDICTIONS.inc()
+            return prediction
+    except Exception as e:
+        ERROR_COUNTER.inc()
+        return fallback_prediction()
+</code></pre>
+<h2 id="implementation-strategy">Implementation Strategy</h2>
+<ol>
+<li><p>Start with <a href="https://mlflow.org/">MLflow</a></p>
+<ul>
+<li>Set up experiment tracking</li>
+<li>Implement model versioning</li>
+<li>Configure basic logging</li>
+</ul>
+</li>
+<li><p>Add <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a></p>
+<ul>
+<li>Deploy basic monitoring</li>
+<li>Set up key alerts</li>
+<li>Create essential dashboards</li>
+</ul>
+</li>
+<li><p>Integrate <a href="https://greatexpectations.io/">Great Expectations</a></p>
+<ul>
+<li>Define core data quality rules</li>
+<li>Implement validation pipelines</li>
+<li>Monitor data distributions</li>
+</ul>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>By focusing on a minimal set of powerful tools (<a href="https://mlflow.org/">MLflow</a>, <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>, and <a href="https://greatexpectations.io/">Great Expectations</a>), you can implement Norman&#39;s design principles effectively while maintaining system simplicity. This approach provides:</p>
+<ul>
+<li>Comprehensive visibility through unified logging and monitoring</li>
+<li>Immediate feedback via real-time alerts</li>
+<li>Strong constraints through data validation</li>
+<li>Clear mappings between components</li>
+<li>Robust error prevention and recovery</li>
+</ul>
+<p>The key is to fully utilise these core tools rather than adding complexity with additional solutions. This creates maintainable, observable, and reliable AI systems that can scale with your needs.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

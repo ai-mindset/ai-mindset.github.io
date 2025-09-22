@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📖 Python To TypeScript Cheatsheet - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>📖 Python To TypeScript Cheatsheet</h1>
+        <span class="post-date">September 6, 2024</span>
+        <div class="post-tags">
+          <span class="post-tag">python</span><span class="post-tag">typescript</span><span class="post-tag">cheatsheet</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> This compact reference guide provides side-by-side comparisons of Python and TypeScript syntax for common programming constructs including variable declarations, functions, classes, control flow structures, and error handling-serving as a quick reference for Python developers exploring TypeScript within the context of Deno development.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>I&#39;ve been curious as to how Python and TypeScript compare at a high level, for someone new to TypeScript. Below is a chatsheet I put together with the help of Claude 3.5 Sonnet. It covers basic syntax, it&#39;s by no means complete or exhaustive. However it gives a first taste of the similarities and differences between the two languages. The reason I am looking into TypeScript is explained in my <a href="../deno/">Deno article</a>.</p>
+<h2 id="variables-and-data-types">Variables And Data Types</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Python</th>
+<th>TypeScript</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Int</td>
+<td><code>x = 5</code></td>
+<td><code>let x: number = 5;</code></td>
+</tr>
+<tr>
+<td>Float</td>
+<td><code>y = 3.14</code></td>
+<td><code>let y: number = 3.14;</code></td>
+</tr>
+<tr>
+<td>Str</td>
+<td><code>name = &quot;John&quot;</code></td>
+<td><code>let name: string = &quot;John&quot;;</code></td>
+</tr>
+<tr>
+<td>Bool</td>
+<td><code>is_valid = True</code></td>
+<td><code>let isValid: boolean = true;</code></td>
+</tr>
+<tr>
+<td>List</td>
+<td><code>numbers = [1, 2, 3]</code></td>
+<td><code>let numbers: number[] = [1, 2, 3];</code></td>
+</tr>
+<tr>
+<td>Dict</td>
+<td><code>person = {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30}</code></td>
+<td><code>let person: { name: string; age: number } = { name: &quot;John&quot;, age: 30 };</code></td>
+</tr>
+</tbody></table>
+<h2 id="functions">Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Python</th>
+<th>TypeScript</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Func def</td>
+<td><code>def greet(name: str) -&gt; str:</code></td>
+<td><code>function greet(name: string): string {</code></td>
+</tr>
+<tr>
+<td>Func return</td>
+<td><code>return f&quot;Hello, {name}!&quot;</code></td>
+<td><code>return `Hello, ${name}!`;</code></td>
+</tr>
+<tr>
+<td>Lambda</td>
+<td><code>lambda x: x * 2</code></td>
+<td><code>(x: number): number =&gt; x * 2</code></td>
+</tr>
+</tbody></table>
+<h2 id="classes">Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Python</th>
+<th>TypeScript</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Class def</td>
+<td><code>class Person:</code></td>
+<td><code>class Person {</code></td>
+</tr>
+<tr>
+<td>Constructor</td>
+<td><code>def __init__(self, name: str, age: int):</code></td>
+<td><code>constructor(name: string, age: number) {</code></td>
+</tr>
+<tr>
+<td>Instance vars</td>
+<td><code>self.name = name</code></td>
+<td><code>this.name = name;</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>self.age = age</code></td>
+<td><code>this.age = age;</code></td>
+</tr>
+<tr>
+<td>Method def</td>
+<td><code>def greet(self) -&gt; str:</code></td>
+<td><code>greet(): string {</code></td>
+</tr>
+<tr>
+<td>Method return</td>
+<td><code>return f&quot;Hello, I&#39;m {self.name}!&quot;</code></td>
+<td><code>return `Hello, I&#39;m ${this.name}!`;</code></td>
+</tr>
+</tbody></table>
+<h2 id="control-flow">Control Flow</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Python</th>
+<th>TypeScript</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>If</td>
+<td><code>if x &gt; 0:</code></td>
+<td><code>if (x &gt; 0) {</code></td>
+</tr>
+<tr>
+<td>Else if</td>
+<td><code>elif x &lt; 0:</code></td>
+<td><code>} else if (x &lt; 0) {</code></td>
+</tr>
+<tr>
+<td>Else</td>
+<td><code>else:</code></td>
+<td><code>} else {</code></td>
+</tr>
+<tr>
+<td>For loop</td>
+<td><code>for i in range(5):</code></td>
+<td><code>for (let i = 0; i &lt; 5; i++) {</code></td>
+</tr>
+<tr>
+<td>While loop</td>
+<td><code>while x &gt; 0:</code></td>
+<td><code>while (x &gt; 0) {</code></td>
+</tr>
+</tbody></table>
+<h2 id="error-handling">Error Handling</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Python</th>
+<th>TypeScript</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Try</td>
+<td><code>try:</code></td>
+<td><code>try {</code></td>
+</tr>
+<tr>
+<td>Except/Catch</td>
+<td><code>except ZeroDivisionError:</code></td>
+<td><code>} catch (error) {</code></td>
+</tr>
+<tr>
+<td>Finally</td>
+<td><code>finally:</code></td>
+<td><code>} finally {</code></td>
+</tr>
+</tbody></table>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

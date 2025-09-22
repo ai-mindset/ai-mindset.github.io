@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💡 TIL: A Reactive Python Notebook That Might Replace Jupyter - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>💡 TIL: A Reactive Python Notebook That Might Replace Jupyter</h1>
+        <span class="post-date">March 22, 2025</span>
+        <div class="post-tags">
+          <span class="post-tag">til</span><span class="post-tag">data-science</span><span class="post-tag">python</span><span class="post-tag">best-practices</span><span class="post-tag">reproducibility</span><span class="post-tag">literate-programming</span><span class="post-tag">jupyter-alternative</span><span class="post-tag">reactivity</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> Marimo offers a reactive Python notebook alternative to Jupyter that solves hidden state problems by storing notebooks as pure Python files with deterministic execution based on variable dependencies, making them git-friendly, reproducible, and deployable whilst providing modern features like Vim keybindings and interactive elements.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>As a long-time Vim/Neovim and IPython user, I&#39;m quite particular about my development environment. So when I say a notebook platform caught my attention enough to consider switching, that&#39;s significant. Recently, I stumbled upon <a href="https://marimo.io/">Marimo</a>, and it might just be the Jupyter alternative I&#39;ve been searching for.</p>
+<h2 id="what-is-marimo">What is Marimo?</h2>
+<p>Marimo is a reactive Python notebook environment that solves many long-standing issues with traditional notebooks. Unlike Jupyter, which stores notebooks as JSON with embedded code and outputs, Marimo notebooks are pure Python files that are:</p>
+<ul>
+<li><strong>Reactive</strong>: Run a cell, and Marimo automatically runs dependent cells or marks them as stale</li>
+<li><strong>Consistent</strong>: No hidden state problems that plague traditional notebooks</li>
+<li><strong>Executable</strong>: Can run as standard Python scripts from the command line</li>
+<li><strong>Git-friendly</strong>: Since they&#39;re just <code>.py</code> files, they work seamlessly with version control</li>
+<li><strong>Deployable</strong>: Easily share as interactive web apps or slides</li>
+</ul>
+<h2 id="why-this-matters-for-literate-programming">Why This Matters for Literate Programming</h2>
+<p>Literate programming -the approach of writing code as a narrative explanation interleaved with executable components- is incredibly powerful for data science, ML, and AI work. It helps create self-documenting, reproducible research and applications.<br>The problem with Jupyter has always been that while it looks like literate programming, its execution model (arbitrary cell execution order) and hidden state make it fundamentally unreliable. Marimo solves this by ensuring deterministic execution based on variable dependencies rather than cell position.</p>
+<h2 id="key-features-that-won-me-over">Key Features That Won Me Over</h2>
+<ol>
+<li><strong>Vim keybindings</strong>: As a Neovim user, this is non-negotiable</li>
+<li><strong>Modern editor features</strong>: GitHub Copilot integration, AI completion, and variable explorer</li>
+<li><strong>Reactive runtime</strong>: No more &quot;did I run all the cells in the right order?&quot; problems</li>
+<li><strong>Interactive elements</strong>: Sliders, tables, and plots that automatically update dependent cells</li>
+<li><strong>SQL integration</strong>: Write SQL against dataframes, databases, or other sources right in your notebook</li>
+<li><strong>Package management</strong>: Built-in support for dependency tracking and isolated environments</li>
+<li><strong>Pure Python storage</strong>: No more JSON files with embedded outputs making git diffs unreadable</li>
+</ol>
+<h2 id="comparisons-with-other-literate-programming-tools">Comparisons with Other Literate Programming Tools</h2>
+<h3 id="plutojl-julia">Pluto.jl (Julia)</h3>
+<p>Pluto.jl pioneered the reactive notebook concept that Marimo implements. Both share:</p>
+<ul>
+<li>Automatic reactivity based on variable dependencies</li>
+<li>Deterministic execution order</li>
+<li>Interactive UI elements</li>
+</ul>
+<p><strong>Differences</strong>:</p>
+<ul>
+<li>Pluto is Julia-specific; Marimo is Python-specific</li>
+<li>Marimo stores notebooks as standard <code>.py</code> files; Pluto uses a custom format</li>
+<li>Marimo has more built-in integrations with Python data science libraries</li>
+<li>Pluto has tighter integration with Julia&#39;s capabilities</li>
+</ul>
+<h3 id="livebook-elixir">Livebook (Elixir)</h3>
+<p>Livebook brings reactive notebooks to the Elixir ecosystem, with:</p>
+<ul>
+<li>Smart cells for common tasks</li>
+<li>Built-in deployment capabilities</li>
+<li>Collaborative editing</li>
+</ul>
+<p><strong>Differences</strong>:</p>
+<ul>
+<li>Livebook embraces Elixir&#39;s concurrency model; Marimo follows Python&#39;s execution model</li>
+<li>Marimo&#39;s Python foundation makes it more accessible for data science work</li>
+<li>Livebook has more built-in tools for building distributed systems</li>
+</ul>
+<h2 id="pros-and-cons">Pros and Cons</h2>
+<h3 id="pros">Pros</h3>
+<ul>
+<li><strong>Reproducibility</strong>: Deterministic execution eliminates the &quot;run cells in wrong order&quot; problem</li>
+<li><strong>Git-friendly</strong>: Pure Python files make version control and collaboration much easier</li>
+<li><strong>No hidden state</strong>: Deleted cell variables are removed from memory</li>
+<li><strong>Deployability</strong>: From notebook to web app with minimal effort</li>
+<li><strong>Testability</strong>: Run standard test suites against your notebooks</li>
+<li><strong>Modern IDE features</strong>: Seems like they&#39;ve thought of everything</li>
+</ul>
+<h3 id="cons">Cons</h3>
+<ul>
+<li><strong>Learning curve</strong>: The reactive model requires a shift in thinking if you&#39;re used to Jupyter</li>
+<li><strong>Ecosystem maturity</strong>: Newer than Jupyter, so fewer third-party extensions</li>
+<li><strong>Performance considerations</strong>: Automatic reactivity could cause issues with expensive computations (though there are options to mitigate this[^1])</li>
+<li><strong>Language limitation</strong>: Python-only, unlike Jupyter which supports multiple kernels</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>Installation is straightforward:</p>
+<pre><code class="language-bash">uv pip install marimo
+# or with recommended extras
+uv pip install marimo[recommended]
+
+# Try the tutorial
+marimo tutorial intro
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>As someone deeply invested in both Vim/Neovim and the Python data ecosystem, Marimo strikes an impressive balance. It brings the benefits of reactive programming to Python notebooks while maintaining the flexibility and familiarity that Python users expect.<br>What truly sets Marimo apart is how it addresses the fundamental issues of reproducibility and hidden state that have plagued notebooks for years. By treating notebooks as actual programs with deterministic execution, it enables literate programming in a way that Jupyter always promised but never fully delivered.<br>Is it perfect? No. But it&#39;s the most compelling alternative I&#39;ve seen so far, and I&#39;m seriously considering making the switch for my daily work.</p>
+<hr>
+<p>[^1]: Marimo provides a &quot;lazy&quot; configuration option where cells that would be automatically re-executed are instead marked as &quot;stale&quot;, allowing users to manually control when expensive computations run. Users can also implement caching strategies using Marimo&#39;s built-in caching functionality, compartmentalise heavy computations into separate cells to control their execution flow, or use the @mo.cell decorator with runtime configurations to customise how specific cells behave when dependencies change.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🗃️ RAG Is Here To Stay - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>🗃️ RAG Is Here To Stay</h1>
+        <span class="post-date">October 29, 2024</span>
+        <div class="post-tags">
+          <span class="post-tag">rag</span><span class="post-tag">llm</span><span class="post-tag">ai</span><span class="post-tag">performance</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> Despite larger LLM context windows, Retrieval-Augmented Generation (RAG) remains essential for information curation, data provenance, and overcoming the &quot;lost in the middle&quot; effect where models struggle with information placed centrally in long contexts-making careful retrieval strategies more valuable than simply dumping large amounts of text into expanded context windows.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>This morning I noticed that <a href="https://xcancel.com/simonw/status/1850928417363149049">Simon Willison shared some views on RAG</a>, <a href="https://xcancel.com/burkov/status/1851159933913280647">Andryi Burkov criticised</a> people who claim that RAG is obsolete, and other RAG-related discussions taking place sparked by recent longer LLM context windows. Below I&#39;m sharing some thoughts based on personal experience.   </p>
+<h2 id="rag">RAG</h2>
+<p>RAG is not simply a workaround to context limits, it&#39;s a way to carefully curate information and data. It enables provenance and visibility of the data flowing through an LLM pipeline -compared to fine-tuning which bakes knowledge into the model itself. Importantly, RAG is not a synonym of embeddings. Embedding text is a fantastic way to enable semantic search, especially if it is done in a smart way (word, sentence, paragraph, or document) given project needs.<br>I have successfully reused existing infrastructure to provide one of the largest companies in the world with the ability to quickly retrieve information through Q &amp; A. To achieve this, in the context of simplicity and leveraging existing infrastructure, I opted against adding moving parts like a Vector DB. Instead, I used plain JSON objects and an agentic system to meet the client&#39;s needs. It worked very well, with feedback from higher management being &quot;<em><strong>thank you</strong>, this is mind-blowing</em>&quot;.<br>A nice overview of RAG comes from <a href="https://www.latent.space/p/llamaindex">Jerry Liu&#39;s interview on Latent Space</a>.<br><em>Update: a useful open-source tool for <a href="https://github.com/Brandon-c-tech/RAG-logger">RAGLogging</a> just came out.</em> </p>
+<h2 id="u-shaped-performance">U-Shaped Performance</h2>
+<p>One LLM behaviour that should be considered, before regarding RAG obsolete, is their tendency to attend to information from the beginning and end of the context window. See <a href="https://arxiv.org/abs/2307.03172">Lost in the Middle: How Language Models Use Long Contexts</a> for an empirical analysis.<br>The paper concludes</p>
+<blockquote>
+<p>We empirically study how language models use long input contexts via a series of controlled experiments. We show that language model performance degrades significantly when changing the position of relevant information, indicating that models struggle to robustly access and use information in long input contexts. In particular, performance is often lowest when models must use information in the middle of long input contexts.We conduct a preliminary investigation of the role of (i) model architecture, (ii) query-aware contextualisation, and (iii) instruction fine-tuning to better understand how they affect how language models use context. Finally, we conclude with a practical case study of open-domain question answering,finding that the performance of language model readers saturates far before retriever recall. Our results and analysis provide a better understanding of how language models use their input context and provides new evaluation protocols for future long-context models.<br>In other words, simply dumping loads of text or embeddings into an LLM with a big context window -say 2M tokens- won&#39;t yield great results. There&#39;s more to it than brute forcing.    </p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>Extending context length, as appealing as it may sound, neither simplifies nor solves the issue of creating a good quality AI system that is enriched by large text corpora. It seems that when it comes to larger data volumes, <a href="https://www.youtube.com/watch?v=5e1Wzbr8wGU">semantic search augmented with Graph search</a> could be a more robust, albeit more involved, approach. Solid prompt engineering approaches, including <a href="https://www.promptingguide.ai/techniques/cot">Chain-of-Thought</a>, <a href="https://www.promptingguide.ai/techniques/fewshot">Few-shot prompting</a> etc. are also powerful tools to keep in our toolbox.    </p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

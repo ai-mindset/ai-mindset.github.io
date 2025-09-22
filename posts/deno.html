@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏗️ Modern Data Science and AI Engineering with Deno 2.0 - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>🏗️ Modern Data Science and AI Engineering with Deno 2.0</h1>
+        <span class="post-date">September 5, 2024</span>
+        <div class="post-tags">
+          <span class="post-tag">ai</span><span class="post-tag">llm</span><span class="post-tag">cross-platform</span><span class="post-tag">data-processing</span><span class="post-tag">data-science</span><span class="post-tag">deno</span><span class="post-tag">machine-learning</span><span class="post-tag">minimal</span><span class="post-tag">polars</span><span class="post-tag">production</span><span class="post-tag">deployment</span><span class="post-tag">toolchain</span><span class="post-tag">typescript</span><span class="post-tag">security</span><span class="post-tag">zero-config</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> Deno 2.0 offers a compelling alternative to Python for AI and data science workflows by providing zero-configuration TypeScript support, native security features, cross-compilation capabilities, and an ecosystem of essential tools-addressing Python&#39;s environment management complexities and deployment frictions whilst enabling production-ready development from proof-of-concept through to single-binary distribution.</p>
+<!--more-->
+
+<h2 id="introduction">Introduction</h2>
+<p>The landscape of Data Science and AI engineering is at a critical inflection point. While Python has dominated data science and machine learning, its fragmented ecosystem and deployment complexities increasingly impede production systems. I&#39;ve already touched on [my solution to Python&#39;s fragmentation]({{ site.baseurl }}{% link _posts/2024-11-21-bring-it-back-to-basics.md %}).<br>Deno 2.0 emerges as a compelling solution to these challenges, bringing together a number of technologies that cover most computing requirements across a very wide range of domains. Having said that, JavaScript (JS) and its superset TypeScript (TS) are <a href="https://www.youtube.com/watch?v=aXOChLn5ZdQ">far from perfect languages</a>[^1], but this discussion is outside the scope of this blog post.</p>
+<p>The key factors driving change are:</p>
+<ul>
+<li>Python environment management complexity</li>
+<li>Production security requirements</li>
+<li>Deployment workflow friction</li>
+<li>Need for type safety in large-scale AI applications</li>
+</ul>
+<h2 id="the-deno-advantage-and-ecosystem">The Deno Advantage and Ecosystem</h2>
+<h3 id="core-capabilities">Core Capabilities</h3>
+<p>Deno 2.0 provides a comprehensive, zero-configuration solution with:</p>
+<ul>
+<li>Native TS support</li>
+<li>First-class security features</li>
+<li>Cross-compilation through <code>deno compile</code></li>
+<li>Built-in development tools</li>
+</ul>
+<p>As Ryan Dahl emphasized in a recent <a href="https://www.youtube.com/watch?v=tZBCq8Ijkgw">Syntax podcast episode</a>: &quot;<em>Deno works really great as a single file. It&#39;s really great for scripting, [...] you can just put some imports in and start working from a single file. And that is actually exactly what you want from notebooks</em>&quot;. This aligns with recent work by <a href="https://www.answer.ai/">Answer.AI</a>&#39;s <a href="https://www.alexisgallagher.com/">Alexis Gallagher</a> on <a href="https://youtube.com/watch?v=t6-Uup-Alfs">single-script Python development</a>.</p>
+<h3 id="ai-and-data-processing-tools">AI and Data Processing Tools</h3>
+<p>The ecosystem provides direct parallels to Python&#39;s essential tools:</p>
+<p>Data Processing:</p>
+<ul>
+<li><a href="https://pola-rs.github.io/nodejs-polars/">nodejs-polars</a> for high-performance DataFrame operations</li>
+<li><a href="https://observablehq.com/plot/">Observable Plot</a> for modern visualisation</li>
+</ul>
+<p>Machine Learning:</p>
+<ul>
+<li><a href="https://js.langchain.com/">LangChain.js</a> and <a href="https://ts.llamaindex.ai/">LlamaIndex.ts</a> for LLM applications</li>
+<li><a href="https://huggingface.co/docs/transformers.js/index">Transformers.js</a> for Hugging Face integration</li>
+<li><a href="https://www.tensorflow.org/js">TensorFlow.js</a> and <a href="https://github.com/nuanio/xgboost-node">XGBoost-node</a> for ML tasks</li>
+</ul>
+<p>Infrastructure:</p>
+<ul>
+<li>Native <a href="https://docs.deno.com/runtime/manual/basics/connecting_to_databases/#postgres">Postgres</a> and <a href="https://docs.deno.com/runtime/manual/basics/connecting_to_databases/#mongodb">MongoDB</a> support</li>
+<li><a href="https://github.com/qdrant/qdrant-js">Qdrant JS</a> for vector storage</li>
+<li><a href="https://stdlib.io/docs/api/latest">STDLib</a> for extended functionality</li>
+<li><a href="https://github.com/axa-group/nlp.js/">NLP.js</a> and <a href="https://github.com/spencermountain/compromise">compromise</a> for NLP</li>
+</ul>
+<h2 id="a-pragmatic-decision-framework">A Pragmatic Decision Framework</h2>
+<p>Modern AI systems need to balance rapid experimentation with production-ready stability. Through experimentation, I&#39;ve found that a TS-based approach using Deno provides an elegant solution to both needs.</p>
+<h3 id="production-first-design">Production-First Design</h3>
+<p>For a start, a zero-configuration Deno-based environment makes it easy to produce code spanning proof of concept (POC) to production. This gives the user native security, cross-compilation capabilities and simple single-binary distribution, eliminating many traditional deployment headaches. While Python remains popular for Data Science and AI research, Deno with simple TS[^2] has been able to handle most of my computational equally well, in a lightweight and productive way.  </p>
+<h3 id="practical-implementation-guide">Practical Implementation Guide</h3>
+<p>Transitioning to this kind of all-in-one Deno-driven architecture can start by utilising tools like LangChain.js or LlamaIndex.ts for LLM applications. Data processing can be handled efficiently through nodejs-polars, while Observable Plots provides powerful visualisation.<br>Emphasising simplicity, we can use REST/GraphQL to handle service communication, with shared data stores and container-based deployment maintaining clear service boundaries. This approach supports both monolithic and microservice architectures, based on project needs.</p>
+<h3 id="development-best-practices">Development Best Practices</h3>
+<p>[Iterative refinement development]({{ site.baseurl }}{% link _posts/2024-11-22-iterative-refinement.md %}) remains an equally productive approach. Strong typing helps with development and code robustness, while correctly used async/await patterns ensure system responsiveness. This approach enables rapid prototyping without sacrificing production readiness.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Leveraging Deno with TS as a replacement for Python is a possible, viable and usually more lightweight alternative for developing more maintainable, secure and production-ready Data and AI systems. Deno&#39;s zero-config setup, extensive tooling, security focus and stability address key pain points I have encountered in my Python development journey.<br>The Deno ecosystem has reached maturity, making it a viable and often superior alternative -in my experience- to traditional Python-based approaches for modern AI engineering workflows.  </p>
+<hr>
+<p>[^1]: There are noteworthy -sadly not as widely used- languages such as <a href="https://clojure.org/">Clojure</a> and <a href="https://racket-lang.org/">Racket</a>, backed by <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">computer science research</a>, that pioneered concepts like iterative refinement (aka REPL-driven development) among others.
+[^2]: &quot;simple&quot; in this context refers to leveraging types but avoiding more involved TypeScript ideas.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
