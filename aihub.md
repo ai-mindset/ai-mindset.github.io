@@ -35,6 +35,10 @@ researchers, and institutions, making them reliable and informative references.
   [The GenAI Guidebook](https://ravinkumar.com/GenAiGuidebook/book_intro.html)
   constitutes a guide that lays out the foundations for building products with
   Generative AI.
+- 📚
+  [Everything I Know About Life I Learned From PowerPoint](https://www.russelldavies.com/powerpoint)
+  is "_a book about PowerPoint built out of PowerPoint -jokes, culture,
+  politics, serious points about power and more, better, jokes_"
 
 ## Courses
 
