@@ -24,14 +24,29 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Drawing inspiration from Norvig, Howard, and Sanderson, this article advocates for iterative refinement over traditional unit testing, emphasising techniques like doctests that keep verification close to code-reducing maintenance burden whilst improving reliability by focusing on actual usage patterns rather than rigid test-driven development that can lead to outdated tests and ossified code structures.</p>
+        <p><strong>TL;DR:</strong> Drawing inspiration from Norvig, Howard, and Sanderson, this article
+advocates for iterative refinement over traditional unit testing, emphasising
+techniques like doctests that keep verification close to code-reducing
+maintenance burden whilst improving reliability by focusing on actual usage
+patterns rather than rigid test-driven development that can lead to outdated
+tests and ossified code structures.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>In the realm of software development and related fields, three influential figures -Peter Norvig (former Director of Research at Google), Jeremy Howard (founder of fast.ai), and Grant Sanderson (creator of 3Blue1Brown)- demonstrate the power of iterative refinement over rigid test-driven development. Their approaches, while applied in different domains, share common principles that challenge traditional development practices.</p>
+<p>In the realm of software development and related fields, three influential
+figures -Peter Norvig (former Director of Research at Google), Jeremy Howard
+(founder of fast.ai), and Grant Sanderson (creator of 3Blue1Brown)- demonstrate
+the power of iterative refinement over rigid test-driven development. Their
+approaches, while applied in different domains, share common principles that
+challenge traditional development practices.</p>
 <h2 id="iterative-refinement">Iterative Refinement</h2>
 <h3 id="peter-norvigs-software-development">Peter Norvig&#39;s Software Development</h3>
-<p>Norvig&#39;s approach, demonstrated in both his <a href="https://norvig.com/docex.html">original <code>docex</code> module</a> and his <a href="https://norvig.com/spell-correct.html">spell corrector implementation</a>, emphasises tests that are tightly coupled with the code they verify. Before Python&#39;s doctests[^1] were officially supported, he created the <code>docex</code> module specifically to write tests in docstrings using a concise syntax like </p>
+<p>Norvig&#39;s approach, demonstrated in both his
+<a href="https://norvig.com/docex.html">original <code>docex</code> module</a> and his
+<a href="https://norvig.com/spell-correct.html">spell corrector implementation</a>,
+emphasises tests that are tightly coupled with the code they verify. Before
+Python&#39;s doctests[^1] were officially supported, he created the <code>docex</code> module
+specifically to write tests in docstrings using a concise syntax like</p>
 <pre><code class="language-python">def factorial(n):
     &quot;&quot;&quot;Return the factorial of n, an exact integer &gt;= 0.
        &gt;&gt;&gt; [factorial(n) for n in range(6)]
@@ -69,13 +84,35 @@ ok
 Test passed.
 $
 </code></pre>
-<p>Even in his spell corrector, Norvig uses simple functions with in-line test cases rather than separate test files. This approach keeps tests close to the code they verify, making them part of the living documentation rather than separate artefacts that can drift out of sync.<br><em>Update: While randomly skimming through PyTorch code, it was good to stumble across examples of <a href="https://github.com/pytorch/pytorch/blob/main/torch/autograd/grad_mode.py">code containing doctests</a>.</em>  </p>
+<p>Even in his spell corrector, Norvig uses simple functions with in-line test
+cases rather than separate test files. This approach keeps tests close to the
+code they verify, making them part of the living documentation rather than
+separate artefacts that can drift out of sync.<br><em>Update: While randomly skimming through PyTorch code, it was good to stumble
+across examples of
+<a href="https://github.com/pytorch/pytorch/blob/main/torch/autograd/grad_mode.py">code containing doctests</a>.</em></p>
 <h3 id="jeremy-howards-machine-learning-development">Jeremy Howard&#39;s Machine Learning Development</h3>
-<p>Howard&#39;s methodology, evidenced in fast.ai&#39;s development and his book &quot;Deep Learning for Coders&quot; advocates for rapid prototyping in notebooks. His emphasis lies in getting end-to-end solutions working quickly, then iteratively improving them based on actual usage patterns. In his latest course <a href="https://solveit.fast.ai/">SolveIt</a>, Howard extends this iterative philosophy to [Dialogue Engineering]({{ site.baseurl }}{% link _posts/2024-11-15-dialogue-engineering.md %}), i.e. using Large Language Models in an iterative conversation to develop solutions, demonstrating how modern AI can be integrated into the development workflow while maintaining the principles of continuous refinement.</p>
+<p>Howard&#39;s methodology, evidenced in fast.ai&#39;s development and his book &quot;Deep
+Learning for Coders&quot; advocates for rapid prototyping in notebooks. His emphasis
+lies in getting end-to-end solutions working quickly, then iteratively improving
+them based on actual usage patterns. In his latest course
+<a href="https://solveit.fast.ai/">SolveIt</a>, Howard extends this iterative philosophy to
+[Dialogue Engineering]({{ site.baseurl }}{% link
+_posts/2024-11-15-dialogue-engineering.md %}), i.e. using Large Language Models
+in an iterative conversation to develop solutions, demonstrating how modern AI
+can be integrated into the development workflow while maintaining the principles
+of continuous refinement.</p>
 <h3 id="grant-sandersons-visual-mathematics">Grant Sanderson&#39;s Visual Mathematics</h3>
-<p>This iterative philosophy extends to mathematical animations. In Grant Sanderson&#39;s <a href="https://www.youtube.com/watch?v=rbu7Zu5X1zI">How I animate</a> video, he demonstrates how he builds visualisations incrementally, starting with basic shapes and gradually refining them while continuously previewing the results. This approach allows for creative exploration while maintaining momentum.</p>
+<p>This iterative philosophy extends to mathematical animations. In Grant
+Sanderson&#39;s <a href="https://www.youtube.com/watch?v=rbu7Zu5X1zI">How I animate</a> video,
+he demonstrates how he builds visualisations incrementally, starting with basic
+shapes and gradually refining them while continuously previewing the results.
+This approach allows for creative exploration while maintaining momentum.</p>
 <h3 id="the-problem-with-traditional-testing">The Problem with Traditional Testing</h3>
-<p>Traditional unit testing often fragments development workflow by requiring separate test maintenance and can lead to ossified code structures. When tests aren&#39;t exercised regularly, they become outdated, creating false confidence. This is particularly problematic in rapidly evolving domains like AI, where interfaces and requirements frequently change.</p>
+<p>Traditional unit testing often fragments development workflow by requiring
+separate test maintenance and can lead to ossified code structures. When tests
+aren&#39;t exercised regularly, they become outdated, creating false confidence.
+This is particularly problematic in rapidly evolving domains like AI, where
+interfaces and requirements frequently change.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Instead of extensive unit test suites, it&#39;s worth considering:</p>
 <ol>
@@ -85,10 +122,14 @@ $
 <li>Refactoring based on actual usage patterns</li>
 <li>Keeping tests focused on stable interfaces</li>
 </ol>
-<p>This approach reduces maintenance burden while ensuring code remains reliable where it matters most, that is in production.</p>
-<p>&quot;<em>Programs must be written for people to read, and only incidentally for machines to execute</em>&quot; - Abelson &amp; Sussman. The same applies to tests.</p>
+<p>This approach reduces maintenance burden while ensuring code remains reliable
+where it matters most, that is in production.</p>
+<p>&quot;<em>Programs must be written for people to read, and only incidentally for
+machines to execute</em>&quot; - Abelson &amp; Sussman. The same applies to tests.</p>
 <hr>
-<p>[^1]: Python has supported <a href="https://docs.python.org/3/library/doctest.html">doctests</a> natively since v2.6.9</p>
+<p>[^1]: Python has supported
+    <a href="https://docs.python.org/3/library/doctest.html">doctests</a> natively since
+    v2.6.9</p>
 
       </div>
     </article>

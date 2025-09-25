@@ -24,27 +24,107 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Creating cross-platform Python application packages requires CI/CD solutions like GitHub Actions since tools like PyInstaller can&#39;t natively build for multiple platforms; alternatives like Julia and Elixir offer promising but still-maturing packaging options, while Deno emerges as an appealing alternative with its straightforward cross-platform packaging capabilities, lightweight footprint, and growing data ecosystem - though Python remains dominant for data analysis despite its packaging limitations.</p>
+        <p><strong>TL;DR:</strong> Creating cross-platform Python application packages requires CI/CD
+solutions like GitHub Actions since tools like PyInstaller can&#39;t natively build
+for multiple platforms; alternatives like Julia and Elixir offer promising but
+still-maturing packaging options, while Deno emerges as an appealing alternative
+with its straightforward cross-platform packaging capabilities, lightweight
+footprint, and growing data ecosystem - though Python remains dominant for data
+analysis despite its packaging limitations.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>In the last couple of years I&#39;ve spoken to 3-4 people who had needed a bespoke data analysis tool that could be used locally, with privacy in mind. In some cases they&#39;d need to work in a sandboxed environment for security reasons, other times they had IP protection concerns. A desktop app or a CLI tool[^1] seemed to fit the bill in all those cases.<br>In the last decade+, Data and Python have become a synonym. <a href="https://pyinstaller.org/">PyInstaller</a> seemed like an obvious choice. However, PyInstaller cannot cross-compile code as it stands. Being a <em>Linux</em> user, offering to help <em>Windows</em> users, meant I should find a workaround e.g. leveraging GitHub Actions for cross-compilation.  </p>
+<p>In the last couple of years I&#39;ve spoken to 3-4 people who had needed a bespoke
+data analysis tool that could be used locally, with privacy in mind. In some
+cases they&#39;d need to work in a sandboxed environment for security reasons, other
+times they had IP protection concerns. A desktop app or a CLI tool[^1] seemed to
+fit the bill in all those cases.<br>In the last decade+, Data and Python have become a synonym.
+<a href="https://pyinstaller.org/">PyInstaller</a> seemed like an obvious choice. However,
+PyInstaller cannot cross-compile code as it stands. Being a <em>Linux</em> user,
+offering to help <em>Windows</em> users, meant I should find a workaround e.g.
+leveraging GitHub Actions for cross-compilation.</p>
 <h2 id="taking-the-scenic-route">Taking The Scenic Route</h2>
-<p>Out of curiosity, I decided to have a poke around a couple of different languages and ecosystems that could teach me a few things while helping me understand what is a viable alternative to Python.  </p>
+<p>Out of curiosity, I decided to have a poke around a couple of different
+languages and ecosystems that could teach me a few things while helping me
+understand what is a viable alternative to Python.</p>
 <h3 id="julia">Julia</h3>
-<p>The <a href="https://julialang.org/">Julia</a> programming language has caught my eye since 2014. It partially reminded me of MATLAB, that I used for my PhD. Familiarity aside, it&#39;s a great language to develop with. It&#39;s fast, interactive, with the best REPL I&#39;ve encountered, highly promising overall especially so after the release of Julia v1.9.<br>To my understanding Julia, being a JIT compiled language, wasn&#39;t designed for static compilation per se. Community efforts have enabled the generation of compiled packages, with <a href="https://binarybuilder.org/">BinaryBuilder</a>, <a href="https://julialang.github.io/PackageCompiler.jl">PackageCompiler</a> and <a href="https://github.com/tshort/StaticCompiler.jl">StaticCompiler</a> being the most well known compilation tools available at the time of writing. From an intermediate Julia user&#39;s point of view, I&#39;ve found that compilation results may vary. Also, to the best of my knowledge most compilation tools actually <em>package</em> code rather than statically compile it, which may expose valuable IP. Therefore, I concluded that Julia <em>probably</em> isn&#39;t as easy to compile as I initially thought (and hoped).  </p>
+<p>The <a href="https://julialang.org/">Julia</a> programming language has caught my eye
+since 2014. It partially reminded me of MATLAB, that I used for my PhD.
+Familiarity aside, it&#39;s a great language to develop with. It&#39;s fast,
+interactive, with the best REPL I&#39;ve encountered, highly promising overall
+especially so after the release of Julia v1.9.<br>To my understanding Julia, being a JIT compiled language, wasn&#39;t designed for
+static compilation per se. Community efforts have enabled the generation of
+compiled packages, with <a href="https://binarybuilder.org/">BinaryBuilder</a>,
+<a href="https://julialang.github.io/PackageCompiler.jl">PackageCompiler</a> and
+<a href="https://github.com/tshort/StaticCompiler.jl">StaticCompiler</a> being the most
+well known compilation tools available at the time of writing. From an
+intermediate Julia user&#39;s point of view, I&#39;ve found that compilation results may
+vary. Also, to the best of my knowledge most compilation tools actually
+<em>package</em> code rather than statically compile it, which may expose valuable IP.
+Therefore, I concluded that Julia <em>probably</em> isn&#39;t as easy to compile as I
+initially thought (and hoped).</p>
 <h3 id="elixir">Elixir</h3>
-<p><a href="https://elixir-lang.org/">Elixir</a> is a fantastic hosted functional language, running on the tried and tested <a href="https://en.wikipedia.org/wiki/BEAM_(Erlang_virtual_machine)">BEAM (Erlang VM)</a>. One of the many things Elixir has going for it, is its strong drive towards <em>good</em> documentation. The language&#39;s REPL is also excellent. All in all, Elixir is rapidly evolving and it&#39;s worth experimenting with.<br>Starting from 2021, <a href="https://github.com/elixir-nx">Numerical Elixir (Nx)</a> has progressed by leaps and bounds. The Nx community has managed to produce excellent libraries, with <a href="https://livebook.dev/">Livebook</a> being the best literate programming environment I&#39;ve ever used. As far as data applications are concerned, Elixir will become a <em>very strong</em> contender, it&#39;s well worth keeping a close eye on the language.<br>As for cross-compilation, to my understanding <a href="https://hex.pm/packages/burrito">Burrito</a> is the only tool that allows for packaged Elixir code to be truly portable albeit producing sizeable executables. Burrito is still WIP, not a guaranteed solution for the time being but a noteworthy tool that&#39;s improving fast.<br>Being doubtful as to whether this tech stack could meet all my current needs, beside being a niche language in Data and AI, led me to search for another tech stack for fun and profit.   </p>
+<p><a href="https://elixir-lang.org/">Elixir</a> is a fantastic hosted functional language,
+running on the tried and tested
+<a href="https://en.wikipedia.org/wiki/BEAM_(Erlang_virtual_machine)">BEAM (Erlang VM)</a>.
+One of the many things Elixir has going for it, is its strong drive towards
+<em>good</em> documentation. The language&#39;s REPL is also excellent. All in all, Elixir
+is rapidly evolving and it&#39;s worth experimenting with.<br>Starting from 2021, <a href="https://github.com/elixir-nx">Numerical Elixir (Nx)</a> has
+progressed by leaps and bounds. The Nx community has managed to produce
+excellent libraries, with <a href="https://livebook.dev/">Livebook</a> being the best
+literate programming environment I&#39;ve ever used. As far as data applications are
+concerned, Elixir will become a <em>very strong</em> contender, it&#39;s well worth keeping
+a close eye on the language.<br>As for cross-compilation, to my understanding
+<a href="https://hex.pm/packages/burrito">Burrito</a> is the only tool that allows for
+packaged Elixir code to be truly portable albeit producing sizeable executables.
+Burrito is still WIP, not a guaranteed solution for the time being but a
+noteworthy tool that&#39;s improving fast.<br>Being doubtful as to whether this tech stack could meet all my current needs,
+beside being a niche language in Data and AI, led me to search for another tech
+stack for fun and profit.</p>
 <h3 id="deno-typescript">Deno (TypeScript)</h3>
-<p>More recently, especially given many AI Engineering APIs are written both in Python <em>and</em> TypeScript, I started using Deno. The idea is to leverage Deno for all my computational needs, since it&#39;s an all-in-one, straightforward to use runtime. Installation and setup were a breeze, Deno comes with <em>all</em> the tools a developer requires (formatter, linter, testing suite, package manager etc.), it plays very nicely with Vim, it&#39;s lightweight, secure, compatible with NPM packages and the list goes on. Importantly, it can easily cross-compile executables. The data and AI ecosystem is not yet as mature as that of Python. However, if someone is willing to put in the effort, I&#39;ve found that it&#39;s well worth the investment. This is why I am betting on Deno for my Data Science and AI needs. </p>
+<p>More recently, especially given many AI Engineering APIs are written both in
+Python <em>and</em> TypeScript, I started using Deno. The idea is to leverage Deno for
+all my computational needs, since it&#39;s an all-in-one, straightforward to use
+runtime. Installation and setup were a breeze, Deno comes with <em>all</em> the tools a
+developer requires (formatter, linter, testing suite, package manager etc.), it
+plays very nicely with Vim, it&#39;s lightweight, secure, compatible with NPM
+packages and the list goes on. Importantly, it can easily cross-compile
+executables. The data and AI ecosystem is not yet as mature as that of Python.
+However, if someone is willing to put in the effort, I&#39;ve found that it&#39;s well
+worth the investment. This is why I am betting on Deno for my Data Science and
+AI needs.</p>
 <h2 id="what-about-python-cross-compilation">What About Python Cross-Compilation?</h2>
-<p><strong>How hard could it be?</strong> 🤔<br><strong>TL;DR:</strong> it&#39;s an involved process that requires access to a CI/CD platform such as GitHub Actions. Once a pipeline is in place, it&#39;s a straightforward process that requires internet access and registering to a hosting service such as GitHub.  </p>
-<p>I wrote two pipelines, one for generating a <a href="https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/unix-build.yml">Unix build</a> and one for <a href="https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/win-build.yml">Windows</a>. The result is pretty decent, however the cumbersome process and reliance on third party tech (GitHub Actions in this case) strengthened my conviction that Deno and TypeScript are worth investing in, for a more complete solution. The JS/DS Data[^2] ecosystem is not as mature yet but it&#39;s evolving pretty fast.  </p>
+<p><strong>How hard could it be?</strong> 🤔<br><strong>TL;DR:</strong> it&#39;s an involved process that requires access to a CI/CD platform
+such as GitHub Actions. Once a pipeline is in place, it&#39;s a straightforward
+process that requires internet access and registering to a hosting service such
+as GitHub.</p>
+<p>I wrote two pipelines, one for generating a
+<a href="https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/unix-build.yml">Unix build</a>
+and one for
+<a href="https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/win-build.yml">Windows</a>.
+The result is pretty decent, however the cumbersome process and reliance on
+third party tech (GitHub Actions in this case) strengthened my conviction that
+Deno and TypeScript are worth investing in, for a more complete solution. The
+JS/DS Data[^2] ecosystem is not as mature yet but it&#39;s evolving pretty fast.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>The process of cross-compiling a simple Python app was pretty instructive. The main downside I see is the reliance on a hosting service and a CI/CD platform. Frankly, having access to a hosting service and using CI/CD is almost a given in my line of work. Still, it&#39;s nowhere near as straightforward as running <code>$ deno compile main.ts</code>
-I am considering attempting the same using <a href="https://podman.io/">Podman</a>, since <a href="https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images">Windows</a>, <a href="https://github.com/sickcodes/Docker-OSX">macOS</a> and <a href="https://hub.docker.com/_/ubuntu/">Linux</a> containers are available. Stay tuned for updates!</p>
+<p>The process of cross-compiling a simple Python app was pretty instructive. The
+main downside I see is the reliance on a hosting service and a CI/CD platform.
+Frankly, having access to a hosting service and using CI/CD is almost a given in
+my line of work. Still, it&#39;s nowhere near as straightforward as running
+<code>$ deno compile main.ts</code> I am considering attempting the same using
+<a href="https://podman.io/">Podman</a>, since
+<a href="https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images">Windows</a>,
+<a href="https://github.com/sickcodes/Docker-OSX">macOS</a> and
+<a href="https://hub.docker.com/_/ubuntu/">Linux</a> containers are available. Stay tuned
+for updates!</p>
 <hr>
-<p>[^1]: One might argue that running statically compiled executables in a sandboxed environment is a security risk. Static malware analysis tools exist for this exact reason<br>[^2]: To be fair, the Data ecosystem is pretty decent and continuously improving. It&#39;s the ML and statistical ecosystem and specifically the lack of a native Scikit-learn and Scipy-like packages that&#39;s still somewhat lacking </p>
+<p>[^1]: One might argue that running statically compiled executables in a
+    sandboxed environment is a security risk. Static malware analysis tools
+    exist for this exact reason</p>
+<p>[^2]: To be fair, the Data ecosystem is pretty decent and continuously
+    improving. It&#39;s the ML and statistical ecosystem and specifically the lack
+    of a native Scikit-learn and Scipy-like packages that&#39;s still somewhat
+    lacking</p>
 
       </div>
     </article>
