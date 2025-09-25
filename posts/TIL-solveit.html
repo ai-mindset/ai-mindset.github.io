@@ -24,38 +24,69 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Answer.ai&#39;s Solveit approach mitigates LLM deterioration by breaking tasks into small steps, editing AI responses, and providing curated context, addressing three key issues: RLHF-trained overenthusiasm, autoregressive decline, and training data flaws.</p>
+        <p><strong>TL;DR:</strong> Answer.ai&#39;s Solveit approach mitigates LLM deterioration by breaking
+tasks into small steps, editing AI responses, and providing curated context,
+addressing three key issues: RLHF-trained overenthusiasm, autoregressive
+decline, and training data flaws.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>A student from fast.ai&#39;s &quot;<a href="http://solveit.fast.ai/">Solve It With Code</a>&quot; course documented three LLM properties that cause deteriorating AI responses and corresponding mitigation techniques. The course, led by <a href="https://nitter.poast.org/jeremyphoward">Jeremy Howard</a> and <a href="https://nitter.poast.org/johnowhitaker">Johno Whitaker</a>, focuses on transforming problematic AI interactions into learning experiences through systematic problem-solving.</p>
-<p>The approach addresses what the author terms the &quot;deteriorating response pattern&quot; -where AI tools initially appear helpful but produce increasingly broken code through subsequent iterations. The common scenario: Request a weather app from ChatGPT, receive 100 lines of code that doesn&#39;t work, request fixes, encounter additional bugs. This occurs due to fundamental LLM properties, not implementation flaws.</p>
+<p>A student from fast.ai&#39;s &quot;<a href="http://solveit.fast.ai/">Solve It With Code</a>&quot; course
+documented three LLM properties that cause deteriorating AI responses and
+corresponding mitigation techniques. The course, led by
+<a href="https://nitter.poast.org/jeremyphoward">Jeremy Howard</a> and
+<a href="https://nitter.poast.org/johnowhitaker">Johno Whitaker</a>, focuses on
+transforming problematic AI interactions into learning experiences through
+systematic problem-solving.</p>
+<p>The approach addresses what the author terms the &quot;deteriorating response
+pattern&quot; -where AI tools initially appear helpful but produce increasingly
+broken code through subsequent iterations. The common scenario: Request a
+weather app from ChatGPT, receive 100 lines of code that doesn&#39;t work, request
+fixes, encounter additional bugs. This occurs due to fundamental LLM properties,
+not implementation flaws.</p>
 <h2 id="the-three-properties--solutions">The Three Properties &amp; Solutions</h2>
 <ol>
 <li><em>RLHF creates overly eager helpers</em></li>
 </ol>
-<p>Issue: Human raters prefer complete responses, so models provide overwhelming amounts of information at once
-Solution: Work in small steps, ask clarifying questions first
-Based on Pólya&#39;s problem-solving framework: understand → plan → implement → review</p>
+<p>Issue: Human raters prefer complete responses, so models provide overwhelming
+amounts of information at once Solution: Work in small steps, ask clarifying
+questions first Based on Pólya&#39;s problem-solving framework: understand → plan →
+implement → review</p>
 <ol start="2">
 <li><em>Autoregression leads to deterioration</em></li>
 </ol>
-<p>Issue: Responses degrade over long conversations as models revert to mediocre training patterns
-Solution: Edit the LLM&#39;s responses to shape better patterns, pre-fill outputs, use examples
-This involves rewriting AI responses to match preferred style, then using those as context for subsequent interactions</p>
+<p>Issue: Responses degrade over long conversations as models revert to mediocre
+training patterns Solution: Edit the LLM&#39;s responses to shape better patterns,
+pre-fill outputs, use examples This involves rewriting AI responses to match
+preferred style, then using those as context for subsequent interactions</p>
 <ol start="3">
 <li><em>Training data is flawed/outdated</em></li>
 </ol>
-<p>Issue: Hallucinations and outdated information from lossy compression of training data
-Solution: &quot;Jeremy RAG&quot; - manually curating relevant context rather than relying on automated retrieval systems
-Tools like <a href="https://github.com/AnswerDotAI/contextkit">contextkit</a> enable inclusion of specific documentation, followed by verification that the LLM correctly interprets the provided context</p>
+<p>Issue: Hallucinations and outdated information from lossy compression of
+training data Solution: &quot;Jeremy RAG&quot; - manually curating relevant context rather
+than relying on automated retrieval systems Tools like
+<a href="https://github.com/AnswerDotAI/contextkit">contextkit</a> enable inclusion of
+specific documentation, followed by verification that the LLM correctly
+interprets the provided context</p>
 <h2 id="application-to-modern-ai-systems">Application to Modern AI Systems</h2>
-<p>The methodology remains relevant for reasoning models like Claude Code or OpenAI&#39;s Deep Research. The primary challenge isn&#39;t that models cannot answer questions, but rather that users often don&#39;t know which questions to ask initially.</p>
-<p>Jeremy connected this to Eric Ries&#39; <a href="https://theleanstartup.com/principles">Lean Startup methodology</a>: working in small steps enables adaptation of thinking and refinement of the actual question being posed (paraphrased from the original).</p>
+<p>The methodology remains relevant for reasoning models like Claude Code or
+OpenAI&#39;s Deep Research. The primary challenge isn&#39;t that models cannot answer
+questions, but rather that users often don&#39;t know which questions to ask
+initially.</p>
+<p>Jeremy connected this to Eric Ries&#39;
+<a href="https://theleanstartup.com/principles">Lean Startup methodology</a>: working in
+small steps enables adaptation of thinking and refinement of the actual question
+being posed (paraphrased from the original).</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>The Solveit approach transforms problematic AI interactions into learning experiences through iterative, step-by-step problem-solving where each stage builds understanding. By breaking down complex tasks and maintaining control over the conversation flow, users can achieve more reliable results with AI assistants.</p>
-<p><em>Note: Solveit remains unreleased, but these principles apply to existing AI tools.</em></p>
-<p>Do you find that decomposing complex problems into smaller components reveals different requirements than initially anticipated?</p>
+<p>The Solveit approach transforms problematic AI interactions into learning
+experiences through iterative, step-by-step problem-solving where each stage
+builds understanding. By breaking down complex tasks and maintaining control
+over the conversation flow, users can achieve more reliable results with AI
+assistants.</p>
+<p><em>Note: Solveit remains unreleased, but these principles apply to existing AI
+tools.</em></p>
+<p>Do you find that decomposing complex problems into smaller components reveals
+different requirements than initially anticipated?</p>
 
       </div>
     </article>

@@ -2,87 +2,159 @@
 layout: post
 title: "🤖 The State of AI Agents in 2025"
 date: 2025-03-15
-tags: [ai, machine-learning, llm, best-practices, evaluation, prompt-engineering, decision-making]
+tags: [
+  ai,
+  machine-learning,
+  llm,
+  best-practices,
+  evaluation,
+  prompt-engineering,
+  decision-making,
+]
 ---
 
-**TL;DR:** Despite significant advancements creating a "perfect storm" for AI agents in 2025, truly autonomous systems still face five categories of cumulative errors that prevent reliable performance; overcoming these challenges requires focused strategies in data curation, robust evaluation frameworks, scaffolding systems, distinctive user experiences, and multimodal approaches.
+**TL;DR:** Despite significant advancements creating a "perfect storm" for AI
+agents in 2025, truly autonomous systems still face five categories of
+cumulative errors that prevent reliable performance; overcoming these challenges
+requires focused strategies in data curation, robust evaluation frameworks,
+scaffolding systems, distinctive user experiences, and multimodal approaches.
 
 <!--more-->
 
 ## Introduction
 
-The AI landscape has evolved at a breathtaking pace over the past few years, with autonomous AI agents being positioned as the next revolutionary frontier. At the 2025 AI Engineer Summit, Grace Isford, a partner at Lux Capital, delivered an [insightful keynote](https://www.youtube.com/watch?v=HS5a8VIKsvA) on "The State of the AI Frontier" that challenged the prevailing narrative about AI agents. While many industry players proclaim that 2025 marks the "perfect storm" for AI agents, Isford's presentation offered a more nuanced view, highlighting both the tremendous progress and the significant challenges that remain. This article summarises the key insights from her keynote, examining the current state of AI agents and the strategies developers can employ to overcome persistent limitations.
+The AI landscape has evolved at a breathtaking pace over the past few years,
+with autonomous AI agents being positioned as the next revolutionary frontier.
+At the 2025 AI Engineer Summit, Grace Isford, a partner at Lux Capital,
+delivered an [insightful keynote](https://www.youtube.com/watch?v=HS5a8VIKsvA)
+on "The State of the AI Frontier" that challenged the prevailing narrative about
+AI agents. While many industry players proclaim that 2025 marks the "perfect
+storm" for AI agents, Isford's presentation offered a more nuanced view,
+highlighting both the tremendous progress and the significant challenges that
+remain. This article summarises the key insights from her keynote, examining the
+current state of AI agents and the strategies developers can employ to overcome
+persistent limitations.
 
 ## The Perfect Storm for AI Agents
 
-The speaker began by acknowledging the remarkable progress in AI over the past two and a half years. The industry has seen exponential advancements since the release of Stable Diffusion in August 2022, with the pace of innovation only accelerating. 2025 has already witnessed several landmark developments:
+The speaker began by acknowledging the remarkable progress in AI over the past
+two and a half years. The industry has seen exponential advancements since the
+release of Stable Diffusion in August 2022, with the pace of innovation only
+accelerating. 2025 has already witnessed several landmark developments:
 
-- The announcement of the $500 billion Stargate project collaboration between the U.S. government, OpenAI, SoftBank, and Oracle
+- The announcement of the $500 billion Stargate project collaboration between
+  the U.S. government, OpenAI, SoftBank, and Oracle
 - OpenAI's o3 model exceeding human performance in the Arc AGI challenge
-- DeepSeq's R1 model launch causing market disruptions and reaching the top of the App Store
-- France's new AI initiative announced at the France AI Summit, bringing Europe back into the global AI race
+- DeepSeq's R1 model launch causing market disruptions and reaching the top of
+  the App Store
+- France's new AI initiative announced at the France AI Summit, bringing Europe
+  back into the global AI race
 
-These developments, alongside other factors, have created what many call the "perfect storm" for AI agents:
+These developments, alongside other factors, have created what many call the
+"perfect storm" for AI agents:
 
-1. Reasoning models (like OpenAI's o1 and o3, DeepSeq's R1, and Grok's latest offering) now outperform humans in various benchmarks
-2. Increased test-time compute (more resources allocated to inference rather than just training)
+1. Reasoning models (like OpenAI's o1 and o3, DeepSeq's R1, and Grok's latest
+   offering) now outperform humans in various benchmarks
+2. Increased test-time compute (more resources allocated to inference rather
+   than just training)
 3. Engineering and hardware optimisations driving efficiency
 4. Cheaper inference and hardware costs
 5. A narrowing gap between open-source and closed-source models
-6. Massive infrastructure investments from governments and corporations worldwide
+6. Massive infrastructure investments from governments and corporations
+   worldwide
 
 ## The Reality Gap: Why AI Agents Aren't Quite Working Yet
 
-Despite this promising landscape, Isford argued that truly autonomous AI agents aren't functioning as seamlessly as industry hype suggests. To illustrate this point, she shared a real-world example of trying to use OpenAI's operator to book a flight from New York to San Francisco with specific requirements. Despite seemingly straightforward criteria (departure time after 3 PM, avoiding rush hour, specific airlines, budget constraints, seat preferences), the agent failed to deliver a satisfactory result.
+Despite this promising landscape, Isford argued that truly autonomous AI agents
+aren't functioning as seamlessly as industry hype suggests. To illustrate this
+point, she shared a real-world example of trying to use OpenAI's operator to
+book a flight from New York to San Francisco with specific requirements. Despite
+seemingly straightforward criteria (departure time after 3 PM, avoiding rush
+hour, specific airlines, budget constraints, seat preferences), the agent failed
+to deliver a satisfactory result.
 
-The presenter identified five categories of cumulative errors that prevent AI agents from delivering consistent, reliable results:
+The presenter identified five categories of cumulative errors that prevent AI
+agents from delivering consistent, reliable results:
 
-1. **Decision Errors**: Choosing incorrect facts or overthinking/exaggerating scenarios
-2. **Implementation Errors**: Encountering access issues or integration failures (like CAPTCHA challenges)
-3. **Heuristic Errors**: Applying wrong criteria or missing critical contextual information
-4. **Taste Errors**: Failing to account for personal preferences not explicitly stated
-5. **Perfection Paradox**: User expectations heightened by AI's capabilities in some areas lead to frustration when agents perform at merely human speed or make basic errors
+1. **Decision Errors**: Choosing incorrect facts or overthinking/exaggerating
+   scenarios
+2. **Implementation Errors**: Encountering access issues or integration failures
+   (like CAPTCHA challenges)
+3. **Heuristic Errors**: Applying wrong criteria or missing critical contextual
+   information
+4. **Taste Errors**: Failing to account for personal preferences not explicitly
+   stated
+5. **Perfection Paradox**: User expectations heightened by AI's capabilities in
+   some areas lead to frustration when agents perform at merely human speed or
+   make basic errors
 
-These errors compound dramatically in complex multi-agent systems with multi-step tasks. Isford presented a compelling visual example showing how even agents with impressive 99% and 95% accuracy rates drop to 60% and 8% reliability respectively after just 50 consecutive steps.
+These errors compound dramatically in complex multi-agent systems with
+multi-step tasks. Isford presented a compelling visual example showing how even
+agents with impressive 99% and 95% accuracy rates drop to 60% and 8% reliability
+respectively after just 50 consecutive steps.
 
 ## Five Strategies for Building Better AI Agents
 
-The keynote then shifted to offering concrete strategies for mitigating these challenges and building more effective AI agents:
+The keynote then shifted to offering concrete strategies for mitigating these
+challenges and building more effective AI agents:
 
 ### 1. Data Curation
-- Recognise that data is increasingly diverse (text, images, video, audio, sensor data)
+
+- Recognise that data is increasingly diverse (text, images, video, audio,
+  sensor data)
 - Curate proprietary data, including data generated by the agent itself
-- Design "data flywheels" that automatically improve agent performance through user interactions
+- Design "data flywheels" that automatically improve agent performance through
+  user interactions
 - Recycle and adapt to user preferences in real-time
 
 ### 2. Robust Evaluation Systems
-- Move beyond evaluations for verifiable domains (math, science) to develop frameworks for subjective assessments
+
+- Move beyond evaluations for verifiable domains (math, science) to develop
+  frameworks for subjective assessments
 - Collect signals about human preferences
 - Build personalised evaluation systems that reflect actual user needs
-- Sometimes the best evaluation is direct human testing rather than relying solely on benchmarks
+- Sometimes the best evaluation is direct human testing rather than relying
+  solely on benchmarks
 
 ### 3. Scaffolding Systems
+
 - Implement safeguards to prevent cascading failures when errors occur
 - Build complex compound systems that can work together harmoniously
 - Incorporate human intervention at critical junctures
-- Develop self-healing agents that can recognise their own mistakes and correct course
+- Develop self-healing agents that can recognise their own mistakes and correct
+  course
 
 ### 4. User Experience as a Competitive Moat
-- Recognise that UX differentiation is crucial when most applications are using the same foundation models
+
+- Recognise that UX differentiation is crucial when most applications are using
+  the same foundation models
 - Deeply understand user workflows to create elegant human-machine collaboration
 - Integrate seamlessly with existing systems to deliver tangible ROI
-- Focus on industries with proprietary data sources and specialised workflows (robotics, manufacturing, life sciences)
+- Focus on industries with proprietary data sources and specialised workflows
+  (robotics, manufacturing, life sciences)
 
 ### 5. Multimodal Approaches
+
 - Move beyond basic chatbot interfaces to create more human-like experiences
-- Incorporate multiple sensory capabilities (vision, voice, and potentially touch or smell)
+- Incorporate multiple sensory capabilities (vision, voice, and potentially
+  touch or smell)
 - Build personal memory systems that understand users on a deeper level
-- Transform inconsistent but visionary products into experiences that exceed expectations through novel interfaces
+- Transform inconsistent but visionary products into experiences that exceed
+  expectations through novel interfaces
 
 ## Conclusion
 
-While 2025 has created what appears to be a perfect storm for AI agents with advanced reasoning models, increased compute efficiency, and massive infrastructure investments, the reality is that autonomous AI agents still face significant challenges. The cumulative effect of small errors across decision-making, implementation, heuristics, and user preferences creates substantial reliability issues in complex agent systems.
+While 2025 has created what appears to be a perfect storm for AI agents with
+advanced reasoning models, increased compute efficiency, and massive
+infrastructure investments, the reality is that autonomous AI agents still face
+significant challenges. The cumulative effect of small errors across
+decision-making, implementation, heuristics, and user preferences creates
+substantial reliability issues in complex agent systems.
 
-However, as this keynote emphasised, these challenges are not insurmountable. By focusing on meticulous data curation, developing sophisticated evaluation frameworks, implementing robust scaffolding systems, prioritising distinctive user experiences, and embracing multimodal approaches, developers can build AI agents that deliver on their transformative potential. The lightning strike of truly autonomous, reliable AI agents may not have happened yet, but with these strategies, the industry is moving steadily toward that breakthrough moment.
-
-
+However, as this keynote emphasised, these challenges are not insurmountable. By
+focusing on meticulous data curation, developing sophisticated evaluation
+frameworks, implementing robust scaffolding systems, prioritising distinctive
+user experiences, and embracing multimodal approaches, developers can build AI
+agents that deliver on their transformative potential. The lightning strike of
+truly autonomous, reliable AI agents may not have happened yet, but with these
+strategies, the industry is moving steadily toward that breakthrough moment.
