@@ -25,11 +25,19 @@ safety, performance, and cross-platform deployment advantages.
 
 ## Introduction
 
-After previously discussing the prospect of doing AI and Data Science with
-[Deno](https://ai-mindset.github.io/posts/deno.html) and
+After previously discussing the potential of doing AI and Data Science with
+[Deno](https://ai-mindset.github.io/posts/deno.html) or
 [Go](https://ai-mindset.github.io/posts/go-pragmatic-modern-development.html),
-Rust emerges as the compelling next step offering native Polars implementation,
-memory safety without garbage collection, and a single-binary deployment model.
+I've found Rust to be a compelling alternative, offering an ecosystem that
+covers my needs, memory safety without garbage collection, and a single-binary
+deployment model.\
+Four Rust libraries, namely
+
+- [Rig](https://rig.rs/) for LLM applications
+- [ndarray](https://docs.rs/ndarray/) for linear algebra
+- [plotters](https://plotters-rs.github.io/home/) for visualisation
+- [Polars](https://docs.pola.rs/) for DataFrames\
+  already cover 90+% of an AI Engineer's and a Data Scientist's needs.
 
 ## Phased Migration Strategy
 
@@ -96,7 +104,7 @@ fn get_user(id: u64) -> Result<User, Error> {
 
 **5. Practical tooling setup**
 
-- Install `rust-analyzer` for Neovim
+- Install `rust-analyzer` for your Editor / IDE of choice
 - Use `clippy` to learn idiomatic Rust: `cargo clippy`
 - Adopt `cargo fmt` for consistent formatting
 
@@ -106,10 +114,10 @@ powerful features as needed.
 
 ## Conclusion
 
-Migrating from Python to Rust offers substantial long-term benefits, including
-type safety, native performance, and streamlined deployment, without requiring
-complete rewrites. By embracing a gradual migration path, leveraging hybrid
-integration, and deliberately limiting your initial exposure to Rust's
-complexity, you can maintain productivity while building competence. The result
-is a minimalist yet powerful approach that delivers increasingly robust software
-over time.
+Migrating from Python to Rust can offer considerable long-term benefits,
+including a cohesite ecosystem, native performance, and streamlined deployment,
+without requiring complete rewrites. Following a gradual migration path,
+leveraging hybrid integration, and deliberately limiting the developer's initial
+exposure to Rust's complexity, one can maintain productivity while acquiring
+experience. This approach can lead to a minimalist software development cycle
+that will result in increasingly robust software over time.
