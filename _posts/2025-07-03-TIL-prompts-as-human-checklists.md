@@ -5,8 +5,7 @@ date: 2025-07-03
 tags: [ai, best-practices, prompt-engineering, system-prompts, code-quality, productivity, til, debugging]
 ---
 
-**TL;DR:** Well-crafted AI system prompts, like those in Microsoft's VSCode Copilot Chat extension, serve as excellent process documentation and step-by-step checklists that human developers can follow to improve their own workflows and debugging methodologies.
-
+**TL;DR:** Well-crafted AI system prompts, like those in Microsoft's VSCode Copilot Chat extension, serve as excellent process documentation and step-by-step checklists that human developers can follow to improve their own workflows and debugging methodologies. 
 <!--more-->
 
 ## Introduction

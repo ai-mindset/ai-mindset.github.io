@@ -5,8 +5,7 @@ date: 2024-12-24
 tags: [minimal, cross-platform, toolchain, best-practices, design-principles, python, deno, zero-config]
 ---
 
-**TL;DR:** For me, Neovim strikes the perfect balance between Vim's simplicity and VSCode's features. After wrestling with VSCode's keyboard input failures on Fedora and its resource demands, I found that Neovim's single configuration file, robust plugins, and cross-platform reliability make it ideal for my Python, Deno, and Clojure development needs. Sometimes stepping back to move forward is exactly what we need!
-
+**TL;DR:** For me, Neovim strikes the perfect balance between Vim's simplicity and VSCode's features. After wrestling with VSCode's keyboard input failures on Fedora and its resource demands, I found that Neovim's single configuration file, robust plugins, and cross-platform reliability make it ideal for my Python, Deno, and Clojure development needs. Sometimes stepping back to move forward is exactly what we need! 
 <!--more-->
 
 ## Introduction

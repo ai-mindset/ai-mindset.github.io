@@ -5,8 +5,7 @@ date: 2025-01-09
 tags: [ai, llm, neural-network, machine-learning, data-science, linear-algebra, statistics, evaluation, interpretability, modelling-mindsets, design-principles, best-practices, data-processing]
 ---
 
-**TL;DR:** Sparse autoencoders are neural networks that learn efficient data representations by reconstructing their input while enforcing neuron inactivity constraints, combining reconstruction error, weight decay, and KL-divergence sparsity penalties to automatically extract interpretable features without manual engineering.
-
+**TL;DR:** Sparse autoencoders are neural networks that learn efficient data representations by reconstructing their input while enforcing neuron inactivity constraints, combining reconstruction error, weight decay, and KL-divergence sparsity penalties to automatically extract interpretable features without manual engineering. 
 <!--more-->
 
 ## Introduction

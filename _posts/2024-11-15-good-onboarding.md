@@ -5,8 +5,7 @@ date: 2024-11-14
 tags: [onboarding, best-practices, productivity, company-culture, decision-making, talent, learning, efficiency]
 ---
 
-**TL;DR:** Effective onboarding programmes dramatically reduce the productivity gap for new hires by applying evidence-based learning principles: breaking skills into manageable components, providing structured learning paths, targeting 80% proficiency before moving on, defining minimum productive competency, using checklists with frequent feedback, and focusing on mechanical competency - all based on how human memory and learning actually work, transforming the costly standard approach where developers take months to become fully productive.
-
+**TL;DR:** Effective onboarding programmes dramatically reduce the productivity gap for new hires by applying evidence-based learning principles: breaking skills into manageable components, providing structured learning paths, targeting 80% proficiency before moving on, defining minimum productive competency, using checklists with frequent feedback, and focusing on mechanical competency - all based on how human memory and learning actually work, transforming the costly standard approach where developers take months to become fully productive. 
 <!--more-->
 
 ## Introduction

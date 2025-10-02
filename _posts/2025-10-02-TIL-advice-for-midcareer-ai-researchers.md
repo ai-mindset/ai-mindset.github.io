@@ -11,7 +11,6 @@ unique perspective, and continuous learning. The most crucial insight: real
 breakthroughs come from researchers who ignore consensus, think for themselves,
 and tackle hard problems. Most encouragingly, they stress that anyone with
 determination can become an expert in this rapidly evolving field.
-
 <!--more-->
 
 ## Introduction

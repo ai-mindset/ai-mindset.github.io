@@ -5,8 +5,7 @@ date: 2025-03-19
 tags: [deno, typescript, deployment, cross-platform, evolution, toolchain, best-practices, code-quality]
 ---
 
-**TL;DR:** Programming languages have evolved from compiled executables to interpreted languages and containerisation, but Deno 2.0 brings deployment full circle by enabling TypeScript/JavaScript compilation into standalone binaries-offering simplified cross-platform deployment whilst maintaining ecosystem richness and enabling single-language development across entire application stacks.
-
+**TL;DR:** Programming languages have evolved from compiled executables to interpreted languages and containerisation, but Deno 2.0 brings deployment full circle by enabling TypeScript/JavaScript compilation into standalone binaries-offering simplified cross-platform deployment whilst maintaining ecosystem richness and enabling single-language development across entire application stacks. 
 <!--more-->
 
 ## Introduction

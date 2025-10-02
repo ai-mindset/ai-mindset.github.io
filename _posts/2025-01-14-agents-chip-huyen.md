@@ -5,8 +5,7 @@ date: 2025-01-14
 tags: [ai, llm, prompt-engineering, system-prompts, evaluation, best-practices, toolchain, machine-learning]
 ---
 
-**TL;DR:** Chip Huyen's analysis of AI agents explores how they combine foundation models with specialised tools (knowledge augmentation, capability extension, and write actions), planning mechanisms (ReAct, Reflexion), and evaluation frameworks to accomplish complex tasks whilst highlighting challenges in tool selection, planning efficiency, and error management.
-
+**TL;DR:** Chip Huyen's analysis of AI agents explores how they combine foundation models with specialised tools (knowledge augmentation, capability extension, and write actions), planning mechanisms (ReAct, Reflexion), and evaluation frameworks to accomplish complex tasks whilst highlighting challenges in tool selection, planning efficiency, and error management. 
 <!--more-->
 
 ## Introduction

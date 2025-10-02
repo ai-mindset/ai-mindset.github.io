@@ -5,8 +5,7 @@ date: 2024-10-08
 tags: [github-actions, ci-cd, yt-dlp, deno, typescript, cross-platform]
 ---
 
-**TL;DR:** This article details the development of a Deno-based tool for downloading high-quality videos with audio using yt-dlp, highlighting unexpected challenges with GitHub Actions where compiled executables became unusable after release-ultimately solved by compressing executables into .tar files, preserving functionality whilst revealing potential limitations in GitHub's release mechanisms.
-
+**TL;DR:** This article details the development of a Deno-based tool for downloading high-quality videos with audio using yt-dlp, highlighting unexpected challenges with GitHub Actions where compiled executables became unusable after release-ultimately solved by compressing executables into .tar files, preserving functionality whilst revealing potential limitations in GitHub's release mechanisms. 
 <!--more-->
 **[Was it worth my time](https://xkcd.com/1205/)?** 
 

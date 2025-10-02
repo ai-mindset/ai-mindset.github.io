@@ -5,8 +5,7 @@ date: 2024-11-23
 tags: [ai, evolution, llm, symbolic, neural-network, data-science]
 ---
 
-**TL;DR:** This historical overview traces AI's evolution through four major paradigms: from symbolic reasoning and expert systems (1950s-1970s), through neural networks and Bayesian approaches (1980s-1990s), to the Big Data revolution (2000s-2010s), culminating in today's integrated systems that combine multiple philosophical approaches-suggesting future progress requires unifying these diverse methodologies rather than choosing between them.
-
+**TL;DR:** This historical overview traces AI's evolution through four major paradigms: from symbolic reasoning and expert systems (1950s-1970s), through neural networks and Bayesian approaches (1980s-1990s), to the Big Data revolution (2000s-2010s), culminating in today's integrated systems that combine multiple philosophical approaches-suggesting future progress requires unifying these diverse methodologies rather than choosing between them. 
 <!--more-->
 
 # AI's Historical Evolution

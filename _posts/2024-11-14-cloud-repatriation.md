@@ -5,8 +5,7 @@ date: 2024-11-14
 tags: [cloud, on-prem]
 ---
 
-**TL;DR:** Cloud repatriation-the strategic migration of applications and data from public clouds back to on-premises infrastructure-is gaining traction as organisations seek better cost control, performance, data privacy, and reduced vendor lock-in, with companies like 37signals projecting significant savings whilst maintaining a balanced hybrid approach rather than abandoning cloud entirely.
-
+**TL;DR:** Cloud repatriation-the strategic migration of applications and data from public clouds back to on-premises infrastructure-is gaining traction as organisations seek better cost control, performance, data privacy, and reduced vendor lock-in, with companies like 37signals projecting significant savings whilst maintaining a balanced hybrid approach rather than abandoning cloud entirely. 
 <!--more-->
 
 ## Introduction
