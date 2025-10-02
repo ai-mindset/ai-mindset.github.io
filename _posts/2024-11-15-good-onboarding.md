@@ -2,16 +2,7 @@
 layout: post
 title: "✅ On-boarding that works"
 date: 2024-11-14
-tags: [
-  onboarding,
-  best-practices,
-  productivity,
-  company-culture,
-  decision-making,
-  talent,
-  learning,
-  efficiency,
-]
+tags: [onboarding, best-practices, productivity, company-culture, decision-making, talent, learning, efficiency]
 ---
 
 **TL;DR:** Effective onboarding programmes dramatically reduce the productivity
@@ -22,7 +13,6 @@ competency, using checklists with frequent feedback, and focusing on mechanical
 competency - all based on how human memory and learning actually work,
 transforming the costly standard approach where developers take months to become
 fully productive.
-
 <!--more-->
 
 ## Introduction

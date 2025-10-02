@@ -90,7 +90,7 @@ The single source of truth for project configuration. For example:</p>
     ]
 
     [tool.ruff]
-    line-length = 90 
+    line-length = 90
     select = [&quot;E&quot;, &quot;F&quot;, &quot;I&quot;]
 
     # Required only if you use pytest for unit testing
@@ -242,16 +242,16 @@ of tools.</p>
                 &quot;content&quot;: &quot;What&#39;s the best way to handle database migrations?&quot;
             }
         ]
-        
+
         response = ollama.chat(model=&#39;llama2&#39;, messages=messages)
         messages.append(response[&#39;message&#39;])
-        
+
         # Follow-up question with context
         messages.append({
             &quot;role&quot;: &quot;user&quot;,
             &quot;content&quot;: &quot;How would that work with SQLAlchemy specifically?&quot;
         })
-        
+
         return ollama.chat(model=&#39;llama2&#39;, messages=messages)
 </code></pre>
 <ul>
@@ -268,17 +268,17 @@ local LLMs or external APIs</li>
         documents = SimpleDirectoryReader(&quot;technical_docs&quot;).load_data()
         parser = SentenceSplitter(chunk_size=1024, chunk_overlap=20)
         nodes = parser.get_nodes_from_documents(documents)
-        
+
         # Create index with custom settings
         index = VectorStoreIndex(nodes)
-        
+
         # Custom retriever with similarity threshold
         retriever = VectorIndexRetriever(
             index=index,
             similarity_top_k=3,
             filters=lambda x: float(x.get_score()) &gt; 0.7
         )
-        
+
         # Create query engine with custom retriever
         query_engine = RetrieverQueryEngine(retriever=retriever)
         return query_engine
@@ -293,7 +293,7 @@ vector storage and graph operations</li>
     def vector_search(text_embedding: np.ndarray, threshold: float = 0.8):
         client = MongoClient(&quot;mongodb://localhost:27017/&quot;)
         db = client.vector_db
-        
+
         pipeline = [
             {
                 &quot;$search&quot;: {
@@ -318,7 +318,7 @@ vector storage and graph operations</li>
                 }
             }
         ]
-        
+
         return list(db.documents.aggregate(pipeline))
 </code></pre>
 <p><em>Update: Looking into <a href="https://weaviate.io/">Weaviate</a> as an all-in-one DB

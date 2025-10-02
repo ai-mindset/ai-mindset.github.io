@@ -11,7 +11,6 @@ with the most valuable skills being prioritisation, communication, project
 selection, and willingness to manually inspect data-suggesting that choosing the
 right problem can multiply output by 10-100x more effectively than simply
 working longer hours.
-
 <!--more-->
 
 ## Introduction

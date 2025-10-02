@@ -2,18 +2,7 @@
 layout: post
 title: "✍ A Path to Maintainable AI Systems using Norman's Design Principles"
 date: 2024-12-03
-tags: [
-  ai,
-  data-science,
-  design-principles,
-  code-quality,
-  mlops,
-  monitoring,
-  observability,
-  production,
-  model-governance,
-  minimal,
-]
+tags: [ai, data-science, design-principles, code-quality, mlops, monitoring, observability, production, model-governance, minimal]
 ---
 
 **TL;DR:** Don Norman's timeless design principles - visibility, feedback,
@@ -23,7 +12,6 @@ implementing these principles with a carefully selected, minimal toolset, we can
 create maintainable, observable AI systems that reduce complexity while
 providing comprehensive functionality - just as Norman observed in physical
 objects, good design in AI leads to fewer errors and greater user satisfaction.
-
 <!--more-->
 
 ## Introduction
@@ -165,7 +153,7 @@ Example error prevention:
 def safe_predict(features):
     if not validate_features(features):
         return fallback_prediction()
-    
+
     try:
         with LATENCY.time():
             prediction = model.predict(features)

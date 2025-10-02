@@ -2,16 +2,7 @@
 layout: post
 title: "シ Back to Basics: A Modern, Minimal Python Toolchain"
 date: 2024-11-21
-tags: [
-  python,
-  type-checking,
-  code-quality,
-  github-actions,
-  ci-cd,
-  cross-platform,
-  minimal,
-  toolchain,
-]
+tags: [python, type-checking, code-quality, github-actions, ci-cd, cross-platform, minimal, toolchain]
 ---
 
 **TL;DR:** This article presents a streamlined Python toolchain that reduces
@@ -20,7 +11,6 @@ featuring Rust-based tools like uv (package manager) and Ruff
 (linter/formatter), along with pyright for type checking-all configured through
 a single pyproject.toml file and complemented by essential libraries for data
 processing, visualisation, and AI development.
-
 <!--more-->
 
 ## Introduction
@@ -85,7 +75,7 @@ common Python setup headaches:
     ]
 
     [tool.ruff]
-    line-length = 90 
+    line-length = 90
     select = ["E", "F", "I"]
 
     # Required only if you use pytest for unit testing
@@ -243,16 +233,16 @@ of tools.
                 "content": "What's the best way to handle database migrations?"
             }
         ]
-        
+
         response = ollama.chat(model='llama2', messages=messages)
         messages.append(response['message'])
-        
+
         # Follow-up question with context
         messages.append({
             "role": "user",
             "content": "How would that work with SQLAlchemy specifically?"
         })
-        
+
         return ollama.chat(model='llama2', messages=messages)
 ```
 
@@ -270,17 +260,17 @@ of tools.
         documents = SimpleDirectoryReader("technical_docs").load_data()
         parser = SentenceSplitter(chunk_size=1024, chunk_overlap=20)
         nodes = parser.get_nodes_from_documents(documents)
-        
+
         # Create index with custom settings
         index = VectorStoreIndex(nodes)
-        
+
         # Custom retriever with similarity threshold
         retriever = VectorIndexRetriever(
             index=index,
             similarity_top_k=3,
             filters=lambda x: float(x.get_score()) > 0.7
         )
-        
+
         # Create query engine with custom retriever
         query_engine = RetrieverQueryEngine(retriever=retriever)
         return query_engine
@@ -296,7 +286,7 @@ of tools.
     def vector_search(text_embedding: np.ndarray, threshold: float = 0.8):
         client = MongoClient("mongodb://localhost:27017/")
         db = client.vector_db
-        
+
         pipeline = [
             {
                 "$search": {
@@ -321,7 +311,7 @@ of tools.
                 }
             }
         ]
-        
+
         return list(db.documents.aggregate(pipeline))
 ```
 

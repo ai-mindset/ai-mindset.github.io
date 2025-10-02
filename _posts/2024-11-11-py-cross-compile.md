@@ -12,7 +12,6 @@ still-maturing packaging options, while Deno emerges as an appealing alternative
 with its straightforward cross-platform packaging capabilities, lightweight
 footprint, and growing data ecosystem - though Python remains dominant for data
 analysis despite its packaging limitations.
-
 <!--more-->
 
 ## Introduction
@@ -78,6 +77,10 @@ stack for fun and profit.
 
 ### Deno (TypeScript)
 
+<<<<<<< HEAD
+## What About Python Cross-Compilation?
+**How hard could it be?** 🤔
+=======
 More recently, especially given many AI Engineering APIs are written both in
 Python _and_ TypeScript, I started using Deno. The idea is to leverage Deno for
 all my computational needs, since it's an all-in-one, straightforward to use
@@ -130,3 +133,4 @@ for updates!
     improving. It's the ML and statistical ecosystem and specifically the lack
     of a native Scikit-learn and Scipy-like packages that's still somewhat
     lacking
+>>>>>>> main

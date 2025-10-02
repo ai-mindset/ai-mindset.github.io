@@ -2,21 +2,13 @@
 layout: post
 title: "💡 TIL: A Simple Yet Effective Ensemble Technique called Model Soup 🍲"
 date: 2025-01-10
-tags: [
-  neural-network,
-  machine-learning,
-  performance,
-  mlops,
-  production,
-  evaluation,
-]
+tags: [neural-network, machine-learning, performance, mlops, production, evaluation]
 ---
 
 **TL;DR:** Model soups provide a computationally efficient ensemble technique by
 averaging the weights of similarly trained neural networks, outperforming both
 individual models and traditional prediction-averaging ensembles while
 maintaining single-model inference speed.
-
 <!--more-->
 
 ## Introduction

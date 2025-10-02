@@ -149,7 +149,7 @@ def validate_features(df):
 <pre><code class="language-python">def safe_predict(features):
     if not validate_features(features):
         return fallback_prediction()
-    
+
     try:
         with LATENCY.time():
             prediction = model.predict(features)

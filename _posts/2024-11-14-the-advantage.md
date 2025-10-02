@@ -10,7 +10,6 @@ health-built through leadership teams founded on trust, clear communication, and
 aligned values-is the single greatest competitive advantage companies can
 achieve, outweighing traditional "smart" business strategies and metrics for
 sustainable long-term success.
-
 <!--more-->
 
 ## Introduction

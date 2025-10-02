@@ -11,7 +11,6 @@ organisations seek better cost control, performance, data privacy, and reduced
 vendor lock-in, with companies like 37signals projecting significant savings
 whilst maintaining a balanced hybrid approach rather than abandoning cloud
 entirely.
-
 <!--more-->
 
 ## Introduction

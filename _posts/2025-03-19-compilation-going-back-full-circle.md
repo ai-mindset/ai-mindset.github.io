@@ -2,16 +2,7 @@
 layout: post
 title: "📦 From Compilation to Containerisation and Back Again"
 date: 2025-03-19
-tags: [
-  deno,
-  typescript,
-  deployment,
-  cross-platform,
-  evolution,
-  toolchain,
-  best-practices,
-  code-quality,
-]
+tags: [deno, typescript, deployment, cross-platform, evolution, toolchain, best-practices, code-quality]
 ---
 
 **TL;DR:** Programming languages have evolved from compiled executables to
@@ -20,7 +11,6 @@ circle by enabling TypeScript/JavaScript compilation into standalone
 binaries-offering simplified cross-platform deployment whilst maintaining
 ecosystem richness and enabling single-language development across entire
 application stacks.
-
 <!--more-->
 
 ## Introduction

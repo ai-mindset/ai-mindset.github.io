@@ -11,7 +11,6 @@ neural networks and Bayesian approaches (1980s-1990s), to the Big Data
 revolution (2000s-2010s), culminating in today's integrated systems that combine
 multiple philosophical approaches-suggesting future progress requires unifying
 these diverse methodologies rather than choosing between them.
-
 <!--more-->
 
 # AI's Historical Evolution

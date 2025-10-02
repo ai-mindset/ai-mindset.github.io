@@ -2,16 +2,7 @@
 layout: post
 title: "🔨 REWORK"
 date: 2025-03-28
-tags: [
-  37signals,
-  best-practices,
-  productivity,
-  efficiency,
-  company-culture,
-  remote-work,
-  minimal,
-  business-value,
-]
+tags: [37signals, best-practices, productivity, efficiency, company-culture, remote-work, minimal, business-value]
 ---
 
 **TL;DR:** Basecamp founders challenge conventional business wisdom in their
@@ -19,7 +10,6 @@ book "Rework," advocating for simplicity, constraints, sustainable work hours,
 and focused execution over endless planning, rapid growth, and workaholism -
 presenting practical principles for building profitable, sustainable businesses
 with minimal resources.
-
 <!--more-->
 
 ## Introduction
