@@ -5,8 +5,7 @@ date: 2024-11-11
 tags: [python, github-actions, ci-cd, cross-platform, deno, typescript]
 ---
 
-**TL;DR:** Creating cross-platform Python application packages requires CI/CD solutions like GitHub Actions since tools like PyInstaller can't natively build for multiple platforms; alternatives like Julia and Elixir offer promising but still-maturing packaging options, while Deno emerges as an appealing alternative with its straightforward cross-platform packaging capabilities, lightweight footprint, and growing data ecosystem - though Python remains dominant for data analysis despite its packaging limitations.
-
+**TL;DR:** Creating cross-platform Python application packages requires CI/CD solutions like GitHub Actions since tools like PyInstaller can't natively build for multiple platforms; alternatives like Julia and Elixir offer promising but still-maturing packaging options, while Deno emerges as an appealing alternative with its straightforward cross-platform packaging capabilities, lightweight footprint, and growing data ecosystem - though Python remains dominant for data analysis despite its packaging limitations. 
 <!--more-->
 
 ## Introduction 
@@ -28,15 +27,3 @@ More recently, especially given many AI Engineering APIs are written both in Pyt
 
 ## What About Python Cross-Compilation? 
 **How hard could it be?** 🤔   
-**TL;DR:** it's an involved process that requires access to a CI/CD platform such as GitHub Actions. Once a pipeline is in place, it's a straightforward process that requires internet access and registering to a hosting service such as GitHub.  
-
-I wrote two pipelines, one for generating a [Unix build](https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/unix-build.yml) and one for [Windows](https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/win-build.yml). The result is pretty decent, however the cumbersome process and reliance on third party tech (GitHub Actions in this case) strengthened my conviction that Deno and TypeScript are worth investing in, for a more complete solution. The JS/DS Data[^2] ecosystem is not as mature yet but it's evolving pretty fast.  
-
-## Conclusion
-The process of cross-compiling a simple Python app was pretty instructive. The main downside I see is the reliance on a hosting service and a CI/CD platform. Frankly, having access to a hosting service and using CI/CD is almost a given in my line of work. Still, it's nowhere near as straightforward as running `$ deno compile main.ts`
-I am considering attempting the same using [Podman](https://podman.io/), since [Windows](https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images), [macOS](https://github.com/sickcodes/Docker-OSX) and [Linux](https://hub.docker.com/_/ubuntu/) containers are available. Stay tuned for updates!
-
----
-[^1]: One might argue that running statically compiled executables in a sandboxed environment is a security risk. Static malware analysis tools exist for this exact reason  
-[^2]: To be fair, the Data ecosystem is pretty decent and continuously improving. It's the ML and statistical ecosystem and specifically the lack of a native Scikit-learn and Scipy-like packages that's still somewhat lacking 
-

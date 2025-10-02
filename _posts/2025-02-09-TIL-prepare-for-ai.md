@@ -5,8 +5,7 @@ date: 2025-02-09
 tags: [til, ai, fast-ai, llm, machine-learning, best-practices, decision-making, evolution]
 ---
 
-**TL;DR:** Fast.ai founder Jeremy Howard advocates studying historical technology cycles rather than attempting to predict AI's future, recommending a practical preparation strategy that combines domain expertise with AI capabilities through self-directed learning, side projects, and community engagement - emphasising that success will come from embracing uncertainty whilst pursuing counter-cyclical opportunities.
-
+**TL;DR:** Fast.ai founder Jeremy Howard advocates studying historical technology cycles rather than attempting to predict AI's future, recommending a practical preparation strategy that combines domain expertise with AI capabilities through self-directed learning, side projects, and community engagement - emphasising that success will come from embracing uncertainty whilst pursuing counter-cyclical opportunities. 
 <!--more-->
 
 ## Introduction

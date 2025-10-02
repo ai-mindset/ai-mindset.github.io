@@ -24,7 +24,7 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Creating cross-platform Python application packages requires CI/CD solutions like GitHub Actions since tools like PyInstaller can&#39;t natively build for multiple platforms; alternatives like Julia and Elixir offer promising but still-maturing packaging options, while Deno emerges as an appealing alternative with its straightforward cross-platform packaging capabilities, lightweight footprint, and growing data ecosystem - though Python remains dominant for data analysis despite its packaging limitations.</p>
+        <p><strong>TL;DR:</strong> Creating cross-platform Python application packages requires CI/CD solutions like GitHub Actions since tools like PyInstaller can&#39;t natively build for multiple platforms; alternatives like Julia and Elixir offer promising but still-maturing packaging options, while Deno emerges as an appealing alternative with its straightforward cross-platform packaging capabilities, lightweight footprint, and growing data ecosystem - though Python remains dominant for data analysis despite its packaging limitations. </p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
@@ -38,13 +38,7 @@
 <h3 id="deno-typescript">Deno (TypeScript)</h3>
 <p>More recently, especially given many AI Engineering APIs are written both in Python <em>and</em> TypeScript, I started using Deno. The idea is to leverage Deno for all my computational needs, since it&#39;s an all-in-one, straightforward to use runtime. Installation and setup were a breeze, Deno comes with <em>all</em> the tools a developer requires (formatter, linter, testing suite, package manager etc.), it plays very nicely with Vim, it&#39;s lightweight, secure, compatible with NPM packages and the list goes on. Importantly, it can easily cross-compile executables. The data and AI ecosystem is not yet as mature as that of Python. However, if someone is willing to put in the effort, I&#39;ve found that it&#39;s well worth the investment. This is why I am betting on Deno for my Data Science and AI needs. </p>
 <h2 id="what-about-python-cross-compilation">What About Python Cross-Compilation?</h2>
-<p><strong>How hard could it be?</strong> 🤔<br><strong>TL;DR:</strong> it&#39;s an involved process that requires access to a CI/CD platform such as GitHub Actions. Once a pipeline is in place, it&#39;s a straightforward process that requires internet access and registering to a hosting service such as GitHub.  </p>
-<p>I wrote two pipelines, one for generating a <a href="https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/unix-build.yml">Unix build</a> and one for <a href="https://github.com/ai-mindset/py-cross-compile/blob/main/.github/workflows/win-build.yml">Windows</a>. The result is pretty decent, however the cumbersome process and reliance on third party tech (GitHub Actions in this case) strengthened my conviction that Deno and TypeScript are worth investing in, for a more complete solution. The JS/DS Data[^2] ecosystem is not as mature yet but it&#39;s evolving pretty fast.  </p>
-<h2 id="conclusion">Conclusion</h2>
-<p>The process of cross-compiling a simple Python app was pretty instructive. The main downside I see is the reliance on a hosting service and a CI/CD platform. Frankly, having access to a hosting service and using CI/CD is almost a given in my line of work. Still, it&#39;s nowhere near as straightforward as running <code>$ deno compile main.ts</code>
-I am considering attempting the same using <a href="https://podman.io/">Podman</a>, since <a href="https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images">Windows</a>, <a href="https://github.com/sickcodes/Docker-OSX">macOS</a> and <a href="https://hub.docker.com/_/ubuntu/">Linux</a> containers are available. Stay tuned for updates!</p>
-<hr>
-<p>[^1]: One might argue that running statically compiled executables in a sandboxed environment is a security risk. Static malware analysis tools exist for this exact reason<br>[^2]: To be fair, the Data ecosystem is pretty decent and continuously improving. It&#39;s the ML and statistical ecosystem and specifically the lack of a native Scikit-learn and Scipy-like packages that&#39;s still somewhat lacking </p>
+<p><strong>How hard could it be?</strong> 🤔   </p>
 
       </div>
     </article>

@@ -5,8 +5,7 @@ date: 2024-12-05
 tags: [til, llm, ai, machine-learning, mlops, best-practices, production, model-governance, evaluation, observability, monitoring, quality-assurance, iterative-refinement]
 ---
 
-**TL;DR:** Critique Shadowing offers an expert-centered approach to LLM evaluation by starting with binary pass/fail judgments and detailed critiques before building automated systems. This iterative methodology—reminiscent of 1970s knowledge engineering—prioritizes domain expertise over complex metrics, revealing valuable insights about products and users while developing reliable evaluation systems that capture nuanced quality standards.
-
+**TL;DR:** Critique Shadowing offers an expert-centered approach to LLM evaluation by starting with binary pass/fail judgments and detailed critiques before building automated systems. This iterative methodology—reminiscent of 1970s knowledge engineering—prioritizes domain expertise over complex metrics, revealing valuable insights about products and users while developing reliable evaluation systems that capture nuanced quality standards. 
 <!--more-->
 
 ## Introduction

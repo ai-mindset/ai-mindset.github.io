@@ -5,8 +5,7 @@ date: 2025-08-26
 tags: [til, fast-ai, answer-ai, solveit, ai, best-practices, llm, performance, productivity, prompt-engineering]
 ---
 
-**TL;DR:** Answer.ai's Solveit approach mitigates LLM deterioration by breaking tasks into small steps, editing AI responses, and providing curated context, addressing three key issues: RLHF-trained overenthusiasm, autoregressive decline, and training data flaws.
-
+**TL;DR:** Answer.ai's Solveit approach mitigates LLM deterioration by breaking tasks into small steps, editing AI responses, and providing curated context, addressing three key issues: RLHF-trained overenthusiasm, autoregressive decline, and training data flaws. 
 <!--more-->
 
 ## Introduction

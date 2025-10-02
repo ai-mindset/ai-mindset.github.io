@@ -5,8 +5,7 @@ date: 2024-11-14
 tags: [slow-down, advantage]
 ---
 
-**TL;DR:** Patrick Lencioni's "The Advantage" argues that organisational health-built through leadership teams founded on trust, clear communication, and aligned values-is the single greatest competitive advantage companies can achieve, outweighing traditional "smart" business strategies and metrics for sustainable long-term success.
-
+**TL;DR:** Patrick Lencioni's "The Advantage" argues that organisational health-built through leadership teams founded on trust, clear communication, and aligned values-is the single greatest competitive advantage companies can achieve, outweighing traditional "smart" business strategies and metrics for sustainable long-term success. 
 <!--more-->
 
 ## Introduction

@@ -5,8 +5,7 @@ date: 2024-12-03
 tags: [ai, data-science, design-principles, code-quality, mlops, monitoring, observability, production, model-governance, minimal]
 ---
 
-**TL;DR:** Don Norman's timeless design principles - visibility, feedback, constraints, mappings, and error prevention - apply powerfully to AI systems, where abstract interfaces and complex workflows often become overwhelming. By implementing these principles with a carefully selected, minimal toolset, we can create maintainable, observable AI systems that reduce complexity while providing comprehensive functionality - just as Norman observed in physical objects, good design in AI leads to fewer errors and greater user satisfaction.
-
+**TL;DR:** Don Norman's timeless design principles - visibility, feedback, constraints, mappings, and error prevention - apply powerfully to AI systems, where abstract interfaces and complex workflows often become overwhelming. By implementing these principles with a carefully selected, minimal toolset, we can create maintainable, observable AI systems that reduce complexity while providing comprehensive functionality - just as Norman observed in physical objects, good design in AI leads to fewer errors and greater user satisfaction. 
 <!--more-->
 
 ## Introduction

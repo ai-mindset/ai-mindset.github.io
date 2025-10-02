@@ -5,8 +5,7 @@ date: 2025-03-22
 tags: [machine-learning, data-processing, fast-ai, python, data-science, optimisation, best-practices, interpretability]
 ---
 
-**TL;DR:** Fast.ai's fasttransform library makes machine learning data pipelines reversible by pairing each transformation with its inverse, enabling visualisation of transformed data for debugging and utilising multiple dispatch to handle different data types intelligently - crucial for understanding model behaviour and identifying spurious correlations.
-
+**TL;DR:** Fast.ai's fasttransform library makes machine learning data pipelines reversible by pairing each transformation with its inverse, enabling visualisation of transformed data for debugging and utilising multiple dispatch to handle different data types intelligently - crucial for understanding model behaviour and identifying spurious correlations. 
 <!--more-->
 
 ## Introduction
