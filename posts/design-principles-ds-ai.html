@@ -24,21 +24,43 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Don Norman&#39;s timeless design principles - visibility, feedback, constraints, mappings, and error prevention - apply powerfully to AI systems, where abstract interfaces and complex workflows often become overwhelming. By implementing these principles with a carefully selected, minimal toolset, we can create maintainable, observable AI systems that reduce complexity while providing comprehensive functionality - just as Norman observed in physical objects, good design in AI leads to fewer errors and greater user satisfaction. </p>
+        <p><strong>TL;DR:</strong> Don Norman&#39;s timeless design principles - visibility, feedback,
+constraints, mappings, and error prevention - apply powerfully to AI systems,
+where abstract interfaces and complex workflows often become overwhelming. By
+implementing these principles with a carefully selected, minimal toolset, we can
+create maintainable, observable AI systems that reduce complexity while
+providing comprehensive functionality - just as Norman observed in physical
+objects, good design in AI leads to fewer errors and greater user satisfaction.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>Don Norman&#39;s principles of good design, outlined in <a href="https://archive.org/details/thedesignofeverydaythingsbydonnorman">The Design of Everyday Things</a>, are particularly relevant to Data Science and AI Engineering, where systems often suffer from unnecessary complexity. This article presents a minimalist approach to implementing these principles using a carefully selected set of tools that maximise impact while reducing operational overhead. Norman&#39;s insights about visibility, feedback, constraints, and mappings translate powerfully to AI system design, where abstract interfaces and complex workflows can easily become overwhelming. Just as Norman observed that poorly designed physical objects lead to user frustration and errors, poorly architected AI systems can result in maintenance nightmares, hidden failure modes, and costly debugging cycles. By applying his principles - making system states visible, providing clear feedback, implementing appropriate constraints, and creating natural mappings between components, we can build AI systems that are not only more intuitive to use but also easier to maintain, debug, and evolve over time.</p>
+<p>Don Norman&#39;s principles of good design, outlined in
+<a href="https://archive.org/details/thedesignofeverydaythingsbydonnorman">The Design of Everyday Things</a>,
+are particularly relevant to Data Science and AI Engineering, where systems
+often suffer from unnecessary complexity. This article presents a minimalist
+approach to implementing these principles using a carefully selected set of
+tools that maximise impact while reducing operational overhead. Norman&#39;s
+insights about visibility, feedback, constraints, and mappings translate
+powerfully to AI system design, where abstract interfaces and complex workflows
+can easily become overwhelming. Just as Norman observed that poorly designed
+physical objects lead to user frustration and errors, poorly architected AI
+systems can result in maintenance nightmares, hidden failure modes, and costly
+debugging cycles. By applying his principles - making system states visible,
+providing clear feedback, implementing appropriate constraints, and creating
+natural mappings between components, we can build AI systems that are not only
+more intuitive to use but also easier to maintain, debug, and evolve over time.</p>
 <h2 id="design-principles-implementation">Design Principles Implementation</h2>
 <h3 id="1-visibility">1. Visibility</h3>
-<p>Implement comprehensive system observability using <a href="https://mlflow.org/">MLflow</a> as your central platform:</p>
+<p>Implement comprehensive system observability using <a href="https://mlflow.org/">MLflow</a>
+as your central platform:</p>
 <ul>
 <li>Track experiments, parameters, and metrics</li>
 <li>Version models and artefacts</li>
 <li>Log production predictions and outcomes</li>
 <li>Monitor model performance metrics</li>
 </ul>
-<p>For system-level metrics, use <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> to:</p>
+<p>For system-level metrics, use
+<a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> to:</p>
 <ul>
 <li>Track resource utilisation (CPU, memory, latency)</li>
 <li>Monitor prediction throughput</li>
@@ -49,7 +71,8 @@
     return hash(request_id) % 100 &lt; (sampling_rate * 100)
 </code></pre>
 <h3 id="2-feedback">2. Feedback</h3>
-<p>Use <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> for real-time monitoring and alerting:</p>
+<p>Use <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a> for
+real-time monitoring and alerting:</p>
 <ul>
 <li>Set up alerts for model performance degradation</li>
 <li>Monitor data distribution shifts</li>
@@ -69,7 +92,8 @@ def predict(features):
         return prediction
 </code></pre>
 <h3 id="3-constraints">3. Constraints</h3>
-<p>Implement data and model guardrails using <a href="https://greatexpectations.io/">Great Expectations</a>:</p>
+<p>Implement data and model guardrails using
+<a href="https://greatexpectations.io/">Great Expectations</a>:</p>
 <ul>
 <li>Define data quality expectations</li>
 <li>Set distribution bounds for features</li>
@@ -125,7 +149,7 @@ def validate_features(df):
 <pre><code class="language-python">def safe_predict(features):
     if not validate_features(features):
         return fallback_prediction()
-    
+
     try:
         with LATENCY.time():
             prediction = model.predict(features)
@@ -160,7 +184,11 @@ def validate_features(df):
 </li>
 </ol>
 <h2 id="conclusion">Conclusion</h2>
-<p>By focusing on a minimal set of powerful tools (<a href="https://mlflow.org/">MLflow</a>, <a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>, and <a href="https://greatexpectations.io/">Great Expectations</a>), you can implement Norman&#39;s design principles effectively while maintaining system simplicity. This approach provides:</p>
+<p>By focusing on a minimal set of powerful tools (<a href="https://mlflow.org/">MLflow</a>,
+<a href="https://prometheus.io/docs/visualization/grafana/">Prometheus/Grafana</a>, and
+<a href="https://greatexpectations.io/">Great Expectations</a>), you can implement Norman&#39;s
+design principles effectively while maintaining system simplicity. This approach
+provides:</p>
 <ul>
 <li>Comprehensive visibility through unified logging and monitoring</li>
 <li>Immediate feedback via real-time alerts</li>
@@ -168,7 +196,9 @@ def validate_features(df):
 <li>Clear mappings between components</li>
 <li>Robust error prevention and recovery</li>
 </ul>
-<p>The key is to fully utilise these core tools rather than adding complexity with additional solutions. This creates maintainable, observable, and reliable AI systems that can scale with your needs.</p>
+<p>The key is to fully utilise these core tools rather than adding complexity with
+additional solutions. This creates maintainable, observable, and reliable AI
+systems that can scale with your needs.</p>
 
       </div>
     </article>

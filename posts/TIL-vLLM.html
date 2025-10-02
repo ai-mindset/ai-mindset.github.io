@@ -24,13 +24,24 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> vLLM revolutionises LLM deployment through its PagedAttention algorithm, which applies virtual memory principles to key-value caches, enabling more efficient memory management and significantly improving throughput for resource-constrained environments whilst supporting popular open-source models. </p>
+        <p><strong>TL;DR:</strong> vLLM revolutionises LLM deployment through its PagedAttention
+algorithm, which applies virtual memory principles to key-value caches, enabling
+more efficient memory management and significantly improving throughput for
+resource-constrained environments whilst supporting popular open-source models.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>As a Data Scientist / AI Engineer exploring local-first solutions[^1] [^2], deploying Large Language Models (LLMs) presents significant resource management challenges. vLLM emerges as a breakthrough solution that fundamentally reimagines how we deploy and utilise these resource-intensive models[^4].</p>
+<p>As a Data Scientist / AI Engineer exploring local-first solutions[^1][^2],
+deploying Large Language Models (LLMs) presents significant resource management
+challenges. vLLM emerges as a breakthrough solution that fundamentally
+reimagines how we deploy and utilise these resource-intensive models[^4].</p>
 <h2 id="what-is-vllm">What Is vLLM?</h2>
-<p>vLLM is an open-source serving engine that optimises LLM deployment through virtualisation techniques[^4]. At its core, vLLM introduces PagedAttention, a novel attention algorithm that improves memory utilisation through paged memory management[^3]. Similar to how operating systems manage virtual memory, PagedAttention segments the key-value memory into non-continuous pages, enabling more efficient memory usage and request handling.</p>
+<p>vLLM is an open-source serving engine that optimises LLM deployment through
+virtualisation techniques[^4]. At its core, vLLM introduces PagedAttention, a
+novel attention algorithm that improves memory utilisation through paged memory
+management[^3]. Similar to how operating systems manage virtual memory,
+PagedAttention segments the key-value memory into non-continuous pages, enabling
+more efficient memory usage and request handling.</p>
 <p>Key features[^4]:</p>
 <ul>
 <li>Efficient memory management through PagedAttention</li>
@@ -90,12 +101,19 @@ outputs = llm.generate([&quot;Your prompt goes here&quot;], sampling_params)
 <li>Regular performance optimisation</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
-<p>vLLM represents a significant advancement in LLM serving technology[^3], offering an efficient, scalable solution for resource-constrained environments. Its innovative approach to memory management through PagedAttention and broad applicability across industries makes it an essential tool for modern AI development.</p>
+<p>vLLM represents a significant advancement in LLM serving technology[^3],
+offering an efficient, scalable solution for resource-constrained environments.
+Its innovative approach to memory management through PagedAttention and broad
+applicability across industries makes it an essential tool for modern AI
+development.</p>
 <hr>
-<p>[^1]: <a href="https://www.puppet.com/blog/cloud-repatriation">Cloud Repatriation: Examples, Unpacking 2024 Trends &amp; Tips for Reverse Migration</a>
-[^2]: <a href="https://thenewstack.io/why-companies-are-ditching-the-cloud-the-rise-of-cloud-repatriation/">Why Companies Are Ditching the Cloud: The Rise of Cloud Repatriation</a>
-[^3]: Kwon, W., Li, Z., Zhuang, S., Sheng, Y., Zheng, L., Yu, C.H., Gonzalez, J.E., Zhang, H., and Stoica, I. (2023). &quot;Efficient Memory Management for Large Language Model Serving with PagedAttention.&quot; <a href="https://arxiv.org/abs/2309.06180">arXiv:2309.06180</a>.
-[^4]: <a href="https://aijobs.net/insights/vllm-explained/">vLLM Explained</a> </p>
+<p>[^1]: <a href="https://www.puppet.com/blog/cloud-repatriation">Cloud Repatriation: Examples, Unpacking 2024 Trends &amp; Tips for Reverse Migration</a></p>
+<p>[^2]: <a href="https://thenewstack.io/why-companies-are-ditching-the-cloud-the-rise-of-cloud-repatriation/">Why Companies Are Ditching the Cloud: The Rise of Cloud Repatriation</a></p>
+<p>[^3]: Kwon, W., Li, Z., Zhuang, S., Sheng, Y., Zheng, L., Yu, C.H., Gonzalez,
+    J.E., Zhang, H., and Stoica, I. (2023). &quot;Efficient Memory Management for
+    Large Language Model Serving with PagedAttention.&quot;
+    <a href="https://arxiv.org/abs/2309.06180">arXiv:2309.06180</a>.</p>
+<p>[^4]: <a href="https://aijobs.net/insights/vllm-explained/">vLLM Explained</a></p>
 
       </div>
     </article>
