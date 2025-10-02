@@ -24,13 +24,22 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Well-crafted AI system prompts, like those in Microsoft&#39;s VSCode Copilot Chat extension, serve as excellent process documentation and step-by-step checklists that human developers can follow to improve their own workflows and debugging methodologies.</p>
+        <p><strong>TL;DR:</strong> Well-crafted AI system prompts, like those in Microsoft&#39;s VSCode
+Copilot Chat extension, serve as excellent process documentation and
+step-by-step checklists that human developers can follow to improve their own
+workflows and debugging methodologies.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>I was exploring Microsoft&#39;s recently open-sourced <a href="https://github.com/microsoft/vscode-copilot-chat/">VSCode Copilot Chat extension</a> codebase when I noticed something interesting: the prompts that power AI coding assistants make excellent checklists for human developers too.</p>
+<p>I was exploring Microsoft&#39;s recently open-sourced
+<a href="https://github.com/microsoft/vscode-copilot-chat/">VSCode Copilot Chat extension</a>
+codebase when I noticed something interesting: the prompts that power AI coding
+assistants make excellent checklists for human developers too.</p>
 <h2 id="engineering-prompts-as-process-documentation">Engineering Prompts as Process Documentation</h2>
-<p>Take this <a href="https://github.com/microsoft/vscode-copilot-chat/blob/main/src/extension/prompts/node/agent/agentInstructions.tsx#L197">agent instruction prompt</a> for example; it&#39;s essentially a 24-step debugging methodology distilled from countless hours of human engineering experience:</p>
+<p>Take this
+<a href="https://github.com/microsoft/vscode-copilot-chat/blob/main/src/extension/prompts/node/agent/agentInstructions.tsx#L197">agent instruction prompt</a>
+for example; it&#39;s essentially a 24-step debugging methodology distilled from
+countless hours of human engineering experience:</p>
 <ol>
 <li>Initialize Git and explore the repository structure</li>
 <li>Create a reproduction script to confirm the issue</li>
@@ -41,11 +50,20 @@
 <li>Stage files in Git before editing</li>
 <li>Apply fixes iteratively...</li>
 </ol>
-<p>And so on. Each step represents a best practice that seasoned developers follow instinctively.</p>
-<p>The <a href="https://github.com/microsoft/vscode-copilot-chat/blob/40d039d8e08c2d17435a2e65846120c394d0727b/src/extension/xtab/common/promptCrafting.ts#L34">system prompt template</a> is equally instructive. It emphasises context analysis, consistency, and understanding developer intent before suggesting changes.</p>
-<p>What&#39;s brilliant is that these prompts aren&#39;t just instructions for AI, they&#39;re codified human expertise. When we craft prompts for AI systems, we&#39;re essentially documenting our own thought processes and best practices. The better the prompt, the better the human process it represents.</p>
+<p>And so on. Each step represents a best practice that seasoned developers follow
+instinctively.</p>
+<p>The
+<a href="https://github.com/microsoft/vscode-copilot-chat/blob/40d039d8e08c2d17435a2e65846120c394d0727b/src/extension/xtab/common/promptCrafting.ts#L34">system prompt template</a>
+is equally instructive. It emphasises context analysis, consistency, and
+understanding developer intent before suggesting changes.</p>
+<p>What&#39;s brilliant is that these prompts aren&#39;t just instructions for AI, they&#39;re
+codified human expertise. When we craft prompts for AI systems, we&#39;re
+essentially documenting our own thought processes and best practices. The better
+the prompt, the better the human process it represents.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>Next time you&#39;re debugging a tricky issue or refactoring complex code, consider following the same systematic approach these AI prompts encourage. After all, good prompts are just good processes made explicit.</p>
+<p>Next time you&#39;re debugging a tricky issue or refactoring complex code, consider
+following the same systematic approach these AI prompts encourage. After all,
+good prompts are just good processes made explicit.</p>
 
       </div>
     </article>
