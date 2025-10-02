@@ -94,7 +94,7 @@ operations:</p>
     def __init__(self, mean=None, std=None):
         self.mean = mean
         self.std = std
-        
+
     def encodes(self, x): return (x-self.mean) / self.std  # forward transform
     def decodes(self, x): return x*self.std + self.mean    # inverse transform
 </code></pre>

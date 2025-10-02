@@ -12,7 +12,6 @@ representing the sweet spot for most users—providing 3.7x size reduction while
 maintaining good quality. Mixed precision strategies (_S/_M/_L variants) further
 optimize performance by targeting attention and feed-forward layers with higher
 precision bits.
-
 <!--more-->
 
 ## Introduction
@@ -145,7 +144,7 @@ are effective, though they require more storage space.
 ## Performance Comparison (7B model)
 
 ```
-Format | Size(GB) | Reduction | BPW  | Perplexity | RTX4080  | M2Max   
+Format | Size(GB) | Reduction | BPW  | Perplexity | RTX4080  | M2Max
 F16    | 13.0     | 1.0x      | 16.0 | 5.91       | 60.0ms   | 116ms
 Q2_K   | 2.67     | 4.9x      | 2.56 | 6.78       | 15.5ms   | 56ms
 Q3_K_S | 2.75     | 4.7x      | 3.44 | 6.46       | 18.6ms   | 81ms

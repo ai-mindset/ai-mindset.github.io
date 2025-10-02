@@ -10,7 +10,6 @@ Python and TypeScript syntax for common programming constructs including
 variable declarations, functions, classes, control flow structures, and error
 handling-serving as a quick reference for Python developers exploring TypeScript
 within the context of Deno development.
-
 <!--more-->
 
 ## Introduction

@@ -11,7 +11,6 @@ challenges with GitHub Actions where compiled executables became unusable after
 release-ultimately solved by compressing executables into .tar files, preserving
 functionality whilst revealing potential limitations in GitHub's release
 mechanisms.
-
 <!--more-->
 
 **[Was it worth my time](https://xkcd.com/1205/)?**

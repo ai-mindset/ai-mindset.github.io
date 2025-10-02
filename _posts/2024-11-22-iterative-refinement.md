@@ -2,16 +2,7 @@
 layout: post
 title: "🔄 Considering Iterative Refinement Over Unit Testing"
 date: 2024-11-22
-tags: [
-  fast-ai,
-  answer-ai,
-  iterative-refinement,
-  doctests,
-  best-practices,
-  llm,
-  dialogue-engineering,
-  code-quality,
-]
+tags: [fast-ai, answer-ai, iterative-refinement, doctests, best-practices, llm, dialogue-engineering, code-quality]
 ---
 
 **TL;DR:** Drawing inspiration from Norvig, Howard, and Sanderson, this article
@@ -20,7 +11,6 @@ techniques like doctests that keep verification close to code-reducing
 maintenance burden whilst improving reliability by focusing on actual usage
 patterns rather than rigid test-driven development that can lead to outdated
 tests and ossified code structures.
-
 <!--more-->
 
 ## Introduction

@@ -2,16 +2,7 @@
 layout: post
 title: "🏠 Why Companies and Individuals Are Moving Back from the Cloud"
 date: 2025-03-20
-tags: [
-  cloud,
-  on-prem,
-  performance,
-  security,
-  mlops,
-  deployment,
-  best-practices,
-  data-science,
-]
+tags: [cloud, on-prem, performance, security, mlops, deployment, best-practices, data-science]
 ---
 
 **TL;DR:** Cloud repatriation is gaining momentum with 86% of CIOs planning to
@@ -19,7 +10,6 @@ move some workloads back on-premises, driven by unexpected costs, performance
 needs, security concerns, and desire for greater control - though most
 organisations are adopting hybrid approaches rather than abandoning cloud
 entirely, strategically placing workloads where they function most efficiently.
-
 <!--more-->
 
 ## Introduction

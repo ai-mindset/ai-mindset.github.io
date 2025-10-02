@@ -2,17 +2,7 @@
 layout: post
 title: "🦀 Transitioning from Python to Rust: A Minimalist Approach"
 date: 2025-09-25
-tags: [
-  rust,
-  python,
-  ai-engineering,
-  data-science,
-  migration,
-  type-safety,
-  performance,
-  productivity,
-  software-minimalism,
-]
+tags: [rust, python, ai-engineering, data-science, migration, type-safety, performance, productivity, software-minimalism]
 ---
 
 **TL;DR:** Moving from Python to Rust for AI work requires a phased approach
@@ -20,7 +10,6 @@ focusing on self-contained utilities first, leveraging PyO3 for hybrid
 integration, and adopting a minimal subset of Rust features before expanding.
 This strategy maintains productivity while gradually unlocking Rust's type
 safety, performance, and cross-platform deployment advantages.
-
 <!--more-->
 
 ## Introduction

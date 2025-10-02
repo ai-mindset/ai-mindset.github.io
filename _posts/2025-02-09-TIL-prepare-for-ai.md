@@ -2,16 +2,7 @@
 layout: post
 title: "💡 TIL: To Prepare for AI, Study History's Tech Cycles"
 date: 2025-02-09
-tags: [
-  til,
-  ai,
-  fast-ai,
-  llm,
-  machine-learning,
-  best-practices,
-  decision-making,
-  evolution,
-]
+tags: [til, ai, fast-ai, llm, machine-learning, best-practices, decision-making, evolution]
 ---
 
 **TL;DR:** Fast.ai founder Jeremy Howard advocates studying historical
@@ -20,7 +11,6 @@ practical preparation strategy that combines domain expertise with AI
 capabilities through self-directed learning, side projects, and community
 engagement - emphasising that success will come from embracing uncertainty
 whilst pursuing counter-cyclical opportunities.
-
 <!--more-->
 
 ## Introduction

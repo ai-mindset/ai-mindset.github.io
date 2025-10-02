@@ -2,16 +2,7 @@
 layout: post
 title: "💡 TIL: A Reactive Python Notebook That Might Replace Jupyter"
 date: 2025-03-22
-tags: [
-  til,
-  data-science,
-  python,
-  best-practices,
-  reproducibility,
-  literate-programming,
-  jupyter-alternative,
-  reactivity,
-]
+tags: [til, data-science, python, best-practices, reproducibility, literate-programming, jupyter-alternative, reactivity]
 ---
 
 **TL;DR:** Marimo offers a reactive Python notebook alternative to Jupyter that
@@ -19,7 +10,6 @@ solves hidden state problems by storing notebooks as pure Python files with
 deterministic execution based on variable dependencies, making them
 git-friendly, reproducible, and deployable whilst providing modern features like
 Vim keybindings and interactive elements.
-
 <!--more-->
 
 ## Introduction

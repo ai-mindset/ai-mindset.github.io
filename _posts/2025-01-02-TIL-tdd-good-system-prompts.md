@@ -2,17 +2,7 @@
 layout: post
 title: "💡 TIL: Test-Driven Development Is Key to Better LLM System Prompts"
 date: 2025-01-02
-tags: [
-  ai,
-  llm,
-  til,
-  prompt-engineering,
-  testing,
-  best-practices,
-  evaluation,
-  machine-learning,
-  system-prompts,
-]
+tags: [ai, llm, til, prompt-engineering, testing, best-practices, evaluation, machine-learning, system-prompts]
 ---
 
 **TL;DR:** Anthropic's approach to system prompt development parallels
@@ -20,7 +10,6 @@ test-driven development-first creating test cases where default model behaviour
 fails, then developing prompts that pass these tests, followed by iterative
 refinement-highlighting how robust automated evaluation is not merely a quality
 check but the foundation for building reliable LLM applications.
-
 <!--more-->
 
 ## Introduction
