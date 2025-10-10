@@ -4,7 +4,7 @@ layout: default
 
 # About
 
-Hi there 👋! I'm a minimalist Data Scientist turned AI Engineer, inspired by 🤓 [fast.ai](https://www.fast.ai/)'s practical approach.
+Hi there 👋! I'm a minimalist AI Engineer, inspired by 🤓 the [fast.ai](https://www.fast.ai/) / [answer.ai](https://www.answer.ai/) way.
 With AI's vast landscape, I embrace 📖 [Just-in-Time learning](https://xcancel.com/radekosmulski/status/1828564396265926967).
 
 - 🔭 Proponent of [simple, modern toolchains](https://ai-mindset.github.io/bring-it-back-to-basics/), and lightweight toolstacks such as [TypeScript with Deno](https://ai-mindset.github.io/deno/) or [Rust](https://ai-mindset.github.io/posts/transitioning-from-python-to-rust-for-ai.html).
