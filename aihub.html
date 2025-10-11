@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Authoritative Learning Resources - Just-in-Time Learning</title>
+  <title>AI Resource Hub - Just-in-Time Learning</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -16,196 +16,650 @@
   <main class="post-container">
     <article class="post">
       <header class="post-header">
-        <h1>Authoritative Learning Resources</h1>
+        <h1>AI Resource Hub</h1>
         <span class="post-date"></span>
         
       </header>
       
       <div class="post-content">
-        <h2 id="what-is-this">What is this?</h2>
-<p>This document provides a curated list of high-quality sources for learning about
-AI, data science, and related topics. These sources come from respected experts,
-researchers, and institutions, making them reliable and informative references.
-📚 indicates an authoritative reference source.</p>
-<h2 id="presentations">Presentations</h2>
+        <p>This document provides a curated collection of high-quality resources for learning about AI, data science, and related topics from respected experts, researchers, and institutions. Resources are organised by topic, format, and expertise level for easy navigation.</p>
+<p>This document provides a curated list of high-quality sources for learning about AI, data science, and related topics. These sources come from respected experts, researchers, and institutions, making them reliable and informative references. 📚 indicates an authoritative reference source.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
 <ul>
-<li>📽️
-<a href="https://russelldavies.typepad.com/planning/2015/11/doing-presentations.html">Doing presentations</a>
-is a collection of excellent presentations on how to present well.</li>
+<li><a href="#how-to-use-this-hub">How to Use This Hub</a></li>
+<li><a href="#featured-resources">Featured Resources</a></li>
+<li><a href="#by-topic">By Topic</a><ul>
+<li><a href="#foundations-of-ai-and-ml">Foundations of AI and ML</a></li>
+<li><a href="#large-language-models">Large Language Models</a></li>
+<li><a href="#ai-engineering">AI Engineering</a></li>
+<li><a href="#data-science">Data Science</a></li>
+<li><a href="#ethics-and-responsible-ai">Ethics and Responsible AI</a></li>
+<li><a href="#technical-skills">Technical Skills</a></li>
 </ul>
-<h2 id="books">Books</h2>
-<ul>
-<li>📚 <a href="https://ml-science-book.com/">Supervised Machine Learning for Science</a> is
-a comprehensive book that explores the role of supervised machine learning in
-scientific research. It provides a philosophical justification for using ML in
-science and discusses best practices for integrating it effectively.</li>
-<li>📚
-<a href="https://cs.gmu.edu/~sean/book/metaheuristics/">Essentials of Metaheuristics</a>,
-an open set of lecture notes on metaheuristics algorithms, intended for
-undergraduate students, practitioners, programmers, and other non-experts. A
-metaheuristic is any stochastic optimization algorithm intended to be the last
-resort before giving up and using random or brute-force search.</li>
-<li>📚
-<a href="https://leanpub.com/ollama">Ollama in Action: Building Safe, Private AI with LLMs, Function Calling and Agents</a>
-demonstrates how it&#39;s possible to run LLMs on-premise to maintain data privacy
-and control of your tech stack. It contains clear Python code examples and
-recommendations for effectively using Ollama, to get you started quickly as
-well as learn a few useful tips and techniques.</li>
-<li>📚
-<a href="https://ravinkumar.com/GenAiGuidebook/book_intro.html">The GenAI Guidebook</a>
-constitutes a guide that lays out the foundations for building products with
-Generative AI.</li>
-<li>📚
-<a href="https://www.russelldavies.com/powerpoint">Everything I Know About Life I Learned From PowerPoint</a>
-is &quot;<em>a book about PowerPoint built out of PowerPoint -jokes, culture,
-politics, serious points about power and more, better, jokes</em>&quot;</li>
+</li>
+<li><a href="#by-format">By Format</a><ul>
+<li><a href="#books">Books</a></li>
+<li><a href="#courses">Courses</a></li>
+<li><a href="#articles">Articles</a></li>
+<li><a href="#talks-and-presentations">Talks and Presentations</a></li>
+<li><a href="#newsletters">Newsletters</a></li>
+<li><a href="#research-resources">Research Resources</a></li>
+<li><a href="#social-media">Social Media</a></li>
 </ul>
-<h2 id="courses">Courses</h2>
-<ul>
-<li>📚 fast.ai&#39;s <a href="https://course.fast.ai/">Practical Deep Learning</a> teaches how to
-apply deep learning to practical problems. Not only it is a rich,
-practical-oriented course but importantly it&#39;s a treasure trove of technical
-information.<br><a href="https://github.com/fastai/fastbook">Fastbook</a> nicely complements this course.</li>
-<li>📚
-<a href="https://xcancel.com/hugobowne/status/1870978490574704812">Building LLM Applications for Data Scientists and Software Engineers</a>
-teaches how to build LLM-powered software reliably, from first principles.
-It&#39;s an authoritative source on GenAI software development lifecycle: agents,
-evals, iteration and others.</li>
-<li>📚
-<a href="https://rdi.berkeley.edu/llm-agents/f24">CS294/194-196 Large Language Model Agents</a>
-is a course that discusses fundamental concepts for LLM agents, including the
-foundation of LLMs, essential LLM abilities required for task automation, and
-agent development infrastructure. Agent applications are discussed as well as
-limitations, potential risks and directions for further improvement.</li>
+</li>
+<li><a href="#by-expertise-level">By Expertise Level</a><ul>
+<li><a href="#beginner">Beginner</a></li>
+<li><a href="#intermediate">Intermediate</a></li>
+<li><a href="#advanced">Advanced</a></li>
 </ul>
-<h2 id="data-driven-insights">Data-driven Insights</h2>
-<ul>
-<li><a href="https://ourworldindata.org/">Our World in Data</a> is a project of the Global
-Change Data Lab at the University of Oxford. It provides well-researched and
-data-driven insights into global issues, making it a valuable resource for
-understanding the world&#39;s largest problems and potential solutions.</li>
+</li>
+<li><a href="#tag-index">Tag Index</a></li>
 </ul>
-<h2 id="newsletters">Newsletters</h2>
+<h2 id="how-to-use-this-hub">How to Use This Hub</h2>
+<p>This resource hub uses several navigation aids to help you quickly find relevant resources:</p>
 <ul>
-<li><a href="https://buttondown.com/ainews/archive/">AI News</a>, a daily newsletter that
-summarizes the top discussions happening in AI-focused online communities. It
-covers the latest trends, research, and developments in the field of
-artificial intelligence.</li>
-<li><a href="https://aibyhand.substack.com/">AI by Hand</a>, a newsletter by Tom Yeh, a
-professor of computer science who focuses on AI and machine learning. It
-provides insights and educational content providing accessible explanations of
-AI concepts.</li>
+<li><strong>By Topic</strong>: Find resources organised by subject area</li>
+<li><strong>By Format</strong>: Browse resources by content type (books, courses, etc.)</li>
+<li><strong>By Expertise Level</strong>: Filter resources by difficulty</li>
+<li><strong>Tag Index</strong>: Find resources by specific topics or technologies</li>
 </ul>
-<h2 id="research">Research</h2>
+<p>Each resource includes standardised metadata:</p>
 <ul>
-<li><a href="https://www.emergentmind.com/">Emergent Mind</a> is an AI research assistant
-that synthesizes the latest computer science research from arXiv. It is also a
-paper aggregator that surfaces trending pre-prints to keep informed about new
-and emerging research directions.</li>
-<li><a href="https://www.latent.space/p/2025-papers">The 2025 AI Engineer Reading List</a>
-contains 50 paper/models/blogs across 10 fields in AI Eng: LLMs, Benchmarks,
-Prompting, RAG, Agents, CodeGen, Vision, Voice, Diffusion, Finetuning. A good
-place to start.</li>
+<li><strong>Type</strong>: 📕 Book | 🎓 Course | 📄 Article | 📹 Talk | 📰 Newsletter | 🔍 Research | 👤 Person</li>
+<li><strong>Level</strong>: 🟢 Beginner | 🟡 Intermediate | 🔴 Advanced</li>
+<li><strong>Tags</strong>: Keywords for cross-referencing</li>
+<li><strong>Description</strong>: Brief explanation of the resource&#39;s content and value</li>
 </ul>
-<h2 id="social-media">Social Media</h2>
+<h2 id="featured-resources">Featured Resources</h2>
+<p>A selection of foundational resources that provide great value:</p>
+<h3 id="fastais-practical-deep-learning"><a href="https://course.fast.ai/">Fast.ai&#39;s Practical Deep Learning</a></h3>
 <ul>
-<li><p><a href="https://bsky.app/profile/erictopol.bsky.social">Eric Topol</a> is a renowned
-cardiologist, scientist, and author who has written extensively on the future
-of medicine, including the impact of AI and digital technologies. His books
-and online presence are valuable resources for understanding the intersection
-of healthcare and technology.</p>
-</li>
-<li><p><a href="https://bsky.app/profile/howard.fm">Jeremy Howard</a> is a prominent data
-scientist, entrepreneur, and educator. He co-founded
-<a href="https://www.fast.ai/">fast.ai</a>, where he teaches introductory courses and
-conducts research in deep learning. He has also co-founded
-<a href="https://www.answer.ai/">answer.ai</a>, a new kind of AI R&amp;D lab. His work and
-online content are highly regarded in the data science community.</p>
-</li>
-<li><p><a href="https://bsky.app/profile/math-rachel.bsky.social">Rachel Thomas</a> is a
-prominent data scientist, educator, and ethics advocate who co-founded fast.ai
-and served as founding director of USF&#39;s Center for Applied Data Ethics. Her
-work spans mathematics, AI education, and ethical tech development, earning
-her recognition as one of Forbes&#39; 20 Incredible Women in AI, while she
-currently pursues advanced studies in microbiology-immunology.</p>
-</li>
-<li><p><a href="https://xcancel.com/karpathy">Andrej Karpathy</a> is a leading AI researcher and
-educator. He previously served as the Director of AI at Tesla and was part of
-the founding team at OpenAI. His online presence and educational materials
-provide in-depth insights into the latest advancements in AI.</p>
-</li>
-<li><p><a href="https://bsky.app/profile/simonwillison.net">Simon Willison</a>, an independent
-open-source developer and a data leader who has made significant contributions
-to the open-source community. He is the creator of
-<a href="https://simonwillison.net/2022/Mar/1/datasette/">Datasette</a>, a tool for
-exploring and publishing data, and a co-creator of the
-<a href="https://www.djangoproject.com/">Django</a> web framework.</p>
-</li>
-<li><p><a href="https://bsky.app/profile/melaniemitchell.bsky.social">Melanie Mitchell</a> is a
-respected professor of computer science and a prominent figure in the field of
-complex systems and artificial intelligence. Her research and publications
-offer valuable perspectives on the challenges and opportunities in AI.</p>
-</li>
-<li><p><a href="https://bsky.app/profile/maosbot.bsky.social/post/3laix6hz42n2m">Michael A. Osborne</a>
-is a professor of machine learning who focuses on Bayesian optimisation and
-its applications within battery modelling and tuning quantum devices. He has
-created Bluesky starter packs distilling prominent figures in relevant fields
-that are worth following.</p>
-</li>
-<li><p><a href="https://bsky.app/profile/christophmolnar.bsky.social">Christoph Molnar</a> is a
-statistician, machine learning expert, and author specializing in ML
-interpretability and uncertainty quantification. He wrote the influential
-books Interpretable Machine Learning and Modeling Mindsets, focusing on
-translating academic research into practical data science insights. He
-publishes the Mindful Modeler newsletter and is known for making complex ML
-concepts accessible to practitioners.</p>
-</li>
+<li><strong>Type:</strong> 🎓 Course 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #deep-learning #practical #hands-on #fastai</li>
+<li><strong>Description:</strong> A rich, practice-oriented course that teaches how to apply deep learning to practical problems, complemented by the <a href="https://github.com/fastai/fastbook">Fastbook</a>.</li>
 </ul>
-<h2 id="talks">Talks</h2>
+<h3 id="building-llm-applications"><a href="https://xcancel.com/hugobowne/status/1870978490574704812">Building LLM Applications</a></h3>
 <ul>
-<li><a href="https://dotclub.club/">The .CLUB Club</a>, offering insightful talks on egoless
-engineering, straightforward tech solutions, and workplace politics as seen
-from an engineering leadership perspective (highly recommended!).</li>
-<li><a href="https://media.ccc.de/">ccc.de</a> hosts a vast collection of presentations by
-the Chaos Computer Club, Europe&#39;s largest hacker association. Topics range
-from reverse engineering to cutting-edge exploration and more, making it an
-invaluable source of practical ideas, scientific exploration, and authentic
-engineering concepts.</li>
-<li><a href="https://www.youtube.com/channel/UCJgIbYl6C5no72a0NUAPcTA">GPU MODE</a> contains
-excellent and rich material on GPU programming, including CUDA kernels, Flash
-Attention, Triton, quantisation among others.</li>
+<li><strong>Type:</strong> 🎓 Course 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #llm #software-development #agents #evaluation #best-practices</li>
+<li><strong>Description:</strong> Teaches how to build LLM-powered software reliably, from first principles, covering the entire GenAI software development lifecycle.</li>
 </ul>
-<h2 id="articles">Articles</h2>
+<h3 id="what-weve-learned-from-a-year-of-building-with-llms"><a href="https://applied-llms.org/">What We&#39;ve Learned From A Year of Building with LLMs</a></h3>
 <ul>
-<li><a href="https://venturebeat.com/ai/mlops-vs-devops-why-data-makes-it-different/">MLOps vs. DevOps: Why data makes it different</a>
-explains how machine learning operations (MLOps) differ from traditional
-DevOps due to ML&#39;s direct exposure to messy real-world data, requiring
-specialised infrastructure that combines data-centric programming with robust
-production systems.</li>
-<li>📚 <a href="https://hamel.dev/blog/posts/evals/">Your AI Product Needs Evals</a> is a
-very nicely structured, comprehensive resource on how to construct
-domain-specific evaluation systems.</li>
-<li>📚
-<a href="https://www.sh-reya.com/blog/ai-engineering-flywheel/">Data Flywheels for LLM Applications</a>
-breaks down how to improve AI systems in an iterative fashion, with the help
-of logging, evals and continuous refinement.</li>
-<li>📚
-<a href="https://applied-llms.org/">What We’ve Learned From A Year of Building with LLMs</a>
-is a practical guide to building successful LLM products, covering the
-tactical, operational, and strategic.<br>The article&#39;s authors provided their insights in the Vanishing Gradients
-podcast (episodes <a href="https://vanishinggradients.fireside.fm/29">29</a> and
-<a href="https://vanishinggradients.fireside.fm/30">30</a>).</li>
-<li>📚
-<a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents</a>
-is a research paper from Anthropic, exploring how to design robust AI agents.
-It presents agentic workflow approaches, alignment and methods on how to
-perform autonomous, reliable tasks.</li>
-<li>📚 <a href="https://vickiboykis.com/what_are_embeddings/">What are Embeddings</a> is a
-comprehensive article exploring embeddings.</li>
-<li>📚
-<a href="https://www.boundaryml.com/blog/structured-output-from-llms">Every Way To Get Structured Output From LLMs</a>
-provides solutions for achieving LLM structured output when function calling
-or specific response formats become challenging to achieve.</li>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #llm #product-development #lessons-learned #applied-ai</li>
+<li><strong>Description:</strong> Practical guide to building successful LLM products, covering tactical, operational, and strategic considerations, complemented by podcast episodes <a href="https://vanishinggradients.fireside.fm/29">29</a> and <a href="https://vanishinggradients.fireside.fm/30">30</a>.</li>
+</ul>
+<h3 id="cs294194-196-large-language-model-agents"><a href="https://rdi.berkeley.edu/llm-agents/f24">CS294/194-196 Large Language Model Agents</a></h3>
+<ul>
+<li><strong>Type:</strong> 🎓 Course 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #llm #agents #foundation-models #task-automation</li>
+<li><strong>Description:</strong> Comprehensive course discussing fundamental concepts for LLM agents, including LLM foundations, essential abilities for task automation, and agent development infrastructure.</li>
+</ul>
+<h3 id="our-world-in-data"><a href="https://ourworldindata.org/">Our World in Data</a></h3>
+<ul>
+<li><strong>Type:</strong> 🔍 Research</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #data-visualisation #global-issues #research #evidence-based</li>
+<li><strong>Description:</strong> Project from the University of Oxford providing data-driven insights into global issues, valuable for understanding the world&#39;s largest problems and potential solutions.</li>
+</ul>
+<h2 id="by-topic">By Topic</h2>
+<h3 id="foundations-of-ai-and-ml">Foundations of AI and ML</h3>
+<h4 id="machine-learning-fundamentals">Machine Learning Fundamentals</h4>
+<h5 id="supervised-machine-learning-for-science"><a href="https://ml-science-book.com/">Supervised Machine Learning for Science</a></h5>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #machine-learning #supervised-learning #science #best-practices</li>
+<li><strong>Description:</strong> Explores the role of supervised machine learning in scientific research with philosophical justifications and integration best practices.</li>
+</ul>
+<h4 id="algorithms-and-optimisation">Algorithms and Optimisation</h4>
+<h5 id="essentials-of-metaheuristics"><a href="https://cs.gmu.edu/~sean/book/metaheuristics/">Essentials of Metaheuristics</a></h5>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #algorithms #optimisation #metaheuristics #stochastic</li>
+<li><strong>Description:</strong> Open lecture notes on metaheuristic algorithms, covering stochastic optimisation methods intended as alternatives to brute-force search.</li>
+</ul>
+<h3 id="large-language-models">Large Language Models</h3>
+<h4 id="development-and-applications">Development and Applications</h4>
+<h5 id="the-genai-guidebook"><a href="https://ravinkumar.com/GenAiGuidebook/book_intro.html">The GenAI Guidebook</a></h5>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #genai #product-development #foundation-models #implementation</li>
+<li><strong>Description:</strong> Comprehensive guide laying out the foundations for building products with Generative AI.</li>
+</ul>
+<h5 id="ollama-in-action"><a href="https://leanpub.com/ollama">Ollama in Action</a></h5>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #llm #ollama #on-premise #privacy #function-calling #agents</li>
+<li><strong>Description:</strong> Demonstrates how to run LLMs on-premise to maintain data privacy and control of your tech stack, with clear Python code examples.</li>
+</ul>
+<h4 id="agents">Agents</h4>
+<h5 id="building-effective-agents"><a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents</a></h5>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #agents #llm #anthropic #agentic-workflow #alignment</li>
+<li><strong>Description:</strong> Research paper exploring robust AI agent design, presenting agentic workflow approaches, alignment methods, and techniques for autonomous, reliable tasks.</li>
+</ul>
+<h4 id="structured-outputs">Structured Outputs</h4>
+<h5 id="every-way-to-get-structured-output-from-llms"><a href="https://www.boundaryml.com/blog/structured-output-from-llms">Every Way To Get Structured Output From LLMs</a></h5>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #structured-output #llm #function-calling #parsing #json</li>
+<li><strong>Description:</strong> Provides various solutions for achieving structured output from LLMs when function calling or specific response formats become challenging.</li>
+</ul>
+<h4 id="vector-representations">Vector Representations</h4>
+<h5 id="what-are-embeddings"><a href="https://vickiboykis.com/what_are_embeddings/">What are Embeddings</a></h5>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #embeddings #vector-representations #nlp #semantic-search</li>
+<li><strong>Description:</strong> Comprehensive article exploring the concept of embeddings, their applications, and how they work in modern AI systems.</li>
+</ul>
+<h3 id="ai-engineering">AI Engineering</h3>
+<h4 id="evaluation-and-testing">Evaluation and Testing</h4>
+<h5 id="your-ai-product-needs-evals"><a href="https://hamel.dev/blog/posts/evals/">Your AI Product Needs Evals</a></h5>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #evaluation #ai-testing #product-development #quality-assessment</li>
+<li><strong>Description:</strong> Structured, comprehensive resource on how to construct domain-specific evaluation systems for AI products.</li>
+</ul>
+<h4 id="data-pipelines">Data Pipelines</h4>
+<h5 id="data-flywheels-for-llm-applications"><a href="https://www.sh-reya.com/blog/ai-engineering-flywheel/">Data Flywheels for LLM Applications</a></h5>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #data-flywheel #llm #logging #evaluation #continuous-improvement</li>
+<li><strong>Description:</strong> Breaks down how to improve AI systems iteratively through logging, evaluation, and continuous refinement processes.</li>
+</ul>
+<h4 id="mlops">MLOps</h4>
+<h5 id="mlops-vs-devops-why-data-makes-it-different"><a href="https://venturebeat.com/ai/mlops-vs-devops-why-data-makes-it-different/">MLOps vs. DevOps: Why data makes it different</a></h5>
+<ul>
+<li><strong>Type:</strong> 📄 Article</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #mlops #devops #data-centric #production-systems</li>
+<li><strong>Description:</strong> Explains how machine learning operations differ from traditional DevOps due to ML&#39;s direct exposure to messy real-world data.</li>
+</ul>
+<h3 id="data-science">Data Science</h3>
+<h4 id="data-analysis">Data Analysis</h4>
+<h5 id="the-2025-ai-engineer-reading-list"><a href="https://www.latent.space/p/2025-papers">The 2025 AI Engineer Reading List</a></h5>
+<ul>
+<li><strong>Type:</strong> 🔍 Research</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #ai-engineering #papers #llm #benchmarks #prompting #rag #agents #code-generation</li>
+<li><strong>Description:</strong> Curated list of 50 papers/models/blogs across 10 fields in AI Engineering, providing a solid foundation for understanding current research directions.</li>
+</ul>
+<h3 id="ethics-and-responsible-ai">Ethics and Responsible AI</h3>
+<h4 id="perspectives-from-experts-in-this-area-include-researchers-focused-on-ethical-ai-development">Perspectives from experts in this area include researchers focused on ethical AI development:</h4>
+<h5 id="melanie-mitchell"><a href="https://bsky.app/profile/melaniemitchell.bsky.social">Melanie Mitchell</a></h5>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #ai-ethics #complex-systems #computational-intelligence</li>
+<li><strong>Description:</strong> Respected professor of computer science and prominent figure in complex systems and artificial intelligence, offering valuable perspectives on AI challenges.</li>
+</ul>
+<h3 id="technical-skills">Technical Skills</h3>
+<h4 id="presentations">Presentations</h4>
+<h5 id="doing-presentations"><a href="https://russelldavies.typepad.com/planning/2015/11/doing-presentations.html">Doing presentations</a></h5>
+<ul>
+<li><strong>Type:</strong> 📹 Talk</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #presentations #communication #slides #public-speaking</li>
+<li><strong>Description:</strong> Collection of excellent presentations on how to present effectively.</li>
+</ul>
+<h5 id="everything-i-know-about-life-i-learned-from-powerpoint"><a href="https://www.russelldavies.com/powerpoint">Everything I Know About Life I Learned From PowerPoint</a></h5>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #powerpoint #presentations #communication #visual-thinking</li>
+<li><strong>Description:</strong> A book about PowerPoint built out of PowerPoint, covering communication techniques, culture, and effective presentation approaches.</li>
+</ul>
+<h4 id="gpu-programming">GPU Programming</h4>
+<h5 id="gpu-mode"><a href="https://www.youtube.com/channel/UCJgIbYl6C5no72a0NUAPcTA">GPU MODE</a></h5>
+<ul>
+<li><strong>Type:</strong> 📹 Talk</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #gpu-programming #cuda #flash-attention #triton #quantisation</li>
+<li><strong>Description:</strong> Channel with excellent material on GPU programming, including CUDA kernels, Flash Attention, Triton, and quantisation techniques.</li>
+</ul>
+<h2 id="by-format">By Format</h2>
+<h3 id="books">Books</h3>
+<h4 id="supervised-machine-learning-for-science-1"><a href="https://ml-science-book.com/">Supervised Machine Learning for Science</a></h4>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #machine-learning #supervised-learning #science #best-practices</li>
+<li><strong>Description:</strong> Explores the role of supervised machine learning in scientific research with philosophical justifications and integration best practices.</li>
+</ul>
+<h4 id="essentials-of-metaheuristics-1"><a href="https://cs.gmu.edu/~sean/book/metaheuristics/">Essentials of Metaheuristics</a></h4>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #algorithms #optimisation #metaheuristics #stochastic</li>
+<li><strong>Description:</strong> Open lecture notes on metaheuristic algorithms, covering stochastic optimisation methods intended as alternatives to brute-force search.</li>
+</ul>
+<h4 id="ollama-in-action-1"><a href="https://leanpub.com/ollama">Ollama in Action</a></h4>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #llm #ollama #on-premise #privacy #function-calling #agents</li>
+<li><strong>Description:</strong> Demonstrates how to run LLMs on-premise to maintain data privacy and control of your tech stack, with clear Python code examples.</li>
+</ul>
+<h4 id="the-genai-guidebook-1"><a href="https://ravinkumar.com/GenAiGuidebook/book_intro.html">The GenAI Guidebook</a></h4>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #genai #product-development #foundation-models #implementation</li>
+<li><strong>Description:</strong> Comprehensive guide laying out the foundations for building products with Generative AI.</li>
+</ul>
+<h4 id="everything-i-know-about-life-i-learned-from-powerpoint-1"><a href="https://www.russelldavies.com/powerpoint">Everything I Know About Life I Learned From PowerPoint</a></h4>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #powerpoint #presentations #communication #visual-thinking</li>
+<li><strong>Description:</strong> A book about PowerPoint built out of PowerPoint, covering communication techniques, culture, and effective presentation approaches.</li>
+</ul>
+<h3 id="courses">Courses</h3>
+<h4 id="fastais-practical-deep-learning-1"><a href="https://course.fast.ai/">Fast.ai&#39;s Practical Deep Learning</a></h4>
+<ul>
+<li><strong>Type:</strong> 🎓 Course 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #deep-learning #practical #hands-on #fastai</li>
+<li><strong>Description:</strong> A rich, practice-oriented course that teaches how to apply deep learning to practical problems, complemented by the <a href="https://github.com/fastai/fastbook">Fastbook</a>.</li>
+</ul>
+<h4 id="building-llm-applications-1"><a href="https://xcancel.com/hugobowne/status/1870978490574704812">Building LLM Applications</a></h4>
+<ul>
+<li><strong>Type:</strong> 🎓 Course 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #llm #software-development #agents #evaluation #best-practices</li>
+<li><strong>Description:</strong> Teaches how to build LLM-powered software reliably, from first principles, covering the entire GenAI software development lifecycle.</li>
+</ul>
+<h4 id="cs294194-196-large-language-model-agents-1"><a href="https://rdi.berkeley.edu/llm-agents/f24">CS294/194-196 Large Language Model Agents</a></h4>
+<ul>
+<li><strong>Type:</strong> 🎓 Course 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #llm #agents #foundation-models #task-automation</li>
+<li><strong>Description:</strong> Comprehensive course discussing fundamental concepts for LLM agents, including LLM foundations, essential abilities for task automation, and agent development infrastructure.</li>
+</ul>
+<h3 id="articles">Articles</h3>
+<h4 id="your-ai-product-needs-evals-1"><a href="https://hamel.dev/blog/posts/evals/">Your AI Product Needs Evals</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #evaluation #ai-testing #product-development #quality-assessment</li>
+<li><strong>Description:</strong> Structured, comprehensive resource on how to construct domain-specific evaluation systems for AI products.</li>
+</ul>
+<h4 id="data-flywheels-for-llm-applications-1"><a href="https://www.sh-reya.com/blog/ai-engineering-flywheel/">Data Flywheels for LLM Applications</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #data-flywheel #llm #logging #evaluation #continuous-improvement</li>
+<li><strong>Description:</strong> Breaks down how to improve AI systems iteratively through logging, evaluation, and continuous refinement processes.</li>
+</ul>
+<h4 id="what-weve-learned-from-a-year-of-building-with-llms-1"><a href="https://applied-llms.org/">What We&#39;ve Learned From A Year of Building with LLMs</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #llm #product-development #lessons-learned #applied-ai</li>
+<li><strong>Description:</strong> Practical guide to building successful LLM products, covering tactical, operational, and strategic considerations, complemented by podcast episodes <a href="https://vanishinggradients.fireside.fm/29">29</a> and <a href="https://vanishinggradients.fireside.fm/30">30</a>.</li>
+</ul>
+<h4 id="building-effective-agents-1"><a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #agents #llm #anthropic #agentic-workflow #alignment</li>
+<li><strong>Description:</strong> Research paper exploring robust AI agent design, presenting agentic workflow approaches, alignment methods, and techniques for autonomous, reliable tasks.</li>
+</ul>
+<h4 id="what-are-embeddings-1"><a href="https://vickiboykis.com/what_are_embeddings/">What are Embeddings</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #embeddings #vector-representations #nlp #semantic-search</li>
+<li><strong>Description:</strong> Comprehensive article exploring the concept of embeddings, their applications, and how they work in modern AI systems.</li>
+</ul>
+<h4 id="every-way-to-get-structured-output-from-llms-1"><a href="https://www.boundaryml.com/blog/structured-output-from-llms">Every Way To Get Structured Output From LLMs</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #structured-output #llm #function-calling #parsing #json</li>
+<li><strong>Description:</strong> Provides various solutions for achieving structured output from LLMs when function calling or specific response formats become challenging.</li>
+</ul>
+<h4 id="mlops-vs-devops-why-data-makes-it-different-1"><a href="https://venturebeat.com/ai/mlops-vs-devops-why-data-makes-it-different/">MLOps vs. DevOps: Why data makes it different</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #mlops #devops #data-centric #production-systems</li>
+<li><strong>Description:</strong> Explains how machine learning operations differ from traditional DevOps due to ML&#39;s direct exposure to messy real-world data.</li>
+</ul>
+<h3 id="talks-and-presentations">Talks and Presentations</h3>
+<h4 id="doing-presentations-1"><a href="https://russelldavies.typepad.com/planning/2015/11/doing-presentations.html">Doing presentations</a></h4>
+<ul>
+<li><strong>Type:</strong> 📹 Talk</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #presentations #communication #slides #public-speaking</li>
+<li><strong>Description:</strong> Collection of excellent presentations on how to present effectively.</li>
+</ul>
+<h4 id="the-club-club"><a href="https://dotclub.club/">The .CLUB Club</a></h4>
+<ul>
+<li><strong>Type:</strong> 📹 Talk</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #engineering-leadership #tech-solutions #workplace-politics #egoless-engineering</li>
+<li><strong>Description:</strong> Insightful talks on egoless engineering, straightforward tech solutions, and workplace politics from an engineering leadership perspective.</li>
+</ul>
+<h4 id="cccde"><a href="https://media.ccc.de/">ccc.de</a></h4>
+<ul>
+<li><strong>Type:</strong> 📹 Talk</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #hacking #reverse-engineering #security #technical-exploration</li>
+<li><strong>Description:</strong> Vast collection of presentations by the Chaos Computer Club, covering reverse engineering, cutting-edge exploration, and authentic engineering concepts.</li>
+</ul>
+<h4 id="gpu-mode-1"><a href="https://www.youtube.com/channel/UCJgIbYl6C5no72a0NUAPcTA">GPU MODE</a></h4>
+<ul>
+<li><strong>Type:</strong> 📹 Talk</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #gpu-programming #cuda #flash-attention #triton #quantisation</li>
+<li><strong>Description:</strong> Channel with excellent material on GPU programming, including CUDA kernels, Flash Attention, Triton, and quantisation techniques.</li>
+</ul>
+<h3 id="newsletters">Newsletters</h3>
+<h4 id="ai-news"><a href="https://buttondown.com/ainews/archive/">AI News</a></h4>
+<ul>
+<li><strong>Type:</strong> 📰 Newsletter</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #ai-news #trends #research #development</li>
+<li><strong>Description:</strong> Daily newsletter summarising top discussions in AI-focused online communities, covering latest trends, research, and developments.</li>
+</ul>
+<h4 id="ai-by-hand"><a href="https://aibyhand.substack.com/">AI by Hand</a></h4>
+<ul>
+<li><strong>Type:</strong> 📰 Newsletter</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #ai-education #machine-learning #accessible-explanations</li>
+<li><strong>Description:</strong> Newsletter by Professor Tom Yeh providing insights and educational content with accessible explanations of AI concepts.</li>
+</ul>
+<h3 id="research-resources">Research Resources</h3>
+<h4 id="emergent-mind"><a href="https://www.emergentmind.com/">Emergent Mind</a></h4>
+<ul>
+<li><strong>Type:</strong> 🔍 Research</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #research-assistant #arxiv #computer-science #trending-papers</li>
+<li><strong>Description:</strong> AI research assistant that synthesises the latest computer science research from arXiv and surfaces trending pre-prints.</li>
+</ul>
+<h4 id="the-2025-ai-engineer-reading-list-1"><a href="https://www.latent.space/p/2025-papers">The 2025 AI Engineer Reading List</a></h4>
+<ul>
+<li><strong>Type:</strong> 🔍 Research</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #ai-engineering #papers #llm #benchmarks #prompting #rag #agents #code-generation</li>
+<li><strong>Description:</strong> Curated list of 50 papers/models/blogs across 10 fields in AI Engineering, providing a solid foundation for understanding current research directions.</li>
+</ul>
+<h4 id="our-world-in-data-1"><a href="https://ourworldindata.org/">Our World in Data</a></h4>
+<ul>
+<li><strong>Type:</strong> 🔍 Research</li>
+<li><strong>Level:</strong> 🟢 Beginner to 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #data-visualisation #global-issues #research #evidence-based</li>
+<li><strong>Description:</strong> Project from the University of Oxford providing data-driven insights into global issues, valuable for understanding the world&#39;s largest problems and potential solutions.</li>
+</ul>
+<h3 id="social-media">Social Media</h3>
+<h4 id="eric-topol"><a href="https://bsky.app/profile/erictopol.bsky.social">Eric Topol</a></h4>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #healthcare #medical-ai #future-medicine #technology</li>
+<li><strong>Description:</strong> Renowned cardiologist, scientist, and author who has written extensively on the future of medicine, including AI and digital technologies impact.</li>
+</ul>
+<h4 id="jeremy-howard"><a href="https://bsky.app/profile/howard.fm">Jeremy Howard</a></h4>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #data-science #fastai #deep-learning #ai-education</li>
+<li><strong>Description:</strong> Prominent data scientist, co-founder of fast.ai and answer.ai, providing educational content and research insights in data science.</li>
+</ul>
+<h4 id="rachel-thomas"><a href="https://bsky.app/profile/math-rachel.bsky.social">Rachel Thomas</a></h4>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #data-science #ai-ethics #ai-education #mathematics</li>
+<li><strong>Description:</strong> Data scientist, educator, ethics advocate who co-founded fast.ai and directed USF&#39;s Center for Applied Data Ethics, recognised as one of Forbes&#39; 20 Incredible Women in AI.</li>
+</ul>
+<h4 id="andrej-karpathy"><a href="https://xcancel.com/karpathy">Andrej Karpathy</a></h4>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #ai-research #deep-learning #tesla #openai</li>
+<li><strong>Description:</strong> Leading AI researcher and educator, former Director of AI at Tesla and founding team member at OpenAI, providing in-depth insights on AI advancements.</li>
+</ul>
+<h4 id="simon-willison"><a href="https://bsky.app/profile/simonwillison.net">Simon Willison</a></h4>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #open-source #datasette #django #data-tools</li>
+<li><strong>Description:</strong> Independent open-source developer and data leader, creator of Datasette and co-creator of Django, with significant contributions to open-source community.</li>
+</ul>
+<h4 id="melanie-mitchell-1"><a href="https://bsky.app/profile/melaniemitchell.bsky.social">Melanie Mitchell</a></h4>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #ai-ethics #complex-systems #computational-intelligence</li>
+<li><strong>Description:</strong> Respected professor of computer science and prominent figure in complex systems and artificial intelligence, offering valuable perspectives on AI challenges.</li>
+</ul>
+<h4 id="michael-a-osborne"><a href="https://bsky.app/profile/maosbot.bsky.social/post/3laix6hz42n2m">Michael A. Osborne</a></h4>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🔴 Advanced</li>
+<li><strong>Tags:</strong> #machine-learning #bayesian-optimisation #battery-modeling #quantum-devices</li>
+<li><strong>Description:</strong> Professor of machine learning focused on Bayesian optimisation and applications in battery modeling and quantum devices, creator of Bluesky starter packs for prominent figures.</li>
+</ul>
+<h4 id="christoph-molnar"><a href="https://bsky.app/profile/christophmolnar.bsky.social">Christoph Molnar</a></h4>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #statistics #ml-interpretability #uncertainty-quantification #mindful-modeler</li>
+<li><strong>Description:</strong> Statistician and ML expert specialising in interpretability and uncertainty quantification, author of books on interpretable ML and modeling mindsets.</li>
+</ul>
+<h2 id="by-expertise-level">By Expertise Level</h2>
+<h3 id="beginner">Beginner</h3>
+<h4 id="doing-presentations-2"><a href="https://russelldavies.typepad.com/planning/2015/11/doing-presentations.html">Doing presentations</a></h4>
+<ul>
+<li><strong>Type:</strong> 📹 Talk</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #presentations #communication #slides #public-speaking</li>
+<li><strong>Description:</strong> Collection of excellent presentations on how to present effectively.</li>
+</ul>
+<h4 id="everything-i-know-about-life-i-learned-from-powerpoint-2"><a href="https://www.russelldavies.com/powerpoint">Everything I Know About Life I Learned From PowerPoint</a></h4>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #powerpoint #presentations #communication #visual-thinking</li>
+<li><strong>Description:</strong> A book about PowerPoint built out of PowerPoint, covering communication techniques, culture, and effective presentation approaches.</li>
+</ul>
+<h4 id="mlops-vs-devops-why-data-makes-it-different-2"><a href="https://venturebeat.com/ai/mlops-vs-devops-why-data-makes-it-different/">MLOps vs. DevOps: Why data makes it different</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #mlops #devops #data-centric #production-systems</li>
+<li><strong>Description:</strong> Explains how machine learning operations differ from traditional DevOps due to ML&#39;s direct exposure to messy real-world data.</li>
+</ul>
+<h4 id="ai-by-hand-1"><a href="https://aibyhand.substack.com/">AI by Hand</a></h4>
+<ul>
+<li><strong>Type:</strong> 📰 Newsletter</li>
+<li><strong>Level:</strong> 🟢 Beginner</li>
+<li><strong>Tags:</strong> #ai-education #machine-learning #accessible-explanations</li>
+<li><strong>Description:</strong> Newsletter by Professor Tom Yeh providing insights and educational content with accessible explanations of AI concepts.</li>
+</ul>
+<h3 id="intermediate">Intermediate</h3>
+<h4 id="supervised-machine-learning-for-science-2"><a href="https://ml-science-book.com/">Supervised Machine Learning for Science</a></h4>
+<ul>
+<li><strong>Type:</strong> 📕 Book 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #machine-learning #supervised-learning #science #best-practices</li>
+<li><strong>Description:</strong> Explores the role of supervised machine learning in scientific research with philosophical justifications and integration best practices.</li>
+</ul>
+<h4 id="building-llm-applications-2"><a href="https://xcancel.com/hugobowne/status/1870978490574704812">Building LLM Applications</a></h4>
+<ul>
+<li><strong>Type:</strong> 🎓 Course 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #llm #software-development #agents #evaluation #best-practices</li>
+<li><strong>Description:</strong> Teaches how to build LLM-powered software reliably, from first principles, covering the entire GenAI software development lifecycle.</li>
+</ul>
+<h4 id="your-ai-product-needs-evals-2"><a href="https://hamel.dev/blog/posts/evals/">Your AI Product Needs Evals</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #evaluation #ai-testing #product-development #quality-assessment</li>
+<li><strong>Description:</strong> Structured, comprehensive resource on how to construct domain-specific evaluation systems for AI products.</li>
+</ul>
+<h4 id="the-club-club-1"><a href="https://dotclub.club/">The .CLUB Club</a></h4>
+<ul>
+<li><strong>Type:</strong> 📹 Talk</li>
+<li><strong>Level:</strong> 🟡 Intermediate</li>
+<li><strong>Tags:</strong> #engineering-leadership #tech-solutions #workplace-politics #egoless-engineering</li>
+<li><strong>Description:</strong> Insightful talks on egoless engineering, straightforward tech solutions, and workplace politics from an engineering leadership perspective.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<h4 id="cs294194-196-large-language-model-agents-2"><a href="https://rdi.berkeley.edu/llm-agents/f24">CS294/194-196 Large Language Model Agents</a></h4>
+<ul>
+<li><strong>Type:</strong> 🎓 Course 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #llm #agents #foundation-models #task-automation</li>
+<li><strong>Description:</strong> Comprehensive course discussing fundamental concepts for LLM agents, including LLM foundations, essential abilities for task automation, and agent development infrastructure.</li>
+</ul>
+<h4 id="building-effective-agents-2"><a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents</a></h4>
+<ul>
+<li><strong>Type:</strong> 📄 Article 📚</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #agents #llm #anthropic #agentic-workflow #alignment</li>
+<li><strong>Description:</strong> Research paper exploring robust AI agent design, presenting agentic workflow approaches, alignment methods, and techniques for autonomous, reliable tasks.</li>
+</ul>
+<h4 id="gpu-mode-2"><a href="https://www.youtube.com/channel/UCJgIbYl6C5no72a0NUAPcTA">GPU MODE</a></h4>
+<ul>
+<li><strong>Type:</strong> 📹 Talk</li>
+<li><strong>Level:</strong> 🟡 Intermediate to 🔴 Advanced</li>
+<li><strong>Tags:</strong> #gpu-programming #cuda #flash-attention #triton #quantisation</li>
+<li><strong>Description:</strong> Channel with excellent material on GPU programming, including CUDA kernels, Flash Attention, Triton, and quantisation techniques.</li>
+</ul>
+<h4 id="michael-a-osborne-1"><a href="https://bsky.app/profile/maosbot.bsky.social/post/3laix6hz42n2m">Michael A. Osborne</a></h4>
+<ul>
+<li><strong>Type:</strong> 👤 Person</li>
+<li><strong>Level:</strong> 🔴 Advanced</li>
+<li><strong>Tags:</strong> #machine-learning #bayesian-optimisation #battery-modeling #quantum-devices</li>
+<li><strong>Description:</strong> Professor of machine learning focused on Bayesian optimisation and applications in battery modeling and quantum devices, creator of Bluesky starter packs for prominent figures.</li>
+</ul>
+<h2 id="tag-index">Tag Index</h2>
+<ul>
+<li><strong>#accessible-explanations</strong>: <a href="#ai-by-hand">AI by Hand</a></li>
+<li><strong>#agents</strong>: <a href="#building-llm-applications">Building LLM Applications</a>, <a href="#cs294194-196-large-language-model-agents">CS294/194-196 Large Language Model Agents</a>, <a href="#building-effective-agents">Building Effective Agents</a>, <a href="#ollama-in-action">Ollama in Action</a>, <a href="#the-2025-ai-engineer-reading-list">The 2025 AI Engineer Reading List</a></li>
+<li><strong>#ai-education</strong>: <a href="#ai-by-hand">AI by Hand</a>, <a href="#rachel-thomas">Rachel Thomas</a></li>
+<li><strong>#ai-engineering</strong>: <a href="#the-2025-ai-engineer-reading-list">The 2025 AI Engineer Reading List</a></li>
+<li><strong>#ai-ethics</strong>: <a href="#rachel-thomas">Rachel Thomas</a>, <a href="#melanie-mitchell">Melanie Mitchell</a></li>
+<li><strong>#ai-news</strong>: <a href="#ai-news">AI News</a></li>
+<li><strong>#ai-research</strong>: <a href="#andrej-karpathy">Andrej Karpathy</a></li>
+<li><strong>#ai-testing</strong>: <a href="#your-ai-product-needs-evals">Your AI Product Needs Evals</a></li>
+<li><strong>#algorithms</strong>: <a href="#essentials-of-metaheuristics">Essentials of Metaheuristics</a></li>
+<li><strong>#alignment</strong>: <a href="#building-effective-agents">Building Effective Agents</a></li>
+<li><strong>#anthropic</strong>: <a href="#building-effective-agents">Building Effective Agents</a></li>
+<li><strong>#agentic-workflow</strong>: <a href="#building-effective-agents">Building Effective Agents</a></li>
+<li><strong>#applied-ai</strong>: <a href="#what-weve-learned-from-a-year-of-building-with-llms">What We&#39;ve Learned From A Year of Building with LLMs</a></li>
+<li><strong>#arxiv</strong>: <a href="#emergent-mind">Emergent Mind</a></li>
+<li><strong>#bayesian-optimisation</strong>: <a href="#michael-a-osborne">Michael A. Osborne</a></li>
+<li><strong>#battery-modeling</strong>: <a href="#michael-a-osborne">Michael A. Osborne</a></li>
+<li><strong>#benchmarks</strong>: <a href="#the-2025-ai-engineer-reading-list">The 2025 AI Engineer Reading List</a></li>
+<li><strong>#best-practices</strong>: <a href="#supervised-machine-learning-for-science">Supervised Machine Learning for Science</a>, <a href="#building-llm-applications">Building LLM Applications</a></li>
+<li><strong>#code-generation</strong>: <a href="#the-2025-ai-engineer-reading-list">The 2025 AI Engineer Reading List</a></li>
+<li><strong>#communication</strong>: <a href="#doing-presentations">Doing presentations</a>, <a href="#everything-i-know-about-life-i-learned-from-powerpoint">Everything I Know About Life I Learned From PowerPoint</a></li>
+<li><strong>#complex-systems</strong>: <a href="#melanie-mitchell">Melanie Mitchell</a></li>
+<li><strong>#computational-intelligence</strong>: <a href="#melanie-mitchell">Melanie Mitchell</a></li>
+<li><strong>#computer-science</strong>: <a href="#emergent-mind">Emergent Mind</a></li>
+<li><strong>#continuous-improvement</strong>: <a href="#data-flywheels-for-llm-applications">Data Flywheels for LLM Applications</a></li>
+<li><strong>#cuda</strong>: <a href="#gpu-mode">GPU MODE</a></li>
+<li><strong>#data-centric</strong>: <a href="#mlops-vs-devops-why-data-makes-it-different">MLOps vs. DevOps: Why data makes it different</a></li>
+<li><strong>#data-flywheel</strong>: <a href="#data-flywheels-for-llm-applications">Data Flywheels for LLM Applications</a></li>
+<li><strong>#data-science</strong>: <a href="#jeremy-howard">Jeremy Howard</a>, <a href="#rachel-thomas">Rachel Thomas</a></li>
+<li><strong>#data-tools</strong>: <a href="#simon-willison">Simon Willison</a></li>
+<li><strong>#data-visualisation</strong>: <a href="#our-world-in-data">Our World in Data</a></li>
+<li><strong>#datasette</strong>: <a href="#simon-willison">Simon Willison</a></li>
+<li><strong>#deep-learning</strong>: <a href="#fastais-practical-deep-learning">Fast.ai&#39;s Practical Deep Learning</a>, <a href="#jeremy-howard">Jeremy Howard</a>, <a href="#andrej-karpathy">Andrej Karpathy</a></li>
+<li><strong>#development</strong>: <a href="#ai-news">AI News</a></li>
+<li><strong>#devops</strong>: <a href="#mlops-vs-devops-why-data-makes-it-different">MLOps vs. DevOps: Why data makes it different</a></li>
+<li><strong>#django</strong>: <a href="#simon-willison">Simon Willison</a></li>
+<li><strong>#egoless-engineering</strong>: <a href="#the-club-club">The .CLUB Club</a></li>
+<li><strong>#embeddings</strong>: <a href="#what-are-embeddings">What are Embeddings</a></li>
+<li><strong>#engineering-leadership</strong>: <a href="#the-club-club">The .CLUB Club</a></li>
+<li><strong>#evaluation</strong>: <a href="#building-llm-applications">Building LLM Applications</a>, <a href="#your-ai-product-needs-evals">Your AI Product Needs Evals</a>, <a href="#data-flywheels-for-llm-applications">Data Flywheels for LLM Applications</a></li>
+<li><strong>#evidence-based</strong>: <a href="#our-world-in-data">Our World in Data</a></li>
+<li><strong>#fastai</strong>: <a href="#fastais-practical-deep-learning">Fast.ai&#39;s Practical Deep Learning</a>, <a href="#jeremy-howard">Jeremy Howard</a></li>
+<li><strong>#flash-attention</strong>: <a href="#gpu-mode">GPU MODE</a></li>
+<li><strong>#foundation-models</strong>: <a href="#cs294194-196-large-language-model-agents">CS294/194-196 Large Language Model Agents</a>, <a href="#the-genai-guidebook">The GenAI Guidebook</a></li>
+<li><strong>#function-calling</strong>: <a href="#ollama-in-action">Ollama in Action</a>, <a href="#every-way-to-get-structured-output-from-llms">Every Way To Get Structured Output From LLMs</a></li>
+<li><strong>#future-medicine</strong>: <a href="#eric-topol">Eric Topol</a></li>
+<li><strong>#genai</strong>: <a href="#the-genai-guidebook">The GenAI Guidebook</a></li>
+<li><strong>#global-issues</strong>: <a href="#our-world-in-data">Our World in Data</a></li>
+<li><strong>#gpu-programming</strong>: <a href="#gpu-mode">GPU MODE</a></li>
+<li><strong>#hacking</strong>: <a href="#cccde">ccc.de</a></li>
+<li><strong>#hands-on</strong>: <a href="#fastais-practical-deep-learning">Fast.ai&#39;s Practical Deep Learning</a></li>
+<li><strong>#healthcare</strong>: <a href="#eric-topol">Eric Topol</a></li>
+<li><strong>#implementation</strong>: <a href="#the-genai-guidebook">The GenAI Guidebook</a></li>
+<li><strong>#json</strong>: <a href="#every-way-to-get-structured-output-from-llms">Every Way To Get Structured Output From LLMs</a></li>
+<li><strong>#lessons-learned</strong>: <a href="#what-weve-learned-from-a-year-of-building-with-llms">What We&#39;ve Learned From A Year of Building with LLMs</a></li>
+<li><strong>#llm</strong>: <a href="#building-llm-applications">Building LLM Applications</a>, <a href="#cs294194-196-large-language-model-agents">CS294/194-196 Large Language Model Agents</a>, <a href="#what-weve-learned-from-a-year-of-building-with-llms">What We&#39;ve Learned From A Year of Building with LLMs</a>, <a href="#building-effective-agents">Building Effective Agents</a>, <a href="#ollama-in-action">Ollama in Action</a>, <a href="#data-flywheels-for-llm-applications">Data Flywheels for LLM Applications</a>, <a href="#every-way-to-get-structured-output-from-llms">Every Way To Get Structured Output From LLMs</a>, <a href="#the-2025-ai-engineer-reading-list">The 2025 AI Engineer Reading List</a></li>
+<li><strong>#logging</strong>: <a href="#data-flywheels-for-llm-applications">Data Flywheels for LLM Applications</a></li>
+<li><strong>#machine-learning</strong>: <a href="#supervised-machine-learning-for-science">Supervised Machine Learning for Science</a>, <a href="#ai-by-hand">AI by Hand</a>, <a href="#michael-a-osborne">Michael A. Osborne</a></li>
+<li><strong>#mathematics</strong>: <a href="#rachel-thomas">Rachel Thomas</a></li>
+<li><strong>#medical-ai</strong>: <a href="#eric-topol">Eric Topol</a></li>
+<li><strong>#metaheuristics</strong>: <a href="#essentials-of-metaheuristics">Essentials of Metaheuristics</a></li>
+<li><strong>#mindful-modeler</strong>: <a href="#christoph-molnar">Christoph Molnar</a></li>
+<li><strong>#ml-interpretability</strong>: <a href="#christoph-molnar">Christoph Molnar</a></li>
+<li><strong>#mlops</strong>: <a href="#mlops-vs-devops-why-data-makes-it-different">MLOps vs. DevOps: Why data makes it different</a></li>
+<li><strong>#nlp</strong>: <a href="#what-are-embeddings">What are Embeddings</a></li>
+<li><strong>#on-premise</strong>: <a href="#ollama-in-action">Ollama in Action</a></li>
+<li><strong>#open-source</strong>: <a href="#simon-willison">Simon Willison</a></li>
+<li><strong>#openai</strong>: <a href="#andrej-karpathy">Andrej Karpathy</a></li>
+<li><strong>#optimisation</strong>: <a href="#essentials-of-metaheuristics">Essentials of Metaheuristics</a></li>
+<li><strong>#papers</strong>: <a href="#the-2025-ai-engineer-reading-list">The 2025 AI Engineer Reading List</a></li>
+<li><strong>#parsing</strong>: <a href="#every-way-to-get-structured-output-from-llms">Every Way To Get Structured Output From LLMs</a></li>
+<li><strong>#powerpoint</strong>: <a href="#everything-i-know-about-life-i-learned-from-powerpoint">Everything I Know About Life I Learned From PowerPoint</a></li>
+<li><strong>#practical</strong>: <a href="#fastais-practical-deep-learning">Fast.ai&#39;s Practical Deep Learning</a></li>
+<li><strong>#presentations</strong>: <a href="#doing-presentations">Doing presentations</a>, <a href="#everything-i-know-about-life-i-learned-from-powerpoint">Everything I Know About Life I Learned From PowerPoint</a></li>
+<li><strong>#privacy</strong>: <a href="#ollama-in-action">Ollama in Action</a></li>
+<li><strong>#product-development</strong>: <a href="#the-genai-guidebook">The GenAI Guidebook</a>, <a href="#what-weve-learned-from-a-year-of-building-with-llms">What We&#39;ve Learned From A Year of Building with LLMs</a>, <a href="#your-ai-product-needs-evals">Your AI Product Needs Evals</a></li>
+<li><strong>#production-systems</strong>: <a href="#mlops-vs-devops-why-data-makes-it-different">MLOps vs. DevOps: Why data makes it different</a></li>
+<li><strong>#prompting</strong>: <a href="#the-2025-ai-engineer-reading-list">The 2025 AI Engineer Reading List</a></li>
+<li><strong>#public-speaking</strong>: <a href="#doing-presentations">Doing presentations</a></li>
+<li><strong>#quality-assessment</strong>: <a href="#your-ai-product-needs-evals">Your AI Product Needs Evals</a></li>
+<li><strong>#quantisation</strong>: <a href="#gpu-mode">GPU MODE</a></li>
+<li><strong>#quantum-devices</strong>: <a href="#michael-a-osborne">Michael A. Osborne</a></li>
+<li><strong>#rag</strong>: <a href="#the-2025-ai-engineer-reading-list">The 2025 AI Engineer Reading List</a></li>
+<li><strong>#research</strong>: <a href="#ai-news">AI News</a>, <a href="#emergent-mind">Emergent Mind</a>, <a href="#our-world-in-data">Our World in Data</a></li>
+<li><strong>#research-assistant</strong>: <a href="#emergent-mind">Emergent Mind</a></li>
+<li><strong>#reverse-engineering</strong>: <a href="#cccde">ccc.de</a></li>
+<li><strong>#science</strong>: <a href="#supervised-machine-learning-for-science">Supervised Machine Learning for Science</a></li>
+<li><strong>#security</strong>: <a href="#cccde">ccc.de</a></li>
+<li><strong>#semantic-search</strong>: <a href="#what-are-embeddings">What are Embeddings</a></li>
+<li><strong>#slides</strong>: <a href="#doing-presentations">Doing presentations</a></li>
+<li><strong>#software-development</strong>: <a href="#building-llm-applications">Building LLM Applications</a></li>
+<li><strong>#statistics</strong>: <a href="#christoph-molnar">Christoph Molnar</a></li>
+<li><strong>#stochastic</strong>: <a href="#essentials-of-metaheuristics">Essentials of Metaheuristics</a></li>
+<li><strong>#structured-output</strong>: <a href="#every-way-to-get-structured-output-from-llms">Every Way To Get Structured Output From LLMs</a></li>
+<li><strong>#supervised-learning</strong>: <a href="#supervised-machine-learning-for-science">Supervised Machine Learning for Science</a></li>
+<li><strong>#task-automation</strong>: <a href="#cs294194-196-large-language-model-agents">CS294/194-196 Large Language Model Agents</a></li>
+<li><strong>#tech-solutions</strong>: <a href="#the-club-club">The .CLUB Club</a></li>
+<li><strong>#technical-exploration</strong>: <a href="#cccde">ccc.de</a></li>
+<li><strong>#technology</strong>: <a href="#eric-topol">Eric Topol</a></li>
+<li><strong>#tesla</strong>: <a href="#andrej-karpathy">Andrej Karpathy</a></li>
+<li><strong>#trends</strong>: <a href="#ai-news">AI News</a></li>
+<li><strong>#trending-papers</strong>: <a href="#emergent-mind">Emergent Mind</a></li>
+<li><strong>#triton</strong>: <a href="#gpu-mode">GPU MODE</a></li>
+<li><strong>#uncertainty-quantification</strong>: <a href="#christoph-molnar">Christoph Molnar</a></li>
+<li><strong>#vector-representations</strong>: <a href="#what-are-embeddings">What are Embeddings</a></li>
+<li><strong>#visual-thinking</strong>: <a href="#everything-i-know-about-life-i-learned-from-powerpoint">Everything I Know About Life I Learned From PowerPoint</a></li>
+<li><strong>#workplace-politics</strong>: <a href="#the-club-club">The .CLUB Club</a></li>
 </ul>
 
       </div>

@@ -24,24 +24,13 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> vLLM revolutionises LLM deployment through its PagedAttention
-algorithm, which applies virtual memory principles to key-value caches, enabling
-more efficient memory management and significantly improving throughput for
-resource-constrained environments whilst supporting popular open-source models.</p>
+        <p><strong>TL;DR:</strong> vLLM revolutionises LLM deployment through its PagedAttention algorithm, which applies virtual memory principles to key-value caches, enabling more efficient memory management and significantly improving throughput for resource-constrained environments whilst supporting popular open-source models.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>As a Data Scientist / AI Engineer exploring local-first solutions[^1][^2],
-deploying Large Language Models (LLMs) presents significant resource management
-challenges. vLLM emerges as a breakthrough solution that fundamentally
-reimagines how we deploy and utilise these resource-intensive models[^4].</p>
+<p>As a Data Scientist / AI Engineer exploring local-first solutions[^1][^2], deploying Large Language Models (LLMs) presents significant resource management challenges. vLLM emerges as a breakthrough solution that fundamentally reimagines how we deploy and utilise these resource-intensive models[^4].</p>
 <h2 id="what-is-vllm">What Is vLLM?</h2>
-<p>vLLM is an open-source serving engine that optimises LLM deployment through
-virtualisation techniques[^4]. At its core, vLLM introduces PagedAttention, a
-novel attention algorithm that improves memory utilisation through paged memory
-management[^3]. Similar to how operating systems manage virtual memory,
-PagedAttention segments the key-value memory into non-continuous pages, enabling
-more efficient memory usage and request handling.</p>
+<p>vLLM is an open-source serving engine that optimises LLM deployment through virtualisation techniques[^4]. At its core, vLLM introduces PagedAttention, a novel attention algorithm that improves memory utilisation through paged memory management[^3]. Similar to how operating systems manage virtual memory, PagedAttention segments the key-value memory into non-continuous pages, enabling more efficient memory usage and request handling.</p>
 <p>Key features[^4]:</p>
 <ul>
 <li>Efficient memory management through PagedAttention</li>
@@ -69,26 +58,22 @@ outputs = llm.generate([&quot;Your prompt goes here&quot;], sampling_params)
 <ol>
 <li><p>Natural Language Processing</p>
 <ul>
-<li>Enhances chatbots and sentiment analysis</li>
-<li>Improves language translation services</li>
+<li>Enhances chatbots and sentiment analysis    - Improves language translation services</li>
 </ul>
 </li>
 <li><p>Healthcare</p>
 <ul>
-<li>Enables secure patient data analysis</li>
-<li>Assists in medical diagnostics</li>
+<li>Enables secure patient data analysis    - Assists in medical diagnostics</li>
 </ul>
 </li>
 <li><p>Financial Services</p>
 <ul>
-<li>Powers fraud detection systems</li>
-<li>Enhances automated customer service</li>
+<li>Powers fraud detection systems    - Enhances automated customer service</li>
 </ul>
 </li>
 <li><p>Education</p>
 <ul>
-<li>Facilitates intelligent tutoring systems</li>
-<li>Enables automated assessment tools</li>
+<li>Facilitates intelligent tutoring systems    - Enables automated assessment tools</li>
 </ul>
 </li>
 </ol>
@@ -101,11 +86,7 @@ outputs = llm.generate([&quot;Your prompt goes here&quot;], sampling_params)
 <li>Regular performance optimisation</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
-<p>vLLM represents a significant advancement in LLM serving technology[^3],
-offering an efficient, scalable solution for resource-constrained environments.
-Its innovative approach to memory management through PagedAttention and broad
-applicability across industries makes it an essential tool for modern AI
-development.</p>
+<p>vLLM represents a significant advancement in LLM serving technology[^3], offering an efficient, scalable solution for resource-constrained environments. Its innovative approach to memory management through PagedAttention and broad applicability across industries makes it an essential tool for modern AI development.</p>
 <hr>
 <p>[^1]: <a href="https://www.puppet.com/blog/cloud-repatriation">Cloud Repatriation: Examples, Unpacking 2024 Trends &amp; Tips for Reverse Migration</a></p>
 <p>[^2]: <a href="https://thenewstack.io/why-companies-are-ditching-the-cloud-the-rise-of-cloud-repatriation/">Why Companies Are Ditching the Cloud: The Rise of Cloud Repatriation</a></p>
