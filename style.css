@@ -67,20 +67,23 @@ body.dark-theme header {
 .search-container {
   margin: 1rem 0;
   position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .search-input {
-  width: 100%;
+  width: 200px;
   padding: 0.6rem 1rem;
   font-size: 1rem;
   border: 1px solid var(--border-light);
   border-radius: 4px;
   background-color: var(--bg-light);
   color: var(--text-light);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: width 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .search-input:focus {
+  width: 100%;
   outline: none;
   border-color: var(--link-light);
   box-shadow: 0 0 0 2px rgba(3, 102, 214, 0.1);

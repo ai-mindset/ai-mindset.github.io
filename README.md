@@ -55,8 +55,8 @@ npm run build
 ### Adding New Posts
 
 1. Create a new markdown file in the `_posts` directory with the naming format:
-   `YYYY-MM-DD-slug.md`
 2. Add front matter at the top of your file:
+   `YYYY-MM-DD-slug.md`
 
 ```markdown
 ---

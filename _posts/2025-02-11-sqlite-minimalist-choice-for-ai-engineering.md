@@ -5,30 +5,12 @@ date: 2025-02-11
 tags: [ai, data-modeling, data-processing, data-science, minimal, production, python, zero-config]
 ---
 
-**TL;DR:** SQLite offers a zero-configuration, pre-installed database solution
-ideal for AI engineering projects, supporting modern data structures including
-vectors, graphs, and JSON documents whilst providing single-file portability,
-ACID compliance, and broad language compatibility - making it an excellent
-minimalist choice when specialised database systems would be overkill.
+**TL;DR:** SQLite offers a zero-configuration, pre-installed database solution ideal for AI engineering projects, supporting modern data structures including vectors, graphs, and JSON documents whilst providing single-file portability, ACID compliance, and broad language compatibility - making it an excellent minimalist choice when specialised database systems would be overkill.
 <!--more-->
 
 ## Introduction
 
-In today's AI engineering landscape, choosing the right database can feel
-overwhelming. While specialised solutions like [Qdrant](https://qdrant.tech/)
-(vectors), [Neo4j](https://neo4j.com/) (graphs), and
-[MongoDB](https://www.mongodb.com/) (documents) excel in their niches, there's a
-compelling case for [SQLite](https://www.sqlite.org/index.html) as a versatile,
-minimalist solution that comes pre-installed on most systems and supports
-multiple data structures effectively. Speaking of minimalism,
-[Harlequin](https://github.com/tconbeer/harlequin) (named after a
-[sea 🦆](https://en.wikipedia.org/wiki/Harlequin_duck)) makes data exploration
-very enjoyable. Credit for the SQLite idea goes to
-[Simon Willison](https://bsky.app/profile/simonwillison.net), a prolific AI
-researcher among others, who has been posting
-[blog articles](https://simonwillison.net/tags/sqlite/) and
-[TILs](https://til.simonwillison.net/sqlite) (Today I Learned) about it since
-2003!
+In today's AI engineering landscape, choosing the right database can feel overwhelming. While specialised solutions like [Qdrant](https://qdrant.tech/) (vectors), [Neo4j](https://neo4j.com/) (graphs), and [MongoDB](https://www.mongodb.com/) (documents) excel in their niches, there's a compelling case for [SQLite](https://www.sqlite.org/index.html) as a versatile, minimalist solution that comes pre-installed on most systems and supports multiple data structures effectively. Speaking of minimalism, [Harlequin](https://github.com/tconbeer/harlequin) (named after a [sea 🦆](https://en.wikipedia.org/wiki/Harlequin_duck)) makes data exploration very enjoyable. Credit for the SQLite idea goes to [Simon Willison](https://bsky.app/profile/simonwillison.net), a prolific AI researcher among others, who has been posting [blog articles](https://simonwillison.net/tags/sqlite/) and [TILs](https://til.simonwillison.net/sqlite) (Today I Learned) about it since 2003!
 
 ## The Power of Pre-installation
 
@@ -36,18 +18,16 @@ SQLite's ubiquity is remarkable. It comes pre-installed on:
 
 - macOS
 - Most Linux distributions (including Ubuntu, as evidenced by its
-  [manifest](https://releases.ubuntu.com/24.10/ubuntu-24.10-desktop-amd64.manifest))
 - Python's standard library
 - Android devices
 - iOS devices
+  [manifest](https://releases.ubuntu.com/24.10/ubuntu-24.10-desktop-amd64.manifest))
 
-This universal availability means you can start developing immediately without
-additional setup or installation steps.
+This universal availability means you can start developing immediately without additional setup or installation steps.
 
 ## Modern Data Structure Support
 
-Despite its lightweight nature, SQLite handles modern data structures
-surprisingly well:
+Despite its lightweight nature, SQLite handles modern data structures surprisingly well:
 
 1. **Vector Storage**[^1]
 
@@ -127,9 +107,7 @@ CREATE TABLE documents (
 
 ## Portability and Simplicity
 
-One of SQLite's strongest features is its
-[single-file](https://www.sqlite.org/onefile.html) nature. Your entire database
-exists in one file that can be:
+One of SQLite's strongest features is its [single-file](https://www.sqlite.org/onefile.html) nature. Your entire database exists in one file that can be:
 
 - Backed up with a simple copy operation
 - Easily version controlled (for smaller databases)
@@ -138,8 +116,7 @@ exists in one file that can be:
 
 ## Conclusion
 
-While specialised databases have their place, SQLite offers a compelling
-combination of features that make it ideal for many AI engineering projects:
+While specialised databases have their place, SQLite offers a compelling combination of features that make it ideal for many AI engineering projects:
 
 - Zero configuration
 - Pre-installed availability
@@ -148,9 +125,7 @@ combination of features that make it ideal for many AI engineering projects:
 - Wide language support, especially in Python and Go
 - ACID[^3] compliance
 
-**TL;DR**: When you need a lightweight, self-contained database that can handle
-documents, vectors, and graphs without the complexity of a full database server,
-SQLite is often an excellent choice.
+**TL;DR**: When you need a lightweight, self-contained database that can handle documents, vectors, and graphs without the complexity of a full database server, SQLite is often an excellent choice.
 
 ---
 
