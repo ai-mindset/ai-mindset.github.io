@@ -63,6 +63,91 @@ body.dark-theme header {
   border-bottom-color: var(--border-dark);
 }
 
+/* Search */
+.search-container {
+  margin: 1rem 0;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-input {
+  width: 200px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: width 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-input:focus {
+  width: 100%;
+  outline: none;
+  border-color: var(--link-light);
+  box-shadow: 0 0 0 2px rgba(3, 102, 214, 0.1);
+}
+
+body.dark-theme .search-input {
+  background-color: var(--code-bg-dark);
+  color: var(--text-dark);
+  border-color: var(--border-dark);
+}
+
+body.dark-theme .search-input:focus {
+  border-color: var(--link-dark);
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+body.dark-theme .search-icon {
+  color: #aaa;
+}
+
+.search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  background: none;
+  border: none;
+  font-size: 16px;
+  padding: 0;
+  cursor: pointer;
+  display: none;
+}
+
+.search-input:not(:placeholder-shown) + .search-icon {
+  display: none;
+}
+
+.search-input:not(:placeholder-shown) ~ .search-clear {
+  display: block;
+}
+
+body.dark-theme .search-clear {
+  color: #aaa;
+}
+
+.highlight-match {
+  background-color: rgba(255, 240, 0, 0.3);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+body.dark-theme .highlight-match {
+  background-color: rgba(255, 240, 0, 0.2);
+}
+
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
@@ -344,7 +429,7 @@ body.dark-theme .post-tag {
   background-color: var(--code-bg-dark);
 }
 
-.post-tldr {
+.post-tldr, .search-match-excerpt {
   margin-top: 0.75rem;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -355,10 +440,21 @@ body.dark-theme .post-tag {
   border-radius: 0 3px 3px 0;
 }
 
-body.dark-theme .post-tldr {
+body.dark-theme .post-tldr,
+body.dark-theme .search-match-excerpt {
   color: #ccc;
   background-color: #2a2a2a;
   border-left-color: var(--link-dark);
+}
+
+.search-match-excerpt {
+  border-left-color: #ff9800;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+body.dark-theme .search-match-excerpt {
+  border-left-color: #ff9800;
 }
 
 /* Post page */

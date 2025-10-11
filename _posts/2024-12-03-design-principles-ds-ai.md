@@ -6,14 +6,16 @@ tags: [ai, data-science, design-principles, code-quality, mlops, monitoring, obs
 ---
 
 **TL;DR:** Don Norman's timeless design principles - visibility, feedback, constraints, mappings, and error prevention - apply powerfully to AI systems, where abstract interfaces and complex workflows often become overwhelming. By implementing these principles with a carefully selected, minimal toolset, we can create maintainable, observable AI systems that reduce complexity while providing comprehensive functionality - just as Norman observed in physical objects, good design in AI leads to fewer errors and greater user satisfaction.
-
 <!--more-->
 
 ## Introduction
+
 Don Norman's principles of good design, outlined in [The Design of Everyday Things](https://archive.org/details/thedesignofeverydaythingsbydonnorman), are particularly relevant to Data Science and AI Engineering, where systems often suffer from unnecessary complexity. This article presents a minimalist approach to implementing these principles using a carefully selected set of tools that maximise impact while reducing operational overhead. Norman's insights about visibility, feedback, constraints, and mappings translate powerfully to AI system design, where abstract interfaces and complex workflows can easily become overwhelming. Just as Norman observed that poorly designed physical objects lead to user frustration and errors, poorly architected AI systems can result in maintenance nightmares, hidden failure modes, and costly debugging cycles. By applying his principles - making system states visible, providing clear feedback, implementing appropriate constraints, and creating natural mappings between components, we can build AI systems that are not only more intuitive to use but also easier to maintain, debug, and evolve over time.
 
 ## Design Principles Implementation
+
 ### 1. Visibility
+
 Implement comprehensive system observability using [MLflow](https://mlflow.org/) as your central platform:
 
 - Track experiments, parameters, and metrics
@@ -22,17 +24,20 @@ Implement comprehensive system observability using [MLflow](https://mlflow.org/)
 - Monitor model performance metrics
 
 For system-level metrics, use [Prometheus/Grafana](https://prometheus.io/docs/visualization/grafana/) to:
+
 - Track resource utilisation (CPU, memory, latency)
 - Monitor prediction throughput
 - Create dashboards for key performance indicators
 
 Implement adaptive sampling for high-volume systems:
+
 ```python
 def should_log(request_id, sampling_rate=0.1):
     return hash(request_id) % 100 < (sampling_rate * 100)
 ```
 
 ### 2. Feedback
+
 Use [Prometheus/Grafana](https://prometheus.io/docs/visualization/grafana/) for real-time monitoring and alerting:
 
 - Set up alerts for model performance degradation
@@ -41,6 +46,7 @@ Use [Prometheus/Grafana](https://prometheus.io/docs/visualization/grafana/) for 
 - Configure tiered alerting based on severity
 
 Example metric collection:
+
 ```python
 from prometheus_client import Counter, Histogram
 
@@ -55,6 +61,7 @@ def predict(features):
 ```
 
 ### 3. Constraints
+
 Implement data and model guardrails using [Great Expectations](https://greatexpectations.io/):
 
 - Define data quality expectations
@@ -63,6 +70,7 @@ Implement data and model guardrails using [Great Expectations](https://greatexpe
 - Generate validation reports
 
 Example constraint implementation:
+
 ```python
 from great_expectations.dataset import Dataset
 
@@ -75,6 +83,7 @@ def validate_features(df):
 ```
 
 ### 4. Mappings
+
 Use [MLflow](https://mlflow.org/) to maintain clear relationships between:
 
 - Experiments and business objectives
@@ -83,6 +92,7 @@ Use [MLflow](https://mlflow.org/) to maintain clear relationships between:
 - Performance metrics and business KPIs
 
 Example mapping structure:
+
 ```python
 with mlflow.start_run(run_name="production_model_v1"):
     mlflow.log_param("business_objective", "customer_churn")
@@ -92,29 +102,34 @@ with mlflow.start_run(run_name="production_model_v1"):
 ```
 
 ### 5. Error Prevention and Recovery
+
 Integrate safeguards using your core toolset:
 
 [MLflow](https://mlflow.org/):
+
 - Version control for models and artefacts
 - Rollback capabilities
 - Experiment tracking for reproducibility
 
 [Prometheus/Grafana](https://prometheus.io/docs/visualization/grafana/):
+
 - Early warning system for issues
 - Performance degradation detection
 - Resource exhaustion prevention
 
 [Great Expectations](https://greatexpectations.io/):
+
 - Data quality validation
 - Schema enforcement
 - Distribution monitoring
 
 Example error prevention:
+
 ```python
 def safe_predict(features):
     if not validate_features(features):
         return fallback_prediction()
-    
+
     try:
         with LATENCY.time():
             prediction = model.predict(features)
@@ -126,22 +141,18 @@ def safe_predict(features):
 ```
 
 ## Implementation Strategy
+
 1. Start with [MLflow](https://mlflow.org/)
-   - Set up experiment tracking
-   - Implement model versioning
-   - Configure basic logging
+   - Set up experiment tracking    - Implement model versioning    - Configure basic logging
 
 2. Add [Prometheus/Grafana](https://prometheus.io/docs/visualization/grafana/)
-   - Deploy basic monitoring
-   - Set up key alerts
-   - Create essential dashboards
+   - Deploy basic monitoring    - Set up key alerts    - Create essential dashboards
 
 3. Integrate [Great Expectations](https://greatexpectations.io/)
-   - Define core data quality rules
-   - Implement validation pipelines
-   - Monitor data distributions
+   - Define core data quality rules    - Implement validation pipelines    - Monitor data distributions
 
 ## Conclusion
+
 By focusing on a minimal set of powerful tools ([MLflow](https://mlflow.org/), [Prometheus/Grafana](https://prometheus.io/docs/visualization/grafana/), and [Great Expectations](https://greatexpectations.io/)), you can implement Norman's design principles effectively while maintaining system simplicity. This approach provides:
 
 - Comprehensive visibility through unified logging and monitoring

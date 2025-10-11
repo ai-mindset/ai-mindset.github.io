@@ -6,13 +6,14 @@ tags: [ai, best-practices, prompt-engineering, system-prompts, code-quality, pro
 ---
 
 **TL;DR:** Well-crafted AI system prompts, like those in Microsoft's VSCode Copilot Chat extension, serve as excellent process documentation and step-by-step checklists that human developers can follow to improve their own workflows and debugging methodologies.
-
 <!--more-->
 
 ## Introduction
+
 I was exploring Microsoft's recently open-sourced [VSCode Copilot Chat extension](https://github.com/microsoft/vscode-copilot-chat/) codebase when I noticed something interesting: the prompts that power AI coding assistants make excellent checklists for human developers too.
 
 ## Engineering Prompts as Process Documentation
+
 Take this [agent instruction prompt](https://github.com/microsoft/vscode-copilot-chat/blob/main/src/extension/prompts/node/agent/agentInstructions.tsx#L197) for example; it's essentially a 24-step debugging methodology distilled from countless hours of human engineering experience:
 
 1. Initialize Git and explore the repository structure
@@ -31,4 +32,5 @@ The [system prompt template](https://github.com/microsoft/vscode-copilot-chat/bl
 What's brilliant is that these prompts aren't just instructions for AI, they're codified human expertise. When we craft prompts for AI systems, we're essentially documenting our own thought processes and best practices. The better the prompt, the better the human process it represents.
 
 ## Conclusion
+
 Next time you're debugging a tricky issue or refactoring complex code, consider following the same systematic approach these AI prompts encourage. After all, good prompts are just good processes made explicit.
