@@ -1,6 +1,6 @@
 # AI Resource Hub
 
-This document provides a curated collection of high-quality resources for learning about AI, data science, and related topics from respected experts, researchers, and institutions. Resources are organized by topic, format, and expertise level for easy navigation.
+This document provides a curated collection of high-quality resources for learning about AI, data science, and related topics from respected experts, researchers, and institutions. Resources are organised by topic, format, and expertise level for easy navigation.
 
 📚 indicates an authoritative reference source.
 
@@ -34,12 +34,12 @@ This document provides a curated collection of high-quality resources for learni
 
 This resource hub uses several navigation aids to help you quickly find relevant resources:
 
-- **By Topic**: Find resources organized by subject area
+- **By Topic**: Find resources organised by subject area
 - **By Format**: Browse resources by content type (books, courses, etc.)
 - **By Expertise Level**: Filter resources by difficulty
 - **Tag Index**: Find resources by specific topics or technologies
 
-Each resource includes standardized metadata:
+Each resource includes standardised metadata:
 - **Type**: 📕 Book | 🎓 Course | 📄 Article | 📹 Talk | 📰 Newsletter | 🔍 Research | 👤 Person
 - **Level**: 🟢 Beginner | 🟡 Intermediate | 🔴 Advanced
 - **Tags**: Keywords for cross-referencing
@@ -76,7 +76,7 @@ A selection of foundational resources that provide exceptional value:
 ### [Our World in Data](https://ourworldindata.org/)
 - **Type:** 🔍 Research
 - **Level:** 🟢 Beginner to 🟡 Intermediate
-- **Tags:** #data-visualization #global-issues #research #evidence-based
+- **Tags:** #data-visualisation #global-issues #research #evidence-based
 - **Description:** Project from the University of Oxford providing data-driven insights into global issues, valuable for understanding the world's largest problems and potential solutions.
 
 ## By Topic
@@ -91,13 +91,13 @@ A selection of foundational resources that provide exceptional value:
 - **Tags:** #machine-learning #supervised-learning #science #best-practices
 - **Description:** Explores the role of supervised machine learning in scientific research with philosophical justifications and integration best practices.
 
-#### Algorithms and Optimization
+#### Algorithms and Optimisation
 
 ##### [Essentials of Metaheuristics](https://cs.gmu.edu/~sean/book/metaheuristics/)
 - **Type:** 📕 Book 📚
 - **Level:** 🟡 Intermediate
-- **Tags:** #algorithms #optimization #metaheuristics #stochastic
-- **Description:** Open lecture notes on metaheuristic algorithms, covering stochastic optimization methods intended as alternatives to brute-force search.
+- **Tags:** #algorithms #optimisation #metaheuristics #stochastic
+- **Description:** Open lecture notes on metaheuristic algorithms, covering stochastic optimisation methods intended as alternatives to brute-force search.
 
 ### Large Language Models
 
@@ -206,8 +206,8 @@ A selection of foundational resources that provide exceptional value:
 ##### [GPU MODE](https://www.youtube.com/channel/UCJgIbYl6C5no72a0NUAPcTA)
 - **Type:** 📹 Talk
 - **Level:** 🟡 Intermediate to 🔴 Advanced
-- **Tags:** #gpu-programming #cuda #flash-attention #triton #quantization
-- **Description:** Channel with excellent material on GPU programming, including CUDA kernels, Flash Attention, Triton, and quantization techniques.
+- **Tags:** #gpu-programming #cuda #flash-attention #triton #quantisation
+- **Description:** Channel with excellent material on GPU programming, including CUDA kernels, Flash Attention, Triton, and quantisation techniques.
 
 ## By Format
 
@@ -222,8 +222,8 @@ A selection of foundational resources that provide exceptional value:
 #### [Essentials of Metaheuristics](https://cs.gmu.edu/~sean/book/metaheuristics/)
 - **Type:** 📕 Book 📚
 - **Level:** 🟡 Intermediate
-- **Tags:** #algorithms #optimization #metaheuristics #stochastic
-- **Description:** Open lecture notes on metaheuristic algorithms, covering stochastic optimization methods intended as alternatives to brute-force search.
+- **Tags:** #algorithms #optimisation #metaheuristics #stochastic
+- **Description:** Open lecture notes on metaheuristic algorithms, covering stochastic optimisation methods intended as alternatives to brute-force search.
 
 #### [Ollama in Action](https://leanpub.com/ollama)
 - **Type:** 📕 Book 📚
@@ -330,8 +330,8 @@ A selection of foundational resources that provide exceptional value:
 #### [GPU MODE](https://www.youtube.com/channel/UCJgIbYl6C5no72a0NUAPcTA)
 - **Type:** 📹 Talk
 - **Level:** 🟡 Intermediate to 🔴 Advanced
-- **Tags:** #gpu-programming #cuda #flash-attention #triton #quantization
-- **Description:** Channel with excellent material on GPU programming, including CUDA kernels, Flash Attention, Triton, and quantization techniques.
+- **Tags:** #gpu-programming #cuda #flash-attention #triton #quantisation
+- **Description:** Channel with excellent material on GPU programming, including CUDA kernels, Flash Attention, Triton, and quantisation techniques.
 
 ### Newsletters
 
@@ -339,7 +339,7 @@ A selection of foundational resources that provide exceptional value:
 - **Type:** 📰 Newsletter
 - **Level:** 🟢 Beginner to 🟡 Intermediate
 - **Tags:** #ai-news #trends #research #development
-- **Description:** Daily newsletter summarizing top discussions in AI-focused online communities, covering latest trends, research, and developments.
+- **Description:** Daily newsletter summarising top discussions in AI-focused online communities, covering latest trends, research, and developments.
 
 #### [AI by Hand](https://aibyhand.substack.com/)
 - **Type:** 📰 Newsletter
@@ -353,7 +353,7 @@ A selection of foundational resources that provide exceptional value:
 - **Type:** 🔍 Research
 - **Level:** 🟡 Intermediate to 🔴 Advanced
 - **Tags:** #research-assistant #arxiv #computer-science #trending-papers
-- **Description:** AI research assistant that synthesizes the latest computer science research from arXiv and surfaces trending pre-prints.
+- **Description:** AI research assistant that synthesises the latest computer science research from arXiv and surfaces trending pre-prints.
 
 #### [The 2025 AI Engineer Reading List](https://www.latent.space/p/2025-papers)
 - **Type:** 🔍 Research
@@ -364,7 +364,7 @@ A selection of foundational resources that provide exceptional value:
 #### [Our World in Data](https://ourworldindata.org/)
 - **Type:** 🔍 Research
 - **Level:** 🟢 Beginner to 🟡 Intermediate
-- **Tags:** #data-visualization #global-issues #research #evidence-based
+- **Tags:** #data-visualisation #global-issues #research #evidence-based
 - **Description:** Project from the University of Oxford providing data-driven insights into global issues, valuable for understanding the world's largest problems and potential solutions.
 
 ### Social Media
@@ -385,7 +385,7 @@ A selection of foundational resources that provide exceptional value:
 - **Type:** 👤 Person
 - **Level:** 🟡 Intermediate
 - **Tags:** #data-science #ai-ethics #ai-education #mathematics
-- **Description:** Data scientist, educator, ethics advocate who co-founded fast.ai and directed USF's Center for Applied Data Ethics, recognized as one of Forbes' 20 Incredible Women in AI.
+- **Description:** Data scientist, educator, ethics advocate who co-founded fast.ai and directed USF's Center for Applied Data Ethics, recognised as one of Forbes' 20 Incredible Women in AI.
 
 #### [Andrej Karpathy](https://xcancel.com/karpathy)
 - **Type:** 👤 Person
@@ -408,14 +408,14 @@ A selection of foundational resources that provide exceptional value:
 #### [Michael A. Osborne](https://bsky.app/profile/maosbot.bsky.social/post/3laix6hz42n2m)
 - **Type:** 👤 Person
 - **Level:** 🔴 Advanced
-- **Tags:** #machine-learning #bayesian-optimization #battery-modeling #quantum-devices
-- **Description:** Professor of machine learning focused on Bayesian optimization and applications in battery modeling and quantum devices, creator of Bluesky starter packs for prominent figures.
+- **Tags:** #machine-learning #bayesian-optimisation #battery-modeling #quantum-devices
+- **Description:** Professor of machine learning focused on Bayesian optimisation and applications in battery modeling and quantum devices, creator of Bluesky starter packs for prominent figures.
 
 #### [Christoph Molnar](https://bsky.app/profile/christophmolnar.bsky.social)
 - **Type:** 👤 Person
 - **Level:** 🟡 Intermediate
 - **Tags:** #statistics #ml-interpretability #uncertainty-quantification #mindful-modeler
-- **Description:** Statistician and ML expert specializing in interpretability and uncertainty quantification, author of books on interpretable ML and modeling mindsets.
+- **Description:** Statistician and ML expert specialising in interpretability and uncertainty quantification, author of books on interpretable ML and modeling mindsets.
 
 ## By Expertise Level
 
@@ -488,14 +488,14 @@ A selection of foundational resources that provide exceptional value:
 #### [GPU MODE](https://www.youtube.com/channel/UCJgIbYl6C5no72a0NUAPcTA)
 - **Type:** 📹 Talk
 - **Level:** 🟡 Intermediate to 🔴 Advanced
-- **Tags:** #gpu-programming #cuda #flash-attention #triton #quantization
-- **Description:** Channel with excellent material on GPU programming, including CUDA kernels, Flash Attention, Triton, and quantization techniques.
+- **Tags:** #gpu-programming #cuda #flash-attention #triton #quantisation
+- **Description:** Channel with excellent material on GPU programming, including CUDA kernels, Flash Attention, Triton, and quantisation techniques.
 
 #### [Michael A. Osborne](https://bsky.app/profile/maosbot.bsky.social/post/3laix6hz42n2m)
 - **Type:** 👤 Person
 - **Level:** 🔴 Advanced
-- **Tags:** #machine-learning #bayesian-optimization #battery-modeling #quantum-devices
-- **Description:** Professor of machine learning focused on Bayesian optimization and applications in battery modeling and quantum devices, creator of Bluesky starter packs for prominent figures.
+- **Tags:** #machine-learning #bayesian-optimisation #battery-modeling #quantum-devices
+- **Description:** Professor of machine learning focused on Bayesian optimisation and applications in battery modeling and quantum devices, creator of Bluesky starter packs for prominent figures.
 
 ## Tag Index
 
@@ -513,7 +513,7 @@ A selection of foundational resources that provide exceptional value:
 - **#agentic-workflow**: [Building Effective Agents](#building-effective-agents)
 - **#applied-ai**: [What We've Learned From A Year of Building with LLMs](#what-weve-learned-from-a-year-of-building-with-llms)
 - **#arxiv**: [Emergent Mind](#emergent-mind)
-- **#bayesian-optimization**: [Michael A. Osborne](#michael-a-osborne)
+- **#bayesian-optimisation**: [Michael A. Osborne](#michael-a-osborne)
 - **#battery-modeling**: [Michael A. Osborne](#michael-a-osborne)
 - **#benchmarks**: [The 2025 AI Engineer Reading List](#the-2025-ai-engineer-reading-list)
 - **#best-practices**: [Supervised Machine Learning for Science](#supervised-machine-learning-for-science), [Building LLM Applications](#building-llm-applications)
@@ -528,7 +528,7 @@ A selection of foundational resources that provide exceptional value:
 - **#data-flywheel**: [Data Flywheels for LLM Applications](#data-flywheels-for-llm-applications)
 - **#data-science**: [Jeremy Howard](#jeremy-howard), [Rachel Thomas](#rachel-thomas)
 - **#data-tools**: [Simon Willison](#simon-willison)
-- **#data-visualization**: [Our World in Data](#our-world-in-data)
+- **#data-visualisation**: [Our World in Data](#our-world-in-data)
 - **#datasette**: [Simon Willison](#simon-willison)
 - **#deep-learning**: [Fast.ai's Practical Deep Learning](#fastais-practical-deep-learning), [Jeremy Howard](#jeremy-howard), [Andrej Karpathy](#andrej-karpathy)
 - **#development**: [AI News](#ai-news)
@@ -566,7 +566,7 @@ A selection of foundational resources that provide exceptional value:
 - **#on-premise**: [Ollama in Action](#ollama-in-action)
 - **#open-source**: [Simon Willison](#simon-willison)
 - **#openai**: [Andrej Karpathy](#andrej-karpathy)
-- **#optimization**: [Essentials of Metaheuristics](#essentials-of-metaheuristics)
+- **#optimisation**: [Essentials of Metaheuristics](#essentials-of-metaheuristics)
 - **#papers**: [The 2025 AI Engineer Reading List](#the-2025-ai-engineer-reading-list)
 - **#parsing**: [Every Way To Get Structured Output From LLMs](#every-way-to-get-structured-output-from-llms)
 - **#powerpoint**: [Everything I Know About Life I Learned From PowerPoint](#everything-i-know-about-life-i-learned-from-powerpoint)
@@ -578,7 +578,7 @@ A selection of foundational resources that provide exceptional value:
 - **#prompting**: [The 2025 AI Engineer Reading List](#the-2025-ai-engineer-reading-list)
 - **#public-speaking**: [Doing presentations](#doing-presentations)
 - **#quality-assessment**: [Your AI Product Needs Evals](#your-ai-product-needs-evals)
-- **#quantization**: [GPU MODE](#gpu-mode)
+- **#quantisation**: [GPU MODE](#gpu-mode)
 - **#quantum-devices**: [Michael A. Osborne](#michael-a-osborne)
 - **#rag**: [The 2025 AI Engineer Reading List](#the-2025-ai-engineer-reading-list)
 - **#research**: [AI News](#ai-news), [Emergent Mind](#emergent-mind), [Our World in Data](#our-world-in-data)
