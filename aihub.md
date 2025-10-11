@@ -2,25 +2,24 @@
 
 This document provides a curated collection of high-quality resources for learning about AI, data science, and related topics from respected experts, researchers, and institutions. Resources are organised by topic, format, and expertise level for easy navigation.
 
-📚 indicates an authoritative reference source.
+This document provides a curated list of high-quality sources for learning about AI, data science, and related topics. These sources come from respected experts, researchers, and institutions, making them reliable and informative references. 📚 indicates an authoritative reference source.
 
 ## Table of Contents
 
 - [How to Use This Hub](#how-to-use-this-hub)
 - [Featured Resources](#featured-resources)
 - [By Topic](#by-topic)
-  - [Foundations of AI/ML](#foundations-of-aiml)
+  - [Foundations of AI and ML](#foundations-of-ai-and-ml)
   - [Large Language Models](#large-language-models)
   - [AI Engineering](#ai-engineering)
   - [Data Science](#data-science)
-  - [Ethics & Responsible AI](#ethics--responsible-ai)
-  - [AI Applications](#ai-applications)
+  - [Ethics and Responsible AI](#ethics-and-responsible-ai)
   - [Technical Skills](#technical-skills)
 - [By Format](#by-format)
   - [Books](#books)
   - [Courses](#courses)
   - [Articles](#articles)
-  - [Talks & Presentations](#talks--presentations)
+  - [Talks and Presentations](#talks-and-presentations)
   - [Newsletters](#newsletters)
   - [Research Resources](#research-resources)
   - [Social Media](#social-media)
@@ -47,7 +46,7 @@ Each resource includes standardised metadata:
 
 ## Featured Resources
 
-A selection of foundational resources that provide exceptional value:
+A selection of foundational resources that provide great value:
 
 ### [Fast.ai's Practical Deep Learning](https://course.fast.ai/)
 - **Type:** 🎓 Course 📚
@@ -81,7 +80,7 @@ A selection of foundational resources that provide exceptional value:
 
 ## By Topic
 
-### Foundations of AI/ML
+### Foundations of AI and ML
 
 #### Machine Learning Fundamentals
 
@@ -175,7 +174,7 @@ A selection of foundational resources that provide exceptional value:
 - **Tags:** #ai-engineering #papers #llm #benchmarks #prompting #rag #agents #code-generation
 - **Description:** Curated list of 50 papers/models/blogs across 10 fields in AI Engineering, providing a solid foundation for understanding current research directions.
 
-### Ethics & Responsible AI
+### Ethics and Responsible AI
 
 #### Perspectives from experts in this area include researchers focused on ethical AI development:
 
@@ -307,7 +306,7 @@ A selection of foundational resources that provide exceptional value:
 - **Tags:** #mlops #devops #data-centric #production-systems
 - **Description:** Explains how machine learning operations differ from traditional DevOps due to ML's direct exposure to messy real-world data.
 
-### Talks & Presentations
+### Talks and Presentations
 
 #### [Doing presentations](https://russelldavies.typepad.com/planning/2015/11/doing-presentations.html)
 - **Type:** 📹 Talk

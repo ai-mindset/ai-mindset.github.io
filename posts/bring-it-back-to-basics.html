@@ -24,57 +24,21 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> This article presents a streamlined Python toolchain that reduces
-cognitive load while maintaining the language&#39;s data science capabilities,
-featuring Rust-based tools like uv (package manager) and Ruff
-(linter/formatter), along with pyright for type checking-all configured through
-a single pyproject.toml file and complemented by essential libraries for data
-processing, visualisation, and AI development.</p>
+        <p><strong>TL;DR:</strong> This article presents a streamlined Python toolchain that reduces cognitive load while maintaining the language&#39;s data science capabilities, featuring Rust-based tools like uv (package manager) and Ruff (linter/formatter), along with pyright for type checking-all configured through a single pyproject.toml file and complemented by essential libraries for data processing, visualisation, and AI development.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>Python&#39;s ecosystem for Data Science and AI is unmatched in its depth and
-maturity. Yet, its fragmented tooling landscape often leads to decision
-paralysis and opinions galore: virtualenv or venv? pip or conda? black or
-flake8? These choices, while providing flexibility, can create unnecessary
-cognitive load and often foster dogmatic opinions about &quot;the right way&quot; to do
-things. After exploring alternative stacks, I&#39;m returning to Python. Not least
-because it&#39;s perfect, but because it&#39;s productive. The challenge isn&#39;t Python&#39;s
-capabilities; it&#39;s the abundance and complexity of its tooling. This article
-presents a carefully curated, minimal toolkit that leverages Python&#39;s ecosystem
-while avoiding its common setup pitfalls.</p>
+<p>Python&#39;s ecosystem for Data Science and AI is unmatched in its depth and maturity. Yet, its fragmented tooling landscape often leads to decision paralysis and opinions galore: virtualenv or venv? pip or conda? black or flake8? These choices, while providing flexibility, can create unnecessary cognitive load and often foster dogmatic opinions about &quot;the right way&quot; to do things. After exploring alternative stacks, I&#39;m returning to Python. Not least because it&#39;s perfect, but because it&#39;s productive. The challenge isn&#39;t Python&#39;s capabilities; it&#39;s the abundance and complexity of its tooling. This article presents a carefully curated, minimal toolkit that leverages Python&#39;s ecosystem while avoiding its common setup pitfalls.</p>
 <h2 id="motivation">Motivation</h2>
-<p>The appeal of integrated toolchains like Deno 2.0 is undeniable. Zero setup,
-immediate productivity, and a cohesive development experience. My recent
-exploration of alternative stacks revealed the value of unified tools that just
-work. While JavaScript&#39;s ecosystem for Data Science and AI is growing rapidly,
-it still lacks the depth and maturity of Python&#39;s scientific computing stack.<br>This exploration led to an important realisation: aside from an expansive Data
-and AI ecosystem, Python development can be achieved with a streamlined workflow
-that increases productivity and decreases complexity. Rather than accepting the
-cognitive overhead of multiple competing tools, I decided to create my own
-compact toolchain that meets most Data Science and AI requirements with
-minimalism, simplicity, and clarity in mind. The goal isn&#39;t to prescribe another
-&quot;right way&quot; of doing things, but rather to demonstrate how a carefully chosen
-set of modern tools can create a development experience that rivals the
-integrated approaches of newer platforms while leveraging Python&#39;s mature
-ecosystem.</p>
+<p>The appeal of integrated toolchains like Deno 2.0 is undeniable. Zero setup, immediate productivity, and a cohesive development experience. My recent exploration of alternative stacks revealed the value of unified tools that just work. While JavaScript&#39;s ecosystem for Data Science and AI is growing rapidly, it still lacks the depth and maturity of Python&#39;s scientific computing stack.\ This exploration led to an important realisation: aside from an expansive Data and AI ecosystem, Python development can be achieved with a streamlined workflow that increases productivity and decreases complexity. Rather than accepting the cognitive overhead of multiple competing tools, I decided to create my own compact toolchain that meets most Data Science and AI requirements with minimalism, simplicity, and clarity in mind. The goal isn&#39;t to prescribe another &quot;right way&quot; of doing things, but rather to demonstrate how a carefully chosen set of modern tools can create a development experience that rivals the integrated approaches of newer platforms while leveraging Python&#39;s mature ecosystem.</p>
 <h2 id="my-approach">My Approach</h2>
 <h3 id="local-development">Local Development</h3>
-<p>My toolchain starts with the following foundational choices that eliminate
-common Python setup headaches:</p>
+<p>My toolchain starts with the following foundational choices that eliminate common Python setup headaches:</p>
 <ol start="0">
-<li><p><a href="https://peps.python.org/pep-0008/">PEP8</a>: Let&#39;s start with a style guide, so
-that the team is on the same page</p>
+<li><p><a href="https://peps.python.org/pep-0008/">PEP8</a>: Let&#39;s start with a style guide, so</p>
 </li>
 <li><p><a href="https://docs.astral.sh/uv/">uv</a>: A blazing-fast Python package and project
-manager, written in Rust. It replaces pip, pip-tools, pipx, poetry, pyenv,
-twine, virtualenv, and more, providing:</p>
-<ul>
-<li>Consistent dependency resolution</li>
-<li>Lightning-fast package installations</li>
-<li>Built-in virtual environment management</li>
-<li>Direct integration with <code>pyproject.toml</code></li>
-</ul>
+that the team is on the same page    manager, written in Rust. It replaces pip, pip-tools, pipx, poetry, pyenv,    twine, virtualenv, and more, providing:    - Consistent dependency resolution    - Lightning-fast package installations    - Built-in virtual environment management    - Direct integration with <code>pyproject.toml</code></p>
 </li>
 <li><p><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/"><code>pyproject.toml</code></a>:
 The single source of truth for project configuration. For example:</p>
@@ -99,28 +63,13 @@ The single source of truth for project configuration. For example:</p>
 </code></pre>
 <ol start="3">
 <li><p><a href="https://docs.astral.sh/ruff/">Ruff</a>: A Rust-based tool that combines
-formatting and linting, replacing the need for black, flake8, isort etc.:</p>
-<ul>
-<li>Single-tool code quality enforcement</li>
-<li>Configurable through <code>pyproject.toml</code></li>
-<li>Significantly faster than Python-based alternatives</li>
-</ul>
+formatting and linting, replacing the need for black, flake8, isort etc.:    - Single-tool code quality enforcement    - Configurable through <code>pyproject.toml</code>    - Significantly faster than Python-based alternatives</p>
 </li>
 <li><p><a href="https://github.com/microsoft/pyright">pyright</a>: Static Type Checker for
-Python</p>
-<ul>
-<li>Static type checker</li>
-<li><a href="https://htmlpreview.github.io/?https://github.com/python/typing/blob/main/conformance/results/results.html">Standards</a>
-compliant</li>
-<li><a href="https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file">Configurable</a>
-within <code>pyproject.toml</code></li>
-</ul>
+Python    - Static type checker    - <a href="https://htmlpreview.github.io/?https://github.com/python/typing/blob/main/conformance/results/results.html">Standards</a>      compliant    - <a href="https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file">Configurable</a>      within <code>pyproject.toml</code></p>
 </li>
 <li><p>[iterative refinement]({{ site.baseurl }}{% link
-_posts/2024-11-22-iterative-refinement.md %}): An approach that tightly
-couples (doc)tests with code, ensuring
-<a href="https://www.merriam-webster.com/thesaurus/up-to-dateness">up-to-dateness</a><br><del><a href="https://docs.pytest.org/en/stable/">pytest</a>: Handles testing with minimal
-boilerplate and rich assertions</del></p>
+_posts/2024-11-22-iterative-refinement.md %}): An approach that tightly    couples (doc)tests with code, ensuring    <a href="https://www.merriam-webster.com/thesaurus/up-to-dateness">up-to-dateness</a>\    <del><a href="https://docs.pytest.org/en/stable/">pytest</a>: Handles testing with minimal    boilerplate and rich assertions</del></p>
 </li>
 </ol>
 <h3 id="cross-platform-distribution">Cross-Platform Distribution</h3>
@@ -224,8 +173,7 @@ fig.show()
 </center><br />
 
 <h3 id="ai-engineering">AI Engineering</h3>
-<p>With hybrid solutions becoming more prevalent nowadays, we can use a combination
-of tools.</p>
+<p>With hybrid solutions becoming more prevalent nowadays, we can use a combination of tools.</p>
 <ul>
 <li><a href="https://ollama.com/">Ollama</a>: Local model deployment and inference</li>
 </ul>
@@ -321,38 +269,23 @@ vector storage and graph operations</li>
 
         return list(db.documents.aggregate(pipeline))
 </code></pre>
-<p><em>Update: Looking into <a href="https://weaviate.io/">Weaviate</a> as an all-in-one DB
-solution.</em></p>
-<p>This stack provides everything needed for modern Data Science and AI work while
-maintaining clarity and minimising tool overlap.</p>
+<p><em>Update: Looking into <a href="https://weaviate.io/">Weaviate</a> as an all-in-one DB solution.</em></p>
+<p>This stack provides everything needed for modern Data Science and AI work while maintaining clarity and minimising tool overlap.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>Returning to Python with this minimal, modern toolchain has proven to be a
-pragmatic choice. The combination of uv, Ruff, and Pytest creates a more unified
-development workflow, while retaining access to Python&#39;s mature scientific
-computing ecosystem.</p>
+<p>Returning to Python with this minimal, modern toolchain has proven to be a pragmatic choice. The combination of uv, Ruff, and Pytest creates a more unified development workflow, while retaining access to Python&#39;s mature scientific computing ecosystem.</p>
 <p>Key benefits of this approach:</p>
 <ol>
 <li><strong>Reduced Cognitive Load</strong>: One tool per task eliminates decision fatigue</li>
-<li><strong>Modern Performance</strong>: Rust-based tools (uv, Ruff) provide near-instant
-feedback</li>
+<li><strong>Modern Performance</strong>: Rust-based tools (uv, Ruff) provide near-instant</li>
 <li><strong>Simplified Configuration</strong>: Single <code>pyproject.toml</code> as source of truth</li>
-<li><strong>Production Ready</strong>: Direct path from development to cross-platform
-deployment</li>
+<li><strong>Production Ready</strong>: Direct path from development to cross-platform</li>
 <li><strong>Full Feature Set</strong>: Complete Data Science and AI capabilities without bloat</li>
-<li><strong>Flexible AI Stack</strong>: Seamless integration between local models (Ollama),
-RAG pipelines (LlamaIndex), and vector storage (MongoDB)</li>
+<li><strong>Flexible AI Stack</strong>: Seamless integration between local models (Ollama),</li>
 <li><strong>Production AI</strong>: Easy transition from experimentation to production AI
-systems with consistent tooling</li>
+feedback    deployment    RAG pipelines (LlamaIndex), and vector storage (MongoDB)    systems with consistent tooling</li>
 </ol>
-<p>While Python&#39;s ecosystem will likely remain fragmented, we don&#39;t have to accept
-the complexity. By carefully choosing modern tools that prioritise speed,
-simplicity, and clarity, we can create a development environment that&#39;s both
-powerful and pleasant to use.</p>
-<p>The beauty of this approach lies not in its prescriptiveness, but in its
-principles: <em>minimize tooling</em>, <em>maximise capability</em>, and <em>maintain clarity</em>.
-Whether you adopt this exact stack or use it as inspiration for your own, the
-goal remains the same: bring the focus back to solving problems rather than
-managing tools.</p>
+<p>While Python&#39;s ecosystem will likely remain fragmented, we don&#39;t have to accept the complexity. By carefully choosing modern tools that prioritise speed, simplicity, and clarity, we can create a development environment that&#39;s both powerful and pleasant to use.</p>
+<p>The beauty of this approach lies not in its prescriptiveness, but in its principles: <em>minimize tooling</em>, <em>maximise capability</em>, and <em>maintain clarity</em>. Whether you adopt this exact stack or use it as inspiration for your own, the goal remains the same: bring the focus back to solving problems rather than managing tools.</p>
 
       </div>
     </article>

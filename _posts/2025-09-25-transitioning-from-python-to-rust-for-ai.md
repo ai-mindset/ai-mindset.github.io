@@ -5,22 +5,12 @@ date: 2025-09-25
 tags: [rust, python, ai-engineering, data-science, migration, type-safety, performance, productivity, software-minimalism]
 ---
 
-**TL;DR:** Moving from Python to Rust for AI work requires a phased approach
-focusing on self-contained utilities first, leveraging PyO3 for hybrid
-integration, and adopting a minimal subset of Rust features before expanding.
-This strategy maintains productivity while gradually unlocking Rust's type
-safety, performance, and cross-platform deployment advantages.
+**TL;DR:** Moving from Python to Rust for AI work requires a phased approach focusing on self-contained utilities first, leveraging PyO3 for hybrid integration, and adopting a minimal subset of Rust features before expanding. This strategy maintains productivity while gradually unlocking Rust's type safety, performance, and cross-platform deployment advantages.
 <!--more-->
 
 ## Introduction
 
-After previously discussing the potential of doing AI and Data Science with
-[Deno](https://ai-mindset.github.io/posts/deno.html) or
-[Go](https://ai-mindset.github.io/posts/go-pragmatic-modern-development.html),
-I've found Rust to be a compelling alternative, offering an ecosystem that
-covers my needs, memory safety without garbage collection, and a single-binary
-deployment model.\
-Four Rust libraries, namely
+After previously discussing the potential of doing AI and Data Science with [Deno](https://ai-mindset.github.io/posts/deno.html) or [Go](https://ai-mindset.github.io/posts/go-pragmatic-modern-development.html), I've found Rust to be a compelling alternative, offering an ecosystem that covers my needs, memory safety without garbage collection, and a single-binary deployment model.\ Four Rust libraries, namely
 
 - [Rig](https://rig.rs/) for LLM applications
 - [ndarray](https://docs.rs/ndarray/) for linear algebra
@@ -97,16 +87,8 @@ fn get_user(id: u64) -> Result<User, Error> {
 - Use `clippy` to learn idiomatic Rust: `cargo clippy`
 - Adopt `cargo fmt` for consistent formatting
 
-This approach prioritises practical learning over theoretical completeness,
-allowing you to become productive quickly while gradually adopting Rust's more
-powerful features as needed.
+This approach prioritises practical learning over theoretical completeness, allowing you to become productive quickly while gradually adopting Rust's more powerful features as needed.
 
 ## Conclusion
 
-Migrating from Python to Rust can offer considerable long-term benefits,
-including a cohesite ecosystem, native performance, and streamlined deployment,
-without requiring complete rewrites. Following a gradual migration path,
-leveraging hybrid integration, and deliberately limiting the developer's initial
-exposure to Rust's complexity, one can maintain productivity while acquiring
-experience. This approach can lead to a minimalist software development cycle
-that will result in increasingly robust software over time.
+Migrating from Python to Rust can offer considerable long-term benefits, including a cohesite ecosystem, native performance, and streamlined deployment, without requiring complete rewrites. Following a gradual migration path, leveraging hybrid integration, and deliberately limiting the developer's initial exposure to Rust's complexity, one can maintain productivity while acquiring experience. This approach can lead to a minimalist software development cycle that will result in increasingly robust software over time.

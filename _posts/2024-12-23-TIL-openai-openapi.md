@@ -5,28 +5,16 @@ date: 2024-12-23
 tags: [ai, llm, openai, openapi, spec]
 ---
 
-**TL;DR:** You can easily explore OpenAI's complete API documentation by loading
-their GitHub-hosted OpenAPI YAML file directly into Swagger's web interface.
-This approach lets you interactively examine all endpoints, request/response
-schemas, and test functionality—a valuable reference for anyone building
-services that need to maintain compatibility with OpenAI's API structure.
+**TL;DR:** You can easily explore OpenAI's complete API documentation by loading their GitHub-hosted OpenAPI YAML file directly into Swagger's web interface. This approach lets you interactively examine all endpoints, request/response schemas, and test functionality—a valuable reference for anyone building services that need to maintain compatibility with OpenAI's API structure.
 <!--more-->
 
 ## Introduction
 
-OpenAI maintains a comprehensive
-[OpenAPI specification](https://github.com/openai/openai-openapi/) that
-documents their entire API surface. While browsing through their GitHub
-repository, [Simon Willison](https://simonwillison.net/)[^1] discovered you can
-easily explore this spec using Swagger's web interface.
+OpenAI maintains a comprehensive [OpenAPI specification](https://github.com/openai/openai-openapi/) that documents their entire API surface. While browsing through their GitHub repository, [Simon Willison](https://simonwillison.net/)[^1] discovered you can easily explore this spec using Swagger's web interface.
 
 ## The Discovery
 
-Willison recently highlighted a neat trick: you can browse OpenAI's full API
-documentation by loading their
-[OpenAPI YAML file](https://github.com/openai/openai-openapi/blob/master/openapi.yaml)
-directly into
-[Swagger's web UI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml#/).
+Willison recently highlighted a neat trick: you can browse OpenAI's full API documentation by loading their [OpenAPI YAML file](https://github.com/openai/openai-openapi/blob/master/openapi.yaml) directly into [Swagger's web UI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml#/).
 
 ## Why This Matters
 
@@ -37,14 +25,11 @@ This approach offers several advantages:
 - Built-in testing capability
 - Detailed parameter documentation
 
-For developers working with AI APIs, this provides a valuable reference point -
-especially when building services that need to maintain compatibility with
-OpenAI's API structure.
+For developers working with AI APIs, this provides a valuable reference point - especially when building services that need to maintain compatibility with OpenAI's API structure.
 
 ## Try It Yourself
 
-Visit the [Swagger UI](https://petstore.swagger.io/) and paste this URL:\
-`https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml`
+Visit the [Swagger UI](https://petstore.swagger.io/) and paste this URL:\ `https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml`
 
 ---
 
