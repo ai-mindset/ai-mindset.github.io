@@ -5,28 +5,16 @@ date: 2024-11-14
 tags: [slow-down, advantage]
 ---
 
-**TL;DR:** Patrick Lencioni's "The Advantage" argues that organisational
-health-built through leadership teams founded on trust, clear communication, and
-aligned values-is the single greatest competitive advantage companies can
-achieve, outweighing traditional "smart" business strategies and metrics for
-sustainable long-term success.
+**TL;DR:** Patrick Lencioni's "The Advantage" argues that organisational health-built through leadership teams founded on trust, clear communication, and aligned values-is the single greatest competitive advantage companies can achieve, outweighing traditional "smart" business strategies and metrics for sustainable long-term success.
 <!--more-->
 
 ## Introduction
 
-Recently I listened to a
-[successful company's CEO interview](https://saasscalingsecrets.buzzsprout.com/2172375/episodes/15926541-why-slower-growth-could-be-your-fast-track-to-success-with-roan-lavery-ceo-of-freeagent),
-where he explained how growing sustainably contributed to the company's success.
-The CEO said that their growth strategy was inspired by
-[Patrick Lencioni](https://www.tablegroup.com/pat/)'s book
-[The Advantage](https://www.tablegroup.com/product/the-advantage/). I found the
-book's premise very interesting, hence I'll attempt to summarise important
-points as a note to self.
+Recently I listened to a [successful company's CEO interview](https://saasscalingsecrets.buzzsprout.com/2172375/episodes/15926541-why-slower-growth-could-be-your-fast-track-to-success-with-roan-lavery-ceo-of-freeagent), where he explained how growing sustainably contributed to the company's success. The CEO said that their growth strategy was inspired by [Patrick Lencioni](https://www.tablegroup.com/pat/)'s book [The Advantage](https://www.tablegroup.com/product/the-advantage/). I found the book's premise very interesting, hence I'll attempt to summarise important points as a note to self.
 
 ## Central Thesis
 
-Organisational health is the _single greatest competitive advantage_ a company
-can achieve, yet it's often overlooked in favour of "smart" business decisions.
+Organisational health is the _single greatest competitive advantage_ a company can achieve, yet it's often overlooked in favour of "smart" business decisions.
 
 ## Key components of organisational health
 
@@ -67,8 +55,4 @@ can achieve, yet it's often overlooked in favour of "smart" business decisions.
 
 ## Conclusion
 
-The book's fundamental message is that creating a healthy organisation through
-strong leadership, clear communication, and aligned values is more important
-than traditional business metrics for long-term success. It's not about being
-the "smartest" in the market, but about creating the healthiest internal
-environment.
+The book's fundamental message is that creating a healthy organisation through strong leadership, clear communication, and aligned values is more important than traditional business metrics for long-term success. It's not about being the "smartest" in the market, but about creating the healthiest internal environment.

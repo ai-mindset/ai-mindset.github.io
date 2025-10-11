@@ -5,26 +5,12 @@ date: 2024-11-27
 tags: [modelling-mindsets, data-science, ai, data-modeling, neural-network, best-practices, statistics, machine-learning, decision-making]
 ---
 
-**TL;DR:** This comprehensive guide explores ten distinct modelling approaches
-across statistics, machine learning, and causal inference-advocating for
-"T-shaped" expertise where practitioners develop deep knowledge in one or two
-mindsets aligned with their domain needs whilst maintaining sufficient breadth
-to recognise when different approaches are required, with specific
-recommendations for research, business, and product development contexts.
+**TL;DR:** This comprehensive guide explores ten distinct modelling approaches across statistics, machine learning, and causal inference-advocating for "T-shaped" expertise where practitioners develop deep knowledge in one or two mindsets aligned with their domain needs whilst maintaining sufficient breadth to recognise when different approaches are required, with specific recommendations for research, business, and product development contexts.
 <!--more-->
 
 ## Introduction
 
-As a practitioner looking to work effectively with real-world data and generate
-meaningful insights, I face a crucial decision: which modelling approaches
-should I invest my time and energy in learning? After discovering Christoph
-Molnar's
-[Modeling Mindsets](https://christophmolnar.com/books/modeling-mindsets/), I
-realised this isn't about picking the "best" approach. It's about becoming what
-he calls a "T-shaped modeller".\
-The concept is elegantly simple: rather than trying to master every possible
-approach (impossible) or limiting myself to just one (ineffective), I should aim
-to develop:
+As a practitioner looking to work effectively with real-world data and generate meaningful insights, I face a crucial decision: which modelling approaches should I invest my time and energy in learning? After discovering Christoph Molnar's [Modeling Mindsets](https://christophmolnar.com/books/modeling-mindsets/), I realised this isn't about picking the "best" approach. It's about becoming what he calls a "T-shaped modeller".\ The concept is elegantly simple: rather than trying to master every possible approach (impossible) or limiting myself to just one (ineffective), I should aim to develop:
 
 - Deep expertise in one or two mindsets that align with my goals and problems
 - Working knowledge of other approaches to recognise when my primary tools
@@ -33,37 +19,24 @@ to develop:
 This systematic exploration serves two purposes:
 
 1. To understand the landscape: What are the main modelling mindsets available
-   today? What are their core premises, strengths, and limitations?
 2. To make an informed choice: Which mindset(s) should I focus on mastering,
-   given my goals and constraints?
+   today? What are their core premises, strengths, and limitations?    given my goals and constraints?
 
-Each mindset represents a different way of approaching problems through data.
-From the probability-focused world of statistical modelling to the interactive
-realm of reinforcement learning, from the causality-oriented approach to the
-pattern-finding nature of unsupervised learning, each offers unique tools and
-perspectives.\
-By examining these mindsets systematically, I aim to make an informed decision
-about where to focus my learning efforts while maintaining enough breadth to
-recognise when I should switch approaches. This isn't just about theoretical
-understanding, it's about practical effectiveness in solving real-world
-problems.
+Each mindset represents a different way of approaching problems through data. From the probability-focused world of statistical modelling to the interactive realm of reinforcement learning, from the causality-oriented approach to the pattern-finding nature of unsupervised learning, each offers unique tools and perspectives.\ By examining these mindsets systematically, I aim to make an informed decision about where to focus my learning efforts while maintaining enough breadth to recognise when I should switch approaches. This isn't just about theoretical understanding, it's about practical effectiveness in solving real-world problems.
 
-Let's explore each mindset in turn, focusing on their fundamental premises, key
-strengths, and limitations to guide this decision.
+Let's explore each mindset in turn, focusing on their fundamental premises, key strengths, and limitations to guide this decision.
 
 ## Statistical Modelling: The Foundation of Data-Driven Inference
 
-_This mindset sees the world through probability distributions. At its core,
-it's about modelling how data is generated and making inferences under
-uncertainty._
+_This mindset sees the world through probability distributions. At its core, it's about modelling how data is generated and making inferences under uncertainty._
 
 Key Aspects:
 
 - Everything has a distribution, from dice rolls to customer behaviours
 - Models encode assumptions about how data is generated
 - Models are evaluated by both checking if their assumptions make sense and
-  measuring how well they match the data
 - Uses same data for fitting and evaluation, unlike machine learning approaches
+  measuring how well they match the data
 
 Primary Strengths:
 
@@ -79,17 +52,11 @@ Notable Limitations:
 3. Good model fit doesn't guarantee good predictions
 4. Less automatable than modern machine learning approaches
 
-This mindset serves as the foundation for three important sub-approaches:
-Frequentism, Bayesianism, and Likelihoodism, each with its own interpretation of
-probability and evidence. For someone starting in data science, understanding
-statistical modelling provides crucial groundwork for understanding both
-traditional statistics and modern machine learning approaches.
+This mindset serves as the foundation for three important sub-approaches: Frequentism, Bayesianism, and Likelihoodism, each with its own interpretation of probability and evidence. For someone starting in data science, understanding statistical modelling provides crucial groundwork for understanding both traditional statistics and modern machine learning approaches.
 
 ## Frequentism: Making Decisions Through Repeated Experiments
 
-_Frequentism views probability as long-run frequency and assumes that parameters
-in the world are fixed but unknown. It's the dominant approach in many
-scientific fields, particularly in medicine and psychology._
+_Frequentism views probability as long-run frequency and assumes that parameters in the world are fixed but unknown. It's the dominant approach in many scientific fields, particularly in medicine and psychology._
 
 Key Aspects:
 
@@ -112,16 +79,11 @@ Notable Limitations:
 3. Interpretation can be counterintuitive, especially for confidence intervals
 4. Results depend on the experimental design, not just the data
 
-For practitioners, Frequentism offers a well-established framework with clear
-decision rules and strong scientific acceptance. However, its limitations in
-handling uncertainty and tendency toward oversimplification have led to growing
-interest in alternative approaches like Bayesian inference.
+For practitioners, Frequentism offers a well-established framework with clear decision rules and strong scientific acceptance. However, its limitations in handling uncertainty and tendency toward oversimplification have led to growing interest in alternative approaches like Bayesian inference.
 
 ## Bayesianism: Learning Through Updated Beliefs
 
-_Bayesianism stands out by treating parameters themselves as random variables
-with distributions, fundamentally different from Frequentism's fixed-parameter
-view. It focuses on updating beliefs about parameters as new data arrives._
+_Bayesianism stands out by treating parameters themselves as random variables with distributions, fundamentally different from Frequentism's fixed-parameter view. It focuses on updating beliefs about parameters as new data arrives._
 
 Key Aspects:
 
@@ -144,16 +106,11 @@ Notable Limitations:
 3. Mathematically more demanding than frequentist approaches
 4. Can seem like overkill for simple decisions
 
-Bayesianism offers a more complete and intuitive framework for handling
-uncertainty, but requires more computational resources and mathematical
-sophistication. It's particularly valuable when prior knowledge is important or
-when understanding full uncertainty is crucial.
+Bayesianism offers a more complete and intuitive framework for handling uncertainty, but requires more computational resources and mathematical sophistication. It's particularly valuable when prior knowledge is important or when understanding full uncertainty is crucial.
 
 ## Likelihoodism: Pure Evidence Through Likelihood
 
-_Likelihoodism attempts to reform statistical inference by focusing solely on
-likelihood as evidence, avoiding both Frequentism's imagined experiments and
-Bayesianism's subjective priors._
+_Likelihoodism attempts to reform statistical inference by focusing solely on likelihood as evidence, avoiding both Frequentism's imagined experiments and Bayesianism's subjective priors._
 
 Key Aspects:
 
@@ -176,16 +133,11 @@ Notable Limitations:
 3. Lacks tools for expressing beliefs or uncertainty
 4. Less practical than other statistical approaches
 
-Likelihoodism offers interesting theoretical insights but may be less
-immediately useful than Frequentist or Bayesian approaches. It's more valuable
-for understanding the foundations of statistical inference than for day-to-day
-data analysis.
+Likelihoodism offers interesting theoretical insights but may be less immediately useful than Frequentist or Bayesian approaches. It's more valuable for understanding the foundations of statistical inference than for day-to-day data analysis.
 
 ## Causal Inference: From Association to Causation
 
-_Causal inference moves beyond correlation to understand what actually causes
-observed effects, providing a framework for analysing interventions and their
-impacts._
+_Causal inference moves beyond correlation to understand what actually causes observed effects, providing a framework for analysing interventions and their impacts._
 
 Key Aspects:
 
@@ -208,16 +160,11 @@ Notable Limitations:
 3. Multiple competing frameworks can confuse newcomers
 4. May sacrifice predictive performance for causal understanding
 
-For practitioners, causal inference is essential when decisions about
-interventions are needed, though it requires careful consideration of
-assumptions and domain knowledge. It's particularly valuable in fields like
-medicine, policy-making, and business strategy where understanding cause-effect
-relationships is crucial.
+For practitioners, causal inference is essential when decisions about interventions are needed, though it requires careful consideration of assumptions and domain knowledge. It's particularly valuable in fields like medicine, policy-making, and business strategy where understanding cause-effect relationships is crucial.
 
 ## Machine Learning: Algorithms Learning from Data
 
-_Machine learning approaches problems by having computers learn algorithms from
-data, focusing on task performance rather than theoretical underpinning._
+_Machine learning approaches problems by having computers learn algorithms from data, focusing on task performance rather than theoretical underpinning._
 
 Key Aspects:
 
@@ -240,14 +187,11 @@ Notable Limitations:
 3. Models often prioritise performance over interpretability
 4. Usually requires substantial data and computation
 
-For practitioners, machine learning offers powerful tools for automation and
-prediction, particularly valuable in industry settings. It's especially useful
-when theoretical understanding is less important than practical performance.
+For practitioners, machine learning offers powerful tools for automation and prediction, particularly valuable in industry settings. It's especially useful when theoretical understanding is less important than practical performance.
 
 ### Supervised Learning: The Art of Prediction
 
-_Supervised learning frames everything as a prediction problem, using labelled
-data to learn mappings from inputs to outputs._
+_Supervised learning frames everything as a prediction problem, using labelled data to learn mappings from inputs to outputs._
 
 Key Aspects:
 
@@ -271,14 +215,11 @@ Notable Limitations:
 4. May miss causal relationships
 5. Can fail in unexpected ways when patterns change
 
-For practitioners, supervised learning excels in prediction tasks where good
-labelled data exists and interpretability isn't crucial. It's particularly
-valuable in industry settings for automation and decision support.
+For practitioners, supervised learning excels in prediction tasks where good labelled data exists and interpretability isn't crucial. It's particularly valuable in industry settings for automation and decision support.
 
 ### Unsupervised Learning: Discovering Hidden Patterns
 
-_This mindset focuses on finding inherent structures in data without labelled
-outcomes, making it ideal for exploratory analysis and pattern discovery._
+_This mindset focuses on finding inherent structures in data without labelled outcomes, making it ideal for exploratory analysis and pattern discovery._
 
 Key Aspects:
 
@@ -301,14 +242,11 @@ Notable Limitations:
 3. Suffers from curse of dimensionality[^2]
 4. No guarantee of finding meaningful patterns
 
-For practitioners, unsupervised learning is valuable for initial data
-exploration and when labelled data isn't available. It's particularly useful in
-customer segmentation, anomaly detection, and dimension reduction.
+For practitioners, unsupervised learning is valuable for initial data exploration and when labelled data isn't available. It's particularly useful in customer segmentation, anomaly detection, and dimension reduction.
 
 ### Reinforcement Learning: Learning Through Interaction
 
-_This mindset models an agent interacting with an environment, making decisions
-and learning from rewards._
+_This mindset models an agent interacting with an environment, making decisions and learning from rewards._
 
 Key Aspects:
 
@@ -333,14 +271,11 @@ Notable Limitations:
 4. Requires careful reward design
 5. Complex implementation choices
 
-For practitioners, reinforcement learning is valuable for problems involving
-sequential decisions or control, particularly in robotics, game playing, and
-resource management.
+For practitioners, reinforcement learning is valuable for problems involving sequential decisions or control, particularly in robotics, game playing, and resource management.
 
 ### Deep Learning: End-to-End Neural Networks
 
-_This mindset approaches problems through deep neural networks, letting the
-model learn both features and relationships._
+_This mindset approaches problems through deep neural networks, letting the model learn both features and relationships._
 
 Key Aspects:
 
@@ -365,17 +300,13 @@ Notable Limitations:
 4. Hard to train and tune effectively
 5. Results can be difficult to interpret
 
-For practitioners, deep learning is essential for complex data types but may be
-overkill for simpler problems. Most valuable in computer vision, natural
-language processing, and other complex pattern recognition tasks.
+For practitioners, deep learning is essential for complex data types but may be overkill for simpler problems. Most valuable in computer vision, natural language processing, and other complex pattern recognition tasks.
 
 ## Conclusion
 
 _**aka Choosing Your Modelling Path**_
 
-For developing T-shaped expertise in modelling, the practitioner's choice should
-align with their primary domain while maintaining broader awareness. Here's how
-to approach this decision:
+For developing T-shaped expertise in modelling, the practitioner's choice should align with their primary domain while maintaining broader awareness. Here's how to approach this decision:
 
 - _Scientific Research_ demands Statistical Modelling for its rigorous
   uncertainty quantification and established peer review frameworks.
@@ -395,8 +326,7 @@ to approach this decision:
 For practical applications, certain combinations prove particularly effective:
 
 - _Industry/Business_ combines Supervised Learning with Unsupervised Learning,
-  enabling accurate predictions while discovering valuable patterns in customer
-  data.
+  enabling accurate predictions while discovering valuable patterns in customer   data.
 
 - _Research_ pairs Statistical Modelling with Machine Learning, balancing
   academic rigour with modern capabilities.
@@ -407,10 +337,7 @@ For practical applications, certain combinations prove particularly effective:
 - _Medical Diagnostics_ unites Supervised Learning with Statistical Modelling,
   crucial for evidence-based decisions with proper uncertainty quantification.
 
-The choice should be based on the practitioner's domain requirements,
-computational resources, interpretability needs, and available time for mastery.
-_Remember:_ Mastery of one mindset with broad awareness surpasses superficial
-knowledge of many.
+The choice should be based on the practitioner's domain requirements, computational resources, interpretability needs, and available time for mastery. _Remember:_ Mastery of one mindset with broad awareness surpasses superficial knowledge of many.
 
 ---
 
