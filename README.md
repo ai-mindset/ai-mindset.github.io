@@ -7,7 +7,7 @@ A minimalist, lightweight blog implementation, designed to be:
 - Easy to build locally
 - Aesthetic and clean
 
-[![pages-build-deployment](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages/pages-build-deployment)
+[![pages-build-deployment](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages/pages-build-deployment)  [![Build Content](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/build-on-push.yml/badge.svg)](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/build-on-push.yml)
 
 ## Features
 
