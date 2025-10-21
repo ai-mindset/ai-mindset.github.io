@@ -17,7 +17,7 @@ A RAG system's effectiveness depends largely on its retrieval strategy - how it 
 
 The quality of retrieved information directly impacts the factual accuracy of the LLM's responses.
 
-![Visual comparison of Sparse, Dense, and Hybrid RAG approaches](/images/Hybrid RAG.png)
+![Visual comparison of Sparse, Dense, and Hybrid RAG approaches](/images/Hybrid%20RAG.png)
 
 Let's explore the three major retrieval strategies:
 
