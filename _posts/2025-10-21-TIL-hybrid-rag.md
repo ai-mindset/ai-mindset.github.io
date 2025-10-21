@@ -10,6 +10,8 @@ tags: [til, rag, llm, retrieval, ai]
 
 ## RAG Retrieval: The Key to Accurate AI Responses
 
+This post is based on a concise and informative video titled [Hybrid RAG](https://yewtu.be/watch?v=r0Dciuq0knU) from the IBM Technology YouTube channel. The video provides an excellent short introduction to what Hybrid RAG is.
+
 A RAG system's effectiveness depends largely on its retrieval strategy - how it fetches information to feed into an LLM. The process works by:
 1. Processing a user query
 2. Retrieving relevant chunks from a knowledge base
@@ -93,3 +95,5 @@ If sparse retrieval is fast but literal, and dense retrieval is contextually awa
 Retrieval strategies have evolved from simple keyword matching to sophisticated semantic understanding, with hybrid approaches now delivering superior results.
 
 For RAG system developers today, hybrid retrieval offers the most balanced approach - combining the precision of keyword search with the contextual understanding of vector embeddings in a unified solution.
+
+This TIL is based on the excellent explanation in IBM Technology's video on Hybrid RAG, that's worth your time in my opinion.
