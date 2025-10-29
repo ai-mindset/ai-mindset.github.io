@@ -26,7 +26,6 @@ The [Julia](https://julialang.org/) programming language has caught my eye since
 
 ### Deno (TypeScript)
 
-<<<<<<< HEAD
 ## What About Python Cross-Compilation?
 
 **How hard could it be?** 🤔\
