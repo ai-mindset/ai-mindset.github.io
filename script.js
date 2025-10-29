@@ -324,7 +324,7 @@ function renderTimeline(posts) {
       const isActive = yearLabel.classList.contains("active");
 
       // Clear all active states
-      document.querySelectorAll(".year-label, .month-dot").forEach((el) => {
+      document.querySelectorAll(".year-label, .month-letter").forEach((el) => {
         el.classList.remove("active");
       });
 
