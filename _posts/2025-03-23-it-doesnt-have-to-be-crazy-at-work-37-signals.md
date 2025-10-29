@@ -5,7 +5,7 @@ date: 2025-03-23
 tags: [37signals, advantage, best-practices, decision-making, business-value, slow-down, onboarding, remote-work, productivity, company-culture]
 ---
 
-**TL;DR:** Basecamp founders reject the "crazy busy" workplace culture, advocating instead for a "calm company" approach that emphasises reasonable 40-hour workweeks, focused attention, asynchronous communication, and flexible project scope - proving that sustainable work practices can yield successful businesses without sacrificing employee wellbeing.
+**TL;DR:** Basecamp founders reject the "crazy busy" workplace culture, advocating instead for a "calm company" approach that emphasises reasonable 40-hour workweeks, focused attention, asynchronous communication, and flexible project scope- proving that sustainable work practices can yield successful businesses without sacrificing employee wellbeing.
 <!--more-->
 
 ## Introduction

@@ -24,10 +24,10 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Claude Skills extend capabilities through modular instruction sets that load dynamically when needed. Using YAML frontmatter summaries (~dozens of tokens), skills keep full implementations ready for relevant tasks while minimizing overhead - enabling everything from document creation to financial analysis without performance degradation.</p>
+        <p><strong>TL;DR:</strong> Claude Skills extend capabilities through modular instruction sets that load dynamically when needed. Using YAML frontmatter summaries (~dozens of tokens), skills keep full implementations ready for relevant tasks while minimizing overhead- enabling everything from document creation to financial analysis without performance degradation.</p>
 <!--more-->
 
-<h2 id="what-are-claude-skills">What Are Claude Skills?</h2>
+<h2>What Are Claude Skills?</h2>
 <p><a href="https://www.anthropic.com/news/skills">Anthropic&#39;s Claude Skills</a> are folders containing instructions, scripts, and resources that extend the AI&#39;s capabilities for specialized tasks. Claude scans available skills and loads only necessary components when relevant to the current task.</p>
 <p>Key characteristics:</p>
 <ul>
@@ -36,25 +36,22 @@
 <li><strong>Efficient</strong>: Uses YAML frontmatter summaries consuming only dozens of tokens</li>
 <li><strong>Powerful</strong>: Includes executable code for reliable task execution</li>
 </ul>
-<h2 id="technical-implementation">Technical Implementation</h2>
+<h2>Technical Implementation</h2>
 <p>The efficiency of Claude Skills comes from their implementation:</p>
 <ol>
-<li>Skills use YAML frontmatter summaries in Markdown files <a href="https://simonwillison.net/2025/Oct/16/claude-skills/">as described by Simon Willison</a><ul>
-<li><em>YAML frontmatter</em>: Structured metadata (delimited by triple dashes <code>---</code>) at the beginning of Markdown files containing required <code>name</code> and <code>description</code> fields that Claude scans at startup to determine which skills are relevant to a task</li>
-</ul>
-</li>
+<li>Skills use YAML frontmatter summaries in Markdown files <a href="https://simonwillison.net/2025/Oct/16/claude-skills/">as described by Simon Willison</a><br>-<em>YAML frontmatter</em>: Structured metadata (delimited by triple dashes <code>---</code>) at the beginning of Markdown files containing required <code>name</code> and <code>description</code> fields that Claude scans at startup to determine which skills are relevant to a task</li>
 <li>This approach dramatically reduces token overhead compared to alternatives like Model Context Protocol, which &quot;<em>famously consumes tens of thousands of tokens</em>&quot; per Willison</li>
 <li>Code execution occurs in a secure environment</li>
 </ol>
 <p>Willison&#39;s analysis of a Slack GIF creator skill demonstrates that skills can import helper modules (like <code>GIFBuilder</code>), use validation functions (e.g., <code>check_slack_size()</code>), and save outputs to designated locations such as <code>/mnt/user-data/outputs/</code>.</p>
-<h2 id="how-to-use-skills">How to Use Skills</h2>
+<h2>How to Use Skills</h2>
 <p>Currently available to Pro, Max, Team, and Enterprise users on Claude.ai:</p>
 <ol>
 <li><strong>Pre-built Skills</strong>: Document creation (Excel, PowerPoint, Word, PDFs)</li>
 <li><strong>Custom Skills</strong>: Developers can create these via the <code>/v1/skills</code> API endpoint</li>
 </ol>
-<p>Using a skill requires simply asking Claude to perform a task in the skill&#39;s domain - Claude identifies and loads the relevant skill automatically.</p>
-<h2 id="applications">Applications</h2>
+<p>Using a skill requires simply asking Claude to perform a task in the skill&#39;s domain- Claude identifies and loads the relevant skill automatically.</p>
+<h2>Applications</h2>
 <p>Real-world applications include:</p>
 <ol>
 <li><strong>Document Processing</strong>: Create and modify Excel spreadsheets, PowerPoint presentations, PDFs</li>
