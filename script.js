@@ -1,3 +1,8 @@
+// Utility function to escape regex special characters
+function escapeRegex(str) {
+  return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
+
 // Check for dark mode preference
 function setThemePreference() {
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -79,10 +84,10 @@ function renderPosts(posts, filterTag = null, searchTerm = null, isExactMatch = 
 
       if (isExactMatch) {
         // Simple highlighting for exact phrase matches
-        searchRegex = new RegExp(searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'gi');
+        searchRegex = new RegExp(escapeRegex(searchTerm), 'gi');
       } else {
         // Try to highlight whole words first, fall back to any match
-        searchRegex = new RegExp(`\\b${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b|${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}`, 'gi');
+        searchRegex = new RegExp(`\\b${escapeRegex(searchTerm)}\\b|${escapeRegex(searchTerm)}`, 'gi');
       }
 
       if (searchRegex.test(titleText)) {
@@ -108,10 +113,10 @@ function renderPosts(posts, filterTag = null, searchTerm = null, isExactMatch = 
 
         if (isExactMatch) {
           // For exact phrase matches
-          searchRegex = new RegExp(searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'gi');
+          searchRegex = new RegExp(escapeRegex(searchTerm), 'gi');
         } else {
           // For word boundary matches
-          searchRegex = new RegExp(`\\b${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b|${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}`, 'gi');
+          searchRegex = new RegExp(`\\b${escapeRegex(searchTerm)}\\b|${escapeRegex(searchTerm)}`, 'gi');
         }
 
         if (searchRegex.test(tag)) {
@@ -148,10 +153,10 @@ function renderPosts(posts, filterTag = null, searchTerm = null, isExactMatch = 
 
           if (isExactMatch) {
             // For exact phrase matches
-            searchRegex = new RegExp(searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'gi');
+            searchRegex = new RegExp(escapeRegex(searchTerm), 'gi');
           } else {
             // For word boundary matches
-            searchRegex = new RegExp(`\\b${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'gi');
+            searchRegex = new RegExp(`\\b${escapeRegex(searchTerm)}\\b`, 'gi');
           }
 
           const highlightedTldr = "<strong>TL;DR:</strong>" + tldrContent.replace(searchRegex, match => `<span class="highlight-match">${match}</span>`);
@@ -171,9 +176,9 @@ function renderPosts(posts, filterTag = null, searchTerm = null, isExactMatch = 
         // Create regex for finding matches
         let searchRegex;
         if (isExactMatch) {
-          searchRegex = new RegExp(`\\b${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'i');
+          searchRegex = new RegExp(`\\b${escapeRegex(searchTerm)}\\b`, 'i');
         } else {
-          searchRegex = new RegExp(`\\b${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'i');
+          searchRegex = new RegExp(`\\b${escapeRegex(searchTerm)}\\b`, 'i');
         }
 
         // Find the position of the first match in content
@@ -195,9 +200,9 @@ function renderPosts(posts, filterTag = null, searchTerm = null, isExactMatch = 
           // Create highlight regex for display
           let highlightRegex;
           if (isExactMatch) {
-            highlightRegex = new RegExp(searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'gi');
+            highlightRegex = new RegExp(escapeRegex(searchTerm), 'gi');
           } else {
-            highlightRegex = new RegExp(`\\b${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'gi');
+            highlightRegex = new RegExp(`\\b${escapeRegex(searchTerm)}\\b`, 'gi');
           }
 
           // Highlight the search term in the excerpt
@@ -433,7 +438,7 @@ function setupSearch(posts) {
       // For exact matches (with quotes)
       if (isExactMatch) {
         // Create word boundary regex pattern for the exact term
-        const exactWordPattern = new RegExp(`\\b${exactSearchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'i');
+        const exactWordPattern = new RegExp(`\\b${escapeRegex(exactSearchTerm)}\\b`, 'i');
 
         // Check for word boundary matches in each area
         const titleMatch = exactWordPattern.test(post.title.toLowerCase());
@@ -443,7 +448,7 @@ function setupSearch(posts) {
         return titleMatch || tagMatch || contentMatch;
       } else {
         // For regular searches (without quotes), use word boundary
-        const wordPattern = new RegExp(`\\b${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'i');
+        const wordPattern = new RegExp(`\\b${escapeRegex(searchTerm)}\\b`, 'i');
 
         // Check for whole word matches
         const titleMatch = wordPattern.test(post.title.toLowerCase());
