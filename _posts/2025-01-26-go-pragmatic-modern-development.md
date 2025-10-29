@@ -5,7 +5,7 @@ date: 2025-01-26
 tags: [ai, go, llm, minimal, machine-learning, toolchain, zero-config, code-quality, cross-platform, production]
 ---
 
-**TL;DR:** Go offers a refreshingly minimal approach to AI and ML development with its concise 47-page specification, zero-configuration toolchain, and functional equivalents to key Python ML libraries - providing explicit error handling, enforced code consistency, and cross-platform capabilities whilst reducing cognitive overhead and team friction in production environments.
+**TL;DR:** Go offers a refreshingly minimal approach to AI and ML development with its concise 47-page specification, zero-configuration toolchain, and functional equivalents to key Python ML libraries- providing explicit error handling, enforced code consistency, and cross-platform capabilities whilst reducing cognitive overhead and team friction in production environments.
 <!--more-->
 
 ## Introduction

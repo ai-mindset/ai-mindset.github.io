@@ -5,7 +5,7 @@ date: 2024-11-11
 tags: [python, github-actions, ci-cd, cross-platform, deno, typescript]
 ---
 
-**TL;DR:** Creating cross-platform Python application packages requires CI/CD solutions like GitHub Actions since tools like PyInstaller can't natively build for multiple platforms; alternatives like Julia and Elixir offer promising but still-maturing packaging options, while Deno emerges as an appealing alternative with its straightforward cross-platform packaging capabilities, lightweight footprint, and growing data ecosystem - though Python remains dominant for data analysis despite its packaging limitations.
+**TL;DR:** Creating cross-platform Python application packages requires CI/CD solutions like GitHub Actions since tools like PyInstaller can't natively build for multiple platforms; alternatives like Julia and Elixir offer promising but still-maturing packaging options, while Deno emerges as an appealing alternative with its straightforward cross-platform packaging capabilities, lightweight footprint, and growing data ecosystem- though Python remains dominant for data analysis despite its packaging limitations.
 <!--more-->
 
 ## Introduction

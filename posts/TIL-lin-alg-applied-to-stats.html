@@ -24,12 +24,12 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Linear regression can be elegantly solved using the matrix equation β = (X^TX)^(-1)X^Ty, which mathematically guarantees minimum squared error by accounting for feature correlations - though real-world applications often favour gradient descent due to the direct solution&#39;s computational complexity, numerical instability with correlated features, and memory constraints.</p>
+        <p><strong>TL;DR:</strong> Linear regression can be elegantly solved using the matrix equation β = (X^TX)^(-1)X^Ty, which mathematically guarantees minimum squared error by accounting for feature correlations- though real-world applications often favour gradient descent due to the direct solution&#39;s computational complexity, numerical instability with correlated features, and memory constraints.</p>
 <!--more-->
 
-<h2 id="introduction">Introduction</h2>
+<h2>Introduction</h2>
 <p>This morning <a href="https://xcancel.com/andrew_n_carr/status/1876855682529480844">an interesting interview question</a> motivated me to remind myself how it&#39;s possible to solve linear regression through matrix algebra. Below is what I learned:</p>
-<h2 id="the-theory-an-elegant-mathematical-solution">The Theory: An Elegant Mathematical Solution</h2>
+<h2>The Theory: An Elegant Mathematical Solution</h2>
 <p>Linear regression finds the best-fit line through data points by finding optimal coefficients ($\beta$) that minimise squared errors. The equation $\beta = (X^TX)^{-1}X^Ty$ elegantly solves this optimisation problem using matrix algebra.</p>
 <p>The solution involves these key components:</p>
 <ol>
@@ -40,61 +40,30 @@
 </ol>
 <p>Here&#39;s how this elegant solution works:</p>
 <ol>
-<li><p>$X^TX$ creates a $(p \times p)$ matrix of feature products:</p>
-<ul>
-<li>Each element $(i,j)$ contains the dot product between features $i$ and $j$    - When features are centred, these products are proportional to covariances[^1]    - When features are also standardised, it yields correlations scaled by $n$</li>
-</ul>
+<li><p>$X^TX$ creates a $(p \times p)$ matrix of feature products:<br>-Each element $(i,j)$ contains the dot product between features $i$ and $j$    -When features are centred, these products are proportional to covariances[^1]    -When features are also standardised, it yields correlations scaled by $n$</p>
 </li>
-<li><p>$(X^TX)^{-1}$ computes the inverse of this matrix:</p>
-<ul>
-<li>Compensates for feature correlations in coefficient calculations[^2]    - Required for solving the normal equations $X^TX\beta = X^Ty$    - Exists only when no feature is a linear combination of others</li>
-</ul>
+<li><p>$(X^TX)^{-1}$ computes the inverse of this matrix:<br>-Compensates for feature correlations in coefficient calculations[^2]    -Required for solving the normal equations $X^TX\beta = X^Ty$    -Exists only when no feature is a linear combination of others</p>
 </li>
-<li><p>$X^Ty$ creates a $(p \times 1)$ vector of feature-target products:</p>
-<ul>
-<li>Each element $i$ contains the dot product of feature $i$ with target $y$    - Represents raw feature-target relationships before adjustment    - When centred, proportional to feature-target covariances[^3]</li>
-</ul>
+<li><p>$X^Ty$ creates a $(p \times 1)$ vector of feature-target products:<br>-Each element $i$ contains the dot product of feature $i$ with target $y$    -Represents raw feature-target relationships before adjustment    -When centred, proportional to feature-target covariances[^3]</p>
 </li>
-<li><p>Final multiplication $(X^TX)^{-1}X^Ty$:</p>
-<ul>
-<li>Solves the normal equations $X^TX\beta = X^Ty$    - Accounts for inter-feature correlations in determining coefficients    - Mathematically guarantees minimum squared error</li>
-</ul>
+<li><p>Final multiplication $(X^TX)^{-1}X^Ty$:<br>-Solves the normal equations $X^TX\beta = X^Ty$    -Accounts for inter-feature correlations in determining coefficients    -Mathematically guarantees minimum squared error</p>
 </li>
 </ol>
 <p>For more information, check Hastie, Tibshirani &amp; Friedman&#39;s &quot;<a href="https://archive.org/details/elementsofstatis0000hast">Elements of Statistical Learning</a>&quot; seminal book.</p>
-<h2 id="the-real-world-catch">The Real-World Catch</h2>
+<h2>The Real-World Catch</h2>
 <p>While mathematically elegant, this direct solution has practical limitations in real-world applications:</p>
 <ol>
 <li><em>Computational Complexity</em>: Computing $(X^TX)^{-1}$ requires $\Omicron(n^3)$</li>
 <li><em>Numerical Instability</em>: When features are highly correlated (like monthly</li>
-<li><em>Memory Constraints</em>: Large datasets require holding the entire $X^TX$ matrix
-operations, becoming prohibitively expensive for large feature sets. This is    why gradient descent, with its $\Omicron(n^2)$ per-iteration complexity,    often proves more practical.    and annual income), $X^TX$ becomes nearly singular[^3]. Even small rounding    errors in the computation of its inverse can lead to large errors in $\beta$.    In extreme cases, when features are perfectly correlated, the inverse doesn&#39;t    exist at all. Gradient descent avoids this matrix inversion entirely.    in memory, while gradient descent can work with mini-batches, making it more    memory-efficient.</li>
+<li><em>Memory Constraints</em>: Large datasets require holding the entire $X^TX$ matrix<br>operations, becoming prohibitively expensive for large feature sets. This is    why gradient descent, with its $\Omicron(n^2)$ per-iteration complexity,    often proves more practical.    and annual income), $X^TX$ becomes nearly singular[^3]. Even small rounding    errors in the computation of its inverse can lead to large errors in $\beta$.    In extreme cases, when features are perfectly correlated, the inverse doesn&#39;t    exist at all. Gradient descent avoids this matrix inversion entirely.    in memory, while gradient descent can work with mini-batches, making it more    memory-efficient.</li>
 </ol>
-<h2 id="conclusion">Conclusion</h2>
+<h2>Conclusion</h2>
 <p>While this equation brilliantly demonstrates the power of linear algebra in statistics, real-world machine learning often favours gradient descent&#39;s iterative approach. Think of it as choosing between a perfect GPS route through heavy traffic (direct solution) versus taking smaller, adaptable steps through clear side streets (gradient descent). Both reach the same destination, but the practical path often wins in real-world conditions.</p>
 <hr>
-<p>[^1]: When features are centred (mean = 0), each product becomes $n$ times the
-    covariance. This means $X^TX$ captures how features vary together, which is
-    crucial because correlated features can lead to unstable coefficients if not
-    accounted for. The relationship between $X^TX$ and covariance comes from the
-    definition of sample covariance:
-    $cov(X_i, X_j) = \frac{1}{n-1}\sum_{k=1}^n (x_{ki} - \bar{x_i})(x_{kj} - \bar{x_j})$.
-    When data is centred, this simplifies to $\frac{1}{n-1}(X^TX)_{ij}$.
-    $\frac{X^TX}{n-1}$ returns the sample covariance matrix. This matters
-    because a) when features are uncentred, $(X^TX)$ gives the sum of products,
-    b) when centred $\frac{X^TX}{n-1}$ gives covariances, c) when also
-    standardised (std = 1), $\frac{X^TX}{n-1}$ gives correlations.</p>
-<p>[^2]: Adjusts coefficient estimates to account for shared information between
-    features. For example, if height and weight are correlated, we need to
-    determine each variable&#39;s unique contribution to the prediction, not their
-    overlapping effect.</p>
-<p>[^3]: When centred, each element becomes $n$ times the covariance between a
-    feature and the target. This reveals how each feature individually relates
-    to $y$ before accounting for other features&#39; effects, providing a starting
-    point for determining final coefficients.</p>
-<p>[^3]: A matrix is singular (or non-invertible) when its determinant is zero. In
-    practical terms, this means one or more columns can be expressed as linear
-    combinations of other columns.</p>
+<p>[^1]: When features are centred (mean = 0), each product becomes $n$ times the<br>    covariance. This means $X^TX$ captures how features vary together, which is<br>    crucial because correlated features can lead to unstable coefficients if not<br>    accounted for. The relationship between $X^TX$ and covariance comes from the<br>    definition of sample covariance:<br>    $cov(X_i, X_j) = \frac{1}{n-1}\sum_{k=1}^n (x_{ki}- \bar{x_i})(x_{kj}- \bar{x_j})$.<br>    When data is centred, this simplifies to $\frac{1}{n-1}(X^TX)_{ij}$.<br>    $\frac{X^TX}{n-1}$ returns the sample covariance matrix. This matters<br>    because a) when features are uncentred, $(X^TX)$ gives the sum of products,<br>    b) when centred $\frac{X^TX}{n-1}$ gives covariances, c) when also<br>    standardised (std = 1), $\frac{X^TX}{n-1}$ gives correlations.</p>
+<p>[^2]: Adjusts coefficient estimates to account for shared information between<br>    features. For example, if height and weight are correlated, we need to<br>    determine each variable&#39;s unique contribution to the prediction, not their<br>    overlapping effect.</p>
+<p>[^3]: When centred, each element becomes $n$ times the covariance between a<br>    feature and the target. This reveals how each feature individually relates<br>    to $y$ before accounting for other features&#39; effects, providing a starting<br>    point for determining final coefficients.</p>
+<p>[^3]: A matrix is singular (or non-invertible) when its determinant is zero. In<br>    practical terms, this means one or more columns can be expressed as linear<br>    combinations of other columns.</p>
 
       </div>
     </article>
