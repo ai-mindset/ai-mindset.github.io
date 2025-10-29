@@ -88,3 +88,4 @@ Your post content here...
 ## Deployment
 
 Simply push the repository to GitHub Pages or any static hosting service.
+
