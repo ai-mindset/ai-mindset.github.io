@@ -4,7 +4,7 @@ layout: default
 
 # About
 
-Hi there 👋! I'm a minimalist AI Engineer, inspired by 🤓 the [fast.ai](https://www.fast.ai/) / [answer.ai](https://www.answer.ai/) way.
+Hi there 👋! I'm a minimalist AI Engineer[^1], inspired by the [fast.ai](https://www.fast.ai/) / [answer.ai](https://www.answer.ai/) way 🤓.
 With AI's vast landscape, I embrace 📖 [Just-in-Time learning](https://xcancel.com/radekosmulski/status/1828564396265926967).
 
 - 🔭 Proponent of [simple, modern toolchains](https://ai-mindset.github.io/bring-it-back-to-basics/), and lightweight toolstacks such as [TypeScript with Deno](https://ai-mindset.github.io/deno/) or [Rust](https://ai-mindset.github.io/posts/transitioning-from-python-to-rust-for-ai.html).
@@ -12,3 +12,6 @@ With AI's vast landscape, I embrace 📖 [Just-in-Time learning](https://xcancel
 - 📖 Avidly tracking tech trends via [curated sources](https://ai-mindset.github.io/aihub/)
 
 Always eager to learn and connect, thanks for visiting 🙏!
+
+---
+[^1]: _'Software engineering' was an aspiration, not real [traditional] engineering_ according to [Alan Kay](https://youtu.be/QboI_1WJUlM?si=yX33iDrnuQZ4JB4Y&t=323), who referenced the "[Garmish conference (1968)](https://en.wikipedia.org/wiki/NATO_Software_Engineering_Conferences)" as the original source of the term
