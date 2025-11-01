@@ -5,7 +5,8 @@ date: 2024-11-14
 tags: [onboarding, best-practices, productivity, company-culture, decision-making, talent, learning, efficiency]
 ---
 
-**TL;DR:** Effective onboarding programmes dramatically reduce the productivity gap for new hires by applying evidence-based learning principles: breaking skills into manageable components, providing structured learning paths, targeting 80% proficiency before moving on, defining minimum productive competency, using checklists with frequent feedback, and focusing on mechanical competency - all based on how human memory and learning actually work, transforming the costly standard approach where developers take months to become fully productive.
+**TL;DR:** Effective onboarding programmes dramatically reduce the productivity gap for new hires by applying evidence-based learning principles: breaking skills into manageable components, providing structured learning paths, targeting 80% proficiency before moving on, defining minimum productive competency, using checklists with frequent feedback, and focusing on mechanical competency- all based on how human memory and learning actually work, transforming the costly standard approach where developers take months to become fully productive.
+
 <!--more-->
 
 ## Introduction
@@ -14,7 +15,8 @@ I recently watched a lively presentation titled [opinionated onboarding](https:/
 
 ## The Problem
 
-New employees face an overwhelming cognitive burden as they simultaneously navigate multiple learning curves: mastering the tech stack, deciphering an unfamiliar codebase, adapting to team workflows, understanding the business domain, and learning organisational structures. Many companies worsen this situation through ineffective approaches, either expecting staff to self-direct their learning with vague instructions like "go learn X and tell us when you're done", or by immediately assigning them tickets without proper context or support. This inefficiency comes at a significant cost though. According to the presenter, the average software developer staying at a company for only 20 months, taking 6 months to become productive means losing nearly a third of their effective tenure[^1]. Rather than fixing their onboarding processes, many companies respond by exclusively hiring senior professionals who can "hit the ground running" - an approach that not only limits their talent pool but proves unrealistic even for experienced hires.
+New employees face an overwhelming cognitive burden as they simultaneously navigate multiple learning curves: mastering the tech stack, deciphering an unfamiliar codebase, adapting to team workflows, understanding the business domain, and learning organisational structures. Many companies worsen this situation through ineffective approaches, either expecting staff to self-direct their learning with vague instructions like "go learn X and tell us when you're done", or by immediately assigning them tickets without proper context or support. This inefficiency comes at a significant cost though. According to the presenter, the average software developer staying at a company for only 20 months, taking 6 months to become productive means losing nearly a third of their effective tenure[^1]. Rather than fixing their onboarding processes, many companies respond by exclusively hiring senior professionals who can "hit the ground running"- an approach that not only limits their talent pool but proves unrealistic even for experienced hires.
+
 
 ## Effective On-boarding Strategies
 
@@ -23,6 +25,7 @@ According to the presenter, research and experience show that effective onboardi
 1. Focus on building specific capabilities rather than general "understanding"
 2. Account for cognitive limitations:
    - People can only hold ~4 concepts in working memory    - New concepts take more mental space than familiar ones    - Skills must be practiced close to when they're learned
+
 
 ### Best Practices
 
@@ -34,7 +37,8 @@ These principles translate into concrete best practices that any organisation ca
 - **Define minimum productive competency for the role**. Not every skill needs
 - **Use checklists and frequent practice with feedback**. Clear checkpoints
 - **Focus on mechanical competency to reduce cognitive load**. When basic
-  example, rather than asking someone to "learn LiveView"[^2] break it down into   specific tasks like creating forms, handling events, or managing state   When new hires must decide what to learn next, they waste valuable mental   capacity on planning rather than learning. A clear, predefined path eliminates   this overhead   ensures sufficient mastery while avoiding diminishing returns from pursuing   perfection   to be mastered immediately - identify what's truly needed for day-one   productivity and focus there first   provide motivation and progress tracking, while regular feedback prevents   learners from developing incorrect habits   operations become automatic, developers can focus their mental energy on   solving more complex problems
+  example, rather than asking someone to "learn LiveView"[^2] break it down into   specific tasks like creating forms, handling events, or managing state   When new hires must decide what to learn next, they waste valuable mental   capacity on planning rather than learning. A clear, predefined path eliminates   this overhead   ensures sufficient mastery while avoiding diminishing returns from pursuing   perfection   to be mastered immediately- identify what's truly needed for day-one   productivity and focus there first   provide motivation and progress tracking, while regular feedback prevents   learners from developing incorrect habits   operations become automatic, developers can focus their mental energy on   solving more complex problems
+
 
 ## Conclusion
 

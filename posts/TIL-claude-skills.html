@@ -24,7 +24,7 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Claude Skills extend capabilities through modular instruction sets that load dynamically when needed. Using YAML frontmatter summaries (~dozens of tokens), skills keep full implementations ready for relevant tasks while minimizing overhead - enabling everything from document creation to financial analysis without performance degradation.</p>
+        <p><strong>TL;DR:</strong> Claude Skills extend capabilities through modular instruction sets that load dynamically when needed. Using YAML frontmatter summaries (~dozens of tokens), skills keep full implementations ready for relevant tasks while minimizing overhead- enabling everything from document creation to financial analysis without performance degradation.</p>
 <!--more-->
 
 <h2 id="what-are-claude-skills">What Are Claude Skills?</h2>
@@ -39,12 +39,15 @@
 <h2 id="technical-implementation">Technical Implementation</h2>
 <p>The efficiency of Claude Skills comes from their implementation:</p>
 <ol>
-<li>Skills use YAML frontmatter summaries in Markdown files <a href="https://simonwillison.net/2025/Oct/16/claude-skills/">as described by Simon Willison</a><ul>
+<li><p>Skills use YAML frontmatter summaries in Markdown files <a href="https://simonwillison.net/2025/Oct/16/claude-skills/">as described by Simon Willison</a></p>
+<ul>
 <li><em>YAML frontmatter</em>: Structured metadata (delimited by triple dashes <code>---</code>) at the beginning of Markdown files containing required <code>name</code> and <code>description</code> fields that Claude scans at startup to determine which skills are relevant to a task</li>
 </ul>
 </li>
-<li>This approach dramatically reduces token overhead compared to alternatives like Model Context Protocol, which &quot;<em>famously consumes tens of thousands of tokens</em>&quot; per Willison</li>
-<li>Code execution occurs in a secure environment</li>
+<li><p>This approach dramatically reduces token overhead compared to alternatives like Model Context Protocol, which &quot;<em>famously consumes tens of thousands of tokens</em>&quot; per Willison</p>
+</li>
+<li><p>Code execution occurs in a secure environment</p>
+</li>
 </ol>
 <p>Willison&#39;s analysis of a Slack GIF creator skill demonstrates that skills can import helper modules (like <code>GIFBuilder</code>), use validation functions (e.g., <code>check_slack_size()</code>), and save outputs to designated locations such as <code>/mnt/user-data/outputs/</code>.</p>
 <h2 id="how-to-use-skills">How to Use Skills</h2>
@@ -53,7 +56,7 @@
 <li><strong>Pre-built Skills</strong>: Document creation (Excel, PowerPoint, Word, PDFs)</li>
 <li><strong>Custom Skills</strong>: Developers can create these via the <code>/v1/skills</code> API endpoint</li>
 </ol>
-<p>Using a skill requires simply asking Claude to perform a task in the skill&#39;s domain - Claude identifies and loads the relevant skill automatically.</p>
+<p>Using a skill requires simply asking Claude to perform a task in the skill&#39;s domain- Claude identifies and loads the relevant skill automatically.</p>
 <h2 id="applications">Applications</h2>
 <p>Real-world applications include:</p>
 <ol>

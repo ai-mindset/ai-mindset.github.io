@@ -24,12 +24,12 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Retrieval Augmented Generation (RAG) uses three main retrieval strategies: (1) Sparse retrieval (50 years old) relies on keyword matching via TF-IDF/BM25 - excellent for exact matches but poor with synonyms; (2) Dense retrieval (5-10 years old) uses vector embeddings to capture semantic meaning - better for natural language but misses rare terms; (3) Hybrid retrieval (2-3 years old) combines both approaches with fusion algorithms to merge results. Hybrid retrieval is now the gold standard, balancing precision, recall, and processing speed for modern RAG systems.</p>
+        <p><strong>TL;DR:</strong> Retrieval Augmented Generation (RAG) uses three main retrieval strategies: (1) Sparse retrieval (50 years old) relies on keyword matching via TF-IDF/BM25- excellent for exact matches but poor with synonyms; (2) Dense retrieval (5-10 years old) uses vector embeddings to capture semantic meaning- better for natural language but misses rare terms; (3) Hybrid retrieval (2-3 years old) combines both approaches with fusion algorithms to merge results. Hybrid retrieval is now the gold standard, balancing precision, recall, and processing speed for modern RAG systems.</p>
 <!--more-->
 
 <h2 id="rag-retrieval-the-key-to-accurate-ai-responses">RAG Retrieval: The Key to Accurate AI Responses</h2>
 <p>This post is based on a concise and informative video titled <a href="https://yewtu.be/watch?v=r0Dciuq0knU">Hybrid RAG</a> from the IBM Technology YouTube channel. The video provides an excellent short introduction to what Hybrid RAG is.</p>
-<p>A RAG system&#39;s effectiveness depends largely on its retrieval strategy - how it fetches information to feed into an LLM. The process works by:</p>
+<p>A RAG system&#39;s effectiveness depends largely on its retrieval strategy- how it fetches information to feed into an LLM. The process works by:</p>
 <ol>
 <li>Processing a user query</li>
 <li>Retrieving relevant chunks from a knowledge base</li>
@@ -54,7 +54,7 @@
 <li>Limited contextual understanding</li>
 <li>Struggles with conceptual queries</li>
 </ul>
-<p><strong>Best uses</strong>: Scenarios requiring exact wording - short queries, code search, log analysis, legal clauses.</p>
+<p><strong>Best uses</strong>: Scenarios requiring exact wording- short queries, code search, log analysis, legal clauses.</p>
 <p><strong>Implementations</strong>: Elasticsearch, Apache Lucene, Milvus</p>
 <h2 id="dense-retrieval-the-semantic-workhorse-5-10-years-old">Dense Retrieval: The Semantic Workhorse (5-10 years old)</h2>
 <p><strong>How it works</strong>: Maps queries and documents into vector space using embeddings (often called &quot;vector search&quot;), finding results based on semantic similarity.</p>
@@ -100,7 +100,7 @@
 </ol>
 <h2 id="conclusion">Conclusion</h2>
 <p>Retrieval strategies have evolved from simple keyword matching to sophisticated semantic understanding, with hybrid approaches now delivering superior results.</p>
-<p>For RAG system developers today, hybrid retrieval offers the most balanced approach - combining the precision of keyword search with the contextual understanding of vector embeddings in a unified solution.</p>
+<p>For RAG system developers today, hybrid retrieval offers the most balanced approach- combining the precision of keyword search with the contextual understanding of vector embeddings in a unified solution.</p>
 <p>This TIL is based on the excellent explanation in IBM Technology&#39;s video on Hybrid RAG, that&#39;s worth your time in my opinion.</p>
 
       </div>

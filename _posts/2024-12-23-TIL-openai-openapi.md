@@ -25,7 +25,7 @@ This approach offers several advantages:
 - Built-in testing capability
 - Detailed parameter documentation
 
-For developers working with AI APIs, this provides a valuable reference point - especially when building services that need to maintain compatibility with OpenAI's API structure.
+For developers working with AI APIs, this provides a valuable reference point- especially when building services that need to maintain compatibility with OpenAI's API structure.
 
 ## Try It Yourself
 

@@ -45,9 +45,9 @@ Husain's most striking observation is that the process of developing evaluation 
 The Critique Shadowing methodology succeeds by prioritising expert knowledge and systematic data collection over premature automation. For teams building LLM applications, this approach offers a clear path to reliable evaluation systems while simultaneously deepening their understanding of their product and users.\ LLM evaluation is an active area of interest and research both in academia and industry. Here is a short list of resources to look into:
 
 - [IBM LLM Evaluation](https://www.ibm.com/think/topics/llm-evaluation)
-- [Mistral AI - Evaluation](https://docs.mistral.ai/guides/evaluation/)
+- [Mistral AI- Evaluation](https://docs.mistral.ai/guides/evaluation/)
 - [Mistral Evals](https://github.com/mistralai/mistral-evals)
-- [Anthropic - Using the Evaluation Tool](https://docs.anthropic.com/en/docs/test-and-evaluate/eval-tool)
+- [Anthropic- Using the Evaluation Tool](https://docs.anthropic.com/en/docs/test-and-evaluate/eval-tool)
 - [Top 5 Open-Source LLM Evaluation Frameworks in 2024](https://dev.to/guybuildingai/-top-5-open-source-llm-evaluation-frameworks-in-2024-98m)
 
 ---

@@ -24,7 +24,7 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Fast.ai&#39;s fasttransform library makes machine learning data pipelines reversible by pairing each transformation with its inverse, enabling visualisation of transformed data for debugging and utilising multiple dispatch to handle different data types intelligently - crucial for understanding model behaviour and identifying spurious correlations.</p>
+        <p><strong>TL;DR:</strong> Fast.ai&#39;s fasttransform library makes machine learning data pipelines reversible by pairing each transformation with its inverse, enabling visualisation of transformed data for debugging and utilising multiple dispatch to handle different data types intelligently- crucial for understanding model behaviour and identifying spurious correlations.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
@@ -101,11 +101,8 @@ transforms_ft = Pipeline([
 <h2 id="conclusion">Conclusion</h2>
 <p>fasttransform represents a significant step forward in making machine learning workflows more intuitive and debugging more accessible. By making transformations reversible through paired encode/decode methods and leveraging multiple dispatch to handle different data types intelligently, it solves two fundamental problems in data processing pipelines: the inability to easily reverse transformations to inspect data, and the need for separate transformation pipelines for different types of data.\ The ability to easily visualise transformed data isn&#39;t just convenient -it&#39;s essential for understanding model behaviour and catching issues like the wolf/husky example, where models learn spurious correlations rather than intended features.\ As machine learning systems grow more complex, tools like fasttransform that improve transparency and the ability to debug become increasingly valuable. Whether working with images, text, time series, or other data types, being able to see what a model sees provides critical insights that might otherwise be missed.\ Returning to our wolf/husky example, the ability to easily visualise transformed data allows researchers to immediately identify that their model is learning to detect snow backgrounds rather than animal features -a crucial insight for building more robust models.\ Those interested in trying fasttransform can install it with <code>pip install fasttransform</code> and check out the <a href="https://github.com/AnswerDotAI/fasttransform">official fasttransform documentation</a> for more examples and detailed API references. The library offers these capabilities with minimal performance overhead, as the paired transformation approach adds negligible computational cost while providing significant benefits for debugging and understanding model behaviour.</p>
 <hr>
-<p>[^1]: Rens Dimmendaal, Hamel Husain, &amp; Jeremy Howard.
-    &quot;<a href="https://www.fast.ai/posts/2025-02-20-fasttransform.html">fasttransform: Reversible Pipelines Made Simple</a>&quot;
-    fast.ai blog, February 20, 2025.</p>
-<p>[^2]: &quot;<a href="https://docs.julialang.org/en/v1/manual/methods/">Methods · The Julia Language</a>&quot;
-    Julia Documentation, docs.julialang.org.</p>
+<p>[^1]: Rens Dimmendaal, Hamel Husain, &amp; Jeremy Howard.<br>    &quot;<a href="https://www.fast.ai/posts/2025-02-20-fasttransform.html">fasttransform: Reversible Pipelines Made Simple</a>&quot;<br>    fast.ai blog, February 20, 2025.</p>
+<p>[^2]: &quot;<a href="https://docs.julialang.org/en/v1/manual/methods/">Methods · The Julia Language</a>&quot;<br>    Julia Documentation, docs.julialang.org.</p>
 
       </div>
     </article>

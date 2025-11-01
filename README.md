@@ -22,20 +22,14 @@ A minimalist, lightweight blog implementation, designed to be:
 
 ### Prerequisites
 
-- Node.js (v14+)
-
-### Installation
-
-```bash
-npm install
-```
+- [Deno](https://deno.land/) (v2.0+)
 
 ### Development
 
 To build the blog and serve it locally:
 
 ```bash
-npm run dev
+deno task dev
 ```
 
 This will:
@@ -49,7 +43,15 @@ This will:
 To just build the blog without serving:
 
 ```bash
-npm run build
+deno task build
+```
+
+### Serving
+
+To just serve the blog without rebuilding:
+
+```bash
+deno task serve
 ```
 
 ### Adding New Posts
@@ -69,13 +71,15 @@ tags: [tag1, tag2, tag3]
 Your post content here...
 ```
 
-3. Run `npm run build` to generate the HTML files
+3. Run `deno task build` to generate the HTML files
 
 ## Structure
 
 - `_posts/`: Markdown content files
 - `posts/`: Generated HTML posts
-- `build.js`: Build script to convert markdown to HTML
+- `build.ts`: Deno build script to convert markdown to HTML
+- `serve.ts`: Deno server script for local development
+- `deno.json`: Deno configuration and task definitions
 - `style.css`: All styles for the blog
 - `script.js`: JavaScript for tag filtering and theme toggle
 - `index.html`: Main page listing all posts

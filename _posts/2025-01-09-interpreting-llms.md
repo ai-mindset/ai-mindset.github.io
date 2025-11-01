@@ -5,7 +5,8 @@ date: 2025-01-09
 tags: [ai, llm, machine-learning, neural-network, model-governance, interpretability]
 ---
 
-**TL;DR:** LLMs present unique interpretability challenges due to neurons exhibiting polysemanticity - responding to multiple unrelated concepts through superposition - which sparse autoencoders help address by mapping neuron combinations to specific concepts, enhancing our ability to understand, control, and improve these increasingly influential AI systems.
+**TL;DR:** LLMs present unique interpretability challenges due to neurons exhibiting polysemanticity- responding to multiple unrelated concepts through superposition- which sparse autoencoders help address by mapping neuron combinations to specific concepts, enhancing our ability to understand, control, and improve these increasingly influential AI systems.
+
 <!--more-->
 
 ## Introduction

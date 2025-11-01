@@ -31,8 +31,7 @@
 <p>Supervised learning has achieved remarkable successes in areas ranging from computer vision to genomics. However, as Andrew Ng points out in his <a href="https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf">CS294A lecture notes</a>, it faces a fundamental limitation: the need for manually engineered features. While researchers have spent years crafting specialised features for vision, audio, and text processing, this approach neither scales nor generalises well. Sparse autoencoders offer an elegant solution to this challenge by automatically learning features from unlabelled data. These neural networks are distinguished by two key characteristics:</p>
 <ol>
 <li>They attempt to reconstruct their input, forcing them to capture essential</li>
-<li>They employ a sparsity constraint that mimics biological neural systems,
-data patterns    where neurons fire infrequently and selectively</li>
+<li>They employ a sparsity constraint that mimics biological neural systems,<br>data patterns    where neurons fire infrequently and selectively</li>
 </ol>
 <p>While simple implementations may not outperform hand-engineered features in specific domains like computer vision, their strength lies in their generality and biological plausibility. The sparse coding principle has proven effective across diverse domains including audio, text, and visual processing.\ The mathematical framework combines reconstruction error, regularisation, and sparsity penalties to learn efficient, interpretable representations. This approach not only advances machine learning capabilities but also provides insights into how biological neural networks might learn and process information. This overview examines the mathematical foundations, practical implementation, and emergent properties of sparse autoencoders, following the framework presented in Stanford&#39;s CS294A course notes.</p>
 <h2 id="sparse-autoencoders">Sparse Autoencoders</h2>
@@ -62,8 +61,7 @@ data patterns    where neurons fire infrequently and selectively</li>
 <p>$     \hat{\rho}<em>j = \frac{1}{m}\sum</em>{i=1}^m[a_j^{(2)}(x^{(i)})]     $</p>
 <p>Key points:    - $a_j^{(2)}(x^{(i)})$ is hidden unit $j<!-- POST_CONTENT will be inserted here -->#39;s activation for input $x^{(i)}$    - With sigmoid activation:      - Values near 1 mean &quot;active&quot; or &quot;firing&quot;      - Values near 0 mean &quot;inactive&quot;    - We constrain $\hat{\rho}_j \approx \rho$ where $\rho$ is small (typically      0.05)    - This enforces selective firing: each neuron responds strongly to specific      input patterns</p>
 </li>
-<li><p><strong>Sparsity Penalty</strong> (using
-<a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>):</p>
+<li><p><strong>Sparsity Penalty</strong> (using<br><a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>):</p>
 <p>The sparsity penalty uses KL divergence to enforce    $\hat{\rho}_j \approx \rho$    :</p>
 <p>$     \sum_{j=1}^{s_2}\rho\log\frac{\rho}{\hat{\rho}_j} + (1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j}     $</p>
 <p>Properties of this penalty:    - Minimised (zero) when $\hat{\rho}_j = \rho$    - Monotonically increases as $\hat{\rho}_j$ deviates from $\rho$    - Becomes infinite as $\hat{\rho}_j$ approaches 0 or 1</p>
@@ -107,8 +105,7 @@ data patterns    where neurons fire infrequently and selectively</li>
 <ul>
 <li>Edge and feature detectors emerging naturally from visual data</li>
 <li>Interpretable representations comparable to biological neural coding</li>
-<li>Robust feature learning even with
-<a href="https://en.wikipedia.org/wiki/Overcompleteness">overcomplete</a> hidden layers</li>
+<li>Robust feature learning even with<br><a href="https://en.wikipedia.org/wiki/Overcompleteness">overcomplete</a> hidden layers</li>
 </ul>
 <p>The practical value of sparse autoencoders extends beyond their theoretical elegance -they provide a foundation for understanding how neural networks can learn meaningful data representations without supervision. Their success in learning biologically plausible features validates both their design principles and their potential for advanced machine learning applications. Their main limitation lies in hyperparameter sensitivity, particularly to the sparsity target ρ and weight β, requiring careful tuning for optimal performance.</p>
 
