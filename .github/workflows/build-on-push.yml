@@ -29,10 +29,10 @@ jobs:
         with:
           deno-version: v2.1.x
 
-      # Optional: Regenerate lockfile if needed (uncomment to use)
+      # Regenerate lockfile to ensure dependencies are up to date
       # Note: Deno 2.1+ automatically updates deno.lock when installing dependencies
-      # - name: Regenerate lockfile
-      #   run: deno install build.ts
+      - name: Regenerate lockfile
+        run: deno install build.ts
 
       - name: Build site
         run: deno task build
