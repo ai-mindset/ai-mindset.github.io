@@ -25,9 +25,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Deno
-        uses: denoland/setup-deno@v2
+        uses: denoland/setup-deno@v1
         with:
-          deno-version: v2.0.x
+          deno-version: v2.x
+
+      # Optional: Regenerate lockfile if needed (uncomment to use)
+      # - name: Regenerate lockfile
+      #   run: deno cache --lock=deno.lock --lock-write build.ts
 
       - name: Build site
         run: deno task build
