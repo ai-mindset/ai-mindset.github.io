@@ -28,6 +28,7 @@ Issue: Responses degrade over long conversations as models revert to mediocre tr
 
 Issue: Hallucinations and outdated information from lossy compression of training data Solution: "Jeremy RAG"- manually curating relevant context rather than relying on automated retrieval systems Tools like [contextkit](https://github.com/AnswerDotAI/contextkit) enable inclusion of specific documentation, followed by verification that the LLM correctly interprets the provided context
 
+
 ## Application to Modern AI Systems
 
 The methodology remains relevant for reasoning models like Claude Code or OpenAI's Deep Research. The primary challenge isn't that models cannot answer questions, but rather that users often don't know which questions to ask initially.

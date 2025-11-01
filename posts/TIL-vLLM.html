@@ -27,9 +27,9 @@
         <p><strong>TL;DR:</strong> vLLM revolutionises LLM deployment through its PagedAttention algorithm, which applies virtual memory principles to key-value caches, enabling more efficient memory management and significantly improving throughput for resource-constrained environments whilst supporting popular open-source models.</p>
 <!--more-->
 
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>As a Data Scientist / AI Engineer exploring local-first solutions[^1][^2], deploying Large Language Models (LLMs) presents significant resource management challenges. vLLM emerges as a breakthrough solution that fundamentally reimagines how we deploy and utilise these resource-intensive models[^4].</p>
-<h2>What Is vLLM?</h2>
+<h2 id="what-is-vllm">What Is vLLM?</h2>
 <p>vLLM is an open-source serving engine that optimises LLM deployment through virtualisation techniques[^4]. At its core, vLLM introduces PagedAttention, a novel attention algorithm that improves memory utilisation through paged memory management[^3]. Similar to how operating systems manage virtual memory, PagedAttention segments the key-value memory into non-continuous pages, enabling more efficient memory usage and request handling.</p>
 <p>Key features[^4]:</p>
 <ul>
@@ -37,7 +37,7 @@
 <li>Continuous batching for request handling</li>
 <li>Support for popular open-source models (Llama, Mistral, Falcon)</li>
 </ul>
-<h2>Implementation</h2>
+<h2 id="implementation">Implementation</h2>
 <p>Here&#39;s a simple example of using vLLM:</p>
 <pre><code class="language-python">from vllm import LLM, SamplingParams
 
@@ -53,19 +53,31 @@ sampling_params = SamplingParams(
 # Generate text
 outputs = llm.generate([&quot;Your prompt goes here&quot;], sampling_params)
 </code></pre>
-<h2>Applications</h2>
+<h2 id="applications">Applications</h2>
 <p>According to industry analysis[^4], vLLM&#39;s applications span multiple domains:</p>
 <ol>
-<li><p>Natural Language Processing<br>-Enhances chatbots and sentiment analysis    -Improves language translation services</p>
+<li><p>Natural Language Processing</p>
+<ul>
+<li>Enhances chatbots and sentiment analysis    - Improves language translation services</li>
+</ul>
 </li>
-<li><p>Healthcare<br>-Enables secure patient data analysis    -Assists in medical diagnostics</p>
+<li><p>Healthcare</p>
+<ul>
+<li>Enables secure patient data analysis    - Assists in medical diagnostics</li>
+</ul>
 </li>
-<li><p>Financial Services<br>-Powers fraud detection systems    -Enhances automated customer service</p>
+<li><p>Financial Services</p>
+<ul>
+<li>Powers fraud detection systems    - Enhances automated customer service</li>
+</ul>
 </li>
-<li><p>Education<br>-Facilitates intelligent tutoring systems    -Enables automated assessment tools</p>
+<li><p>Education</p>
+<ul>
+<li>Facilitates intelligent tutoring systems    - Enables automated assessment tools</li>
+</ul>
 </li>
 </ol>
-<h2>Best Practices for Implementation[^4]</h2>
+<h2 id="best-practices-for-implementation4">Best Practices for Implementation[^4]</h2>
 <p>For optimal vLLM deployment:</p>
 <ul>
 <li>Implement model optimisation techniques</li>
@@ -73,7 +85,7 @@ outputs = llm.generate([&quot;Your prompt goes here&quot;], sampling_params)
 <li>Maintain robust monitoring systems</li>
 <li>Regular performance optimisation</li>
 </ul>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>vLLM represents a significant advancement in LLM serving technology[^3], offering an efficient, scalable solution for resource-constrained environments. Its innovative approach to memory management through PagedAttention and broad applicability across industries makes it an essential tool for modern AI development.</p>
 <hr>
 <p>[^1]: <a href="https://www.puppet.com/blog/cloud-repatriation">Cloud Repatriation: Examples, Unpacking 2024 Trends &amp; Tips for Reverse Migration</a></p>

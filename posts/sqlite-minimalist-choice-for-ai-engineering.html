@@ -27,9 +27,9 @@
         <p><strong>TL;DR:</strong> SQLite offers a zero-configuration, pre-installed database solution ideal for AI engineering projects, supporting modern data structures including vectors, graphs, and JSON documents whilst providing single-file portability, ACID compliance, and broad language compatibility- making it an excellent minimalist choice when specialised database systems would be overkill.</p>
 <!--more-->
 
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>In today&#39;s AI engineering landscape, choosing the right database can feel overwhelming. While specialised solutions like <a href="https://qdrant.tech/">Qdrant</a> (vectors), <a href="https://neo4j.com/">Neo4j</a> (graphs), and <a href="https://www.mongodb.com/">MongoDB</a> (documents) excel in their niches, there&#39;s a compelling case for <a href="https://www.sqlite.org/index.html">SQLite</a> as a versatile, minimalist solution that comes pre-installed on most systems and supports multiple data structures effectively. Speaking of minimalism, <a href="https://github.com/tconbeer/harlequin">Harlequin</a> (named after a <a href="https://en.wikipedia.org/wiki/Harlequin_duck">sea 🦆</a>) makes data exploration very enjoyable. Credit for the SQLite idea goes to <a href="https://bsky.app/profile/simonwillison.net">Simon Willison</a>, a prolific AI researcher among others, who has been posting <a href="https://simonwillison.net/tags/sqlite/">blog articles</a> and <a href="https://til.simonwillison.net/sqlite">TILs</a> (Today I Learned) about it since 2003!</p>
-<h2>The Power of Pre-installation</h2>
+<h2 id="the-power-of-pre-installation">The Power of Pre-installation</h2>
 <p>SQLite&#39;s ubiquity is remarkable. It comes pre-installed on:</p>
 <ul>
 <li>macOS</li>
@@ -39,7 +39,7 @@
 <li>iOS devices<br><a href="https://releases.ubuntu.com/24.10/ubuntu-24.10-desktop-amd64.manifest">manifest</a>)</li>
 </ul>
 <p>This universal availability means you can start developing immediately without additional setup or installation steps.</p>
-<h2>Modern Data Structure Support</h2>
+<h2 id="modern-data-structure-support">Modern Data Structure Support</h2>
 <p>Despite its lightweight nature, SQLite handles modern data structures surprisingly well:</p>
 <ol>
 <li><strong>Vector Storage</strong>[^1]</li>
@@ -104,7 +104,7 @@ LIMIT 10
     metadata JSON
 );
 </code></pre>
-<h2>Portability and Simplicity</h2>
+<h2 id="portability-and-simplicity">Portability and Simplicity</h2>
 <p>One of SQLite&#39;s strongest features is its <a href="https://www.sqlite.org/onefile.html">single-file</a> nature. Your entire database exists in one file that can be:</p>
 <ul>
 <li>Backed up with a simple copy operation</li>
@@ -112,7 +112,7 @@ LIMIT 10
 <li>Moved between systems effortlessly</li>
 <li>Examined with standard SQLite tools</li>
 </ul>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>While specialised databases have their place, SQLite offers a compelling combination of features that make it ideal for many AI engineering projects:</p>
 <ul>
 <li>Zero configuration</li>

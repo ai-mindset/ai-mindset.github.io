@@ -27,7 +27,7 @@
         <p><strong>TL;DR:</strong> This comprehensive guide explores ten distinct modelling approaches across statistics, machine learning, and causal inference-advocating for &quot;T-shaped&quot; expertise where practitioners develop deep knowledge in one or two mindsets aligned with their domain needs whilst maintaining sufficient breadth to recognise when different approaches are required, with specific recommendations for research, business, and product development contexts.</p>
 <!--more-->
 
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>As a practitioner looking to work effectively with real-world data and generate meaningful insights, I face a crucial decision: which modelling approaches should I invest my time and energy in learning? After discovering Christoph Molnar&#39;s <a href="https://christophmolnar.com/books/modeling-mindsets/">Modeling Mindsets</a>, I realised this isn&#39;t about picking the &quot;best&quot; approach. It&#39;s about becoming what he calls a &quot;T-shaped modeller&quot;.\ The concept is elegantly simple: rather than trying to master every possible approach (impossible) or limiting myself to just one (ineffective), I should aim to develop:</p>
 <ul>
 <li>Deep expertise in one or two mindsets that align with my goals and problems</li>
@@ -40,7 +40,7 @@
 </ol>
 <p>Each mindset represents a different way of approaching problems through data. From the probability-focused world of statistical modelling to the interactive realm of reinforcement learning, from the causality-oriented approach to the pattern-finding nature of unsupervised learning, each offers unique tools and perspectives.\ By examining these mindsets systematically, I aim to make an informed decision about where to focus my learning efforts while maintaining enough breadth to recognise when I should switch approaches. This isn&#39;t just about theoretical understanding, it&#39;s about practical effectiveness in solving real-world problems.</p>
 <p>Let&#39;s explore each mindset in turn, focusing on their fundamental premises, key strengths, and limitations to guide this decision.</p>
-<h2>Statistical Modelling: The Foundation of Data-Driven Inference</h2>
+<h2 id="statistical-modelling-the-foundation-of-data-driven-inference">Statistical Modelling: The Foundation of Data-Driven Inference</h2>
 <p><em>This mindset sees the world through probability distributions. At its core, it&#39;s about modelling how data is generated and making inferences under uncertainty.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -64,7 +64,7 @@
 <li>Less automatable than modern machine learning approaches</li>
 </ol>
 <p>This mindset serves as the foundation for three important sub-approaches: Frequentism, Bayesianism, and Likelihoodism, each with its own interpretation of probability and evidence. For someone starting in data science, understanding statistical modelling provides crucial groundwork for understanding both traditional statistics and modern machine learning approaches.</p>
-<h2>Frequentism: Making Decisions Through Repeated Experiments</h2>
+<h2 id="frequentism-making-decisions-through-repeated-experiments">Frequentism: Making Decisions Through Repeated Experiments</h2>
 <p><em>Frequentism views probability as long-run frequency and assumes that parameters in the world are fixed but unknown. It&#39;s the dominant approach in many scientific fields, particularly in medicine and psychology.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -88,7 +88,7 @@
 <li>Results depend on the experimental design, not just the data</li>
 </ol>
 <p>For practitioners, Frequentism offers a well-established framework with clear decision rules and strong scientific acceptance. However, its limitations in handling uncertainty and tendency toward oversimplification have led to growing interest in alternative approaches like Bayesian inference.</p>
-<h2>Bayesianism: Learning Through Updated Beliefs</h2>
+<h2 id="bayesianism-learning-through-updated-beliefs">Bayesianism: Learning Through Updated Beliefs</h2>
 <p><em>Bayesianism stands out by treating parameters themselves as random variables with distributions, fundamentally different from Frequentism&#39;s fixed-parameter view. It focuses on updating beliefs about parameters as new data arrives.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -112,7 +112,7 @@
 <li>Can seem like overkill for simple decisions</li>
 </ol>
 <p>Bayesianism offers a more complete and intuitive framework for handling uncertainty, but requires more computational resources and mathematical sophistication. It&#39;s particularly valuable when prior knowledge is important or when understanding full uncertainty is crucial.</p>
-<h2>Likelihoodism: Pure Evidence Through Likelihood</h2>
+<h2 id="likelihoodism-pure-evidence-through-likelihood">Likelihoodism: Pure Evidence Through Likelihood</h2>
 <p><em>Likelihoodism attempts to reform statistical inference by focusing solely on likelihood as evidence, avoiding both Frequentism&#39;s imagined experiments and Bayesianism&#39;s subjective priors.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -136,7 +136,7 @@
 <li>Less practical than other statistical approaches</li>
 </ol>
 <p>Likelihoodism offers interesting theoretical insights but may be less immediately useful than Frequentist or Bayesian approaches. It&#39;s more valuable for understanding the foundations of statistical inference than for day-to-day data analysis.</p>
-<h2>Causal Inference: From Association to Causation</h2>
+<h2 id="causal-inference-from-association-to-causation">Causal Inference: From Association to Causation</h2>
 <p><em>Causal inference moves beyond correlation to understand what actually causes observed effects, providing a framework for analysing interventions and their impacts.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -160,7 +160,7 @@
 <li>May sacrifice predictive performance for causal understanding</li>
 </ol>
 <p>For practitioners, causal inference is essential when decisions about interventions are needed, though it requires careful consideration of assumptions and domain knowledge. It&#39;s particularly valuable in fields like medicine, policy-making, and business strategy where understanding cause-effect relationships is crucial.</p>
-<h2>Machine Learning: Algorithms Learning from Data</h2>
+<h2 id="machine-learning-algorithms-learning-from-data">Machine Learning: Algorithms Learning from Data</h2>
 <p><em>Machine learning approaches problems by having computers learn algorithms from data, focusing on task performance rather than theoretical underpinning.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -184,7 +184,7 @@
 <li>Usually requires substantial data and computation</li>
 </ol>
 <p>For practitioners, machine learning offers powerful tools for automation and prediction, particularly valuable in industry settings. It&#39;s especially useful when theoretical understanding is less important than practical performance.</p>
-<h3>Supervised Learning: The Art of Prediction</h3>
+<h3 id="supervised-learning-the-art-of-prediction">Supervised Learning: The Art of Prediction</h3>
 <p><em>Supervised learning frames everything as a prediction problem, using labelled data to learn mappings from inputs to outputs.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -209,7 +209,7 @@
 <li>Can fail in unexpected ways when patterns change</li>
 </ol>
 <p>For practitioners, supervised learning excels in prediction tasks where good labelled data exists and interpretability isn&#39;t crucial. It&#39;s particularly valuable in industry settings for automation and decision support.</p>
-<h3>Unsupervised Learning: Discovering Hidden Patterns</h3>
+<h3 id="unsupervised-learning-discovering-hidden-patterns">Unsupervised Learning: Discovering Hidden Patterns</h3>
 <p><em>This mindset focuses on finding inherent structures in data without labelled outcomes, making it ideal for exploratory analysis and pattern discovery.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -233,7 +233,7 @@
 <li>No guarantee of finding meaningful patterns</li>
 </ol>
 <p>For practitioners, unsupervised learning is valuable for initial data exploration and when labelled data isn&#39;t available. It&#39;s particularly useful in customer segmentation, anomaly detection, and dimension reduction.</p>
-<h3>Reinforcement Learning: Learning Through Interaction</h3>
+<h3 id="reinforcement-learning-learning-through-interaction">Reinforcement Learning: Learning Through Interaction</h3>
 <p><em>This mindset models an agent interacting with an environment, making decisions and learning from rewards.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -259,7 +259,7 @@
 <li>Complex implementation choices</li>
 </ol>
 <p>For practitioners, reinforcement learning is valuable for problems involving sequential decisions or control, particularly in robotics, game playing, and resource management.</p>
-<h3>Deep Learning: End-to-End Neural Networks</h3>
+<h3 id="deep-learning-end-to-end-neural-networks">Deep Learning: End-to-End Neural Networks</h3>
 <p><em>This mindset approaches problems through deep neural networks, letting the model learn both features and relationships.</em></p>
 <p>Key Aspects:</p>
 <ul>
@@ -285,7 +285,7 @@
 <li>Results can be difficult to interpret</li>
 </ol>
 <p>For practitioners, deep learning is essential for complex data types but may be overkill for simpler problems. Most valuable in computer vision, natural language processing, and other complex pattern recognition tasks.</p>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p><em><strong>aka Choosing Your Modelling Path</strong></em></p>
 <p>For developing T-shaped expertise in modelling, the practitioner&#39;s choice should align with their primary domain while maintaining broader awareness. Here&#39;s how to approach this decision:</p>
 <ul>

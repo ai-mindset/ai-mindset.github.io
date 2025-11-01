@@ -26,16 +26,17 @@ The solution involves these key components:
 Here's how this elegant solution works:
 
 1. $X^TX$ creates a $(p \times p)$ matrix of feature products:
-   -Each element $(i,j)$ contains the dot product between features $i$ and $j$    -When features are centred, these products are proportional to covariances[^1]    -When features are also standardised, it yields correlations scaled by $n$
+   - Each element $(i,j)$ contains the dot product between features $i$ and $j$    - When features are centred, these products are proportional to covariances[^1]    - When features are also standardised, it yields correlations scaled by $n$
 
 2. $(X^TX)^{-1}$ computes the inverse of this matrix:
-   -Compensates for feature correlations in coefficient calculations[^2]    -Required for solving the normal equations $X^TX\beta = X^Ty$    -Exists only when no feature is a linear combination of others
+   - Compensates for feature correlations in coefficient calculations[^2]    - Required for solving the normal equations $X^TX\beta = X^Ty$    - Exists only when no feature is a linear combination of others
 
 3. $X^Ty$ creates a $(p \times 1)$ vector of feature-target products:
-   -Each element $i$ contains the dot product of feature $i$ with target $y$    -Represents raw feature-target relationships before adjustment    -When centred, proportional to feature-target covariances[^3]
+   - Each element $i$ contains the dot product of feature $i$ with target $y$    - Represents raw feature-target relationships before adjustment    - When centred, proportional to feature-target covariances[^3]
 
 4. Final multiplication $(X^TX)^{-1}X^Ty$:
-   -Solves the normal equations $X^TX\beta = X^Ty$    -Accounts for inter-feature correlations in determining coefficients    -Mathematically guarantees minimum squared error
+   - Solves the normal equations $X^TX\beta = X^Ty$    - Accounts for inter-feature correlations in determining coefficients    - Mathematically guarantees minimum squared error
+
 
 For more information, check Hastie, Tibshirani & Friedman's "[Elements of Statistical Learning](https://archive.org/details/elementsofstatis0000hast)" seminal book.
 

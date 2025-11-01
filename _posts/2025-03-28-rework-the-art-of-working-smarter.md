@@ -6,6 +6,7 @@ tags: [37signals, best-practices, productivity, efficiency, company-culture, rem
 ---
 
 **TL;DR:** Basecamp founders challenge conventional business wisdom in their book "Rework," advocating for simplicity, constraints, sustainable work hours, and focused execution over endless planning, rapid growth, and workaholism- presenting practical principles for building profitable, sustainable businesses with minimal resources.
+
 <!--more-->
 
 ## Introduction

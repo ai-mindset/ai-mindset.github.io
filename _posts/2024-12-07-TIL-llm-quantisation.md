@@ -154,7 +154,8 @@ Modern quantisation techniques offer multiple ways to run large language models 
 - For more constrained setups, Q2_K/Q3_K variants can run larger models with
 - Higher bits (Q5_K, Q6_K) approach F16 quality but require more memory
 - The _S/_M/_L variants let the user fine-tune the quality-size tradeoff by
-  precision strategies   -3.7x size reduction   -Good perplexity (6.02)   -Excellent inference speed on both GPU and CPU   acceptable quality loss   adjusting precision where it matters most
+  precision strategies   - 3.7x size reduction   - Good perplexity (6.02)   - Excellent inference speed on both GPU and CPU   acceptable quality loss   adjusting precision where it matters most
+
 
 Before downloading a quantised model, check the system's available RAM and choose a format that leaves enough memory for comfortable operation. For most users with modern GPUs, Q4_K variants will provide the best experience.
 

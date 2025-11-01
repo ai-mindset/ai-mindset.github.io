@@ -49,13 +49,14 @@ The system operates through three primary components:
 [InstructLab](https://instructlab.ai/) offers three specialised training pipelines:
 
 1. **Simple Pipeline**
-   -Fast training (~1 hour)    -Uses SFT Trainer (Linux) or MLX (MacOS)    -Great for initial experiments and validation
+   - Fast training (~1 hour)    - Uses SFT Trainer (Linux) or MLX (MacOS)    - Great for initial experiments and validation
 
 2. **Full Pipeline**
-   -Custom [QLoRA](https://arxiv.org/abs/2305.14314) training loop optimised      for CPU/MPS    -Enhanced data processing functions    -Memory requirement: 32GB RAM    -Balanced performance and accessibility
+   - Custom [QLoRA](https://arxiv.org/abs/2305.14314) training loop optimised      for CPU/MPS    - Enhanced data processing functions    - Memory requirement: 32GB RAM    - Balanced performance and accessibility
 
 3. **Accelerated Pipeline**
-   -GPU-accelerated distributed [QLoRA](https://arxiv.org/abs/2305.14314)      training    -Supports NVIDIA CUDA and AMD ROCm    -Requires 18GB+ GPU memory    -Ideal for production-grade fine-tuning
+   - GPU-accelerated distributed [QLoRA](https://arxiv.org/abs/2305.14314)      training    - Supports NVIDIA CUDA and AMD ROCm    - Requires 18GB+ GPU memory    - Ideal for production-grade fine-tuning
+
 
 ### Hardware Support and Quantisation
 
@@ -86,16 +87,17 @@ Key requirements:
 ### Core Workflow Steps
 
 1. **Model Acquisition**
-   ```bash    ilab model download    ```    -Downloads pre-trained base models    -Supports GGUF (4-bit to 16-bit) and Safetensors formats    -Automatic quantisation with configurable parameters
+   ```bash    ilab model download    ```    - Downloads pre-trained base models    - Supports GGUF (4-bit to 16-bit) and Safetensors formats    - Automatic quantisation with configurable parameters
 
 2. **Synthetic Data Generation**
-   ```bash    ilab model serve    ilab data generate --pipeline [simple|full]    ```    Common issues and solutions:    -Server conflicts: Use different ports with `--port`    -Memory errors: Reduce batch size or use `--pipeline simple`    -Teacher model issues: Verify model checksum and try re-downloading
+   ```bash    ilab model serve    ilab data generate --pipeline [simple|full]    ```    Common issues and solutions:    - Server conflicts: Use different ports with `--port`    - Memory errors: Reduce batch size or use `--pipeline simple`    - Teacher model issues: Verify model checksum and try re-downloading
 
 3. **Training**
-   ```bash    ilab model train    ```    Hyperparameters (configurable in config.yaml):    -Max epochs: 10
+   ```bash    ilab model train    ```    Hyperparameters (configurable in config.yaml):    - Max epochs: 10
 
 4. **Evaluation**
-   ```bash    ilab model evaluate    ```    Benchmarks and typical scores:    -[MMLU](http://en.wikipedia.org/wiki/MMLU): Knowledge (0.0-1.0 scale)    -MMLUBranch: Delta improvements    -MTBench: Skills (0.0-10.0 scale)    -MTBenchBranch: Skill improvements
+   ```bash    ilab model evaluate    ```    Benchmarks and typical scores:    - [MMLU](http://en.wikipedia.org/wiki/MMLU): Knowledge (0.0-1.0 scale)    - MMLUBranch: Delta improvements    - MTBench: Skills (0.0-10.0 scale)    - MTBenchBranch: Skill improvements
+
 
 ### Model Deployment
 
@@ -136,10 +138,11 @@ Deployment considerations:
 
 - **Model Constraints**: Currently supports models up to 7B parameters
 - **Resource Timeline**: Typical deployment cycle from setup to production:
-  effectively   -Initial setup: a few hours   -Synthetic Data generation: 15 minutes to 1+ hours depending on computing     resources   -Training: several hours on consumer hardware   -Evaluation and deployment: a few hours
+  effectively   - Initial setup: a few hours   - Synthetic Data generation: 15 minutes to 1+ hours depending on computing     resources   - Training: several hours on consumer hardware   - Evaluation and deployment: a few hours
 
 - **Maintenance Requirements**:
-  -Regular model evaluations against new benchmarks   -Periodic retraining with updated taxonomy   -System updates and dependency management   -Storage management for checkpoints and datasets
+  - Regular model evaluations against new benchmarks   - Periodic retraining with updated taxonomy   - System updates and dependency management   - Storage management for checkpoints and datasets
+
 
 ### RAG vs Fine-tuning
 

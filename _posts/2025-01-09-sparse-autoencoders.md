@@ -36,19 +36,20 @@ Where:
 
 1. **Base Cost Function** (single training example):
 
-   $$     J(W,b; x,y) = \frac{1}{2}||h_{W,b}(x)- y||^2     $$
+   $$     J(W,b; x,y) = \frac{1}{2}||h_{W,b}(x) - y||^2     $$
 
-   For a single training example:\    -Measures reconstruction error between network output $h_{W,b}(x)$ and      target $y$\    -For autoencoders: $y = x$ (we reconstruct the input)\    -$\frac{1}{2}$ factor simplifies gradient computations\    -Squared L2 norm penalises larger reconstruction errors quadratically
+   For a single training example:\    - Measures reconstruction error between network output $h_{W,b}(x)$ and      target $y$\    - For autoencoders: $y = x$ (we reconstruct the input)\    - $\frac{1}{2}$ factor simplifies gradient computations\    - Squared L2 norm penalises larger reconstruction errors quadratically
 
 2. **Full Cost Function with Weight Decay**:
 
-   The cost function $J(W,b)$ combines the average reconstruction error\    $\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)})- x^{(i)}||^2$
+   The cost function $J(W,b)$ combines the average reconstruction error\    $\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - x^{(i)}||^2$
 
    with the weight decay regularisation, to prevent overfitting by penalising    large weights:\    $\frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2$
 
-   $$     J(W,b) = \left[\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)})- y^{(i)}||^2\right] + \frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2     $$
+   $$     J(W,b) = \left[\frac{1}{m}\sum_{i=1}^m \frac{1}{2}||h_{W,b}(x^{(i)}) - y^{(i)}||^2\right] + \frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(W_{ji}^{(l)})^2     $$
 
-   Key points:    -For autoencoders, output $y^{(i)}$ equals input $x^{(i)}$    -Weight decay applies only to weights $W$, not biases $b$    -$\lambda$ balances reconstruction accuracy vs. weight magnitude    -The $\frac{1}{2}$ factor simplifies derivative calculations in      backpropagation    -This regularisation is distinct from the sparsity constraint (KL divergence      term)
+   Key points:    - For autoencoders, output $y^{(i)}$ equals input $x^{(i)}$    - Weight decay applies only to weights $W$, not biases $b$    - $\lambda$ balances reconstruction accuracy vs. weight magnitude    - The $\frac{1}{2}$ factor simplifies derivative calculations in      backpropagation    - This regularisation is distinct from the sparsity constraint (KL divergence      term)
+
 
 3. **Sparsity Measurement**:
 
@@ -56,7 +57,8 @@ Where:
 
    $$     \hat{\rho}_j = \frac{1}{m}\sum_{i=1}^m[a_j^{(2)}(x^{(i)})]     $$
 
-   Key points:    -$a_j^{(2)}(x^{(i)})$ is hidden unit $j$'s activation for input $x^{(i)}$    -With sigmoid activation:      -Values near 1 mean "active" or "firing"      -Values near 0 mean "inactive"    -We constrain $\hat{\rho}_j \approx \rho$ where $\rho$ is small (typically      0.05)    -This enforces selective firing: each neuron responds strongly to specific      input patterns
+   Key points:    - $a_j^{(2)}(x^{(i)})$ is hidden unit $j$'s activation for input $x^{(i)}$    - With sigmoid activation:      - Values near 1 mean "active" or "firing"      - Values near 0 mean "inactive"    - We constrain $\hat{\rho}_j \approx \rho$ where $\rho$ is small (typically      0.05)    - This enforces selective firing: each neuron responds strongly to specific      input patterns
+
 
 4. **Sparsity Penalty** (using
    [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence)):
@@ -65,15 +67,17 @@ Where:
 
    $$     \sum_{j=1}^{s_2}\rho\log\frac{\rho}{\hat{\rho}_j} + (1-\rho)\log\frac{1-\rho}{1-\hat{\rho}_j}     $$
 
-   Properties of this penalty:    -Minimised (zero) when $\hat{\rho}_j = \rho$    -Monotonically increases as $\hat{\rho}_j$ deviates from $\rho$    -Becomes infinite as $\hat{\rho}_j$ approaches 0 or 1
+   Properties of this penalty:    - Minimised (zero) when $\hat{\rho}_j = \rho$    - Monotonically increases as $\hat{\rho}_j$ deviates from $\rho$    - Becomes infinite as $\hat{\rho}_j$ approaches 0 or 1
+
 
 5. **Final Cost Function**:
 
    $$     J_{sparse}(W,b) = J(W,b) + \beta\sum_{j=1}^{s_2}KL(\rho||\hat{\rho}_j)     $$
 
-   Components:    -$J(W,b)$: Standard autoencoder cost (reconstruction error + weight decay)    -Sparsity term: KL divergence penalty summed over $s_2$ hidden units
+   Components:    - $J(W,b)$: Standard autoencoder cost (reconstruction error + weight decay)    - Sparsity term: KL divergence penalty summed over $s_2$ hidden units
 
-   $\beta$ controls:    -Balance between accurate reconstruction and sparse representation    -Strength of sparsity enforcement    -Higher $\beta$ → stronger sparsity constraint
+   $\beta$ controls:    - Balance between accurate reconstruction and sparse representation    - Strength of sparsity enforcement    - Higher $\beta$ → stronger sparsity constraint
+
 
    This formulation naturally penalises both over- and under-activation of    hidden units relative to target sparsity $\rho$.
 

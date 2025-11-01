@@ -27,11 +27,11 @@
         <p><strong>TL;DR:</strong> You can easily explore OpenAI&#39;s complete API documentation by loading their GitHub-hosted OpenAPI YAML file directly into Swagger&#39;s web interface. This approach lets you interactively examine all endpoints, request/response schemas, and test functionality—a valuable reference for anyone building services that need to maintain compatibility with OpenAI&#39;s API structure.</p>
 <!--more-->
 
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>OpenAI maintains a comprehensive <a href="https://github.com/openai/openai-openapi/">OpenAPI specification</a> that documents their entire API surface. While browsing through their GitHub repository, <a href="https://simonwillison.net/">Simon Willison</a>[^1] discovered you can easily explore this spec using Swagger&#39;s web interface.</p>
-<h2>The Discovery</h2>
+<h2 id="the-discovery">The Discovery</h2>
 <p>Willison recently highlighted a neat trick: you can browse OpenAI&#39;s full API documentation by loading their <a href="https://github.com/openai/openai-openapi/blob/master/openapi.yaml">OpenAPI YAML file</a> directly into <a href="https://petstore.swagger.io/?url=https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml#/">Swagger&#39;s web UI</a>.</p>
-<h2>Why This Matters</h2>
+<h2 id="why-this-matters">Why This Matters</h2>
 <p>This approach offers several advantages:</p>
 <ul>
 <li>Interactive exploration of all API endpoints</li>
@@ -40,7 +40,7 @@
 <li>Detailed parameter documentation</li>
 </ul>
 <p>For developers working with AI APIs, this provides a valuable reference point- especially when building services that need to maintain compatibility with OpenAI&#39;s API structure.</p>
-<h2>Try It Yourself</h2>
+<h2 id="try-it-yourself">Try It Yourself</h2>
 <p>Visit the <a href="https://petstore.swagger.io/">Swagger UI</a> and paste this URL:\ <code>https://raw.githubusercontent.com/openai/openai-openapi/refs/heads/master/openapi.yaml</code></p>
 <hr>
 <p>[^1]: Co-founder of<br>    <a href="https://blog.natbat.net/post/61658401806/lanyrd-from-idea-to-exit">Lanyrd</a>,<br>    co-creator of <a href="https://simonwillison.net/2005/Jul/17/django/">Django</a> and<br>    <a href="https://datasette.io/">Datasette</a> and a prolific independent AI researcher</p>

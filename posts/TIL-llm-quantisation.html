@@ -27,11 +27,11 @@
         <p><strong>TL;DR:</strong> GGUF quantisation converts LLM weights from 16-bit to lower precision formats (2-bit to 6-bit) to run large models on consumer hardware. Each format offers different tradeoffs between size, speed, and quality, with Q4_K_S (4-bit) representing the sweet spot for most users—providing 3.7x size reduction while maintaining good quality. Mixed precision strategies (_S/_M/_L variants) further optimize performance by targeting attention and feed-forward layers with higher precision bits.</p>
 <!--more-->
 
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>When experimenting with larger language models (12B, 30B, 70B etc.), choosing the right quantisation format becomes crucial for striking a good balance i.e. running them on consumer hardware while maintaining reasonably good performance. I wrote this guide after spending time looking up different GGUF quantisation types to optimise model selection for my machine&#39;s constraints. This guide explains quantisation methods and their practical tradeoffs to help the reader select the optimal format for their setup.\ The quantisation formats discussed here are implemented in popular frameworks like <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a>. Q4_K_S is typically the default format due to its good balance of size, speed, and quality, while Q2_K and Q3_K variants are offered for more constrained systems.</p>
-<h2>What is Quantisation?</h2>
+<h2 id="what-is-quantisation">What is Quantisation?</h2>
 <p>Quantisation converts model weights from 16-bit floating point (F16) to lower precision formats using fixed-size blocks. Each block contains multiple weights that share scaling parameters.\ Perplexity is the key metric used to measure model quality after quantisation. It indicates how well the model predicts text, the lower the perplexity the better the predictions. For example, a change from 5.91 to 6.78 perplexity represents a noticeable but often acceptable drop in prediction quality. A model with perplexity 6.78 is slightly less certain about its predictions than one with perplexity 5.91.</p>
-<h2>Basic Quantisation Types and K-Quantisation</h2>
+<h2 id="basic-quantisation-types-and-k-quantisation">Basic Quantisation Types and K-Quantisation</h2>
 <p>K-quantisation is a way to make AI models smaller using two methods to store weights (the model&#39;s numbers):</p>
 <ol>
 <li>Type-0 (simpler): reconstructs weight as <code>weight = scale × quant</code></li>
@@ -86,7 +86,7 @@
 <li>Type-1 first shifts all numbers by subtracting the minimum (making them<br>smaller), then scales them for storage, and when reconstructing adds the   minimum back</li>
 </ul>
 <p>This is why Type-1 generally gives better quality results but needs more storage space. It has to keep track of both the scale and minimum for each block.</p>
-<h2>Mixed Precision Strategies</h2>
+<h2 id="mixed-precision-strategies">Mixed Precision Strategies</h2>
 <p>K-quantisations use different precision levels for different model components. From <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> documentation, there are three variants:</p>
 <ul>
 <li><p>S (Small): Uses single quantisation throughout Example using Q3_K_S:</p>
@@ -106,7 +106,7 @@
 </li>
 </ul>
 <p>These strategies target attention and feed-forward layers with higher precision because they directly impact text processing quality, as demonstrated by the perplexity improvements in benchmarks: Q3_K_S (6.46) → Q3_K_M (6.15) → Q3_K_L (6.09).\ The improvement in perplexity scores demonstrates why mixed precision strategies are effective, though they require more storage space.</p>
-<h2>Performance Comparison (7B model)</h2>
+<h2 id="performance-comparison-7b-model">Performance Comparison (7B model)</h2>
 <pre><code>Format | Size(GB) | Reduction | BPW  | Perplexity | RTX4080  | M2Max
 F16    | 13.0     | 1.0x      | 16.0 | 5.91       | 60.0ms   | 116ms
 Q2_K   | 2.67     | 4.9x      | 2.56 | 6.78       | 15.5ms   | 56ms
@@ -124,7 +124,7 @@ Q6_K   | 5.15     | 2.5x      | 6.56 | 5.91       | 18.3ms   | 75ms
 <li>GPU Inference: Q4_K (optimal speed/quality)</li>
 </ul>
 <p>All data are from recent <a href="https://github.com/ggerganov/llama.cpp/pull/1684">llama.cpp</a> performance benchmarks and <a href="https://github.com/ggerganov/ggml">GGML</a> implementation details.</p>
-<h2>Memory Requirements for Inference</h2>
+<h2 id="memory-requirements-for-inference">Memory Requirements for Inference</h2>
 <p>When running quantised models, more RAM is required than the model size alone for inference overhead. Memory requirements depend on several factors:</p>
 <ul>
 <li>Model architecture and size</li>
@@ -147,14 +147,14 @@ Q6_K   | 5.15GB    | Highest quality
 <li>Total recommended free memory: ~7GB</li>
 </ul>
 <p>This explains why a model that&#39;s &quot;3.56GB&quot; might need 6-7GB of free RAM/VRAM to run smoothly. The exact overhead varies based on your settings and system.</p>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>Modern quantisation techniques offer multiple ways to run large language models on consumer hardware. Here&#39;s what we need to remember:</p>
 <ul>
 <li>K-quantisation provides the best balance through super-blocks and mixed</li>
 <li>Q4_K_S (4-bit) represents the current sweet spot for most users, offering:</li>
 <li>For more constrained setups, Q2_K/Q3_K variants can run larger models with</li>
 <li>Higher bits (Q5_K, Q6_K) approach F16 quality but require more memory</li>
-<li>The _S/_M/_L variants let the user fine-tune the quality-size tradeoff by<br>precision strategies   -3.7x size reduction   -Good perplexity (6.02)   -Excellent inference speed on both GPU and CPU   acceptable quality loss   adjusting precision where it matters most</li>
+<li>The _S/_M/_L variants let the user fine-tune the quality-size tradeoff by<br>precision strategies   - 3.7x size reduction   - Good perplexity (6.02)   - Excellent inference speed on both GPU and CPU   acceptable quality loss   adjusting precision where it matters most</li>
 </ul>
 <p>Before downloading a quantised model, check the system&#39;s available RAM and choose a format that leaves enough memory for comfortable operation. For most users with modern GPUs, Q4_K variants will provide the best experience.</p>
 <hr>

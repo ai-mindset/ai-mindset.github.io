@@ -6,6 +6,7 @@ tags: [til, decision-making, best-practices, evaluation, statistics, design-prin
 ---
 
 **TL;DR:** Sheena Iyengar's cross-cultural research reveals that how we perceive and respond to choice varies dramatically between societies- with evidence showing that sometimes having fewer choices or allowing others to choose for us can lead to better outcomes, challenging the widely-held Western belief that more individual choice is always beneficial.
+
 <!--more-->
 
 ## Introduction

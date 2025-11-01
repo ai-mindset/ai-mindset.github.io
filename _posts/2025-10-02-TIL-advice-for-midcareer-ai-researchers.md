@@ -12,6 +12,7 @@ tags: [til, ai, research, career, learning, advice, perspective, breakthrough]
 
 In a field evolving as rapidly as artificial intelligence, mid-career researchers often find themselves at a crossroads, balancing established expertise with the need to adapt to new paradigms. A recent compilation of advice from leading AI researchers and practitioners offers valuable insights for navigating this challenging terrain. These perspectives from industry leaders at organisations like OpenAI, Anthropic, Google DeepMind, and others reveal common themes about what truly matters for success in AI research today- with surprising emphasis on coding skills, infrastructure knowledge, and the courage to challenge consensus.
 
+
 ## Key Advice from Industry Leaders
 
 Below is [a collection of insights](https://xcancel.com/chrisbarber/status/1973405958786429285) from leading AI researchers and practitioners, in response to the question: "_What career advice do you have for AI researchers, or what you wish you'd learned earlier?_":
@@ -40,6 +41,7 @@ Below is [a collection of insights](https://xcancel.com/chrisbarber/status/19734
 
 > **[@danielhanchen](https://xcancel.com/danielhanchen), Unsloth AI** I would > definitely watch MIT, Stanford videos much much earlier- > [CS231N](https://yewtu.be/playlist?list=PLoROMvodv4rOmsNzYBMe0gJY2XS8AQg16), > do [FastAI courses](https://course.fast.ai/), > [MIT's AI course](https://yewtu.be/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI), > Gilbert Strang's courses + > [CS229](https://yewtu.be/playlist?list=PLULjW8y9XZKiTBlTFPVDLebgtctNZCgG-).
 
+
 _Note: For readers interested in Gilbert Strang's courses, some excellent options include [MIT 18.06 Linear Algebra](https://yewtu.be/playlist?list=PLE7DDD91010BC51F8), [Highlights of Calculus](https://yewtu.be/playlist?list=PLBE9407EA64E2C318), [MIT 18.065 Matrix Methods](https://yewtu.be/playlist?list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k), [A Vision of Linear Algebra](https://yewtu.be/playlist?list=PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek), and [Big Picture of Calculus](https://yewtu.be/watch?v=UcWsDwg1XwM&list=PLBE9407EA64E2C318&index=1)._
 
 ### Take Action and Be Selective
@@ -49,6 +51,7 @@ _Note: For readers interested in Gilbert Strang's courses, some excellent option
 ### Connect with the Research Community
 
 > **[@TianbaoX](https://xcancel.com/TianbaoX), OpenAI** I wish I had learned > earlier how important it is to actively exchange ideas with others and stay > close to the frontier- AI is a fast-moving field, and working in isolation > rarely leads to impact. Because scaling laws hold so strongly, incremental > work often gets washed out; the real breakthroughs come from daring to imagine > and build something fundamentally new.
+
 
 ### Seek Fulfilling Work
 
@@ -61,6 +64,7 @@ _Note: For readers interested in Gilbert Strang's courses, some excellent option
 ### Stay Adaptable
 
 > **[@angli_ai](https://xcancel.com/angli_ai), Simular AI** The opportunities > often come from places you couldn't have imagined- stay curious, adapt fast, > and be willing to reinvent.
+
 
 ### Focus on Legibility
 
