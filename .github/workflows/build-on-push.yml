@@ -27,11 +27,12 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: v2.x
+          deno-version: v2.1.x
 
       # Optional: Regenerate lockfile if needed (uncomment to use)
+      # Note: Deno 2.1+ automatically updates deno.lock when installing dependencies
       # - name: Regenerate lockfile
-      #   run: deno cache --lock=deno.lock --lock-write build.ts
+      #   run: deno install build.ts
 
       - name: Build site
         run: deno task build
