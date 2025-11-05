@@ -25,14 +25,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Deno
-        uses: denoland/setup-deno@v1
+        uses: denoland/setup-deno@v2
         with:
-          deno-version: v2.1.x
-
-      # Regenerate lockfile to ensure dependencies are up to date
-      # Note: Deno 2.1+ automatically updates deno.lock when installing dependencies
-      - name: Regenerate lockfile
-        run: deno install build.ts
+          deno-version: v2.x
 
       - name: Build site
         run: deno task build
