@@ -5,7 +5,7 @@ date: 2025-01-08
 tags: [data-science, machine-learning, statistics, ai, linear-algebra, til, modelling-mindsets, data-modeling]
 ---
 
-**TL;DR:** Linear regression can be elegantly solved using the matrix equation β = (X^TX)^(-1)X^Ty, which mathematically guarantees minimum squared error by accounting for feature correlations - though real-world applications often favour gradient descent due to the direct solution's computational complexity, numerical instability with correlated features, and memory constraints.
+**TL;DR:** Linear regression can be elegantly solved using the matrix equation β = (X^TX)^(-1)X^Ty, which mathematically guarantees minimum squared error by accounting for feature correlations- though real-world applications often favour gradient descent due to the direct solution's computational complexity, numerical instability with correlated features, and memory constraints.
 <!--more-->
 
 ## Introduction
@@ -37,6 +37,7 @@ Here's how this elegant solution works:
 4. Final multiplication $(X^TX)^{-1}X^Ty$:
    - Solves the normal equations $X^TX\beta = X^Ty$    - Accounts for inter-feature correlations in determining coefficients    - Mathematically guarantees minimum squared error
 
+
 For more information, check Hastie, Tibshirani & Friedman's "[Elements of Statistical Learning](https://archive.org/details/elementsofstatis0000hast)" seminal book.
 
 ## The Real-World Catch
@@ -59,7 +60,7 @@ While this equation brilliantly demonstrates the power of linear algebra in stat
     crucial because correlated features can lead to unstable coefficients if not
     accounted for. The relationship between $X^TX$ and covariance comes from the
     definition of sample covariance:
-    $cov(X_i, X_j) = \frac{1}{n-1}\sum_{k=1}^n (x_{ki} - \bar{x_i})(x_{kj} - \bar{x_j})$.
+    $cov(X_i, X_j) = \frac{1}{n-1}\sum_{k=1}^n (x_{ki}- \bar{x_i})(x_{kj}- \bar{x_j})$.
     When data is centred, this simplifies to $\frac{1}{n-1}(X^TX)_{ij}$.
     $\frac{X^TX}{n-1}$ returns the sample covariance matrix. This matters
     because a) when features are uncentred, $(X^TX)$ gives the sum of products,

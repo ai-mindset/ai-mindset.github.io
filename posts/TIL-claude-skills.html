@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💡 TIL: Claude Skills - Modular AI Capabilities with Minimal Token Cost - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Just-in-Time Learning</a></h1>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>💡 TIL: Claude Skills - Modular AI Capabilities with Minimal Token Cost</h1>
+        <span class="post-date">October 17, 2025</span>
+        <div class="post-tags">
+          <span class="post-tag">til</span><span class="post-tag">ai</span><span class="post-tag">claude</span><span class="post-tag">llm</span><span class="post-tag">productivity</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> Claude Skills extend capabilities through modular instruction sets that load dynamically when needed. Using YAML frontmatter summaries (~dozens of tokens), skills keep full implementations ready for relevant tasks while minimizing overhead- enabling everything from document creation to financial analysis without performance degradation.</p>
+<!--more-->
+
+<h2 id="what-are-claude-skills">What Are Claude Skills?</h2>
+<p><a href="https://www.anthropic.com/news/skills">Anthropic&#39;s Claude Skills</a> are folders containing instructions, scripts, and resources that extend the AI&#39;s capabilities for specialized tasks. Claude scans available skills and loads only necessary components when relevant to the current task.</p>
+<p>Key characteristics:</p>
+<ul>
+<li><strong>Composable</strong>: Multiple skills work together automatically</li>
+<li><strong>Portable</strong>: Same format works across Claude applications, Claude Code, and API</li>
+<li><strong>Efficient</strong>: Uses YAML frontmatter summaries consuming only dozens of tokens</li>
+<li><strong>Powerful</strong>: Includes executable code for reliable task execution</li>
+</ul>
+<h2 id="technical-implementation">Technical Implementation</h2>
+<p>The efficiency of Claude Skills comes from their implementation:</p>
+<ol>
+<li><p>Skills use YAML frontmatter summaries in Markdown files <a href="https://simonwillison.net/2025/Oct/16/claude-skills/">as described by Simon Willison</a></p>
+<ul>
+<li><em>YAML frontmatter</em>: Structured metadata (delimited by triple dashes <code>---</code>) at the beginning of Markdown files containing required <code>name</code> and <code>description</code> fields that Claude scans at startup to determine which skills are relevant to a task</li>
+</ul>
+</li>
+<li><p>This approach dramatically reduces token overhead compared to alternatives like Model Context Protocol, which &quot;<em>famously consumes tens of thousands of tokens</em>&quot; per Willison</p>
+</li>
+<li><p>Code execution occurs in a secure environment</p>
+</li>
+</ol>
+<p>Willison&#39;s analysis of a Slack GIF creator skill demonstrates that skills can import helper modules (like <code>GIFBuilder</code>), use validation functions (e.g., <code>check_slack_size()</code>), and save outputs to designated locations such as <code>/mnt/user-data/outputs/</code>.</p>
+<h2 id="how-to-use-skills">How to Use Skills</h2>
+<p>Currently available to Pro, Max, Team, and Enterprise users on Claude.ai:</p>
+<ol>
+<li><strong>Pre-built Skills</strong>: Document creation (Excel, PowerPoint, Word, PDFs)</li>
+<li><strong>Custom Skills</strong>: Developers can create these via the <code>/v1/skills</code> API endpoint</li>
+</ol>
+<p>Using a skill requires simply asking Claude to perform a task in the skill&#39;s domain- Claude identifies and loads the relevant skill automatically.</p>
+<h2 id="applications">Applications</h2>
+<p>Real-world applications include:</p>
+<ol>
+<li><strong>Document Processing</strong>: Create and modify Excel spreadsheets, PowerPoint presentations, PDFs</li>
+<li><strong>Data Analysis</strong>: Perform financial calculations and visualizations with specialized techniques</li>
+<li><strong>Workflow Automation</strong>: <a href="https://www.anthropic.com/news/skills">Companies report</a> 83% time reduction on specialized tasks</li>
+</ol>
+<p>Claude Skills represent an important evolution in AI assistant capabilities, enabling specialized task performance while maintaining core performance across interfaces and applications.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

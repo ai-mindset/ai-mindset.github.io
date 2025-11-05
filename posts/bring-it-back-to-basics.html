@@ -37,11 +37,9 @@
 <ol start="0">
 <li><p><a href="https://peps.python.org/pep-0008/">PEP8</a>: Let&#39;s start with a style guide, so</p>
 </li>
-<li><p><a href="https://docs.astral.sh/uv/">uv</a>: A blazing-fast Python package and project
-that the team is on the same page    manager, written in Rust. It replaces pip, pip-tools, pipx, poetry, pyenv,    twine, virtualenv, and more, providing:    - Consistent dependency resolution    - Lightning-fast package installations    - Built-in virtual environment management    - Direct integration with <code>pyproject.toml</code></p>
+<li><p><a href="https://docs.astral.sh/uv/">uv</a>: A blazing-fast Python package and project<br>that the team is on the same page    manager, written in Rust. It replaces pip, pip-tools, pipx, poetry, pyenv,    twine, virtualenv, and more, providing:    - Consistent dependency resolution    - Lightning-fast package installations    - Built-in virtual environment management    - Direct integration with <code>pyproject.toml</code></p>
 </li>
-<li><p><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/"><code>pyproject.toml</code></a>:
-The single source of truth for project configuration. For example:</p>
+<li><p><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/"><code>pyproject.toml</code></a>:<br>The single source of truth for project configuration. For example:</p>
 </li>
 </ol>
 <pre><code class="language-toml">    [project]
@@ -62,14 +60,11 @@ The single source of truth for project configuration. For example:</p>
     testpaths = [&quot;tests&quot;]
 </code></pre>
 <ol start="3">
-<li><p><a href="https://docs.astral.sh/ruff/">Ruff</a>: A Rust-based tool that combines
-formatting and linting, replacing the need for black, flake8, isort etc.:    - Single-tool code quality enforcement    - Configurable through <code>pyproject.toml</code>    - Significantly faster than Python-based alternatives</p>
+<li><p><a href="https://docs.astral.sh/ruff/">Ruff</a>: A Rust-based tool that combines<br>formatting and linting, replacing the need for black, flake8, isort etc.:    - Single-tool code quality enforcement    - Configurable through <code>pyproject.toml</code>    - Significantly faster than Python-based alternatives</p>
 </li>
-<li><p><a href="https://github.com/microsoft/pyright">pyright</a>: Static Type Checker for
-Python    - Static type checker    - <a href="https://htmlpreview.github.io/?https://github.com/python/typing/blob/main/conformance/results/results.html">Standards</a>      compliant    - <a href="https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file">Configurable</a>      within <code>pyproject.toml</code></p>
+<li><p><a href="https://github.com/microsoft/pyright">pyright</a>: Static Type Checker for<br>Python    - Static type checker    - <a href="https://htmlpreview.github.io/?https://github.com/python/typing/blob/main/conformance/results/results.html">Standards</a>      compliant    - <a href="https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file">Configurable</a>      within <code>pyproject.toml</code></p>
 </li>
-<li><p>[iterative refinement]({{ site.baseurl }}{% link
-_posts/2024-11-22-iterative-refinement.md %}): An approach that tightly    couples (doc)tests with code, ensuring    <a href="https://www.merriam-webster.com/thesaurus/up-to-dateness">up-to-dateness</a>\    <del><a href="https://docs.pytest.org/en/stable/">pytest</a>: Handles testing with minimal    boilerplate and rich assertions</del></p>
+<li><p>[iterative refinement]({{ site.baseurl }}{% link<br>_posts/2024-11-22-iterative-refinement.md %}): An approach that tightly    couples (doc)tests with code, ensuring    <a href="https://www.merriam-webster.com/thesaurus/up-to-dateness">up-to-dateness</a>\    <del><a href="https://docs.pytest.org/en/stable/">pytest</a>: Handles testing with minimal    boilerplate and rich assertions</del></p>
 </li>
 </ol>
 <h3 id="cross-platform-distribution">Cross-Platform Distribution</h3>
@@ -93,8 +88,7 @@ CMD pyinstaller --onefile src/main.py
 <h3 id="data-science">Data Science</h3>
 <p>A carefully selected set of powerful libraries that minimize overlap:</p>
 <ul>
-<li><a href="https://pola.rs/">Polars</a>: Fast DataFrame operations with a cohesive API.
-<a href="https://xcancel.com/charliermarsh/status/1860388882015223835">Why?</a></li>
+<li><a href="https://pola.rs/">Polars</a>: Fast DataFrame operations with a cohesive API.<br><a href="https://xcancel.com/charliermarsh/status/1860388882015223835">Why?</a></li>
 </ul>
 <pre><code class="language-python">    import polars as pl
 
@@ -203,8 +197,7 @@ fig.show()
         return ollama.chat(model=&#39;llama2&#39;, messages=messages)
 </code></pre>
 <ul>
-<li><a href="https://docs.llamaindex.ai/">LlamaIndex</a>: RAG pipeline construction using
-local LLMs or external APIs</li>
+<li><a href="https://docs.llamaindex.ai/">LlamaIndex</a>: RAG pipeline construction using<br>local LLMs or external APIs</li>
 </ul>
 <pre><code class="language-python">    from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
     from llama_index.core.node_parser import SentenceSplitter
@@ -232,8 +225,7 @@ local LLMs or external APIs</li>
         return query_engine
 </code></pre>
 <ul>
-<li><a href="https://www.mongodb.com/">MongoDB</a>: A distributed document DB that supports
-vector storage and graph operations</li>
+<li><a href="https://www.mongodb.com/">MongoDB</a>: A distributed document DB that supports<br>vector storage and graph operations</li>
 </ul>
 <pre><code class="language-python">    from pymongo import MongoClient
     import numpy as np
@@ -281,8 +273,7 @@ vector storage and graph operations</li>
 <li><strong>Production Ready</strong>: Direct path from development to cross-platform</li>
 <li><strong>Full Feature Set</strong>: Complete Data Science and AI capabilities without bloat</li>
 <li><strong>Flexible AI Stack</strong>: Seamless integration between local models (Ollama),</li>
-<li><strong>Production AI</strong>: Easy transition from experimentation to production AI
-feedback    deployment    RAG pipelines (LlamaIndex), and vector storage (MongoDB)    systems with consistent tooling</li>
+<li><strong>Production AI</strong>: Easy transition from experimentation to production AI<br>feedback    deployment    RAG pipelines (LlamaIndex), and vector storage (MongoDB)    systems with consistent tooling</li>
 </ol>
 <p>While Python&#39;s ecosystem will likely remain fragmented, we don&#39;t have to accept the complexity. By carefully choosing modern tools that prioritise speed, simplicity, and clarity, we can create a development environment that&#39;s both powerful and pleasant to use.</p>
 <p>The beauty of this approach lies not in its prescriptiveness, but in its principles: <em>minimize tooling</em>, <em>maximise capability</em>, and <em>maintain clarity</em>. Whether you adopt this exact stack or use it as inspiration for your own, the goal remains the same: bring the focus back to solving problems rather than managing tools.</p>

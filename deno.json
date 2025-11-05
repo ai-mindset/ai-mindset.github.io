@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "build": "deno run --allow-read --allow-write build.ts",
+    "serve": "deno run --allow-net --allow-read serve.ts",
+    "dev": "deno task build && deno task serve"
+  },
+  "imports": {
+    "std/": "https://deno.land/std@0.224.0/",
+    "marked": "https://deno.land/x/marked@1.0.2/mod.ts"
+  }
+}

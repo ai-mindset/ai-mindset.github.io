@@ -51,9 +51,9 @@
 </ul>
 <h2 id="bm25-the-modern-evolution">BM25: The Modern Evolution</h2>
 <p>BM25 (Best Match 25) builds upon TF-IDF&#39;s foundation but adds two crucial improvements: term frequency saturation and document length normalisation. Note how the $idf_{BM25}$ component differs from TF-IDF&#39;s:</p>
-<p>$idf_{BM25}(t) = \log\frac{N - n_t + 0.5}{n_t + 0.5}$</p>
+<p>$idf_{BM25}(t) = \log\frac{N- n_t + 0.5}{n_t + 0.5}$</p>
 <p>This modification provides smoother IDF weights and better handles edge cases.</p>
-<p>$BM25(t,d) = \frac{tf(t,d) \cdot (k_1 + 1)}{tf(t,d) + k_1 \cdot (1 - b + b \cdot \frac{|d|}{avgdl})} \cdot idf_{BM25}$</p>
+<p>$BM25(t,d) = \frac{tf(t,d) \cdot (k_1 + 1)}{tf(t,d) + k_1 \cdot (1- b + b \cdot \frac{|d|}{avgdl})} \cdot idf_{BM25}$</p>
 <p>where:\ $tf(t,d)$ : Frequency of term $t$ in document $d$\ $|d|$ : Length of document $d$ (in words)\ $avgdl$ : Average document length in corpus\ $k_1$ : Term frequency saturation parameter (typically 1.2-2.0)\ $b$ : Length normalisation parameter (typically 0.75)\ $N$ : Total number of documents in corpus\ $n_t$ : Number of documents containing term $t$</p>
 <h3 id="advantages-1">Advantages</h3>
 <ul>

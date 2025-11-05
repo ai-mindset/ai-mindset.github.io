@@ -57,6 +57,7 @@ The system operates through three primary components:
 3. **Accelerated Pipeline**
    - GPU-accelerated distributed [QLoRA](https://arxiv.org/abs/2305.14314)      training    - Supports NVIDIA CUDA and AMD ROCm    - Requires 18GB+ GPU memory    - Ideal for production-grade fine-tuning
 
+
 ### Hardware Support and Quantisation
 
 [InstructLab](https://instructlab.ai/) supports various hardware configurations with automatic quantisation:
@@ -96,6 +97,7 @@ Key requirements:
 
 4. **Evaluation**
    ```bash    ilab model evaluate    ```    Benchmarks and typical scores:    - [MMLU](http://en.wikipedia.org/wiki/MMLU): Knowledge (0.0-1.0 scale)    - MMLUBranch: Delta improvements    - MTBench: Skills (0.0-10.0 scale)    - MTBenchBranch: Skill improvements
+
 
 ### Model Deployment
 
@@ -140,6 +142,7 @@ Deployment considerations:
 
 - **Maintenance Requirements**:
   - Regular model evaluations against new benchmarks   - Periodic retraining with updated taxonomy   - System updates and dependency management   - Storage management for checkpoints and datasets
+
 
 ### RAG vs Fine-tuning
 

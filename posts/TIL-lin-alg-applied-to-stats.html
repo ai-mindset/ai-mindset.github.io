@@ -24,7 +24,7 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Linear regression can be elegantly solved using the matrix equation β = (X^TX)^(-1)X^Ty, which mathematically guarantees minimum squared error by accounting for feature correlations - though real-world applications often favour gradient descent due to the direct solution&#39;s computational complexity, numerical instability with correlated features, and memory constraints.</p>
+        <p><strong>TL;DR:</strong> Linear regression can be elegantly solved using the matrix equation β = (X^TX)^(-1)X^Ty, which mathematically guarantees minimum squared error by accounting for feature correlations- though real-world applications often favour gradient descent due to the direct solution&#39;s computational complexity, numerical instability with correlated features, and memory constraints.</p>
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
@@ -67,34 +67,15 @@
 <ol>
 <li><em>Computational Complexity</em>: Computing $(X^TX)^{-1}$ requires $\Omicron(n^3)$</li>
 <li><em>Numerical Instability</em>: When features are highly correlated (like monthly</li>
-<li><em>Memory Constraints</em>: Large datasets require holding the entire $X^TX$ matrix
-operations, becoming prohibitively expensive for large feature sets. This is    why gradient descent, with its $\Omicron(n^2)$ per-iteration complexity,    often proves more practical.    and annual income), $X^TX$ becomes nearly singular[^3]. Even small rounding    errors in the computation of its inverse can lead to large errors in $\beta$.    In extreme cases, when features are perfectly correlated, the inverse doesn&#39;t    exist at all. Gradient descent avoids this matrix inversion entirely.    in memory, while gradient descent can work with mini-batches, making it more    memory-efficient.</li>
+<li><em>Memory Constraints</em>: Large datasets require holding the entire $X^TX$ matrix<br>operations, becoming prohibitively expensive for large feature sets. This is    why gradient descent, with its $\Omicron(n^2)$ per-iteration complexity,    often proves more practical.    and annual income), $X^TX$ becomes nearly singular[^3]. Even small rounding    errors in the computation of its inverse can lead to large errors in $\beta$.    In extreme cases, when features are perfectly correlated, the inverse doesn&#39;t    exist at all. Gradient descent avoids this matrix inversion entirely.    in memory, while gradient descent can work with mini-batches, making it more    memory-efficient.</li>
 </ol>
 <h2 id="conclusion">Conclusion</h2>
 <p>While this equation brilliantly demonstrates the power of linear algebra in statistics, real-world machine learning often favours gradient descent&#39;s iterative approach. Think of it as choosing between a perfect GPS route through heavy traffic (direct solution) versus taking smaller, adaptable steps through clear side streets (gradient descent). Both reach the same destination, but the practical path often wins in real-world conditions.</p>
 <hr>
-<p>[^1]: When features are centred (mean = 0), each product becomes $n$ times the
-    covariance. This means $X^TX$ captures how features vary together, which is
-    crucial because correlated features can lead to unstable coefficients if not
-    accounted for. The relationship between $X^TX$ and covariance comes from the
-    definition of sample covariance:
-    $cov(X_i, X_j) = \frac{1}{n-1}\sum_{k=1}^n (x_{ki} - \bar{x_i})(x_{kj} - \bar{x_j})$.
-    When data is centred, this simplifies to $\frac{1}{n-1}(X^TX)_{ij}$.
-    $\frac{X^TX}{n-1}$ returns the sample covariance matrix. This matters
-    because a) when features are uncentred, $(X^TX)$ gives the sum of products,
-    b) when centred $\frac{X^TX}{n-1}$ gives covariances, c) when also
-    standardised (std = 1), $\frac{X^TX}{n-1}$ gives correlations.</p>
-<p>[^2]: Adjusts coefficient estimates to account for shared information between
-    features. For example, if height and weight are correlated, we need to
-    determine each variable&#39;s unique contribution to the prediction, not their
-    overlapping effect.</p>
-<p>[^3]: When centred, each element becomes $n$ times the covariance between a
-    feature and the target. This reveals how each feature individually relates
-    to $y$ before accounting for other features&#39; effects, providing a starting
-    point for determining final coefficients.</p>
-<p>[^3]: A matrix is singular (or non-invertible) when its determinant is zero. In
-    practical terms, this means one or more columns can be expressed as linear
-    combinations of other columns.</p>
+<p>[^1]: When features are centred (mean = 0), each product becomes $n$ times the<br>    covariance. This means $X^TX$ captures how features vary together, which is<br>    crucial because correlated features can lead to unstable coefficients if not<br>    accounted for. The relationship between $X^TX$ and covariance comes from the<br>    definition of sample covariance:<br>    $cov(X_i, X_j) = \frac{1}{n-1}\sum_{k=1}^n (x_{ki}- \bar{x_i})(x_{kj}- \bar{x_j})$.<br>    When data is centred, this simplifies to $\frac{1}{n-1}(X^TX)_{ij}$.<br>    $\frac{X^TX}{n-1}$ returns the sample covariance matrix. This matters<br>    because a) when features are uncentred, $(X^TX)$ gives the sum of products,<br>    b) when centred $\frac{X^TX}{n-1}$ gives covariances, c) when also<br>    standardised (std = 1), $\frac{X^TX}{n-1}$ gives correlations.</p>
+<p>[^2]: Adjusts coefficient estimates to account for shared information between<br>    features. For example, if height and weight are correlated, we need to<br>    determine each variable&#39;s unique contribution to the prediction, not their<br>    overlapping effect.</p>
+<p>[^3]: When centred, each element becomes $n$ times the covariance between a<br>    feature and the target. This reveals how each feature individually relates<br>    to $y$ before accounting for other features&#39; effects, providing a starting<br>    point for determining final coefficients.</p>
+<p>[^3]: A matrix is singular (or non-invertible) when its determinant is zero. In<br>    practical terms, this means one or more columns can be expressed as linear<br>    combinations of other columns.</p>
 
       </div>
     </article>

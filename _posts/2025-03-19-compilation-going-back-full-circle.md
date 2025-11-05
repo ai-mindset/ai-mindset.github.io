@@ -39,7 +39,8 @@ The key benefits include:
 3. **Bundled assets** for complete portability
 4. **Improved startup times** compared to interpreter-based approaches
 
-Deno 2.0 enhances these capabilities further with support for npm packages, web workers, cross-compilation, smaller binary sizes, and code signing with custom icons - making it viable for complete applications, not just scripts.
+Deno 2.0 enhances these capabilities further with support for npm packages, web workers, cross-compilation, smaller binary sizes, and code signing with custom icons- making it viable for complete applications, not just scripts.
+
 
 ## The Single Language Advantage
 
@@ -65,7 +66,8 @@ Deno's compilation capabilities shine in several real-world scenarios:
 
 ## Conclusion
 
-We've come full circle in programming language evolution -from compiled languages like Fortran in the 1950s, to interpreted languages for improved developer experience, to containerisation for managing deployment complexities, and now back to compilation with Deno[^1].\ Deno's approach represents a compelling blend - combining deployment simplicity with the ecosystem richness of modern TS/JS. For AI engineering, this addresses many pain points of Python deployment while maintaining access to growing ecosystem of data science tools.\ While Elixir offers similar single language benefits, its distribution story remains a work in progress with projects like [Burrito](https://github.com/burrito-elixir/burrito) showing promise but not yet fully mature. Until then, Deno stands out as a viable alternative for simplified deployment without sacrificing ecosystem benefits.\ The future of deployment may look surprisingly like its past, just with better languages and tools at our disposal -offering a path toward more cohesive, efficient software development that reduces complexity without sacrificing capability.
+We've come full circle in programming language evolution -from compiled languages like Fortran in the 1950s, to interpreted languages for improved developer experience, to containerisation for managing deployment complexities, and now back to compilation with Deno[^1].\ Deno's approach represents a compelling blend- combining deployment simplicity with the ecosystem richness of modern TS/JS. For AI engineering, this addresses many pain points of Python deployment while maintaining access to growing ecosystem of data science tools.\ While Elixir offers similar single language benefits, its distribution story remains a work in progress with projects like [Burrito](https://github.com/burrito-elixir/burrito) showing promise but not yet fully mature. Until then, Deno stands out as a viable alternative for simplified deployment without sacrificing ecosystem benefits.\ The future of deployment may look surprisingly like its past, just with better languages and tools at our disposal -offering a path toward more cohesive, efficient software development that reduces complexity without sacrificing capability.
+
 
 ---
 

@@ -49,8 +49,7 @@
 <ul>
 <li><strong>Taxonomy Repository</strong>: A structured collection of knowledge and skills,</li>
 <li><strong>Synthetic Data Generator</strong>: Uses a teacher model (default: Mixtral/Mistral</li>
-<li><strong>Training Pipeline System</strong>: <a href="https://arxiv.org/abs/2305.14314">QLoRA</a>-based
-organised in YAML files (max 2300 words per Q&amp;A pair)   instruct for full pipeline, Merlinite 7b for simple) to transform taxonomy   entries into diverse training examples   training options optimised for different hardware configurations</li>
+<li><strong>Training Pipeline System</strong>: <a href="https://arxiv.org/abs/2305.14314">QLoRA</a>-based<br>organised in YAML files (max 2300 words per Q&amp;A pair)   instruct for full pipeline, Merlinite 7b for simple) to transform taxonomy   entries into diverse training examples   training options optimised for different hardware configurations</li>
 </ul>
 <h3 id="training-pipelines">Training Pipelines</h3>
 <p><a href="https://instructlab.ai/">InstructLab</a> offers three specialised training pipelines:</p>
@@ -93,17 +92,13 @@ ilab config init
 </ul>
 <h3 id="core-workflow-steps">Core Workflow Steps</h3>
 <ol>
-<li><p><strong>Model Acquisition</strong>
-<code>bash    ilab model download    </code>    - Downloads pre-trained base models    - Supports GGUF (4-bit to 16-bit) and Safetensors formats    - Automatic quantisation with configurable parameters</p>
+<li><p><strong>Model Acquisition</strong><br><code>bash    ilab model download    </code>    - Downloads pre-trained base models    - Supports GGUF (4-bit to 16-bit) and Safetensors formats    - Automatic quantisation with configurable parameters</p>
 </li>
-<li><p><strong>Synthetic Data Generation</strong>
-<code>bash    ilab model serve    ilab data generate --pipeline [simple|full]    </code>    Common issues and solutions:    - Server conflicts: Use different ports with <code>--port</code>    - Memory errors: Reduce batch size or use <code>--pipeline simple</code>    - Teacher model issues: Verify model checksum and try re-downloading</p>
+<li><p><strong>Synthetic Data Generation</strong><br><code>bash    ilab model serve    ilab data generate --pipeline [simple|full]    </code>    Common issues and solutions:    - Server conflicts: Use different ports with <code>--port</code>    - Memory errors: Reduce batch size or use <code>--pipeline simple</code>    - Teacher model issues: Verify model checksum and try re-downloading</p>
 </li>
-<li><p><strong>Training</strong>
-<code>bash    ilab model train    </code>    Hyperparameters (configurable in config.yaml):    - Max epochs: 10</p>
+<li><p><strong>Training</strong><br><code>bash    ilab model train    </code>    Hyperparameters (configurable in config.yaml):    - Max epochs: 10</p>
 </li>
-<li><p><strong>Evaluation</strong>
-<code>bash    ilab model evaluate    </code>    Benchmarks and typical scores:    - <a href="http://en.wikipedia.org/wiki/MMLU">MMLU</a>: Knowledge (0.0-1.0 scale)    - MMLUBranch: Delta improvements    - MTBench: Skills (0.0-10.0 scale)    - MTBenchBranch: Skill improvements</p>
+<li><p><strong>Evaluation</strong><br><code>bash    ilab model evaluate    </code>    Benchmarks and typical scores:    - <a href="http://en.wikipedia.org/wiki/MMLU">MMLU</a>: Knowledge (0.0-1.0 scale)    - MMLUBranch: Delta improvements    - MTBench: Skills (0.0-10.0 scale)    - MTBenchBranch: Skill improvements</p>
 </li>
 </ol>
 <h3 id="model-deployment">Model Deployment</h3>
@@ -123,8 +118,7 @@ ilab model chat -m &lt;new-model-path&gt; # Optionally, chat with the model
 <li><strong>Accessibility</strong>: From laptops to data centres,</li>
 <li><strong>Flexibility</strong>: Multiple training pipelines accommodate different needs and</li>
 <li><strong>Systematic</strong>: Structured approach to knowledge and skill injection through</li>
-<li><strong>Verifiable</strong>: Comprehensive evaluation suite ensures quality of fine-tuned
-<a href="https://instructlab.ai/">InstructLab</a> scales with available resources   constraints   taxonomy   models</li>
+<li><strong>Verifiable</strong>: Comprehensive evaluation suite ensures quality of fine-tuned<br><a href="https://instructlab.ai/">InstructLab</a> scales with available resources   constraints   taxonomy   models</li>
 </ul>
 <h3 id="practical-impact">Practical Impact</h3>
 <p><a href="https://instructlab.ai/">InstructLab</a> enables organisations to:</p>
@@ -132,15 +126,13 @@ ilab model chat -m &lt;new-model-path&gt; # Optionally, chat with the model
 <li>Create domain-specialised models without massive compute resources</li>
 <li>Systematically inject new capabilities through structured knowledge</li>
 <li>Validate improvements through quantitative benchmarks</li>
-<li>Deploy fine-tuned models with minimal operational overhead
-representation</li>
+<li>Deploy fine-tuned models with minimal operational overhead<br>representation</li>
 </ul>
 <h3 id="limitations-and-considerations">Limitations and Considerations</h3>
 <ul>
 <li><p><strong>Model Constraints</strong>: Currently supports models up to 7B parameters</p>
 </li>
-<li><p><strong>Resource Timeline</strong>: Typical deployment cycle from setup to production:
-effectively   - Initial setup: a few hours   - Synthetic Data generation: 15 minutes to 1+ hours depending on computing     resources   - Training: several hours on consumer hardware   - Evaluation and deployment: a few hours</p>
+<li><p><strong>Resource Timeline</strong>: Typical deployment cycle from setup to production:<br>effectively   - Initial setup: a few hours   - Synthetic Data generation: 15 minutes to 1+ hours depending on computing     resources   - Training: several hours on consumer hardware   - Evaluation and deployment: a few hours</p>
 </li>
 <li><p><strong>Maintenance Requirements</strong>:</p>
 <ul>
@@ -157,11 +149,7 @@ effectively   - Initial setup: a few hours   - Synthetic Data generation: 15 min
 </ul>
 <p>The system&#39;s architecture strikes a careful balance between computational efficiency and training effectiveness, making it a practical tool for both experimentation and production use. While not eliminating the complexity of LLM fine-tuning entirely, <a href="https://instructlab.ai/">InstructLab</a> significantly reduces the technical barriers to entry in this crucial domain.</p>
 <hr>
-<p>[^1]: Python version compatibility remains a significant consideration in the ML
-    ecosystem. While newer versions (≥3.12) offer improved performance, they
-    often lack compatibility with essential ML frameworks. This constraint
-    informs <a href="https://instructlab.ai/">InstructLab</a>&#39;s current version
-    requirements.</p>
+<p>[^1]: Python version compatibility remains a significant consideration in the ML<br>    ecosystem. While newer versions (≥3.12) offer improved performance, they<br>    often lack compatibility with essential ML frameworks. This constraint<br>    informs <a href="https://instructlab.ai/">InstructLab</a>&#39;s current version<br>    requirements.</p>
 
       </div>
     </article>

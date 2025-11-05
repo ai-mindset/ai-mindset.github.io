@@ -85,7 +85,7 @@ Instead of extensive unit test suites, it's worth considering:
 
 This approach reduces maintenance burden while ensuring code remains reliable where it matters most, that is in production.
 
-"_Programs must be written for people to read, and only incidentally for machines to execute_" - Abelson & Sussman. The same applies to tests.
+"_Programs must be written for people to read, and only incidentally for machines to execute_"- Abelson & Sussman. The same applies to tests.
 
 ---
 

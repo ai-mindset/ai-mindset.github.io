@@ -5,7 +5,6 @@ date: 2025-01-21
 tags: [machine-learning, best-practices, mlops, monitoring, production, quality-assurance, data-science, decision-making]
 ---
 
-**TL;DR:** This concise guide distils Google's 43 machine learning best practices into essential principles across four phases: starting with simple heuristics before ML, building robust data pipelines, prioritising feature engineering over complex algorithms, and gradually introducing complexity only after monitoring systems are established - emphasising engineering excellence over ML expertise.
 <!--more-->
 
 ## Introduction
@@ -34,6 +33,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 3. **Choose ML over complex heuristics**
    - Simple heuristics for launching    - Complex heuristics become unmaintainable    - ML models are easier to maintain long-term
 
+
 ## Phase II: First Pipeline (Rules #4-11)
 
 1. **Keep first model simple, get infrastructure right**
@@ -45,6 +45,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 3. **Starting Your ML System**
    - Test getting data into algorithm    - Test getting models out correctly    - Monitor data statistics continuously    - Build alerting system
 
+
 ## Your First Objective (Rules #12-15)
 
 1. **Choose Objectives Wisely**
@@ -52,6 +53,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 
 2. **Model Selection Guidelines**
    - Start with interpretable models    - Separate spam filtering from quality ranking    - Use simple linear models initially    - Make debugging easier
+
 
 ## Phase III: Feature Engineering (Rules #16-22)
 
@@ -64,6 +66,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 3. **Feature Coverage and Quality**
    - Features that generalise across contexts    - Monitor feature coverage    - Document feature ownership    - Regular feature clean-up
 
+
 ## Human Analysis (Rules #23-28)
 
 1. **Testing and Validation**
@@ -71,6 +74,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 
 2. **Common Pitfalls**
    - Engineers aren't typical users    - Beware of confirmation bias    - Quantify undesirable behaviours
+
 
 ## Training-Serving Skew (Rules #29-37)
 
@@ -80,6 +84,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 2. **Monitor Everything**
    - Track performance metrics    - Watch data distributions    - Monitor feature coverage    - Check prediction bias
 
+
 ## Phase IV: Optimisation and Complex Models (Rules #38-43)
 
 1. **When to Add Complexity**
@@ -88,6 +93,7 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 2. **Advanced Techniques**
    - Keep ensembles simple    - Look for new information sources    - Balance complexity vs. benefits
 
+
 ## Final Recommendations
 
 1. **Launch Decisions**
@@ -95,3 +101,4 @@ Most ML gains come from great features, not algorithms. The basic approach shoul
 
 2. **System Evolution**
    - Start simple, add complexity gradually    - Monitor consistently    - Keep infrastructure clean    - Document everything
+

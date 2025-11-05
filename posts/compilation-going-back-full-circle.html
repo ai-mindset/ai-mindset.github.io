@@ -28,9 +28,7 @@
 <!--more-->
 
 <h2 id="introduction">Introduction</h2>
-<p>Over the years, I&#39;ve experimented with numerous programming languages and deployment strategies. Python has been my domain&#39;s lingua franca -with its vast ecosystem for data science and AI applications. However, its deployment complexities have consistently been a pain point: managing dependencies, configuring containers, and setting up build pipelines.\ This search for a better alternative has led me through statically compiled languages like Go and Rust; JIT-compiled languages like Julia; and hosted languages like Clojure and Scala. Yet most failed to provide a good balance between ecosystem richness and deployment simplicity. Recently, however, Deno
-2.0 has emerged as a compelling solution -particularly with its ability to
-compile TypeScript (TS) / JavaScript (JS) to standalone executables.</p>
+<p>Over the years, I&#39;ve experimented with numerous programming languages and deployment strategies. Python has been my domain&#39;s lingua franca -with its vast ecosystem for data science and AI applications. However, its deployment complexities have consistently been a pain point: managing dependencies, configuring containers, and setting up build pipelines.\ This search for a better alternative has led me through statically compiled languages like Go and Rust; JIT-compiled languages like Julia; and hosted languages like Clojure and Scala. Yet most failed to provide a good balance between ecosystem richness and deployment simplicity. Recently, however, Deno<br>2.0 has emerged as a compelling solution -particularly with its ability to<br>compile TypeScript (TS) / JavaScript (JS) to standalone executables.</p>
 <h2 id="the-circular-evolution-of-programming-languages">The Circular Evolution of Programming Languages</h2>
 <p>Programming languages have undergone a fascinating evolution. In the beginning (the late 1950s and 1960s), languages like Fortran, COBOL, and C were ahead-of-time compiled -transformed directly into machine code executables that could run without additional dependencies.\ As computing evolved, the pendulum swung toward higher-level languages -interpreted languages like Python and hosted environments like the JVM- prioritising readability and developer productivity over raw performance. These languages abstracted away machine-level concerns, allowing developers to focus on solving business problems.\ Yet this shift introduced new challenges. Python applications often require managing complex dependency trees, virtual environments, and platform-specific configurations. The infamous &quot;<em>works on my machine</em>&quot; problem became so pervasive that containerisation emerged as a solution.\ While effective, containerisation introduces its own complexities: orchestration, image management, and networking configurations. What began as a solution to simplify deployment has become a complex system requiring specialised knowledge.</p>
 <h2 id="deno-compilation-makes-a-comeback">Deno: Compilation Makes a Comeback</h2>
@@ -49,7 +47,7 @@ await open(&quot;https://example.com&quot;);
 <li><strong>Bundled assets</strong> for complete portability</li>
 <li><strong>Improved startup times</strong> compared to interpreter-based approaches</li>
 </ol>
-<p>Deno 2.0 enhances these capabilities further with support for npm packages, web workers, cross-compilation, smaller binary sizes, and code signing with custom icons - making it viable for complete applications, not just scripts.</p>
+<p>Deno 2.0 enhances these capabilities further with support for npm packages, web workers, cross-compilation, smaller binary sizes, and code signing with custom icons- making it viable for complete applications, not just scripts.</p>
 <h2 id="the-single-language-advantage">The Single Language Advantage</h2>
 <p>Beyond deployment simplicity, using a single language across an entire project stack creates significant organisational benefits. I&#39;ve experienced first-hand how using different languages for front-end, back-end, and data science work can create silos within teams.\ <a href="https://dockyard.com/blog/2024/02/06/5-benefts-amplified-saw-switching-to-elixir">Amplified&#39;s case study</a> demonstrates this point clearly. After switching from a React/JS front-end and Phoenix/Elixir back-end to an all-Elixir approach with LiveView, they reported:</p>
 <ol>
@@ -57,8 +55,7 @@ await open(&quot;https://example.com&quot;);
 <li><strong>Dramatically increased development speed</strong> by eliminating cross-language</li>
 <li><strong>Improved team cohesion</strong> with shared tooling and knowledge</li>
 <li><strong>Enhanced maintainability</strong> through code reuse</li>
-<li><strong>Reduced team size requirements</strong> from 12 developers to just 2
-silos</li>
+<li><strong>Reduced team size requirements</strong> from 12 developers to just 2<br>silos</li>
 </ol>
 <p>TS with Deno provides a similar single language opportunity -allowing teams to build front-end interfaces, back-end services, and data processing workflows with the same toolchain. The JS/TS ecosystem is rapidly maturing for AI, ML, and data science applications, as I noted in my previous article on [Modern Data Science and AI Engineering with Deno 2.0]({{ site.baseurl }}{% link _posts/2024-09-05-deno.md %}).\ One often overlooked benefit is the reduced cognitive load when developers don&#39;t need to context-switch between different language paradigms, package managers, testing frameworks, and debugging approaches.</p>
 <h2 id="practical-applications">Practical Applications</h2>
@@ -66,17 +63,12 @@ silos</li>
 <ol>
 <li><strong>CLI Tools</strong>: Creating self-contained executables that &quot;just work&quot; across</li>
 <li><strong>Offline Environments</strong>: Deploying to systems without internet access, where</li>
-<li><strong>Cross-Platform Applications</strong>: Building desktop applications that leverage
-platforms without complex installation instructions    package resolution at runtime isn&#39;t possible    web technologies without requiring a browser runtime</li>
+<li><strong>Cross-Platform Applications</strong>: Building desktop applications that leverage<br>platforms without complex installation instructions    package resolution at runtime isn&#39;t possible    web technologies without requiring a browser runtime</li>
 </ol>
 <h2 id="conclusion">Conclusion</h2>
-<p>We&#39;ve come full circle in programming language evolution -from compiled languages like Fortran in the 1950s, to interpreted languages for improved developer experience, to containerisation for managing deployment complexities, and now back to compilation with Deno[^1].\ Deno&#39;s approach represents a compelling blend - combining deployment simplicity with the ecosystem richness of modern TS/JS. For AI engineering, this addresses many pain points of Python deployment while maintaining access to growing ecosystem of data science tools.\ While Elixir offers similar single language benefits, its distribution story remains a work in progress with projects like <a href="https://github.com/burrito-elixir/burrito">Burrito</a> showing promise but not yet fully mature. Until then, Deno stands out as a viable alternative for simplified deployment without sacrificing ecosystem benefits.\ The future of deployment may look surprisingly like its past, just with better languages and tools at our disposal -offering a path toward more cohesive, efficient software development that reduces complexity without sacrificing capability.</p>
+<p>We&#39;ve come full circle in programming language evolution -from compiled languages like Fortran in the 1950s, to interpreted languages for improved developer experience, to containerisation for managing deployment complexities, and now back to compilation with Deno[^1].\ Deno&#39;s approach represents a compelling blend- combining deployment simplicity with the ecosystem richness of modern TS/JS. For AI engineering, this addresses many pain points of Python deployment while maintaining access to growing ecosystem of data science tools.\ While Elixir offers similar single language benefits, its distribution story remains a work in progress with projects like <a href="https://github.com/burrito-elixir/burrito">Burrito</a> showing promise but not yet fully mature. Until then, Deno stands out as a viable alternative for simplified deployment without sacrificing ecosystem benefits.\ The future of deployment may look surprisingly like its past, just with better languages and tools at our disposal -offering a path toward more cohesive, efficient software development that reduces complexity without sacrificing capability.</p>
 <hr>
-<p>[^1]: Go, Zig, Rust, C/C++ D, Nim, Common Lisp are some prominent examples of
-    ahead-of-time compiled languages that -with the exception of Common Lisp-
-    excel in systems programming. However, Deno allows a ubiquitous,
-    higher-level language like JS and its superset TS to join the club of
-    languages that can easily package code to a cross-platform single binary.</p>
+<p>[^1]: Go, Zig, Rust, C/C++ D, Nim, Common Lisp are some prominent examples of<br>    ahead-of-time compiled languages that -with the exception of Common Lisp-<br>    excel in systems programming. However, Deno allows a ubiquitous,<br>    higher-level language like JS and its superset TS to join the club of<br>    languages that can easily package code to a cross-platform single binary.</p>
 
       </div>
     </article>

@@ -35,8 +35,7 @@
 <p>K-quantisation is a way to make AI models smaller using two methods to store weights (the model&#39;s numbers):</p>
 <ol>
 <li>Type-0 (simpler): reconstructs weight as <code>weight = scale × quant</code></li>
-<li>Type-1 (more precise): reconstructs weight as
-<code>weight = scale × quant + minimum</code></li>
+<li>Type-1 (more precise): reconstructs weight as<br><code>weight = scale × quant + minimum</code></li>
 </ol>
 <p>The &quot;block minimum&quot; <code>minimum</code> is the smallest value found in a group of weights. By tracking this minimum, we can represent the other values more precisely relative to it, rather than having to represent their full absolute values.</p>
 <p>Each format groups weights into &quot;super-blocks&quot; to save space. Specifically:</p>
@@ -46,8 +45,7 @@
 <li>Organises weights in groups of 256 (16 blocks × 16 weights)</li>
 <li>Uses 4 bits to store both scales and minimums</li>
 <li>Takes exactly 2.5625 bits per weight</li>
-<li>Result: Shrinks a 13GB model to 2.67GB, but quality drops (perplexity
-increases from 5.91 to 6.78)</li>
+<li>Result: Shrinks a 13GB model to 2.67GB, but quality drops (perplexity<br>increases from 5.91 to 6.78)</li>
 </ul>
 <p>Q3_K (3-bit):</p>
 <ul>
@@ -85,8 +83,7 @@ increases from 5.91 to 6.78)</li>
 <p>A simple way to think of this concept is:</p>
 <ul>
 <li>Type-0 just stretches/shrinks values using a scale</li>
-<li>Type-1 first shifts all numbers by subtracting the minimum (making them
-smaller), then scales them for storage, and when reconstructing adds the   minimum back</li>
+<li>Type-1 first shifts all numbers by subtracting the minimum (making them<br>smaller), then scales them for storage, and when reconstructing adds the   minimum back</li>
 </ul>
 <p>This is why Type-1 generally gives better quality results but needs more storage space. It has to keep track of both the scale and minimum for each block.</p>
 <h2 id="mixed-precision-strategies">Mixed Precision Strategies</h2>
@@ -157,8 +154,7 @@ Q6_K   | 5.15GB    | Highest quality
 <li>Q4_K_S (4-bit) represents the current sweet spot for most users, offering:</li>
 <li>For more constrained setups, Q2_K/Q3_K variants can run larger models with</li>
 <li>Higher bits (Q5_K, Q6_K) approach F16 quality but require more memory</li>
-<li>The _S/_M/_L variants let the user fine-tune the quality-size tradeoff by
-precision strategies   - 3.7x size reduction   - Good perplexity (6.02)   - Excellent inference speed on both GPU and CPU   acceptable quality loss   adjusting precision where it matters most</li>
+<li>The _S/_M/_L variants let the user fine-tune the quality-size tradeoff by<br>precision strategies   - 3.7x size reduction   - Good perplexity (6.02)   - Excellent inference speed on both GPU and CPU   acceptable quality loss   adjusting precision where it matters most</li>
 </ul>
 <p>Before downloading a quantised model, check the system&#39;s available RAM and choose a format that leaves enough memory for comfortable operation. For most users with modern GPUs, Q4_K variants will provide the best experience.</p>
 <hr>
@@ -168,17 +164,8 @@ vectors in the self-attention mechanism of the model. This tensor is crucial
 for determining how much focus the model places on different parts of the
 input when generating responses.
 </code></pre>
-<p>[^2]: <code>attention.wo</code> refers to the weight matrix used in the output layer of the
-    attention mechanism within a transformer model. It plays a crucial role in
-    transforming the attention output into the final representation that is used
-    for generating predictions.</p>
-<p>[^3]: <code>feed_forward.w1</code> projects input to a higher-dimensional space, enabling
-    the capture of complex features. <code>feed_forward.w2</code> projects transformed
-    input back to the original dimension with a non-linear activation function,
-    whereas <code>feed_forward.w3</code> applies an additional transformation to enhance
-    the learning of complex patterns. These matrices collectively enable the
-    feed-forward network to transform and learn from the input effectively,
-    contributing to the overall performance of the transformer model.</p>
+<p>[^2]: <code>attention.wo</code> refers to the weight matrix used in the output layer of the<br>    attention mechanism within a transformer model. It plays a crucial role in<br>    transforming the attention output into the final representation that is used<br>    for generating predictions.</p>
+<p>[^3]: <code>feed_forward.w1</code> projects input to a higher-dimensional space, enabling<br>    the capture of complex features. <code>feed_forward.w2</code> projects transformed<br>    input back to the original dimension with a non-linear activation function,<br>    whereas <code>feed_forward.w3</code> applies an additional transformation to enhance<br>    the learning of complex patterns. These matrices collectively enable the<br>    feed-forward network to transform and learn from the input effectively,<br>    contributing to the overall performance of the transformer model.</p>
 
       </div>
     </article>

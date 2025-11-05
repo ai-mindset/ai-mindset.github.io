@@ -26,6 +26,7 @@ My toolchain starts with the following foundational choices that eliminate commo
 1. [uv](https://docs.astral.sh/uv/): A blazing-fast Python package and project
    that the team is on the same page    manager, written in Rust. It replaces pip, pip-tools, pipx, poetry, pyenv,    twine, virtualenv, and more, providing:    - Consistent dependency resolution    - Lightning-fast package installations    - Built-in virtual environment management    - Direct integration with `pyproject.toml`
 
+
 2. [`pyproject.toml`](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/):
    The single source of truth for project configuration. For example:
 
@@ -53,6 +54,7 @@ My toolchain starts with the following foundational choices that eliminate commo
 
 4. [pyright](https://github.com/microsoft/pyright): Static Type Checker for
    Python    - Static type checker    - [Standards](https://htmlpreview.github.io/?https://github.com/python/typing/blob/main/conformance/results/results.html)      compliant    - [Configurable](https://microsoft.github.io/pyright/#/configuration?id=sample-pyprojecttoml-file)      within `pyproject.toml`
+
 
 5. [iterative refinement]({{ site.baseurl }}{% link
    _posts/2024-11-22-iterative-refinement.md %}): An approach that tightly    couples (doc)tests with code, ensuring    [up-to-dateness](https://www.merriam-webster.com/thesaurus/up-to-dateness)\    ~~[pytest](https://docs.pytest.org/en/stable/): Handles testing with minimal    boilerplate and rich assertions~~
