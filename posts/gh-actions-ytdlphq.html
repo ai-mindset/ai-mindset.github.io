@@ -9,7 +9,11 @@
 <body>
   <header>
     <div class="container">
-      <h1><a href="/">Just-in-Time Learning</a></h1>
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
     </div>
   </header>
 
@@ -24,15 +28,20 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> This article details the development of a Deno-based tool for downloading high-quality videos with audio using yt-dlp, highlighting unexpected challenges with GitHub Actions where compiled executables became unusable after release-ultimately solved by compressing executables into .tar files, preserving functionality whilst revealing potential limitations in GitHub&#39;s release mechanisms.</p>
+        <p>
+<strong>TL;DR:</strong> This article details the development of a Deno-based tool for downloading high-quality videos with audio using yt-dlp, highlighting unexpected challenges with GitHub Actions where compiled executables became unusable after release-ultimately solved by compressing executables into .tar files, preserving functionality whilst revealing potential limitations in GitHub’s release mechanisms.</p>
 <!--more-->
-
-<p><strong><a href="https://xkcd.com/1205/">Was it worth my time</a>?</strong></p>
-<h2 id="introduction">Introduction</h2>
-<p>There are times where I need to use my computer offline, e.g. when I&#39;m travelling. Having to stay offline is a good opportunity for me to study some lectures of interest, without distractions. For that, I need offline access to the videos I&#39;m interested in.\ <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> is a great open-source project that allows the user to download audio and/or video from a wide array of platforms including YouTube. Recently, I noticed that it&#39;s no longer as straightforward to download a video with audio, using <code>yt-dlp</code>. One workaround is to download the audio and video streams separately, and merge them using <a href="https://ffmpeg.org/">FFmpeg</a>. This was a good opportunity to write a small automation project in a language I&#39;m interested in.</p>
-<h3 id="yt-dlp-and-youtube"><code>yt-dlp</code> And YouTube</h3>
-<p>Here&#39;s an example that motivates implementing this project. Imagine I&#39;d like to download a video from the excellent <a href="https://www.youtube.com/channel/UCKWaEZ-_VweaEx1j62do_vQ">IBM Technology</a> YouTube channel, for instance <a href="https://www.youtube.com/watch?v=F8NKVhkZZWI">What are AI Agents</a>. Listing the video&#39;s available formats, returns the following table</p>
-<pre><code class="language-console">$ yt-dlp -F https://www.youtube.com/watch\?v\=F8NKVhkZZWI
+<p>
+<strong><a href="https://xkcd.com/1205/">Was it worth my time</a>?</strong></p>
+<h2>
+Introduction</h2>
+<p>
+There are times where I need to use my computer offline, e.g. when I’m travelling. Having to stay offline is a good opportunity for me to study some lectures of interest, without distractions. For that, I need offline access to the videos I’m interested in.\ <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> is a great open-source project that allows the user to download audio and/or video from a wide array of platforms including YouTube. Recently, I noticed that it’s no longer as straightforward to download a video with audio, using <code class="inline">yt-dlp</code>. One workaround is to download the audio and video streams separately, and merge them using <a href="https://ffmpeg.org/">FFmpeg</a>. This was a good opportunity to write a small automation project in a language I’m interested in.</p>
+<h3>
+<code class="inline">yt-dlp</code> And YouTube</h3>
+<p>
+Here’s an example that motivates implementing this project. Imagine I’d like to download a video from the excellent <a href="https://www.youtube.com/channel/UCKWaEZ-_VweaEx1j62do_vQ">IBM Technology</a> YouTube channel, for instance <a href="https://www.youtube.com/watch?v=F8NKVhkZZWI">What are AI Agents</a>. Listing the video’s available formats, returns the following table</p>
+<pre><code class="console">$ yt-dlp -F https://www.youtube.com/watch\?v\=F8NKVhkZZWI
 [youtube] Extracting URL: https://www.youtube.com/watch?v=F8NKVhkZZWI
 [youtube] F8NKVhkZZWI: Downloading webpage
 [youtube] F8NKVhkZZWI: Downloading ios player API JSON
@@ -86,23 +95,37 @@ sb0     mhtml 320x180      0    │                  mhtml │ images           
 137     mp4   1920x1080   30    │   96.17MiB 1078k https │ avc1.640028   1078k video only          1080p, mp4_dash
 614     mp4   1920x1080   30    │ ~164.68MiB 1847k m3u8  │ vp09.00.40.08 1847k video only
 248     webm  1920x1080   30    │   91.43MiB 1025k https │ vp09.00.40.08 1025k video only          1080p, webm_dash
-616     mp4   1920x1080   30    │ ~322.53MiB 3617k m3u8  │ vp09.00.40.08 3617k video only          Premium
-</code></pre>
-<p>It looks like the only ID containing a video <em>with</em> audio, is <code>18</code>, i.e. a 420p, 640x360 video according to my media player. This might be sufficient for a video like the above, but such low resolution would make it almost impossible to read code or smaller writing.</p>
-<h2 id="my-solution">My Solution</h2>
-<p>Given I have started leveraging Deno for my needs, I wrote a small tool called <a href="https://github.com/ai-mindset/yt-dlp-hq">yt-dlp-hq</a>. It&#39;s certainly basic, with lots of room for improvement. However it does exactly what I need and I&#39;m relatively happy with the result, pending some improvements[^1].\ Deno is great for cross-compilation. Also, GitHub Actions can be a good method for automating testing, running, compiling etc.[^2] Is it though? Let&#39;s see.</p>
-<h2 id="my-ci-pipeline">My CI Pipeline</h2>
-<p>I started off by using <a href="https://nektosact.com/introduction.html">act</a>, a very nice tool that allows for testing pipelines locally. The main downside I found was that for an intermediate Docker user with little <code>act</code> experience, sometimes GitHub Actions don&#39;t behave the same way locally as they would online. Also, I like <a href="https://podman.io/">podman</a> considerably better, since it&#39;s daemonless and not as resource-hungry among others.\ Putting <code>act</code> aside, I focused on setting up a <a href="https://github.com/ai-mindset/yt-dlp-hq/blob/main/.github/workflows/ci.yml">pipeline</a> that&#39;d work well enough with every new PR opened against <code>main</code> aside from others.\ The pipeline ran successfully, where in theory it built and released <code>yt-dlp-hq</code> executables. However, when I downloaded the corresponding executable for my OS and CPU architecture, it did not run. When I locally built the same set of executables, running <code>deno task build</code>, the executable for my OS &amp; arch worked as expected. This made me wonder whether I&#39;m doing something wrong, if it&#39;s a GitHub Action intricacy or some other issue I needed to resolve. Inspired by Medicine, I tried approaching the issue through differential diagnosis, which to my understanding works by excluding other causes in order to hone in on the actual medical condition. I.e. I first created a release directory locally. I then manually created a release on GitHub. To my dismay, the executable I manually uploaded didn&#39;t run when I downloaded it back from GitHub. This made me wonder if there is a conversion involved when a pipeline generates executables or the user uploads them manually for release. Spoiler alert: I still don&#39;t know if that&#39;s the case, but I suspect that GitHub indeed doesn&#39;t save executables without some change taking place during upload.</p>
-<h3 id="fixing-executables-github-release">Fixing Executables GitHub Release</h3>
-<p>Initially, I changed the following setting on my repository:\ <em>&quot;Settings -&gt; Actions -&gt; General -&gt; Workflow permissions&quot;</em> select <em>&quot;Read and write permissions&quot;</em>. Then, I experimented with compressing each generated executable into a .tar file. This did the trick. Simply compressing an executable is enough to maintain its function. Thus, the way to install <code>yt-dlp-hq</code> takes one extra step.\ For example, if you&#39;re a Linux user on an Intel-based machine, here&#39;s how you can use my tool</p>
-<pre><code class="language-console">$ curl -L -O https://github.com/ai-mindset/yt-dlp-hq/releases/download/1.0.0/yt-dlp-hq-intel-linux.tar &amp;&amp; tar xvf yt-dlp-hq-intel-linux.tar &amp;&amp; cd release
-$ ./yt-dlp-hq-intel-linux https://www.youtube.com/watch?v=dQw4w9WgXcQ
-</code></pre>
-<h2 id="conclusion">Conclusion</h2>
-<p>I&#39;m glad I learned something more about GitHub and Actions, its idiosyncrasies and abilities. It took me a couple days, which made me consider the benefits of <a href="https://xkcd.com/1319/">automation</a>. Being more minimalistic, I tend to opt for simple automation when possible <a href="https://xkcd.com/1205/"><em>if</em> it&#39;s worth it</a>. To quote <a href="https://en.wikiquote.org/wiki/Alan_Perlis">Alan Perlis</a>, &quot;<em>Simplicity does not precede complexity, but follows it</em>&quot;.</p>
-<hr>
-<p>[^1]: Some improvements I&#39;m planning include unit testing, automatic audio &amp;<br>    video ID selection and possibly automatic FFmpeg installation when it&#39;s not<br>    available in <code>$PATH</code>.</p>
-<p>[^2]: A <a href="https://julialang.org/">Juiia</a> enthusiast introduced me to<br>    <a href="https://woodpecker-ci.org/">Woodpecker CI</a> and<br>    <a href="https://codeberg.org/">Codeberg</a>. I&#39;m definitely considering switching,<br>    following my recent GitHub Actions experience 🤔</p>
+616     mp4   1920x1080   30    │ ~322.53MiB 3617k m3u8  │ vp09.00.40.08 3617k video only          Premium</code></pre>
+<p>
+It looks like the only ID containing a video <em>with</em> audio, is <code class="inline">18</code>, i.e. a 420p, 640x360 video according to my media player. This might be sufficient for a video like the above, but such low resolution would make it almost impossible to read code or smaller writing.</p>
+<h2>
+My Solution</h2>
+<p>
+Given I have started leveraging Deno for my needs, I wrote a small tool called <a href="https://github.com/ai-mindset/yt-dlp-hq">yt-dlp-hq</a>. It’s certainly basic, with lots of room for improvement. However it does exactly what I need and I’m relatively happy with the result, pending some improvements[^1].\ Deno is great for cross-compilation. Also, GitHub Actions can be a good method for automating testing, running, compiling etc.[^2] Is it though? Let’s see.</p>
+<h2>
+My CI Pipeline</h2>
+<p>
+I started off by using <a href="https://nektosact.com/introduction.html">act</a>, a very nice tool that allows for testing pipelines locally. The main downside I found was that for an intermediate Docker user with little <code class="inline">act</code> experience, sometimes GitHub Actions don’t behave the same way locally as they would online. Also, I like <a href="https://podman.io/">podman</a> considerably better, since it’s daemonless and not as resource-hungry among others.\ Putting <code class="inline">act</code> aside, I focused on setting up a <a href="https://github.com/ai-mindset/yt-dlp-hq/blob/main/.github/workflows/ci.yml">pipeline</a> that’d work well enough with every new PR opened against <code class="inline">main</code> aside from others.\ The pipeline ran successfully, where in theory it built and released <code class="inline">yt-dlp-hq</code> executables. However, when I downloaded the corresponding executable for my OS and CPU architecture, it did not run. When I locally built the same set of executables, running <code class="inline">deno task build</code>, the executable for my OS &amp; arch worked as expected. This made me wonder whether I’m doing something wrong, if it’s a GitHub Action intricacy or some other issue I needed to resolve. Inspired by Medicine, I tried approaching the issue through differential diagnosis, which to my understanding works by excluding other causes in order to hone in on the actual medical condition. I.e. I first created a release directory locally. I then manually created a release on GitHub. To my dismay, the executable I manually uploaded didn’t run when I downloaded it back from GitHub. This made me wonder if there is a conversion involved when a pipeline generates executables or the user uploads them manually for release. Spoiler alert: I still don’t know if that’s the case, but I suspect that GitHub indeed doesn’t save executables without some change taking place during upload.</p>
+<h3>
+Fixing Executables GitHub Release</h3>
+<p>
+Initially, I changed the following setting on my repository:\ <em>“Settings -&gt; Actions -&gt; General -&gt; Workflow permissions”</em> select <em>“Read and write permissions”</em>. Then, I experimented with compressing each generated executable into a .tar file. This did the trick. Simply compressing an executable is enough to maintain its function. Thus, the way to install <code class="inline">yt-dlp-hq</code> takes one extra step.\ For example, if you’re a Linux user on an Intel-based machine, here’s how you can use my tool</p>
+<pre><code class="console">$ curl -L -O https://github.com/ai-mindset/yt-dlp-hq/releases/download/1.0.0/yt-dlp-hq-intel-linux.tar &amp;&amp; tar xvf yt-dlp-hq-intel-linux.tar &amp;&amp; cd release
+$ ./yt-dlp-hq-intel-linux https://www.youtube.com/watch?v=dQw4w9WgXcQ</code></pre>
+<h2>
+Conclusion</h2>
+<p>
+I’m glad I learned something more about GitHub and Actions, its idiosyncrasies and abilities. It took me a couple days, which made me consider the benefits of <a href="https://xkcd.com/1319/">automation</a>. Being more minimalistic, I tend to opt for simple automation when possible <a href="https://xkcd.com/1205/"><em>if</em> it’s worth it</a>. To quote <a href="https://en.wikiquote.org/wiki/Alan_Perlis">Alan Perlis</a>, “<em>Simplicity does not precede complexity, but follows it</em>“.</p>
+<hr class="thin">
+<p>
+[^1]: Some improvements I’m planning include unit testing, automatic audio &amp;</p>
+<pre><code>video ID selection and possibly automatic FFmpeg installation when it&#39;s not
+available in `$PATH`.</code></pre>
+<p>
+[^2]: A <a href="https://julialang.org/">Juiia</a> enthusiast introduced me to</p>
+<pre><code>[Woodpecker CI](https://woodpecker-ci.org/) and
+[Codeberg](https://codeberg.org/). I&#39;m definitely considering switching,
+following my recent GitHub Actions experience 🤔</code></pre>
 
       </div>
     </article>

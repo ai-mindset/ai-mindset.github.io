@@ -24,18 +24,17 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
+      - name: Setup Elixir
+        uses: erlef/setup-beam@v1
         with:
-          deno-version: v2.1.x
+          elixir-version: '1.20'
+          otp-version: '29'
 
-      # Regenerate lockfile to ensure dependencies are up to date
-      # Note: Deno 2.1+ automatically updates deno.lock when installing dependencies
-      - name: Regenerate lockfile
-        run: deno install build.ts
+      - name: Install dependencies
+        run: mix deps.get
 
       - name: Build site
-        run: deno task build
+        run: mix build_site
 
       - name: Commit changes
         run: |

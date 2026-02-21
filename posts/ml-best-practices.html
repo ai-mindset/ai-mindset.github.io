@@ -9,7 +9,11 @@
 <body>
   <header>
     <div class="container">
-      <h1><a href="/">Just-in-Time Learning</a></h1>
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
     </div>
   </header>
 
@@ -25,138 +29,211 @@
       
       <div class="post-content">
         <!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>This is a concise reference guide distilling Martin Zinkevich&#39;s <a href="https://developers.google.com/machine-learning/guides/rules-of-ml">influential Google article on machine learning best practices</a>. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you&#39;re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
-<h2 id="core-philosophy">Core Philosophy</h2>
+<h2>
+Introduction</h2>
+<p>
+This is a concise reference guide distilling Martin Zinkevich’s <a href="https://developers.google.com/machine-learning/guides/rules-of-ml">influential Google article on machine learning best practices</a>. While the original spans 43 detailed rules, this 10-minute summary captures the essential principles for building production ML systems. Whether you’re starting a new project or reviewing an existing one, this summary can be used as a practical checklist for engineering-focused machine learning.</p>
+<h2>
+Core Philosophy</h2>
 <blockquote>
-<p>Do machine learning like the great engineer you are, not like the great &gt; machine learning expert you aren&#39;t.</p>
+  <p>
+Do machine learning like the great engineer you are, not like the great &gt; machine learning expert you aren’t.  </p>
 </blockquote>
-<p>Most ML gains come from great features, not algorithms. The basic approach should be:</p>
+<p>
+Most ML gains come from great features, not algorithms. The basic approach should be:</p>
 <ol>
-<li>Ensure solid end-to-end pipeline</li>
-<li>Start with reasonable objective</li>
-<li>Add common-sense features simply</li>
-<li>Maintain pipeline integrity</li>
+  <li>
+Ensure solid end-to-end pipeline  </li>
+  <li>
+Start with reasonable objective  </li>
+  <li>
+Add common-sense features simply  </li>
+  <li>
+Maintain pipeline integrity  </li>
 </ol>
-<h2 id="phase-i-before-machine-learning-rules-1-3">Phase I: Before Machine Learning (Rules #1-3)</h2>
+<h2>
+Phase I: Before Machine Learning (Rules #1-3)</h2>
 <ol>
-<li><p><strong>Don&#39;t be afraid to launch without ML</strong></p>
-<ul>
-<li>Simple heuristics get you 50% of the way    - Launch with heuristics when data is insufficient    - Example: Use install rate for app ranking</li>
-</ul>
-</li>
-<li><p><strong>First, design and implement metrics</strong></p>
-<ul>
-<li>Track everything possible in current system    - Get early permission from users    - Design systems with metric instrumentation    - Implement experiment framework</li>
-</ul>
-</li>
-<li><p><strong>Choose ML over complex heuristics</strong></p>
-<ul>
-<li>Simple heuristics for launching    - Complex heuristics become unmaintainable    - ML models are easier to maintain long-term</li>
-</ul>
-</li>
+  <li>
+    <p>
+<strong>Don’t be afraid to launch without ML</strong>    </p>
+    <ul>
+      <li>
+Simple heuristics get you 50% of the way    - Launch with heuristics when data is insufficient    - Example: Use install rate for app ranking      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>First, design and implement metrics</strong>    </p>
+    <ul>
+      <li>
+Track everything possible in current system    - Get early permission from users    - Design systems with metric instrumentation    - Implement experiment framework      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>Choose ML over complex heuristics</strong>    </p>
+    <ul>
+      <li>
+Simple heuristics for launching    - Complex heuristics become unmaintainable    - ML models are easier to maintain long-term      </li>
+    </ul>
+  </li>
 </ol>
-<h2 id="phase-ii-first-pipeline-rules-4-11">Phase II: First Pipeline (Rules #4-11)</h2>
+<h2>
+Phase II: First Pipeline (Rules #4-11)</h2>
 <ol>
-<li><p><strong>Keep first model simple, get infrastructure right</strong></p>
-<ul>
-<li>Focus on data pipeline integrity    - Define clear evaluation metrics    - Plan model integration carefully</li>
-</ul>
-</li>
-<li><p><strong>Pipeline Health is Critical</strong></p>
-<ul>
-<li>Test infrastructure independently    - Monitor freshness requirements    - Watch for silent failures    - Give feature columns owners    - Document feature expectations</li>
-</ul>
-</li>
-<li><p><strong>Starting Your ML System</strong></p>
-<ul>
-<li>Test getting data into algorithm    - Test getting models out correctly    - Monitor data statistics continuously    - Build alerting system</li>
-</ul>
-</li>
+  <li>
+    <p>
+<strong>Keep first model simple, get infrastructure right</strong>    </p>
+    <ul>
+      <li>
+Focus on data pipeline integrity    - Define clear evaluation metrics    - Plan model integration carefully      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>Pipeline Health is Critical</strong>    </p>
+    <ul>
+      <li>
+Test infrastructure independently    - Monitor freshness requirements    - Watch for silent failures    - Give feature columns owners    - Document feature expectations      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>Starting Your ML System</strong>    </p>
+    <ul>
+      <li>
+Test getting data into algorithm    - Test getting models out correctly    - Monitor data statistics continuously    - Build alerting system      </li>
+    </ul>
+  </li>
 </ol>
-<h2 id="your-first-objective-rules-12-15">Your First Objective (Rules #12-15)</h2>
+<h2>
+Your First Objective (Rules #12-15)</h2>
 <ol>
-<li><p><strong>Choose Objectives Wisely</strong></p>
-<ul>
-<li>Don&#39;t overthink initial objective choice    - Start with simple, observable metrics    - Use directly observed user behaviours    - Example: clicks, downloads, shares</li>
-</ul>
-</li>
-<li><p><strong>Model Selection Guidelines</strong></p>
-<ul>
-<li>Start with interpretable models    - Separate spam filtering from quality ranking    - Use simple linear models initially    - Make debugging easier</li>
-</ul>
-</li>
+  <li>
+    <p>
+<strong>Choose Objectives Wisely</strong>    </p>
+    <ul>
+      <li>
+Don’t overthink initial objective choice    - Start with simple, observable metrics    - Use directly observed user behaviours    - Example: clicks, downloads, shares      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>Model Selection Guidelines</strong>    </p>
+    <ul>
+      <li>
+Start with interpretable models    - Separate spam filtering from quality ranking    - Use simple linear models initially    - Make debugging easier      </li>
+    </ul>
+  </li>
 </ol>
-<h2 id="phase-iii-feature-engineering-rules-16-22">Phase III: Feature Engineering (Rules #16-22)</h2>
+<h2>
+Phase III: Feature Engineering (Rules #16-22)</h2>
 <ol>
-<li><p><strong>Plan to launch and iterate</strong></p>
-<ul>
-<li>Expect regular model updates    - Design for feature flexibility    - Keep infrastructure clean</li>
-</ul>
-</li>
-<li><p><strong>Feature Engineering Principles</strong></p>
-<ul>
-<li>Start with directly observed features    - Use cross-product features wisely    - Clean up unused features    - Scale feature complexity with data</li>
-</ul>
-</li>
-<li><p><strong>Feature Coverage and Quality</strong></p>
-<ul>
-<li>Features that generalise across contexts    - Monitor feature coverage    - Document feature ownership    - Regular feature clean-up</li>
-</ul>
-</li>
+  <li>
+    <p>
+<strong>Plan to launch and iterate</strong>    </p>
+    <ul>
+      <li>
+Expect regular model updates    - Design for feature flexibility    - Keep infrastructure clean      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>Feature Engineering Principles</strong>    </p>
+    <ul>
+      <li>
+Start with directly observed features    - Use cross-product features wisely    - Clean up unused features    - Scale feature complexity with data      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>Feature Coverage and Quality</strong>    </p>
+    <ul>
+      <li>
+Features that generalise across contexts    - Monitor feature coverage    - Document feature ownership    - Regular feature clean-up      </li>
+    </ul>
+  </li>
 </ol>
-<h2 id="human-analysis-rules-23-28">Human Analysis (Rules #23-28)</h2>
+<h2>
+Human Analysis (Rules #23-28)</h2>
 <ol>
-<li><p><strong>Testing and Validation</strong></p>
-<ul>
-<li>Use crowdsourcing or live experiments    - Measure model deltas explicitly    - Look for error patterns    - Consider long-term effects</li>
-</ul>
-</li>
-<li><p><strong>Common Pitfalls</strong></p>
-<ul>
-<li>Engineers aren&#39;t typical users    - Beware of confirmation bias    - Quantify undesirable behaviours</li>
-</ul>
-</li>
+  <li>
+    <p>
+<strong>Testing and Validation</strong>    </p>
+    <ul>
+      <li>
+Use crowdsourcing or live experiments    - Measure model deltas explicitly    - Look for error patterns    - Consider long-term effects      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>Common Pitfalls</strong>    </p>
+    <ul>
+      <li>
+Engineers aren’t typical users    - Beware of confirmation bias    - Quantify undesirable behaviours      </li>
+    </ul>
+  </li>
 </ol>
-<h2 id="training-serving-skew-rules-29-37">Training-Serving Skew (Rules #29-37)</h2>
+<h2>
+Training-Serving Skew (Rules #29-37)</h2>
 <ol>
-<li><p><strong>Prevent Skew</strong></p>
-<ul>
-<li>Save serving-time features    - Weight sampled data properly    - Reuse code between training/serving    - Test on future data</li>
-</ul>
-</li>
-<li><p><strong>Monitor Everything</strong></p>
-<ul>
-<li>Track performance metrics    - Watch data distributions    - Monitor feature coverage    - Check prediction bias</li>
-</ul>
-</li>
+  <li>
+    <p>
+<strong>Prevent Skew</strong>    </p>
+    <ul>
+      <li>
+Save serving-time features    - Weight sampled data properly    - Reuse code between training/serving    - Test on future data      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>Monitor Everything</strong>    </p>
+    <ul>
+      <li>
+Track performance metrics    - Watch data distributions    - Monitor feature coverage    - Check prediction bias      </li>
+    </ul>
+  </li>
 </ol>
-<h2 id="phase-iv-optimisation-and-complex-models-rules-38-43">Phase IV: Optimisation and Complex Models (Rules #38-43)</h2>
+<h2>
+Phase IV: Optimisation and Complex Models (Rules #38-43)</h2>
 <ol>
-<li><p><strong>When to Add Complexity</strong></p>
-<ul>
-<li>After simple approaches plateau    - When objectives are well-aligned    - If maintenance cost justifies gains</li>
-</ul>
-</li>
-<li><p><strong>Advanced Techniques</strong></p>
-<ul>
-<li>Keep ensembles simple    - Look for new information sources    - Balance complexity vs. benefits</li>
-</ul>
-</li>
+  <li>
+    <p>
+<strong>When to Add Complexity</strong>    </p>
+    <ul>
+      <li>
+After simple approaches plateau    - When objectives are well-aligned    - If maintenance cost justifies gains      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>Advanced Techniques</strong>    </p>
+    <ul>
+      <li>
+Keep ensembles simple    - Look for new information sources    - Balance complexity vs. benefits      </li>
+    </ul>
+  </li>
 </ol>
-<h2 id="final-recommendations">Final Recommendations</h2>
+<h2>
+Final Recommendations</h2>
 <ol>
-<li><p><strong>Launch Decisions</strong></p>
-<ul>
-<li>Consider multiple metrics    - Use proxies for long-term goals    - Balance simple vs. complex</li>
-</ul>
-</li>
-<li><p><strong>System Evolution</strong></p>
-<ul>
-<li>Start simple, add complexity gradually    - Monitor consistently    - Keep infrastructure clean    - Document everything</li>
-</ul>
-</li>
+  <li>
+    <p>
+<strong>Launch Decisions</strong>    </p>
+    <ul>
+      <li>
+Consider multiple metrics    - Use proxies for long-term goals    - Balance simple vs. complex      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+<strong>System Evolution</strong>    </p>
+    <ul>
+      <li>
+Start simple, add complexity gradually    - Monitor consistently    - Keep infrastructure clean    - Document everything      </li>
+    </ul>
+  </li>
 </ol>
 
       </div>
