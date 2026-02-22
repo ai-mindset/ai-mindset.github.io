@@ -24,16 +24,17 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v2
+      - name: Setup Elixir
+        uses: erlef/setup-beam@v1
         with:
-          deno-version: v2.x
+          elixir-version: "1.19"
+          otp-version: "28"
 
       - name: Install dependencies
-        run: deno install
+        run: mix deps.get
 
       - name: Build site
-        run: deno task build
+        run: mix build_site
 
       - name: Commit changes
         run: |

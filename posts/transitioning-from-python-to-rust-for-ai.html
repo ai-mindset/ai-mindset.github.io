@@ -9,7 +9,11 @@
 <body>
   <header>
     <div class="container">
-      <h1><a href="/">Just-in-Time Learning</a></h1>
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
     </div>
   </header>
 
@@ -24,81 +28,121 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Moving from Python to Rust for AI work requires a phased approach focusing on self-contained utilities first, leveraging PyO3 for hybrid integration, and adopting a minimal subset of Rust features before expanding. This strategy maintains productivity while gradually unlocking Rust&#39;s type safety, performance, and cross-platform deployment advantages.</p>
+        <p>
+<strong>TL;DR:</strong> Moving from Python to Rust for AI work requires a phased approach focusing on self-contained utilities first, leveraging PyO3 for hybrid integration, and adopting a minimal subset of Rust features before expanding. This strategy maintains productivity while gradually unlocking Rust’s type safety, performance, and cross-platform deployment advantages.</p>
 <!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>After previously discussing the potential of doing AI and Data Science with <a href="https://ai-mindset.github.io/posts/deno.html">Deno</a> or <a href="https://ai-mindset.github.io/posts/go-pragmatic-modern-development.html">Go</a>, I&#39;ve found Rust to be a compelling alternative, offering an ecosystem that covers my needs, memory safety without garbage collection, and a single-binary deployment model.\ Four Rust libraries, namely</p>
+<h2>
+Introduction</h2>
+<p>
+After previously discussing the potential of doing AI and Data Science with <a href="https://ai-mindset.github.io/posts/deno.html">Deno</a> or <a href="https://ai-mindset.github.io/posts/go-pragmatic-modern-development.html">Go</a>, I’ve found Rust to be a compelling alternative, offering an ecosystem that covers my needs, memory safety without garbage collection, and a single-binary deployment model.\ Four Rust libraries, namely</p>
 <ul>
-<li><a href="https://rig.rs/">Rig</a> for LLM applications</li>
-<li><a href="https://docs.rs/ndarray/">ndarray</a> for linear algebra</li>
-<li><a href="https://plotters-rs.github.io/home/">plotters</a> for visualisation</li>
-<li><a href="https://docs.pola.rs/">Polars</a> for DataFrames<br>already cover 90+% of an AI Engineer&#39;s and a Data Scientist&#39;s needs.</li>
+  <li>
+<a href="https://rig.rs/">Rig</a> for LLM applications  </li>
+  <li>
+<a href="https://docs.rs/ndarray/">ndarray</a> for linear algebra  </li>
+  <li>
+<a href="https://plotters-rs.github.io/home/">plotters</a> for visualisation  </li>
+  <li>
+<a href="https://docs.pola.rs/">Polars</a> for DataFrames\    <br>
+already cover 90+% of an AI Engineer’s and a Data Scientist’s needs.  </li>
 </ul>
-<h2 id="phased-migration-strategy">Phased Migration Strategy</h2>
-<p><strong>1. Start with small, self-contained utilities</strong></p>
+<h2>
+Phased Migration Strategy</h2>
+<p>
+<strong>1. Start with small, self-contained utilities</strong></p>
 <ul>
-<li>Begin by rewriting simple command-line tools or utilities</li>
-<li>Focus on pure functions with clear inputs/outputs</li>
-<li>Examples: data processors, validators, or simple APIs</li>
+  <li>
+Begin by rewriting simple command-line tools or utilities  </li>
+  <li>
+Focus on pure functions with clear inputs/outputs  </li>
+  <li>
+Examples: data processors, validators, or simple APIs  </li>
 </ul>
-<p><strong>2. Learn incrementally through practical patterns</strong></p>
-<pre><code class="language-rust">// Python:
+<p>
+<strong>2. Learn incrementally through practical patterns</strong></p>
+<pre><code class="rust">// Python:
 def process_data(items):
     return [x * 2 for x in items if x &gt; 0]
 
 // Rust equivalent:
 fn process_data(items: &amp;[i32]) -&gt; Vec&lt;i32&gt; {
     items.iter().filter(|x| **x &gt; 0).map(|x| x * 2).collect()
-}
-</code></pre>
-<p><strong>3. Adopt a hybrid approach during transition</strong></p>
+}</code></pre>
+<p>
+<strong>3. Adopt a hybrid approach during transition</strong></p>
 <ul>
-<li>Use <a href="https://pyo3.rs/">PyO3</a> to call your new Rust code from existing Python</li>
-<li>Gradually replace performance-critical components first</li>
-<li>Keep Python for rapid prototyping until comfortable with Rust</li>
+  <li>
+Use <a href="https://pyo3.rs/">PyO3</a> to call your new Rust code from existing Python  </li>
+  <li>
+Gradually replace performance-critical components first  </li>
+  <li>
+Keep Python for rapid prototyping until comfortable with Rust  </li>
 </ul>
-<p><strong>4. Leverage familiar concepts across languages</strong></p>
+<p>
+<strong>4. Leverage familiar concepts across languages</strong></p>
 <ul>
-<li>Rust&#39;s iterators ≈ Python&#39;s generators</li>
-<li>Rust&#39;s closures ≈ Python&#39;s lambda functions</li>
-<li>Rust&#39;s Option/Result ≈ Python&#39;s Optional/try-except</li>
+  <li>
+Rust’s iterators ≈ Python’s generators  </li>
+  <li>
+Rust’s closures ≈ Python’s lambda functions  </li>
+  <li>
+Rust’s Option/Result ≈ Python’s Optional/try-except  </li>
 </ul>
-<h2 id="keeping-rust-simple-and-robust">Keeping Rust Simple and Robust</h2>
-<p><strong>1. Start with a subset of Rust features</strong></p>
+<h2>
+Keeping Rust Simple and Robust</h2>
+<p>
+<strong>1. Start with a subset of Rust features</strong></p>
 <ul>
-<li>Focus on structs, enums, and basic pattern matching</li>
-<li>Defer learning advanced traits, lifetimes, and generics</li>
-<li>Use <code>#[derive]</code> macros to avoid boilerplate</li>
+  <li>
+Focus on structs, enums, and basic pattern matching  </li>
+  <li>
+Defer learning advanced traits, lifetimes, and generics  </li>
+  <li>
+Use <code class="inline">#[derive]</code> macros to avoid boilerplate  </li>
 </ul>
-<p><strong>2. Adopt consistent patterns</strong></p>
-<pre><code class="language-rust">// Prefer simple error handling patterns
+<p>
+<strong>2. Adopt consistent patterns</strong></p>
+<pre><code class="rust">// Prefer simple error handling patterns
 fn get_user(id: u64) -&gt; Result&lt;User, Error&gt; {
     let user = db.find_user(id)?; // Early return on error
     Ok(user)
-}
-</code></pre>
-<p><strong>3. Minimise complexity with good defaults</strong></p>
+}</code></pre>
+<p>
+<strong>3. Minimise complexity with good defaults</strong></p>
 <ul>
-<li>Use <code>String</code> over <code>&amp;str</code> for return values until comfortable with lifetimes</li>
-<li>Start with <code>Vec&lt;T&gt;</code> before learning specialised collections</li>
-<li>Prefer <code>.clone()</code> initially where ownership is complex</li>
+  <li>
+Use <code class="inline">String</code> over <code class="inline">&amp;str</code> for return values until comfortable with lifetimes  </li>
+  <li>
+Start with <code class="inline">Vec&lt;T&gt;</code> before learning specialised collections  </li>
+  <li>
+Prefer <code class="inline">.clone()</code> initially where ownership is complex  </li>
 </ul>
-<p><strong>4. Focus on idiomatic Rust patterns</strong></p>
+<p>
+<strong>4. Focus on idiomatic Rust patterns</strong></p>
 <ul>
-<li>Prefer composition over inheritance</li>
-<li>Use enums for representing state</li>
-<li>Leverage the type system to make invalid states unrepresentable</li>
+  <li>
+Prefer composition over inheritance  </li>
+  <li>
+Use enums for representing state  </li>
+  <li>
+Leverage the type system to make invalid states unrepresentable  </li>
 </ul>
-<p><strong>5. Practical tooling setup</strong></p>
+<p>
+<strong>5. Practical tooling setup</strong></p>
 <ul>
-<li>Install <code>rust-analyzer</code> for your Editor / IDE of choice</li>
-<li>Use <code>clippy</code> to learn idiomatic Rust: <code>cargo clippy</code></li>
-<li>Adopt <code>cargo fmt</code> for consistent formatting</li>
+  <li>
+Install <code class="inline">rust-analyzer</code> for your Editor / IDE of choice  </li>
+  <li>
+Use <code class="inline">clippy</code> to learn idiomatic Rust: <code class="inline">cargo clippy</code>  </li>
+  <li>
+Adopt <code class="inline">cargo fmt</code> for consistent formatting  </li>
 </ul>
-<p>This approach prioritises practical learning over theoretical completeness, allowing you to become productive quickly while gradually adopting Rust&#39;s more powerful features as needed.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Migrating from Python to Rust can offer considerable long-term benefits, including a cohesite ecosystem, native performance, and streamlined deployment, without requiring complete rewrites. Following a gradual migration path, leveraging hybrid integration, and deliberately limiting the developer&#39;s initial exposure to Rust&#39;s complexity, one can maintain productivity while acquiring experience. This approach can lead to a minimalist software development cycle that will result in increasingly robust software over time.</p>
+<p>
+This approach prioritises practical learning over theoretical completeness, allowing you to become productive quickly while gradually adopting Rust’s more powerful features as needed.</p>
+<h2>
+Conclusion</h2>
+<p>
+Migrating from Python to Rust can offer considerable long-term benefits, including a cohesite ecosystem, native performance, and streamlined deployment, without requiring complete rewrites. Following a gradual migration path, leveraging hybrid integration, and deliberately limiting the developer’s initial exposure to Rust’s complexity, one can maintain productivity while acquiring experience. This approach can lead to a minimalist software development cycle that will result in increasingly robust software over time.</p>
 
       </div>
     </article>

@@ -9,7 +9,11 @@
 <body>
   <header>
     <div class="container">
-      <h1><a href="/">Just-in-Time Learning</a></h1>
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
     </div>
   </header>
 
@@ -24,297 +28,535 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> This comprehensive guide explores ten distinct modelling approaches across statistics, machine learning, and causal inference-advocating for &quot;T-shaped&quot; expertise where practitioners develop deep knowledge in one or two mindsets aligned with their domain needs whilst maintaining sufficient breadth to recognise when different approaches are required, with specific recommendations for research, business, and product development contexts.</p>
+        <p>
+<strong>TL;DR:</strong> This comprehensive guide explores ten distinct modelling approaches across statistics, machine learning, and causal inference-advocating for “T-shaped” expertise where practitioners develop deep knowledge in one or two mindsets aligned with their domain needs whilst maintaining sufficient breadth to recognise when different approaches are required, with specific recommendations for research, business, and product development contexts.</p>
 <!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>As a practitioner looking to work effectively with real-world data and generate meaningful insights, I face a crucial decision: which modelling approaches should I invest my time and energy in learning? After discovering Christoph Molnar&#39;s <a href="https://christophmolnar.com/books/modeling-mindsets/">Modeling Mindsets</a>, I realised this isn&#39;t about picking the &quot;best&quot; approach. It&#39;s about becoming what he calls a &quot;T-shaped modeller&quot;.\ The concept is elegantly simple: rather than trying to master every possible approach (impossible) or limiting myself to just one (ineffective), I should aim to develop:</p>
+<h2>
+Introduction</h2>
+<p>
+As a practitioner looking to work effectively with real-world data and generate meaningful insights, I face a crucial decision: which modelling approaches should I invest my time and energy in learning? After discovering Christoph Molnar’s <a href="https://christophmolnar.com/books/modeling-mindsets/">Modeling Mindsets</a>, I realised this isn’t about picking the “best” approach. It’s about becoming what he calls a “T-shaped modeller”.\ The concept is elegantly simple: rather than trying to master every possible approach (impossible) or limiting myself to just one (ineffective), I should aim to develop:</p>
 <ul>
-<li>Deep expertise in one or two mindsets that align with my goals and problems</li>
-<li>Working knowledge of other approaches to recognise when my primary tools<br>aren&#39;t optimal</li>
+  <li>
+Deep expertise in one or two mindsets that align with my goals and problems  </li>
+  <li>
+Working knowledge of other approaches to recognise when my primary tools    <br>
+aren’t optimal  </li>
 </ul>
-<p>This systematic exploration serves two purposes:</p>
+<p>
+This systematic exploration serves two purposes:</p>
 <ol>
-<li>To understand the landscape: What are the main modelling mindsets available</li>
-<li>To make an informed choice: Which mindset(s) should I focus on mastering,<br>today? What are their core premises, strengths, and limitations?    given my goals and constraints?</li>
+  <li>
+To understand the landscape: What are the main modelling mindsets available  </li>
+  <li>
+To make an informed choice: Which mindset(s) should I focus on mastering,    <br>
+today? What are their core premises, strengths, and limitations?    given my goals and constraints?  </li>
 </ol>
-<p>Each mindset represents a different way of approaching problems through data. From the probability-focused world of statistical modelling to the interactive realm of reinforcement learning, from the causality-oriented approach to the pattern-finding nature of unsupervised learning, each offers unique tools and perspectives.\ By examining these mindsets systematically, I aim to make an informed decision about where to focus my learning efforts while maintaining enough breadth to recognise when I should switch approaches. This isn&#39;t just about theoretical understanding, it&#39;s about practical effectiveness in solving real-world problems.</p>
-<p>Let&#39;s explore each mindset in turn, focusing on their fundamental premises, key strengths, and limitations to guide this decision.</p>
-<h2 id="statistical-modelling-the-foundation-of-data-driven-inference">Statistical Modelling: The Foundation of Data-Driven Inference</h2>
-<p><em>This mindset sees the world through probability distributions. At its core, it&#39;s about modelling how data is generated and making inferences under uncertainty.</em></p>
-<p>Key Aspects:</p>
+<p>
+Each mindset represents a different way of approaching problems through data. From the probability-focused world of statistical modelling to the interactive realm of reinforcement learning, from the causality-oriented approach to the pattern-finding nature of unsupervised learning, each offers unique tools and perspectives.\ By examining these mindsets systematically, I aim to make an informed decision about where to focus my learning efforts while maintaining enough breadth to recognise when I should switch approaches. This isn’t just about theoretical understanding, it’s about practical effectiveness in solving real-world problems.</p>
+<p>
+Let’s explore each mindset in turn, focusing on their fundamental premises, key strengths, and limitations to guide this decision.</p>
+<h2>
+Statistical Modelling: The Foundation of Data-Driven Inference</h2>
+<p>
+<em>This mindset sees the world through probability distributions. At its core, it’s about modelling how data is generated and making inferences under uncertainty.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Everything has a distribution, from dice rolls to customer behaviours</li>
-<li>Models encode assumptions about how data is generated</li>
-<li>Models are evaluated by both checking if their assumptions make sense and</li>
-<li>Uses same data for fitting and evaluation, unlike machine learning approaches<br>measuring how well they match the data</li>
+  <li>
+Everything has a distribution, from dice rolls to customer behaviours  </li>
+  <li>
+Models encode assumptions about how data is generated  </li>
+  <li>
+Models are evaluated by both checking if their assumptions make sense and  </li>
+  <li>
+Uses same data for fitting and evaluation, unlike machine learning approaches    <br>
+measuring how well they match the data  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>Provides rigorous mathematical framework for handling uncertainty</li>
-<li>Strong theoretical foundation spanning decades of research</li>
-<li>Forces explicit consideration of data-generating processes</li>
-<li>Versatile for decisions, predictions, and understanding</li>
+  <li>
+Provides rigorous mathematical framework for handling uncertainty  </li>
+  <li>
+Strong theoretical foundation spanning decades of research  </li>
+  <li>
+Forces explicit consideration of data-generating processes  </li>
+  <li>
+Versatile for decisions, predictions, and understanding  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Manual and often tedious modelling process</li>
-<li>Struggles with complex data types like images and text</li>
-<li>Good model fit doesn&#39;t guarantee good predictions</li>
-<li>Less automatable than modern machine learning approaches</li>
+  <li>
+Manual and often tedious modelling process  </li>
+  <li>
+Struggles with complex data types like images and text  </li>
+  <li>
+Good model fit doesn’t guarantee good predictions  </li>
+  <li>
+Less automatable than modern machine learning approaches  </li>
 </ol>
-<p>This mindset serves as the foundation for three important sub-approaches: Frequentism, Bayesianism, and Likelihoodism, each with its own interpretation of probability and evidence. For someone starting in data science, understanding statistical modelling provides crucial groundwork for understanding both traditional statistics and modern machine learning approaches.</p>
-<h2 id="frequentism-making-decisions-through-repeated-experiments">Frequentism: Making Decisions Through Repeated Experiments</h2>
-<p><em>Frequentism views probability as long-run frequency and assumes that parameters in the world are fixed but unknown. It&#39;s the dominant approach in many scientific fields, particularly in medicine and psychology.</em></p>
-<p>Key Aspects:</p>
+<p>
+This mindset serves as the foundation for three important sub-approaches: Frequentism, Bayesianism, and Likelihoodism, each with its own interpretation of probability and evidence. For someone starting in data science, understanding statistical modelling provides crucial groundwork for understanding both traditional statistics and modern machine learning approaches.</p>
+<h2>
+Frequentism: Making Decisions Through Repeated Experiments</h2>
+<p>
+<em>Frequentism views probability as long-run frequency and assumes that parameters in the world are fixed but unknown. It’s the dominant approach in many scientific fields, particularly in medicine and psychology.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Interprets probability as frequency in infinite repetitions</li>
-<li>Makes decisions through hypothesis tests and confidence intervals</li>
-<li>Relies on &quot;imagined experiments&quot; to draw conclusions</li>
-<li>Focuses on estimating fixed, true parameters</li>
+  <li>
+Interprets probability as frequency in infinite repetitions  </li>
+  <li>
+Makes decisions through hypothesis tests and confidence intervals  </li>
+  <li>
+Relies on “imagined experiments” to draw conclusions  </li>
+  <li>
+Focuses on estimating fixed, true parameters  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>Enables clear, binary decisions</li>
-<li>Computationally fast compared to other approaches</li>
-<li>No need for prior information</li>
-<li>Widely accepted in scientific research</li>
+  <li>
+Enables clear, binary decisions  </li>
+  <li>
+Computationally fast compared to other approaches  </li>
+  <li>
+No need for prior information  </li>
+  <li>
+Widely accepted in scientific research  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Often oversimplifies complex questions into yes/no decisions</li>
-<li>Vulnerable to p-hacking (searching for significant results)</li>
-<li>Interpretation can be counterintuitive, especially for confidence intervals</li>
-<li>Results depend on the experimental design, not just the data</li>
+  <li>
+Often oversimplifies complex questions into yes/no decisions  </li>
+  <li>
+Vulnerable to p-hacking (searching for significant results)  </li>
+  <li>
+Interpretation can be counterintuitive, especially for confidence intervals  </li>
+  <li>
+Results depend on the experimental design, not just the data  </li>
 </ol>
-<p>For practitioners, Frequentism offers a well-established framework with clear decision rules and strong scientific acceptance. However, its limitations in handling uncertainty and tendency toward oversimplification have led to growing interest in alternative approaches like Bayesian inference.</p>
-<h2 id="bayesianism-learning-through-updated-beliefs">Bayesianism: Learning Through Updated Beliefs</h2>
-<p><em>Bayesianism stands out by treating parameters themselves as random variables with distributions, fundamentally different from Frequentism&#39;s fixed-parameter view. It focuses on updating beliefs about parameters as new data arrives.</em></p>
-<p>Key Aspects:</p>
+<p>
+For practitioners, Frequentism offers a well-established framework with clear decision rules and strong scientific acceptance. However, its limitations in handling uncertainty and tendency toward oversimplification have led to growing interest in alternative approaches like Bayesian inference.</p>
+<h2>
+Bayesianism: Learning Through Updated Beliefs</h2>
+<p>
+<em>Bayesianism stands out by treating parameters themselves as random variables with distributions, fundamentally different from Frequentism’s fixed-parameter view. It focuses on updating beliefs about parameters as new data arrives.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Requires prior distributions before seeing data</li>
-<li>Updates beliefs through Bayes&#39; theorem</li>
-<li>Produces complete posterior distributions, not just point estimates</li>
-<li>Naturally propagates uncertainty through all calculations[^1]</li>
+  <li>
+Requires prior distributions before seeing data  </li>
+  <li>
+Updates beliefs through Bayes’ theorem  </li>
+  <li>
+Produces complete posterior distributions, not just point estimates  </li>
+  <li>
+Naturally propagates uncertainty through all calculations[^1]  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>Can incorporate prior knowledge and expert opinions</li>
-<li>Provides complete probability distributions for parameters</li>
-<li>More intuitive interpretation of uncertainty</li>
-<li>Cleanly separates inference (getting posteriors) from decisions (using them)</li>
+  <li>
+Can incorporate prior knowledge and expert opinions  </li>
+  <li>
+Provides complete probability distributions for parameters  </li>
+  <li>
+More intuitive interpretation of uncertainty  </li>
+  <li>
+Cleanly separates inference (getting posteriors) from decisions (using them)  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Choosing priors can be difficult and controversial</li>
-<li>Computationally intensive, especially for complex models</li>
-<li>Mathematically more demanding than frequentist approaches</li>
-<li>Can seem like overkill for simple decisions</li>
+  <li>
+Choosing priors can be difficult and controversial  </li>
+  <li>
+Computationally intensive, especially for complex models  </li>
+  <li>
+Mathematically more demanding than frequentist approaches  </li>
+  <li>
+Can seem like overkill for simple decisions  </li>
 </ol>
-<p>Bayesianism offers a more complete and intuitive framework for handling uncertainty, but requires more computational resources and mathematical sophistication. It&#39;s particularly valuable when prior knowledge is important or when understanding full uncertainty is crucial.</p>
-<h2 id="likelihoodism-pure-evidence-through-likelihood">Likelihoodism: Pure Evidence Through Likelihood</h2>
-<p><em>Likelihoodism attempts to reform statistical inference by focusing solely on likelihood as evidence, avoiding both Frequentism&#39;s imagined experiments and Bayesianism&#39;s subjective priors.</em></p>
-<p>Key Aspects:</p>
+<p>
+Bayesianism offers a more complete and intuitive framework for handling uncertainty, but requires more computational resources and mathematical sophistication. It’s particularly valuable when prior knowledge is important or when understanding full uncertainty is crucial.</p>
+<h2>
+Likelihoodism: Pure Evidence Through Likelihood</h2>
+<p>
+<em>Likelihoodism attempts to reform statistical inference by focusing solely on likelihood as evidence, avoiding both Frequentism’s imagined experiments and Bayesianism’s subjective priors.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Uses likelihood ratios to compare hypotheses</li>
-<li>Adheres strictly to the likelihood principle</li>
-<li>Rejects both prior probabilities and sampling distributions</li>
-<li>Compares models based on their relative evidence</li>
+  <li>
+Uses likelihood ratios to compare hypotheses  </li>
+  <li>
+Adheres strictly to the likelihood principle  </li>
+  <li>
+Rejects both prior probabilities and sampling distributions  </li>
+  <li>
+Compares models based on their relative evidence  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>More coherent than Frequentism&#39;s mixed toolkit</li>
-<li>Avoids subjective elements of Bayesianism</li>
-<li>Ideas work well within other statistical mindsets</li>
-<li>Adheres to likelihood principle (evidence depends only on observed data)</li>
+  <li>
+More coherent than Frequentism’s mixed toolkit  </li>
+  <li>
+Avoids subjective elements of Bayesianism  </li>
+  <li>
+Ideas work well within other statistical mindsets  </li>
+  <li>
+Adheres to likelihood principle (evidence depends only on observed data)  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Cannot make absolute statements, only relative comparisons</li>
-<li>No clear mechanism for making final decisions</li>
-<li>Lacks tools for expressing beliefs or uncertainty</li>
-<li>Less practical than other statistical approaches</li>
+  <li>
+Cannot make absolute statements, only relative comparisons  </li>
+  <li>
+No clear mechanism for making final decisions  </li>
+  <li>
+Lacks tools for expressing beliefs or uncertainty  </li>
+  <li>
+Less practical than other statistical approaches  </li>
 </ol>
-<p>Likelihoodism offers interesting theoretical insights but may be less immediately useful than Frequentist or Bayesian approaches. It&#39;s more valuable for understanding the foundations of statistical inference than for day-to-day data analysis.</p>
-<h2 id="causal-inference-from-association-to-causation">Causal Inference: From Association to Causation</h2>
-<p><em>Causal inference moves beyond correlation to understand what actually causes observed effects, providing a framework for analysing interventions and their impacts.</em></p>
-<p>Key Aspects:</p>
+<p>
+Likelihoodism offers interesting theoretical insights but may be less immediately useful than Frequentist or Bayesian approaches. It’s more valuable for understanding the foundations of statistical inference than for day-to-day data analysis.</p>
+<h2>
+Causal Inference: From Association to Causation</h2>
+<p>
+<em>Causal inference moves beyond correlation to understand what actually causes observed effects, providing a framework for analysing interventions and their impacts.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Uses Directed Acyclic Graphs (DAGs) to visualise relationships</li>
-<li>Distinguishes between association and causation</li>
-<li>Requires explicit encoding of causal assumptions</li>
-<li>Can work with both statistical models and machine learning</li>
+  <li>
+Uses Directed Acyclic Graphs (DAGs) to visualise relationships  </li>
+  <li>
+Distinguishes between association and causation  </li>
+  <li>
+Requires explicit encoding of causal assumptions  </li>
+  <li>
+Can work with both statistical models and machine learning  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>Addresses fundamental questions about cause and effect</li>
-<li>Makes assumptions explicit through DAGs</li>
-<li>Models tend to be more robust than pure association-based approaches</li>
-<li>Provides clear framework for analysing interventions</li>
+  <li>
+Addresses fundamental questions about cause and effect  </li>
+  <li>
+Makes assumptions explicit through DAGs  </li>
+  <li>
+Models tend to be more robust than pure association-based approaches  </li>
+  <li>
+Provides clear framework for analysing interventions  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Requires identifying all relevant confounders</li>
-<li>Cannot verify all causal assumptions from data alone</li>
-<li>Multiple competing frameworks can confuse newcomers</li>
-<li>May sacrifice predictive performance for causal understanding</li>
+  <li>
+Requires identifying all relevant confounders  </li>
+  <li>
+Cannot verify all causal assumptions from data alone  </li>
+  <li>
+Multiple competing frameworks can confuse newcomers  </li>
+  <li>
+May sacrifice predictive performance for causal understanding  </li>
 </ol>
-<p>For practitioners, causal inference is essential when decisions about interventions are needed, though it requires careful consideration of assumptions and domain knowledge. It&#39;s particularly valuable in fields like medicine, policy-making, and business strategy where understanding cause-effect relationships is crucial.</p>
-<h2 id="machine-learning-algorithms-learning-from-data">Machine Learning: Algorithms Learning from Data</h2>
-<p><em>Machine learning approaches problems by having computers learn algorithms from data, focusing on task performance rather than theoretical underpinning.</em></p>
-<p>Key Aspects:</p>
+<p>
+For practitioners, causal inference is essential when decisions about interventions are needed, though it requires careful consideration of assumptions and domain knowledge. It’s particularly valuable in fields like medicine, policy-making, and business strategy where understanding cause-effect relationships is crucial.</p>
+<h2>
+Machine Learning: Algorithms Learning from Data</h2>
+<p>
+<em>Machine learning approaches problems by having computers learn algorithms from data, focusing on task performance rather than theoretical underpinning.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Computer-first approach to learning from data</li>
-<li>External evaluation based on task performance</li>
-<li>Less constrained by statistical assumptions</li>
-<li>Includes supervised, unsupervised, reinforcement, and deep learning</li>
+  <li>
+Computer-first approach to learning from data  </li>
+  <li>
+External evaluation based on task performance  </li>
+  <li>
+Less constrained by statistical assumptions  </li>
+  <li>
+Includes supervised, unsupervised, reinforcement, and deep learning  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>Task-oriented and pragmatic approach</li>
-<li>Highly automatable</li>
-<li>Well-suited for building digital products</li>
-<li>Strong industry adoption and career opportunities</li>
+  <li>
+Task-oriented and pragmatic approach  </li>
+  <li>
+Highly automatable  </li>
+  <li>
+Well-suited for building digital products  </li>
+  <li>
+Strong industry adoption and career opportunities  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Less principled than statistical approaches</li>
-<li>Many competing approaches can be overwhelming</li>
-<li>Models often prioritise performance over interpretability</li>
-<li>Usually requires substantial data and computation</li>
+  <li>
+Less principled than statistical approaches  </li>
+  <li>
+Many competing approaches can be overwhelming  </li>
+  <li>
+Models often prioritise performance over interpretability  </li>
+  <li>
+Usually requires substantial data and computation  </li>
 </ol>
-<p>For practitioners, machine learning offers powerful tools for automation and prediction, particularly valuable in industry settings. It&#39;s especially useful when theoretical understanding is less important than practical performance.</p>
-<h3 id="supervised-learning-the-art-of-prediction">Supervised Learning: The Art of Prediction</h3>
-<p><em>Supervised learning frames everything as a prediction problem, using labelled data to learn mappings from inputs to outputs.</em></p>
-<p>Key Aspects:</p>
+<p>
+For practitioners, machine learning offers powerful tools for automation and prediction, particularly valuable in industry settings. It’s especially useful when theoretical understanding is less important than practical performance.</p>
+<h3>
+Supervised Learning: The Art of Prediction</h3>
+<p>
+<em>Supervised learning frames everything as a prediction problem, using labelled data to learn mappings from inputs to outputs.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Learning is optimisation and search in hypothesis space</li>
-<li>Models evaluated on unseen data, not training data</li>
-<li>Focuses on generalising to new cases</li>
-<li>Highly automatable and competition-friendly</li>
+  <li>
+Learning is optimisation and search in hypothesis space  </li>
+  <li>
+Models evaluated on unseen data, not training data  </li>
+  <li>
+Focuses on generalising to new cases  </li>
+  <li>
+Highly automatable and competition-friendly  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>Clear evaluation metrics</li>
-<li>Highly automatable</li>
-<li>Strong performance on prediction tasks</li>
-<li>Well-defined optimisation objectives</li>
+  <li>
+Clear evaluation metrics  </li>
+  <li>
+Highly automatable  </li>
+  <li>
+Strong performance on prediction tasks  </li>
+  <li>
+Well-defined optimisation objectives  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Requires labelled data</li>
-<li>Models often black-box (uninterpretable)</li>
-<li>Not hypothesis-driven</li>
-<li>May miss causal relationships</li>
-<li>Can fail in unexpected ways when patterns change</li>
+  <li>
+Requires labelled data  </li>
+  <li>
+Models often black-box (uninterpretable)  </li>
+  <li>
+Not hypothesis-driven  </li>
+  <li>
+May miss causal relationships  </li>
+  <li>
+Can fail in unexpected ways when patterns change  </li>
 </ol>
-<p>For practitioners, supervised learning excels in prediction tasks where good labelled data exists and interpretability isn&#39;t crucial. It&#39;s particularly valuable in industry settings for automation and decision support.</p>
-<h3 id="unsupervised-learning-discovering-hidden-patterns">Unsupervised Learning: Discovering Hidden Patterns</h3>
-<p><em>This mindset focuses on finding inherent structures in data without labelled outcomes, making it ideal for exploratory analysis and pattern discovery.</em></p>
-<p>Key Aspects:</p>
+<p>
+For practitioners, supervised learning excels in prediction tasks where good labelled data exists and interpretability isn’t crucial. It’s particularly valuable in industry settings for automation and decision support.</p>
+<h3>
+Unsupervised Learning: Discovering Hidden Patterns</h3>
+<p>
+<em>This mindset focuses on finding inherent structures in data without labelled outcomes, making it ideal for exploratory analysis and pattern discovery.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Discovers patterns in data distributions</li>
-<li>Includes clustering, dimensionality reduction, anomaly detection</li>
-<li>No ground truth for validation</li>
-<li>More open-ended than supervised learning</li>
+  <li>
+Discovers patterns in data distributions  </li>
+  <li>
+Includes clustering, dimensionality reduction, anomaly detection  </li>
+  <li>
+No ground truth for validation  </li>
+  <li>
+More open-ended than supervised learning  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>Finds patterns other approaches might miss</li>
-<li>Excellent for initial data exploration</li>
-<li>Flexible for undefined problems</li>
-<li>Can reveal natural groupings in data</li>
+  <li>
+Finds patterns other approaches might miss  </li>
+  <li>
+Excellent for initial data exploration  </li>
+  <li>
+Flexible for undefined problems  </li>
+  <li>
+Can reveal natural groupings in data  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Hard to validate results objectively</li>
-<li>Feature weighting is often arbitrary</li>
-<li>Suffers from curse of dimensionality[^2]</li>
-<li>No guarantee of finding meaningful patterns</li>
+  <li>
+Hard to validate results objectively  </li>
+  <li>
+Feature weighting is often arbitrary  </li>
+  <li>
+Suffers from curse of dimensionality[^2]  </li>
+  <li>
+No guarantee of finding meaningful patterns  </li>
 </ol>
-<p>For practitioners, unsupervised learning is valuable for initial data exploration and when labelled data isn&#39;t available. It&#39;s particularly useful in customer segmentation, anomaly detection, and dimension reduction.</p>
-<h3 id="reinforcement-learning-learning-through-interaction">Reinforcement Learning: Learning Through Interaction</h3>
-<p><em>This mindset models an agent interacting with an environment, making decisions and learning from rewards.</em></p>
-<p>Key Aspects:</p>
+<p>
+For practitioners, unsupervised learning is valuable for initial data exploration and when labelled data isn’t available. It’s particularly useful in customer segmentation, anomaly detection, and dimension reduction.</p>
+<h3>
+Reinforcement Learning: Learning Through Interaction</h3>
+<p>
+<em>This mindset models an agent interacting with an environment, making decisions and learning from rewards.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Agent learns by taking actions and receiving rewards</li>
-<li>Handles delayed and sparse rewards</li>
-<li>Balances exploration and exploitation</li>
-<li>Creates its own training data through interaction</li>
+  <li>
+Agent learns by taking actions and receiving rewards  </li>
+  <li>
+Handles delayed and sparse rewards  </li>
+  <li>
+Balances exploration and exploitation  </li>
+  <li>
+Creates its own training data through interaction  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>Models dynamic real-world interactions</li>
-<li>Excellent for sequential decision-making</li>
-<li>Can discover novel strategies</li>
-<li>Learns through direct experience</li>
-<li>Combines well with deep learning</li>
+  <li>
+Models dynamic real-world interactions  </li>
+  <li>
+Excellent for sequential decision-making  </li>
+  <li>
+Can discover novel strategies  </li>
+  <li>
+Learns through direct experience  </li>
+  <li>
+Combines well with deep learning  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Not all problems fit agent-environment framework</li>
-<li>Often unstable or difficult to train</li>
-<li>May perform poorly in real-world conditions</li>
-<li>Requires careful reward design</li>
-<li>Complex implementation choices</li>
+  <li>
+Not all problems fit agent-environment framework  </li>
+  <li>
+Often unstable or difficult to train  </li>
+  <li>
+May perform poorly in real-world conditions  </li>
+  <li>
+Requires careful reward design  </li>
+  <li>
+Complex implementation choices  </li>
 </ol>
-<p>For practitioners, reinforcement learning is valuable for problems involving sequential decisions or control, particularly in robotics, game playing, and resource management.</p>
-<h3 id="deep-learning-end-to-end-neural-networks">Deep Learning: End-to-End Neural Networks</h3>
-<p><em>This mindset approaches problems through deep neural networks, letting the model learn both features and relationships.</em></p>
-<p>Key Aspects:</p>
+<p>
+For practitioners, reinforcement learning is valuable for problems involving sequential decisions or control, particularly in robotics, game playing, and resource management.</p>
+<h3>
+Deep Learning: End-to-End Neural Networks</h3>
+<p>
+<em>This mindset approaches problems through deep neural networks, letting the model learn both features and relationships.</em></p>
+<p>
+Key Aspects:</p>
 <ul>
-<li>Models tasks end-to-end through neural networks</li>
-<li>Learns hierarchical representations automatically</li>
-<li>Highly modular architecture design</li>
-<li>Benefits from transfer learning and pre-trained models</li>
+  <li>
+Models tasks end-to-end through neural networks  </li>
+  <li>
+Learns hierarchical representations automatically  </li>
+  <li>
+Highly modular architecture design  </li>
+  <li>
+Benefits from transfer learning and pre-trained models  </li>
 </ul>
-<p>Primary Strengths:</p>
+<p>
+Primary Strengths:</p>
 <ol>
-<li>Excels at complex data (images, text, speech)</li>
-<li>Learns useful feature representations</li>
-<li>Highly modular and customisable</li>
-<li>Strong tooling and community support</li>
-<li>Can handle multiple inputs/outputs seamlessly</li>
+  <li>
+Excels at complex data (images, text, speech)  </li>
+  <li>
+Learns useful feature representations  </li>
+  <li>
+Highly modular and customisable  </li>
+  <li>
+Strong tooling and community support  </li>
+  <li>
+Can handle multiple inputs/outputs seamlessly  </li>
 </ol>
-<p>Notable Limitations:</p>
+<p>
+Notable Limitations:</p>
 <ol>
-<li>Underperforms on tabular data versus tree methods</li>
-<li>Requires large amounts of data</li>
-<li>Computationally intensive</li>
-<li>Hard to train and tune effectively</li>
-<li>Results can be difficult to interpret</li>
+  <li>
+Underperforms on tabular data versus tree methods  </li>
+  <li>
+Requires large amounts of data  </li>
+  <li>
+Computationally intensive  </li>
+  <li>
+Hard to train and tune effectively  </li>
+  <li>
+Results can be difficult to interpret  </li>
 </ol>
-<p>For practitioners, deep learning is essential for complex data types but may be overkill for simpler problems. Most valuable in computer vision, natural language processing, and other complex pattern recognition tasks.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p><em><strong>aka Choosing Your Modelling Path</strong></em></p>
-<p>For developing T-shaped expertise in modelling, the practitioner&#39;s choice should align with their primary domain while maintaining broader awareness. Here&#39;s how to approach this decision:</p>
+<p>
+For practitioners, deep learning is essential for complex data types but may be overkill for simpler problems. Most valuable in computer vision, natural language processing, and other complex pattern recognition tasks.</p>
+<h2>
+Conclusion</h2>
+<p>
+<em><strong>aka Choosing Your Modelling Path</strong></em></p>
+<p>
+For developing T-shaped expertise in modelling, the practitioner’s choice should align with their primary domain while maintaining broader awareness. Here’s how to approach this decision:</p>
 <ul>
-<li><p><em>Scientific Research</em> demands Statistical Modelling for its rigorous<br>uncertainty quantification and established peer review frameworks.</p>
-</li>
-<li><p><em>Business Predictions</em> benefit most from Supervised Learning, optimising<br>prediction accuracy while enabling automation and scalability.</p>
-</li>
-<li><p><em>Complex Data</em> (images/text) requires Deep Learning to handle unstructured<br>data and learn hierarchical features effectively.</p>
-</li>
-<li><p><em>Interventions/Policies</em> need Causal Inference to distinguish correlation from<br>causation and understand intervention effects.</p>
-</li>
-<li><p><em>Control Systems</em> thrive with Reinforcement Learning for sequential decisions<br>and environment interaction.</p>
-</li>
+  <li>
+    <p>
+<em>Scientific Research</em> demands Statistical Modelling for its rigorous      <br>
+uncertainty quantification and established peer review frameworks.    </p>
+  </li>
+  <li>
+    <p>
+<em>Business Predictions</em> benefit most from Supervised Learning, optimising      <br>
+prediction accuracy while enabling automation and scalability.    </p>
+  </li>
+  <li>
+    <p>
+<em>Complex Data</em> (images/text) requires Deep Learning to handle unstructured      <br>
+data and learn hierarchical features effectively.    </p>
+  </li>
+  <li>
+    <p>
+<em>Interventions/Policies</em> need Causal Inference to distinguish correlation from      <br>
+causation and understand intervention effects.    </p>
+  </li>
+  <li>
+    <p>
+<em>Control Systems</em> thrive with Reinforcement Learning for sequential decisions      <br>
+and environment interaction.    </p>
+  </li>
 </ul>
-<p>For practical applications, certain combinations prove particularly effective:</p>
+<p>
+For practical applications, certain combinations prove particularly effective:</p>
 <ul>
-<li><p><em>Industry/Business</em> combines Supervised Learning with Unsupervised Learning,<br>enabling accurate predictions while discovering valuable patterns in customer   data.</p>
-</li>
-<li><p><em>Research</em> pairs Statistical Modelling with Machine Learning, balancing<br>academic rigour with modern capabilities.</p>
-</li>
-<li><p><em>Product Development</em> merges Deep Learning with Supervised Learning for<br>end-to-end features with clear metrics.</p>
-</li>
-<li><p><em>Medical Diagnostics</em> unites Supervised Learning with Statistical Modelling,<br>crucial for evidence-based decisions with proper uncertainty quantification.</p>
-</li>
+  <li>
+    <p>
+<em>Industry/Business</em> combines Supervised Learning with Unsupervised Learning,      <br>
+enabling accurate predictions while discovering valuable patterns in customer   data.    </p>
+  </li>
+  <li>
+    <p>
+<em>Research</em> pairs Statistical Modelling with Machine Learning, balancing      <br>
+academic rigour with modern capabilities.    </p>
+  </li>
+  <li>
+    <p>
+<em>Product Development</em> merges Deep Learning with Supervised Learning for      <br>
+end-to-end features with clear metrics.    </p>
+  </li>
+  <li>
+    <p>
+<em>Medical Diagnostics</em> unites Supervised Learning with Statistical Modelling,      <br>
+crucial for evidence-based decisions with proper uncertainty quantification.    </p>
+  </li>
 </ul>
-<p>The choice should be based on the practitioner&#39;s domain requirements, computational resources, interpretability needs, and available time for mastery. <em>Remember:</em> Mastery of one mindset with broad awareness surpasses superficial knowledge of many.</p>
-<hr>
-<p>[^1]: Because Bayesian models treat everything as probability distributions<br>    (rather than fixed values), any predictions or conclusions automatically<br>    include their associated uncertainty. For example, if you predict someone&#39;s<br>    future income using multiple uncertain factors, the final prediction comes<br>    as a range of possibilities with their probabilities, rather than just a<br>    single number.</p>
-<p>[^2]: Here is a<br>    <a href="https://bsky.app/profile/chrisalbon.com/post/3lbendflq2w2n">nice digital flashcard</a><br>    by Chris Albon, on the concept of <em>curse of dimensionality</em></p>
+<p>
+The choice should be based on the practitioner’s domain requirements, computational resources, interpretability needs, and available time for mastery. <em>Remember:</em> Mastery of one mindset with broad awareness surpasses superficial knowledge of many.</p>
+<hr class="thin">
+<p>
+[^1]: Because Bayesian models treat everything as probability distributions</p>
+<pre><code>(rather than fixed values), any predictions or conclusions automatically
+include their associated uncertainty. For example, if you predict someone&#39;s
+future income using multiple uncertain factors, the final prediction comes
+as a range of possibilities with their probabilities, rather than just a
+single number.</code></pre>
+<p>
+[^2]: Here is a</p>
+<pre><code>[nice digital flashcard](https://bsky.app/profile/chrisalbon.com/post/3lbendflq2w2n)
+by Chris Albon, on the concept of _curse of dimensionality_</code></pre>
 
       </div>
     </article>
