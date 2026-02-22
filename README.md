@@ -21,8 +21,8 @@ A minimalist, lightweight static blog generator built with Elixir, designed to b
 
 ## Prerequisites
 
-- [Elixir](https://elixir-lang.org/) 1.20+
-- [Erlang/OTP](https://www.erlang.org/) 29+
+- [Elixir](https://elixir-lang.org/) 1.19+
+- [Erlang/OTP](https://www.erlang.org/) 28+
 
 ## Quick Start
 
