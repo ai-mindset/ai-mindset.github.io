@@ -41,6 +41,19 @@ async function loadPosts() {
   }
 }
 
+// Clear all active filter states
+function clearAllActiveStates() {
+  // Clear tag active states
+  document.querySelectorAll(".tag").forEach((t) => {
+    t.classList.remove("active");
+  });
+
+  // Clear timeline active states
+  document.querySelectorAll(".year-label, .month-letter").forEach((el) => {
+    el.classList.remove("active");
+  });
+}
+
 // Render posts
 function renderPosts(posts, filterTag = null, searchTerm = null, isExactMatch = false) {
   const postsContainer = document.getElementById("posts-list");
@@ -246,6 +259,7 @@ function renderTags(posts) {
         renderPosts(posts, tag);
       } else {
         // Show all posts when unselecting a tag
+        clearAllActiveStates();
         renderPosts(posts);
       }
     });
@@ -255,9 +269,7 @@ function renderTags(posts) {
 
   // Add event listener to show all button
   document.getElementById("show-all-btn").addEventListener("click", () => {
-    document.querySelectorAll(".tag").forEach((t) => {
-      t.classList.remove("active");
-    });
+    clearAllActiveStates();
     renderPosts(posts);
   });
 }
@@ -340,6 +352,7 @@ function renderTimeline(posts) {
         renderPosts(filteredPosts);
       } else {
         // Show all posts
+        clearAllActiveStates();
         renderPosts(posts);
       }
     });
@@ -347,51 +360,50 @@ function renderTimeline(posts) {
     const monthLetters = document.createElement("div");
     monthLetters.className = "month-letters";
 
-    // Create letters for all months (0-11)
-    for (let month = 0; month < 12; month++) {
-      const monthLetter = document.createElement("div");
-      monthLetter.className = "month-letter";
-      monthLetter.setAttribute("data-month", month);
-      monthLetter.setAttribute("data-year", year);
+    // Create letters only for months that have posts
+    const monthsWithPosts = [...dateMap.get(year)].sort((a, b) => a - b);
 
-      // Get first letter of month name
-      const monthName = new Date(year, month).toLocaleString("default", { month: "long" });
-      monthLetter.textContent = monthName[0];
-      monthLetter.title = monthName;
+    monthsWithPosts.forEach((month) => {
+      const monthElement = document.createElement("div");
+      monthElement.className = "month-letter has-posts";
+      monthElement.setAttribute("data-month", month);
+      monthElement.setAttribute("data-year", year);
 
-      // If this month has posts, mark it and make it clickable
-      if (dateMap.get(year).has(month)) {
-        monthLetter.classList.add("has-posts");
+      // Get first letter and full month name for enhanced tooltip
+      const monthFull = new Date(year, month).toLocaleString("default", { month: "long" });
+      monthElement.textContent = monthFull[0];
+      monthElement.title = `${monthFull} ${year}`;
+      monthElement.setAttribute("data-month-name", monthFull);
 
-        monthLetter.addEventListener("click", () => {
-          // Toggle month selection
-          const isActive = monthLetter.classList.contains("active");
+      monthElement.addEventListener("click", () => {
+        // Toggle month selection
+        const isActive = monthElement.classList.contains("active");
 
-          // Clear all active states
-          document.querySelectorAll(".year-label, .month-letter").forEach((el) => {
-            el.classList.remove("active");
+        // Clear all active states
+        document.querySelectorAll(".year-label, .month-letter").forEach((el) => {
+          el.classList.remove("active");
+        });
+
+        if (!isActive) {
+          monthElement.classList.add("active");
+          yearLabel.classList.add("active");
+
+          // Filter posts by month and year
+          const filteredPosts = posts.filter((post) => {
+            const postDate = new Date(post.date);
+            return postDate.getFullYear() === year && postDate.getMonth() === month;
           });
 
-          if (!isActive) {
-            monthLetter.classList.add("active");
-            yearLabel.classList.add("active");
+          renderPosts(filteredPosts);
+        } else {
+          // Show all posts
+          clearAllActiveStates();
+          renderPosts(posts);
+        }
+      });
 
-            // Filter posts by month and year
-            const filteredPosts = posts.filter((post) => {
-              const postDate = new Date(post.date);
-              return postDate.getFullYear() === year && postDate.getMonth() === month;
-            });
-
-            renderPosts(filteredPosts);
-          } else {
-            // Show all posts
-            renderPosts(posts);
-          }
-        });
-      }
-
-      monthLetters.appendChild(monthLetter);
-    }
+      monthLetters.appendChild(monthElement);
+    });
 
     yearContainer.appendChild(yearLabel);
     yearContainer.appendChild(monthLetters);
@@ -412,6 +424,7 @@ function setupSearch(posts) {
     searchTerm = originalSearchTerm.toLowerCase();
 
     if (!searchTerm) {
+      clearAllActiveStates();
       renderPosts(posts);
       return;
     }
@@ -489,6 +502,7 @@ function setupSearch(posts) {
   if (clearButton) {
     clearButton.addEventListener('click', () => {
       searchInput.value = '';
+      clearAllActiveStates();
       renderPosts(posts);
       searchInput.focus();
     });
