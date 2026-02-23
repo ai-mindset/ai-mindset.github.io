@@ -1,0 +1,1 @@
+{application,blog_builder,[{modules,['Elixir.BlogBuilder','Elixir.BlogServer','Elixir.Mix.Tasks.BuildSite','Elixir.Mix.Tasks.Dev','Elixir.Mix.Tasks.Serve']},{optional_applications,[]},{applications,[kernel,stdlib,elixir,logger,inets,ssl,earmark,yaml_elixir,jason,plug_cowboy]},{description,"blog_builder"},{registered,[]},{vsn,"1.0.0"}]}.

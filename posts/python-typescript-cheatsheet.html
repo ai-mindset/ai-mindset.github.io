@@ -9,7 +9,11 @@
 <body>
   <header>
     <div class="container">
-      <h1><a href="/">Just-in-Time Learning</a></h1>
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
     </div>
   </header>
 
@@ -24,21 +28,33 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> This compact reference guide provides side-by-side comparisons of Python and TypeScript syntax for common programming constructs including variable declarations, functions, classes, control flow structures, and error handling-serving as a quick reference for Python developers exploring TypeScript within the context of Deno development.</p>
+        <p>
+<strong>TL;DR:</strong> This compact reference guide provides side-by-side comparisons of Python and TypeScript syntax for common programming constructs including variable declarations, functions, classes, control flow structures, and error handling-serving as a quick reference for Python developers exploring TypeScript within the context of Deno development.</p>
 <!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>I&#39;ve been curious as to how Python and TypeScript compare at a high level, for someone new to TypeScript. Below is a chatsheet I put together with the help of Claude 3.5 Sonnet. It covers basic syntax, it&#39;s by no means complete or exhaustive. However it gives a first taste of the similarities and differences between the two languages. The reason I am looking into TypeScript is explained in my <a href="../deno/">Deno article</a>.</p>
-<h2 id="variables-and-data-types">Variables And Data Types</h2>
-<p>| Concept | Python                                 | TypeScript                                                               | | ------- | -------------------------------------- | ------------------------------------------------------------------------ | | Int     | <code>x = 5</code>                                | <code>let x: number = 5;</code>                                                     | | Float   | <code>y = 3.14</code>                             | <code>let y: number = 3.14;</code>                                                  | | Str     | <code>name = &quot;John&quot;</code>                        | <code>let name: string = &quot;John&quot;;</code>                                             | | Bool    | <code>is_valid = True</code>                      | <code>let isValid: boolean = true;</code>                                           | | List    | <code>numbers = [1, 2, 3]</code>                  | <code>let numbers: number[] = [1, 2, 3];</code>                                     | | Dict    | <code>person = {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30}</code> | <code>let person: { name: string; age: number } = { name: &quot;John&quot;, age: 30 };</code> |</p>
-<h2 id="functions">Functions</h2>
-<p>| Concept     | Python                         | TypeScript                               | | ----------- | ------------------------------ | ---------------------------------------- | | Func def    | <code>def greet(name: str) -&gt; str:</code> | <code>function greet(name: string): string {</code> | | Func return | <code>return f&quot;Hello, {name}!&quot;</code>     | <code>return `Hello, ${name}!`;</code>            | | Lambda      | <code>lambda x: x * 2</code>              | <code>(x: number): number =&gt; x * 2</code>           |</p>
-<h2 id="classes">Classes</h2>
-<p>| Concept       | Python                                     | TypeScript                                 | | ------------- | ------------------------------------------ | ------------------------------------------ | | Class def     | <code>class Person:</code>                            | <code>class Person {</code>                           | | Constructor   | <code>def __init__(self, name: str, age: int):</code> | <code>constructor(name: string, age: number) {</code> | | Instance vars | <code>self.name = name</code>                         | <code>this.name = name;</code>                        | |               | <code>self.age = age</code>                           | <code>this.age = age;</code>                          | | Method def    | <code>def greet(self) -&gt; str:</code>                  | <code>greet(): string {</code>                        | | Method return | <code>return f&quot;Hello, I&#39;m {self.name}!&quot;</code>        | <code>return `Hello, I&#39;m ${this.name}!`;</code>     |</p>
-<h2 id="control-flow">Control Flow</h2>
-<p>| Concept    | Python               | TypeScript                      | | ---------- | -------------------- | ------------------------------- | | If         | <code>if x &gt; 0:</code>          | <code>if (x &gt; 0) {</code>                  | | Else if    | <code>elif x &lt; 0:</code>        | <code>} else if (x &lt; 0) {</code>           | | Else       | <code>else:</code>              | <code>} else {</code>                      | | For loop   | <code>for i in range(5):</code> | <code>for (let i = 0; i &lt; 5; i++) {</code> | | While loop | <code>while x &gt; 0:</code>       | <code>while (x &gt; 0) {</code>               |</p>
-<h2 id="error-handling">Error Handling</h2>
-<p>| Concept      | Python                      | TypeScript          | | ------------ | --------------------------- | ------------------- | | Try          | <code>try:</code>                      | <code>try {</code>             | | Except/Catch | <code>except ZeroDivisionError:</code> | <code>} catch (error) {</code> | | Finally      | <code>finally:</code>                  | <code>} finally {</code>       |</p>
+<h2>
+Introduction</h2>
+<p>
+I’ve been curious as to how Python and TypeScript compare at a high level, for someone new to TypeScript. Below is a chatsheet I put together with the help of Claude 3.5 Sonnet. It covers basic syntax, it’s by no means complete or exhaustive. However it gives a first taste of the similarities and differences between the two languages. The reason I am looking into TypeScript is explained in my <a href="../deno/">Deno article</a>.</p>
+<h2>
+Variables And Data Types</h2>
+<p>
+| Concept | Python                                 | TypeScript                                                               | | ——- | ————————————– | ———————————————————————— | | Int     | <code class="inline">x = 5</code>                                | <code class="inline">let x: number = 5;</code>                                                     | | Float   | <code class="inline">y = 3.14</code>                             | <code class="inline">let y: number = 3.14;</code>                                                  | | Str     | <code class="inline">name = &quot;John&quot;</code>                        | <code class="inline">let name: string = &quot;John&quot;;</code>                                             | | Bool    | <code class="inline">is_valid = True</code>                      | <code class="inline">let isValid: boolean = true;</code>                                           | | List    | <code class="inline">numbers = [1, 2, 3]</code>                  | <code class="inline">let numbers: number[] = [1, 2, 3];</code>                                     | | Dict    | <code class="inline">person = {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30}</code> | <code class="inline">let person: { name: string; age: number } = { name: &quot;John&quot;, age: 30 };</code> |</p>
+<h2>
+Functions</h2>
+<p>
+| Concept     | Python                         | TypeScript                               | | ———– | —————————— | —————————————- | | Func def    | <code class="inline">def greet(name: str) -&gt; str:</code> | <code class="inline">function greet(name: string): string {</code> | | Func return | <code class="inline">return f&quot;Hello, {name}!&quot;</code>     | <code class="inline">return `Hello, ${name}!`;</code>            | | Lambda      | <code class="inline">lambda x: x * 2</code>              | <code class="inline">(x: number): number =&gt; x * 2</code>           |</p>
+<h2>
+Classes</h2>
+<p>
+| Concept       | Python                                     | TypeScript                                 | | ————- | —————————————— | —————————————— | | Class def     | <code class="inline">class Person:</code>                            | <code class="inline">class Person {</code>                           | | Constructor   | <code class="inline">def __init__(self, name: str, age: int):</code> | <code class="inline">constructor(name: string, age: number) {</code> | | Instance vars | <code class="inline">self.name = name</code>                         | <code class="inline">this.name = name;</code>                        | |               | <code class="inline">self.age = age</code>                           | <code class="inline">this.age = age;</code>                          | | Method def    | <code class="inline">def greet(self) -&gt; str:</code>                  | <code class="inline">greet(): string {</code>                        | | Method return | <code class="inline">return f&quot;Hello, I&#39;m {self.name}!&quot;</code>        | <code class="inline">return `Hello, I&#39;m ${this.name}!`;</code>     |</p>
+<h2>
+Control Flow</h2>
+<p>
+| Concept    | Python               | TypeScript                      | | ———- | ——————– | ——————————- | | If         | <code class="inline">if x &gt; 0:</code>          | <code class="inline">if (x &gt; 0) {</code>                  | | Else if    | <code class="inline">elif x &lt; 0:</code>        | <code class="inline">} else if (x &lt; 0) {</code>           | | Else       | <code class="inline">else:</code>              | <code class="inline">} else {</code>                      | | For loop   | <code class="inline">for i in range(5):</code> | <code class="inline">for (let i = 0; i &lt; 5; i++) {</code> | | While loop | <code class="inline">while x &gt; 0:</code>       | <code class="inline">while (x &gt; 0) {</code>               |</p>
+<h2>
+Error Handling</h2>
+<p>
+| Concept      | Python                      | TypeScript          | | ———— | ————————— | ——————- | | Try          | <code class="inline">try:</code>                      | <code class="inline">try {</code>             | | Except/Catch | <code class="inline">except ZeroDivisionError:</code> | <code class="inline">} catch (error) {</code> | | Finally      | <code class="inline">finally:</code>                  | <code class="inline">} finally {</code>       |</p>
 
       </div>
     </article>

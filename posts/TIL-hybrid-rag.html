@@ -9,7 +9,11 @@
 <body>
   <header>
     <div class="container">
-      <h1><a href="/">Just-in-Time Learning</a></h1>
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
     </div>
   </header>
 
@@ -24,84 +28,144 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Retrieval Augmented Generation (RAG) uses three main retrieval strategies: (1) Sparse retrieval (50 years old) relies on keyword matching via TF-IDF/BM25- excellent for exact matches but poor with synonyms; (2) Dense retrieval (5-10 years old) uses vector embeddings to capture semantic meaning- better for natural language but misses rare terms; (3) Hybrid retrieval (2-3 years old) combines both approaches with fusion algorithms to merge results. Hybrid retrieval is now the gold standard, balancing precision, recall, and processing speed for modern RAG systems.</p>
+        <p>
+<strong>TL;DR:</strong> Retrieval Augmented Generation (RAG) uses three main retrieval strategies: (1) Sparse retrieval (50 years old) relies on keyword matching via TF-IDF/BM25- excellent for exact matches but poor with synonyms; (2) Dense retrieval (5-10 years old) uses vector embeddings to capture semantic meaning- better for natural language but misses rare terms; (3) Hybrid retrieval (2-3 years old) combines both approaches with fusion algorithms to merge results. Hybrid retrieval is now the gold standard, balancing precision, recall, and processing speed for modern RAG systems.</p>
 <!--more-->
-
-<h2 id="rag-retrieval-the-key-to-accurate-ai-responses">RAG Retrieval: The Key to Accurate AI Responses</h2>
-<p>This post is based on a concise and informative video titled <a href="https://yewtu.be/watch?v=r0Dciuq0knU">Hybrid RAG</a> from the IBM Technology YouTube channel. The video provides an excellent short introduction to what Hybrid RAG is.</p>
-<p>A RAG system&#39;s effectiveness depends largely on its retrieval strategy- how it fetches information to feed into an LLM. The process works by:</p>
+<h2>
+RAG Retrieval: The Key to Accurate AI Responses</h2>
+<p>
+This post is based on a concise and informative video titled <a href="https://yewtu.be/watch?v=r0Dciuq0knU">Hybrid RAG</a> from the IBM Technology YouTube channel. The video provides an excellent short introduction to what Hybrid RAG is.</p>
+<p>
+A RAG system’s effectiveness depends largely on its retrieval strategy- how it fetches information to feed into an LLM. The process works by:</p>
 <ol>
-<li>Processing a user query</li>
-<li>Retrieving relevant chunks from a knowledge base</li>
-<li>Feeding those chunks to an LLM</li>
+  <li>
+Processing a user query  </li>
+  <li>
+Retrieving relevant chunks from a knowledge base  </li>
+  <li>
+Feeding those chunks to an LLM  </li>
 </ol>
-<p>The quality of retrieved information directly impacts the factual accuracy of the LLM&#39;s responses.</p>
-<p><img src="/images/Hybrid%20RAG.png" alt="Visual comparison of Sparse, Dense, and Hybrid RAG approaches"></p>
-<p>Let&#39;s explore the three major retrieval strategies:</p>
-<h2 id="sparse-retrieval-the-classic-approach-50-years-old">Sparse Retrieval: The Classic Approach (50 years old)</h2>
-<p><strong>How it works</strong>: Uses keyword matching through TF-IDF and BM25, counting term frequency in documents and scoring accordingly.</p>
-<p><strong>Pros</strong>:</p>
+<p>
+The quality of retrieved information directly impacts the factual accuracy of the LLM’s responses.</p>
+<p>
+  <img src="/images/Hybrid%20RAG.png" alt="Visual comparison of Sparse, Dense, and Hybrid RAG approaches">
+</p>
+<p>
+Let’s explore the three major retrieval strategies:</p>
+<h2>
+Sparse Retrieval: The Classic Approach (50 years old)</h2>
+<p>
+<strong>How it works</strong>: Uses keyword matching through TF-IDF and BM25, counting term frequency in documents and scoring accordingly.</p>
+<p>
+<strong>Pros</strong>:</p>
 <ul>
-<li>Simple and fast implementation</li>
-<li>Highly scalable</li>
-<li>Cost-effective (no embeddings required)</li>
-<li>Effective for domain-specific terminology</li>
-<li>Can sometimes outperform complex models for specialised terms</li>
+  <li>
+Simple and fast implementation  </li>
+  <li>
+Highly scalable  </li>
+  <li>
+Cost-effective (no embeddings required)  </li>
+  <li>
+Effective for domain-specific terminology  </li>
+  <li>
+Can sometimes outperform complex models for specialised terms  </li>
 </ul>
-<p><strong>Cons</strong>:</p>
+<p>
+<strong>Cons</strong>:</p>
 <ul>
-<li>Poor with synonyms and related concepts</li>
-<li>Limited contextual understanding</li>
-<li>Struggles with conceptual queries</li>
+  <li>
+Poor with synonyms and related concepts  </li>
+  <li>
+Limited contextual understanding  </li>
+  <li>
+Struggles with conceptual queries  </li>
 </ul>
-<p><strong>Best uses</strong>: Scenarios requiring exact wording- short queries, code search, log analysis, legal clauses.</p>
-<p><strong>Implementations</strong>: Elasticsearch, Apache Lucene, Milvus</p>
-<h2 id="dense-retrieval-the-semantic-workhorse-5-10-years-old">Dense Retrieval: The Semantic Workhorse (5-10 years old)</h2>
-<p><strong>How it works</strong>: Maps queries and documents into vector space using embeddings (often called &quot;vector search&quot;), finding results based on semantic similarity.</p>
-<p><strong>Pros</strong>:</p>
+<p>
+<strong>Best uses</strong>: Scenarios requiring exact wording- short queries, code search, log analysis, legal clauses.</p>
+<p>
+<strong>Implementations</strong>: Elasticsearch, Apache Lucene, Milvus</p>
+<h2>
+Dense Retrieval: The Semantic Workhorse (5-10 years old)</h2>
+<p>
+<strong>How it works</strong>: Maps queries and documents into vector space using embeddings (often called “vector search”), finding results based on semantic similarity.</p>
+<p>
+<strong>Pros</strong>:</p>
 <ul>
-<li>Strong contextual understanding</li>
-<li>Handles synonyms and paraphrasing well</li>
-<li>Flexible for natural language queries</li>
-<li>Captures content meaning effectively</li>
+  <li>
+Strong contextual understanding  </li>
+  <li>
+Handles synonyms and paraphrasing well  </li>
+  <li>
+Flexible for natural language queries  </li>
+  <li>
+Captures content meaning effectively  </li>
 </ul>
-<p><strong>Cons</strong>:</p>
+<p>
+<strong>Cons</strong>:</p>
 <ul>
-<li>Misses rare terms and jargon</li>
-<li>Less effective for very short queries</li>
-<li>More computationally intensive</li>
-<li>Requires domain adaptation</li>
+  <li>
+Misses rare terms and jargon  </li>
+  <li>
+Less effective for very short queries  </li>
+  <li>
+More computationally intensive  </li>
+  <li>
+Requires domain adaptation  </li>
 </ul>
-<p><strong>Best uses</strong>: Chatbots, customer service, research over unstructured knowledge bases.</p>
-<p><strong>Implementations</strong>: Meta&#39;s FAISS, JVector</p>
-<h2 id="hybrid-retrieval-the-current-state-of-the-art-2-3-years-old">Hybrid Retrieval: The Current State of the Art (2-3 years old)</h2>
-<p><strong>How it works</strong>: Combines vector-based and keyword-based search, processing queries through both methods and merging results.</p>
-<p><strong>Pros</strong>:</p>
+<p>
+<strong>Best uses</strong>: Chatbots, customer service, research over unstructured knowledge bases.</p>
+<p>
+<strong>Implementations</strong>: Meta’s FAISS, JVector</p>
+<h2>
+Hybrid Retrieval: The Current State of the Art (2-3 years old)</h2>
+<p>
+<strong>How it works</strong>: Combines vector-based and keyword-based search, processing queries through both methods and merging results.</p>
+<p>
+<strong>Pros</strong>:</p>
 <ul>
-<li>Leverages strengths of both approaches</li>
-<li>Outperforms dense-only retrieval in benchmarks</li>
-<li>Improves precision and recall metrics</li>
-<li>Handles both semantics and rare terms</li>
+  <li>
+Leverages strengths of both approaches  </li>
+  <li>
+Outperforms dense-only retrieval in benchmarks  </li>
+  <li>
+Improves precision and recall metrics  </li>
+  <li>
+Handles both semantics and rare terms  </li>
 </ul>
-<p><strong>Fusion algorithms</strong>:</p>
+<p>
+<strong>Fusion algorithms</strong>:</p>
 <ul>
-<li>Weighted sum (e.g., 70% dense, 30% sparse)</li>
-<li>Reciprocal Ranked Fusion (RRF), merging based on ranked positions</li>
+  <li>
+Weighted sum (e.g., 70% dense, 30% sparse)  </li>
+  <li>
+Reciprocal Ranked Fusion (RRF), merging based on ranked positions  </li>
 </ul>
-<p><strong>Best uses</strong>: Specialised domains (legal, technical, medical) and general-purpose retrieval requiring high accuracy.</p>
-<p><strong>Implementations</strong>: Elasticsearch, Milvus, Weaviate, DataStax Astra DB</p>
-<h2 id="why-hybrid-retrieval-leads-the-pack">Why Hybrid Retrieval Leads the Pack</h2>
-<p>If sparse retrieval is fast but literal, and dense retrieval is contextually aware but misses specific terms, hybrid retrieval offers the best combination:</p>
+<p>
+<strong>Best uses</strong>: Specialised domains (legal, technical, medical) and general-purpose retrieval requiring high accuracy.</p>
+<p>
+<strong>Implementations</strong>: Elasticsearch, Milvus, Weaviate, DataStax Astra DB</p>
+<h2>
+Why Hybrid Retrieval Leads the Pack</h2>
+<p>
+If sparse retrieval is fast but literal, and dense retrieval is contextually aware but misses specific terms, hybrid retrieval offers the best combination:</p>
 <ol>
-<li><strong>Complementary strengths</strong>: Semantic matching for concepts, keyword matching for critical terms</li>
-<li><strong>Balanced performance</strong>: Optimises for speed, precision, and recall</li>
-<li><strong>Adaptability</strong>: Works across different domains and query types</li>
-<li><strong>Improved accuracy</strong>: Consistently outperforms single-method approaches</li>
+  <li>
+<strong>Complementary strengths</strong>: Semantic matching for concepts, keyword matching for critical terms  </li>
+  <li>
+<strong>Balanced performance</strong>: Optimises for speed, precision, and recall  </li>
+  <li>
+<strong>Adaptability</strong>: Works across different domains and query types  </li>
+  <li>
+<strong>Improved accuracy</strong>: Consistently outperforms single-method approaches  </li>
 </ol>
-<h2 id="conclusion">Conclusion</h2>
-<p>Retrieval strategies have evolved from simple keyword matching to sophisticated semantic understanding, with hybrid approaches now delivering superior results.</p>
-<p>For RAG system developers today, hybrid retrieval offers the most balanced approach- combining the precision of keyword search with the contextual understanding of vector embeddings in a unified solution.</p>
-<p>This TIL is based on the excellent explanation in IBM Technology&#39;s video on Hybrid RAG, that&#39;s worth your time in my opinion.</p>
+<h2>
+Conclusion</h2>
+<p>
+Retrieval strategies have evolved from simple keyword matching to sophisticated semantic understanding, with hybrid approaches now delivering superior results.</p>
+<p>
+For RAG system developers today, hybrid retrieval offers the most balanced approach- combining the precision of keyword search with the contextual understanding of vector embeddings in a unified solution.</p>
+<p>
+This TIL is based on the excellent explanation in IBM Technology’s video on Hybrid RAG, that’s worth your time in my opinion.</p>
 
       </div>
     </article>

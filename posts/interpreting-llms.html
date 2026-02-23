@@ -9,7 +9,11 @@
 <body>
   <header>
     <div class="container">
-      <h1><a href="/">Just-in-Time Learning</a></h1>
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
     </div>
   </header>
 
@@ -24,48 +28,80 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> LLMs present unique interpretability challenges due to neurons exhibiting polysemanticity- responding to multiple unrelated concepts through superposition- which sparse autoencoders help address by mapping neuron combinations to specific concepts, enhancing our ability to understand, control, and improve these increasingly influential AI systems.</p>
+        <p>
+<strong>TL;DR:</strong> LLMs present unique interpretability challenges due to neurons exhibiting polysemanticity- responding to multiple unrelated concepts through superposition- which sparse autoencoders help address by mapping neuron combinations to specific concepts, enhancing our ability to understand, control, and improve these increasingly influential AI systems.</p>
 <!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>Large Language Models (LLMs) have become increasingly sophisticated, yet understanding their inner workings remains a critical challenge for AI safety and development. This blog post summarises concepts and research presented in <a href="https://www.youtube.com/watch?v=UGO_Ehywuxc">Welch Labs&#39; video on mechanistic interpretability</a>, examining how LLMs process information and recent advances in making their decision-making processes more transparent.</p>
-<h2 id="how-llms-think">How LLMs Think</h2>
-<p>LLMs process text through a sophisticated pipeline:</p>
+<h2>
+Introduction</h2>
+<p>
+Large Language Models (LLMs) have become increasingly sophisticated, yet understanding their inner workings remains a critical challenge for AI safety and development. This blog post summarises concepts and research presented in <a href="https://www.youtube.com/watch?v=UGO_Ehywuxc">Welch Labs’ video on mechanistic interpretability</a>, examining how LLMs process information and recent advances in making their decision-making processes more transparent.</p>
+<h2>
+How LLMs Think</h2>
+<p>
+LLMs process text through a sophisticated pipeline:</p>
 <ol>
-<li>Text is converted into tokens and mapped to vectors</li>
-<li>These vectors flow through multiple layers via &quot;<em>residual streams</em>&quot;</li>
-<li>Each layer transforms the information through attention mechanisms</li>
-<li>Final outputs emerge from probability distributions across possible tokens</li>
+  <li>
+Text is converted into tokens and mapped to vectors  </li>
+  <li>
+These vectors flow through multiple layers via “<em>residual streams</em>“  </li>
+  <li>
+Each layer transforms the information through attention mechanisms  </li>
+  <li>
+Final outputs emerge from probability distributions across possible tokens  </li>
 </ol>
-<p>This process, while mathematically precise, creates a black box of neural connections that resist simple interpretation.</p>
-<h2 id="the-challenge-of-model-transparency">The Challenge of Model Transparency</h2>
-<p><a href="https://ai.google.dev/gemma">Google Gemma</a> models&#39; analysis of the sentence &quot;<em>the reliability of Wikipedia is very</em>&quot; demonstrates this complexity. The model assigns varying probabilities to different completions:</p>
+<p>
+This process, while mathematically precise, creates a black box of neural connections that resist simple interpretation.</p>
+<h2>
+The Challenge of Model Transparency</h2>
+<p>
+<a href="https://ai.google.dev/gemma">Google Gemma</a> models’ analysis of the sentence “<em>the reliability of Wikipedia is very</em>“ demonstrates this complexity. The model assigns varying probabilities to different completions:</p>
 <ul>
-<li>&quot;<em>important</em>&quot; (20.21%)</li>
-<li>&quot;<em>high</em>&quot; (11.16%)</li>
-<li>&quot;<em>questionable</em>&quot; (9.48%)</li>
+  <li>
+“<em>important</em>“ (20.21%)  </li>
+  <li>
+“<em>high</em>“ (11.16%)  </li>
+  <li>
+“<em>questionable</em>“ (9.48%)  </li>
 </ul>
-<p>These probabilities emerge from intricate interactions between neurons, leading to a phenomenon called <em>superposition</em>[^1].</p>
-<h2 id="superposition-and-its-solution">Superposition and Its Solution</h2>
-<p>Unlike vision models where neurons correspond to specific concepts, LLMs exhibit <a href="https://arxiv.org/abs/2210.01892">polysemanticity</a> -individual neurons respond to multiple, unrelated concepts. This occurs because LLMs encode more concepts than available neurons by using specific neuron combinations.</p>
-<p>This complexity necessitated the development of [sparse autoencoders]({{ site.baseurl }}{% link _posts/2025-01-09-sparse-autoencoders.md %}), which:</p>
+<p>
+These probabilities emerge from intricate interactions between neurons, leading to a phenomenon called <em>superposition</em>[^1].</p>
+<h2>
+Superposition and Its Solution</h2>
+<p>
+Unlike vision models where neurons correspond to specific concepts, LLMs exhibit <a href="https://arxiv.org/abs/2210.01892">polysemanticity</a> -individual neurons respond to multiple, unrelated concepts. This occurs because LLMs encode more concepts than available neurons by using specific neuron combinations.</p>
+<p>
+This complexity necessitated the development of <a href="{{ site.baseurl }}{% link _posts/2025-01-09-sparse-autoencoders.md %}">sparse autoencoders</a>, which:</p>
 <ol>
-<li>Map complex neuron combinations to specific concepts</li>
-<li>Extract interpretable features from LLMs</li>
-<li>Enable direct manipulation of model behaviour</li>
+  <li>
+Map complex neuron combinations to specific concepts  </li>
+  <li>
+Extract interpretable features from LLMs  </li>
+  <li>
+Enable direct manipulation of model behaviour  </li>
 </ol>
-<h2 id="practical-implications">Practical Implications</h2>
-<p>Understanding LLM internals has crucial implications:</p>
+<h2>
+Practical Implications</h2>
+<p>
+Understanding LLM internals has crucial implications:</p>
 <ul>
-<li><strong>AI Safety</strong>: Better control over model behaviours and outputs</li>
-<li><strong>Development</strong>: More targeted improvements in model capabilities</li>
-<li><strong>Deployment</strong>: Enhanced ability to predict and prevent unwanted behaviours</li>
-<li><strong>Trust</strong>: Greater transparency in AI decision-making processes</li>
+  <li>
+<strong>AI Safety</strong>: Better control over model behaviours and outputs  </li>
+  <li>
+<strong>Development</strong>: More targeted improvements in model capabilities  </li>
+  <li>
+<strong>Deployment</strong>: Enhanced ability to predict and prevent unwanted behaviours  </li>
+  <li>
+<strong>Trust</strong>: Greater transparency in AI decision-making processes  </li>
 </ul>
-<h2 id="conclusion">Conclusion</h2>
-<p>While tools like sparse autoencoders have provided unprecedented insights into model behaviour, they&#39;ve also revealed the vast complexity of LLM internal mechanisms -the &quot;dark matter&quot; of AI. As these models become more integral to society, advancing our ability to interpret and control them becomes increasingly critical for responsible AI development.\ This improved understanding represents not just academic progress, but a crucial step toward safer, more reliable AI systems.</p>
-<hr>
-<p>[^1]: superposition in the context of neural networks is the ability of a single<br>    neuron to represent multiple features simultaneously.<br>    <a href="https://hdl.handle.net/1721.1/157073">https://hdl.handle.net/1721.1/157073</a></p>
+<h2>
+Conclusion</h2>
+<p>
+While tools like sparse autoencoders have provided unprecedented insights into model behaviour, they’ve also revealed the vast complexity of LLM internal mechanisms -the “dark matter” of AI. As these models become more integral to society, advancing our ability to interpret and control them becomes increasingly critical for responsible AI development.\ This improved understanding represents not just academic progress, but a crucial step toward safer, more reliable AI systems.</p>
+<hr class="thin">
+<p>
+[^1]: superposition in the context of neural networks is the ability of a single</p>
+<pre><code>neuron to represent multiple features simultaneously.
+[https://hdl.handle.net/1721.1/157073](https://hdl.handle.net/1721.1/157073)</code></pre>
 
       </div>
     </article>

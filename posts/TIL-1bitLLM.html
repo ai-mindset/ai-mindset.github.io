@@ -9,7 +9,11 @@
 <body>
   <header>
     <div class="container">
-      <h1><a href="/">Just-in-Time Learning</a></h1>
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
     </div>
   </header>
 
@@ -24,18 +28,27 @@
       </header>
       
       <div class="post-content">
-        <p><strong>TL;DR:</strong> Ternary-weighted LLMs using only {-1, 0, 1} values (1.58 bits) can match full-precision performance while delivering dramatic efficiency improvements: 2.71x faster inference, 2.55x lower memory usage, and 71.4x lower energy consumption for matrix operations at 3B parameter scale.</p>
+        <p>
+<strong>TL;DR:</strong> Ternary-weighted LLMs using only {-1, 0, 1} values (1.58 bits) can match full-precision performance while delivering dramatic efficiency improvements: 2.71x faster inference, 2.55x lower memory usage, and 71.4x lower energy consumption for matrix operations at 3B parameter scale.</p>
 <!--more-->
-
-<h2 id="introduction">Introduction</h2>
-<p>Back in February 2024, a preprint titled <a href="https://arxiv.org/abs/2402.17764">The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits</a> was released. Lots of people picked up on it, simply search for <em>1.58-bits</em> on YouTube for instance, however it escaped me due to <a href="https://xcancel.com/AdamMGrant/status/1851348990589354464">a busy time at work</a>. It was only when I stumbled across this preprint again recently, that I realised what a fantastic idea it is to <a href="https://www.youtube.com/watch?v=wCDGiys-nLA">substitute multiplication with addition or subtraction</a>.</p>
-<h2 id="contributions">Contributions</h2>
-<p>The TL;DR is that all LLM weights can be ternary i.e. {-1, 0, 1}. Ternary weights are 1.58-bits. Activations are 8-bits. This highly quantised model matches full-precision performance at 3B parameter scale.\ This highly quantised model exhibits 2.71x faster inference, 2.55x lower memory usage at 3B scale, 71.4x lower energy consumption for matrix multiplication operations. Benefits increase with model scale e.g. 4.1x speed-up at 70B parameters, 8.9x higher throughput, 11x larger batch size.</p>
-<h2 id="what-does-158-bits-mean">What Does 1.58-bits Mean?</h2>
-<p>Carnegie Mellon University has a great reference on the <a href="https://www.cs.cmu.edu/~dst/Tutorials/Info-Theory/">basics of Information theory</a>. Learning how to measure information content for a ternary system {-1, 0, 1}, we notice that:\ Each value {-1, 0, 1} has an equal probability $P = \frac{1}{3}$ for each state. The information content is $-(P \log_2{P})$ summed over all states</p>
-<p>$ -(\frac{1}{3} \log_2(\frac{1}{3}) + \frac{1}{3} \log_2(\frac{1}{3}) + \frac{1}{3} \log_2(\frac{1}{3})) = -(3 × (\frac{1}{3} \log_2(\frac{1}{3}))) = -\log_2(\frac{1}{3}) \approx 1.58496... bits $</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>LLMs can achieve comparable performance to full-precision models while using only three weight values {-1, 0, 1}, achieving up to 71.4x lower energy consumption for matrix operations and 3.55x lower memory usage at 3B scale. This breakthrough suggests a new direction for efficient LLM deployment, particularly promising for edge devices and mobile applications, while also opening opportunities for specialized hardware optimized for 1-bit operations.</p>
+<h2>
+Introduction</h2>
+<p>
+Back in February 2024, a preprint titled <a href="https://arxiv.org/abs/2402.17764">The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits</a> was released. Lots of people picked up on it, simply search for <em>1.58-bits</em> on YouTube for instance, however it escaped me due to <a href="https://xcancel.com/AdamMGrant/status/1851348990589354464">a busy time at work</a>. It was only when I stumbled across this preprint again recently, that I realised what a fantastic idea it is to <a href="https://www.youtube.com/watch?v=wCDGiys-nLA">substitute multiplication with addition or subtraction</a>.</p>
+<h2>
+Contributions</h2>
+<p>
+The TL;DR is that all LLM weights can be ternary i.e. {-1, 0, 1}. Ternary weights are 1.58-bits. Activations are 8-bits. This highly quantised model matches full-precision performance at 3B parameter scale.\ This highly quantised model exhibits 2.71x faster inference, 2.55x lower memory usage at 3B scale, 71.4x lower energy consumption for matrix multiplication operations. Benefits increase with model scale e.g. 4.1x speed-up at 70B parameters, 8.9x higher throughput, 11x larger batch size.</p>
+<h2>
+What Does 1.58-bits Mean?</h2>
+<p>
+Carnegie Mellon University has a great reference on the <a href="https://www.cs.cmu.edu/~dst/Tutorials/Info-Theory/">basics of Information theory</a>. Learning how to measure information content for a ternary system {-1, 0, 1}, we notice that:\ Each value {-1, 0, 1} has an equal probability $P = \frac{1}{3}$ for each state. The information content is $-(P \log_2{P})$ summed over all states</p>
+<p>
+$$ -(\frac{1}{3} \log_2(\frac{1}{3}) + \frac{1}{3} \log_2(\frac{1}{3}) + \frac{1}{3} \log_2(\frac{1}{3})) = -(3 × (\frac{1}{3} \log_2(\frac{1}{3}))) = -\log_2(\frac{1}{3}) \approx 1.58496… bits $$</p>
+<h2>
+Conclusion</h2>
+<p>
+LLMs can achieve comparable performance to full-precision models while using only three weight values {-1, 0, 1}, achieving up to 71.4x lower energy consumption for matrix operations and 3.55x lower memory usage at 3B scale. This breakthrough suggests a new direction for efficient LLM deployment, particularly promising for edge devices and mobile applications, while also opening opportunities for specialized hardware optimized for 1-bit operations.</p>
 
       </div>
     </article>

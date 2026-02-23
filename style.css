@@ -346,43 +346,104 @@ body.dark-theme .year-label.active {
   font-size: 0.8rem;
   width: 1.2rem;
   height: 1.2rem;
-  text-align: center;
-  line-height: 1.2rem;
-  color: #ccc;
-  transition: transform 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
   font-weight: 400;
+  position: relative;
 }
 
 .month-letter.has-posts {
   color: var(--text-light);
   cursor: pointer;
-}
-
-body.dark-theme .month-letter {
-  color: #555;
-}
-
-.month-letter.has-posts:hover {
-  transform: scale(1.2);
-  color: var(--link-light);
-}
-
-body.dark-theme .month-letter.has-posts:hover {
-  color: var(--link-dark);
-}
-
-.month-letter.has-posts.active {
-  color: var(--link-light);
-  font-weight: 700;
-  transform: scale(1.2);
-}
-
-body.dark-theme .month-letter.has-posts.active {
-  color: var(--link-dark);
+  background-color: rgba(128, 128, 128, 0.1);
 }
 
 body.dark-theme .month-letter.has-posts {
   color: var(--text-dark);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.month-letter.has-posts:hover {
+  transform: scale(1.3);
+  color: var(--link-light);
+  background-color: var(--link-light);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .month-letter.has-posts:hover {
+  background-color: var(--link-dark);
+  color: var(--bg-dark);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.month-letter.has-posts.active {
+  background-color: var(--link-light);
+  color: white;
+  font-weight: 700;
+  transform: scale(1.3);
+}
+
+body.dark-theme .month-letter.has-posts.active {
+  background-color: var(--link-dark);
+  color: var(--bg-dark);
+}
+
+/* Enhanced tooltip styling for month letters */
+.month-letter.has-posts[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  animation: tooltipFadeIn 0.2s ease-in-out forwards;
+}
+
+body.dark-theme .month-letter.has-posts[title]:hover::after {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--bg-dark);
+}
+
+/* Tooltip arrow */
+.month-letter.has-posts[title]:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  animation: tooltipFadeIn 0.2s ease-in-out forwards;
+}
+
+body.dark-theme .month-letter.has-posts[title]:hover::before {
+  border-top-color: rgba(255, 255, 255, 0.95);
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 /* Posts */
