@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-02-28",
+    "title": "💡 TIL: I've Been Doing Spec-Driven Development Without Realising",
+    "url": "/posts/TIL-spec-driven-development.html",
+    "content": "<p>\n<strong>TL;DR:</strong> Watching a video on Spec-Driven Development, I realised I’ve been practising a form of it for the past year - starting from behaviour specifications and constraints before letting coding agents implement. Combined with Simon Willison’s concept of Agentic Engineering, this gave a name to an approach I’d developed through trial and error: directing AI agents with upfront planning rather than iterating through vague prompts.</p>\n<!--more-->\n<h2>\nIntroduction</h2>\n<p>\nI stumbled across a video titled <a href=\"https://www.youtube.com/watch?v=mViFYTwWvcM\">Spec-Driven Development: AI Assisted Coding Explained</a> and had one of those “<em>oh, that’s what I’ve been doing</em>“ moments.</p>\n<h2>\nSpec-Driven Development</h2>\n<p>\nThe video contrasts <strong>vibe coding</strong> - prompt, generate, tweak, repeat - with <strong>spec-driven development</strong>, where you specify desired behaviour and constraints <em>before</em> any code gets written. The spec becomes a contract: requirements first, then a design document, then implementation. Nothing gets coded until the spec is approved. The presenter positions it as test-driven development and behaviour-driven development “on steroids”, where the spec becomes the primary artifact driving all downstream work.</p>\n<h2>\nMy Experience</h2>\n<p>\nI’ve been doing a form of this for the past few months. When working with coding agents, I usually start by planning - writing out what I want the system to do, the constraints, the expected behaviour - before letting the agent loose. Not always; sometimes a quick script just needs a quick prompt. But for anything substantial, the planning step has become instinctive.</p>\n<p>\nI wouldn’t call what I do vibe coding, though. Simon Willison’s term <a href=\"https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/\"><strong>agentic engineering</strong></a> captures it better - professional developers amplifying their existing experience with coding agents, rather than ignoring the code entirely. The spec-driven approach fits naturally within that: you’re not vibing, you’re <em>directing</em>.</p>\n<h2>\nConclusion</h2>\n<p>\nWhat I found validating about the video is the emphasis on reducing ambiguity. When you give an agent a spec rather than a vague prompt, you get consistent results. That matches my experience - the more precise my upfront planning, the fewer back-and-forth iterations I need.</p>\n<p>\nTIL there’s a name for what I’ve been doing.</p>\n",
+    "tags": [
+      "til",
+      "ai",
+      "agentic-engineering",
+      "spec-driven-development",
+      "productivity"
+    ]
+  },
+  {
     "date": "2026-02-21",
     "title": "🛠️ Finding Balance: My Current AI Development Toolstack",
     "url": "/posts/finding-balance-my-current-ai-development-toolstack.html",
