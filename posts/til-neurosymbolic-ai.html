@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💡 TIL: Neurosymbolic AI - Bringing Reason Back Into Intelligence - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Inquisitive. Learning. Sharing. Simplicity = Reliability</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>💡 TIL: Neurosymbolic AI - Bringing Reason Back Into Intelligence</h1>
+        <span class="post-date">February 28, 2026</span>
+        <div class="post-tags">
+          <span class="post-tag">til</span><span class="post-tag">ai</span><span class="post-tag">neurosymbolic</span><span class="post-tag">symbolic-ai</span><span class="post-tag">neural-network</span><span class="post-tag">reasoning</span><span class="post-tag">interpretability</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p>
+<strong>TL;DR:</strong> Neurosymbolic AI combines neural networks (pattern recognition) with symbolic logic (structured reasoning) to create systems that can both recognise <em>and</em> understand. While neural networks alone can identify a cat but can’t explain why, and rule-based systems can reason but break when reality doesn’t fit the template, neurosymbolic approaches bridge this gap - with real-world applications like mediKanren already using this hybrid approach to discover novel medical treatments by combining logical inference over scientific literature with LLM capabilities.</p>
+<!--more-->
+<h2>
+Introduction</h2>
+<p>
+Pedro Domingos’ <a href="https://en.wikipedia.org/wiki/The_Master_Algorithm">The Master Algorithm</a> lays out five tribes of machine learning - symbolists, connectionists, evolutionaries, Bayesians, and analogisers - and argues that the ultimate goal is a single master algorithm that unifies them all. Neurosymbolic AI feels like a tangible step toward that vision, bridging at least two of those tribes: the symbolists and the connectionists.</p>
+<p>
+Symbolic AI first caught my eye when I read about Matt Might’s work on mediKanren - a reasoning engine that digests biomedical literature into logical relations and infers novel treatments by connecting disparate parts of the medical knowledge graph. Recently, a concise <a href="https://www.youtube.com/watch?v=ZfWDVO3rzeA">video explainer on Neurosymbolic AI</a> helped crystallise why this hybrid approach matters, and how it connects to work like Might’s.</p>
+<h2>
+The Problem: Recognition Without Understanding</h2>
+<p>
+The video opens with an analogy that resonates: current AI is like a student who memorises every answer but doesn’t understand the material. Neural networks excel at pattern recognition - tagging photos, generating text - but can’t explain <em>why</em> they reach their conclusions. Show them a plastic plant and they’ll confidently call it real, because they’ve learned what plants <em>look like</em>, not what they <em>are</em>.</p>
+<p>
+Conversely, classical symbolic AI reasons step by step - leaves plus stem equals plant - but freezes when a cactus shows up. It’s logic without intuition.</p>
+<h2>
+Neurosymbolic AI: Both Sides of the Coin</h2>
+<p>
+Neurosymbolic AI combines the neural (learning) with the symbolic (reasoning). The video’s stop sign example illustrates this well: the neural side detects shapes and colours, while the symbolic side applies rules like “<em>red and octagonal means stop sign</em>“. Even with stickers, lighting changes, or paint, the system still understands <em>why</em> a stop sign looks the way it does.</p>
+<p>
+Importantly, these systems can learn new rules. The whale example from the video demonstrates meta-learning: when a model that’s learned “<em>mammals have fur</em>“ encounters a whale, it can reason - whales give birth to live young and have lungs - and update its logic without retraining on millions of examples.</p>
+<h2>
+From Theory to Practice: mediKanren</h2>
+<p>
+Matt Might’s mediKanren provides a compelling real-world implementation of neurosymbolic ideas. Might, director of the Hugh Kaul Precision Medicine Institute at the University of Alabama at Birmingham, created mediKanren after his son Bertrand was diagnosed with a previously unknown rare disease (NGLY1 deficiency).</p>
+<p>
+mediKanren digests PubMed abstracts using NLP, extracts simple relations (X inhibits Y, Y causes Z), and layers logical inference on top to discover potential treatments by connecting findings across disparate papers. It’s essentially the neurosymbolic approach applied to medicine - neural methods for parsing natural language, symbolic reasoning for drawing logical conclusions.</p>
+<p>
+The team is now developing mediKanren-GPT, which combines the symbolic, explainable approach of mediKanren with LLMs. As Might has noted, mediKanren can <em>verify</em> the assertions coming out of LLMs - if an LLM makes a claim, that claim can be passed to a symbolic AI for verification. This addresses one of the core weaknesses of pure neural approaches: the inability to guarantee factual correctness.</p>
+<h2>
+Conclusion</h2>
+<p>
+The neurosymbolic approach represents a path beyond the current limitations of both pure neural networks and rigid rule-based systems. What makes it particularly interesting isn’t just the theoretical elegance of combining pattern recognition with structured reasoning - it’s that systems like mediKanren are already applying this hybrid approach to discover medical treatments that no human researcher had connected.</p>
+<p>
+As Domingos argued, the real breakthroughs will come from unifying the tribes of machine learning. Neurosymbolic AI is one of the most promising steps in that direction - logic and learning, working hand in hand.</p>
+<p>
+TIL that neurosymbolic AI isn’t the fringe approach I’d assumed it was. I’d known about its potential since reading about mediKanren, but the relative silence around it had me second-guessing whether it was gaining real traction. Seeing it presented as a growing, practical field - with real applications in science, finance, and law - was a welcome reminder that sometimes the quiet ideas are the ones worth paying attention to.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
