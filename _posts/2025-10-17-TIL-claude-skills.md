@@ -24,7 +24,7 @@ Key characteristics:
 The efficiency of Claude Skills comes from their implementation:
 
 1. Skills use YAML frontmatter summaries in Markdown files [as described by Simon Willison](https://simonwillison.net/2025/Oct/16/claude-skills/)
-   - *YAML frontmatter*: Structured metadata (delimited by triple dashes `---`) at the beginning of Markdown files containing required `name` and `description` fields that Claude scans at startup to determine which skills are relevant to a task
+   - _YAML frontmatter_: Structured metadata (delimited by triple dashes `---`) at the beginning of Markdown files containing required `name` and `description` fields that Claude scans at startup to determine which skills are relevant to a task
 
 2. This approach dramatically reduces token overhead compared to alternatives like Model Context Protocol, which "_famously consumes tens of thousands of tokens_" per Willison
 3. Code execution occurs in a secure environment

@@ -21,7 +21,7 @@ The video contrasts **vibe coding** - prompt, generate, tweak, repeat - with **s
 
 I've been doing a form of this for the past few months. When working with coding agents, I usually start by planning - writing out what I want the system to do, the constraints, the expected behaviour - before letting the agent loose. Not always; sometimes a quick script just needs a quick prompt. But for anything substantial, the planning step has become instinctive.
 
-I wouldn't call what I do vibe coding, though. Simon Willison's term [**agentic engineering**](https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/) captures it better - professional developers amplifying their existing experience with coding agents, rather than ignoring the code entirely. The spec-driven approach fits naturally within that: you're not vibing, you're *directing*.
+I wouldn't call what I do vibe coding, though. Simon Willison's term [**agentic engineering**](https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/) captures it better - professional developers amplifying their existing experience with coding agents, rather than ignoring the code entirely. The spec-driven approach fits naturally within that: you're not vibing, you're _directing_.
 
 ## Conclusion
 
