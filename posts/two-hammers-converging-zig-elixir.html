@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔨 Two Hammers: Converging on ⚡ Zig and 💧 Elixir - Just-in-Time Learning</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Just-in-Time Learning</h1>
+      <p class="subtitle">Curious. Simplicity ⟹ Reliability. V ↑ → Q ↓</p>
+      <nav>
+        <a href="/" class="back-link">← Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="post-container">
+    <article class="post">
+      <header class="post-header">
+        <h1>🔨 Two Hammers: Converging on ⚡ Zig and 💧 Elixir</h1>
+        <span class="post-date">June 9, 2026</span>
+        <div class="post-tags">
+          <span class="post-tag">zig</span><span class="post-tag">elixir</span><span class="post-tag">gleam</span><span class="post-tag">language-design</span><span class="post-tag">toolchain</span><span class="post-tag">polyglot</span><span class="post-tag">ai</span><span class="post-tag">data-science</span><span class="post-tag">minimalism</span>
+        </div>
+      </header>
+      
+      <div class="post-content">
+        <p>
+<strong>TL;DR:</strong> After years of searching for a single language to rule them all - through <a href="https://ai-mindset.github.io/posts/deno.html">Deno</a>, <a href="https://ai-mindset.github.io/posts/go-pragmatic-modern-development.html">Go</a>, and <a href="https://ai-mindset.github.io/posts/transitioning-from-python-to-rust-for-ai.html">Rust</a> - I’m converging on two: Zig for systems-level control, cross-compilation, and raw performance, and Elixir for concurrency, fault-tolerance, and a rapidly growing AI/ML ecosystem. Neither is perfect alone, but together they cover nearly everything I need.</p>
+<!--more-->
+<h2>
+Introduction</h2>
+<p>
+The search for <em>one language to rule them all</em> is a rabbit hole I knowingly fell into - a time pit, as much as anything else, of experimentation, learning, and hard-won dead ends. The appeal is obvious: one mental model, one toolchain, one community. I’ve explored this question seriously - from <a href="https://ai-mindset.github.io/posts/deno.html">Deno’s zero-config TypeScript</a> and <a href="https://ai-mindset.github.io/posts/go-pragmatic-modern-development.html">Go’s refreshing minimalism</a> to <a href="https://ai-mindset.github.io/posts/transitioning-from-python-to-rust-for-ai.html">Rust’s memory safety guarantees</a> and also <a href="https://ai-mindset.github.io/posts/compilation-going-back-full-circle.html">the broader question of compiled languages making a comeback</a>.</p>
+<p>
+Now, after building <a href="https://github.com/ai-mindset/bundlr"><code class="inline">bundlr</code></a> in Zig and <a href="https://github.com/The-Strategy-Unit/synthesis"><code class="inline">synthesis</code></a> in Elixir, and after stumbling across <a href="https://www.youtube.com/watch?v=iqddnwKF8HQ">Andrew Kelley’s 2026 interview</a> recently, I feel that I’m closing in on the answer I’ve been looking for.</p>
+<h2>
+The Journey So Far</h2>
+<p>
+<strong>Deno</strong> was compelling for its zero-config TypeScript, single-binary deployment, and security model. But JavaScript’s warts never quite disappeared, and the ecosystem - despite being rich - carried Node.js’s baggage.</p>
+<p>
+<strong>Go</strong> offered something rarer: a sub-50-page language spec, prescriptive tooling, and a single way to solve most problems. For production AI and data work it was genuinely appealing. But its ceiling - no BEAM, no low-level control, a maturing but still thin ML ecosystem - hasn’t been as appealing.</p>
+<p>
+<strong>Rust</strong> addressed the performance and safety arguments convincingly, with libraries like <a href="https://rig.rs/">Rig</a>, <a href="https://docs.pola.rs/">Polars</a>, and <a href="https://docs.rs/ndarray/">ndarray</a> covering most of an AI engineer’s needs. Yet its borrow checker imposes a steep ongoing cognitive tax that doesn’t align with my preference for simplicity.</p>
+<p>
+In parallel, I’ve settled on a <a href="https://ai-mindset.github.io/posts/finding-balance-my-current-ai-development-toolstack.html">minimal AI toolstack</a> that values control over automation. The same instinct is now shaping my language choices.</p>
+<h2>
+Zig</h2>
+<p>
+Vibe-ish building <a href="https://github.com/ai-mindset/bundlr"><code class="inline">bundlr</code></a> - admittedly shoddy Zig - gave me a taste of the language. What stood out:</p>
+<ul>
+  <li>
+<strong>Cross-compilation as a first-class citizen.</strong> One flag, any target. No toolchain archaeology.  </li>
+  <li>
+<strong>Explicit is genuinely better than implicit.</strong> Error handling, allocators, <code class="inline">comptime</code> - all force clarity that pays dividends later.  </li>
+  <li>
+<strong>No hidden control flow.</strong> What you write is what the CPU does. This aligns with Kelley’s philosophy: <em>think about what you want the CPU to do, then write that.</em>  </li>
+  <li>
+<strong>Own your stack.</strong> Kelley’s decision to replace LLVM with a custom backend - unlocking &lt;50ms incremental builds on million-line codebases - exemplifies what becomes possible when you control your tools end-to-end.  </li>
+</ul>
+<p>
+The caveat: Zig’s AI/ML/Data Science ecosystem is still nascent. Practical data science in Zig today means writing many of your own bindings or leaning on C FFI - though notably, at least one of Zig’s major sponsors operates in the AI/ML space, signalling real industry momentum. It’s a significant investment, but one that compounds over time.</p>
+<h2>
+Elixir (and Gleam)</h2>
+<p>
+<a href="https://github.com/The-Strategy-Unit/synthesis"><code class="inline">synthesis</code></a> is built in Elixir because Elixir was simply the right tool: BEAM’s concurrency and fault-tolerance model is unmatched for that class of problem. <a href="https://github.com/elixir-nx/nx">Project Nx</a>, <a href="https://github.com/elixir-nx/bumblebee">Bumblebee</a>, <a href="https://github.com/elixir-nx/scholar">Scholar</a>, and <a href="https://github.com/elixir-dux/dux">Dux</a> are evolving fast, and the AI/ML story is becoming genuinely compelling.</p>
+<p>
+Ideally I’d have liked to use <a href="https://gleam.run">Gleam</a> instead - Elixir’s younger sibling. It runs on BEAM, brings a strong static type system, and ships batteries-included (formatter, linter, package manager, LSP). The gap is deployment and native ecosystem: Elixir’s <a href="https://github.com/burrito-elixir/burrito">Burrito</a> has no Gleam equivalent yet - something <a href="https://ai-mindset.github.io/posts/compilation-going-back-full-circle.html">I noted as a caveat as far back as 2025</a>.</p>
+<h2>
+The Tradeoffs</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left;">
+      </th>
+      <th style="text-align: left;">
+Zig      </th>
+      <th style="text-align: left;">
+Elixir / Gleam      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;">
+AI/ML ecosystem      </td>
+      <td style="text-align: left;">
+Sparse (C FFI available)      </td>
+      <td style="text-align: left;">
+Rapidly growing (Nx)      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Learning curve      </td>
+      <td style="text-align: left;">
+Steep      </td>
+      <td style="text-align: left;">
+Moderate      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Cross-compilation      </td>
+      <td style="text-align: left;">
+Excellent (built-in)      </td>
+      <td style="text-align: left;">
+Limited      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Concurrency model      </td>
+      <td style="text-align: left;">
+Manual      </td>
+      <td style="text-align: left;">
+BEAM (world-class)      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Deployment      </td>
+      <td style="text-align: left;">
+Single binary      </td>
+      <td style="text-align: left;">
+Burrito (Elixir only)      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Control / performance      </td>
+      <td style="text-align: left;">
+Maximum      </td>
+      <td style="text-align: left;">
+Good, not systems-level      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+Type system      </td>
+      <td style="text-align: left;">
+Comptime-based      </td>
+      <td style="text-align: left;">
+Static (Gleam), dynamic (Elixir)      </td>
+    </tr>
+  </tbody>
+</table>
+<h2>
+A Conclusion (Almost)</h2>
+<p>
+I’m not ready to declare victory. But the question is no longer <em>which language</em> - it’s <em>whether one of these two[^1] can stretch far enough to replace the other</em> for my use cases.</p>
+<p>
+Zig’s AI/ML story needs to mature before it can replace Python for data work. Elixir/Gleam’s deployment story needs to close the gap with single-binary distribution. Both ecosystems are moving. The answer may simply be: use both, deliberately, and resist the urge to collapse them into one.</p>
+<p>
+Sometimes two good hammers beat one imperfect universal tool.</p>
+<hr class="thin">
+<p>
+[^1]: Gleam can leverage the entirety of the BEAM ecosystem as NIFs (Native Implemented Functions) i.e. FFI. I could write Synthesis in Gleam, calling Elixir libraries, but it defeats the purpose of using a language when I need to heavily rely on another’s ecosystem through FFI.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="https://ai-mindset.github.io/dialogue-engineering">AI</a> to help process and curate content ✨</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
