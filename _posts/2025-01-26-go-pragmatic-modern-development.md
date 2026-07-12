@@ -81,9 +81,4 @@ While Python remains dominant for ML/AI research, prototyping and -frequently- p
 
 ---
 
-[^1]: Vet is -in essence- a linter, since it helps improve code quality. Quoting
-    Go's [vet doc](https://go.dev/src/cmd/vet/doc.go) _"Vet examines Go source
-    code and reports suspicious constructs, such as Printf calls whose arguments
-    do not align with the format string. Vet uses heuristics that do not
-    guarantee all reports are genuine problems, but it can find errors not
-    caught by the compilers."_
+[^1]: Vet is -in essence- a linter, since it helps improve code quality. Quoting Go's [vet doc](https://go.dev/src/cmd/vet/doc.go) _"Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string. Vet uses heuristics that do not guarantee all reports are genuine problems, but it can find errors not caught by the compilers."_
