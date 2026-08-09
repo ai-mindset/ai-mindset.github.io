@@ -152,7 +152,7 @@ function headingSlug(text) {
 export function renderMarkdown(markdown) {
   const slugCounts = new Map();
   const markdownParser = new Marked({
-    breaks: true,
+    breaks: false,
     gfm: true,
   }).use(markedFootnote()).use({
     renderer: {

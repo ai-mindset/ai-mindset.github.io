@@ -107,3 +107,16 @@ Deno.test("Markdown headings receive stable unique IDs", () => {
     if (!html.includes(heading)) throw new Error(`Missing ${heading}`);
   }
 });
+
+Deno.test("Markdown source wrapping does not create visible line breaks", () => {
+  const html = renderMarkdown(
+    "A paragraph wrapped\nacross source lines.\n\nAn intentional break.  \nNext line.",
+  );
+
+  if (html.includes("wrapped<br>")) {
+    throw new Error("A soft source wrap rendered as a visible line break");
+  }
+  if (!html.includes("intentional break.<br>")) {
+    throw new Error("An intentional Markdown line break was not rendered");
+  }
+});

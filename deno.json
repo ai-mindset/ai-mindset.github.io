@@ -1,5 +1,6 @@
 {
   "fmt": {
+    "proseWrap": "preserve",
     "include": [
       "deno.json",
       "counter/*.js",
