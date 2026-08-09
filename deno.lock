@@ -1,0 +1,25 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:marked-footnote@1.4.0": "1.4.0_marked@17.0.6",
+    "npm:marked@17.0.6": "17.0.6"
+  },
+  "npm": {
+    "marked-footnote@1.4.0_marked@17.0.6": {
+      "integrity": "sha512-fZTxAhI1TcLEs5UOjCfYfTHpyKGaWQevbxaGTEA68B51l7i87SctPFtHETYqPkEN0ka5opvy4Dy1l/yXVC+hmg==",
+      "dependencies": [
+        "marked"
+      ]
+    },
+    "marked@17.0.6": {
+      "integrity": "sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA==",
+      "bin": true
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:marked-footnote@1.4.0",
+      "npm:marked@17.0.6"
+    ]
+  }
+}

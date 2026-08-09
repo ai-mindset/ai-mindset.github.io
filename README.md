@@ -1,109 +1,106 @@
 # Just-in-Time Learning
 
-A minimalist, lightweight static blog generator built with Elixir, designed to be:
+A small static blog whose executable code is JavaScript from end to end. Deno
+builds Markdown into a disposable static site, serves it during development, and
+runs the project checks. The browser uses plain JavaScript for search, filters,
+and theme selection.
 
-- Simple to maintain
-- Fast to load
-- Easy to build locally
-- Aesthetic and clean
-
-[![pages-build-deployment](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages/pages-build-deployment)  [![Build Content](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/build-on-push.yml/badge.svg)](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/build-on-push.yml)
+[![Deploy site](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages.yml/badge.svg)](https://github.com/ai-mindset/ai-mindset.github.io/actions/workflows/pages.yml)
 
 ## Features
 
-- Markdown-based posts with YAML front matter
-- Tag filtering system
-- Dark/light theme toggle
-- Responsive design
-- Zero external dependencies at runtime
-- No tracking or analytics
-- Built entirely with Elixir
+- Markdown posts with simple YAML front matter
+- Static HTML generation for fast, dependency-free page loads
+- Full-text search, tag and timeline filters
+- Responsive light and dark themes
+- One runtime and one programming language
+- Privacy-minimal aggregate visitor counting without an analytics engine
 
-## Prerequisites
+## Development
 
-- [Elixir](https://elixir-lang.org/) 1.19+
-- [Erlang/OTP](https://www.erlang.org/) 28+
+[Install Deno 2](https://docs.deno.com/runtime/getting_started/installation/),
+then build and serve the site:
 
-## Quick Start
-
-### Install Dependencies
-
-```bash
-mix deps.get
+```sh
+deno task dev
 ```
 
-### Development
+The site is available at <http://127.0.0.1:8000>. The individual tasks are:
 
-Build and serve locally:
-
-```bash
-mix dev
+```sh
+deno task build                 # generate _site/
+deno task serve -- 8080         # serve _site/ on an optional port
+deno task audit                 # check content metadata, typography, and Markdown
+deno task check                 # audit content, then format, lint, and type-check
+deno task check-links           # make an optional live check of external URLs
+deno task snapshot-visitors     # refresh aggregate counts when configured
+deno task test                  # rebuild and run the tooling tests
+deno task verify                # validate every generated page
 ```
 
-Visit `http://localhost:8000`
+## Adding a post
 
-### Build Only
-
-Generate HTML files without starting server:
-
-```bash
-mix build_site
-```
-
-### Serve Only
-
-Start HTTP server without rebuilding:
-
-```bash
-mix serve [port]  # default port: 8000
-```
-
-## Adding New Posts
-
-1. Create markdown file in `_posts/` directory:
-
-**Format:** `YYYY-MM-DD-slug.md`
-
-2. Add YAML front matter:
+Create `content/posts/YYYY-MM-DD-slug.md` with front matter followed by
+Markdown:
 
 ```markdown
 ---
 layout: post
-title: "Your Post Title"
-date: 2025-01-01
-tags: [tag1, tag2, tag3]
+title: "Your post title"
+date: 2026-08-09
+tags: [learning, ai]
 ---
 
-Your post content here...
+Your post goes here.
 ```
 
-3. Run `mix build_site` to generate HTML
+Run `deno task test` and `deno task verify`. Commit the Markdown source only;
+`_site/` is generated and deliberately ignored.
 
-## Project Structure
+## Structure
 
+```text
+content/
+  pages/             Standalone Markdown pages
+  posts/             Markdown post sources
+counter/             Anonymous Deno KV counter service
+scripts/             Deno build, server, and verification tools
+site/                Browser assets and shared HTML templates
+tests/               Deno tests for build and server behaviour
+_site/               Generated deployment artifact (ignored)
+deno.json            Tasks and pinned imports
+deno.lock            Reproducible dependency lock
 ```
-├── _posts/              # Markdown source files
-├── posts/               # Generated HTML posts
-├── lib/
-│   ├── blog_builder.ex  # Main build logic
-│   ├── blog_server.ex   # HTTP server
-│   └── mix/tasks/       # Mix tasks (build_site, serve, dev)
-├── mix.exs              # Project configuration
-├── post-template.html   # HTML template for posts
-├── index.html           # Main blog listing page
-├── style.css            # All styling
-├── script.js            # Client-side JavaScript
-└── posts.json           # Generated posts index
-```
 
-## Deployment
+On pushes to `main`, GitHub Actions checks, builds, tests, verifies, and deploys
+`_site/` to GitHub Pages. Pull requests run the same validation without
+deploying.
 
-GitHub Actions automatically builds and deploys to GitHub Pages on push to `main`.
+## Anonymous visitor count
 
-## Architecture
+The homepage can count approximate unique browser profiles without Google
+Analytics or another analytics engine. The browser stores only two local flags:
+whether it has ever been counted and the last month in which it was counted.
+Those flags are not sent as identifiers. The Deno service accepts only a boolean
+`firstEver` event and stores aggregate total and monthly counters in Deno KV.
 
-- **Static Generation:** Converts markdown → HTML at build time
-- **YAML Front Matter:** Parses post metadata (title, date, tags)
-- **Template System:** Applies HTML templates with string replacement
-- **JSON Index:** Generates searchable posts.json for frontend
-- **HTTP Server:** Elixir Plug/Cowboy for local development
+To enable it:
+
+1. Create a dynamic Deno Deploy application from this repository, using
+   `counter/` as its application directory. Its `deno.json` selects `main.js` as
+   the entrypoint.
+2. Provision a Deno KV database and attach it to the application.
+3. If the site uses another domain, set the Deno Deploy environment variable
+   `VISITOR_COUNTER_ALLOWED_ORIGINS` to a comma-separated list of allowed
+   origins. The default already allows `https://ai-mindset.github.io` and the
+   local development server.
+4. Add the public deployment URL as the GitHub repository variable
+   `VISITOR_COUNTER_ENDPOINT`.
+5. Run the Pages workflow manually after the variable is available.
+
+The Pages workflow refreshes `visitors.json` in the deployment artifact once a
+day. It does not commit counter updates, so automated traffic data does not
+pollute the repository history. Counts are approximate: clearing local storage,
+using another browser or device, and automated browsers can affect them. The
+public endpoint deliberately stores no visitor ID, IP address, user-agent,
+referrer or browsing history in its KV records.

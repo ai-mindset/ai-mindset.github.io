@@ -1,0 +1,40 @@
+{
+  "fmt": {
+    "include": [
+      "deno.json",
+      "counter/*.js",
+      "counter/deno.json",
+      "counter/tests/*.js",
+      "scripts/*.js",
+      "site/*.css",
+      "site/*.html",
+      "site/script.js",
+      "tests/*.js"
+    ]
+  },
+  "lint": {
+    "include": [
+      "counter/*.js",
+      "counter/tests/*.js",
+      "scripts/*.js",
+      "site/*.js",
+      "tests/*.js"
+    ]
+  },
+  "unstable": ["kv"],
+  "tasks": {
+    "audit": "deno run --allow-read=content scripts/audit-content.js",
+    "build": "deno run --allow-env=VISITOR_COUNTER_ENDPOINT --allow-read=content,site --allow-write=_site scripts/build.js",
+    "check": "deno task audit && deno fmt --check && deno lint && deno check counter/*.js counter/tests/*.js scripts/*.js site/*.js tests/*.js",
+    "check-links": "deno run --allow-read=content --allow-net scripts/check-links.js",
+    "dev": "deno task build && deno task serve",
+    "serve": "deno run --allow-net=127.0.0.1 --allow-read=_site scripts/serve.js",
+    "snapshot-visitors": "deno run --allow-env=VISITOR_COUNTER_ENDPOINT --allow-net --allow-write=_site/visitors.json scripts/snapshot-visitors.js",
+    "test": "deno task build && deno test --allow-read=_site tests/ counter/tests/",
+    "verify": "deno run --allow-read=_site scripts/verify.js"
+  },
+  "imports": {
+    "marked": "npm:marked@17.0.6",
+    "marked-footnote": "npm:marked-footnote@1.4.0"
+  }
+}
