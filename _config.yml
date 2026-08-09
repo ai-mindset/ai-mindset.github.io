@@ -1,6 +1,0 @@
-exclude:
-  - deps
-  - lib
-  - _build
-  - mix.exs
-  - mix.lock
