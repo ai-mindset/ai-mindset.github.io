@@ -521,8 +521,8 @@ body.dark-theme .search-match-excerpt {
   border-left-color: #ff9800;
 }
 
-/* Anonymous visitor count */
-.visitor-counter {
+/* Approximate page-load count */
+.page-load-counter {
   margin-top: 2.5rem;
   padding: 1rem;
   border: 1px solid var(--border-light);
@@ -530,23 +530,23 @@ body.dark-theme .search-match-excerpt {
   background-color: var(--code-bg-light);
 }
 
-body.dark-theme .visitor-counter {
+body.dark-theme .page-load-counter {
   border-color: var(--border-dark);
   background-color: var(--code-bg-dark);
 }
 
-.visitor-counter h2 {
+.page-load-counter h2 {
   margin: 0 0 0.5rem;
   font-size: 1.1rem;
 }
 
-.visitor-privacy {
+.page-load-privacy {
   margin-top: 0.4rem;
   color: #666;
   font-size: 0.85rem;
 }
 
-body.dark-theme .visitor-privacy {
+body.dark-theme .page-load-privacy {
   color: #aaa;
 }
 

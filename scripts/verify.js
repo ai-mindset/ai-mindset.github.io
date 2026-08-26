@@ -106,27 +106,30 @@ for (const filename of ["404.html", "index.html"]) {
   await assertInternalLinks(html, filename);
 }
 
-const visitorSnapshot = JSON.parse(
-  await Deno.readTextFile(`${siteDirectory}/visitors.json`),
+const pageLoadSnapshot = JSON.parse(
+  await Deno.readTextFile(`${siteDirectory}/counter/visitors.json`),
 );
 assert(
-  typeof visitorSnapshot.enabled === "boolean",
-  "visitors.json must declare whether counting is enabled",
+  Number.isSafeInteger(pageLoadSnapshot.total) && pageLoadSnapshot.total >= 0,
+  "counter/visitors.json must contain a non-negative total",
 );
 assert(
-  Number.isSafeInteger(visitorSnapshot.total) && visitorSnapshot.total >= 0,
-  "visitors.json must contain a non-negative total",
+  Number.isSafeInteger(pageLoadSnapshot.assetDownloads) &&
+    pageLoadSnapshot.assetDownloads >= 0,
+  "counter/visitors.json must contain the release asset download count",
 );
 assert(
-  visitorSnapshot.monthly && typeof visitorSnapshot.monthly === "object",
-  "visitors.json must contain monthly aggregates",
-);
-const visitorConfig = await Deno.readTextFile(
-  `${siteDirectory}/visitor-config.js`,
+  pageLoadSnapshot.daily && typeof pageLoadSnapshot.daily === "object" &&
+    !Array.isArray(pageLoadSnapshot.daily) &&
+    Object.values(pageLoadSnapshot.daily).every((count) =>
+      Number.isSafeInteger(count) && count >= 0
+    ),
+  "counter/visitors.json must contain daily aggregates",
 );
 assert(
-  visitorConfig.startsWith("globalThis.AI_MINDSET_VISITOR_COUNTER_ENDPOINT = "),
-  "visitor-config.js must configure the visitor endpoint",
+  pageLoadSnapshot.lastUpdated === null ||
+    /^\d{4}-\d{2}-\d{2}$/.test(pageLoadSnapshot.lastUpdated),
+  "counter/visitors.json must contain a valid last-updated date",
 );
 
 console.log(`Verified ${posts.length} posts and 2 standalone pages.`);

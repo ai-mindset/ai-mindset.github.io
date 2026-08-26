@@ -14,6 +14,10 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  COUNTER_ASSET: visit.txt
+  COUNTER_TAG: page-load-counter-v1
+
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -21,8 +25,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      VISITOR_COUNTER_ENDPOINT: ${{ vars.VISITOR_COUNTER_ENDPOINT }}
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout repository
@@ -34,18 +40,52 @@ jobs:
           cache: true
           deno-version: v2.x
 
+      - name: Ensure GitHub-hosted page-load beacon
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view "$COUNTER_TAG" >/dev/null 2>&1; then
+            gh release create "$COUNTER_TAG" "counter/$COUNTER_ASSET" \
+              --target "$GITHUB_SHA" \
+              --title "Page-load counter beacon" \
+              --notes "Tiny GitHub-hosted asset used for an approximate aggregate page-load count." \
+              --latest=false
+          elif ! gh release view "$COUNTER_TAG" --json assets \
+            --jq '.assets[].name' | grep -Fxq "$COUNTER_ASSET"; then
+            gh release upload "$COUNTER_TAG" "counter/$COUNTER_ASSET"
+          fi
+
+      - name: Snapshot approximate page loads
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          download_count=$(gh api \
+            "repos/${GITHUB_REPOSITORY}/releases/tags/${COUNTER_TAG}" \
+            --jq ".assets[] | select(.name == \"${COUNTER_ASSET}\") | .download_count")
+          VISITOR_DOWNLOAD_COUNT="$download_count" deno task snapshot-counter
+
       - name: Check JavaScript
         run: deno task check
 
       - name: Build and test site
         run: deno task test
 
-      - name: Refresh anonymous visitor snapshot
-        if: github.event_name != 'pull_request'
-        run: deno task snapshot-visitors
-
       - name: Verify generated site
         run: deno task verify
+
+      - name: Persist daily counter snapshot
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          git add counter/visitors.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m "chore: update approximate page-load count [skip ci]"
+          git push origin HEAD:main
 
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'

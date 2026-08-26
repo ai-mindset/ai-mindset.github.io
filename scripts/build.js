@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run --allow-read=content,site --allow-write=_site
+#!/usr/bin/env -S deno run --allow-read=content,site,counter --allow-write=_site
 
 import { Marked } from "marked";
 import markedFootnote from "marked-footnote";
@@ -17,31 +17,10 @@ const staticFiles = [
   "favicon.ico",
   "index.html",
   "robots.txt",
+  "page-load-counter.js",
   "script.js",
   "style.css",
-  "visitor-counter.js",
-  "visitors.json",
 ];
-
-export function normaliseCounterEndpoint(value) {
-  const endpoint = value.trim();
-  if (!endpoint) return "";
-
-  const url = new URL(endpoint);
-  const isLocalHttp = url.protocol === "http:" &&
-    ["127.0.0.1", "localhost"].includes(url.hostname);
-  if (url.protocol !== "https:" && !isLocalHttp) {
-    throw new Error("VISITOR_COUNTER_ENDPOINT must use HTTPS");
-  }
-  if (url.username || url.password || url.search || url.hash) {
-    throw new Error(
-      "VISITOR_COUNTER_ENDPOINT must not contain credentials or parameters",
-    );
-  }
-
-  url.pathname = url.pathname.replace(/\/+$/, "");
-  return url.href.replace(/\/$/, "");
-}
 
 function parseScalar(value) {
   const trimmed = value.trim();
@@ -237,17 +216,11 @@ async function copyStaticSite() {
     `${siteDirectory}/images`,
     `${outputDirectory}/images`,
   );
-}
 
-async function writeVisitorCounterConfig() {
-  const endpoint = normaliseCounterEndpoint(
-    Deno.env.get("VISITOR_COUNTER_ENDPOINT") ?? "",
-  );
-  await Deno.writeTextFile(
-    `${outputDirectory}/visitor-config.js`,
-    `globalThis.AI_MINDSET_VISITOR_COUNTER_ENDPOINT = ${
-      JSON.stringify(endpoint)
-    };\n`,
+  await Deno.mkdir(`${outputDirectory}/counter`, { recursive: true });
+  await Deno.copyFile(
+    "counter/visitors.json",
+    `${outputDirectory}/counter/visitors.json`,
   );
 }
 
@@ -333,7 +306,6 @@ async function build() {
   await Deno.mkdir(outputDirectory, { recursive: true });
   await Deno.mkdir(postsOutputDirectory, { recursive: true });
   await copyStaticSite();
-  await writeVisitorCounterConfig();
   const template = await Deno.readTextFile(
     `${siteDirectory}/post-template.html`,
   );
