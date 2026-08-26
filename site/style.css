@@ -521,32 +521,15 @@ body.dark-theme .search-match-excerpt {
   border-left-color: #ff9800;
 }
 
-/* Anonymous visitor count */
-.visitor-counter {
+/* Approximate page-load count */
+.page-load-counter {
   margin-top: 2.5rem;
-  padding: 1rem;
-  border: 1px solid var(--border-light);
-  border-radius: 4px;
-  background-color: var(--code-bg-light);
-}
-
-body.dark-theme .visitor-counter {
-  border-color: var(--border-dark);
-  background-color: var(--code-bg-dark);
-}
-
-.visitor-counter h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-}
-
-.visitor-privacy {
-  margin-top: 0.4rem;
   color: #666;
   font-size: 0.85rem;
+  text-align: center;
 }
 
-body.dark-theme .visitor-privacy {
+body.dark-theme .page-load-counter {
   color: #aaa;
 }
 

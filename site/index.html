@@ -50,23 +50,9 @@
         <div id="posts-list"></div>
       </div>
 
-      <aside id="visitor-counter" class="visitor-counter"
-        aria-labelledby="visitor-counter-title">
-        <h2 id="visitor-counter-title">Anonymous visitor count</h2>
-        <p data-visitor-stats hidden>
-          <strong><span data-visitor-total>0</span></strong> approximate unique
-          browsers in total, including
-          <strong><span data-visitor-monthly>0</span></strong> during
-          <span data-visitor-month-label>this month</span>.
-        </p>
-        <p class="visitor-privacy">
-          Visitor counting is anonymous. This site does not use Google
-          Analytics or another analytics engine. It stores only aggregate
-          totals. Two flags kept in your browser prevent ordinary reloads from
-          being counted again; neither flag is sent to the server as an
-          identifier.
-        </p>
-      </aside>
+      <p class="page-load-counter" data-page-load-counter>
+        ~<strong><span data-page-load-total>0</span></strong> page views
+      </p>
     </main>
 
     <footer>
@@ -75,8 +61,7 @@
       </div>
     </footer>
 
-    <script src="visitor-config.js"></script>
     <script src="script.js"></script>
-    <script type="module" src="visitor-counter.js"></script>
+    <script type="module" src="/page-load-counter.js"></script>
   </body>
 </html>
