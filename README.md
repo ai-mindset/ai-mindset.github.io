@@ -26,3 +26,15 @@ deno task verify
 
 Posts live in `content/posts/` and use the filename format
 `YYYY-MM-DD-slug.md`. The generated `_site/` directory is not committed.
+
+## Approximate Page-Load Counter
+
+Each rendered page requests the tiny `visit.txt` asset from the
+`page-load-counter-v1` GitHub release. GitHub's aggregate release download count
+acts as a deliberately approximate page-load total. The scheduled Pages
+workflow reads that total, updates `counter/visitors.json`, and deploys the
+snapshot with the site.
+
+The counter uses no cookies, browser identifiers, external analytics service or
+credential in client-side code. It counts reloads rather than unique people and
+can be affected by browser caching, bots and GitHub's release infrastructure.
