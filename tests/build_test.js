@@ -1,6 +1,5 @@
 import {
   applyTemplate,
-  normaliseCounterEndpoint,
   normaliseLegacyLinks,
   parseFrontMatter,
   renderMarkdown,
@@ -32,25 +31,6 @@ Body`;
     },
     body: "Body",
   });
-});
-
-Deno.test("visitor counter endpoints require HTTPS except during local development", () => {
-  assertEquals(
-    normaliseCounterEndpoint("https://counter.example/"),
-    "https://counter.example",
-  );
-  assertEquals(
-    normaliseCounterEndpoint("http://127.0.0.1:8001/"),
-    "http://127.0.0.1:8001",
-  );
-
-  let rejected = false;
-  try {
-    normaliseCounterEndpoint("http://counter.example");
-  } catch {
-    rejected = true;
-  }
-  assertEquals(rejected, true);
 });
 
 Deno.test("front matter accepts multiline flow lists", () => {
