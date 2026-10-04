@@ -17,7 +17,6 @@ const staticFiles = [
   "favicon.ico",
   "index.html",
   "robots.txt",
-  "page-load-counter.js",
   "script.js",
   "style.css",
 ];
