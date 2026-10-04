@@ -521,15 +521,15 @@ body.dark-theme .search-match-excerpt {
   border-left-color: #ff9800;
 }
 
-/* Approximate page-load count */
-.page-load-counter {
+/* Approximate unique-browser count */
+.visitor-counter {
   margin-top: 2.5rem;
   color: #666;
   font-size: 0.85rem;
   text-align: center;
 }
 
-body.dark-theme .page-load-counter {
+body.dark-theme .visitor-counter {
   color: #aaa;
 }
 
