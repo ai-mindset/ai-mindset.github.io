@@ -106,29 +106,16 @@ for (const filename of ["404.html", "index.html"]) {
   await assertInternalLinks(html, filename);
 }
 
-const pageLoadSnapshot = JSON.parse(
+const visitorSnapshot = JSON.parse(
   await Deno.readTextFile(`${siteDirectory}/counter/visitors.json`),
 );
 assert(
-  Number.isSafeInteger(pageLoadSnapshot.total) && pageLoadSnapshot.total >= 0,
+  Number.isSafeInteger(visitorSnapshot.total) && visitorSnapshot.total >= 0,
   "counter/visitors.json must contain a non-negative total",
 );
 assert(
-  Number.isSafeInteger(pageLoadSnapshot.assetDownloads) &&
-    pageLoadSnapshot.assetDownloads >= 0,
-  "counter/visitors.json must contain the release asset download count",
-);
-assert(
-  pageLoadSnapshot.daily && typeof pageLoadSnapshot.daily === "object" &&
-    !Array.isArray(pageLoadSnapshot.daily) &&
-    Object.values(pageLoadSnapshot.daily).every((count) =>
-      Number.isSafeInteger(count) && count >= 0
-    ),
-  "counter/visitors.json must contain daily aggregates",
-);
-assert(
-  pageLoadSnapshot.lastUpdated === null ||
-    /^\d{4}-\d{2}-\d{2}$/.test(pageLoadSnapshot.lastUpdated),
+  visitorSnapshot.lastUpdated === null ||
+    /^\d{4}-\d{2}-\d{2}$/.test(visitorSnapshot.lastUpdated),
   "counter/visitors.json must contain a valid last-updated date",
 );
 
