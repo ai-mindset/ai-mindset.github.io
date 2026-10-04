@@ -1,31 +1,41 @@
 {
+  "compilerOptions": {
+    "lib": ["deno.ns", "dom", "dom.iterable", "esnext"]
+  },
   "fmt": {
     "proseWrap": "preserve",
     "include": [
       "deno.json",
       "counter/*.json",
       "scripts/*.js",
+      "scripts/*.ts",
       "site/*.css",
       "site/*.html",
       "site/*.js",
-      "tests/*.js"
+      "site/*.ts",
+      "tests/*.js",
+      "tests/*.ts"
     ]
   },
   "lint": {
     "include": [
       "scripts/*.js",
+      "scripts/*.ts",
       "site/*.js",
-      "tests/*.js"
+      "site/*.ts",
+      "tests/*.js",
+      "tests/*.ts"
     ]
   },
   "tasks": {
     "audit": "deno run --allow-read=content scripts/audit-content.js",
-    "build": "deno run --allow-read=content,site,counter --allow-write=_site scripts/build.js",
-    "check": "deno task audit && deno fmt --check && deno lint && deno check scripts/*.js site/*.js tests/*.js",
+    "bundle-counter": "deno bundle --platform=browser --output=_site/visitor-counter.js site/visitor-counter.ts",
+    "build": "deno run --allow-read=content,site,counter --allow-write=_site scripts/build.js && deno task bundle-counter",
+    "check": "deno task audit && deno fmt --check && deno lint && deno check scripts/*.js scripts/*.ts site/*.js site/*.ts tests/*.js tests/*.ts",
     "check-links": "deno run --allow-read=content --allow-net scripts/check-links.js",
     "dev": "deno task build && deno task serve",
     "serve": "deno run --allow-net=127.0.0.1 --allow-read=_site scripts/serve.js",
-    "snapshot-counter": "deno run --allow-env=VISITOR_DOWNLOAD_COUNT,COUNTER_SNAPSHOT_DATE --allow-read=counter/visitors.json --allow-write=counter/visitors.json scripts/update-page-load-counter.js",
+    "snapshot-counter": "deno run --allow-env=VISITOR_DOWNLOAD_COUNT,COUNTER_SNAPSHOT_DATE --allow-write=counter/visitors.json scripts/update-visitor-counter.ts",
     "test": "deno task build && deno test --allow-read=_site tests/",
     "verify": "deno run --allow-read=_site scripts/verify.js"
   },
