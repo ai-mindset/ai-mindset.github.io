@@ -2,7 +2,7 @@
   "name": "ai-mindset-site",
   "private": true,
   "type": "module",
-  "packageManager": "bun@1.4.3",
+  "packageManager": "bun@canary",
   "engines": {
     "bun": ">=1.4.3 <2"
   },
@@ -24,7 +24,6 @@
     "marked-footnote": "1.4.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.15",
     "@types/bun": "1.4.2"
   },
   "trustedDependencies": []
