@@ -28,3 +28,10 @@ bun run verify
 
 Posts live in `content/posts/` and use the filename format
 `YYYY-MM-DD-slug.md`. The generated `_site/` directory is not committed.
+
+## License
+
+Original writing by ai-mindset in posts and pages is
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Credit ai-mindset
+with source and license links, and note changes. Images and third-party
+material are excluded; site code is [MIT licensed](LICENSE).
