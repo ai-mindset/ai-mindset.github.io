@@ -1,0 +1,30 @@
+{
+  "name": "ai-mindset-site",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.3",
+  "engines": {
+    "bun": ">=1.4.3 <2"
+  },
+  "scripts": {
+    "audit": "bun run scripts/audit-content.js",
+    "bundle-counter": "bun build --check site/visitor-counter.ts --outfile=_site/visitor-counter.js --target=browser",
+    "build": "bun run scripts/build.js && bun run bundle-counter",
+    "check": "bun run audit && bun fmt --check --ignore-unknown package.json tsconfig.json tsconfig.js.json counter scripts tests && bun lint scripts site tests && bun --check --project=tsconfig.json && bun --check --project=tsconfig.js.json",
+    "check-links": "bun run scripts/check-links.js",
+    "dev": "bun run build && bun run serve",
+    "format": "bun fmt --ignore-unknown package.json tsconfig.json tsconfig.js.json counter scripts tests",
+    "serve": "bun run scripts/serve.js",
+    "snapshot-counter": "bun run scripts/update-visitor-counter.ts",
+    "test": "bun run build && bun test --check tests",
+    "verify": "bun run scripts/verify.js"
+  },
+  "dependencies": {
+    "marked": "17.0.6",
+    "marked-footnote": "1.4.0"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.2"
+  },
+  "trustedDependencies": []
+}

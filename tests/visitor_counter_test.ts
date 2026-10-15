@@ -1,3 +1,5 @@
+import { expect, test } from "bun:test";
+
 import {
   claimBrowser,
   isVisitorSnapshot,
@@ -7,14 +9,6 @@ import {
   visitorBeaconUrl,
 } from "../site/visitor-counter.ts";
 import { createVisitorSnapshot } from "../scripts/update-visitor-counter.ts";
-
-function assertEquals(actual: unknown, expected: unknown): void {
-  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
-    throw new Error(
-      `Expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`,
-    );
-  }
-}
 
 class MemoryStorage implements StorageLike {
   #values = new Map<string, string>();
@@ -28,13 +22,13 @@ class MemoryStorage implements StorageLike {
   }
 }
 
-Deno.test("a browser can claim the counter only once", () => {
+test("a browser can claim the counter only once", () => {
   const storage = new MemoryStorage();
-  assertEquals(claimBrowser(storage), true);
-  assertEquals(claimBrowser(storage), false);
+  expect(claimBrowser(storage)).toBe(true);
+  expect(claimBrowser(storage)).toBe(false);
 });
 
-Deno.test("reloads send only one anonymous beacon", async () => {
+test("reloads send only one anonymous beacon", async () => {
   const storage = new MemoryStorage();
   const requests: Array<{ input: string; init?: RequestInit }> = [];
   const fetcher = (
@@ -48,21 +42,23 @@ Deno.test("reloads send only one anonymous beacon", async () => {
   const first = await recordUniqueBrowser({ fetcher, now: 123, storage });
   const reload = await recordUniqueBrowser({ fetcher, now: 456, storage });
 
-  assertEquals(first, true);
-  assertEquals(reload, false);
-  assertEquals(requests, [{
-    input: visitorBeaconUrl(123),
-    init: {
-      cache: "no-store",
-      credentials: "omit",
-      keepalive: true,
-      mode: "no-cors",
-      referrerPolicy: "no-referrer",
+  expect(first).toBe(true);
+  expect(reload).toBe(false);
+  expect(requests).toEqual([
+    {
+      input: visitorBeaconUrl(123),
+      init: {
+        cache: "no-store",
+        credentials: "omit",
+        keepalive: true,
+        mode: "no-cors",
+        referrerPolicy: "no-referrer",
+      },
     },
-  }]);
+  ]);
 });
 
-Deno.test("storage failures do not create unbounded counts", async () => {
+test("storage failures do not create unbounded counts", async () => {
   let requests = 0;
   const storage: StorageLike = {
     getItem() {
@@ -81,11 +77,11 @@ Deno.test("storage failures do not create unbounded counts", async () => {
     },
   });
 
-  assertEquals(counted, false);
-  assertEquals(requests, 0);
+  expect(counted).toBe(false);
+  expect(requests).toBe(0);
 });
 
-Deno.test("a failed beacon is not retried and double-counted", async () => {
+test("a failed beacon is not retried and double-counted", async () => {
   const storage = new MemoryStorage();
   let requests = 0;
   const fetcher = (): Promise<Response> => {
@@ -93,18 +89,18 @@ Deno.test("a failed beacon is not retried and double-counted", async () => {
     return Promise.reject(new Error("connection closed"));
   };
 
-  assertEquals(await recordUniqueBrowser({ fetcher, storage }), false);
-  assertEquals(await recordUniqueBrowser({ fetcher, storage }), false);
-  assertEquals(requests, 1);
+  expect(await recordUniqueBrowser({ fetcher, storage })).toBe(false);
+  expect(await recordUniqueBrowser({ fetcher, storage })).toBe(false);
+  expect(requests).toBe(1);
 });
 
-Deno.test("the snapshot mirrors the clean release total", () => {
+test("the snapshot mirrors the clean release total", () => {
   const snapshot = createVisitorSnapshot(12, "2026-10-04");
-  assertEquals(snapshot, { total: 12, lastUpdated: "2026-10-04" });
-  assertEquals(isVisitorSnapshot(snapshot), true);
+  expect(snapshot).toEqual({ total: 12, lastUpdated: "2026-10-04" });
+  expect(isVisitorSnapshot(snapshot)).toBe(true);
 });
 
-Deno.test("the homepage renders the latest visitor snapshot", async () => {
+test("the homepage renders the latest visitor snapshot", async () => {
   const total = { textContent: "0" };
   const root = {
     querySelector(selector: string) {
@@ -115,14 +111,16 @@ Deno.test("the homepage renders the latest visitor snapshot", async () => {
     root,
     fetcher() {
       return Promise.resolve(
-        new Response(JSON.stringify({
-          total: 1234,
-          lastUpdated: "2026-10-04",
-        })),
+        new Response(
+          JSON.stringify({
+            total: 1234,
+            lastUpdated: "2026-10-04",
+          }),
+        ),
       );
     },
   });
 
-  assertEquals(rendered, true);
-  assertEquals(total.textContent, "1,234");
+  expect(rendered).toBe(true);
+  expect(total.textContent).toBe("1,234");
 });
