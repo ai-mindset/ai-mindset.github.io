@@ -1,5 +1,6 @@
-#!/usr/bin/env -S deno run --allow-read=content
+#!/usr/bin/env bun
 
+import { readdir } from "node:fs/promises";
 import { parseFrontMatter } from "./build.js";
 
 const contentDirectories = ["content/pages", "content/posts"];
@@ -7,8 +8,8 @@ const errors = [];
 
 async function markdownFiles(directory) {
   const files = [];
-  for await (const entry of Deno.readDir(directory)) {
-    if (entry.isFile && entry.name.endsWith(".md")) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    if (entry.isFile() && entry.name.endsWith(".md")) {
       files.push(`${directory}/${entry.name}`);
     }
   }
@@ -17,13 +18,16 @@ async function markdownFiles(directory) {
 
 function withoutFencedCode(markdown) {
   let inFence = false;
-  return markdown.split(/\r?\n/).map((line) => {
-    if (/^\s*```/.test(line)) {
-      inFence = !inFence;
-      return "";
-    }
-    return inFence ? "" : line;
-  }).join("\n");
+  return markdown
+    .split(/\r?\n/)
+    .map((line) => {
+      if (/^\s*```/.test(line)) {
+        inFence = !inFence;
+        return "";
+      }
+      return inFence ? "" : line;
+    })
+    .join("\n");
 }
 
 function report(file, message) {
@@ -32,7 +36,7 @@ function report(file, message) {
 
 for (const directory of contentDirectories) {
   for (const file of await markdownFiles(directory)) {
-    const source = await Deno.readTextFile(file);
+    const source = await Bun.file(file).text();
     const { attributes, body } = parseFrontMatter(source, file);
     const prose = withoutFencedCode(body);
 
@@ -55,23 +59,23 @@ for (const directory of contentDirectories) {
       report(file, "loads a site image through raw.githubusercontent.com");
     }
 
-    const footnotes = [...prose.matchAll(/^\[\^([^\]]+)\]:/gm)].map((match) =>
-      match[1]
+    const footnotes = [...prose.matchAll(/^\[\^([^\]]+)\]:/gm)].map(
+      (match) => match[1],
     );
-    const duplicateFootnotes = footnotes.filter((name, index) =>
-      footnotes.indexOf(name) !== index
+    const duplicateFootnotes = footnotes.filter(
+      (name, index) => footnotes.indexOf(name) !== index,
     );
     if (duplicateFootnotes.length > 0) {
       report(
         file,
-        `defines duplicate footnote(s): ${
-          [...new Set(duplicateFootnotes)].join(", ")
-        }`,
+        `defines duplicate footnote(s): ${[...new Set(duplicateFootnotes)].join(
+          ", ",
+        )}`,
       );
     }
-    const footnoteReferences = [
-      ...prose.matchAll(/\[\^([^\]]+)\](?!:)/g),
-    ].map((match) => match[1]);
+    const footnoteReferences = [...prose.matchAll(/\[\^([^\]]+)\](?!:)/g)].map(
+      (match) => match[1],
+    );
     const undefinedFootnotes = [...new Set(footnoteReferences)].filter(
       (name) => !footnotes.includes(name),
     );
@@ -120,7 +124,7 @@ for (const directory of contentDirectories) {
 if (errors.length > 0) {
   console.error(`Content audit failed with ${errors.length} issue(s):`);
   for (const error of errors) console.error(`- ${error}`);
-  Deno.exit(1);
+  process.exit(1);
 }
 
 console.log("Content typography, metadata, and Markdown structure passed.");

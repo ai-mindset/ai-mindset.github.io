@@ -1,5 +1,6 @@
-#!/usr/bin/env -S deno run --allow-read=content,site,counter --allow-write=_site
+#!/usr/bin/env bun
 
+import { mkdir, readdir, rm } from "node:fs/promises";
 import { Marked } from "marked";
 import markedFootnote from "marked-footnote";
 
@@ -132,18 +133,20 @@ export function renderMarkdown(markdown) {
   const markdownParser = new Marked({
     breaks: false,
     gfm: true,
-  }).use(markedFootnote()).use({
-    renderer: {
-      heading({ depth, text, tokens }) {
-        const content = this.parser.parseInline(tokens);
-        const baseSlug = headingSlug(text) || "section";
-        const count = (slugCounts.get(baseSlug) ?? 0) + 1;
-        slugCounts.set(baseSlug, count);
-        const slug = count === 1 ? baseSlug : `${baseSlug}-${count}`;
-        return `<h${depth} id="${slug}">${content}</h${depth}>\n`;
+  })
+    .use(markedFootnote())
+    .use({
+      renderer: {
+        heading({ depth, text, tokens }) {
+          const content = this.parser.parseInline(tokens);
+          const baseSlug = headingSlug(text) || "section";
+          const count = (slugCounts.get(baseSlug) ?? 0) + 1;
+          slugCounts.set(baseSlug, count);
+          const slug = count === 1 ? baseSlug : `${baseSlug}-${count}`;
+          return `<h${depth} id="${slug}">${content}</h${depth}>\n`;
+        },
       },
-    },
-  });
+    });
 
   return markdownParser.parse(normaliseLegacyLinks(markdown));
 }
@@ -173,7 +176,7 @@ export function applyTemplate(
 
   return template
     .replaceAll("POST_TITLE", () => escapeHtml(title))
-    .replaceAll("POST_DATE", () => date ? formatDate(date) : "")
+    .replaceAll("POST_DATE", () => (date ? formatDate(date) : ""))
     .replace("<!-- POST_TAGS will be inserted here -->", () => tagsHtml)
     .replace("<!-- POST_CONTENT will be inserted here -->", () => content);
 }
@@ -181,45 +184,44 @@ export function applyTemplate(
 async function markdownFiles(directory) {
   const filenames = [];
 
-  for await (const entry of Deno.readDir(directory)) {
-    if (entry.isFile && entry.name.endsWith(".md")) filenames.push(entry.name);
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    if (entry.isFile() && entry.name.endsWith(".md")) {
+      filenames.push(entry.name);
+    }
   }
 
   return filenames.sort();
 }
 
 async function copyDirectory(source, destination) {
-  await Deno.mkdir(destination, { recursive: true });
+  await mkdir(destination, { recursive: true });
 
-  for await (const entry of Deno.readDir(source)) {
+  for (const entry of await readdir(source, { withFileTypes: true })) {
     const sourcePath = `${source}/${entry.name}`;
     const destinationPath = `${destination}/${entry.name}`;
 
-    if (entry.isDirectory) {
+    if (entry.isDirectory()) {
       await copyDirectory(sourcePath, destinationPath);
-    } else if (entry.isFile) {
-      await Deno.copyFile(sourcePath, destinationPath);
+    } else if (entry.isFile()) {
+      await Bun.write(destinationPath, Bun.file(sourcePath));
     }
   }
 }
 
 async function copyStaticSite() {
   for (const filename of staticFiles) {
-    await Deno.copyFile(
-      `${siteDirectory}/${filename}`,
+    await Bun.write(
       `${outputDirectory}/${filename}`,
+      Bun.file(`${siteDirectory}/${filename}`),
     );
   }
 
-  await copyDirectory(
-    `${siteDirectory}/images`,
-    `${outputDirectory}/images`,
-  );
+  await copyDirectory(`${siteDirectory}/images`, `${outputDirectory}/images`);
 
-  await Deno.mkdir(`${outputDirectory}/counter`, { recursive: true });
-  await Deno.copyFile(
-    "counter/visitors.json",
+  await mkdir(`${outputDirectory}/counter`, { recursive: true });
+  await Bun.write(
     `${outputDirectory}/counter/visitors.json`,
+    Bun.file("counter/visitors.json"),
   );
 }
 
@@ -232,7 +234,7 @@ async function buildPosts(template) {
       throw new Error(`${filename}: expected YYYY-MM-DD-slug.md`);
     }
 
-    const source = await Deno.readTextFile(`${postsDirectory}/${filename}`);
+    const source = await Bun.file(`${postsDirectory}/${filename}`).text();
     const { attributes, body } = parseFrontMatter(source, filename);
     if (attributes.draft) continue;
 
@@ -257,31 +259,30 @@ async function buildPosts(template) {
     };
     const outputFilename = `${slug}.html`;
 
-    await Deno.writeTextFile(
+    await Bun.write(
       `${postsOutputDirectory}/${outputFilename}`,
       applyTemplate(template, post),
     );
     posts.push(post);
   }
 
-  posts.sort((left, right) =>
-    right.date.localeCompare(left.date) || left.title.localeCompare(right.title)
+  posts.sort(
+    (left, right) =>
+      right.date.localeCompare(left.date) ||
+      left.title.localeCompare(right.title),
   );
 
-  await Deno.writeTextFile(
-    postsIndexFile,
-    `${JSON.stringify(posts, null, 2)}\n`,
-  );
+  await Bun.write(postsIndexFile, `${JSON.stringify(posts, null, 2)}\n`);
   console.log(`Generated ${posts.length} posts and ${postsIndexFile}`);
 }
 
 async function buildStandalonePages(template) {
   for (const page of standalonePages) {
-    const source = await Deno.readTextFile(page.source);
+    const source = await Bun.file(page.source).text();
     const { attributes, body } = parseFrontMatter(source, page.source);
     const titleMatch = body.match(/^\s*#\s+(.+)$/m);
-    const title = attributes.title || titleMatch?.[1] ||
-      page.output.replace(".html", "");
+    const title =
+      attributes.title || titleMatch?.[1] || page.output.replace(".html", "");
     const markdown = titleMatch ? body.replace(titleMatch[0], "").trim() : body;
     const html = applyTemplate(template, {
       content: renderMarkdown(markdown),
@@ -289,25 +290,18 @@ async function buildStandalonePages(template) {
     }).replace(/\s*<div class="post-tags">[\s\S]*?<\/div>/, "");
     const outputFilename = `${outputDirectory}/${page.output}`;
 
-    await Deno.writeTextFile(outputFilename, html);
+    await Bun.write(outputFilename, html);
     console.log(`Generated ${outputFilename}`);
   }
 }
 
 async function build() {
   console.log("Building site...");
-  try {
-    await Deno.remove(outputDirectory, { recursive: true });
-  } catch (error) {
-    if (!(error instanceof Deno.errors.NotFound)) throw error;
-  }
-
-  await Deno.mkdir(outputDirectory, { recursive: true });
-  await Deno.mkdir(postsOutputDirectory, { recursive: true });
+  await rm(outputDirectory, { force: true, recursive: true });
+  await mkdir(outputDirectory, { recursive: true });
+  await mkdir(postsOutputDirectory, { recursive: true });
   await copyStaticSite();
-  const template = await Deno.readTextFile(
-    `${siteDirectory}/post-template.html`,
-  );
+  const template = await Bun.file(`${siteDirectory}/post-template.html`).text();
 
   await buildPosts(template);
   await buildStandalonePages(template);

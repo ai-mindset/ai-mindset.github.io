@@ -1,5 +1,6 @@
-#!/usr/bin/env -S deno run --allow-read=content --allow-net
+#!/usr/bin/env bun
 
+import { readdir } from "node:fs/promises";
 import { parseFrontMatter, renderMarkdown } from "./build.js";
 
 const contentDirectories = ["content/pages", "content/posts"];
@@ -8,8 +9,8 @@ const timeoutMilliseconds = 15_000;
 
 async function markdownFiles(directory) {
   const files = [];
-  for await (const entry of Deno.readDir(directory)) {
-    if (entry.isFile && entry.name.endsWith(".md")) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    if (entry.isFile() && entry.name.endsWith(".md")) {
       files.push(`${directory}/${entry.name}`);
     }
   }
@@ -19,7 +20,7 @@ async function markdownFiles(directory) {
 const references = new Map();
 for (const directory of contentDirectories) {
   for (const file of await markdownFiles(directory)) {
-    const source = await Deno.readTextFile(file);
+    const source = await Bun.file(file).text();
     const { body } = parseFrontMatter(source, file);
     const html = renderMarkdown(body);
 
@@ -44,9 +45,9 @@ async function check(url) {
   try {
     const response = await fetch(url, {
       headers: {
-        "Accept":
+        Accept:
           "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.1",
-        "Range": "bytes=0-0",
+        Range: "bytes=0-0",
         "User-Agent": "ai-mindset-content-link-checker/1.0",
       },
       redirect: "follow",
@@ -54,7 +55,9 @@ async function check(url) {
     });
     await response.body?.cancel();
 
-    const allowed = response.ok || response.status < 400 ||
+    const allowed =
+      response.ok ||
+      response.status < 400 ||
       [401, 403, 405, 429].includes(response.status);
     if (!allowed) {
       failures.push({ message: `returned HTTP ${response.status}`, url });
@@ -86,7 +89,7 @@ if (failures.length > 0) {
     console.error(
       `Could not reach any of ${queue.length} external URLs. Check DNS and network access, then run the task again.`,
     );
-    Deno.exit(1);
+    process.exit(1);
   }
 
   console.error(
@@ -101,7 +104,7 @@ if (failures.length > 0) {
   if (failures.length > 50) {
     console.error(`- ...and ${failures.length - 50} more failures`);
   }
-  Deno.exit(1);
+  process.exit(1);
 }
 
 console.log(`Checked ${queue.length} external URLs successfully.`);

@@ -34,11 +34,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v2
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          cache: true
-          deno-version: v2.x
+          bun-version: 1.4.3
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
 
       - name: Ensure GitHub-hosted visitor beacon
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
@@ -64,16 +66,16 @@ jobs:
           download_count=$(gh api \
             "repos/${GITHUB_REPOSITORY}/releases/tags/${COUNTER_TAG}" \
             --jq ".assets[] | select(.name == \"${COUNTER_ASSET}\") | .download_count")
-          VISITOR_DOWNLOAD_COUNT="$download_count" deno task snapshot-counter
+          VISITOR_DOWNLOAD_COUNT="$download_count" bun run snapshot-counter
 
       - name: Check source
-        run: deno task check
+        run: bun run check
 
       - name: Build and test site
-        run: deno task test
+        run: bun run test
 
       - name: Verify generated site
-        run: deno task verify
+        run: bun run verify
 
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'
