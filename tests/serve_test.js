@@ -1,32 +1,30 @@
+import { expect, test } from "bun:test";
+
 import { contentType, fileResponse, publicPath } from "../scripts/serve.js";
 
-function assertEquals(actual, expected) {
-  if (actual !== expected) {
-    throw new Error(`Expected ${expected}, got ${actual}`);
-  }
-}
-
-Deno.test("public paths are constrained to site assets", () => {
-  assertEquals(publicPath("/"), "index.html");
-  assertEquals(publicPath("/posts/deno.html"), "posts/deno.html");
-  assertEquals(publicPath("/images/Deno%202.png"), "images/Deno 2.png");
-  assertEquals(publicPath("/_posts/private.md"), null);
-  assertEquals(publicPath("/posts/%2e%2e/README.md"), null);
+test("public paths are constrained to site assets", () => {
+  expect(publicPath("/")).toBe("index.html");
+  expect(publicPath("/posts/deno.html")).toBe("posts/deno.html");
+  expect(publicPath("/images/Deno%202.png")).toBe("images/Deno 2.png");
+  expect(publicPath("/counter/visitors.json")).toBe("counter/visitors.json");
+  expect(publicPath("/visitor-counter.js")).toBe("visitor-counter.js");
+  expect(publicPath("/_posts/private.md")).toBeNull();
+  expect(publicPath("/posts/%2e%2e/README.md")).toBeNull();
 });
 
-Deno.test("responses use an appropriate content type", () => {
-  assertEquals(contentType("index.html"), "text/html; charset=utf-8");
-  assertEquals(contentType("script.js"), "text/javascript; charset=utf-8");
-  assertEquals(contentType("images/photo.jpg"), "image/jpeg");
+test("responses use an appropriate content type", () => {
+  expect(contentType("index.html")).toBe("text/html; charset=utf-8");
+  expect(contentType("script.js")).toBe("text/javascript; charset=utf-8");
+  expect(contentType("images/photo.jpg")).toBe("image/jpeg");
 });
 
-Deno.test("files can be served with GET and HEAD", async () => {
+test("files can be served with GET and HEAD", async () => {
   const getResponse = await fileResponse("index.html");
-  assertEquals(getResponse.status, 200);
-  assertEquals((await getResponse.text()).startsWith("<!DOCTYPE html>"), true);
+  expect(getResponse?.status).toBe(200);
+  expect((await getResponse?.text())?.startsWith("<!DOCTYPE html>")).toBe(true);
 
   const headResponse = await fileResponse("index.html", 200, "HEAD");
-  assertEquals(headResponse.status, 200);
-  assertEquals(await headResponse.text(), "");
-  assertEquals(await fileResponse("does-not-exist"), null);
+  expect(headResponse?.status).toBe(200);
+  expect(await headResponse?.text()).toBe("");
+  expect(await fileResponse("does-not-exist")).toBeNull();
 });

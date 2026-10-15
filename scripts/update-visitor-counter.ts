@@ -27,19 +27,16 @@ export function createVisitorSnapshot(
 }
 
 async function main(): Promise<void> {
-  const downloadValue = Deno.env.get("VISITOR_DOWNLOAD_COUNT");
+  const downloadValue = process.env.VISITOR_DOWNLOAD_COUNT;
   if (!downloadValue || !/^\d+$/.test(downloadValue)) {
     throw new Error("VISITOR_DOWNLOAD_COUNT must be a non-negative integer");
   }
 
-  const date = Deno.env.get("COUNTER_SNAPSHOT_DATE") ??
-    new Date().toISOString().slice(0, 10);
+  const date =
+    process.env.COUNTER_SNAPSHOT_DATE ?? new Date().toISOString().slice(0, 10);
   const snapshot = createVisitorSnapshot(Number(downloadValue), date);
 
-  await Deno.writeTextFile(
-    snapshotFile,
-    `${JSON.stringify(snapshot, null, 2)}\n`,
-  );
+  await Bun.write(snapshotFile, `${JSON.stringify(snapshot, null, 2)}\n`);
 }
 
 if (import.meta.main) await main();

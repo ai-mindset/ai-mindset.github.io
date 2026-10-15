@@ -1,3 +1,5 @@
+import { expect, test } from "bun:test";
+
 import {
   applyTemplate,
   normaliseLegacyLinks,
@@ -5,15 +7,7 @@ import {
   renderMarkdown,
 } from "../scripts/build.js";
 
-function assertEquals(actual, expected) {
-  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
-    throw new Error(
-      `Expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`,
-    );
-  }
-}
-
-Deno.test("front matter parses the fields used by posts", () => {
+test("front matter parses the fields used by posts", () => {
   const source = `---
 title: "A useful: post"
 date: 2026-08-09
@@ -22,7 +16,7 @@ draft: false
 ---
 Body`;
 
-  assertEquals(parseFrontMatter(source, "post.md"), {
+  expect(parseFrontMatter(source, "post.md")).toEqual({
     attributes: {
       title: "A useful: post",
       date: "2026-08-09",
@@ -33,7 +27,7 @@ Body`;
   });
 });
 
-Deno.test("front matter accepts multiline flow lists", () => {
+test("front matter accepts multiline flow lists", () => {
   const source = `---
 layout: post
 tags: [
@@ -43,7 +37,7 @@ tags: [
 ---
 Body`;
 
-  assertEquals(parseFrontMatter(source, "post.md"), {
+  expect(parseFrontMatter(source, "post.md")).toEqual({
     attributes: {
       layout: "post",
       tags: ["python", "data-validation"],
@@ -52,7 +46,7 @@ Body`;
   });
 });
 
-Deno.test("template content is inserted literally", () => {
+test("template content is inserted literally", () => {
   const template =
     "<title>POST_TITLE</title><!-- POST_CONTENT will be inserted here -->";
   const html = applyTemplate(template, {
@@ -60,43 +54,36 @@ Deno.test("template content is inserted literally", () => {
     title: "Example & test",
   });
 
-  assertEquals(
-    html,
+  expect(html).toBe(
     "<title>Example &amp; test</title>A value like $j's remains intact.",
   );
 });
 
-Deno.test("legacy Jekyll post links become static URLs", () => {
+test("legacy Jekyll post links become static URLs", () => {
   const markdown =
     "[Read]({{ site.baseurl }} {% link _posts/2024-09-05-deno.md %})";
-  assertEquals(normaliseLegacyLinks(markdown), "[Read](/posts/deno.html)");
+  expect(normaliseLegacyLinks(markdown)).toBe("[Read](/posts/deno.html)");
 });
 
-Deno.test("Markdown headings receive stable unique IDs", () => {
+test("Markdown headings receive stable unique IDs", () => {
   const html = renderMarkdown(
     "# Hello, World!\n\n## Repeated\n\n## Repeated\n",
   );
 
-  for (
-    const heading of [
-      '<h1 id="hello-world">Hello, World!</h1>',
-      '<h2 id="repeated">Repeated</h2>',
-      '<h2 id="repeated-2">Repeated</h2>',
-    ]
-  ) {
-    if (!html.includes(heading)) throw new Error(`Missing ${heading}`);
+  for (const heading of [
+    '<h1 id="hello-world">Hello, World!</h1>',
+    '<h2 id="repeated">Repeated</h2>',
+    '<h2 id="repeated-2">Repeated</h2>',
+  ]) {
+    expect(html).toContain(heading);
   }
 });
 
-Deno.test("Markdown source wrapping does not create visible line breaks", () => {
+test("Markdown source wrapping does not create visible line breaks", () => {
   const html = renderMarkdown(
     "A paragraph wrapped\nacross source lines.\n\nAn intentional break.  \nNext line.",
   );
 
-  if (html.includes("wrapped<br>")) {
-    throw new Error("A soft source wrap rendered as a visible line break");
-  }
-  if (!html.includes("intentional break.<br>")) {
-    throw new Error("An intentional Markdown line break was not rendered");
-  }
+  expect(html).not.toContain("wrapped<br>");
+  expect(html).toContain("intentional break.<br>");
 });
