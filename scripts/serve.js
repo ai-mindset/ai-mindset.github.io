@@ -1,10 +1,10 @@
-#!/usr/bin/env -S deno run --allow-net=127.0.0.1 --allow-read=_site
+#!/usr/bin/env bun
 
 const hostname = "127.0.0.1";
 const siteDirectory = "_site";
-const portArgument = Deno.args.find((argument) => argument !== "--");
+const portArgument = Bun.argv.slice(2).find((argument) => argument !== "--");
 const port = Number(portArgument || 8000);
-const publicDirectories = new Set(["images", "posts"]);
+const publicDirectories = new Set(["counter", "images", "posts"]);
 const publicFiles = new Set([
   "404.html",
   "about.html",
@@ -15,6 +15,7 @@ const publicFiles = new Set([
   "robots.txt",
   "script.js",
   "style.css",
+  "visitor-counter.js",
 ]);
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
@@ -43,14 +44,13 @@ export function publicPath(pathname) {
     return null;
   }
 
-  const relativePath = decodedPath === "/"
-    ? "index.html"
-    : decodedPath.slice(1);
+  const relativePath =
+    decodedPath === "/" ? "index.html" : decodedPath.slice(1);
   const segments = relativePath.split("/");
 
   if (
-    segments.some((segment) =>
-      segment === "" || segment === "." || segment === ".."
+    segments.some(
+      (segment) => segment === "" || segment === "." || segment === "..",
     )
   ) {
     return null;
@@ -71,46 +71,42 @@ export function contentType(path) {
 }
 
 export async function fileResponse(path, status = 200, method = "GET") {
-  try {
-    const file = await Deno.open(`${siteDirectory}/${path}`, { read: true });
-    const headers = new Headers({
-      "content-type": contentType(path),
-      "x-content-type-options": "nosniff",
-    });
+  const file = Bun.file(`${siteDirectory}/${path}`);
+  if (!(await file.exists())) return null;
 
-    if (method === "HEAD") {
-      file.close();
-      return new Response(null, { headers, status });
-    }
-
-    return new Response(file.readable, { headers, status });
-  } catch (error) {
-    if (error instanceof Deno.errors.NotFound) return null;
-    throw error;
-  }
+  const headers = new Headers({
+    "content-type": contentType(path),
+    "x-content-type-options": "nosniff",
+  });
+  const body = method === "HEAD" ? null : file;
+  return new Response(body, { headers, status });
 }
 
 export function startServer() {
-  Deno.serve({
+  const server = Bun.serve({
     hostname,
-    onListen: ({ hostname, port }) => {
-      console.log(`Site available at http://${hostname}:${port}`);
-    },
     port,
-  }, async (request) => {
-    if (request.method !== "GET" && request.method !== "HEAD") {
-      return new Response("Method not allowed", {
-        headers: { allow: "GET, HEAD" },
-        status: 405,
-      });
-    }
+    async fetch(request) {
+      if (request.method !== "GET" && request.method !== "HEAD") {
+        return new Response("Method not allowed", {
+          headers: { allow: "GET, HEAD" },
+          status: 405,
+        });
+      }
 
-    const path = publicPath(new URL(request.url).pathname);
-    const response = path && await fileResponse(path, 200, request.method);
+      const path = publicPath(new URL(request.url).pathname);
+      const response = path && (await fileResponse(path, 200, request.method));
 
-    return response || await fileResponse("404.html", 404, request.method) ||
-      new Response("Not found", { status: 404 });
+      return (
+        response ||
+        (await fileResponse("404.html", 404, request.method)) ||
+        new Response("Not found", { status: 404 })
+      );
+    },
   });
+
+  console.log(`Site available at ${server.url}`);
+  return server;
 }
 
 if (import.meta.main) startServer();

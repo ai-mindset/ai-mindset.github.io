@@ -1,5 +1,4 @@
 _site/
-.deno/
 node_modules/
 counter/*.sqlite*
 

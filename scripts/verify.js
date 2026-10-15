@@ -1,9 +1,9 @@
-#!/usr/bin/env -S deno run --allow-read=.
+#!/usr/bin/env bun
+
+import { stat } from "node:fs/promises";
 
 const siteDirectory = "_site";
-const posts = JSON.parse(
-  await Deno.readTextFile(`${siteDirectory}/posts.json`),
-);
+const posts = JSON.parse(await Bun.file(`${siteDirectory}/posts.json`).text());
 const unresolvedTemplate =
   /\bPOST_(?:TITLE|DATE|CONTENT|TAGS)\b|\{\{\s*site\.baseurl\s*\}\}|\{%\s*link\b/;
 
@@ -20,25 +20,32 @@ async function assertInternalLinks(html, filename) {
 
     const pageUrl = new URL(filename, "https://site.invalid/");
     const targetUrl = new URL(reference, pageUrl);
-    let targetPath = `${siteDirectory}${
-      decodeURIComponent(targetUrl.pathname)
-    }`;
+    let targetPath = `${siteDirectory}${decodeURIComponent(
+      targetUrl.pathname,
+    )}`;
 
     try {
-      const target = await Deno.stat(targetPath);
-      if (target.isDirectory) targetPath = `${targetPath}/index.html`;
+      const target = await stat(targetPath);
+      if (target.isDirectory()) targetPath = `${targetPath}/index.html`;
     } catch (error) {
-      if (error instanceof Deno.errors.NotFound) {
-        throw new Error(`${filename} links to missing ${reference}`);
+      if (
+        error instanceof Error &&
+        "code" in error &&
+        error.code === "ENOENT"
+      ) {
+        throw new Error(`${filename} links to missing ${reference}`, {
+          cause: error,
+        });
       }
       throw error;
     }
 
     if (targetUrl.hash) {
       const fragment = decodeURIComponent(targetUrl.hash.slice(1));
-      const targetHtml = targetPath === `${siteDirectory}/${filename}`
-        ? html
-        : await Deno.readTextFile(targetPath);
+      const targetHtml =
+        targetPath === `${siteDirectory}/${filename}`
+          ? html
+          : await Bun.file(targetPath).text();
       if (!targetHtml.includes(`id="${fragment}"`)) {
         throw new Error(`${filename} links to missing fragment ${reference}`);
       }
@@ -71,7 +78,7 @@ for (const [index, post] of posts.entries()) {
     `Posts are not newest-first at ${post.url}`,
   );
 
-  const html = await Deno.readTextFile(`${siteDirectory}${post.url}`);
+  const html = await Bun.file(`${siteDirectory}${post.url}`).text();
   assert(
     html.startsWith("<!DOCTYPE html>"),
     `${post.url} is not an HTML document`,
@@ -89,7 +96,7 @@ for (const [index, post] of posts.entries()) {
 }
 
 for (const filename of ["about.html", "aihub.html"]) {
-  const html = await Deno.readTextFile(`${siteDirectory}/${filename}`);
+  const html = await Bun.file(`${siteDirectory}/${filename}`).text();
   assert(
     html.startsWith("<!DOCTYPE html>"),
     `${filename} is not an HTML document`,
@@ -102,12 +109,12 @@ for (const filename of ["about.html", "aihub.html"]) {
 }
 
 for (const filename of ["404.html", "index.html"]) {
-  const html = await Deno.readTextFile(`${siteDirectory}/${filename}`);
+  const html = await Bun.file(`${siteDirectory}/${filename}`).text();
   await assertInternalLinks(html, filename);
 }
 
 const visitorSnapshot = JSON.parse(
-  await Deno.readTextFile(`${siteDirectory}/counter/visitors.json`),
+  await Bun.file(`${siteDirectory}/counter/visitors.json`).text(),
 );
 assert(
   Number.isSafeInteger(visitorSnapshot.total) && visitorSnapshot.total >= 0,
