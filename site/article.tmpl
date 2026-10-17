@@ -1,0 +1,17 @@
+{{define "body"}}
+<main id="main-content" class="post-container">
+  <article class="post">
+    <header class="post-header">
+      <a class="back-link" href="/">{{if .Date}}← All posts{{else}}← Home{{end}}</a>
+      <h1>{{.Title}}</h1>
+      {{if .Date}}<span class="post-date">{{.DisplayDate}}</span>{{end}}
+      {{if .Tags}}<div class="post-tags">{{range .Tags}}<a class="post-tag" href="/?tag={{.}}#posts">{{.}}</a>{{end}}</div>{{end}}
+    </header>
+    {{if .Outline}}<details class="article-outline">
+      <summary>On this page</summary>
+      <nav aria-label="Article sections"><ul>{{range .Outline}}<li class="outline-level-{{.Level}}"><a href="#{{.ID}}">{{.Title}}</a></li>{{end}}</ul></nav>
+    </details>{{end}}
+    <div class="post-content">{{.Content}}</div>
+  </article>
+</main>
+{{end}}

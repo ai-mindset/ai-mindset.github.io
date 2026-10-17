@@ -34,13 +34,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup Go
+        uses: actions/setup-go@v7
         with:
-          bun-version: canary
+          go-version-file: go.mod
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: go mod download
 
       - name: Ensure GitHub-hosted visitor beacon
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
@@ -66,16 +66,21 @@ jobs:
           download_count=$(gh api \
             "repos/${GITHUB_REPOSITORY}/releases/tags/${COUNTER_TAG}" \
             --jq ".assets[] | select(.name == \"${COUNTER_ASSET}\") | .download_count")
-          VISITOR_DOWNLOAD_COUNT="$download_count" bun run snapshot-counter
+          VISITOR_DOWNLOAD_COUNT="$download_count" go run . snapshot
 
       - name: Check source
-        run: bun run check
+        run: |
+          test -z "$(gofmt -l *.go)"
+          go vet ./...
+          go run . check
 
-      - name: Build and test site
-        run: bun run test
+      - name: Test and build site
+        run: |
+          go test ./...
+          go run . build
 
       - name: Verify generated site
-        run: bun run verify
+        run: go run . verify
 
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'

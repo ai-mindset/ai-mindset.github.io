@@ -1,0 +1,48 @@
+{{define "body"}}
+<main id="main-content" class="container">
+  <div class="search-container">
+    <input type="search" id="search-input" class="search-input" placeholder="Search posts..." aria-label="Search posts">
+    <span class="search-icon" aria-hidden="true">🔍</span>
+    <button type="button" class="search-clear" aria-label="Clear search">✕</button>
+  </div>
+
+  <details class="tag-filter">
+    <summary>Filter by tag</summary>
+    <div id="tags">
+      {{range .Tags}}<button type="button" class="tag" data-tag="{{.}}" aria-pressed="false">{{.}}</button>{{end}}
+    </div>
+  </details>
+
+  <div class="date-filter">
+    <label for="date-filter">Browse by date</label>
+    <select id="date-filter">
+      <option value="">All dates</option>
+      {{range .Years}}{{$year := .Year}}
+      <option value="{{.Year}}">{{.Year}}</option>
+      {{range .Months}}<option value="{{$year}}-{{.Number}}">{{.Name}} {{$year}}</option>{{end}}
+      {{end}}
+    </select>
+  </div>
+
+  <section id="posts" class="posts" aria-label="Posts">
+    <h2>Posts</h2>
+    <div class="results-summary">
+      <p id="results-status" role="status">{{len .Posts}} posts</p>
+      <button type="button" id="show-all-btn" hidden>Clear filters</button>
+    </div>
+    <p id="no-results" hidden>No posts found.</p>
+    <div id="posts-list">
+      {{range .Posts}}
+      <article class="post-item" data-url="{{.URL}}" data-year="{{.Year}}" data-month="{{.Month}}" data-tags="{{join .Tags ","}}">
+        <span class="post-date">{{.DisplayDate}}</span>
+        <h3 class="post-title"><a href="{{.URL}}">{{.Title}}</a></h3>
+        <div class="post-tags">{{range .Tags}}<a class="post-tag" href="/?tag={{.}}#posts">{{.}}</a>{{end}}</div>
+        <div class="post-tldr">{{.Summary}}</div>
+      </article>
+      {{end}}
+    </div>
+  </section>
+
+  <p class="visitor-counter">~<strong>{{.VisitorTotal}}</strong> unique browsers</p>
+</main>
+{{end}}

@@ -1,0 +1,33 @@
+{{define "base"}}<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{if .Title}}{{.Title}} - {{end}}Just-in-Time Learning</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header>
+      <div class="container">
+        {{if .Title}}<p class="site-title"><a href="/">Just-in-Time Learning</a></p>{{else}}<h1 class="site-title"><a href="/">Just-in-Time Learning</a></h1>{{end}}
+        <p class="subtitle">Notes on AI engineering, data, tools, and ways of working.</p>
+        <nav aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/about.html">About</a>
+          <a href="/aihub.html">Resources</a>
+        </nav>
+      </div>
+    </header>
+
+    {{template "body" .}}
+
+    <footer>
+      <div class="container">
+        <p>Created with <a href="https://github.com/ai-mindset/init.vim">Neovim</a>, using <a href="/posts/dialogue-engineering.html">AI</a> to help process and curate content ✨ · <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+      </div>
+    </footer>
+    <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+    <script src="/app.js" defer></script>
+  </body>
+</html>{{end}}
