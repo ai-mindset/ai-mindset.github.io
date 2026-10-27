@@ -1,9 +1,24 @@
-_site/
-node_modules/
-counter/*.sqlite*
+# from https://raw.githubusercontent.com/github/gitignore/refs/heads/main/Go.gitignore
+# Allowlisting gitignore template for GO projects prevents us
+# from adding various unwanted local files, such as generated
+# files, developer configurations or IDE-specific files etc.
+#
+# Recommended: Go.AllowList.gitignore
 
-# Local agent configuration
-.agents/
-.claude/
-.codex/
-CLAUDE.md
+# Ignore everything
+*
+
+# But not these files...
+!/.gitignore
+
+!*.go
+!go.sum
+!go.mod
+
+!README.md
+!LICENSE
+
+# !Makefile
+
+# ...even if they are in subdirectories
+!*/
